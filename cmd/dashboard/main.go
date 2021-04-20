@@ -14,7 +14,7 @@ func getDashboard(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-    //http.HandleFunc("/", http.FileServer(http.Dir("./src/dashboard/static/index.html")))
+    http.Handle("/", http.FileServer(http.Dir("./dashboard/build/")))
 
     http.HandleFunc("/api", func(w http.ResponseWriter, r *http.Request){
         fmt.Fprintf(w, "API")
@@ -22,6 +22,6 @@ func main() {
 
     log.Fatal(http.ListenAndServe(":8080", nil))
 
-    Database := db.Database("SQL")
-
+    database := db.Database{Name: "SQL"}
+    fmt.Print(database)
 }
