@@ -1,5 +1,6 @@
 package db
 
 type Database struct {
-	Name string
+	Name 	string
 }
+
