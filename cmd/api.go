@@ -53,6 +53,11 @@ func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
 
 func main() {
     router := mux.NewRouter()
+    
+    var d db.ReadMeDatabase
+    
+    d = db.NewMongoController()
+    fmt.Print(d.GetUser().Username)
 
     // REST API
     router.HandleFunc("/api/getUser/{userId}", getUser).Methods("GET") 
@@ -62,6 +67,4 @@ func main() {
 
     http.ListenAndServe(":8081", router)
 
-    database := db.Database{Name: "SQL"}
-    fmt.Print(database)
 }

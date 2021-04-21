@@ -2,18 +2,18 @@ package db
 
 
 type User struct {
-	ID			ID
+	//ID			ID
     Username 	string
-	Email 		string
-	FirstName	string
-	LastName	string
+	//Email 		string
+	//FirstName	string
+	//LastName	string
 
-	Interests	*ReadMeLabel
-	Credit		int
-	RelScore	int
+	//Interests	*ReadMeLabel
+	//Credit		int
+	//RelScore	int
 	
-	Favorites	*ID
-	Comments	*Comment
+	//Favorites	*ID
+	//Comments	*Comment
 
 }
 
