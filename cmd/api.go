@@ -57,7 +57,7 @@ func main() {
     var d db.ReadMeDatabase
     
     d = db.NewMongoController()
-    fmt.Print(d.GetUser().Username)
+    fmt.Print(d.GetUser("Oved").Username)
 
     // REST API
     router.HandleFunc("/api/getUser/{userId}", getUser).Methods("GET") 

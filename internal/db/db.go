@@ -5,13 +5,13 @@ type Database struct {
 }
 
 type ReadMeDatabase interface {
-	GetUser() 		User
-	//getUsers()  	*User
-	//getArticle()	Article	
-	//getArticles()	*Article
+	GetUser(id ID) 		User
+	GetUsers()  		[]User
+	GetArticle(id ID)	Article	
+	GetArticles()		[]Article
 
-	//newUser()
-	//newArticle()
-	//updateUser()
-	//updateArticle()
+	NewUser()
+	NewArticle()
+	UpdateUser()
+	UpdateArticle()
 }

@@ -2,19 +2,18 @@ package db
 
 
 type User struct {
-	//ID			ID
+	ID			ID
     Username 	string
-	//Email 		string
-	//FirstName	string
-	//LastName	string
+	Email 		string
+	FirstName	string
+	LastName	string
 
-	//Interests	*ReadMeLabel
-	//Credit		int
-	//RelScore	int
+	Interests	[]ReadMeLabel
+	Credit		int
+	RelScore	int
 	
-	//Favorites	*ID
-	//Comments	*Comment
-
+	Favorites	[]ID
+	Comments	[]Comment
 }
 
 type Article struct {
@@ -24,12 +23,12 @@ type Article struct {
 	Author 		string 
 	Date 		int64
 	
-	Labels	 	*ReadMeLabel
+	Labels	 	[]ReadMeLabel
 	//RelScore 	float32	
 	FakeVotes	Votes
 	SponsVotes	Votes
 
-	Comments	*Comment
+	Comments	[]Comment
 }
 
 type Comment struct {
