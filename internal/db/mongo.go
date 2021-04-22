@@ -67,7 +67,7 @@ func (db *MongoController) GetArticle(id ID) Article {
 }
 
 func (db *MongoController) GetArticles() []Article {
-	return []Article{
+	return []Article {
 		Article{Name: "I like turtles?"},
 		Article{Name: "I like turtles!"},
 		Article{Name: "I like turtles$"},	

@@ -51,18 +51,43 @@ func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
     json.NewEncoder(responseWriter).Encode(jsonData)
 }
 
+
+func __convert(jsonData interface{}) func(responseWriter http.ResponseWriter, r *http.Request) {
+    return func(responseWriter http.ResponseWriter, r *http.Request) {
+        responseWriter.Header().Set("Content-Type", "application/json")
+        responseWriter.WriteHeader(http.StatusOK)
+        json.NewEncoder(responseWriter).Encode(jsonData)
+    }
+}
+
+func convertWithID(f func(id db.ID) db.User) func(responseWriter http.ResponseWriter, r *http.Request) {
+    return func(responseWriter http.ResponseWriter, r *http.Request) {
+        vars := mux.Vars(r)
+        var id string
+        id = vars["id"]
+
+        jsonData := f(db.ID(id))
+
+        responseWriter.Header().Set("Content-Type", "application/json")
+        responseWriter.WriteHeader(http.StatusOK)
+
+        json.NewEncoder(responseWriter).Encode(jsonData)
+    }
+}
+
+
+var d db.ReadMeDatabase
+
 func main() {
     router := mux.NewRouter()
-    
-    var d db.ReadMeDatabase
     
     d = db.NewMongoController()
     fmt.Print(d.GetUser("Oved").Username)
 
     // REST API
-    router.HandleFunc("/api/getUser/{userId}", getUser).Methods("GET") 
+    router.HandleFunc("/api/getUser/{id}", convertWithID(d.GetUser)).Methods("GET") 
     router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
-    router.HandleFunc("/api/getArtickes/{articleId}", getArticle).Methods("GET") 
+    router.HandleFunc("/api/getArtickes/{id}", getArticle).Methods("GET") 
     router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
 
     http.ListenAndServe(":8081", router)
