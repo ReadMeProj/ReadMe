@@ -66,7 +66,7 @@ func convertWithID(f func(id db.ID) db.User) func(responseWriter http.ResponseWr
         var id string
         id = vars["id"]
 
-        jsonData := f(db.ID(id)) //
+        jsonData := f(db.ID(id)) 
 
         responseWriter.Header().Set("Content-Type", "application/json")
         responseWriter.WriteHeader(http.StatusOK)
