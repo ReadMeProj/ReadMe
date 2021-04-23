@@ -1,7 +1,6 @@
 package main
 
 import (
-    "fmt"
     "net/http"
    
     "ReadMe/internal/db"
@@ -39,12 +38,11 @@ func main() {
     router := mux.NewRouter()
     
     dBase = db.NewMongoController()
-    fmt.Print(dBase.GetUser("Oved").Username)
 
     // REST API
     router.HandleFunc("/api/getUser/{id}", getUser).Methods("GET") 
     router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
-    router.HandleFunc("/api/getArticles/{id}", getArticle).Methods("GET") 
+    router.HandleFunc("/api/getArticle/{id}", getArticle).Methods("GET") 
     router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
 
     http.ListenAndServe(":8081", router)

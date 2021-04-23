@@ -5,13 +5,13 @@ import (
     "fmt"
     "log"
 
-    //"go.mongodb.org/mongo-driver/bson"
+    "go.mongodb.org/mongo-driver/bson"
     "go.mongodb.org/mongo-driver/mongo"
     "go.mongodb.org/mongo-driver/mongo/options"
 )
 
 type MongoController struct {
-	mongoClient		mongo.Client		
+	client		mongo.Client		
 }
 
 func NewMongoController() *MongoController {
@@ -20,7 +20,7 @@ func NewMongoController() *MongoController {
 	
 	var controller MongoController
 	controller = MongoController {
-		mongoClient: client,
+		client: client,
 	}
 
 	return &controller
@@ -50,7 +50,17 @@ func getMongoClient() *mongo.Client {
 }
 
 func (db *MongoController) GetUser(id ID) User {
-	return User{Username: "Oved"}
+	collection := db.client.Database("ReadMeDB").Collection("users")
+	filter := bson.D{{Key: "ID", Value: id}}
+
+	var user User
+
+	err := collection.FindOne(context.TODO(), filter).Decode(&user)	
+	if err != nil {
+		log.Print(err)
+	}
+
+	return user
 }
 
 func (db *MongoController) GetUsers() []User { 
