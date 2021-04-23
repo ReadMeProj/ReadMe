@@ -7,6 +7,11 @@ import (
     "github.com/gorilla/mux"
 )
 
+type Response struct {
+	Error		interface{}
+	Data 		interface{}
+}
+
 func GenerateHandler(responseWriter http.ResponseWriter, 
 	r *http.Request,
 	jsonData interface{}) {
@@ -22,3 +27,4 @@ func ExtractIDStringFromRequest(r *http.Request) string {
 	id = vars["id"]
 	return id 
 }
+

@@ -9,27 +9,33 @@ import (
 )
 
 func getUser(responseWriter http.ResponseWriter, r *http.Request) {
-    jsonData := dBase.GetUser(
+    jsonData, err := dBase.GetUser(
         db.ID(api.ExtractIDStringFromRequest(r)),
     )
-    api.GenerateHandler(responseWriter, r, jsonData)
+    response := api.Response{Error: err, Data: jsonData}
+
+    api.GenerateHandler(responseWriter, r, response)
 }
 
 func getUsers(responseWriter http.ResponseWriter, r *http.Request) {
-    jsonData := dBase.GetUsers()
-    api.GenerateHandler(responseWriter, r, jsonData)
+    jsonData, err := dBase.GetUsers()
+    response := api.Response{Error: err, Data: jsonData}
+
+    api.GenerateHandler(responseWriter, r, response)
 }
 
 func getArticle(responseWriter http.ResponseWriter, r *http.Request) {
-    jsonData := dBase.GetArticle(
+    jsonData, err := dBase.GetArticle(
         db.ID(api.ExtractIDStringFromRequest(r)),
     )
-    api.GenerateHandler(responseWriter, r, jsonData)
+    response := api.Response{Error: err, Data: jsonData}
+    api.GenerateHandler(responseWriter, r, response)
 }
 
 func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
-    jsonData := dBase.GetArticles()
-    api.GenerateHandler(responseWriter, r, jsonData)
+    jsonData, err := dBase.GetArticles()
+    response := api.Response{Error: err, Data: jsonData}
+    api.GenerateHandler(responseWriter, r, response)
 }
 
 var dBase db.ReadMeDatabase

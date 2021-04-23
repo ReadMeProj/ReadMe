@@ -49,7 +49,7 @@ func getMongoClient() *mongo.Client {
 	return client
 }
 
-func (db *MongoController) GetUser(id ID) User {
+func (db *MongoController) GetUser(id ID) (User, error) {
 	collection := db.client.Database("ReadMeDB").Collection("users")
 	filter := bson.D{{Key: "ID", Value: id}}
 
@@ -60,42 +60,69 @@ func (db *MongoController) GetUser(id ID) User {
 		log.Print(err)
 	}
 
-	return user
+	return user, err
 }
 
-func (db *MongoController) GetUsers() []User { 
-	return []User {
-		User{Username: "Oved"},
-		User{Username: "Yariv"},
-		User{Username: "Ronit"},
-		User{Username: "Doron"},
+func (db *MongoController) GetUsers() ([]User, error) { 
+	collection := db.client.Database("ReadMeDB").Collection("users")
+
+	findOptions := options.Find()
+	findOptions.SetLimit(10)
+
+	var results []User
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.TODO(), bson.D{{}}, findOptions)
+	if err != nil {
+		log.Print(err)
 	}
+
+	// Finding multiple documents returns a cursor
+	// Iterating through the cursor allows us to decode documents one at a time
+	for cur.Next(context.TODO()) {
+		
+		// create a value into which the single document can be decoded
+		var elem User
+		err := cur.Decode(&elem)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		results = append(results, elem)
+	}
+
+	if err := cur.Err(); err != nil {
+		log.Fatal(err)
+	}
+	cur.Close(context.TODO())
+
+	return results, err 
 }
 
-func (db *MongoController) GetArticle(id ID) Article {
-	return Article{Name: "I like turtles?"}
+func (db *MongoController) GetArticle(id ID) (Article, error) {
+	return Article{Name: "I like turtles?"}, nil
 }
 
-func (db *MongoController) GetArticles() []Article {
+func (db *MongoController) GetArticles() ([]Article, error) {
 	return []Article {
 		Article{Name: "I like turtles?"},
 		Article{Name: "I like turtles!"},
 		Article{Name: "I like turtles$"},	
-	}
+	}, nil
 }
 
-func (db *MongoController) NewUser() {
-
+func (db *MongoController) NewUser() error {
+	return nil
 }
 
-func (db *MongoController) NewArticle() {
-	
+func (db *MongoController) NewArticle() error {
+	return nil
 }
 
-func (db *MongoController) UpdateUser() {
-
+func (db *MongoController) UpdateUser() error {
+	return nil
 }
 
-func (db *MongoController) UpdateArticle() {
-
+func (db *MongoController) UpdateArticle() error {
+	return nil
 }
