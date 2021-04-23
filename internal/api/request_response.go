@@ -1,18 +1,18 @@
 package api
 
 import (
-    "net/http"
-    "encoding/json"
-   
-    "github.com/gorilla/mux"
+	"encoding/json"
+	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 type Response struct {
-	Error		interface{}
-	Data 		interface{}
+	Error interface{}
+	Data  interface{}
 }
 
-func GenerateHandler(responseWriter http.ResponseWriter, 
+func GenerateHandler(responseWriter http.ResponseWriter,
 	r *http.Request,
 	jsonData interface{}) {
 
@@ -25,6 +25,5 @@ func ExtractIDStringFromRequest(r *http.Request) string {
 	vars := mux.Vars(r)
 	var id string
 	id = vars["id"]
-	return id 
+	return id
 }
-

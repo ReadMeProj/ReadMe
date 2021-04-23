@@ -1,25 +1,25 @@
 package db
 
 import (
-    "context"
-    "fmt"
-    "log"
+	"context"
+	"fmt"
+	"log"
 
-    "go.mongodb.org/mongo-driver/bson"
-    "go.mongodb.org/mongo-driver/mongo"
-    "go.mongodb.org/mongo-driver/mongo/options"
+	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 type MongoController struct {
-	client		mongo.Client		
+	client mongo.Client
 }
 
 func NewMongoController() *MongoController {
 	var client mongo.Client
 	client = *getMongoClient()
-	
+
 	var controller MongoController
-	controller = MongoController {
+	controller = MongoController{
 		client: client,
 	}
 
@@ -49,15 +49,15 @@ func getMongoClient() *mongo.Client {
 	return client
 }
 
-func (db* MongoController) extractOneByIDFromDB(dbName string, 
-												collectionName string, 
-												id ID, 
-												result interface{}) (error) {
+func (db *MongoController) extractOneByIDFromDB(dbName string,
+	collectionName string,
+	id ID,
+	result interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
 
 	filter := bson.D{{Key: "ID", Value: id}}
 
-	err := collection.FindOne(context.TODO(), filter).Decode(result)	
+	err := collection.FindOne(context.TODO(), filter).Decode(result)
 	if err != nil {
 		log.Print(err)
 	}
@@ -73,10 +73,10 @@ func (db *MongoController) GetUser(id ID) (User, error) {
 		log.Print(err)
 	}
 
-	return user, err 
+	return user, err
 }
 
-func (db *MongoController) GetUsers() ([]User, error) { 
+func (db *MongoController) GetUsers() ([]User, error) {
 	collection := db.client.Database("ReadMeDB").Collection("users")
 
 	findOptions := options.Find()
@@ -93,7 +93,7 @@ func (db *MongoController) GetUsers() ([]User, error) {
 	// Finding multiple documents returns a cursor
 	// Iterating through the cursor allows us to decode documents one at a time
 	for cur.Next(context.TODO()) {
-		
+
 		// create a value into which the single document can be decoded
 		var elem User
 		err := cur.Decode(&elem)
@@ -109,7 +109,7 @@ func (db *MongoController) GetUsers() ([]User, error) {
 	}
 	cur.Close(context.TODO())
 
-	return results, err 
+	return results, err
 }
 
 func (db *MongoController) GetArticle(id ID) (Article, error) {
@@ -117,10 +117,10 @@ func (db *MongoController) GetArticle(id ID) (Article, error) {
 }
 
 func (db *MongoController) GetArticles() ([]Article, error) {
-	return []Article {
+	return []Article{
 		Article{Name: "I like turtles?"},
 		Article{Name: "I like turtles!"},
-		Article{Name: "I like turtles$"},	
+		Article{Name: "I like turtles$"},
 	}, nil
 }
 
