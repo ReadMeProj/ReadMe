@@ -44,7 +44,7 @@ func main() {
     // REST API
     router.HandleFunc("/api/getUser/{id}", getUser).Methods("GET") 
     router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
-    router.HandleFunc("/api/getArtickes/{id}", getArticle).Methods("GET") 
+    router.HandleFunc("/api/getArticles/{id}", getArticle).Methods("GET") 
     router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
 
     http.ListenAndServe(":8081", router)
