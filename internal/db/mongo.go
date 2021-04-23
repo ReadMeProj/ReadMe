@@ -49,18 +49,31 @@ func getMongoClient() *mongo.Client {
 	return client
 }
 
-func (db *MongoController) GetUser(id ID) (User, error) {
-	collection := db.client.Database("ReadMeDB").Collection("users")
+func (db* MongoController) extractOneByIDFromDB(dbName string, 
+												collectionName string, 
+												id ID, 
+												result interface{}) (error) {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
 	filter := bson.D{{Key: "ID", Value: id}}
 
-	var user User
-
-	err := collection.FindOne(context.TODO(), filter).Decode(&user)	
+	err := collection.FindOne(context.TODO(), filter).Decode(result)	
 	if err != nil {
 		log.Print(err)
 	}
 
-	return user, err
+	return err
+}
+
+func (db *MongoController) GetUser(id ID) (User, error) {
+	var user User
+
+	err := db.extractOneByIDFromDB("ReadMeDB", "users", id, &user)
+	if err != nil {
+		log.Print(err)
+	}
+
+	return user, err 
 }
 
 func (db *MongoController) GetUsers() ([]User, error) { 
