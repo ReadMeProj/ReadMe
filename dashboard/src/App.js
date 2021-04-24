@@ -52,7 +52,7 @@ function App() {
                 <div className="col-sm">
                   <div>
                     <Link to="/login" className="btn btn-primary">
-                      Login/Signup
+                      Login
                     </Link>
                   </div>
                 </div>

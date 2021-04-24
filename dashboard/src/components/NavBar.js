@@ -1,27 +1,32 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function NavBar(params) {
   return (
     <div>
       <dl>
-        <dd>
-          <Link to="/" className="btn btn-primary">
+        <dd className="navOption">
+          <FontAwesomeIcon icon={["fas", "home"]} size="lg" />
+          <Link to="/" className="navLink">
             Dashboard
           </Link>
         </dd>
-        <dd>
-          <Link to="/login" className="btn btn-primary">
+        <dd className="navOption">
+          <FontAwesomeIcon icon={["fas", "user-circle"]} size="lg" />
+          <Link to="/login" className="navLink">
             My Profile
           </Link>
         </dd>
-        <dd>
-          <Link to="/requests" className="btn btn-primary">
+        <dd className="navOption">
+          <FontAwesomeIcon icon={["fas", "inbox"]} size="lg" />
+          <Link to="/requests" className="navLink">
             My Requests
           </Link>
         </dd>
-        <dd>
-          <Link to="/requests" className="btn btn-primary">
+        <dd className="navOption">
+          <FontAwesomeIcon icon={["fas", "tasks"]} size="lg" />
+          <Link to="/requests" className="navLink">
             Requested Of Me
           </Link>
         </dd>

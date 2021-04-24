@@ -1,5 +1,7 @@
 import React from "react";
-import searchIcon from "../assets/search.svg";
+import "../assets/Icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const SearchBar = () => (
   <form action="/" method="get">
     <div className="searchBar">
@@ -8,15 +10,10 @@ const SearchBar = () => (
         id="header-search"
         placeholder="Search articles"
         name="q"
+        style={{ minWidth: "400px" }}
       />
       <button type="submit" className="iconButton">
-        <img
-          width={30}
-          height={30}
-          className="align-self-center mr-3"
-          src={searchIcon}
-          alt="Search"
-        />
+        <FontAwesomeIcon icon={["fas", "search"]} size="lg" />
       </button>
     </div>
   </form>

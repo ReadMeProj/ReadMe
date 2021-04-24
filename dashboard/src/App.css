@@ -40,7 +40,8 @@
 .searchBar {
   display: flex;
   width: 600px;
-  border-radius: 20px;
+  min-height: 35px;
+  border-radius: 10px;
   background-color: #eff0f8;
   padding-left: 30px;
   justify-content: space-around;
@@ -70,4 +71,17 @@ hr {
 input[type="text"] {
   background-color: transparent;
   border: none;
+}
+
+.navLink {
+  padding-left: 20px;
+  color: #262a31;
+}
+
+.navLink:hover {
+  color: blueviolet;
+}
+
+.navOption {
+  margin-bottom: 20px;
 }
