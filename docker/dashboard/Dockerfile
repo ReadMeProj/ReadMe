@@ -1,11 +1,14 @@
 FROM golang:1.15
 
-WORKDIR /cmd/dashboard
-COPY . .
+# Make modules
+WORKDIR /board
+COPY go.* ./
+RUN go mod download
 
-RUN go get -d -v ./...
-RUN go install -v ./...
+# Copy everything
+COPY . . 
+RUN go build -o ./board ./cmd/dashboard 
 
 EXPOSE 8080
 
-CMD ["main"]
+CMD ["./board"]
