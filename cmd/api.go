@@ -39,6 +39,20 @@ func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
 	api.GenerateHandler(responseWriter, r, response)
 }
 
+func newUser(responseWriter http.ResponseWriter, r *http.Request) {
+	
+}
+
+func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
+}
+
+func updateUser(responseWriter http.ResponseWriter, r *http.Request) {
+}
+
+func updateArticle(responseWriter http.ResponseWriter, r *http.Request) {
+}
+
+
 var dBase db.ReadMeDatabase
 
 func main() {
@@ -51,6 +65,11 @@ func main() {
 	router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
 	router.HandleFunc("/api/getArticle/{id}", getArticle).Methods("GET")
 	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
+
+	router.HandleFunc("/api/newUser", newUser).Methods("GET")
+	router.HandleFunc("/api/newArticle", newArticle).Methods("GET")
+	router.HandleFunc("/api/updateUser", updateUser).Methods("GET")
+	router.HandleFunc("/api/updateArticle", updateArticle).Methods("GET")
 
 	http.ListenAndServe(":8081", router)
 

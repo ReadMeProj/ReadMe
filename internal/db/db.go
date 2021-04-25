@@ -10,8 +10,8 @@ type ReadMeDatabase interface {
 	GetArticle(id ID) (Article, error)
 	GetArticles() ([]Article, error)
 
-	NewUser() error
-	NewArticle() error
-	UpdateUser() error
-	UpdateArticle() error
+	NewUser(user User) error
+	NewArticle(article Article) error
+	UpdateUser(user User) error
+	UpdateArticle(article Article) error
 }

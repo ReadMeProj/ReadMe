@@ -11,6 +11,10 @@ import (
 )
 
 const MultipleExtractionLimit = 10
+const mongoDatabaseName = "ReadMeDB"
+const mongoUsersCollectionName = "users"
+const mongoArticlesCollectionName = "articles"
+const mongoCollectionIDKey = "ID"
 
 type MongoController struct {
 	client mongo.Client
@@ -85,13 +89,12 @@ func (db *MongoController) extractManyByFromDB(dbName string, collectionName str
 	}
 	
 	return err
-
 }
 
 func (db *MongoController) GetUser(id ID) (User, error) {
 	var user User
 
-	err := db.extractOneByIDFromDB("ReadMeDB", "users", id, &user)
+	err := db.extractOneByIDFromDB(mongoDatabaseName, mongoUsersCollectionName, id, &user)
 	if err != nil {
 		log.Print(err)
 	}
@@ -103,7 +106,7 @@ func (db *MongoController) GetUsers() ([]User, error) {
 	var users []User
 	limit := MultipleExtractionLimit
 
-	err := db.extractManyByFromDB("ReadMeDB", "users", &users, int64(limit))
+	err := db.extractManyByFromDB(mongoDatabaseName, mongoUsersCollectionName, &users, int64(limit))
 	if err != nil {
 		log.Print(err)
 	}
@@ -114,7 +117,7 @@ func (db *MongoController) GetUsers() ([]User, error) {
 func (db *MongoController) GetArticle(id ID) (Article, error) {
 	var article Article 
 
-	err := db.extractOneByIDFromDB("ReadMeDB", "articles", id, &article)
+	err := db.extractOneByIDFromDB(mongoDatabaseName, mongoArticlesCollectionName, id, &article)
 	if err != nil {
 		log.Print(err)
 	}
@@ -126,7 +129,7 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 	var articles []Article
 	limit := MultipleExtractionLimit
 
-	err := db.extractManyByFromDB("ReadMeDB", "articles", &articles, int64(limit))
+	err := db.extractManyByFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(limit))
 	if err != nil {
 		log.Print(err)
 	}
@@ -134,18 +137,18 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 	return articles, err	
 }
 
-func (db *MongoController) NewUser() error {
+func (db *MongoController) NewUser(user User) error {
 	return nil
 }
 
-func (db *MongoController) NewArticle() error {
+func (db *MongoController) NewArticle(article Article) error {
 	return nil
 }
 
-func (db *MongoController) UpdateUser() error {
+func (db *MongoController) UpdateUser(user User) error {
 	return nil
 }
 
-func (db *MongoController) UpdateArticle() error {
+func (db *MongoController) UpdateArticle(article Article) error {
 	return nil
 }
