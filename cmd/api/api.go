@@ -1,11 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-
 	"ReadMe/internal/api"
 	"ReadMe/internal/db"
+	"encoding/json"
+	"fmt"
+	"net/http"
 
 	"github.com/gorilla/mux"
 )
@@ -41,11 +41,15 @@ func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
 }
 
 func newUser(responseWriter http.ResponseWriter, r *http.Request) {
-	user := db.User{}
-	user.Username = api.TokenGenerator(6) 
-	user.ID = db.ID(api.TokenGenerator(10))
+	var user db.User
+
+	err := json.NewDecoder(r.Body).Decode(&user)
+    if err != nil {
+        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return
+    }
 	
-	err := dBase.NewUser(user)
+	err = dBase.NewUser(user)
 	response := api.Response{Error:err, Data: nil}
 	api.GenerateHandler(responseWriter, r, response)
 }
@@ -96,10 +100,10 @@ func main() {
 	router.HandleFunc("/api/getArticle/{id}", getArticle).Methods("GET")
 	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
 
-	router.HandleFunc("/api/newUser", newUser).Methods("GET")
-	router.HandleFunc("/api/newArticle", newArticle).Methods("GET")
-	router.HandleFunc("/api/updateUser", updateUser).Methods("GET")
-	router.HandleFunc("/api/updateArticle", updateArticle).Methods("GET")
+	router.HandleFunc("/api/newUser", newUser).Methods("PUT")
+	router.HandleFunc("/api/newArticle", newArticle).Methods("PUT")
+	router.HandleFunc("/api/updateUser", updateUser).Methods("POST")
+	router.HandleFunc("/api/updateArticle", updateArticle).Methods("POST")
 
 	serv := &http.Server{
         Addr:         "0.0.0.0:8081",
