@@ -9,6 +9,4 @@ RUN go mod download
 COPY . . 
 RUN go build -o ./api ./cmd/api 
 
-EXPOSE 8081
-
 CMD ["./api"]

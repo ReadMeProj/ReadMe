@@ -101,6 +101,10 @@ func main() {
 	router.HandleFunc("/api/updateUser", updateUser).Methods("GET")
 	router.HandleFunc("/api/updateArticle", updateArticle).Methods("GET")
 
-	http.ListenAndServe(":8081", router)
+	serv := &http.Server{
+        Addr:         "0.0.0.0:8081",
+        Handler:      router,
+    }
 
+	serv.ListenAndServe()
 }
