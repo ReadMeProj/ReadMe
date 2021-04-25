@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"ReadMe/internal/api"
@@ -84,6 +85,8 @@ var dBase db.ReadMeDatabase
 
 func main() {
 	router := mux.NewRouter()
+
+	fmt.Println("Starting API server")
 
 	dBase = db.NewMongoController()
 
