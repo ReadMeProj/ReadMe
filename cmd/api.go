@@ -40,16 +40,43 @@ func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
 }
 
 func newUser(responseWriter http.ResponseWriter, r *http.Request) {
+	user := db.User{}
+	user.Username = api.TokenGenerator(6) 
+	user.ID = db.ID(api.TokenGenerator(10))
 	
+	err := dBase.NewUser(user)
+	response := api.Response{Error:err, Data: nil}
+	api.GenerateHandler(responseWriter, r, response)
 }
 
 func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
+	article := db.Article{}
+	article.Name = api.TokenGenerator(6) 
+	article.ID = db.ID(api.TokenGenerator(10))
+	
+	err := dBase.NewArticle(article)
+	response := api.Response{Error:err, Data: nil}
+	api.GenerateHandler(responseWriter, r, response)
 }
 
 func updateUser(responseWriter http.ResponseWriter, r *http.Request) {
+	user := db.User{}
+	user.Username = api.TokenGenerator(6) 
+	user.ID = "Oved" 
+	
+	err := dBase.UpdateUser(user)
+	response := api.Response{Error:err, Data: nil}
+	api.GenerateHandler(responseWriter, r, response)
 }
 
 func updateArticle(responseWriter http.ResponseWriter, r *http.Request) {
+	article := db.Article{}
+	article.Name = api.TokenGenerator(6) 
+	article.ID = "abcdefghijk"
+	
+	err := dBase.NewArticle(article)
+	response := api.Response{Error:err, Data: nil}
+	api.GenerateHandler(responseWriter, r, response)
 }
 
 
