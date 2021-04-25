@@ -15,7 +15,7 @@ const mongoDatabaseName = "ReadMeDB"
 const mongoUsersCollectionName = "users"
 const mongoArticlesCollectionName = "articles"
 const mongoCollectionIDKey = "ID"
-const MultipleExtractionLimit = 10^5
+const MultipleExtractionLimit = 10000
 
 type MongoController struct {
 	client mongo.Client
@@ -78,7 +78,7 @@ func (db *MongoController) extractManyByFromDB(dbName string, collectionName str
 	findOptions.SetLimit(limit)
 
 	// Passing bson.D{{}} as the filter matches all documents in the collection
-	cur, err := collection.Find(context.TODO(), bson.D{{}}, findOptions)
+	cur, err := collection.Find(context.Background(), bson.D{{}}, findOptions)
 	if err != nil {
 		log.Println(err)
 	}
@@ -179,7 +179,7 @@ func (db *MongoController) NewUser(user User) error {
 }
 
 func (db *MongoController) NewArticle(article Article) error {
-	err := db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, article)
+	err := db.insertOneToDB(mongoDatabaseName, mongoArticlesCollectionName, article)
 	if err != nil {
 		log.Println(err)
 	}

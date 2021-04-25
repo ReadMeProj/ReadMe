@@ -50,17 +50,21 @@ func newUser(responseWriter http.ResponseWriter, r *http.Request) {
     }
 	
 	err = dBase.NewUser(user)
-	response := api.Response{Error:err, Data: nil}
+	response := api.Response{Error:err, Data: user}
 	api.GenerateHandler(responseWriter, r, response)
 }
 
 func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
-	article := db.Article{}
-	article.Name = api.TokenGenerator(6) 
-	article.ID = db.ID(api.TokenGenerator(10))
+	var article db.Article
 	
-	err := dBase.NewArticle(article)
-	response := api.Response{Error:err, Data: nil}
+	err := json.NewDecoder(r.Body).Decode(&article)
+    if err != nil {
+        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return
+    }
+
+	err = dBase.NewArticle(article)
+	response := api.Response{Error:err, Data: article}
 	api.GenerateHandler(responseWriter, r, response)
 }
 
