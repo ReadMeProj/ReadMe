@@ -10,6 +10,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
+const MultipleExtractionLimit = 10
+
 type MongoController struct {
 	client mongo.Client
 }
@@ -49,20 +51,41 @@ func getMongoClient() *mongo.Client {
 	return client
 }
 
-func (db *MongoController) extractOneByIDFromDB(dbName string,
-	collectionName string,
-	id ID,
-	result interface{}) error {
+func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, id ID,
+	pResult interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
 
 	filter := bson.D{{Key: "ID", Value: id}}
 
-	err := collection.FindOne(context.TODO(), filter).Decode(result)
+	err := collection.FindOne(context.TODO(), filter).Decode(pResult)
 	if err != nil {
 		log.Print(err)
 	}
 
 	return err
+}
+
+// extract multiple results from mongo DB 
+func (db *MongoController) extractManyByFromDB(dbName string, collectionName string, pResults interface{}, limit int64) (error) {
+	collection := db.client.Database(dbName).Collection(collectionName)
+	
+	findOptions := options.Find()
+	findOptions.SetLimit(limit)
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.TODO(), bson.D{{}}, findOptions)
+	if err != nil {
+		log.Print(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), pResults)
+	if err != nil {
+		// handle error
+	}
+	
+	return err
+
 }
 
 func (db *MongoController) GetUser(id ID) (User, error) {
@@ -77,51 +100,38 @@ func (db *MongoController) GetUser(id ID) (User, error) {
 }
 
 func (db *MongoController) GetUsers() ([]User, error) {
-	collection := db.client.Database("ReadMeDB").Collection("users")
+	var users []User
+	limit := MultipleExtractionLimit
 
-	findOptions := options.Find()
-	findOptions.SetLimit(10)
-
-	var results []User
-
-	// Passing bson.D{{}} as the filter matches all documents in the collection
-	cur, err := collection.Find(context.TODO(), bson.D{{}}, findOptions)
+	err := db.extractManyByFromDB("ReadMeDB", "users", &users, int64(limit))
 	if err != nil {
 		log.Print(err)
 	}
 
-	// Finding multiple documents returns a cursor
-	// Iterating through the cursor allows us to decode documents one at a time
-	for cur.Next(context.TODO()) {
-
-		// create a value into which the single document can be decoded
-		var elem User
-		err := cur.Decode(&elem)
-		if err != nil {
-			log.Fatal(err)
-		}
-
-		results = append(results, elem)
-	}
-
-	if err := cur.Err(); err != nil {
-		log.Fatal(err)
-	}
-	cur.Close(context.TODO())
-
-	return results, err
+	return users, err	
 }
 
 func (db *MongoController) GetArticle(id ID) (Article, error) {
-	return Article{Name: "I like turtles?"}, nil
+	var article Article 
+
+	err := db.extractOneByIDFromDB("ReadMeDB", "articles", id, &article)
+	if err != nil {
+		log.Print(err)
+	}
+
+	return article, err
 }
 
 func (db *MongoController) GetArticles() ([]Article, error) {
-	return []Article{
-		Article{Name: "I like turtles?"},
-		Article{Name: "I like turtles!"},
-		Article{Name: "I like turtles$"},
-	}, nil
+	var articles []Article
+	limit := MultipleExtractionLimit
+
+	err := db.extractManyByFromDB("ReadMeDB", "articles", &articles, int64(limit))
+	if err != nil {
+		log.Print(err)
+	}
+
+	return articles, err	
 }
 
 func (db *MongoController) NewUser() error {
