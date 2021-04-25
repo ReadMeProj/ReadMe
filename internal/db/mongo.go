@@ -111,7 +111,6 @@ func (db *MongoController) updateOneInDB(dbName string, collectionName string, i
 
 	filter := bson.D{{Key: mongoCollectionIDKey, Value: id}}
 
-	// Declare a filter that will change a field's integer value to `42`
     update := bson.M{"$set": updatedObject}
 
 	res, err := collection.UpdateOne(context.TODO(), filter, update)
@@ -188,7 +187,7 @@ func (db *MongoController) NewArticle(article Article) error {
 }
 
 func (db *MongoController) UpdateUser(user User) error {
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "Oved", user)
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, user.ID, user)
 	if err != nil {
 		log.Println(err)
 	}
@@ -197,7 +196,7 @@ func (db *MongoController) UpdateUser(user User) error {
 }
 
 func (db *MongoController) UpdateArticle(article Article) error {
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "abcdefghijk", article)
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, article.ID, article)
 	if err != nil {
 		log.Println(err)
 	}
