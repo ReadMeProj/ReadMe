@@ -193,7 +193,6 @@ func (db *MongoController) NewArticle(article Article) error {
 
 func (db *MongoController) UpdateUser(user User) error {
 	updateMap := make(map[string]interface{})
-	updateMap["firstname"] = user.FirstName
 	updateMap["credit"] = user.Credit
 	updateMap["relscore"] = user.RelScore
 
@@ -207,8 +206,6 @@ func (db *MongoController) UpdateUser(user User) error {
 
 func (db *MongoController) UpdateArticle(article Article) error {
 	updateMap := make(map[string]interface{})
-	updateMap["name"] = article.Name
-	updateMap["author"] = article.Author
 	updateMap["fakevotes"] = article.FakeVotes
 	updateMap["sponsvotes"] = article.SponsVotes
 	
