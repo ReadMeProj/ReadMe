@@ -14,7 +14,7 @@ import (
 const mongoDatabaseName = "ReadMeDB"
 const mongoUsersCollectionName = "users"
 const mongoArticlesCollectionName = "articles"
-const mongoCollectionIDKey = "ID"
+const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
 type MongoController struct {
@@ -106,12 +106,17 @@ func (db *MongoController) insertOneToDB(dbName string, collectionName string, n
 }
 
 // updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
-func (db *MongoController) updateOneInDB(dbName string, collectionName string, id ID, updatedObject interface{}) error {
+func (db *MongoController) updateOneInDB(dbName string, collectionName string, id ID, updateObject map[string]interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
 
 	filter := bson.D{{Key: mongoCollectionIDKey, Value: id}}
+	update := bson.M{}
 
-    update := bson.M{"$set": updatedObject}
+	for k, v := range updateObject {
+		update[k] = v
+	}
+	
+	update = bson.M{"$set": update}
 
 	res, err := collection.UpdateOne(context.TODO(), filter, update)
 	if err != nil {
@@ -187,7 +192,12 @@ func (db *MongoController) NewArticle(article Article) error {
 }
 
 func (db *MongoController) UpdateUser(user User) error {
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, user.ID, user)
+	updateMap := make(map[string]interface{})
+	updateMap["firstname"] = user.FirstName
+	updateMap["credit"] = user.Credit
+	updateMap["relscore"] = user.RelScore
+
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, user.ID, updateMap)
 	if err != nil {
 		log.Println(err)
 	}
@@ -196,7 +206,13 @@ func (db *MongoController) UpdateUser(user User) error {
 }
 
 func (db *MongoController) UpdateArticle(article Article) error {
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, article.ID, article)
+	updateMap := make(map[string]interface{})
+	updateMap["name"] = article.Name
+	updateMap["author"] = article.Author
+	updateMap["fakevotes"] = article.FakeVotes
+	updateMap["sponsvotes"] = article.SponsVotes
+	
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, article.ID, updateMap)
 	if err != nil {
 		log.Println(err)
 	}
