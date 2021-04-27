@@ -1,54 +1,52 @@
 package db
 
-
 type User struct {
-	ID			ID
-    Username 	string
-	Email 		string
-	FirstName	string
-	LastName	string
+	ID        ID `json:"id"`
+	Username  string `json:"username"`
+	Email     string `json:"email"`
+	FirstName string `json:"firstname"`
+	LastName  string `json:"lastname"`
 
-	Interests	*ReadMeLabel
-	Credit		int
-	RelScore	int
-	
-	Favorites	*ID
-	Comments	*Comment
+	Interests []ReadMeLabel `json:"interests"`
+	Credit    int `json:"credit"`
+	RelScore  int `json:"relscore"`
 
+	Favorites []ID `json:"favorites"`
+	Comments  []Comment `json:"comments"`
 }
 
 type Article struct {
-	ID			ID
-    Name 	 	string
-	URL  	 	string
-	Author 		string 
-	Date 		int64
-	
-	Labels	 	*ReadMeLabel
-	//RelScore 	float32	
-	FakeVotes	Votes
-	SponsVotes	Votes
+	ID     ID `json:"id"`
+	Name   string `json:"name"`
+	URL    string `json:"url"`
+	Author string `json:"author"`
+	Date   int64 `json:"date"`
 
-	Comments	*Comment
+	Labels []ReadMeLabel `json:"labels"`
+	//RelScore 	float32
+	FakeVotes  Votes `json:"fakevotes"`
+	SponsVotes Votes `json:"sponsvotes"`
+
+	Comments []Comment `json:"comments"`
 }
 
 type Comment struct {
-	userID 		ID
-	articleID	ID
-	Date 		int64
-	Content		string
-	
-	Votes		Votes
+	UserID    ID `json:"userid"`
+	ArticleID ID `json:"articleid"`
+	Date      int64 `json:"date"`
+	Content   string `json:"content"`
+
+	Votes Votes `json:"votes"`
 }
 
 type ID string
 
 type ReadMeLabel struct {
-	LabelName 	string
-	Score		float32
+	LabelName string `json:"labelname"`
+	Score     float32 `json:"score"`
 }
 
 type Votes struct {
-	UpVote 		int
-	DownVote 	int
+	UpVote   int `json:"upvote"`
+	DownVote int `json:"downvote"`
 }

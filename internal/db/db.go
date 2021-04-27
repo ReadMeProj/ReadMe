@@ -1,17 +1,17 @@
 package db
 
 type Database struct {
-	Name 	string
+	Name string
 }
 
 type ReadMeDatabase interface {
-	getUser() 		User
-	getUsers()  	*User
-	getArticle()	Article	
-	getArticles()	*Article
+	GetUser(id ID) (User, error)
+	GetUsers() ([]User, error)
+	GetArticle(id ID) (Article, error)
+	GetArticles() ([]Article, error)
 
-	newUser()
-	newArticle()
-	updateUser()
-	updateArticle()
+	NewUser(user User) error
+	NewArticle(article Article) error
+	UpdateUser(user User) error
+	UpdateArticle(article Article) error
 }
