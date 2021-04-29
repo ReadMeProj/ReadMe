@@ -126,7 +126,7 @@ func startAPIServer(mongoIP string) {
 var dBase db.ReadMeDatabase
 
 func main() {
-	mongoIP := flag.String("mongoIP", "0.0.0.0", "One of '0.0.0.0', 'localhost' (running local) or 'mongodb' (running with Docker)")
+	mongoIP := flag.String("mongo", "0.0.0.0", "One of '0.0.0.0', 'localhost' (running local) or 'mongodb' (running with Docker)")
 
 	flag.Parse()
 

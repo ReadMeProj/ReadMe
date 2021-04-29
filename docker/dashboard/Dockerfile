@@ -9,6 +9,4 @@ RUN go mod download
 COPY . . 
 RUN go build -o ./board ./cmd/dashboard 
 
-EXPOSE 8080
-
 CMD ["./board"]
