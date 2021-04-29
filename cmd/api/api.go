@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"flag"
 
 	"github.com/gorilla/mux"
 )
@@ -96,15 +97,12 @@ func updateArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	api.GenerateHandler(responseWriter, r, response)
 }
 
-
-var dBase db.ReadMeDatabase
-
-func main() {
+func startAPIServer(mongoIP string) {
 	router := mux.NewRouter()
 
 	fmt.Println("Starting API server")
 
-	dBase = db.NewMongoController()
+	dBase = db.NewMongoController(mongoIP)
 
 	// REST API
 	router.HandleFunc("/api/getUser/{id}", getUser).Methods("GET")
@@ -123,4 +121,14 @@ func main() {
     }
 
 	serv.ListenAndServe()
+}
+
+var dBase db.ReadMeDatabase
+
+func main() {
+	mongoIP := flag.String("mongoIP", "0.0.0.0", "One of '0.0.0.0', 'localhost' (running local) or 'mongodb' (running with Docker)")
+
+	flag.Parse()
+
+	startAPIServer(*mongoIP)
 }
