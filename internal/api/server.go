@@ -104,7 +104,7 @@ func StartAPIServer(mongoIP string) {
 	dBase = db.NewMongoController(mongoIP)
 
 	// REST API
-	router.HandleFunc("/api/getUser/{id}", getUser).Methods("GET")
+	router.HandleFunc("/api/getUser/{id}", getUser).Methods("GET").Headers()
 	router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
 	router.HandleFunc("/api/getArticle/{id}", getArticle).Methods("GET")
 	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
