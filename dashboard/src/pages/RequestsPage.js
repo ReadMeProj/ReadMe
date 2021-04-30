@@ -13,7 +13,11 @@ const reqs = [
 class RequestsPage extends Component {
   state = {};
   render() {
-    return <div></div>;
+    return (
+      <div>
+        <RequestCard />
+      </div>
+    );
   }
 }
 
