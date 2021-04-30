@@ -17,6 +17,7 @@ func GenerateHandler(responseWriter http.ResponseWriter,
 	jsonData interface{}) {
 
 	responseWriter.Header().Set("Content-Type", "application/json")
+	responseWriter.Header().Set("Access-Control-Allow-Origin", "*")
 	responseWriter.WriteHeader(http.StatusOK)
 	json.NewEncoder(responseWriter).Encode(jsonData)
 }

@@ -21,9 +21,9 @@ type MongoController struct {
 	client mongo.Client
 }
 
-func NewMongoController() *MongoController {
+func NewMongoController(mongoIP string) *MongoController {
 	var client mongo.Client
-	client = *getMongoClient()
+	client = *getMongoClient(mongoIP)
 
 	var controller MongoController
 	controller = MongoController{
@@ -33,9 +33,9 @@ func NewMongoController() *MongoController {
 	return &controller
 }
 
-func getMongoClient() *mongo.Client {
+func getMongoClient(mongoIP string) *mongo.Client {
 	// Set client options
-	clientOptions := options.Client().ApplyURI("mongodb://mongodb:27017")
+	clientOptions := options.Client().ApplyURI(fmt.Sprintf("mongodb://%s:27017", mongoIP))
 
 	// Connect to MongoDB
 	client, err := mongo.Connect(context.TODO(), clientOptions)
