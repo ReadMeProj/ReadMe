@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import LoginPage from "./pages/LoginPage";
 import RequestsPage from "./pages/RequestsPage";
 import NavBar from "./components/NavBar";
@@ -9,55 +9,24 @@ import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import ArticleList from "./components/ArticleList";
 import logo from "./assets/siteLogo.png";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      articlesData: [
-        {
-          id: "1",
-          name: "This first post is about React",
-          content:
-            "malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,",
-          link: "",
-        },
-        {
-          id: "2",
-          name: "This next post is about Preact",
-          content:
-            "tempor Pellentesque habitant morbi tristique senectus et netus et malesuada",
-          link: "",
-        },
-        {
-          id: "3",
-          name: "We have yet another React post!",
-          content:
-            "fames ac turpis egestas. Vestibulum tortor quam, feugiat  vitae, ultricies eget, tempor sit amet, ante.",
-          link: "",
-        },
-        {
-          id: "4",
-          name: "This is the fourth and final post",
-          content:
-            "Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.",
-          link: "",
-        },
-      ],
-    };
-  }
+function App () {
+  const [articles, setArticles] = useState([]);
 
-  //   componentDidMount() {
-  //     fetch("http://localhost:8081/api/getArticles")
-  //       .then((response) => response.json())
-  //       .then((data) => this.setState({ articlesData: data.Data }));
-  //   }
+  let headers = new Headers();
+  //headers.append('Content-Type', 'application/json');
+  //headers.append('Accept', 'application/json');
+  //headers.append('Origin','http://localhost:8081');
 
-  render() {
-    const { search } = window.location;
-    const query = new URLSearchParams(search).get("q");
-    return (
-      <div className="App">
-        <Router>
+  useEffect(() => 
+    fetch("http://localhost:8081/api/getArticles")
+          .then((response) => response.json())
+          .then((response) => response["Data"])
+          .then((response) => setArticles(response))
+  );
+
+  return (
+      <Router>
+        <div className="App">
           <div className="container-fluid">
             <div className="row">
               <div className="col">
@@ -109,8 +78,8 @@ class App extends Component {
                     <Route exact path="/">
                       <div>
                         <ArticleList
-                          data={this.state.articlesData}
-                          query={query}
+                          data={articles}
+                          //query={query}
                         />
                       </div>
                     </Route>
@@ -125,10 +94,9 @@ class App extends Component {
               </div>
             </div>
           </div>
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
-}
 
 export default App;
