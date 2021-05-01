@@ -1,5 +1,6 @@
 .App {
   text-align: left;
+  overflow: "hidden";
 }
 
 .App-logo {
@@ -92,4 +93,9 @@ input[type="text"] {
 .cardLink:active {
   text-decoration: none;
   color: inherit;
+}
+
+.scrollableDiv {
+  overflow-y: auto;
+  max-height: 380px;
 }

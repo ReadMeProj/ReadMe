@@ -1,21 +1,40 @@
 import React, { Component } from "react";
 import RequestCard from "../components/RequestCard";
-
-const reqs = [
-  {
-    id: "1",
-    name: "This first post is about React",
-    content:
-      "malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget,",
-    link: "",
-  },
-];
 class RequestsPage extends Component {
-  state = {};
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      requests: [],
+    };
+  }
+
+  componentDidMount() {
+    // GET request using fetch with set headers
+    const headers = { "Content-Type": "application/json" };
+    fetch(window.$name, {
+      headers: headers,
+    })
+      .then((response) => response.json())
+      .then((data) => this.setState({ requests: data.results }));
+  }
+
   render() {
+    const { requests: requests } = this.state;
+
     return (
       <div>
-        <RequestCard />
+        <dl>
+          {requests.map((article) => (
+            <dd key={article.package.date}>
+              <RequestCard
+                title={article.package.name}
+                content={article.package.description}
+                url={article.package.links.npm}
+              />
+            </dd>
+          ))}
+        </dl>
       </div>
     );
   }
