@@ -7,7 +7,7 @@ services:
         ports:
           - "27017:27017"
         volumes:
-          - mongo_data:/db/data
+          - ./mongo_data:/data/db
     api:
         build:
           context: ..
@@ -37,4 +37,4 @@ networks:
     driver: bridge
 volumes: 
   mongo_data:
-    external: true 
+    #external: true 
