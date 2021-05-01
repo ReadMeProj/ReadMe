@@ -13,6 +13,7 @@
 
 // Log `title` of current active web page
 const { parseFromDocument } = require('parse-open-graph');
+
 const result = parseFromDocument();
 console.log(result);
 if (result && result.og) {
