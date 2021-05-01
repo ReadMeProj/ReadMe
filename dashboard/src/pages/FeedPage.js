@@ -25,12 +25,10 @@ class FeedPage extends Component {
 
   componentDidMount() {
     // GET request using fetch with set headers
-    const headers = { "Content-Type": "application/json" };
-    fetch(window.$name, {
-      headers: headers,
-    })
+    fetch("http://localhost:8081/api/getArticles")
       .then((response) => response.json())
-      .then((data) => this.setState({ articles: data.results }));
+      .then((response) => response["Data"])
+      .then((response) => this.setState({ articles: response }));
   }
 
   render() {
@@ -42,11 +40,11 @@ class FeedPage extends Component {
       <div>
         <dl>
           {filteredPosts.map((article) => (
-            <dd key={article.package.date}>
+            <dd key={article.id}>
               <ArticleCard
-                title={article.package.name}
-                content={article.package.description}
-                url={article.package.links.npm}
+                title={article.name}
+                content={`Written by ${article.author}`}
+                url={article.url}
               />
             </dd>
           ))}
