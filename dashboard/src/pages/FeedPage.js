@@ -39,7 +39,7 @@ class FeedPage extends Component {
     return (
       <div>
         <dl>
-          {filteredPosts.map((article) => (
+          {filteredPosts == null ? [] : filteredPosts.map((article) => (
             <dd key={article.id}>
               <ArticleCard
                 title={article.name}
