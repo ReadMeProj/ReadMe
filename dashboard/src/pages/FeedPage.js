@@ -26,7 +26,7 @@ class FeedPage extends Component {
   componentDidMount() {
     // GET request using fetch with set headers
     const headers = { "Content-Type": "application/json" };
-    fetch("https://api.npms.io/v2/search?q=react", {
+    fetch(window.$name, {
       headers: headers,
     })
       .then((response) => response.json())

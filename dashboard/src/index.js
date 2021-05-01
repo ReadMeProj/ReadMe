@@ -5,6 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 
+window.$name = "https://api.npms.io/v2/search?q=react";
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
