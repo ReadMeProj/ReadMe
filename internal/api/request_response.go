@@ -18,6 +18,7 @@ func GenerateHandler(responseWriter http.ResponseWriter,
 
 	responseWriter.Header().Set("Content-Type", "application/json")
 	responseWriter.Header().Set("Access-Control-Allow-Origin", "*")
+	responseWriter.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 	responseWriter.WriteHeader(http.StatusOK)
 	json.NewEncoder(responseWriter).Encode(jsonData)
 }
