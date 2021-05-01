@@ -1,13 +1,15 @@
 import "./App.css";
 import React from "react";
-import LoginPage from "./pages/LoginPage";
+import UserProfile from "./pages/UserProfile";
 import RequestsPage from "./pages/RequestsPage";
+import UserRequestsPage from "./pages/UserRequestsPage";
 import NavBar from "./components/NavBar";
 import SearchBar from "./components/SearchBar";
 import SearchFilterBox from "./components/SearchFilters";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import logo from "./assets/siteLogo.png";
 import FeedPage from "./pages/FeedPage";
+import FillRequestPage from "./pages/FillRequestPage";
 
 function App() {
   // Variables to tie the search bar with the other components.
@@ -22,7 +24,7 @@ function App() {
             <div className="col">
               <div className="row align-items-center">
                 <div className="col-sm">
-                  <div>Hello, {"User"}</div>
+                  <div>Hello, {"UserName"}</div>
                 </div>
                 <div className="col-sm">
                   <div>
@@ -69,10 +71,16 @@ function App() {
                     </div>
                   </Route>
                   <Route path="/login">
-                    <LoginPage />
+                    <UserProfile />
                   </Route>
                   <Route path="/requests">
-                    <RequestsPage />
+                    <RequestsPage query={query} />
+                  </Route>
+                  <Route path="/userRequests">
+                    <UserRequestsPage query={query} />
+                  </Route>
+                  <Route path="/fillRequest">
+                    <FillRequestPage />
                   </Route>
                 </Switch>
               </div>

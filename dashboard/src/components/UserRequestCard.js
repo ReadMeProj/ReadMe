@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function RequestCard(props) {
+function UserRequestCard(props) {
   var requestTitle = "";
   var url = "";
   var id = "12345";
@@ -31,14 +31,11 @@ function RequestCard(props) {
             </a>
             <hr />
             <div className="row justify-content-around">
-              <a href={props.url} className="btn btn-info" target="_blank">
-                View article
-              </a>
-              <Link to={"/fillRequest/" + id} className="btn btn-info">
-                Answer
+              <p>Status: {"on hold"}</p>
+              <Link to={"/fillRequest/" + id} className="btn btn-warning">
+                Request Again
               </Link>
-              <button className="btn btn-danger">Deny</button>
-              <button className="btn btn-info">Put On Hold</button>
+              <button className="btn btn-danger">Delete Request</button>
             </div>
           </div>
         </div>
@@ -47,4 +44,4 @@ function RequestCard(props) {
   );
 }
 
-export default RequestCard;
+export default UserRequestCard;
