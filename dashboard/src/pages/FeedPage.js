@@ -25,7 +25,7 @@ class FeedPage extends Component {
 
   componentDidMount() {
     // GET request using fetch with set headers
-    fetch("http://localhost:8081/api/getArticles")
+    fetch(window.$name)
       .then((response) => response.json())
       .then((response) => response["Data"])
       .then((response) => this.setState({ articles: response }));
