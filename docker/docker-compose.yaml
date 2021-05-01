@@ -34,7 +34,11 @@ services:
           - ./shared_data:/shared_data
 networks:
   readme_network:
+<<<<<<< Updated upstream
     driver: bridge
 volumes: 
   mongo_data:
     #external: true 
+=======
+    driver: bridge
+>>>>>>> Stashed changes
