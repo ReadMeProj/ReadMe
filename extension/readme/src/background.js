@@ -6,16 +6,15 @@
 // See https://developer.chrome.com/extensions/background_pages
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === 'GREETINGS') {
-    const message = `Hi ${
-      sender.tab ? 'Con' : 'Pop'
-    }, my name is Bac. I am from Background. It's great to hear from you.`;
-
+  if (request.type === 'ARTICLE') {
+    const message = `Hi contentScript , got it this is an article`;
     // Log message coming from the `request` parameter
     console.log(request.payload.message);
+    console.log(`I'm from background , got this from contentScript: ${JSON.stringify(request.payload.ogMetaData)}`)
     // Send a response message
     sendResponse({
       message,
     });
+    
   }
 });
