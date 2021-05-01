@@ -51,7 +51,12 @@ function ArticleCard(params) {
       <Container>
         <Row>
           <Col>
-            <a href={articleUrl} className="cardLink" target="_blank">
+            <a
+              href={articleUrl}
+              className="cardLink"
+              target="_blank"
+              rel="noreferrer"
+            >
               <div
                 className="articleBox"
                 style={{ width: "550px", height: "150px" }}

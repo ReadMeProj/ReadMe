@@ -5,7 +5,7 @@ class RequestsPage extends Component {
     super(props);
 
     this.state = {
-      requests: [],
+      requestsData: [],
     };
   }
 
@@ -16,11 +16,11 @@ class RequestsPage extends Component {
       headers: headers,
     })
       .then((response) => response.json())
-      .then((data) => this.setState({ requests: data.results }));
+      .then((data) => this.setState({ requestsData: data.results }));
   }
 
   render() {
-    const { requests: requests } = this.state;
+    const { requestsData: requests } = this.state;
 
     return (
       <div>

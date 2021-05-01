@@ -63,7 +63,7 @@ function App() {
               <NavBar />
             </div>
             <div className="col-10">
-              <div className="App" className="scrollableDiv">
+              <div className="scrollableDiv">
                 <Switch>
                   <Route exact path="/">
                     <div>

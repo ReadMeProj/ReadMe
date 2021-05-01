@@ -5,22 +5,22 @@ class RequestsPage extends Component {
     super(props);
 
     this.state = {
-      requests: [],
+      requestsData: [],
     };
   }
 
   componentDidMount() {
     // GET request using fetch with set headers
-    const headers = { "Content-Type": "application/json" };
+    const reqheaders = { "Content-Type": "application/json" };
     fetch("https://api.npms.io/v2/search?q=react", {
-      headers: headers,
+      headers: reqheaders,
     })
       .then((response) => response.json())
-      .then((data) => this.setState({ requests: data.results }));
+      .then((data) => this.setState({ requestsData: data.results }));
   }
 
   render() {
-    const { requests: requests } = this.state;
+    const { requestsData: requests } = this.state;
 
     return (
       <div>

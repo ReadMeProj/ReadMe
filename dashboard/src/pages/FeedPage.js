@@ -19,7 +19,7 @@ class FeedPage extends Component {
     super(props);
 
     this.state = {
-      articles: [],
+      articlesData: [],
     };
   }
 
@@ -28,12 +28,12 @@ class FeedPage extends Component {
     fetch(window.$name)
       .then((response) => response.json())
       .then((response) => response["Data"])
-      .then((response) => this.setState({ articles: response }));
+      .then((response) => this.setState({ articlesData: response }));
   }
 
   render() {
     if (this.props == null) return;
-    const { articles: articles } = this.state;
+    const { articlesData: articles } = this.state;
     const filteredPosts = filterData(articles, this.props.query);
 
     return (

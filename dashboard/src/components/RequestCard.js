@@ -27,12 +27,17 @@ function RequestCard(props) {
       <div className="row">
         <div className="col align-items-center">
           <div className="articleBox" style={{ width: "600px" }}>
-            <a href={props.url} className="cardLink" target="_blank">
+            <a href={url} className="cardLink" target="_blank" rel="noreferrer">
               <h5>{requestTitle}</h5>
             </a>
             <hr />
             <div className="row justify-content-around">
-              <a href={props.url} className="btn btn-info" target="_blank">
+              <a
+                href={url}
+                className="btn btn-info"
+                target="_blank"
+                rel="noreferrer"
+              >
                 View article
               </a>
               <Link to={"/fillRequest/id=" + id} className="btn btn-info">
