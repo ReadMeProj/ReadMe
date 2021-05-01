@@ -20,7 +20,7 @@ function NavBar(params) {
         </dd>
         <dd className="navOption">
           <FontAwesomeIcon icon={["fas", "inbox"]} size="lg" />
-          <Link to="/requests" className="navLink">
+          <Link to="/userRequests" className="navLink">
             My Requests
           </Link>
         </dd>
