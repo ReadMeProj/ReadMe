@@ -22,9 +22,7 @@ function App() {
             <div className="col">
               <div className="row align-items-center">
                 <div className="col-sm">
-                  <div>
-                    <Link to="/login">The user name</Link>
-                  </div>
+                  <div>Hello, {"User"}</div>
                 </div>
                 <div className="col-sm">
                   <div>

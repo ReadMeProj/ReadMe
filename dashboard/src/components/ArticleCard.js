@@ -54,7 +54,7 @@ function ArticleCard(params) {
             <a href={articleUrl} className="cardLink" target="_blank">
               <div
                 className="articleBox"
-                style={{ width: "600px", height: "150px" }}
+                style={{ width: "550px", height: "150px" }}
               >
                 <Media>
                   <Media.Body>
@@ -80,15 +80,12 @@ function ArticleCard(params) {
           <Col>
             <div
               className="articleBox"
-              style={{ width: "300px", height: "150px" }}
+              style={{ width: "350px", height: "150px" }}
             >
               <h6>Should I believe it?</h6>
               <div>
-                <p>
-                  {fakePercent}
-                  <br />
-                  <Link>See more</Link>
-                </p>
+                <p>{fakePercent}</p>
+                <Link className="btn btn-info">See more</Link>
               </div>
             </div>
           </Col>
