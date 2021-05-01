@@ -6,6 +6,8 @@ services:
           - readme_network
         ports:
           - "27017:27017"
+        volumes:
+          - mongo_data:/db/data
     api:
         build:
           context: ..
@@ -33,4 +35,6 @@ services:
 networks:
   readme_network:
     driver: bridge
-    
+volumes: 
+  mongo_data:
+    external: true 
