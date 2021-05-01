@@ -85,3 +85,11 @@ input[type="text"] {
 .navOption {
   margin-bottom: 20px;
 }
+
+.cardLink,
+.cardLink:hover,
+.cardLink:visited,
+.cardLink:active {
+  text-decoration: none;
+  color: inherit;
+}

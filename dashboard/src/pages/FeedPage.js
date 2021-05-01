@@ -9,7 +9,7 @@ const filteData = (data, query) => {
   }
 
   return data.filter((article) => {
-    const postName = article.name.toLowerCase();
+    const postName = article.package.name.toLowerCase();
     return postName.includes(query);
   });
 };
@@ -46,6 +46,7 @@ class FeedPage extends Component {
               <ArticleCard
                 title={article.package.name}
                 content={article.package.description}
+                url={article.package.links.npm}
               />
             </dd>
           ))}
