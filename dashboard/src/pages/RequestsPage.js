@@ -29,8 +29,8 @@ class RequestsPage extends Component {
             <dd key={article.package.date}>
               <RequestCard
                 title={article.package.name}
-                content={article.package.description}
                 url={article.package.links.npm}
+                id={article.package.date}
               />
             </dd>
           ))}

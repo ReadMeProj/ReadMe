@@ -74,10 +74,10 @@ function App() {
                     <UserProfile />
                   </Route>
                   <Route path="/requests">
-                    <RequestsPage query={query} />
+                    <RequestsPage />
                   </Route>
                   <Route path="/userRequests">
-                    <UserRequestsPage query={query} />
+                    <UserRequestsPage />
                   </Route>
                   <Route path="/fillRequest">
                     <FillRequestPage />

@@ -29,7 +29,7 @@ class RequestsPage extends Component {
             <dd key={article.package.date}>
               <UserRequestCard
                 title={article.package.name}
-                content={article.package.description}
+                id={article.package.date}
                 url={article.package.links.npm}
               />
             </dd>

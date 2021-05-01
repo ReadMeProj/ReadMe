@@ -3,13 +3,13 @@ import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
 
 // TODO - have the server filter the results by getting the query in the url in the request.
-const filteData = (data, query) => {
+const filterData = (data, query) => {
   if (!query) {
     return data;
   }
 
   return data.filter((article) => {
-    const postName = article.package.name.toLowerCase();
+    const postName = article.name.toLowerCase();
     return postName.includes(query);
   });
 };
@@ -34,7 +34,7 @@ class FeedPage extends Component {
   render() {
     if (this.props == null) return;
     const { articles: articles } = this.state;
-    const filteredPosts = filteData(articles, this.props.query);
+    const filteredPosts = filterData(articles, this.props.query);
 
     return (
       <div>

@@ -1,10 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function UserRequestCard(props) {
   var requestTitle = "";
   var url = "";
-  var id = "12345";
+  var id = "";
 
   if (props != null && props.title != null) {
     if (props.title.length > 50) {
@@ -20,6 +19,9 @@ function UserRequestCard(props) {
   } else {
     url = "";
   }
+  if (props != null && props.id != null) {
+    id = props.id;
+  }
 
   return (
     <div className="container-fluid align-items-center">
@@ -32,9 +34,7 @@ function UserRequestCard(props) {
             <hr />
             <div className="row justify-content-around">
               <p>Status: {"on hold"}</p>
-              <Link to={"/fillRequest/" + id} className="btn btn-warning">
-                Request Again
-              </Link>
+              <button className="btn btn-warning">Request Again</button>
               <button className="btn btn-danger">Delete Request</button>
             </div>
           </div>

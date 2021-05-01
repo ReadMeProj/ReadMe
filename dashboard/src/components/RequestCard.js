@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function RequestCard(props) {
   var requestTitle = "";
   var url = "";
-  var id = "12345";
+  var id = "";
 
   if (props != null && props.title != null) {
     if (props.title.length > 50) {
@@ -17,8 +17,9 @@ function RequestCard(props) {
   }
   if (props != null && props.url != null) {
     url = props.url;
-  } else {
-    url = "";
+  }
+  if (props != null && props.id != null) {
+    id = props.id;
   }
 
   return (
@@ -34,7 +35,7 @@ function RequestCard(props) {
               <a href={props.url} className="btn btn-info" target="_blank">
                 View article
               </a>
-              <Link to={"/fillRequest/" + id} className="btn btn-info">
+              <Link to={"/fillRequest/id=" + id} className="btn btn-info">
                 Answer
               </Link>
               <button className="btn btn-danger">Deny</button>
