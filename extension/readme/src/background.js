@@ -4,6 +4,9 @@ import {getArticleById} from './apiHelper'
 // and contentScript files.
 // For more information on background script,
 // See https://developer.chrome.com/extensions/background_pages
+chrome.storage.local.set({'auth': true}, function() {
+  console.log('Value is set to ' + true);
+});
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'ARTICLE') {
