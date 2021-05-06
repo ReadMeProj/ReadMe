@@ -9,6 +9,7 @@ import {
   faUserCircle,
   faStar,
   faHome,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -17,6 +18,7 @@ library.add(
   faTasks,
   faUserCircle,
   faStar,
-  faHome
+  faHome,
+  faHeart
   // more icons go here
 );

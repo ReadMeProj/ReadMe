@@ -10,6 +10,7 @@ import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import logo from "./assets/siteLogo.png";
 import FeedPage from "./pages/FeedPage";
 import FillRequestPage from "./pages/FillRequestPage";
+import FavoritesPage from "./pages/FavoritesPage";
 
 function App() {
   // Variables to tie the search bar with the other components.
@@ -81,6 +82,9 @@ function App() {
                   </Route>
                   <Route path="/fillRequest">
                     <FillRequestPage />
+                  </Route>
+                  <Route path="/favorites">
+                    <FavoritesPage />
                   </Route>
                 </Switch>
               </div>

@@ -13,6 +13,12 @@ function NavBar(params) {
           </Link>
         </dd>
         <dd className="navOption">
+          <FontAwesomeIcon icon={["fas", "star"]} size="lg" />
+          <Link to="/favorites" className="navLink">
+            Favorites
+          </Link>
+        </dd>
+        <dd className="navOption">
           <FontAwesomeIcon icon={["fas", "user-circle"]} size="lg" />
           <Link to="/login" className="navLink">
             My Profile
