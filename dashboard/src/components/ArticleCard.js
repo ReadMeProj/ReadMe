@@ -2,16 +2,7 @@ import React from "react";
 import { Media, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-// Send API request to toggle like for the article for this user.
-function toggleLike(params) {
-  const articleID = params;
-  const likeRequest = {
-    method: "PUT",
-    headers: { "Content-Type": "application/json" },
-  };
-  fetch(window.$name + "/getArticle/like/id=" + articleID, likeRequest);
-}
+import { toggleArticleLike } from "../apiFunctions";
 
 function ArticleCard(params) {
   var articleContent = "";
@@ -20,7 +11,7 @@ function ArticleCard(params) {
   var articleID = "";
   var isReview = false; //TODO- read from params.
   var fakePercent;
-  var isLiked = true; //TODO- read from params.
+  var isLiked = false;
   var heart;
 
   // TODO- take img url from params.
@@ -59,6 +50,10 @@ function ArticleCard(params) {
     } else {
       console.log("Article id is null.");
     }
+    // Set up article ID.
+    if (params.isLiked != null) {
+      isLiked = params.isliked;
+    }
   }
 
   if (isReview) {
@@ -73,7 +68,7 @@ function ArticleCard(params) {
         icon={["fas", "heart"]}
         size="lg"
         color="red"
-        onClick={() => toggleLike(articleID)}
+        onClick={() => toggleArticleLike(articleID, "userId")}
         cursor="pointer"
       />
     );
@@ -83,7 +78,7 @@ function ArticleCard(params) {
         icon={["fas", "heart"]}
         size="lg"
         color="grey"
-        onClick={() => toggleLike(articleID)}
+        onClick={() => toggleArticleLike(articleID, "userId")}
         cursor="pointer"
       />
     );

@@ -1,7 +1,7 @@
 import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
-
+import { getFavoriteArticles, isArticleLiked } from "../apiFunctions";
 class FavoritesPage extends Component {
   constructor(props) {
     super(props);
@@ -12,11 +12,7 @@ class FavoritesPage extends Component {
   }
 
   componentDidMount() {
-    // GET request using fetch with set headers
-    fetch(window.$name + "/getArticles")
-      .then((response) => response.json())
-      .then((response) => response["Data"])
-      .then((response) => this.setState({ articlesData: response }));
+    getFavoriteArticles(this);
   }
 
   render() {
@@ -35,6 +31,7 @@ class FavoritesPage extends Component {
                     content={`Written by ${article.author}`}
                     url={article.url}
                     id={article.id}
+                    isLiked={isArticleLiked(article.id, "someUserID")}
                   />
                 </dd>
               ))}

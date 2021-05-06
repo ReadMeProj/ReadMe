@@ -26,7 +26,7 @@ function RequestCard(props) {
     <div className="container-fluid align-items-center">
       <div className="row">
         <div className="col align-items-center">
-          <div className="articleBox" style={{ width: "600px" }}>
+          <div className="articleBox" style={{ width: "80%" }}>
             <a href={url} className="cardLink" target="_blank" rel="noreferrer">
               <h5>{requestTitle}</h5>
             </a>

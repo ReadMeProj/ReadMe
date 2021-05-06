@@ -14,20 +14,12 @@ function UserRequestCard(props) {
   } else {
     requestTitle = "Title";
   }
-  // if (props != null && props.url != null) {
-  //   url = props.url;
-  // } else {
-  //   url = "";
-  // }
-  // if (props != null && props.id != null) {
-  //   id = props.id;
-  // }
 
   return (
     <div className="container-fluid align-items-center">
       <div className="row">
         <div className="col align-items-center">
-          <div className="articleBox" style={{ width: "600px" }}>
+          <div className="articleBox" style={{ width: "80%" }}>
             <a
               href={props.url}
               className="cardLink"
