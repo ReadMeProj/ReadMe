@@ -1,0 +1,24 @@
+[
+    {
+        "id": "abdefghijk12345",
+        "name": "At India’s Funeral Pyres, Covid Sunders the Rites of Grief",
+        "url": "https://www.nytimes.com/2021/05/08/world/asia/india-covid-deaths-crematories.html",
+        "author": "By Mujib Mashal, Sameer Yasir, Shalini Venugopal Bhagat and Atul Loke",
+        "date": "20210508"
+    },
+    {
+        "id": "abdefghijk1234567",
+        "name": "Chinese rocket expected to crash into Earth this weekend",
+        "url": "https://www.cnn.com/2021/05/08/politics/chinese-rocket-earth-reentry/index.html",
+        "author": "Paul LeBlanc, CNN",
+        "date": "2021-05-08T04:01:55Z"
+    },
+    {
+        "id": "abdefghijk123456789",
+        "name": "Man City reach first Champions League final",
+        "url": "https://www.bbc.co.uk/sport/football/56973031",
+        "author": "Phil McNulty",
+        "date": "2021-05-05T02:11:34Z"
+
+    }
+]

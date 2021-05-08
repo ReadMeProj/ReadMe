@@ -16,11 +16,11 @@ type User struct {
 }
 
 type Article struct {
-	ID     ID `json:"id"`
-	Name   string `json:"name"`
-	URL    string `json:"url"`
-	Author string `json:"author"`
-	Date   int64 `json:"date"`
+	ID     ID `json:"id" validate:"required"`
+	Name   string `json:"name" validate:"required"`
+	URL    string `json:"url" validate:"required,url"`
+	Author string `json:"author" validate:"required,gte=2"`
+	Date   string `json:"date" validate:"required"`
 
 	Labels []ReadMeLabel `json:"labels"`
 	//RelScore 	float32

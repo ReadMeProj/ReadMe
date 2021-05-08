@@ -8,6 +8,8 @@ services:
           - "27017:27017"
         volumes:
           - ./mongo_data:/data/db
+        command:
+          - ./docker/mongo/import.sh
     api:
         build:
           context: ..
