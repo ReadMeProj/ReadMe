@@ -209,3 +209,187 @@
     **Content:** `{ error : ..., data: null }`
     **Causes:** Access token outdated
     
+## /api/newUser
+
+* **Method:**
+
+  `PUT`
+  
+* **Header**  
+
+  * None
+  
+*  **URL Params**
+
+   * None
+
+* **Data Params**
+
+   ``` {
+          "username": "ILovePspice",
+          "password": "justinBeiber123",
+          "email": "haruvioved@gmail.com",
+          "firstname": "Oved Hagai",
+          "lastname": "Haruvi
+       }
+   ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  * **Content:** 
+    ```
+    { 
+        error: null, 
+        data: 
+              {
+                    "id": "123abc123",
+                    "username": "ILovePspice",
+                    "password": "justinBeiber123",
+                    "email": "haruvioved@gmail.com",
+                    "firstname": "Oved Hagai",
+                    "lastname": "Haruvi,
+                    ...
+              }
+    }
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `{ error : ..., data: null }`
+  **Causes:**  Json body malformed
+  
+## /api/newArticle
+
+* **Method:**
+
+  `PUT`
+  
+* **Header**  
+
+  * None
+  
+*  **URL Params**
+
+   * None
+
+* **Data Params**
+
+   ``` 
+       {
+          "name": "Man City reach first Champions League final",
+          "url": "https://www.bbc.co.uk/sport/football/56973031",
+          "author": "Phil McNulty",
+          "date": "2021-05-05T02:11:34Z
+       }
+   ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  * **Content:** 
+    ```
+    { 
+        error: null, 
+        data: 
+              {
+                    "id": "123abc123",
+                    "name": "Man City reach first Champions League final",
+                    "url": "https://www.bbc.co.uk/sport/football/56973031",
+                    "author": "Phil McNulty",
+                    "date": "2021-05-05T02:11:34Z,
+                    ...
+              }
+    }
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `{ error : ..., data: null }`
+  **Causes:**  Json body malformed
+
+## /login
+
+* **Method:**
+
+  `POST`
+  
+* **Header**  
+
+  * None
+  
+*  **URL Params**
+
+   * None
+
+* **Data Params**
+
+   ``` 
+      {
+          "id": "7a3410c3b79a5d16e2d7",
+          "password": "12345678"
+      }
+   ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  * **Content:** 
+    ```
+    { 
+        error: null, 
+        data: "accessTokenID"
+    }
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `{ error : ..., data: null }`
+  **Causes:**  Json body malformed
+  
+  * **Code:** 401 UNAUTHORIZED <br />
+  **Content:** `{ error : ..., data: null }`
+  **Causes:**  Password mismatch
+
+## /logout
+
+* **Method:**
+
+  `POST`
+  
+* **Header**  
+
+  * Token: access token 
+  * UserId: user id 
+  
+*  **URL Params**
+
+  * None
+
+* **Data Params**
+
+   ``` 
+      {
+          "id": "7a3410c3b79a5d16e2d7",
+      }
+   ```
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  * **Content:** 
+    ```
+    { 
+        error: null, 
+        data:  null
+    }
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `{ error : ..., data: null }`
+  **Causes:**  Json body malformed
