@@ -50,8 +50,7 @@ func newUser(responseWriter http.ResponseWriter, r *http.Request) {
     }
 
 	err = validator.New().Struct(user)
-	valErr := err.(validator.ValidationErrors)
-	if err != nil || valErr != nil {
+	if err != nil {
 		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
         return	
 	}
@@ -71,8 +70,7 @@ func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
     }
 
 	err = validator.New().Struct(article)
-	valErr := err.(validator.ValidationErrors)
-	if err != nil || valErr != nil {
+	if err != nil { 
 		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
         return	
 	}
@@ -118,6 +116,12 @@ func login(responseWriter http.ResponseWriter, r *http.Request) {
         http.Error(responseWriter, err.Error(), http.StatusBadRequest)
         return
     }
+
+	err = validator.New().Struct(credentials)
+	if err != nil {
+		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return	
+	}
 	
 	token, err := dBase.Login(credentials.ID, credentials.Password)
 	if err != nil {
@@ -130,15 +134,36 @@ func login(responseWriter http.ResponseWriter, r *http.Request) {
 }
 
 func logout(responseWriter http.ResponseWriter, r *http.Request) {
+	var id db.ID  
+	
+	idStruct := struct{
+		ID db.ID
+	}{
+		ID: id,
+	}
 
+	err := json.NewDecoder(r.Body).Decode(&idStruct)
+    if err != nil {
+        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return
+    }
+	
+	err = dBase.Logout(idStruct.ID)
+	if err != nil {
+        http.Error(responseWriter, err.Error(), http.StatusUnauthorized)
+        return
+    }
+
+	response := Response{Error:err, Data: nil}
+	GenerateHandler(responseWriter, r, response)
 }
 
-func isAuthorized(endpoint func(http.ResponseWriter, *http.Request)) http.Handler {
+func isAuthorized(endpoint func(http.ResponseWriter, *http.Request)) func(http.ResponseWriter, *http.Request) {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-        if r.Header["Token"] != nil && r.Header["UserId"] != nil {
+        if r.Header["Token"] != nil && r.Header["Userid"] != nil {
 			
-			userId := r.Header["UserID"][0]
+			userId := r.Header["Userid"][0]
 			token := r.Header["Token"][0]
 
 			err := dBase.IsAuth(
@@ -167,10 +192,10 @@ func StartAPIServer(mongoIP string) {
 	dBase = db.NewMongoController(mongoIP)
 
 	// REST API
-	router.HandleFunc("/api/getUser/{id}", getUser).Methods("GET").Headers()
+	router.HandleFunc("/api/getUser/{id}", isAuthorized(getUser)).Methods("GET").Headers()
 	router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
-	router.HandleFunc("/api/getArticle/{id}", getArticle).Methods("GET")
-	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
+	router.HandleFunc("/api/getArticle/{id}", isAuthorized(getArticle)).Methods("GET")
+	router.HandleFunc("/api/getArticles", isAuthorized(getArticles)).Methods("GET")
 
 	router.HandleFunc("/api/newUser", newUser).Methods("PUT")
 	router.HandleFunc("/api/newArticle", newArticle).Methods("PUT")
@@ -178,7 +203,7 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/updateArticle", updateArticle).Methods("POST")
 
 	router.HandleFunc("/login", login).Methods("POST")
-	router.HandleFunc("/logout", logout).Methods("POST")
+	router.HandleFunc("/logout", isAuthorized(logout)).Methods("POST")
 	
 	serv := &http.Server{
         Addr:         "0.0.0.0:8081",

@@ -2,12 +2,12 @@ package db
 
 
 type User struct {
-	ID        ID `json:"id" validate:"required"`
-	Username  string `json:"username" validate:"required"`
-	Password  string `json:"password" validate:"required"`
-	Email     string `json:"email" validate:"required"`
-	FirstName string `json:"firstname" validate:"required"`
-	LastName  string `json:"lastname" validate:"required"`
+	ID        ID `json:"id"`
+	Username  string `json:"username" validate:"required,gte=2"`
+	Password  string `json:"password" validate:"required,gte=8"`
+	Email     string `json:"email" validate:"required,email"`
+	FirstName string `json:"firstname" validate:"required,gte=2"`
+	LastName  string `json:"lastname" validate:"required,gte=2"`
 
 	AccessToken Token `json:"accesstoken"`
 
@@ -22,8 +22,8 @@ type User struct {
 type Article struct {
 	ID        ID `json:"id" validate:"required"`
 	Name   string `json:"name" validate:"required"`
-	URL    string `json:"url" validate:"required"`
-	Author string `json:"author" validate:"required"`
+	URL    string `json:"url" validate:"required,url"`
+	Author string `json:"author" validate:"required,gte=2"`
 	Date   int64 `json:"date" validate:"required"`
 
 	Labels []ReadMeLabel `json:"labels"`
@@ -57,6 +57,6 @@ type Votes struct {
 }
 
 type Credentials struct { 
-	ID 			ID
-	Password 	string
+	ID 			ID	`json:"id" validate:"required"`
+	Password 	string `json:"password" validate:"required"`
 }
