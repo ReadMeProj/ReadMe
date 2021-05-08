@@ -12,23 +12,27 @@
 // See https://developer.chrome.com/extensions/content_scripts
 
 // Log `title` of current active web page
-const pageTitle = document.head.getElementsByTagName('title')[0].innerHTML;
-console.log(
-  `Page title is: '${pageTitle}' - evaluated by Chrome extension's 'contentScript.js' file`
-);
+const { parseFromDocument } = require('parse-open-graph');
 
-// Communicate with background file by sending a message
-chrome.runtime.sendMessage(
-  {
-    type: 'GREETINGS',
-    payload: {
-      message: 'Hello, my name is Con. I am from ContentScript.',
-    },
-  },
-  response => {
-    console.log(response.message);
+const result = parseFromDocument();
+console.log(result);
+if (result && result.og) {
+  const ogType = result.og.type;
+  if (ogType && ogType === "article") {
+    chrome.runtime.sendMessage(
+      {
+        type: 'ARTICLE',
+        payload: {
+          message: 'Hi this is from contentscript saying this is',
+          ogMetaData: result
+        },
+      },
+      response => {
+        console.log(response.message);
+      }
+    );
   }
-);
+}
 
 // Listen for message
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
