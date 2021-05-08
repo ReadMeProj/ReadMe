@@ -4,25 +4,31 @@ import 'regenerator-runtime/runtime'
 
 
 const axiosClient = axios.create({
-    baseUrl: `${config.config.host}:${config.config['db-port']}`,
+    baseURL: `${config.config.host}:${config.config['db-port']}`,
     headers: {
         'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
+        'Content-Type': 'application/json'
     }
-});
+})
 
-// axiosClient.interceptors.response.use(
-//     function(response){
-//         return response;
-//     },
-//     function(error){
-//         let res = error.response;
-//         console.error(`Looks like there was a problem. Status code: ${res.status}`);
-//         return Promise.reject;
-//     }
-// )
+axiosClient.interceptors.response.use(
+    (response)=> {
+        return response;
+    },
+    (error) => {
+        if(error.response && error.response.status === 404){
+            console.error("Article Not found");
+        }
+        else if(error.response && error.response.status === 401){
+            console.error("You are not authorized");
+        }
+        else if(error.response && error.response.data) {
+            return Promise.reject(error.response.data)
+        }
+        console.log(error);
+        return Promise.reject(error.message);
+    }
+)
 
 export default {
     axiosClient

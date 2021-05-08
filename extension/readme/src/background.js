@@ -12,7 +12,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const articleId = ogMetaData.og.url;
     // Log message coming from the `request` parameter
     console.log(request.payload.message);
-    console.log(getArticles())
+    getArticle(articleId).then(res =>{
+      console.log(res)
+    }).catch(err =>{console.log(err)})
     console.log(`I'm from background , got this from contentScript: ${JSON.stringify(request.payload.ogMetaData)}`)
     // Send a response message
     

@@ -1,6 +1,3 @@
-
-
-
 const config = {
     "host": __API__,
     "db-port": "8081",

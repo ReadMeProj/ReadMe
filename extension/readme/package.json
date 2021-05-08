@@ -6,9 +6,9 @@
   "scripts": {
     "watch": "webpack --mode=development --watch --config config/webpack.config.js",
     "build": "webpack --mode=production --config config/webpack.config.js",
-    "build:production" : "NODE_ENV=production npm run build",
-    "build:development" : "NODE_ENV=dev npm run build",
-    "watch:production" : "NODE_ENV=production npm run watch",
+    "build:production": "NODE_ENV=production npm run build",
+    "build:development": "NODE_ENV=dev npm run build",
+    "watch:production": "NODE_ENV=production npm run watch",
     "watch:development": "npm run watch",
     "dev": "npm run watch:development",
     "prod": "npm run watch:production"
@@ -22,5 +22,8 @@
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12",
     "webpack-merge": "^5.7.3"
+  },
+  "dependencies": {
+    "parse-open-graph": "^0.4.0"
   }
 }

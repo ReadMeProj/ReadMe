@@ -1,14 +1,18 @@
-import  axiosClient from '../apiClient';
+import axiosClient from '../apiClient';
 import config from '../config';
+import utf8 from 'utf8';
+
 
 
 
 export function getArticle(id) {
-    id = encodeURI(id);
+    id = utf8.encode(id);
+    console.log(`about to call getArticle for : ${id}`);
     return axiosClient.axiosClient.get(`${config.config["getArticlePath"]}/${id}`);
 }
 
 export function getArticles() {
+    console.log(axiosClient);
     return axiosClient.axiosClient.get(`${config.config["getArticlesPath"]}`);
 }
 
