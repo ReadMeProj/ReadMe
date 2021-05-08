@@ -195,7 +195,7 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/getUser/{id}", isAuthorized(getUser)).Methods("GET").Headers()
 	router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
 	router.HandleFunc("/api/getArticle/{id}", isAuthorized(getArticle)).Methods("GET")
-	router.HandleFunc("/api/getArticles", isAuthorized(getArticles)).Methods("GET")
+	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
 
 	router.HandleFunc("/api/newUser", newUser).Methods("PUT")
 	router.HandleFunc("/api/newArticle", newArticle).Methods("PUT")

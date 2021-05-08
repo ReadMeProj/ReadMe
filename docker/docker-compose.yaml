@@ -13,8 +13,12 @@ services:
         #  - ./src/import.sh
     mongo_seed:
         build: ./mongo
+        links:
+          - mongodb
         depends_on:
           - mongodb
+        networks:
+          - readme_network
     api:
         build:
           context: ..
