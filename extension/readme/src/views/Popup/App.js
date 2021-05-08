@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <Router>
         <img 
-        width={64}
-        height={64}
+        width={48}
+        height={48}
         src={logo}/>
         <div>
           <Link to="/insights">
