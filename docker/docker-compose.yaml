@@ -7,9 +7,14 @@ services:
         ports:
           - "27017:27017"
         volumes:
+          - ./mongo:/src/
           - ./mongo_data:/data/db
-        command:
-          - ./docker/mongo/import.sh
+        #command:
+        #  - ./src/import.sh
+    mongo_seed:
+        build: ./mongo
+        depends_on:
+          - mongodb
     api:
         build:
           context: ..
