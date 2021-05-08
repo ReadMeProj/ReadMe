@@ -1,5 +1,5 @@
 'use strict';
-var {getArticle } = require('../../../shared/network/lib/article'); 
+var {getArticle, getArticles } = require('../../../shared/network/lib/article'); 
 // With background scripts you can communicate with popup
 // and contentScript files.
 // For more information on background script,
@@ -7,20 +7,18 @@ var {getArticle } = require('../../../shared/network/lib/article');
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'ARTICLE') {
-    const message = `Hi ${
-      sender.tab ? 'Con' : 'Pop'
-    }, my name is Bac. I am from Background. It's great to hear from you.`;
-
+    const message = `Hi contentScript , got it this is an article`;
+    const ogMetaData = request.payload.ogMetaData;
+    const articleId = ogMetaData.og.url;
     // Log message coming from the `request` parameter
     console.log(request.payload.message);
-    console.log(`I'm from background , got this from contentScript: ${JSON.stringify(request.payload.ogMetaData)}`);
-    console.log(request.payload.ogMetaData);
-    getArticleById(articleId).then(response => {
-      console.log(`From Background - i got this Data about the article from MongoDB ${response}`);
-    });
+    console.log(getArticles())
+    console.log(`I'm from background , got this from contentScript: ${JSON.stringify(request.payload.ogMetaData)}`)
     // Send a response message
+    
     sendResponse({
       message,
     });
+    
   }
 });

@@ -1,5 +1,8 @@
-export const config = {
-    "host": `__API__` ,
+
+
+
+const config = {
+    "host": __API__,
     "db-port": "8081",
     "dashboard-port": "8080",
     "loginPath": "/login",
@@ -11,4 +14,8 @@ export const config = {
     "newArticlePath": "/api/newArticle",
     "updateUserPath": "/api/updateUser",
     "updateArticlePath" : "/api/updateArticle"
+}
+
+export default{
+    config
 }

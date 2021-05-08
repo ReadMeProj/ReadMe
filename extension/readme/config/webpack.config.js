@@ -9,13 +9,13 @@ var apiHost;
 var setupAPI = () => {
   switch (process.env.NODE_ENV) {
     case 'dev':
-      apiHost = "http://127.0.0.1";
+      apiHost = "'https://127.0.0.1'";
       break;
     case 'production':
-      apiHost = "https://20.71.92.74";
+      apiHost = "'http://20.71.92.74'";
       break;
     default:
-      apiHost = "https://20.71.92.74";
+      apiHost = "'http://127.0.0.1'";
       break;
   }
 }
