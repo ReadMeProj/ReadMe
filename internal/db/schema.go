@@ -16,7 +16,7 @@ type User struct {
 }
 
 type Article struct {
-	ID     ID `json:"id"`
+	ID        ID `json:"id"`
 	Name   string `json:"name"`
 	URL    string `json:"url"`
 	Author string `json:"author"`

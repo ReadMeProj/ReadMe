@@ -1,6 +1,7 @@
 package db
 
 import (
+	"ReadMe/internal/proto"
 	"context"
 	"fmt"
 	"log"
@@ -174,6 +175,7 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 }
 
 func (db *MongoController) NewUser(user User) error {
+	user.ID = ID(proto.TokenGenerator(10))
 	err := db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, user)
 	if err != nil {
 		log.Println(err)
@@ -183,6 +185,7 @@ func (db *MongoController) NewUser(user User) error {
 }
 
 func (db *MongoController) NewArticle(article Article) error {
+	article.ID = ID(proto.TokenGenerator(10))
 	err := db.insertOneToDB(mongoDatabaseName, mongoArticlesCollectionName, article)
 	if err != nil {
 		log.Println(err)
