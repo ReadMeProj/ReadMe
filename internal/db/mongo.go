@@ -1,7 +1,9 @@
 package db
 
 import (
+	"ReadMe/internal/proto"
 	"context"
+	"errors"
 	"fmt"
 	"log"
 
@@ -26,7 +28,7 @@ func NewMongoController(mongoIP string) *MongoController {
 	client = *getMongoClient(mongoIP)
 
 	var controller MongoController
-	controller = MongoController{
+	controller = MongoController {
 		client: client,
 	}
 
@@ -174,6 +176,7 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 }
 
 func (db *MongoController) NewUser(user User) error {
+	user.ID = ID(proto.TokenGenerator(10))
 	err := db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, user)
 	if err != nil {
 		log.Println(err)
@@ -183,6 +186,7 @@ func (db *MongoController) NewUser(user User) error {
 }
 
 func (db *MongoController) NewArticle(article Article) error {
+	article.ID = ID(proto.TokenGenerator(10))
 	err := db.insertOneToDB(mongoDatabaseName, mongoArticlesCollectionName, article)
 	if err != nil {
 		log.Println(err)
@@ -213,6 +217,57 @@ func (db *MongoController) UpdateArticle(article Article) error {
 	if err != nil {
 		log.Println(err)
 	}
+
+	return err
+}
+
+func (db* MongoController) IsAuth(id ID, token Token) error {
+	user, _ := db.GetUser(id)
+
+	if (user.AccessToken == token) {
+		return nil
+	}
+
+	return errors.New("Not authenticated")
+}
+
+func (db *MongoController) updateAccessToken(id ID, token string) error {
+	updateMap := make(map[string]interface{})
+	updateMap["accesstoken"] = token 
+	
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, id, updateMap)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db *MongoController) performLogin(id ID, password string) error {
+	user, _ := db.GetUser(id)
+
+	if (user.Password == password) {
+		return nil
+	}
+
+	return errors.New("Password mismatch")	
+}
+
+func (db *MongoController) Login(id ID, password string) (Token, error) {
+	err := db.performLogin(id, password)
+	if err != nil {
+		return "", err
+	}
+
+	token := proto.TokenGenerator(10)
+	err = db.updateAccessToken(id, token)	
+
+	return Token(token), err
+}
+
+func (db *MongoController) Logout(id ID) error {
+	token := "NO_TOKEN" 
+	err := db.updateAccessToken(id, token)	
 
 	return err
 }

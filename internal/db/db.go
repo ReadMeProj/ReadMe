@@ -14,4 +14,8 @@ type ReadMeDatabase interface {
 	NewArticle(article Article) error
 	UpdateUser(user User) error
 	UpdateArticle(article Article) error
+
+	IsAuth(id ID, token Token) error
+	Login(id ID, password string) (Token, error)
+	Logout(id ID) error
 }
