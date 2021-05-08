@@ -1,11 +1,15 @@
 package db
 
+
 type User struct {
-	ID        ID `json:"id"`
-	Username  string `json:"username"`
-	Email     string `json:"email"`
-	FirstName string `json:"firstname"`
-	LastName  string `json:"lastname"`
+	ID        ID `json:"id" validate:"required"`
+	Username  string `json:"username" validate:"required"`
+	Password  string `json:"password" validate:"required"`
+	Email     string `json:"email" validate:"required"`
+	FirstName string `json:"firstname" validate:"required"`
+	LastName  string `json:"lastname" validate:"required"`
+
+	AccessToken Token `json:"accesstoken"`
 
 	Interests []ReadMeLabel `json:"interests"`
 	Credit    int `json:"credit"`
@@ -16,11 +20,11 @@ type User struct {
 }
 
 type Article struct {
-	ID        ID `json:"id"`
-	Name   string `json:"name"`
-	URL    string `json:"url"`
-	Author string `json:"author"`
-	Date   int64 `json:"date"`
+	ID        ID `json:"id" validate:"required"`
+	Name   string `json:"name" validate:"required"`
+	URL    string `json:"url" validate:"required"`
+	Author string `json:"author" validate:"required"`
+	Date   int64 `json:"date" validate:"required"`
 
 	Labels []ReadMeLabel `json:"labels"`
 	//RelScore 	float32
@@ -40,6 +44,7 @@ type Comment struct {
 }
 
 type ID string
+type Token string
 
 type ReadMeLabel struct {
 	LabelName string `json:"labelname"`
@@ -49,4 +54,9 @@ type ReadMeLabel struct {
 type Votes struct {
 	UpVote   int `json:"upvote"`
 	DownVote int `json:"downvote"`
+}
+
+type Credentials struct { 
+	ID 			ID
+	Password 	string
 }
