@@ -75,16 +75,16 @@ function App() {
                     <UserProfile />
                   </Route>
                   <Route path="/requests">
-                    <RequestsPage />
+                    <RequestsPage query={query}/>
                   </Route>
                   <Route path="/userRequests">
-                    <UserRequestsPage />
+                    <UserRequestsPage query={query}/>
                   </Route>
                   <Route path="/fillRequest">
                     <FillRequestPage />
                   </Route>
                   <Route path="/favorites">
-                    <FavoritesPage />
+                    <FavoritesPage query={query}/>
                   </Route>
                 </Switch>
               </div>

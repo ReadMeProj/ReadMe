@@ -97,5 +97,5 @@ input[type="text"] {
 
 .scrollableDiv {
   overflow-y: auto;
-  max-height: 380px;
+  max-height: 400px;
 }

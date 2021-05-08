@@ -6,20 +6,17 @@ function RequestCard(props) {
   var url = "";
   var id = "";
 
-  if (props != null && props.title != null) {
-    if (props.title.length > 50) {
-      requestTitle = props.title.slice(0, 50).concat("...");
+  if (props != null) {
+    if (props.title != null) {
+      requestTitle =
+        props.title.length > 50
+          ? props.title.slice(0, 50).concat("...")
+          : props.title;
     } else {
-      requestTitle = props.title;
+      requestTitle = "Title.";
     }
-  } else {
-    requestTitle = "Title";
-  }
-  if (props != null && props.url != null) {
-    url = props.url;
-  }
-  if (props != null && props.id != null) {
-    id = props.id;
+    if (props.url != null) url = props.url;
+    if (props.id != null) id = props.id;
   }
 
   return (
