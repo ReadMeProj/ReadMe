@@ -14,11 +14,11 @@
   
 *  **URL Params**
 
-   None
+   * None
 
 * **Data Params**
 
-   None
+   * None
 
 * **Success Response:**
 
@@ -51,5 +51,58 @@
  
 * **Error Response:**
 
+  * **Code:** 400 BAD REQUEST <br />
+    **Content:** `{ error : ..., data: null }`
+    **Causes:** Missing data in header
+    
   * **Code:** 401 UNAUTHORIZED <br />
-    **Content:** `{ error : null, data: null }`
+    **Content:** `{ error : ..., data: null }`
+    **Causes:** Access token outdated
+    
+## /api/getUser/{$id}
+
+* **Method:**
+
+  `GET`
+  
+* **Header**  
+
+  * Token: access token 
+  * UserId: user id 
+  
+*  **URL Params**
+
+   * id: string
+
+* **Data Params**
+
+   * None
+
+* **Success Response:**
+
+  * **Code:** 200 <br />
+  * **Content:** 
+    ```
+    { 
+        error: null, 
+        data: 
+              {
+                  "id": "123abc123",
+                  "username": "ILovePspice",
+                  "password": "justinBeiber123",
+                  "email": "haruvioved@gmail.com",
+                  "firstname": "Oved Hagai",
+                  "lastname": "Haruvi"
+              },   
+    }
+    ```
+ 
+* **Error Response:**
+
+  * **Code:** 400 BAD REQUEST <br />
+  **Content:** `{ error : ..., data: null }`
+  **Causes:** Missing data in header
+    
+  * **Code:** 401 UNAUTHORIZED <br />
+    **Content:** `{ error : ..., data: null }`
+    **Causes:** Access token outdated
