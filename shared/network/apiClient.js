@@ -16,6 +16,9 @@ axiosClient.interceptors.response.use(
     },
     function(error){
         let res = error.response;
+        if(res.status == 401){
+            window.location.href = `${config["dashboard-host"]}/${config["loginPath"]}`
+        }
         console.error(`Looks like there was a problem. Status code: ${res.status}`);
         return Promise.reject;
     }
