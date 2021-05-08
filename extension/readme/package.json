@@ -5,7 +5,13 @@
   "private": true,
   "scripts": {
     "watch": "webpack --mode=development --watch --config config/webpack.config.js",
-    "build": "webpack --mode=production --config config/webpack.config.js"
+    "build": "webpack --mode=production --config config/webpack.config.js",
+    "build:production" : "NODE_ENV=production npm run build",
+    "build:development" : "NODE_ENV=dev npm run build",
+    "watch:production" : "NODE_ENV=production npm run watch",
+    "watch:development": "NODE_ENV=dev npm run watch",
+    "dev": "npm run watch:development",
+    "prod": "npm run watch:production"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^6.4.1",

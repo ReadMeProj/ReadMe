@@ -1,5 +1,5 @@
 const {axiosClient} = require('../apiClient');
-const config = require('../config/prodConfig');
+const config = require('../config');
 
 
 export function getArticle(id){

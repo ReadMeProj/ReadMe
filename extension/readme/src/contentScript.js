@@ -20,9 +20,9 @@ console.log(
 // Communicate with background file by sending a message
 chrome.runtime.sendMessage(
   {
-    type: 'GREETINGS',
+    type: 'ARTICLE',
     payload: {
-      message: 'Hello, my name is Con. I am from ContentScript.',
+      message: 'Hi I got an article for you'
     },
   },
   response => {
