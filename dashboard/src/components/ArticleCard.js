@@ -91,7 +91,7 @@ function ArticleCard(params) {
           <Col>
             <div
               className="articleBox"
-              style={{ width: "550px", height: "150px" }}
+              style={{ width: "550px", height: "auto" }}
             >
               <a
                 href={articleUrl}

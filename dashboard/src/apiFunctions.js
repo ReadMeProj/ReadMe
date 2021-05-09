@@ -62,6 +62,16 @@ export function login(userName, password, stateErr, stateData) {
     );
 }
 
-export function signUp(userName, password) {}
+export function logout(token, userId, stateErr, stateData) {
+  const requestOptions = {
+    method: "POST",
+    header: { Token: { token }, UserId: { userId } },
+  };
+  fetch(window.$name + "/logout", requestOptions)
+    .then((response) => response.json())
+    .then((data) =>
+      this.setState({ [stateErr]: data.error, [stateData]: data.data })
+    );
+}
 
 export function addScore(userID, score) {}
