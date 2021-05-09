@@ -1,5 +1,5 @@
-const {axiosClient} = require('../apiClient');
-const config = require('../config');
+import {axiosClient} from '../apiClient.js'
+import {config} from '../config.js';
 
 
 export function getUser(id){

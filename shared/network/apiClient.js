@@ -1,10 +1,11 @@
-import config from './config'
+import {config} from './config.js'
 const axios = require('axios');
 import 'regenerator-runtime/runtime'
 
 
-const axiosClient = axios.create({
-    baseURL: `${config.config.host}:${config.config['db-port']}`,
+
+export const axiosClient = axios.create({
+    baseURL: `${config.host}:${config['db-port']}`,
     headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -29,7 +30,3 @@ axiosClient.interceptors.response.use(
         return Promise.reject(error.message);
     }
 )
-
-export default {
-    axiosClient
-};
