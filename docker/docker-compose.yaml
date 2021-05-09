@@ -7,7 +7,18 @@ services:
         ports:
           - "27017:27017"
         volumes:
+          - ./mongo:/src/
           - ./mongo_data:/data/db
+        #command:
+        #  - ./src/import.sh
+    mongo_seed:
+        build: ./mongo
+        links:
+          - mongodb
+        depends_on:
+          - mongodb
+        networks:
+          - readme_network
     api:
         build:
           context: ..
@@ -34,11 +45,6 @@ services:
           - ./shared_data:/shared_data
 networks:
   readme_network:
-<<<<<<< Updated upstream
     driver: bridge
 volumes: 
   mongo_data:
-    #external: true 
-=======
-    driver: bridge
->>>>>>> Stashed changes

@@ -1,0 +1,37 @@
+[
+    {
+        "id": "123abc123",
+        "username": "ILovePspice",
+        "password": "justinBeiber123",
+        "email": "haruvioved@gmail.com",
+        "firstname": "Oved Hagai",
+        "lastname": "Haruvi"
+    },
+    {
+        "id": "1234abc1234",
+        "username": "ManchesterUnited4Life",
+        "password": "fantasyfootball",
+        "email": "doroknkopit@gmail.com",
+        "firstname": "Doron",
+        "lastname": "Kopit"
+
+    },
+    {
+        "id": "12345abc12345",
+        "username": "RonitTheQueen",
+        "password": "12345678",
+        "email": "ronitpriav@gmail.com",
+        "firstname": "Ronit",
+        "lastname": "Priav"
+
+    },
+    {
+        "id": "123456abc123456",
+        "username": "AlmightYariv",
+        "password": "ILikeTurtles123",
+        "email": "yarivlevy@mail.tau.ac.il",
+        "firstname": "Yariv",
+        "lastname": "Levy"
+
+    }
+]
