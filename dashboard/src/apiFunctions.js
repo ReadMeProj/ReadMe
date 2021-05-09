@@ -25,32 +25,42 @@ export function isArticleLiked(articleID, userID) {
 } //For each user we should save an array of article IDs of the articles the user liked. Same for favorites.
 
 // Get data (need 'this' as parameter).
-export function getArticles(theState) {
+export function getArticles(theState, variableName) {
   // GET request using fetch with set headers
-  fetch(window.$name + "/getArticles")
+  fetch(window.$name + "/api/getArticles")
     .then((response) => response.json())
     .then((response) => response["Data"])
-    .then((response) => theState.setState({ articlesData: response }));
+    .then((response) => theState.setState({ [variableName]: response }));
 }
 
-export function getFavoriteArticles(theState, userID) {
+export function getFavoriteArticles(theState, variableName) {
   // GET request using fetch with set headers
-  fetch(window.$name + "/getArticles")
+  fetch(window.$name + "/api/getArticles")
     .then((response) => response.json())
     .then((response) => response["Data"])
-    .then((response) => theState.setState({ articlesData: response }));
+    .then((response) => theState.setState({ [variableName]: response }));
 }
 
 export function getUsers(theState) {
   // GET request using fetch with set headers
-  fetch(window.$name + "/getUsers")
+  fetch(window.$name + "/api/getUsers")
     .then((response) => response.json())
     .then((response) => response["Data"]) //TODO -FIX
     .then((response) => theState.setState({ articlesData: response }));
 }
 
 //More..
-export function login(userName, password) {}
+export function login(userName, password, stateErr, stateData) {
+  const requestOptions = {
+    method: "POST",
+    body: JSON.stringify({ id: userName, password: password }),
+  };
+  fetch(window.$name + "/login", requestOptions)
+    .then((response) => response.json())
+    .then((data) =>
+      this.setState({ [stateErr]: data.error, [stateData]: data.data })
+    );
+}
 
 export function signUp(userName, password) {}
 

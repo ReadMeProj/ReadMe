@@ -20,8 +20,14 @@ function NavBar(params) {
         </dd>
         <dd className="navOption">
           <FontAwesomeIcon icon={["fas", "user-circle"]} size="lg" />
-          <Link to="/login" className="navLink">
+          <Link to="/profile" className="navLink">
             My Profile
+          </Link>
+        </dd>
+        <dd className="navOption">
+          <FontAwesomeIcon icon={["fas", "user-circle"]} size="lg" />
+          <Link to="/login" className="navLink">
+            Login
           </Link>
         </dd>
         <dd className="navOption">

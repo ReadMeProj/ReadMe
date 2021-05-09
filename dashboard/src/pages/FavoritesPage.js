@@ -12,7 +12,7 @@ class FavoritesPage extends Component {
   }
 
   componentDidMount() {
-    getFavoriteArticles(this);
+    getFavoriteArticles(this, "articlesData");
   }
 
   render() {

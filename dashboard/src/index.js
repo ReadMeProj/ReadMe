@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 
-window.$name = "http://localhost:8081/api"; //"http://localhost:8081/api/getArticles";
+window.$name = "http://localhost:8081"; //"http://localhost:8081/api/getArticles";
 
 ReactDOM.render(
   <React.StrictMode>

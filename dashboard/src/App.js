@@ -1,6 +1,5 @@
 import "./App.css";
 import React from "react";
-import UserProfile from "./pages/UserProfile";
 import RequestsPage from "./pages/RequestsPage";
 import UserRequestsPage from "./pages/UserRequestsPage";
 import NavBar from "./components/NavBar";
@@ -11,6 +10,8 @@ import logo from "./assets/siteLogo.png";
 import FeedPage from "./pages/FeedPage";
 import FillRequestPage from "./pages/FillRequestPage";
 import FavoritesPage from "./pages/FavoritesPage";
+import LoginPage from "./pages/LoginPage";
+import ProfilePage from "./pages/UserProfile";
 
 function App() {
   // Variables to tie the search bar with the other components.
@@ -71,20 +72,23 @@ function App() {
                       <FeedPage query={query} />
                     </div>
                   </Route>
-                  <Route path="/login">
-                    <UserProfile />
+                  <Route path="/profile">
+                    <ProfilePage />
                   </Route>
                   <Route path="/requests">
-                    <RequestsPage query={query}/>
+                    <RequestsPage query={query} />
                   </Route>
                   <Route path="/userRequests">
-                    <UserRequestsPage query={query}/>
+                    <UserRequestsPage query={query} />
                   </Route>
                   <Route path="/fillRequest">
                     <FillRequestPage />
                   </Route>
                   <Route path="/favorites">
-                    <FavoritesPage query={query}/>
+                    <FavoritesPage query={query} />
+                  </Route>
+                  <Route path="/login">
+                    <LoginPage />
                   </Route>
                 </Switch>
               </div>

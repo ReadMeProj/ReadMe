@@ -12,7 +12,7 @@ class FeedPage extends Component {
   }
 
   componentDidMount() {
-    getArticles(this);
+    getArticles(this, "articlesData");
   }
 
   render() {
