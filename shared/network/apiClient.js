@@ -30,3 +30,14 @@ axiosClient.interceptors.response.use(
         return Promise.reject(error.message);
     }
 )
+
+axiosClient.interceptors.request.use(
+    request => {
+        console.log(`About to call api endpoint with request`);
+        console.log(request);
+        return request;
+    },
+    error => {
+        return Promise.reject(error);
+    }
+)
