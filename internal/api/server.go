@@ -179,6 +179,7 @@ func isAuthorized(endpoint func(http.ResponseWriter, *http.Request)) func(http.R
 			return
         } 
         
+		w.WriteHeader(http.StatusUnauthorized)
 		fmt.Fprintf(w, "Not Authorized")
     })
 }
