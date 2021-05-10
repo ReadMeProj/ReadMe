@@ -11,5 +11,7 @@ export var config = {
     "newUserPath": "/api/newUser",
     "newArticlePath": "/api/newArticle",
     "updateUserPath": "/api/updateUser",
-    "updateArticlePath" : "/api/updateArticle"
+    "updateArticlePath" : "/api/updateArticle",
+    "powerUserId" : "sudo",
+    "powerUserToken" : "NO_TOKEN" 
 }
