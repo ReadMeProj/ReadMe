@@ -9,8 +9,6 @@ services:
         volumes:
           - ./mongo:/src/
           - ./mongo_data:/data/db
-        #command:
-        #  - ./src/import.sh
     mongo_seed:
         build: ./mongo
         links:
@@ -38,7 +36,7 @@ services:
         networks:
           - readme_network
         ports:
-          - "8080:8080"
+          - "3000:3000"
         links:
           - "mongodb"
         volumes:
