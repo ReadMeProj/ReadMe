@@ -2,32 +2,27 @@ import React from "react";
 
 function UserRequestCard(props) {
   var requestTitle = "";
-  //var url = "";
-  //var id = "";
+  var url = "";
+  var id = "";
 
-  if (props != null && props.title != null) {
-    if (props.title.length > 50) {
-      requestTitle = props.title.slice(0, 50).concat("...");
+  if (props != null) {
+    if (props.title != null) {
+      requestTitle =
+        props.title.length > 50
+          ? props.title.slice(0, 50).concat("...")
+          : props.title;
     } else {
-      requestTitle = props.title;
+      requestTitle = "Title.";
     }
-  } else {
-    requestTitle = "Title";
+    if (props.url != null) url = props.url;
+    if (props.id != null) id = props.id;
   }
-  // if (props != null && props.url != null) {
-  //   url = props.url;
-  // } else {
-  //   url = "";
-  // }
-  // if (props != null && props.id != null) {
-  //   id = props.id;
-  // }
 
   return (
     <div className="container-fluid align-items-center">
       <div className="row">
         <div className="col align-items-center">
-          <div className="articleBox" style={{ width: "600px" }}>
+          <div className="articleBox" style={{ width: "80%" }}>
             <a
               href={props.url}
               className="cardLink"

@@ -1,13 +1,18 @@
 import React from "react";
 import { Media, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toggleArticleLike } from "../apiFunctions";
 
 function ArticleCard(params) {
   var articleContent = "";
   var articleTitle = "";
   var articleUrl = "";
-  var isReview = false;
+  var articleID = "";
+  var isReview = false; //TODO- read from params.
   var fakePercent;
+  var isLiked = false;
+  var heart;
 
   // TODO- take img url from params.
   var imageUrl =
@@ -37,7 +42,17 @@ function ArticleCard(params) {
     if (params.url != null) {
       articleUrl = params.url;
     } else {
-      articleUrl = "";
+      console.log("Article url is null.");
+    }
+    // Set up article ID.
+    if (params.id != null) {
+      articleID = params.id;
+    } else {
+      console.log("Article id is null.");
+    }
+    // Set up article ID.
+    if (params.isLiked != null) {
+      isLiked = params.isliked;
     }
   }
 
@@ -46,20 +61,43 @@ function ArticleCard(params) {
   } else {
     fakePercent = <b>Fake %:</b>;
   }
+
+  if (isLiked) {
+    heart = (
+      <FontAwesomeIcon
+        icon={["fas", "heart"]}
+        size="lg"
+        color="red"
+        onClick={() => toggleArticleLike(articleID, "userId")}
+        cursor="pointer"
+      />
+    );
+  } else {
+    heart = (
+      <FontAwesomeIcon
+        icon={["fas", "heart"]}
+        size="lg"
+        color="grey"
+        onClick={() => toggleArticleLike(articleID, "userId")}
+        cursor="pointer"
+      />
+    );
+  }
+
   return (
     <Container fluid="md">
       <Container>
         <Row>
           <Col>
-            <a
-              href={articleUrl}
-              className="cardLink"
-              target="_blank"
-              rel="noreferrer"
+            <div
+              className="articleBox"
+              style={{ width: "550px", height: "auto" }}
             >
-              <div
-                className="articleBox"
-                style={{ width: "550px", height: "150px" }}
+              <a
+                href={articleUrl}
+                className="cardLink"
+                target="_blank"
+                rel="noreferrer"
               >
                 <Media>
                   <Media.Body>
@@ -79,8 +117,9 @@ function ArticleCard(params) {
                     alt="Generic placeholder"
                   />
                 </Media>
-              </div>
-            </a>
+              </a>
+              {heart}
+            </div>
           </Col>
           <Col>
             <div
