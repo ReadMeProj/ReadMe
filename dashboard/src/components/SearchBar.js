@@ -10,7 +10,11 @@ const SearchBar = () => (
         id="header-search"
         placeholder="Search articles"
         name="q"
-        style={{ minWidth: "400px" }}
+        style={{
+          minWidth: "400px",
+          "background-color": "transparent",
+          border: "none",
+        }}
       />
       <button type="submit" className="iconButton">
         <FontAwesomeIcon icon={["fas", "search"]} size="lg" />

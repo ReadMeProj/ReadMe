@@ -1,8 +1,8 @@
 import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { getArticles, isArticleLiked } from "../apiFunctions";
-class FeedPage extends Component {
+import { getFavoriteArticles, isArticleLiked } from "../apiFunctions";
+class FavoritesPage extends Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +12,7 @@ class FeedPage extends Component {
   }
 
   componentDidMount() {
-    getArticles(this, "articlesData");
+    getFavoriteArticles(this, "articlesData");
   }
 
   render() {
@@ -31,7 +31,7 @@ class FeedPage extends Component {
                     content={`Written by ${article.author}`}
                     url={article.url}
                     id={article.id}
-                    isLiked={isArticleLiked(article.id, "someUserID")} //TODO- move to the articleCard and make it a class with state.
+                    isLiked={isArticleLiked(article.id, "someUserID")}
                   />
                 </dd>
               ))}
@@ -41,4 +41,4 @@ class FeedPage extends Component {
   }
 }
 
-export default FeedPage;
+export default FavoritesPage;
