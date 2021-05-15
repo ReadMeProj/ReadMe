@@ -5,6 +5,9 @@ const { login, logout } = require('./network/lib/login');
 // and contentScript files.
 // For more information on background script,
 // See https://developer.chrome.com/extensions/background_pages
+chrome.storage.local.set({'auth': true}, function() {
+  console.log('Value is set to ' + true);
+});
 
 
 function articleFromOg(ogData) {
