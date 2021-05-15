@@ -1,12 +1,11 @@
 import { axiosClient } from "../apiClient.js";
 import { config } from "../config.js";
-{
-  /*
+
+/*
     Function the Dashboard will use to handle the users of the app by talking with the api.
     An interaction with the api that returns a response will return a promise. 
     It's the code responsibility to catch it and know what the response looks like.
 */
-}
 
 /// Check if the current session has a valid token.
 export async function isLoggedIn() {

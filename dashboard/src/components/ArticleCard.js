@@ -46,6 +46,7 @@ function ArticleCard(params) {
     // Set up article ID.
     if (params.id != null) {
       articleID = params.id;
+      console.log(articleID);
     } else {
       console.log("Article id is null.");
     }
