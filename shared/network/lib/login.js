@@ -1,4 +1,3 @@
-import axios from 'axios';
 import {axiosClient} from '../apiClient.js'
 import {config} from '../config.js'
 

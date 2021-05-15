@@ -7,6 +7,10 @@ const { login, logout } = require('../../../shared/network/lib/login');
 // See https://developer.chrome.com/extensions/background_pages
 
 
+login({
+  "id": ""
+})
+
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'ARTICLE') {
@@ -14,14 +18,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const ogMetaData = request.payload.ogMetaData;
     const articleId = encodeURIComponent(ogMetaData.og.url);
     console.log(articleId);
-    newArticle({"id": articleId , "name": "ovedTesting", "url": ogMetaData.og.url, "author" : "Doron" , "date": "123"})
-    .then(res => {
-      if(res.status == 200){
-        getArticle(articleId).then(res => console.log("Fucking shit succeeded")).catch(err => {
-          console.error(err)
-        })
-      }
-    }).catch(err => {console.error(err)})
+    
+    
     // Log message coming from the `request` parameter
     console.log(request.payload.message);
   //   login({
