@@ -1,5 +1,5 @@
 'use strict';
-var {getArticle, getArticles, newArticle } = require('../../../shared/network/lib/article'); 
+var { getArticle, getArticles, newArticle } = require('../../../shared/network/lib/article');
 const { login, logout } = require('../../../shared/network/lib/login');
 // With background scripts you can communicate with popup
 // and contentScript files.
@@ -10,43 +10,76 @@ chrome.storage.local.set({'auth': true}, function() {
 });
 
 
+function articleFromOg(ogData) {
+  let author;
+  if (ogData.vr && ogData.vr.author) {
+    author = ogData.vr.author;
+  }
+  let date;
+  if (ogData.article && (ogData.article.publishedTime || ogData.article.modified_time)) {
+    date = ogData.article.publishedTime || ogData.article.modified_time;
+  }
+  return {
+    "id": encodeURIComponent(ogData.og.url),
+    "name": ogData.og.title,
+    "url": ogData.og.url,
+    "author": author || "noAuthor",
+    "date": date || "noDate",
+    "image": ogData.og.image[0],
+    "source": ogData.og.site_name
+  }
+}
+
+const articleStorage = {
+  get: cb => {
+    chrome.storage.sync.get(['currentArticle'], result => {
+      cb(result.currentArticle);
+    });
+  },
+  set: (article, cb) => {
+    chrome.storage.sync.set(
+      {
+        currentArticle: article,
+      },
+      () => {
+        cb();
+      }
+    );
+  },
+};
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'ARTICLE') {
     const message = `Hi contentScript , got it this is an article`;
     const ogMetaData = request.payload.ogMetaData;
     const articleId = encodeURIComponent(ogMetaData.og.url);
+    const currentArticle = articleFromOg(ogMetaData);
     console.log(articleId);
-    newArticle({"id": articleId , "name": "ovedTesting", "url": ogMetaData.og.url, "author" : "Doron" , "date": "123"})
-    .then(res => {
-      if(res.status == 200){
-        getArticle(articleId).then(res => console.log("Fucking shit succeeded")).catch(err => {
-          console.error(err)
+    let articleToPop;
+    getArticle(articleId, false).then(res => {
+      if (res && res.status === 200 && res.data.id) {
+        articleToPop = res.data;
+        console.log("Going to store this in chrome storage");
+        console.log(articleToPop.Data);
+        articleStorage.set(articleToPop.Data, () => {
         })
       }
-    }).catch(err => {console.error(err)})
-    // Log message coming from the `request` parameter
-    console.log(request.payload.message);
-  //   login({
-  //     "id": "123456abc123456",
-  //     "password": "ILikeTurtles123"
-  // }).then(res =>{
-  //     console.log(res);
-  //     if(res.data){
-  //       var token = res.data.Data;
-  //       console.log(token);
-  //       logout({"token": token , "userId": "123456abc123456"}).then(res => {
-  //         console.log(res)
-  //       }).catch((err => {console.log(err)}));
-  //     }
-  //   }).catch(err =>{console.log(err)})
-  
-    console.log(`I'm from background , got this from contentScript: ${JSON.stringify(request.payload.ogMetaData)}`)
-    // Send a response message
-    
-    sendResponse({
-      message,
-    });
-    
+      else {
+        newArticle(currentArticle).then((res => {
+          if (res.status === 200) {
+            articleToPop = res.data;
+          }
+          console.log("Going to store this in chrome storage");
+          console.log(articleToPop.Data);
+          articleStorage.set(articleToPop.Data, () => {
+          })
+        }))
+      }
+    }).then(()=>{
+      articleStorage.get((article)=>{
+        sendResponse({type: "articleUpdated" , data:article });
+      })
+    })
   }
+  return true;
 });
