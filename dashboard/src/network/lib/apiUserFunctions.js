@@ -35,3 +35,5 @@ export async function addScore(params) {}
 
 /// Get user current point balance.
 export async function getPoints(params) {}
+
+/// Add article ID to user's likes.
