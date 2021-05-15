@@ -2,7 +2,6 @@ import React from "react";
 import { Media, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toggleArticleLike } from "../apiFunctions";
 
 function ArticleCard(params) {
   var articleContent = "";
@@ -47,6 +46,7 @@ function ArticleCard(params) {
     // Set up article ID.
     if (params.id != null) {
       articleID = params.id;
+      console.log(articleID);
     } else {
       console.log("Article id is null.");
     }
@@ -68,7 +68,7 @@ function ArticleCard(params) {
         icon={["fas", "heart"]}
         size="lg"
         color="red"
-        onClick={() => toggleArticleLike(articleID, "userId")}
+        onClick={() => {}}
         cursor="pointer"
       />
     );
@@ -78,7 +78,7 @@ function ArticleCard(params) {
         icon={["fas", "heart"]}
         size="lg"
         color="grey"
-        onClick={() => toggleArticleLike(articleID, "userId")}
+        onClick={() => {}}
         cursor="pointer"
       />
     );
@@ -129,7 +129,9 @@ function ArticleCard(params) {
               <h6>Should I believe it?</h6>
               <div>
                 <p>{fakePercent}</p>
-                <Link className="btn btn-info">See more</Link>
+                <Link className="btn btn-info" to="moreInfo">
+                  See more
+                </Link>
               </div>
             </div>
           </Col>

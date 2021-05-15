@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { login } from "../apiFunctions";
+import { login } from "../network/lib/apiUserFunctions";
 class LoginPage extends Component {
   constructor(props) {
     super(props);
@@ -15,24 +15,27 @@ class LoginPage extends Component {
     this.setState({ [nam]: val });
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
     let user = this.state.userName;
     let pass = this.state.password;
-    //Call api to login with post msg.
-    login(user, pass, this.state.err, this.state.token);
-    //alert("The userName submitted: " + this.state.userName);
+
+    await login(user, pass)
+      .then((response) => response.data)
+      .then((result) => {
+        console.log(result);
+      });
   }
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="loginBox">
         <h2>Login</h2>
-        <br></br>
-        <lable className="form-label">UserName: </lable>
+        <br />
+        <label className="form-label">UserName: </label>
         <input type="text" name="userName" onChange={this.handleChange} />
         <br />
         <br />
-        <lable className="form-label">password: </lable>
+        <label className="form-label">Password: </label>
         <input type="password" name="password" onChange={this.handleChange} />
         <br />
         <br />
@@ -42,7 +45,6 @@ class LoginPage extends Component {
           className="btn btn-info"
           onSubmit={this.handleSubmit}
         />
-        <h1>{this.state.token}</h1>
       </form>
     );
   }
