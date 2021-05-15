@@ -9,8 +9,6 @@ services:
         volumes:
           - ./mongo:/src/
           - ./mongo_data:/data/db
-        #command:
-        #  - ./src/import.sh
     mongo_seed:
         build: ./mongo
         links:
@@ -19,22 +17,10 @@ services:
           - mongodb
         networks:
           - readme_network
-    api:
+    app:
         build:
           context: ..
-          dockerfile: ./docker/api/Dockerfile
-        networks:
-          - readme_network
-        ports:
-          - "8081:8081"
-        links:
-          - "mongodb"
-        volumes:
-          - ./shared_data:/shared_data
-    dashboard:
-        build:
-          context: ..
-          dockerfile: ./docker/dashboard/Dockerfile
+          dockerfile: ./docker/app/Dockerfile
         networks:
           - readme_network
         ports:
@@ -42,7 +28,21 @@ services:
         links:
           - "mongodb"
         volumes:
+          #- ./app/:/app/
+          - /app/node_modules
           - ./shared_data:/shared_data
+    #dashboard:
+    #    build:
+    #      context: ..
+    #      dockerfile: ./docker/dashboard/Dockerfile
+    #    networks:
+    #      - readme_network
+    #    ports:
+    #      - "3000:3000"
+    #    links:
+    #      - "mongodb"
+    #    volumes:
+    #      - ./shared_data:/shared_data
 networks:
   readme_network:
     driver: bridge
