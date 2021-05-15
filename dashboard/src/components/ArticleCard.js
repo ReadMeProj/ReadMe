@@ -2,7 +2,6 @@ import React from "react";
 import { Media, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { toggleArticleLike } from "../apiFunctions";
 
 function ArticleCard(params) {
   var articleContent = "";
@@ -68,7 +67,7 @@ function ArticleCard(params) {
         icon={["fas", "heart"]}
         size="lg"
         color="red"
-        onClick={() => toggleArticleLike(articleID, "userId")}
+        onClick={() => {}}
         cursor="pointer"
       />
     );
@@ -78,7 +77,7 @@ function ArticleCard(params) {
         icon={["fas", "heart"]}
         size="lg"
         color="grey"
-        onClick={() => toggleArticleLike(articleID, "userId")}
+        onClick={() => {}}
         cursor="pointer"
       />
     );
