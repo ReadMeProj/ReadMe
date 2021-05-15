@@ -5,9 +5,9 @@ type Database struct {
 }
 
 type ReadMeDatabase interface {
-	GetUser(id ID) (User, error)
+	GetUser(key string, value interface{}) (User, error)
 	GetUsers() ([]User, error)
-	GetArticle(id ID) (Article, error)
+	GetArticle(key string, value interface{}) (Article, error)
 	GetArticles() ([]Article, error)
 
 	NewUser(user User) error
@@ -15,7 +15,7 @@ type ReadMeDatabase interface {
 	UpdateUser(user User) error
 	UpdateArticle(article Article) error
 
-	IsAuth(id ID, token Token) error
-	Login(id ID, password string) (Token, error)
-	Logout(id ID) error
+	IsAuth(username string, token Token) error
+	Login(username string, password string) (Token, error)
+	Logout(username string) error
 }

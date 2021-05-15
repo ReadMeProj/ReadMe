@@ -1,6 +1,6 @@
 import {config} from './config.js'
 const axios = require('axios');
-import 'regenerator-runtime/runtime'
+
 
 
 

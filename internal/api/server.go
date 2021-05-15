@@ -12,6 +12,7 @@ import (
 
 func getUser(responseWriter http.ResponseWriter, r *http.Request) {
 	jsonData, err := dBase.GetUser(
+		"id",
 		db.ID(ExtractIDStringFromRequest(r)),
 	)
 	response := Response{Error: err, Data: jsonData}
@@ -28,7 +29,23 @@ func getUsers(responseWriter http.ResponseWriter, r *http.Request) {
 
 func getArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	jsonData, err := dBase.GetArticle(
+		"id",
 		db.ID(ExtractIDStringFromRequest(r)),
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getArticleByURL(responseWriter http.ResponseWriter, r *http.Request) {
+	url := r.URL.Query().Get("url")
+	if url == "" {
+		http.Error(responseWriter, "", http.StatusBadRequest)
+        return	
+	} 
+
+	jsonData, err := dBase.GetArticle(
+		"url",
+		url,
 	)
 	response := Response{Error: err, Data: jsonData}
 	GenerateHandler(responseWriter, r, response)
@@ -65,7 +82,8 @@ func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	
 	err := json.NewDecoder(r.Body).Decode(&article)
     if err != nil {
-        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+		responseWriter.WriteHeader(http.StatusBadRequest)
+		fmt.Fprintf(responseWriter, "Got no URL in request")
         return
     }
 
@@ -123,7 +141,7 @@ func login(responseWriter http.ResponseWriter, r *http.Request) {
         return	
 	}
 	
-	token, err := dBase.Login(credentials.ID, credentials.Password)
+	token, err := dBase.Login(credentials.Username, credentials.Password)
 	if err != nil {
         http.Error(responseWriter, err.Error(), http.StatusUnauthorized)
         return
@@ -134,12 +152,12 @@ func login(responseWriter http.ResponseWriter, r *http.Request) {
 }
 
 func logout(responseWriter http.ResponseWriter, r *http.Request) {
-	var id db.ID  
+	var username string
 	
 	idStruct := struct{
-		ID db.ID
+		Username string
 	}{
-		ID: id,
+		Username: username,
 	}
 
 	err := json.NewDecoder(r.Body).Decode(&idStruct)
@@ -148,7 +166,7 @@ func logout(responseWriter http.ResponseWriter, r *http.Request) {
         return
     }
 	
-	err = dBase.Logout(idStruct.ID)
+	err = dBase.Logout(idStruct.Username)
 	if err != nil {
         http.Error(responseWriter, err.Error(), http.StatusUnauthorized)
         return
@@ -161,18 +179,20 @@ func logout(responseWriter http.ResponseWriter, r *http.Request) {
 func isAuthorized(endpoint func(http.ResponseWriter, *http.Request)) func(http.ResponseWriter, *http.Request) {
     return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-        if r.Header["Token"] != nil && r.Header["Userid"] != nil {
+        if r.Header["Token"] != nil && r.Header["Username"] != nil {
 			
-			userId := r.Header["Userid"][0]
+			username := r.Header["Username"][0]
 			token := r.Header["Token"][0]
 
 			err := dBase.IsAuth(
-				db.ID(userId), 
+				username, 
 				db.Token(token),
 			)
 
             if err != nil {
                 fmt.Fprintf(w, err.Error())
+				w.WriteHeader(http.StatusUnauthorized)
+				return
             }
 
             endpoint(w, r)
@@ -196,6 +216,7 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/getUser/{id}", isAuthorized(getUser)).Methods("GET").Headers()
 	router.HandleFunc("/api/getUsers", getUsers).Methods("GET")
 	router.HandleFunc("/api/getArticle/{id}", isAuthorized(getArticle)).Methods("GET")
+	router.HandleFunc("/api/getArticle", isAuthorized(getArticleByURL)).Methods("GET")
 	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
 
 	router.HandleFunc("/api/newUser", newUser).Methods("PUT")
