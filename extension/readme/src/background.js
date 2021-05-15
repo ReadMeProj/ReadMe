@@ -1,6 +1,6 @@
 'use strict';
-var { getArticle, getArticles, newArticle } = require('../../../shared/network/lib/article');
-const { login, logout } = require('../../../shared/network/lib/login');
+var { getArticle, getArticles, newArticle } = require('./network/lib/article');
+const { login, logout } = require('./network/lib/login');
 // With background scripts you can communicate with popup
 // and contentScript files.
 // For more information on background script,
@@ -54,7 +54,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const currentArticle = articleFromOg(ogMetaData);
     let articleToPop;
     getArticle(articleUrl, false).then(res => {
-      if (res && res.status === 200 && res.data.Data.id) {
+      if (res && res.status === 200 && res.data.Data && res.data.Data.id) {
         console.log("Found article in the DB");
         articleToPop = res.data;
         console.log("Going to store this in chrome storage");
@@ -64,7 +64,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       }
       else {
         newArticle(currentArticle).then((res => {
-          console.log("Didn't know this article, adding it to db");
+          console.log("Didn't know this article, added it to db");
           if (res.status === 200) {
             articleToPop = res.data;
           }
