@@ -1,7 +1,7 @@
 import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { getFavoriteArticles, isArticleLiked } from "../apiFunctions";
+import { getArticles } from "../network/lib/apiArticleFunctions";
 class FavoritesPage extends Component {
   constructor(props) {
     super(props);
@@ -11,8 +11,10 @@ class FavoritesPage extends Component {
     };
   }
 
-  componentDidMount() {
-    getFavoriteArticles(this, "articlesData");
+  async componentDidMount() {
+    await getArticles().then((response) =>
+      this.setState({ articlesData: response.data["Data"] })
+    );
   }
 
   render() {
@@ -31,7 +33,7 @@ class FavoritesPage extends Component {
                     content={`Written by ${article.author}`}
                     url={article.url}
                     id={article.id}
-                    isLiked={isArticleLiked(article.id, "someUserID")}
+                    isLiked={false} //TODO
                   />
                 </dd>
               ))}

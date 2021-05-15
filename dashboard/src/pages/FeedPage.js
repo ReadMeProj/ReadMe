@@ -1,7 +1,7 @@
 import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { getArticles, isArticleLiked } from "../apiFunctions";
+import { getArticles } from "../network/lib/apiArticleFunctions";
 class FeedPage extends Component {
   constructor(props) {
     super(props);
@@ -11,8 +11,10 @@ class FeedPage extends Component {
     };
   }
 
-  componentDidMount() {
-    getArticles(this, "articlesData");
+  async componentDidMount() {
+    await getArticles().then((response) =>
+      this.setState({ articlesData: response.data["Data"] })
+    );
   }
 
   render() {
@@ -31,7 +33,7 @@ class FeedPage extends Component {
                     content={`Written by ${article.author}`}
                     url={article.url}
                     id={article.id}
-                    isLiked={isArticleLiked(article.id, "someUserID")} //TODO- move to the articleCard and make it a class with state.
+                    isLiked={false} //TODO
                   />
                 </dd>
               ))}

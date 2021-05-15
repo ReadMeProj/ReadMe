@@ -55,7 +55,7 @@ export function login(userName, password, stateErr, stateData) {
     method: "POST",
     body: JSON.stringify({ id: userName, password: password }),
   };
-  fetch(window.$name + "/login", requestOptions)
+  fetch(window.$name + "/api/login", requestOptions)
     .then((response) => response.json())
     .then((data) =>
       this.setState({ [stateErr]: data.error, [stateData]: data.data })
@@ -67,7 +67,7 @@ export function logout(token, userId, stateErr, stateData) {
     method: "POST",
     header: { Token: { token }, UserId: { userId } },
   };
-  fetch(window.$name + "/logout", requestOptions)
+  fetch(window.$name + "/api/logout", requestOptions)
     .then((response) => response.json())
     .then((data) =>
       this.setState({ [stateErr]: data.error, [stateData]: data.data })

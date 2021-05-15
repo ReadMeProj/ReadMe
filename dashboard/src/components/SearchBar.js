@@ -12,7 +12,7 @@ const SearchBar = () => (
         name="q"
         style={{
           minWidth: "400px",
-          "background-color": "transparent",
+          backgroundColor: "transparent",
           border: "none",
         }}
       />
