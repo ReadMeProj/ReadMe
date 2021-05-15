@@ -44,7 +44,6 @@ function ArticleCard(params) {
     } else {
       console.log("Article id is null.");
     }
-   
   }
 
   if (isReview) {
@@ -53,21 +52,16 @@ function ArticleCard(params) {
     fakePercent = <b>Fake %:</b>;
   }
 
-  
-
   return (
     <Container fluid="md">
       <Container>
-            <div
-              className="articleBox"
-              style={{ width: "200px", height: "150px" }}
-            >
-              <h6>Should I believe it?</h6>
-              <div>
-                <p>{fakePercent}</p>
-                <Link className="btn btn-info">See more</Link>
-              </div>
-            </div>
+        <div className="articleBox" style={{ width: "200px", height: "150px" }}>
+          <h6>Should I believe it?</h6>
+          <div>
+            <p>{fakePercent}</p>
+            <Link className="btn btn-info">See more</Link>
+          </div>
+        </div>
       </Container>
     </Container>
   );

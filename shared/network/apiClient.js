@@ -1,7 +1,5 @@
 import {config} from './config.js'
 const axios = require('axios');
-import 'regenerator-runtime/runtime'
-
 
 
 export const axiosClient = axios.create({
