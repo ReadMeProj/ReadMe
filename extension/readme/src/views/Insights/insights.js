@@ -5,6 +5,7 @@ import ArticleCard from "./article_card";
 class Insights extends Component {
   constructor(props) {
     super(props);
+    const [article, setArticle] = useState(0);
 
     this.state = {
       article: [],
@@ -12,8 +13,7 @@ class Insights extends Component {
   }
 
   componentDidMount() {
-    // chrome.storage.sync.get(currentArticle)
-    getArticles(this);
+    setArticle(chrome.storage.sync.get(currentArticle))
   }
 
   render() {
@@ -22,11 +22,11 @@ class Insights extends Component {
     return (
       <div>
         <ArticleCard
-          title={this.article.name}
-          content={`Written by ${this.article.author}`}
-          url={this.article.url}
-          id={this.article.id}
-          isLiked={this.isArticleLiked(article.id, "someUserID")} //TODO- move to the articleCard and make it a class with state.
+          title={article.name}
+          content={`Written by ${article.author}`}
+          url={article.url}
+          id={article.id}
+          isLiked={isArticleLiked(article.id, "someUserID")} //TODO- move to the articleCard and make it a class with state.
         />
       </div>
     );
