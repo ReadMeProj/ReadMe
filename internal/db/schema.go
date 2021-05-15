@@ -57,6 +57,6 @@ type Votes struct {
 }
 
 type Credentials struct { 
-	ID 			ID	`json:"id" validate:"required"`
+	Username 	string `json:"username" validate:"required"`
 	Password 	string `json:"password" validate:"required"`
 }
