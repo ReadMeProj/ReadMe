@@ -7,9 +7,25 @@ const { login, logout } = require('../../../shared/network/lib/login');
 // See https://developer.chrome.com/extensions/background_pages
 
 
-login({
-  "id": ""
-})
+function articleFromOg(ogData){
+  let author;
+  if(ogData.vr && ogData.vr.author){
+    author = ogData.vr.author;
+  }
+  let date;
+  if(ogData.article && (ogData.article.publishedTime || ogData.article.lastModified)){
+    date = ogData.article.publishedTime || ogData.article.lastModified;
+  }
+  return {
+    "id": encodeURIComponent(ogData.og.url),
+"name": ogData.og.title,
+"url": ogData.og.url,
+"author": author || "noAuthor",
+"date": date || "noDate",
+"image": ogData.og.image[0],
+"source": ogData.og.site_name
+  }
+}
 
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -17,8 +33,25 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const message = `Hi contentScript , got it this is an article`;
     const ogMetaData = request.payload.ogMetaData;
     const articleId = encodeURIComponent(ogMetaData.og.url);
+    const currentArticle = articleFromOg(ogMetaData);
     console.log(articleId);
-    
+    let articleToPop;
+    getArticle(articleId, false).then(res => {
+      if(res && res.status === 200 && res.data.id){
+        articleToPop = res.data;
+      }
+      else{
+        newArticle(currentArticle).then((res=> {
+          if(res.status === 200){
+            articleToPop = res.data;
+          }
+        })) 
+      }
+    }).catch(err=>{
+    }).finally(() =>{
+      chrome.storage.sync.set({articleToPop:articleToPop})
+      
+    })
     
     // Log message coming from the `request` parameter
     console.log(request.payload.message);
@@ -42,6 +75,8 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     sendResponse({
       message,
     });
+
+    
     
   }
 });
