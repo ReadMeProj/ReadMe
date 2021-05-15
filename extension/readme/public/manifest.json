@@ -20,7 +20,9 @@
     "default_popup": "popup.html"
   },
   "permissions": [
-    "storage"
+    "storage",
+    "http://20.71.92.74:8081/",
+    "http://127.0.0.1:8081/"
   ],
   "content_scripts": [
     {

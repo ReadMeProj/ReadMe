@@ -1,12 +1,11 @@
-FROM golang:1.15
+FROM node
 
-# Make modules
-WORKDIR /board
-COPY go.* ./
-RUN go mod download
+WORKDIR /app
 
-# Copy everything
-COPY . . 
-RUN go build -o ./board ./cmd/dashboard 
+COPY ["./dashboard/package.json", "./dashboard/package-lock.json", "./"]
 
-CMD ["./board"]
+RUN npm install --production
+
+COPY ./dashboard/ .
+
+CMD ["npm", "start"]

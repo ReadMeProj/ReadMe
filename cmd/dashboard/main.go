@@ -13,7 +13,7 @@ func main() {
 	fmt.Println("Starting dashboard server")
 
 	// Main Dashboard
-	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./dashboard/build/")))
+	router.PathPrefix("/dashboard").Handler(http.FileServer(http.Dir("./dashboard/build/")))
 
 	serv := &http.Server{
         Addr:         "0.0.0.0:8080",

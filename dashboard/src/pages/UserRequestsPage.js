@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import RequestCard from "../components/RequestCard";
+import UserRequestCard from "../components/UserRequestCard";
 class RequestsPage extends Component {
   constructor(props) {
     super(props);
@@ -11,9 +11,9 @@ class RequestsPage extends Component {
 
   componentDidMount() {
     // GET request using fetch with set headers
-    const reqheaders = { "Content-Type": "application/json" };
+    const headers = { "Content-Type": "application/json" };
     fetch("https://api.npms.io/v2/search?q=react", {
-      headers: reqheaders,
+      headers: headers,
     })
       .then((response) => response.json())
       .then((data) => this.setState({ requestsData: data.results }));
@@ -27,10 +27,10 @@ class RequestsPage extends Component {
         <dl>
           {requests.map((article) => (
             <dd key={article.package.date}>
-              <RequestCard
+              <UserRequestCard
                 title={article.package.name}
-                url={article.package.links.npm}
                 id={article.package.date}
+                url={article.package.links.npm}
               />
             </dd>
           ))}

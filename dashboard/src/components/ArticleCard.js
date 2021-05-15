@@ -1,23 +1,87 @@
 import React from "react";
 import { Media, Container, Row, Col } from "react-bootstrap";
-import picture from "../testPicture.jpg";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { toggleArticleLike } from "../apiFunctions";
 
 function ArticleCard(params) {
   var articleContent = "";
   var articleTitle = "";
-  if (params != null && params.content != null) {
-    articleContent = params.content.slice(0, 115).concat("...");
-  } else {
-    articleContent = "Content";
-  }
-  if (params != null && params.title != null) {
-    if (params.title.length > 50) {
-      articleTitle = params.title.slice(0, 50).concat("...");
+  var articleUrl = "";
+  var articleID = "";
+  var isReview = false; //TODO- read from params.
+  var fakePercent;
+  var isLiked = false;
+  var heart;
+
+  // TODO- take img url from params.
+  var imageUrl =
+    "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350";
+
+  // Set up parameters.
+  if (params != null) {
+    // Set up title.
+    if (params.title != null) {
+      articleTitle = params.title.slice(0, 50);
+      if (params.content.length > 50) {
+        articleTitle.concat("...");
+      }
     } else {
-      articleTitle = params.title;
+      articleTitle = "Title";
     }
+    // Set up content.
+    if (params.content != null) {
+      articleContent = params.content.slice(0, 115);
+      if (params.content.length > 115) {
+        articleContent.concat("...");
+      }
+    } else {
+      articleContent = "Content.";
+    }
+    // Set up url.
+    if (params.url != null) {
+      articleUrl = params.url;
+    } else {
+      console.log("Article url is null.");
+    }
+    // Set up article ID.
+    if (params.id != null) {
+      articleID = params.id;
+    } else {
+      console.log("Article id is null.");
+    }
+    // Set up article ID.
+    if (params.isLiked != null) {
+      isLiked = params.isliked;
+    }
+  }
+
+  if (isReview) {
+    fakePercent = <b>Spondored %:</b>;
   } else {
-    articleTitle = "Title";
+    fakePercent = <b>Fake %:</b>;
+  }
+
+  if (isLiked) {
+    heart = (
+      <FontAwesomeIcon
+        icon={["fas", "heart"]}
+        size="lg"
+        color="red"
+        onClick={() => toggleArticleLike(articleID, "userId")}
+        cursor="pointer"
+      />
+    );
+  } else {
+    heart = (
+      <FontAwesomeIcon
+        icon={["fas", "heart"]}
+        size="lg"
+        color="grey"
+        onClick={() => toggleArticleLike(articleID, "userId")}
+        cursor="pointer"
+      />
+    );
   }
 
   return (
@@ -27,31 +91,46 @@ function ArticleCard(params) {
           <Col>
             <div
               className="articleBox"
-              style={{ width: "600px", height: "150px" }}
+              style={{ width: "550px", height: "auto" }}
             >
-              <Media>
-                <Media.Body>
-                  <h5>{articleTitle}</h5>
-                  <div>
-                    <p>{articleContent}</p>
-                  </div>
-                </Media.Body>
-                <img
-                  width={150}
-                  height={100}
-                  className="align-self-center mr-3"
-                  src={picture}
-                  alt="Generic placeholder"
-                />
-              </Media>
+              <a
+                href={articleUrl}
+                className="cardLink"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Media>
+                  <Media.Body>
+                    <b>{articleTitle}</b>
+                    <div>
+                      <small style={{ color: "gray" }}>
+                        Author: {params.content}
+                      </small>
+                      <p>{articleContent}</p>
+                    </div>
+                  </Media.Body>
+                  <img
+                    width={150}
+                    height={100}
+                    className="align-self-center mr-3"
+                    src={imageUrl}
+                    alt="Generic placeholder"
+                  />
+                </Media>
+              </a>
+              {heart}
             </div>
           </Col>
           <Col>
             <div
               className="articleBox"
-              style={{ width: "300px", height: "150px" }}
+              style={{ width: "350px", height: "150px" }}
             >
-              basic stats about the article
+              <h6>Should I believe it?</h6>
+              <div>
+                <p>{fakePercent}</p>
+                <Link className="btn btn-info">See more</Link>
+              </div>
             </div>
           </Col>
         </Row>
