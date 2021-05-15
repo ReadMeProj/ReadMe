@@ -2,6 +2,8 @@ import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
 import { getArticles } from "../network/lib/apiArticleFunctions";
+import SearchBar from "../components/SearchBar";
+import SearchFilterBox from "../components/SearchFilters";
 class FeedPage extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +25,10 @@ class FeedPage extends Component {
 
     return (
       <div>
+        <div>
+          <SearchBar />
+          <SearchFilterBox />
+        </div>
         <dl>
           {articles == null
             ? []

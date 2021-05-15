@@ -30,12 +30,12 @@ class LoginPage extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="loginBox">
         <h2>Login</h2>
-        <br></br>
+        <br />
         <label className="form-label">UserName: </label>
         <input type="text" name="userName" onChange={this.handleChange} />
         <br />
         <br />
-        <label className="form-label">password: </label>
+        <label className="form-label">Password: </label>
         <input type="password" name="password" onChange={this.handleChange} />
         <br />
         <br />
@@ -45,7 +45,6 @@ class LoginPage extends Component {
           className="btn btn-info"
           onSubmit={this.handleSubmit}
         />
-        <h1>{this.state.token}</h1>
       </form>
     );
   }

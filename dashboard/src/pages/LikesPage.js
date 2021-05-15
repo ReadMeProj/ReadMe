@@ -2,7 +2,9 @@ import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
 import { getArticles } from "../network/lib/apiArticleFunctions";
-class FavoritesPage extends Component {
+import SearchBar from "../components/SearchBar";
+import SearchFilterBox from "../components/SearchFilters";
+class LikesPage extends Component {
   constructor(props) {
     super(props);
 
@@ -23,6 +25,10 @@ class FavoritesPage extends Component {
 
     return (
       <div>
+        <div>
+          <SearchBar />
+          <SearchFilterBox />
+        </div>
         <dl>
           {articles == null
             ? []
@@ -43,4 +49,4 @@ class FavoritesPage extends Component {
   }
 }
 
-export default FavoritesPage;
+export default LikesPage;
