@@ -2,22 +2,22 @@ import {axiosClient} from '../apiClient.js'
 import {config} from '../config.js'
 
 
-export function login(userIdAndPasswordJson){
-    return axiosClient.post(`${config.loginPath}`, userIdAndPasswordJson);
+export function login(userNameAndPasswordJson){
+    return axiosClient.post(`${config.loginPath}`, userNameAndPasswordJson);
 }
 
 export function logout(tokenAndIdJson){
-    if(tokenAndIdJson && tokenAndIdJson.token && tokenAndIdJson.userId){
+    if(tokenAndIdJson && tokenAndIdJson.token && tokenAndIdJson.userName){
         let callConfig = {
             headers: {
                 'Token': tokenAndIdJson.token,
-                'UserId': tokenAndIdJson.userId
+                'UserName': tokenAndIdJson.userName
             }
         }
         return axiosClient.post(`${config.logoutPath}` , {}, callConfig);
     }
     else{ 
-        console.error(`Got illegal value ${tokenAndIdJson} expected to get {token: sessionToken ,userId: currentUserId}`);
+        console.error(`Got illegal value ${tokenAndIdJson} expected to get {token: sessionToken ,userName: currentUserName}`);
         return Promise.reject(`Illegal input`);
     }
 }
