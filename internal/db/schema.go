@@ -26,6 +26,8 @@ type Article struct {
 	Author string `json:"author" validate:"required,gte=2"`
 	Date   string `json:"date" validate:"required"`
 
+	Image  string `json:"image" validate:"url"`
+	
 	Labels []ReadMeLabel `json:"labels"`
 	//RelScore 	float32
 	FakeVotes  Votes `json:"fakevotes"`
