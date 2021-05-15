@@ -12,6 +12,7 @@ import FillRequestPage from "./pages/FillRequestPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/UserProfile";
+import ArticlePage from "./pages/ArticlePage";
 
 function App() {
   // Variables to tie the search bar with the other components.
@@ -89,6 +90,9 @@ function App() {
                   </Route>
                   <Route path="/login">
                     <LoginPage />
+                  </Route>
+                  <Route path="/moreInfo">
+                    <ArticlePage />
                   </Route>
                 </Switch>
               </div>
