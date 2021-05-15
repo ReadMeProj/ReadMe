@@ -22,7 +22,22 @@ export async function login(userName, password) {
 }
 
 /// Send a POST request to log the user out.
-export async function logout(params) {}
+export async function logout(userName, token) {
+  if (userName && token) {
+    let headers = {
+      headers: {
+        Token: token,
+        UserName: userName,
+      },
+    };
+    return axiosClient.post(`${config.logoutPath}`, {}, headers);
+  } else {
+    console.error(
+      `Got illegal values ${token} ${userName} expected to get token: sessionToken ,userName: currentUserName`
+    );
+    return Promise.reject(`Illegal input`);
+  }
+}
 
 /// Send  PUT request to update user personal info.
 export async function updateInfo(params) {}

@@ -125,3 +125,16 @@ input[type="password"]:focus {
   text-align: center;
   padding: 70px 0;
 }
+
+.astext {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  color: #262a31;
+}
+
+.astext:hover {
+  color: #3c4a9b;
+}
