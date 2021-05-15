@@ -203,11 +203,13 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/updateUser", updateUser).Methods("POST")
 	router.HandleFunc("/api/updateArticle", updateArticle).Methods("POST")
 
-	router.HandleFunc("/login", login).Methods("POST")
-	router.HandleFunc("/logout", isAuthorized(logout)).Methods("POST")
+	router.HandleFunc("/api/login", login).Methods("POST")
+	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")
 	
+	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./dashboard/build/")))
+
 	serv := &http.Server{
-        Addr:         "0.0.0.0:8081",
+        Addr:         "0.0.0.0:8080",
         Handler:      router,
     }
 
