@@ -59,10 +59,10 @@ func getMongoClient(mongoIP string) *mongo.Client {
 }	
 
 // extractManyByFromDB extracts multiple results from mongo DB, by filtering with ID type.
-func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, id ID, pResult interface{}) error {
+func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
 
-	filter := bson.D{{Key: mongoCollectionIDKey, Value: id}}
+	filter := bson.D{{Key: key, Value: value}}
 
 	err := collection.FindOne(context.TODO(), filter).Decode(pResult)
 	if err != nil {
@@ -108,10 +108,10 @@ func (db *MongoController) insertOneToDB(dbName string, collectionName string, n
 }
 
 // updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
-func (db *MongoController) updateOneInDB(dbName string, collectionName string, id ID, updateObject map[string]interface{}) error {
+func (db *MongoController) updateOneInDB(dbName string, collectionName string, key string, value string, updateObject map[string]interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
 
-	filter := bson.D{{Key: mongoCollectionIDKey, Value: id}}
+	filter := bson.D{{Key: key, Value: value}}
 	update := bson.M{}
 
 	for k, v := range updateObject {
@@ -129,10 +129,10 @@ func (db *MongoController) updateOneInDB(dbName string, collectionName string, i
 	return err
 }
 
-func (db *MongoController) GetUser(id ID) (User, error) {
+func (db *MongoController) GetUser(key string, value interface{}) (User, error) {
 	var user User
 
-	err := db.extractOneByIDFromDB(mongoDatabaseName, mongoUsersCollectionName, id, &user)
+	err := db.extractOneByIDFromDB(mongoDatabaseName, mongoUsersCollectionName, key, value, &user)
 	if err != nil {
 		log.Println(err)
 	}
@@ -152,10 +152,10 @@ func (db *MongoController) GetUsers() ([]User, error) {
 	return users, err	
 }
 
-func (db *MongoController) GetArticle(id ID) (Article, error) {
+func (db *MongoController) GetArticle(key string, value interface{}) (Article, error) {
 	var article Article 
 
-	err := db.extractOneByIDFromDB(mongoDatabaseName, mongoArticlesCollectionName, id, &article)
+	err := db.extractOneByIDFromDB(mongoDatabaseName, mongoArticlesCollectionName, key, value, &article)
 	if err != nil {
 		log.Println(err)
 	}
@@ -177,7 +177,15 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 
 func (db *MongoController) NewUser(user User) error {
 	user.ID = ID(proto.TokenGenerator(10))
-	err := db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, user)
+
+	_, err := db.GetUser("username", user.Username)
+	if err == nil {
+		log.Println(err)
+		err = errors.New("Username already in DB")
+		return err
+	}
+
+	err = db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, user)
 	if err != nil {
 		log.Println(err)
 	}
@@ -187,7 +195,15 @@ func (db *MongoController) NewUser(user User) error {
 
 func (db *MongoController) NewArticle(article Article) error {
 	article.ID = ID(proto.TokenGenerator(10))
-	err := db.insertOneToDB(mongoDatabaseName, mongoArticlesCollectionName, article)
+
+	_, err := db.GetArticle("url", article.URL)
+	if err == nil {
+		log.Println(err)
+		err = errors.New("URL already in DB")
+		return err
+	}
+
+	err = db.insertOneToDB(mongoDatabaseName, mongoArticlesCollectionName, article)
 	if err != nil {
 		log.Println(err)
 	}
@@ -200,7 +216,7 @@ func (db *MongoController) UpdateUser(user User) error {
 	updateMap["credit"] = user.Credit
 	updateMap["relscore"] = user.RelScore
 
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, user.ID, updateMap)
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "username", user.Username, updateMap)
 	if err != nil {
 		log.Println(err)
 	}
@@ -213,7 +229,7 @@ func (db *MongoController) UpdateArticle(article Article) error {
 	updateMap["fakevotes"] = article.FakeVotes
 	updateMap["sponsvotes"] = article.SponsVotes
 	
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, article.ID, updateMap)
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "url", article.URL, updateMap)
 	if err != nil {
 		log.Println(err)
 	}
@@ -221,8 +237,8 @@ func (db *MongoController) UpdateArticle(article Article) error {
 	return err
 }
 
-func (db* MongoController) IsAuth(id ID, token Token) error {
-	user, _ := db.GetUser(id)
+func (db* MongoController) IsAuth(username string, token Token) error {
+	user, _ := db.GetUser("username", username)
 
 	if (user.AccessToken == token) {
 		return nil
@@ -231,11 +247,11 @@ func (db* MongoController) IsAuth(id ID, token Token) error {
 	return errors.New("Not authenticated")
 }
 
-func (db *MongoController) updateAccessToken(id ID, token string) error {
+func (db *MongoController) updateAccessToken(username string, token string) error {
 	updateMap := make(map[string]interface{})
 	updateMap["accesstoken"] = token 
 	
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, id, updateMap)
+	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "username", username, updateMap)
 	if err != nil {
 		log.Println(err)
 	}
@@ -243,8 +259,8 @@ func (db *MongoController) updateAccessToken(id ID, token string) error {
 	return err
 }
 
-func (db *MongoController) performLogin(id ID, password string) error {
-	user, _ := db.GetUser(id)
+func (db *MongoController) performLogin(username string, password string) error {
+	user, _ := db.GetUser("username", username)
 
 	if (user.Password == password) {
 		return nil
@@ -253,21 +269,21 @@ func (db *MongoController) performLogin(id ID, password string) error {
 	return errors.New("Password mismatch")	
 }
 
-func (db *MongoController) Login(id ID, password string) (Token, error) {
-	err := db.performLogin(id, password)
+func (db *MongoController) Login(username string, password string) (Token, error) {
+	err := db.performLogin(username, password)
 	if err != nil {
 		return "", err
 	}
 
 	token := proto.TokenGenerator(10)
-	err = db.updateAccessToken(id, token)	
+	err = db.updateAccessToken(username, token)	
 
 	return Token(token), err
 }
 
-func (db *MongoController) Logout(id ID) error {
+func (db *MongoController) Logout(username string) error {
 	token := "NO_TOKEN" 
-	err := db.updateAccessToken(id, token)	
+	err := db.updateAccessToken(username, token)	
 
 	return err
 }
