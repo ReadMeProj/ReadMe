@@ -3,16 +3,15 @@ import {config} from '../config.js';
 
 
 // Example Json:
-// {token:"12233" , userId: "DoronKopit"} 
-export function getArticle(articleId , isUserTriggered=true, tokenAndUserIdJson={"userId" : "defaultId", "token": "defualtToken"}) {
-    articleId = encodeURIComponent(articleId);
+// {token:"12233" , userName: "DoronKopit"} 
+export function getArticle(articleId , isUserTriggered=true, tokenAndUserNameJson={"userName" : "defaultName", "token": "defualtToken"}) {
     let callConfig = {
         headers: {
-            'Token': isUserTriggered ? tokenAndUserIdJson.token : config.powerUserToken,
-            'UserId': isUserTriggered ?  tokenAndUserIdJson.userId : config.powerUserId
+            'Token': isUserTriggered ? tokenAndUserNameJson.token : config.powerUserToken,
+            'UserName': isUserTriggered ?  tokenAndUserNameJson.userName : config.powerUserName
         }
     }
-    return axiosClient.get(`${config["getArticlePath"]}/${articleId}` , callConfig);
+    return axiosClient.get(`${config["getArticlePath"]}?url=${encodeURIComponent(articleId)}` , callConfig);
 }
 
 export function getArticles() {

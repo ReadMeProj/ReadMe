@@ -2,12 +2,12 @@ import {axiosClient} from '../apiClient.js'
 import {config} from '../config.js';
 
 
-export function getUser(userId, isUserTriggered=true, tokenAndUserIdJson={"userId" : "defaultId", "token": "defualtToken"}){
+export function getUser(userId, isUserTriggered=true, tokenAndUserNameJson={"userName" : "defaultName", "token": "defualtToken"}){
     userId = encodeURIComponent(userId);
     let callConfig = {
         headers: {
-            'Token': isUserTriggered ? tokenAndUserIdJson.token : config.powerUserToken,
-            'UserId': isUserTriggered ?  tokenAndUserIdJson.userId : config.powerUserId
+            'Token': isUserTriggered ? tokenAndUserNameJson.token : config.powerUserToken,
+            'UserName': isUserTriggered ?  tokenAndUserNameJson.userId : config.powerUserName
         }
     }
     return axiosClient.get(`${config["getUserPath"]}/${userId}`, callConfig);

@@ -1,6 +1,6 @@
 'use strict';
-var { getArticle, getArticles, newArticle } = require('../../../shared/network/lib/article');
-const { login, logout } = require('../../../shared/network/lib/login');
+var { getArticle, getArticles, newArticle } = require('./network/lib/article');
+const { login, logout } = require('./network/lib/login');
 // With background scripts you can communicate with popup
 // and contentScript files.
 // For more information on background script,
@@ -20,8 +20,8 @@ function articleFromOg(ogData) {
     "id": encodeURIComponent(ogData.og.url),
     "name": ogData.og.title,
     "url": ogData.og.url,
-    "author": author || "noAuthor",
-    "date": date || "noDate",
+    "author": author || "Doron Kopit",
+    "date": date || "2021-03-12",
     "image": ogData.og.image[0],
     "source": ogData.og.site_name
   }
@@ -47,14 +47,15 @@ const articleStorage = {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'ARTICLE') {
-    const message = `Hi contentScript , got it this is an article`;
+    console.log("Got this from contentScript -");
+    console.log(request);
     const ogMetaData = request.payload.ogMetaData;
-    const articleId = encodeURIComponent(ogMetaData.og.url);
+    const articleUrl = ogMetaData.og.url;
     const currentArticle = articleFromOg(ogMetaData);
-    console.log(articleId);
     let articleToPop;
-    getArticle(articleId, false).then(res => {
-      if (res && res.status === 200 && res.data.id) {
+    getArticle(articleUrl, false).then(res => {
+      if (res && res.status === 200 && res.data.Data && res.data.Data.id) {
+        console.log("Found article in the DB");
         articleToPop = res.data;
         console.log("Going to store this in chrome storage");
         console.log(articleToPop.Data);
@@ -63,6 +64,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       }
       else {
         newArticle(currentArticle).then((res => {
+          console.log("Didn't know this article, added it to db");
           if (res.status === 200) {
             articleToPop = res.data;
           }
