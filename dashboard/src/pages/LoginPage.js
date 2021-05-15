@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { login } from "../apiFunctions";
+import { login } from "../network/lib/apiUserFunctions";
 class LoginPage extends Component {
   constructor(props) {
     super(props);
@@ -15,13 +15,16 @@ class LoginPage extends Component {
     this.setState({ [nam]: val });
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
     let user = this.state.userName;
     let pass = this.state.password;
-    //Call api to login with post msg.
-    login(user, pass, this.state.err, this.state.token);
-    //alert("The userName submitted: " + this.state.userName);
+
+    await login(user, pass)
+      .then((response) => response.data)
+      .then((result) => {
+        console.log(result);
+      });
   }
   render() {
     return (
