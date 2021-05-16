@@ -24,7 +24,7 @@ function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
   // const query = new URLSearchParams(search).get("q");
-  if (isLoggedIn()) {
+  if (!isLoggedIn()) {
     return <Redirect to="/login" />;
   }
   return (
