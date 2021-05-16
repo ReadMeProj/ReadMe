@@ -10,27 +10,11 @@ import Report from "../Report/report";
 function App() {
   return (
     <div className="App">
-      <Router>
+      
         <img width={48} height={48} src={logo} />
         <div>
-          <Link to="/insights">
-            <button type="button">Insights</button>
-          </Link>
-          <Link to="/report">
-            <button type="button">Report</button>
-          </Link>
           <LoginButton />
         </div>
-
-        <Switch>
-          <Route path="/insights">
-            <Insights />
-          </Route>
-          <Route path="/report">
-            <Report />
-          </Route>
-        </Switch>
-      </Router>
     </div>
   );
 }
