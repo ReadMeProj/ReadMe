@@ -8,9 +8,10 @@ import { config } from "../config.js";
 */
 
 /// Check if the current session has a valid token.
-export async function isLoggedIn() {
-  //TODO
-  return true;
+export function isLoggedIn() {
+  const loggedInUser = localStorage.getItem("Username");
+  const loggedInToken = localStorage.getItem("Token");
+  return loggedInUser != null && loggedInToken != null;
 }
 
 /// Send a POST request with the user cardinals to get a session token.
@@ -22,18 +23,23 @@ export async function login(userName, password) {
 }
 
 /// Send a POST request to log the user out.
-export async function logout(userName, token) {
-  if (userName && token) {
+export async function logout(token, username) {
+  console.log(token + " sjfjdf " + username);
+  if (token && username) {
     let headers = {
       headers: {
         Token: token,
-        UserName: userName,
+        UserName: username,
       },
     };
-    return axiosClient.post(`${config.logoutPath}`, {}, headers);
+    console.log("The headers in logout:" + headers);
+    console.log(axiosClient.post(`${config.logoutPath}`, {}, headers));
+    localStorage.clear();
+    window.location.href = "/";
+    return;
   } else {
     console.error(
-      `Got illegal values ${token} ${userName} expected to get token: sessionToken ,userName: currentUserName`
+      `Got illegal values ${token} ${username} expected to get token: sessionToken ,userName: currentUserName`
     );
     return Promise.reject(`Illegal input`);
   }

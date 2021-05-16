@@ -18,7 +18,9 @@ function NavBar() {
         <button
           className="astext"
           onClick={() => {
-            logout("blah", "blah"); //TODO
+            var Token = window.localStorage.getItem("Token");
+            var Username = window.localStorage.getItem("Username");
+            logout(Token, Username);
           }}
         >
           Logout
