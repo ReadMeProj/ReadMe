@@ -36,6 +36,60 @@ func getArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getComments(key string, value interface{}) (interface{}, error) {
+	jsonData, err := dBase.GetComments(
+		key,
+		value,
+	)
+
+	return jsonData, err 
+}
+
+func getCommentsByArticle(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getComments(
+		"articleid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getCommentsByUser(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getComments(
+		"userid",
+		db.ID(ExtractIDStringFromRequest(r)),
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getFavorites(key string, value interface{}) (interface{}, error) {
+	jsonData, err := dBase.GetFavorites(
+		key,
+		value,
+	)
+
+	return jsonData, err 
+}
+
+func getFavoritesByArticle(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getFavorites(
+		"articleid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getFavoritesByUser(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getFavorites(
+		"userid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
 func getArticleByURL(responseWriter http.ResponseWriter, r *http.Request) {
 	url := r.URL.Query().Get("url")
 	if url == "" {
@@ -95,6 +149,46 @@ func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
 
 	err = dBase.NewArticle(article)
 	response := Response{Error:err, Data: article}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func newFavorite(responseWriter http.ResponseWriter, r *http.Request) {
+	var favorite db.Favorite
+
+	err := json.NewDecoder(r.Body).Decode(&favorite)
+    if err != nil {
+        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return
+    }
+
+	err = validator.New().Struct(favorite)
+	if err != nil {
+		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return	
+	}
+	
+	err = dBase.NewFavorite(favorite)
+	response := Response{Error:err, Data: favorite}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func newComment(responseWriter http.ResponseWriter, r *http.Request) {
+	var comment db.Comment
+
+	err := json.NewDecoder(r.Body).Decode(&comment)
+    if err != nil {
+        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return
+    }
+
+	err = validator.New().Struct(comment)
+	if err != nil {
+		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        return	
+	}
+	
+	err = dBase.NewComment(comment)
+	response := Response{Error:err, Data: comment}
 	GenerateHandler(responseWriter, r, response)
 }
 
@@ -223,6 +317,14 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/newArticle", newArticle).Methods("PUT")
 	router.HandleFunc("/api/updateUser", updateUser).Methods("POST")
 	router.HandleFunc("/api/updateArticle", updateArticle).Methods("POST")
+
+	router.HandleFunc("/api/getFavorites/user/{id}", getFavoritesByUser).Methods("GET")
+	router.HandleFunc("/api/getFavorites/article/{id}", getFavoritesByArticle).Methods("GET")
+	router.HandleFunc("/api/getComments/user/{id}", getCommentsByUser).Methods("GET")
+	router.HandleFunc("/api/getComments/article/{id}", getCommentsByArticle).Methods("GET")
+
+	router.HandleFunc("/api/newFavorite", newFavorite).Methods("PUT")
+	router.HandleFunc("/api/newComment", newComment).Methods("PUT")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")

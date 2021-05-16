@@ -15,6 +15,11 @@ type ReadMeDatabase interface {
 	UpdateUser(user User) error
 	UpdateArticle(article Article) error
 
+	GetFavorites(key string, value interface{}) ([]Favorite, error)
+	GetComments(key string, value interface{}) ([]Comment, error)
+	NewFavorite(favorite Favorite) error
+	NewComment(comment Comment) error
+
 	IsAuth(username string, token Token) error
 	Login(username string, password string) (Token, error)
 	Logout(username string) error

@@ -5,7 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 
-window.$name = "http://localhost:8081";
+window.$name = "http://20.71.92.74:8080";
 
 ReactDOM.render(
   <React.StrictMode>
