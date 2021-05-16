@@ -28,11 +28,11 @@ class Login extends Component {
       <form onSubmit={this.handleSubmit} className="loginBox">
         <h2>Login</h2>
         <br></br>
-        <lable className="form-label">UserName: </lable>
+        <label className="form-label">UserName: </label>
         <input type="text" name="userName" onChange={this.handleChange} />
         <br />
         <br />
-        <lable className="form-label">password: </lable>
+        <label className="form-label">password: </label>
         <input type="password" name="password" onChange={this.handleChange} />
         <br />
         <br />
