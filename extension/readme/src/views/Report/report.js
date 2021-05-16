@@ -9,6 +9,7 @@ class Report extends Component {
       <div className="form">
         <Formik
           initialValues={{
+            id:"123",
             mainCat: "",
             subCat: "",
             fake: "",
@@ -18,6 +19,8 @@ class Report extends Component {
           }}
           onSubmit={(values) => {
             alert(JSON.stringify(values, null, 2));
+            console.log(JSON.stringify(values, null, 2))
+
           }}
         >
           <Form>
