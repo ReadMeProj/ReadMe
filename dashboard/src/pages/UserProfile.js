@@ -4,7 +4,7 @@ class ProfilePage extends Component {
   state = {};
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid" style={{ marginTop: "50px" }}>
         <div className="row justify-content-start">
           <h2>{"UserName"}'s profile</h2>
           <hr />

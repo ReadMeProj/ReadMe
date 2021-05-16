@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import UserRequestCard from "../components/UserRequestCard";
+import SearchBar from "../components/SearchBar";
+import SearchFilterBox from "../components/SearchFilters";
 class RequestsPage extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,10 @@ class RequestsPage extends Component {
 
     return (
       <div>
+        <div>
+          <SearchBar />
+          <SearchFilterBox />
+        </div>
         <dl>
           {requests.map((article) => (
             <dd key={article.package.date}>

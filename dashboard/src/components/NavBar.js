@@ -14,8 +14,8 @@ function NavBar(params) {
         </dd>
         <dd className="navOption">
           <FontAwesomeIcon icon={["fas", "star"]} size="lg" />
-          <Link to="/favorites" className="navLink">
-            Favorites
+          <Link to="/likes" className="navLink">
+            Likes
           </Link>
         </dd>
         <dd className="navOption">
