@@ -3,92 +3,79 @@ import React from "react";
 import RequestsPage from "./pages/RequestsPage";
 import UserRequestsPage from "./pages/UserRequestsPage";
 import NavBar from "./components/NavBar";
-import SearchBar from "./components/SearchBar";
-import SearchFilterBox from "./components/SearchFilters";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "./assets/siteLogo.png";
 import FeedPage from "./pages/FeedPage";
 import FillRequestPage from "./pages/FillRequestPage";
-import FavoritesPage from "./pages/FavoritesPage";
+import LikesPage from "./pages/LikesPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/UserProfile";
+import ArticlePage from "./pages/ArticlePage";
 
 function App() {
   // Variables to tie the search bar with the other components.
-  const { search } = window.location;
-  const query = new URLSearchParams(search).get("q");
+  // const { search } = window.location;
+  // const query = new URLSearchParams(search).get("q");
 
   return (
     <div className="App">
       <Router>
         <div className="container-fluid">
           <div className="row">
-            <div className="col">
-              <div className="row align-items-center">
-                <div className="col-sm">
-                  <div>Hello, {"UserName"}</div>
-                </div>
-                <div className="col-sm">
-                  <div>
-                    <SearchBar />
-                  </div>
-                </div>
-                <div className="col-sm">
-                  <Link to="/">
-                    <img
-                      width={100}
-                      height={20}
-                      className="float-right"
-                      src={logo}
-                      alt="Generic placeholder"
-                    />
-                  </Link>
-                </div>
-              </div>
-              <div className="row"></div>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm" />
-            <div className="col-sm">
-              <SearchFilterBox />
-            </div>
-            <div className="col-sm" />
-          </div>
-          <div className="row">
-            <div className="col">
-              <hr />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-2">
+            <div
+              className="col-2"
+              style={{
+                textAlign: "start",
+                padding: "10px 15px 0",
+                position: "fixed",
+              }}
+            >
+              <Link to="/">
+                <img
+                  width={100}
+                  height={20}
+                  className="float-left"
+                  src={logo}
+                  alt="logo"
+                />
+              </Link>
+              <br />
+              <div style={{ paddingTop: "100px" }}></div>
               <NavBar />
+              <FontAwesomeIcon
+                icon={["fas", "angle-up"]}
+                size="lg"
+                style={{ marginTop: "50px" }}
+                onClick={() => window.scrollTo(0, 0)}
+              />
             </div>
-            <div className="col-10">
+            <div className="col-10" style={{ marginLeft: "250px" }}>
               <div className="scrollableDiv">
                 <Switch>
                   <Route exact path="/">
-                    <div>
-                      <FeedPage query={query} />
-                    </div>
+                    <FeedPage />
                   </Route>
                   <Route path="/profile">
                     <ProfilePage />
                   </Route>
                   <Route path="/requests">
-                    <RequestsPage query={query} />
+                    <RequestsPage />
                   </Route>
                   <Route path="/userRequests">
-                    <UserRequestsPage query={query} />
+                    <UserRequestsPage />
                   </Route>
                   <Route path="/fillRequest">
                     <FillRequestPage />
                   </Route>
-                  <Route path="/favorites">
-                    <FavoritesPage query={query} />
+                  <Route path="/likes">
+                    <LikesPage />
                   </Route>
                   <Route path="/login">
                     <LoginPage />
+                  </Route>
+                  <Route path="/moreInfo">
+                    <ArticlePage />
                   </Route>
                 </Switch>
               </div>

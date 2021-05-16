@@ -16,6 +16,7 @@ function UserRequestCard(props) {
     }
     if (props.url != null) url = props.url;
     if (props.id != null) id = props.id;
+    console.log(url + id);
   }
 
   return (

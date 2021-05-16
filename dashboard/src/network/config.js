@@ -1,0 +1,17 @@
+export var config = {
+  host: "http://localhost",
+  "db-port": "8080",
+  "dashboard-port": "8080",
+  loginPath: "/api/login",
+  logoutPath: "/api/logout",
+  getArticlePath: "/api/getArticle",
+  getArticlesPath: "/api/getArticles",
+  getUserPath: "/api/getUser",
+  getUsersPath: "/api/getUsers",
+  newUserPath: "/api/newUser",
+  newArticlePath: "/api/newArticle",
+  updateUserPath: "/api/updateUser",
+  updateArticlePath: "/api/updateArticle",
+  powerUserId: "sudo",
+  powerUserToken: "NO_TOKEN",
+};
