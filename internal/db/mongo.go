@@ -16,7 +16,7 @@ import (
 const mongoDatabaseName = "ReadMeDB"
 const mongoUsersCollectionName = "users"
 const mongoArticlesCollectionName = "articles"
-const mongoFavoritesCollectionName = "favorties"
+const mongoFavoritesCollectionName = "favorites"
 const mongoCommentsCollectionName = "comments"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
