@@ -13,10 +13,7 @@ type User struct {
 
 	Interests []ReadMeLabel `json:"interests"`
 	Credit    int `json:"credit"`
-	RelScore  int `json:"relscore"`
-
-	Favorites []ID `json:"favorites"`
-	Comments  []Comment `json:"comments"`
+	RelScore  float32 `json:"relscore"`
 }
 
 type Article struct {
@@ -25,24 +22,26 @@ type Article struct {
 	URL    string `json:"url" validate:"required,url"`
 	Author string `json:"author" validate:"required,gte=2"`
 	Date   string `json:"date" validate:"required"`
-
 	Image  string `json:"image" validate:"url"`
 	
 	Labels []ReadMeLabel `json:"labels"`
-	//RelScore 	float32
 	FakeVotes  Votes `json:"fakevotes"`
 	SponsVotes Votes `json:"sponsvotes"`
-
-	Comments []Comment `json:"comments"`
+	RelScore   float32 `json:"relscore"`
 }
 
 type Comment struct {
-	UserID    ID `json:"userid"`
-	ArticleID ID `json:"articleid"`
-	Date      int64 `json:"date"`
-	Content   string `json:"content"`
-
+	UserID 	  ID `json:"userid" validate:"required"`
+	ArticleID ID `json:"articleid" validate:"required"`
+	Date      int64 `json:"date" validate:"required"`
+	Content   string `json:"content" validate:"required,lte=100"`
 	Votes Votes `json:"votes"`
+}
+
+type Favorite struct {
+	UserID 	  ID `json:"userid" validate:"required"`
+	ArticleID ID `json:"articleid" validate:"required"`
+	Date      int64 `json:"date" validate:"required"`
 }
 
 type ID string
