@@ -12,15 +12,17 @@ import LikesPage from "./pages/LikesPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
+import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
-
 function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
   // const query = new URLSearchParams(search).get("q");
-  // Redirect user to login if not logged in.
+
+  const history = createBrowserHistory();
+
   if (!isLoggedIn()) {
-    window.location.href = "/login";
+    history.push(`/login`);
   }
   return (
     <div className="App">
