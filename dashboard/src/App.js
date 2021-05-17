@@ -3,13 +3,7 @@ import React from "react";
 import RequestsPage from "./pages/RequestsPage";
 import UserRequestsPage from "./pages/UserRequestsPage";
 import NavBar from "./components/NavBar";
-import {
-  Route,
-  BrowserRouter as Router,
-  Switch,
-  Link,
-  Redirect,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "./assets/siteLogo.png";
 import FeedPage from "./pages/FeedPage";
@@ -24,9 +18,6 @@ function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
   // const query = new URLSearchParams(search).get("q");
-  if (!isLoggedIn()) {
-    return <Redirect to="/login" />;
-  }
   return (
     <div className="App">
       <Router>
