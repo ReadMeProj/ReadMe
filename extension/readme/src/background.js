@@ -1,13 +1,11 @@
 'use strict';
-var { getArticle, getArticles, newArticle } = require('./network/lib/article');
-const { login, logout } = require('./network/lib/login');
+var { getArticle, newArticle } = require('./network/lib/article');
+const {articleStorage, isAuth} = require('./chromeHelper');
 // With background scripts you can communicate with popup
 // and contentScript files.
 // For more information on background script,
 // See https://developer.chrome.com/extensions/background_pages
-chrome.storage.local.set({'auth': true}, function() {
-  console.log('Value is set to ' + true);
-});
+isAuth.set(true , () =>{})
 
 
 function articleFromOg(ogData) {
@@ -30,23 +28,7 @@ function articleFromOg(ogData) {
   }
 }
 
-const articleStorage = {
-  get: cb => {
-    chrome.storage.sync.get(['currentArticle'], result => {
-      cb(result.currentArticle);
-    });
-  },
-  set: (article, cb) => {
-    chrome.storage.sync.set(
-      {
-        currentArticle: article,
-      },
-      () => {
-        cb();
-      }
-    );
-  },
-};
+
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.type === 'ARTICLE') {

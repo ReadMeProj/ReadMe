@@ -1,5 +1,5 @@
 export var config = {
-    "host": __API__,
+    "host": "http://127.0.0.1",
     "db-port": "8080",
     "dashboard-port": "8080",
     "loginPath": "/ap/login",

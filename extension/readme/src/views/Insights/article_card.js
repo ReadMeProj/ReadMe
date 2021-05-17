@@ -1,12 +1,16 @@
 import React from "react";
 import { Media, Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { isAuth, userStorage } from "../../chromeHelper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ArticleCard(params) {
+  console.log(params);
   var articleContent = "";
   var articleTitle = "";
   var articleUrl = "";
   var articleID = "";
+  var articleFakeVotes = {};
   var isReview = false; //TODO- read from params.
   var fakePercent;
   var isLiked = false;
@@ -44,13 +48,50 @@ function ArticleCard(params) {
     } else {
       console.log("Article id is null.");
     }
+
+    if(params.fakeVotes != null){
+      articleFakeVotes = params.fakeVotes;
+    }
+    else{
+      console.log("Article Fake votes is null");
+    }
   }
 
   if (isReview) {
-    fakePercent = <b>Sponsored %:</b>;
+    fakePercent = <b>Sponsored %:{}</b>;
   } else {
-    fakePercent = <b>Fake %:</b>;
+    fakePercent = <b>Fake %: {articleFakeVotes.upvote}</b>;
   }
+  var signedIn;
+  isAuth.get(isAuth => {
+    signedIn = isAuth;
+  })
+
+  userStorage.get(user => {
+    if (signedIn && user) {
+      if (isLiked) {
+        heart = (
+          <FontAwesomeIcon
+            icon={["fas", "heart"]}
+            size="lg"
+            color="red"
+            onClick={() => toggleArticleLike(articleID, user)}
+            cursor="pointer"
+          />
+        );
+      } else {
+        heart = (
+          <FontAwesomeIcon
+            icon={["fas", "heart"]}
+            size="lg"
+            color="grey"
+            onClick={() => toggleArticleLike(articleID, user)}
+            cursor="pointer"
+          />
+        );
+      }
+    }
+  })
 
   return (
     <Container fluid="md">
@@ -59,12 +100,13 @@ function ArticleCard(params) {
           <h6>Should I believe it?</h6>
           <div>
             <p>{fakePercent}</p>
-            <Link className="btn btn-info">See more</Link>
+            <button className="btn btn-info" onClick={() => this.handleClick()}>See more</button>
           </div>
+          {heart}
         </div>
       </Container>
     </Container>
-  );
+  )
 }
 
 export default ArticleCard;

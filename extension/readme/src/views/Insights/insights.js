@@ -1,36 +1,45 @@
-import React, { Component } from "react";
-import {useState} from 'react'
+import React, { Component, useEffect } from "react";
+import { useState } from 'react'
 import ArticleCard from "./article_card";
 
-class Insights extends Component {
-  constructor(props) {
-    super(props);
-    const [article, setArticle] = useState(0);
 
-    this.state = {
-      article: [],
-    };
-  }
-
-  componentDidMount() {
-    setArticle(chrome.storage.sync.get(currentArticle))
-  }
-
-  render() {
-    if (this.props == null) return;
-
-    return (
-      <div>
-        <ArticleCard
-          title={article.name}
-          content={`Written by ${article.author}`}
-          url={article.url}
-          id={article.id}
-          isLiked={isArticleLiked(article.id, "someUserID")} //TODO- move to the articleCard and make it a class with state.
-        />
-      </div>
+const articleStorage = {
+  get: cb => {
+    chrome.storage.local.get(['currentArticle'], result => {
+      cb(result.currentArticle);
+    });
+  },
+  set: (article, cb) => {
+    chrome.storage.local.set(
+      {
+        currentArticle: article,
+      },
+      () => {
+        cb();
+      }
     );
-  }
+  },
+};
+
+const Insights = (props) => {
+  const [article, setArticle] = useState();
+
+  useEffect(() => {
+    articleStorage.get((article) => { console.log(article); setArticle(article) })
+  }, [])
+
+
+  if (article)
+    return <div>  <ArticleCard
+      title={article.name}
+      content={`Written by ${article.author}`}
+      url={article.url}
+      id={article.id}
+      isLiked={true}
+      fakeVotes={article.fakevotes}
+       //TODO- move to the articleCard and make it a class with state.
+    /></div>
+  else return <div>loading</div>
 }
 
 export default Insights;
