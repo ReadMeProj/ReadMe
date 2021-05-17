@@ -18,6 +18,10 @@ function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
   // const query = new URLSearchParams(search).get("q");
+  // Redirect user to login if not logged in.
+  if (!isLoggedIn()) {
+    window.location.href = "/login";
+  }
   return (
     <div className="App">
       <Router>
