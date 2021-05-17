@@ -20,8 +20,34 @@ function App() {
   // const query = new URLSearchParams(search).get("q");
 
   const history = createBrowserHistory();
-
+  var logoImg = (
+    <Link to="/">
+      <img
+        width={100}
+        height={20}
+        className="float-left"
+        src={logo}
+        alt="logo"
+      />
+    </Link>
+  );
   if (!isLoggedIn()) {
+    logoImg = (
+      <button
+        className="astext"
+        onClick={() => {
+          alert("Please log in!");
+        }}
+      >
+        <img
+          width={100}
+          height={20}
+          className="float-left"
+          src={logo}
+          alt="logo"
+        />
+      </button>
+    );
     history.push(`/login`);
   }
   return (
@@ -37,15 +63,7 @@ function App() {
                 position: "fixed",
               }}
             >
-              <Link to="/">
-                <img
-                  width={100}
-                  height={20}
-                  className="float-left"
-                  src={logo}
-                  alt="logo"
-                />
-              </Link>
+              {logoImg}
               <br />
               <div style={{ paddingTop: "100px" }}></div>
               <NavBar />
