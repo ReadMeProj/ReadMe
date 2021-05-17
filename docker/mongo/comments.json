@@ -1,0 +1,24 @@
+[
+    {
+        "_id": "abcdef1234",
+        "userid": "123456abc123456",
+	    "articleid": "abdefghijk1234567",
+	    "date": 1621171204,
+	    "content": "It's amazing!"
+    },
+    {
+        "_id": "abcdef12345",
+        "userid": "123456abc123456",
+	    "articleid": "abdefghijk12345",
+	    "date": 1621171204,
+	    "content": "Interesting, I personally prefer Pspice"
+    },
+    {
+        "_id": "abcdef123456",
+        "userid": "123abc123",
+	    "articleid": "abdefghijk12345",
+	    "date": 1621171204,
+	    "content": "Pspice Rulezzzz :X XD"
+
+    }
+]

@@ -16,6 +16,8 @@ import (
 const mongoDatabaseName = "ReadMeDB"
 const mongoUsersCollectionName = "users"
 const mongoArticlesCollectionName = "articles"
+const mongoFavoritesCollectionName = "favorites"
+const mongoCommentsCollectionName = "comments"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
@@ -58,7 +60,7 @@ func getMongoClient(mongoIP string) *mongo.Client {
 	return client
 }	
 
-// extractManyByFromDB extracts multiple results from mongo DB, by filtering with ID type.
+// extractOneByIDFromDB extracts multiple results from mongo DB, by filtering with ID type.
 func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
 
@@ -72,8 +74,8 @@ func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName st
 	return err
 }
 
-// extractManyByFromDB extracts multiple results (subject to limit) from mongo DB 
-func (db *MongoController) extractManyByFromDB(dbName string, collectionName string, pResults interface{}, limit int64) error {
+// extractManyFromDB extracts multiple results (subject to limit) from mongo DB 
+func (db *MongoController) extractManyFromDB(dbName string, collectionName string, pResults interface{}, limit int64) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
 	
 	findOptions := options.Find()
@@ -81,6 +83,30 @@ func (db *MongoController) extractManyByFromDB(dbName string, collectionName str
 
 	// Passing bson.D{{}} as the filter matches all documents in the collection
 	cur, err := collection.Find(context.Background(), bson.D{{}}, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), pResults)
+	if err != nil {
+		// handle error
+	}
+	
+	return err
+}
+
+// extractManyFromDB extracts multiple results (subject to limit) from mongo DB 
+func (db *MongoController) extractManyByIDFromDB(dbName string, collectionName string, pResults interface{}, key string, value interface{}, limit int64) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+	
+	findOptions := options.Find()
+	findOptions.SetLimit(limit)
+
+	filter := bson.D{{Key: key, Value: value}}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
 	if err != nil {
 		log.Println(err)
 	}
@@ -144,7 +170,7 @@ func (db *MongoController) GetUsers() ([]User, error) {
 	var users []User
 	limit := MultipleExtractionLimit
 
-	err := db.extractManyByFromDB(mongoDatabaseName, mongoUsersCollectionName, &users, int64(limit))
+	err := db.extractManyFromDB(mongoDatabaseName, mongoUsersCollectionName, &users, int64(limit))
 	if err != nil {
 		log.Println(err)
 	}
@@ -167,12 +193,36 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 	var articles []Article
 	limit := MultipleExtractionLimit
 
-	err := db.extractManyByFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(limit))
+	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(limit))
 	if err != nil {
 		log.Println(err)
 	}
 
 	return articles, err	
+}
+
+func (db *MongoController) GetFavorites(key string, value interface{}) ([]Favorite, error) {
+	var favorites []Favorite
+	limit := MultipleExtractionLimit
+
+	err := db.extractManyByIDFromDB(mongoDatabaseName, mongoFavoritesCollectionName, &favorites, key, value, int64(limit))
+	if err != nil {
+		log.Println(err)
+	}
+
+	return favorites, err	
+}
+
+func (db *MongoController) GetComments(key string, value interface{}) ([]Comment, error) {
+	var comments []Comment
+	limit := MultipleExtractionLimit
+
+	err := db.extractManyByIDFromDB(mongoDatabaseName, mongoCommentsCollectionName, &comments, key, value, int64(limit))
+	if err != nil {
+		log.Println(err)
+	}
+
+	return comments, err	
 }
 
 func (db *MongoController) NewUser(user User) error {
@@ -211,8 +261,27 @@ func (db *MongoController) NewArticle(article Article) error {
 	return err
 }
 
+func (db *MongoController) NewComment(comment Comment) error {
+	err := db.insertOneToDB(mongoDatabaseName, mongoCommentsCollectionName, comment)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db *MongoController) NewFavorite(favorite Favorite) error {
+	err := db.insertOneToDB(mongoDatabaseName, mongoFavoritesCollectionName, favorite)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
 func (db *MongoController) UpdateUser(user User) error {
 	updateMap := make(map[string]interface{})
+	updateMap["interests"] = user.Interests
 	updateMap["credit"] = user.Credit
 	updateMap["relscore"] = user.RelScore
 
@@ -226,8 +295,10 @@ func (db *MongoController) UpdateUser(user User) error {
 
 func (db *MongoController) UpdateArticle(article Article) error {
 	updateMap := make(map[string]interface{})
+	updateMap["labels"] = article.Labels
 	updateMap["fakevotes"] = article.FakeVotes
 	updateMap["sponsvotes"] = article.SponsVotes
+	updateMap["relscore"] = article.SponsVotes
 	
 	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "url", article.URL, updateMap)
 	if err != nil {

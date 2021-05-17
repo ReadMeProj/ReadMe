@@ -30,9 +30,9 @@ func ExtractIDStringFromRequest(r *http.Request) string {
 	return id
 }
 
-func ExtractFromRequest(r *http.Request, key string) interface{} {
+func ExtractFromRequest(r *http.Request, key string) string {
 	vars := mux.Vars(r)
-	var val interface{}
+	var val string
 	val = vars[key]
 	return val
 }
