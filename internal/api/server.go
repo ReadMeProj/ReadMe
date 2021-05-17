@@ -330,29 +330,43 @@ func updateArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
-func login(responseWriter http.ResponseWriter, r *http.Request) {
+func login(w http.ResponseWriter, r *http.Request) {
 	var credentials db.Credentials
 	
 	err := json.NewDecoder(r.Body).Decode(&credentials)
     if err != nil {
-        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        http.Error(w, err.Error(), http.StatusBadRequest)
         return
     }
 
 	err = validator.New().Struct(credentials)
 	if err != nil {
-		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+		http.Error(w, err.Error(), http.StatusBadRequest)
         return	
 	}
 	
+	user, err := dBase.GetUser("username", credentials.Username)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return		
+	}
+
 	token, err := dBase.Login(credentials.Username, credentials.Password)
 	if err != nil {
-        http.Error(responseWriter, err.Error(), http.StatusUnauthorized)
+        http.Error(w, err.Error(), http.StatusUnauthorized)
         return
     }
 
-	response := Response{Error:err, Data: token}
-	GenerateHandler(responseWriter, r, response)
+	idToken := struct {
+		ID 		db.ID `json:"id"`
+		Token	db.Token `json:"token"`
+	}{
+		ID: db.ID(user.ID),
+		Token: db.Token(token),
+	}
+
+	response := Response{Error:err, Data: idToken}
+	GenerateHandler(w, r, response)
 }
 
 func logout(responseWriter http.ResponseWriter, r *http.Request) {
