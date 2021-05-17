@@ -17,7 +17,7 @@ type User struct {
 }
 
 type Article struct {
-	ID     ID `json:"id" validate:"required"`
+	ID     ID `json:"id"`
 	Name   string `json:"name" validate:"required"`
 	URL    string `json:"url" validate:"required,url"`
 	Author string `json:"author" validate:"required,gte=2"`
@@ -31,17 +31,38 @@ type Article struct {
 }
 
 type Comment struct {
+	ID 		  ID `json:"id"`
 	UserID 	  ID `json:"userid" validate:"required"`
 	ArticleID ID `json:"articleid" validate:"required"`
 	Date      int64 `json:"date" validate:"required"`
-	Content   string `json:"content" validate:"required,lte=100"`
-	Votes Votes `json:"votes"`
+	Content   string `json:"content" validate:"required,lte=128"`
+	Votes 	  Votes `json:"votes"`
 }
 
 type Favorite struct {
 	UserID 	  ID `json:"userid" validate:"required"`
 	ArticleID ID `json:"articleid" validate:"required"`
 	Date      int64 `json:"date" validate:"required"`
+}
+
+type Request struct {
+	ID 		  	ID `json:"id"`
+	RequestedBy ID `json:"requestedby" validate:"required"`
+	ArticleID   ID `json:"articleid" validate:"required"`
+	Date      	int64 `json:"date" validate:"required"`
+	Content   	string `json:"content" validate:"required,lte=256"`
+	Votes 		Votes `json:"votes"`
+	Fulfilled	bool `json:"fulfilled"`
+}
+
+type Answer struct {
+	ID 		  ID `json:"id"`
+	RequestID ID `json:"requestid" validate:"required"`
+	UserID 	  ID `json:"userid" validate:"required"`
+	ArticleId ID `json:"articleid" validate:"required"`
+	Date      int64 `json:"date" validate:"required"`
+	Content   string `json:"content" validate:"required,lte=128"`
+	Votes 	  Votes `json:"votes"`
 }
 
 type ID string

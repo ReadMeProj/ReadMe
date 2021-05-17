@@ -90,6 +90,60 @@ func getFavoritesByUser(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getRequests(key string, value interface{}) (interface{}, error) {
+	jsonData, err := dBase.GetRequests(
+		key,
+		value,
+	)
+
+	return jsonData, err 
+}
+
+func getRequestsByArticle(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getRequests(
+		"articleid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getRequestsByUser(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getRequests(
+		"requestedby",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getAnswers(key string, value interface{}) (interface{}, error) {
+	jsonData, err := dBase.GetAnswers(
+		key,
+		value,
+	)
+
+	return jsonData, err 
+}
+
+func getAnswersByArticle(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getAnswers(
+		"articleid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getAnswersByUser(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getAnswers(
+		"userid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
 func getArticleByURL(responseWriter http.ResponseWriter, r *http.Request) {
 	url := r.URL.Query().Get("url")
 	if url == "" {
@@ -192,18 +246,74 @@ func newComment(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
-func updateUser(responseWriter http.ResponseWriter, r *http.Request) {
+func decodeAndValidate(w http.ResponseWriter, r *http.Request, pObj interface{}) error {
+	err := json.NewDecoder(r.Body).Decode(pObj)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return err
+    }
+
+	err = validator.New().Struct(&pObj)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return err	
+	}
+
+	return err
+}
+
+func newRequest(w http.ResponseWriter, r *http.Request) {
+	var request db.Request
+	
+	err := json.NewDecoder(r.Body).Decode(&request)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return 
+    }
+
+	err = validator.New().Struct(request)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return 
+	}
+
+	err = dBase.NewRequest(request)
+	response := Response{Error:err, Data: request}
+	GenerateHandler(w, r, response)
+}
+
+func newAnswer(w http.ResponseWriter, r *http.Request) {
+	var answer db.Answer
+	
+	err := json.NewDecoder(r.Body).Decode(&answer)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return 
+    }
+
+	err = validator.New().Struct(answer)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return 
+	}
+
+	err = dBase.NewAnswer(answer)
+	response := Response{Error:err, Data: answer}
+	GenerateHandler(w, r, response)
+}
+
+func updateUser(w http.ResponseWriter, r *http.Request) {
 	var user db.User
 
 	err := json.NewDecoder(r.Body).Decode(&user)
     if err != nil {
-        http.Error(responseWriter, err.Error(), http.StatusBadRequest)
+        http.Error(w, err.Error(), http.StatusBadRequest)
         return
     } 
 	
 	err = dBase.UpdateUser(user)
 	response := Response{Error:err, Data: nil}
-	GenerateHandler(responseWriter, r, response)
+	GenerateHandler(w, r, response)
 }
 
 func updateArticle(responseWriter http.ResponseWriter, r *http.Request) {
@@ -323,8 +433,15 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/getComments/user/{id}", getCommentsByUser).Methods("GET")
 	router.HandleFunc("/api/getComments/article/{id}", getCommentsByArticle).Methods("GET")
 
+	router.HandleFunc("/api/getRequests/user/{id}", getRequestsByUser).Methods("GET")
+	router.HandleFunc("/api/getRequests/article/{id}", getRequestsByArticle).Methods("GET")
+	router.HandleFunc("/api/getAnswers/user/{id}", getAnswersByUser).Methods("GET")
+	router.HandleFunc("/api/getAnswers/article/{id}", getAnswersByArticle).Methods("GET")
+
 	router.HandleFunc("/api/newFavorite", newFavorite).Methods("PUT")
 	router.HandleFunc("/api/newComment", newComment).Methods("PUT")
+	router.HandleFunc("/api/newRequest", newRequest).Methods("PUT")
+	router.HandleFunc("/api/newAnswer", newAnswer).Methods("PUT")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")

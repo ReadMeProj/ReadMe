@@ -18,6 +18,8 @@ const mongoUsersCollectionName = "users"
 const mongoArticlesCollectionName = "articles"
 const mongoFavoritesCollectionName = "favorites"
 const mongoCommentsCollectionName = "comments"
+const mongoRequestsCollectionName = "requests"
+const mongoAnswersCollectionName = "answers"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
@@ -225,8 +227,32 @@ func (db *MongoController) GetComments(key string, value interface{}) ([]Comment
 	return comments, err	
 }
 
+func (db *MongoController) getMany(collectionName string, key string, value interface{}, pResults interface{}) error {
+	limit := MultipleExtractionLimit
+	err := db.extractManyByIDFromDB(mongoDatabaseName, collectionName, pResults, key, value, int64(limit))
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db* MongoController) GetRequests(key string, value interface{}) ([]Request, error) {
+	var requests []Request
+	err := db.getMany(mongoRequestsCollectionName, key, value, &requests)
+
+	return requests, err
+}
+
+func (db* MongoController) GetAnswers(key string, value interface{}) ([]Answer, error) {
+	var answers []Answer
+	err := db.getMany(mongoAnswersCollectionName, key, value, &answers)
+
+	return answers, err
+}
+
 func (db *MongoController) NewUser(user User) error {
-	user.ID = ID(proto.TokenGenerator(10))
+	user.ID = ID(proto.TokenGenerator())
 
 	_, err := db.GetUser("username", user.Username)
 	if err == nil {
@@ -244,7 +270,7 @@ func (db *MongoController) NewUser(user User) error {
 }
 
 func (db *MongoController) NewArticle(article Article) error {
-	article.ID = ID(proto.TokenGenerator(10))
+	article.ID = ID(proto.TokenGenerator())
 
 	_, err := db.GetArticle("url", article.URL)
 	if err == nil {
@@ -261,7 +287,18 @@ func (db *MongoController) NewArticle(article Article) error {
 	return err
 }
 
+func (db* MongoController) newItemNoValidate(collectionName string, item interface{}) error {
+	err := db.insertOneToDB(mongoDatabaseName, collectionName, item)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
 func (db *MongoController) NewComment(comment Comment) error {
+	comment.ID = ID(proto.TokenGenerator())
+
 	err := db.insertOneToDB(mongoDatabaseName, mongoCommentsCollectionName, comment)
 	if err != nil {
 		log.Println(err)
@@ -277,6 +314,16 @@ func (db *MongoController) NewFavorite(favorite Favorite) error {
 	}
 
 	return err
+}
+
+func (db *MongoController) NewRequest(request Request) error {
+	request.ID = ID(proto.TokenGenerator())
+	return db.newItemNoValidate(mongoRequestsCollectionName, request)	
+}
+
+func (db *MongoController) NewAnswer(answer Answer) error {
+	answer.ID = ID(proto.TokenGenerator())
+	return db.newItemNoValidate(mongoAnswersCollectionName, answer)	
 }
 
 func (db *MongoController) UpdateUser(user User) error {
@@ -346,7 +393,7 @@ func (db *MongoController) Login(username string, password string) (Token, error
 		return "", err
 	}
 
-	token := proto.TokenGenerator(10)
+	token := proto.TokenGenerator()
 	err = db.updateAccessToken(username, token)	
 
 	return Token(token), err
