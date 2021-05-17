@@ -1,13 +1,11 @@
 'use strict';
 var { getArticle, newArticle } = require('./network/lib/article');
-const {articleStorage} = require('./chromeHelper');
+const {articleStorage, isAuth} = require('./chromeHelper');
 // With background scripts you can communicate with popup
 // and contentScript files.
 // For more information on background script,
 // See https://developer.chrome.com/extensions/background_pages
-chrome.storage.local.set({'auth': true}, function() {
-  console.log('Value is set to ' + true);
-});
+isAuth.set(true , () =>{})
 
 
 function articleFromOg(ogData) {
