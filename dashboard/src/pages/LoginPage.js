@@ -3,7 +3,7 @@ import { login } from "../network/lib/apiUserFunctions";
 class LoginPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { userName: "", password: "", err: null, token: "token" };
+    this.state = { userName: "", password: "", userToken: "" };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,12 +19,18 @@ class LoginPage extends Component {
     event.preventDefault();
     let user = this.state.userName;
     let pass = this.state.password;
-
-    await login(user, pass)
-      .then((response) => response.data)
-      .then((result) => {
-        console.log(result);
-      });
+    const response = await login(user, pass);
+    if (response.data.error == null) {
+      this.setState({ userToken: response.data });
+      // Store the response in localStorage
+      window.localStorage.setItem("Token", response.data.Data);
+      window.localStorage.setItem("Username", this.state.userName);
+      window.location.href = "/";
+    } else if (response.data.error === 401) {
+      alert("Password doesn't match");
+    } else {
+      alert("User doesn't exist, sign up through the ReadMe extension!");
+    }
   }
   render() {
     return (
@@ -32,7 +38,12 @@ class LoginPage extends Component {
         <h2>Login</h2>
         <br />
         <label className="form-label">UserName: </label>
-        <input type="text" name="userName" onChange={this.handleChange} />
+        <input
+          type="text"
+          name="userName"
+          onChange={this.handleChange}
+          autoFocus
+        />
         <br />
         <br />
         <label className="form-label">Password: </label>
