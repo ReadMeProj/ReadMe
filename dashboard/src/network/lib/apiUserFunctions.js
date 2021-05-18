@@ -9,7 +9,7 @@ import { config } from "../config.js";
 
 /// Check if the current session has a valid token.
 export function isLoggedIn() {
-  const loggedInUser = localStorage.getItem("Username");
+  const loggedInUser = localStorage.getItem("UserId");
   const loggedInToken = localStorage.getItem("Token");
   return loggedInUser != null && loggedInToken != null;
 }
@@ -24,7 +24,6 @@ export async function login(userName, password) {
 
 /// Send a POST request to log the user out.
 export async function logout(token, username) {
-  console.log(token + " sjfjdf " + username);
   if (token && username) {
     let headers = {
       headers: {
