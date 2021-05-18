@@ -7,7 +7,7 @@ import { config } from "../config.js";
       It's the code responsibility to catch it and know what the response looks like.
   */
 
-//const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 });
+//const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 }); //TODO
 
 /// Get all articles.
 export async function getArticles() {
@@ -15,11 +15,14 @@ export async function getArticles() {
 }
 
 /// Get user liked articles.
+export async function getUserFavorites() {
+  var userId = window.localStorage.getItem("UserId");
+  return axiosClient.get(`${config["getFavoritesByUserPath"] + "/" + userId}`);
+}
+
+/// Fill info for article that was requested. //TODO
+export async function fillRequest(requestID, articleID) {}
 
 /// Get articles by query.
 
 /// Get article by some filter from the filterEnum.
-
-/// Fill info for article that was requested.
-
-/// Remove article request.
