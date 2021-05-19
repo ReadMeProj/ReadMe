@@ -24,6 +24,8 @@ type ReadMeDatabase interface {
 	GetAnswers(key string, value interface{}) ([]Answer, error)
 	NewRequest(reuqest Request) error
 	NewAnswer(answer Answer) error
+	UpdateAnswer(answer Answer) error
+	UpdateRequest(request Request) error
 
 	IsAuth(username string, token Token) error
 	Login(username string, password string) (Token, error)
