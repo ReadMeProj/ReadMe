@@ -52,7 +52,7 @@ type Request struct {
 	Date      	int64 `json:"date" validate:"required"`
 	Content   	string `json:"content" validate:"required,lte=256"`
 	Votes 		Votes `json:"votes"`
-	Fulfilled	bool `json:"fulfilled"`
+	AnswerID 	ID `json:"answerid"`
 }
 
 type Answer struct {
@@ -61,8 +61,15 @@ type Answer struct {
 	UserID 	  ID `json:"userid" validate:"required"`
 	ArticleId ID `json:"articleid" validate:"required"`
 	Date      int64 `json:"date" validate:"required"`
-	Content   string `json:"content" validate:"required,lte=128"`
+	Report	  Report `json:"report" validate:"required"`
 	Votes 	  Votes `json:"votes"`
+}
+
+type Report struct {
+	Content   string `json:"content" validate:"required,lte=128"`
+	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
+	Proof 	  string `json:"url"`
+	Author	  string `json:"author validate:"gte=2"`
 }
 
 type ID string
