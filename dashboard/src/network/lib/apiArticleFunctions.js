@@ -20,8 +20,18 @@ export async function getUserFavorites() {
   return axiosClient.get(`${config["getFavoritesByUserPath"] + "/" + userId}`);
 }
 
-/// Fill info for article that was requested. //TODO
-export async function fillRequest(requestID, articleID) {}
+/// Fill info for article that was requested.
+export async function fillRequest(requestID, articleID, reportJson) {
+  var userId = window.localStorage.getItem("UserId");
+  var answer = {
+    requestid: requestID,
+    userid: userId,
+    articleid: articleID,
+    date: new Date().toLocaleString() + "",
+    report: reportJson,
+  };
+  return axiosClient.put(`${config.newAnswerPath}`, answer);
+}
 
 /// Get articles by query.
 
