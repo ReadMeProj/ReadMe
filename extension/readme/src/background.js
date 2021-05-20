@@ -14,8 +14,12 @@ function articleFromOg(ogData) {
     author = ogData.vr.author;
   }
   let date;
-  if (ogData.article && (ogData.article.publishedTime || ogData.article.modified_time)) {
-    date = ogData.article.publishedTime || ogData.article.modified_time;
+  if (ogData.article && (ogData.article.publishedTime || ogData.article.modified_time || ogData.article.published_time)) {
+    date = ogData.article.publishedTime || ogData.article.modified_time || ogData.article.published_time;
+  }
+  let image;
+  if(ogData.og.image[0] && ogData.og.image[0].url){
+    image = ogData.og.image[0].url;
   }
   return {
     "id": encodeURIComponent(ogData.og.url),
@@ -23,7 +27,7 @@ function articleFromOg(ogData) {
     "url": ogData.og.url,
     "author": author || "Doron Kopit",
     "date": date || "2021-03-12",
-    "image": ogData.og.image[0],
+    "image": image || "",
     "source": ogData.og.site_name
   }
 }
