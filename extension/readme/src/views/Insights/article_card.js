@@ -1,6 +1,7 @@
 import React from "react";
-import { Media, Container, Row, Col } from "react-bootstrap";
+import { Media, Container, Row, Col , Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { GrLike , GrDislike } from "react-icons/gr"
 import { isAuth, userStorage } from "../../chromeHelper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -49,16 +50,16 @@ function ArticleCard(params) {
       console.log("Article id is null.");
     }
 
-    if(params.fakeVotes != null){
+    if (params.fakeVotes != null) {
       articleFakeVotes = params.fakeVotes;
     }
-    else{
+    else {
       console.log("Article Fake votes is null");
     }
   }
 
   if (isReview) {
-    fakePercent = <b>Sponsored %:{}</b>;
+    fakePercent = <b>Sponsored %:{ }</b>;
   } else {
     fakePercent = <b>Fake %: {articleFakeVotes.upvote}</b>;
   }
@@ -96,14 +97,12 @@ function ArticleCard(params) {
   return (
     <Container fluid="md">
       <Container>
-        <div className="articleBox" style={{ width: "200px", height: "150px" }}>
-          <h6>Should I believe it?</h6>
-          <div>
-            <p>{fakePercent}</p>
-            <button className="btn btn-info" onClick={() => this.handleClick()}>See more</button>
-          </div>
-          {heart}
-        </div>
+        <Card bg='light' text='dark' style={{ width: '13rem' }} className="mb-2">
+          <Card.Header>Some Meta-data regard the article</Card.Header>
+          <Card.Body>
+            {articleFakeVotes.upvote} <GrLike/> {articleFakeVotes.downvote} <GrDislike/>
+          </Card.Body>
+        </Card>
       </Container>
     </Container>
   )

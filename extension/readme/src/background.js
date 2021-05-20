@@ -9,31 +9,38 @@ isAuth.set(true , () =>{})
 
 
 function articleFromOg(ogData) {
+  const article = ogData.article;
+  const vr = ogData.vr;
+  const og = ogData.og;
   let author;
-  if (ogData.vr && ogData.vr.author) {
-    author = ogData.vr.author;
+  if ((vr && vr.author)) {
+    author = vr.author;
   }
   let date;
-  if (ogData.article && (ogData.article.publishedTime || ogData.article.modified_time || ogData.article.published_time)) {
-    date = ogData.article.publishedTime || ogData.article.modified_time || ogData.article.published_time;
+  if (article && (article.publishedTime || article.modified_time || article.published_time)) {
+    date = article.publishedTime || article.modified_time || article.published_time;
   }
   let image;
-  if(ogData.og.image[0] && ogData.og.image[0].url){
-    image = ogData.og.image[0].url;
+  if(og.image[0] && og.image[0].url){
+    image = og.image[0].url;
   }
   let labels = [];
-  if(ogData.article && ogData.article.tag ){
-    labels = ogData.article.tag;
+  if(article && article.tag ){
+    let tags;
+    if(og.site_name === "the Guardian"){
+      tags = article.tag[0].split(",");
+      labels = tags.map(tag => {return {labelname:tag, score:1}});
+    }
   }
   return {
     "id": encodeURIComponent(ogData.og.url),
-    "name": ogData.og.title,
-    "url": ogData.og.url,
+    "name": og.title,
+    "url": og.url,
     "author": author || "Doron Kopit",
     "date": date || "2021-03-12",
     "image": image || "",
-    "source": ogData.og.site_name,
-    "labels": labels
+    "source": og.site_name,
+    "labels": labels || []
   }
 }
 
