@@ -69,7 +69,7 @@ type Report struct {
 	Content   string `json:"content" validate:"required,lte=128"`
 	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
 	Proof 	  string `json:"url"`
-	Author	  string `json:"author" validate:"gte=2"`
+	Author	  string `json:"author"`
 }
 
 type ID string
