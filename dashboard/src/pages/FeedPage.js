@@ -40,6 +40,7 @@ class FeedPage extends Component {
                     url={article.url}
                     id={article.id}
                     isLiked={false} //TODO
+                    image={article.image}
                   />
                 </dd>
               ))}
