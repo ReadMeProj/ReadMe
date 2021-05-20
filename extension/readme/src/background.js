@@ -21,6 +21,10 @@ function articleFromOg(ogData) {
   if(ogData.og.image[0] && ogData.og.image[0].url){
     image = ogData.og.image[0].url;
   }
+  let labels = [];
+  if(ogData.article && ogData.article.tag ){
+    labels = ogData.article.tag;
+  }
   return {
     "id": encodeURIComponent(ogData.og.url),
     "name": ogData.og.title,
@@ -28,7 +32,8 @@ function articleFromOg(ogData) {
     "author": author || "Doron Kopit",
     "date": date || "2021-03-12",
     "image": image || "",
-    "source": ogData.og.site_name
+    "source": ogData.og.site_name,
+    "labels": labels
   }
 }
 
