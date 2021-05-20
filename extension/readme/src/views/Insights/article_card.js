@@ -1,9 +1,8 @@
 import React from "react";
-import { Media, Container, Row, Col , Card } from "react-bootstrap";
+import { Media, Container, Row, Col , Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { GrLike , GrDislike } from "react-icons/gr"
 import { isAuth, userStorage } from "../../chromeHelper";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ArticleCard(params) {
   console.log(params);
@@ -94,6 +93,7 @@ function ArticleCard(params) {
     }
   })
 
+
   return (
     <Container fluid="md">
       <Container>
@@ -102,6 +102,9 @@ function ArticleCard(params) {
           <Card.Body>
             {articleFakeVotes.upvote} <GrLike/> {articleFakeVotes.downvote} <GrDislike/>
           </Card.Body>
+          <Card.Text>
+            <Button variant='link' size='sm' onClick={() => window.open(`http://localhost:8080?articleId=${articleID}`)} >See more</Button>
+          </Card.Text>
         </Card>
       </Container>
     </Container>

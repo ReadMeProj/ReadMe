@@ -3,7 +3,9 @@ import {config} from '../config.js'
 
 
 export function login(userNameAndPasswordJson){
-    return axiosClient.post(`${config.loginPath}`, userNameAndPasswordJson);
+    return axiosClient.post(`${config.loginPath}`, userNameAndPasswordJson).then(res =>{
+        return res.data.Data;
+    });
 }
 
 export function logout(tokenAndIdJson){
