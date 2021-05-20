@@ -95,3 +95,4 @@ $RECYCLE.BIN/
 # Docker ignores
 mongo_data/
 shared_data/
+venv/

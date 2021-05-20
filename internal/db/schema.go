@@ -76,7 +76,7 @@ type ID string
 type Token string
 
 type ReadMeLabel struct {
-	LabelName string `json:"label"`
+	Label	  string `json:"label"`
 	Score     float32 `json:"score"`
 }
 
