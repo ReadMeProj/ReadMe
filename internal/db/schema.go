@@ -24,9 +24,8 @@ type Article struct {
 	Date   string `json:"date" validate:"required"`
 	Image  string `json:"image" validate:"url"`
 	
-	Labels []ReadMeLabel `json:"labels"`
+	Labels 	   []ReadMeLabel `json:"labels"`
 	FakeVotes  Votes `json:"fakevotes"`
-	SponsVotes Votes `json:"sponsvotes"`
 	RelScore   float32 `json:"relscore"`
 }
 
@@ -51,8 +50,8 @@ type Request struct {
 	ArticleID   ID `json:"articleid" validate:"required"`
 	Date      	int64 `json:"date" validate:"required"`
 	Content   	string `json:"content" validate:"required,lte=256"`
-	Votes 		Votes `json:"votes"`
 	AnswerID 	ID `json:"answerid"`
+	Votes 		Votes `json:"votes"`
 }
 
 type Answer struct {
@@ -61,22 +60,48 @@ type Answer struct {
 	UserID 	  ID `json:"userid" validate:"required"`
 	ArticleId ID `json:"articleid" validate:"required"`
 	Date      int64 `json:"date" validate:"required"`
-	Report	  Report `json:"report" validate:"required"`
+	Content   string `json:"content" validate:"required,lte=256"`
+	// Report
+	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
+	Category  string `json:"category"`
+	Fake 	  bool `json:"fake"`
+	// Report
 	Votes 	  Votes `json:"votes"`
 }
 
 type Report struct {
+	ID 		  ID `json:"id"`
+	UserID 	  ID `json:"userid" validate:"required"`
+	ArticleId ID `json:"articleid" validate:"required"`
+	// Report
+	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
+	Category  string `json:"category"`
+	Fake 	  bool `json:"fake"`
+	// Report
+}
+
+type ReadMeReport struct {
+	ID 		  ID `json:"id"`
+	UserID 	  ID `json:"userid" validate:"required"`
+	ArticleID ID `json:"articleid" validate:"required"`
+	Date 	  int64 `json:"date" validate:"required"`
+
+	RequestID ID 	 `json:"requestid"`
+	// If it's an answer to request
 	Content   string `json:"content" validate:"required,lte=128"`
+	Votes	  Votes	  `json:"votes"`
+
+	// If it's just a regular report or an answer
 	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
 	Proof 	  string `json:"url"`
-	Author	  string `json:"author" validate:"gte=2"`
+	Author	  string `json:"author"`
 }
 
 type ID string
 type Token string
 
 type ReadMeLabel struct {
-	LabelName string `json:"labelname"`
+	Label	  string `json:"label"`
 	Score     float32 `json:"score"`
 }
 

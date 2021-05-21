@@ -54,6 +54,10 @@ function ArticleCard(params) {
     if (params.isLiked != null) {
       isLiked = params.isliked;
     }
+
+    if (params.image != null) {
+      imageUrl = params.image;
+    }
   }
 
   if (isReview) {

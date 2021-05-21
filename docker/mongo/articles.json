@@ -4,6 +4,7 @@
         "id": "abdefghijk12345",
         "name": "At India’s Funeral Pyres, Covid Sunders the Rites of Grief",
         "url": "https://www.nytimes.com/2021/05/08/world/asia/india-covid-deaths-crematories.html",
+        "image": "https://static01.nyt.com/images/2021/05/07/world/00virus-india-crematories-promo/00virus-india-crematories-2-facebookJumbo.jpg",
         "author": "By Mujib Mashal, Sameer Yasir, Shalini Venugopal Bhagat and Atul Loke",
         "date": "20210508"
     },
@@ -12,6 +13,7 @@
         "id": "abdefghijk1234567",
         "name": "Chinese rocket expected to crash into Earth this weekend",
         "url": "https://www.cnn.com/2021/05/08/politics/chinese-rocket-earth-reentry/index.html",
+        "image": "https://cdn.cnn.com/cnnnext/dam/assets/210504155312-long-march-5b-launch-0429-super-tease.jpg",
         "author": "Paul LeBlanc, CNN",
         "date": "2021-05-08T04:01:55Z"
     },
@@ -20,6 +22,7 @@
         "id": "abdefghijk123456789",
         "name": "Man City reach first Champions League final",
         "url": "https://www.bbc.co.uk/sport/football/56973031",
+        "image": "https://ichef.bbci.co.uk/live-experience/cps/624/cpsprodpb/122EC/production/_118367447_man_city_goal_reuters.jpg",
         "author": "Phil McNulty",
         "date": "2021-05-05T02:11:34Z"
 
