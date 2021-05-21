@@ -5,7 +5,7 @@ import {userStorage , isAuth} from '../../chromeHelper'
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { userName: "", password: "", err: null, token: "token" };
+    this.state = { userName: "", password: "", err: null, token: "token" , loginErrorMessage: ""};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -22,12 +22,13 @@ class Login extends Component {
     let user = this.state.userName;
     let pass = this.state.password;
     login({username:user, password: pass}).then((res) =>{
+      this.state.loginErrorMessage
       console.log(res);
       this.state.token = res.token;
-      userStorage.set({userId: res.id , token:res.token}, null);
+      userStorage.set({userId: res.id , token:res.token , userName: user, password: pass}, null);
       isAuth.set(true, null);
     }).catch((err) =>{
-      console.log("Username or password are not valid");
+      this.state.loginErrorMessage = "Username or Password are not valid";
     })
 
     //Call api to login with post msg.
@@ -38,7 +39,7 @@ class Login extends Component {
     return (
       <form onSubmit={this.handleSubmit} className="loginBox">
         <h2>Login</h2>
-        <br></br>
+        <br>{this.message}</br>
         <label className="form-label">UserName: </label>
         <input type="text" name="userName" onChange={this.handleChange} />
         <br />

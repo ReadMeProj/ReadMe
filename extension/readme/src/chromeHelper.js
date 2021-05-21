@@ -39,15 +39,17 @@ export const articleStorage = {
 
 export const userStorage = {
     get: cb => {
-        chrome.storage.local.get(['readMeUserId'], result => {
-            cb(result.readMeUserId);
+        chrome.storage.local.get(['readMeUserCredentials'], result => {
+            cb(result.readMeUserCredentials);
         });
     },
-    set: (userIdAndTokenJson, cb) => {
+    set: (userCredentials, cb) => {
         chrome.storage.local.set(
             {
-                readMeUserId: userIdAndTokenJson.userId,
-                readMeUserToken : userIdAndTokenJson.token
+                readMeUserId: userCredentials.userId,
+                readMeUserToken : userCredentials.token,
+                readMeUserName: userCredentials.userName,
+                readMeUserPassword: userCredentials.password
             },
             () => {
                 cb();
