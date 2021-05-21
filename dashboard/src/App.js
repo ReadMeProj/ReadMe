@@ -14,6 +14,7 @@ import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
 import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
+import UserScore from "./components/UserScore";
 function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
@@ -73,6 +74,7 @@ function App() {
               <br />
               <div style={{ paddingTop: "100px" }}></div>
               <NavBar />
+              <UserScore />
               <FontAwesomeIcon
                 icon={["fas", "angle-up"]}
                 size="lg"

@@ -51,7 +51,18 @@ export async function likeArticle(params) {}
 /// Send PUT request to update user points.
 export async function addScore(params) {}
 
-/// Get user current point balance.
-export async function getPoints(params) {}
+/// Get user by userId in the localStorage.
+export async function getUserById() {
+  var userName = window.localStorage.getItem("Username");
+  var userId = window.localStorage.getItem("UserId");
+  var token = window.localStorage.getItem("Token");
+  let headers = {
+    headers: {
+      Token: token,
+      Username: userName,
+    },
+  };
+  return axiosClient.get(`${config["getUserPath"] + "/" + userId}`, headers);
+}
 
 /// Add article ID to user's likes.
