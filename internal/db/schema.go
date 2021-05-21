@@ -26,7 +26,7 @@ type Article struct {
 	
 	Labels []ReadMeLabel `json:"labels"`
 	FakeVotes  Votes `json:"fakevotes"`
-	SponsVotes Votes `json:"sponsvotes"`
+	//SponsVotes Votes `json:"sponsvotes"`
 	RelScore   float32 `json:"relscore"`
 }
 
