@@ -347,7 +347,32 @@ func (db *MongoController) UpdateArticle(article Article) error {
 	updateMap["sponsvotes"] = article.SponsVotes
 	updateMap["relscore"] = article.SponsVotes
 	
-	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "url", article.URL, updateMap)
+	err := db.updateOneInDB(mongoDatabaseName, mongoArticlesCollectionName, "url", article.URL, updateMap)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db *MongoController) UpdateAnswer(answer Answer) error {
+	updateMap := make(map[string]interface{})
+	updateMap["votes"] = answer.Votes 
+	
+	err := db.updateOneInDB(mongoDatabaseName, mongoAnswersCollectionName, "id", string(answer.ID), updateMap)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db *MongoController) UpdateRequest(request Request) error {
+	updateMap := make(map[string]interface{})
+	updateMap["votes"] = request.Votes 
+	updateMap["answerid"] = request.AnswerID 
+	
+	err := db.updateOneInDB(mongoDatabaseName, mongoRequestsCollectionName, "id", string(request.ID), updateMap)
 	if err != nil {
 		log.Println(err)
 	}

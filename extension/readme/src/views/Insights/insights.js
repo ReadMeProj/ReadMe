@@ -1,25 +1,9 @@
 import React, { Component, useEffect } from "react";
 import { useState } from 'react'
 import ArticleCard from "./article_card";
+import {Spinner} from 'react-bootstrap';
+import {articleStorage} from '../../chromeHelper'
 
-
-const articleStorage = {
-  get: cb => {
-    chrome.storage.local.get(['currentArticle'], result => {
-      cb(result.currentArticle);
-    });
-  },
-  set: (article, cb) => {
-    chrome.storage.local.set(
-      {
-        currentArticle: article,
-      },
-      () => {
-        cb();
-      }
-    );
-  },
-};
 
 const Insights = (props) => {
   const [article, setArticle] = useState();
@@ -39,7 +23,9 @@ const Insights = (props) => {
       fakeVotes={article.fakevotes}
        //TODO- move to the articleCard and make it a class with state.
     /></div>
-  else return <div>loading</div>
+  else return <Spinner animation="border" role="status">
+  <span className="sr-only">Loading...</span>
+</Spinner>
 }
 
 export default Insights;

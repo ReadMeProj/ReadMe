@@ -5,14 +5,8 @@ import Login from "./login";
 import Insights from "../Insights/insights";
 import Report from "../Report/report";
 import Request from "../Request/request";
+import {isAuth} from '../../chromeHelper'
 
-function getLoggedin() {
-  return new Promise((resolve) => {
-    chrome.storage.local.get("auth", function (items) {
-      resolve(items.auth.value);
-    });
-  });
-}
 
 class LoginButton extends Component {
   constructor() {
@@ -21,7 +15,7 @@ class LoginButton extends Component {
     this.state = {
       isLogged: false,
     };
-    getLoggedin().then((result) => {
+    isAuth.get((result) => {
       this.state.isLogged = result;
     });
     this.login = this.login.bind(this);
@@ -36,6 +30,9 @@ class LoginButton extends Component {
 
   logout() {
     this.setState({ isLogged: false });
+    isAuth.set(false , () => {console.log("User logged out")});
+    
+    
     chrome.storage.local.set({ auth: false }, function () {
       console.log("User logged out");
     });

@@ -330,6 +330,34 @@ func updateArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func updateAnswer(w http.ResponseWriter, r *http.Request) {
+	var answer db.Answer
+	
+	err := json.NewDecoder(r.Body).Decode(&answer)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+    }
+	
+	err = dBase.UpdateAnswer(answer)
+	response := Response{Error:err, Data: nil}
+	GenerateHandler(w, r, response)
+}
+
+func updateRequest(w http.ResponseWriter, r *http.Request) {
+	var request db.Request
+	
+	err := json.NewDecoder(r.Body).Decode(&request)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+    }
+	
+	err = dBase.UpdateRequest(request)
+	response := Response{Error:err, Data: nil}
+	GenerateHandler(w, r, response)
+}
+
 func login(w http.ResponseWriter, r *http.Request) {
 	var credentials db.Credentials
 	
@@ -456,6 +484,8 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/newComment", newComment).Methods("PUT")
 	router.HandleFunc("/api/newRequest", newRequest).Methods("PUT")
 	router.HandleFunc("/api/newAnswer", newAnswer).Methods("PUT")
+	router.HandleFunc("/api/updateAnswer", updateAnswer).Methods("POST")
+	router.HandleFunc("/api/updateRequest", updateRequest).Methods("POST")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")

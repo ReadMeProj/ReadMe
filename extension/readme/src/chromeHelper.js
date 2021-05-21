@@ -43,10 +43,11 @@ export const userStorage = {
             cb(result.readMeUserId);
         });
     },
-    set: (userId, cb) => {
+    set: (userIdAndTokenJson, cb) => {
         chrome.storage.local.set(
             {
-                readMeUserId: userId,
+                readMeUserId: userIdAndTokenJson.userId,
+                readMeUserToken : userIdAndTokenJson.token
             },
             () => {
                 cb();

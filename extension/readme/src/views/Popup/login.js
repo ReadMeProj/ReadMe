@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import {login} from "../../network/lib/login";
+import {userStorage , isAuth} from '../../chromeHelper'
 //import { login } from "../apiFunctions";
 class Login extends Component {
   constructor(props) {
@@ -19,6 +21,15 @@ class Login extends Component {
     event.preventDefault();
     let user = this.state.userName;
     let pass = this.state.password;
+    login({username:user, password: pass}).then((res) =>{
+      console.log(res);
+      this.state.token = res.token;
+      userStorage.set({userId: res.id , token:res.token}, null);
+      isAuth.set(true, null);
+    }).catch((err) =>{
+      console.log("Username or password are not valid");
+    })
+
     //Call api to login with post msg.
     //login(user, pass, this.state.err, this.state.token);
     //alert("The userName submitted: " + this.state.userName);
