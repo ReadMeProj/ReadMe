@@ -344,8 +344,7 @@ func (db *MongoController) UpdateArticle(article Article) error {
 	updateMap := make(map[string]interface{})
 	updateMap["labels"] = article.Labels
 	updateMap["fakevotes"] = article.FakeVotes
-	updateMap["sponsvotes"] = article.SponsVotes
-	updateMap["relscore"] = article.SponsVotes
+	updateMap["relscore"] = article.RelScore
 	
 	err := db.updateOneInDB(mongoDatabaseName, mongoArticlesCollectionName, "url", article.URL, updateMap)
 	if err != nil {

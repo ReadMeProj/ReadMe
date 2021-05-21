@@ -24,9 +24,8 @@ type Article struct {
 	Date   string `json:"date" validate:"required"`
 	Image  string `json:"image" validate:"url"`
 	
-	Labels []ReadMeLabel `json:"labels"`
+	Labels 	   []ReadMeLabel `json:"labels"`
 	FakeVotes  Votes `json:"fakevotes"`
-	//SponsVotes Votes `json:"sponsvotes"`
 	RelScore   float32 `json:"relscore"`
 }
 
