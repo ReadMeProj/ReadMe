@@ -20,6 +20,7 @@ const mongoFavoritesCollectionName = "favorites"
 const mongoCommentsCollectionName = "comments"
 const mongoRequestsCollectionName = "requests"
 const mongoAnswersCollectionName = "answers"
+const mongoReportsCollectionName = "reports"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
@@ -251,6 +252,13 @@ func (db* MongoController) GetAnswers(key string, value interface{}) ([]Answer, 
 	return answers, err
 }
 
+func (db* MongoController) GetReports(key string, value interface{}) ([]Report, error) {
+	var reports []Report
+	err := db.getMany(mongoReportsCollectionName, key, value, &reports)
+
+	return reports, err
+}
+
 func (db *MongoController) NewUser(user User) error {
 	user.ID = ID(proto.TokenGenerator())
 
@@ -326,6 +334,11 @@ func (db *MongoController) NewAnswer(answer Answer) error {
 	return db.newItemNoValidate(mongoAnswersCollectionName, answer)	
 }
 
+func (db *MongoController) NewReport(report Report) error {
+	report.ID = ID(proto.TokenGenerator())
+	return db.newItemNoValidate(mongoReportsCollectionName, report)	
+}
+
 func (db *MongoController) UpdateUser(user User) error {
 	updateMap := make(map[string]interface{})
 	updateMap["interests"] = user.Interests
@@ -359,6 +372,20 @@ func (db *MongoController) UpdateAnswer(answer Answer) error {
 	updateMap["votes"] = answer.Votes 
 	
 	err := db.updateOneInDB(mongoDatabaseName, mongoAnswersCollectionName, "id", string(answer.ID), updateMap)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db *MongoController) UpdateReport(report Report) error {
+	updateMap := make(map[string]interface{})
+	updateMap["category"] = report.Category 
+	updateMap["fake"] = report.Fake
+	updateMap["rating"] = report.Rating
+	
+	err := db.updateOneInDB(mongoDatabaseName, mongoAnswersCollectionName, "id", string(report.ID), updateMap)
 	if err != nil {
 		log.Println(err)
 	}
