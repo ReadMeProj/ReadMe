@@ -14,6 +14,23 @@ export async function getArticles() {
   return axiosClient.get(`${config["getArticlesPath"]}`);
 }
 
+/// Get article by ID.
+export async function getArticleById(articleId) {
+  var userName = window.localStorage.getItem("Username");
+  var token = window.localStorage.getItem("Token");
+  let headers = {
+    headers: {
+      Token: token,
+      Username: userName,
+    },
+  };
+
+  return axiosClient.get(
+    `${config["getArticlePath"] + "/" + articleId}`,
+    headers
+  );
+}
+
 /// Get user liked articles.
 export async function getUserFavorites() {
   var userId = window.localStorage.getItem("UserId");

@@ -133,7 +133,10 @@ function ArticleCard(params) {
               <h6>Should I believe it?</h6>
               <div>
                 <p>{fakePercent}</p>
-                <Link className="btn btn-info" to="moreInfo">
+                <Link
+                  className="btn btn-info"
+                  to={"moreInfo?articleId=" + articleID}
+                >
                   See more
                 </Link>
               </div>

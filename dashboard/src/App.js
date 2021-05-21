@@ -50,6 +50,12 @@ function App() {
     );
     history.push(`/login`);
   }
+  let params = new URLSearchParams(document.location.search.substring(1));
+  let articleID = params.get("articleId"); // Will be null if there is no articleId value in the URL.
+  if (articleID) {
+    history.push("moreInfo?articleId=" + articleID);
+  }
+
   return (
     <div className="App">
       <Router>
@@ -98,7 +104,7 @@ function App() {
                   <Route path="/login">
                     <LoginPage />
                   </Route>
-                  <Route path="/moreInfo">
+                  <Route exact path="/moreInfo">
                     <ArticlePage />
                   </Route>
                 </Switch>
