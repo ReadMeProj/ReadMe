@@ -31,8 +31,6 @@ export async function logout(token, username) {
         UserName: username,
       },
     };
-    console.log("The headers in logout:" + headers);
-    console.log(axiosClient.post(`${config.logoutPath}`, {}, headers));
     localStorage.clear();
     window.location.href = "/";
     return;

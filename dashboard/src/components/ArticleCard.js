@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function ArticleCard(params) {
-  var articleContent = "";
-  var articleTitle = "";
-  var articleUrl = "";
-  var articleID = "";
+  var articleContent = "Conetnt";
+  var articleTitle = "Title";
+  var articleUrl = "URL";
+  var articleID = "ID";
   var isReview = false; //TODO- read from params.
   var fakePercent;
   var isLiked = false;
@@ -25,8 +25,6 @@ function ArticleCard(params) {
       if (params.content.length > 50) {
         articleTitle.concat("...");
       }
-    } else {
-      articleTitle = "Title";
     }
     // Set up content.
     if (params.content != null) {
@@ -34,21 +32,14 @@ function ArticleCard(params) {
       if (params.content.length > 115) {
         articleContent.concat("...");
       }
-    } else {
-      articleContent = "Content.";
     }
     // Set up url.
     if (params.url != null) {
       articleUrl = params.url;
-    } else {
-      console.log("Article url is null.");
     }
     // Set up article ID.
     if (params.id != null) {
       articleID = params.id;
-      console.log(articleID);
-    } else {
-      console.log("Article id is null.");
     }
     // Set up article ID.
     if (params.isLiked != null) {
