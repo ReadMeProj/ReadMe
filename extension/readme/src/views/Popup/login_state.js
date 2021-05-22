@@ -15,27 +15,32 @@ class LoginButton extends Component {
     this.state = {
       isLogged: false,
     };
-    isAuth.get((result) => {
-      this.state.isLogged = result;
-    });
+    
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
   }
 
+  componentDidMount(){
+    isAuth.get((result) => {
+      this.setState({isLogged:result});
+    });
+  }
+
+  componentDidUpdate(){
+    isAuth.get((result) => {
+      this.setState({isLogged:result});
+    });
+  }
+
   login() {
     console.log("login pushed");
-
+    this.setState({isLogged: true});
     <Route path="/login" component={Login} />;
   }
 
   logout() {
     this.setState({ isLogged: false });
     isAuth.set(false , () => {console.log("User logged out")});
-    
-    
-    chrome.storage.local.set({ auth: false }, function () {
-      console.log("User logged out");
-    });
   }
 
   render() {
@@ -78,13 +83,6 @@ class LoginButton extends Component {
             <Link to="/insights">
               <button type="button">Insights</button>
             </Link>
-            <Link to="/report">
-              <button type="button">Report</button>
-            </Link>
-            <Link to="/request">
-              <button type="button">Request Review</button>
-            </Link>
-
             <Switch>
               <Route path="/login">
                 <Login />

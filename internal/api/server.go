@@ -144,6 +144,33 @@ func getAnswersByUser(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getReports(key string, value interface{}) (interface{}, error) {
+	jsonData, err := dBase.GetReports(
+		key,
+		value,
+	)
+
+	return jsonData, err 
+}
+
+func getReportsByArticle(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getReports(
+		"articleid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getReportsByUser(responseWriter http.ResponseWriter, r *http.Request) {
+	jsonData, err := getReports(
+		"userid",
+		db.ID(ExtractIDStringFromRequest(r)),	
+	)
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
 func getArticleByURL(responseWriter http.ResponseWriter, r *http.Request) {
 	url := r.URL.Query().Get("url")
 	if url == "" {
@@ -302,6 +329,26 @@ func newAnswer(w http.ResponseWriter, r *http.Request) {
 	GenerateHandler(w, r, response)
 }
 
+func newReport(w http.ResponseWriter, r *http.Request) {
+	var report db.Report
+	
+	err := json.NewDecoder(r.Body).Decode(&report)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return 
+    }
+
+	err = validator.New().Struct(report)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return 
+	}
+
+	err = dBase.NewReport(report)
+	response := Response{Error:err, Data: report}
+	GenerateHandler(w, r, response)
+}
+
 func updateUser(w http.ResponseWriter, r *http.Request) {
 	var user db.User
 
@@ -354,6 +401,20 @@ func updateRequest(w http.ResponseWriter, r *http.Request) {
     }
 	
 	err = dBase.UpdateRequest(request)
+	response := Response{Error:err, Data: nil}
+	GenerateHandler(w, r, response)
+}
+
+func updateReport(w http.ResponseWriter, r *http.Request) {
+	var report db.Report
+	
+	err := json.NewDecoder(r.Body).Decode(&report)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+    }
+	
+	err = dBase.UpdateReport(report)
 	response := Response{Error:err, Data: nil}
 	GenerateHandler(w, r, response)
 }
@@ -479,6 +540,8 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/getRequests/article/{id}", getRequestsByArticle).Methods("GET")
 	router.HandleFunc("/api/getAnswers/user/{id}", getAnswersByUser).Methods("GET")
 	router.HandleFunc("/api/getAnswers/article/{id}", getAnswersByArticle).Methods("GET")
+	router.HandleFunc("/api/getReports/user/{id}", getReportsByUser).Methods("GET")
+	router.HandleFunc("/api/getReports/article/{id}", getReportsByArticle).Methods("GET")
 
 	router.HandleFunc("/api/newFavorite", newFavorite).Methods("PUT")
 	router.HandleFunc("/api/newComment", newComment).Methods("PUT")

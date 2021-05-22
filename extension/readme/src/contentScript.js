@@ -1,5 +1,5 @@
 'use strict';
-
+import {articleStorage} from './chromeHelper';
 // Content script file will run in the context of web page.
 // With content script you can manipulate the web pages using
 // Document Object Model (DOM).
@@ -31,6 +31,9 @@ if (result && result.og) {
         console.log(response)
       }
     );
+  }
+  else{
+    articleStorage.set("noArticle" , ()=>{});
   }
 }
 

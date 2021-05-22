@@ -28,3 +28,7 @@ export function updateUser(UserData){
         return axiosClient.post(`${config["updateUserPath"]}` , Json.stringify(UserData))
     }
 }
+
+export function toggleLike(user,articleId){
+    //TODO
+}

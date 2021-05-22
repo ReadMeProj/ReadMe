@@ -22,10 +22,13 @@ type ReadMeDatabase interface {
 
 	GetRequests(key string, value interface{}) ([]Request, error)
 	GetAnswers(key string, value interface{}) ([]Answer, error)
+	GetReports(key string, value interface{}) ([]Report, error)
 	NewRequest(reuqest Request) error
 	NewAnswer(answer Answer) error
+	NewReport(report Report) error
 	UpdateAnswer(answer Answer) error
 	UpdateRequest(request Request) error
+	UpdateReport(report Report) error
 
 	IsAuth(username string, token Token) error
 	Login(username string, password string) (Token, error)
