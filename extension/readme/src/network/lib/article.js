@@ -26,6 +26,6 @@ export function newArticle(articleData) {
 
 export function updateArticle(articleData) {
     if (articleData["id"]) {
-        return axiosClient.post(`${config["updateArticlePath"]}`, Json.stringify(articleData))
+        return axiosClient.post(`${config["updateArticlePath"]}`, JSON.stringify(articleData))
     }
 }
