@@ -1,8 +1,11 @@
-import React from "react";
-import { Media, Container, Row, Col , Card, Button } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Media, Container, Row, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { GrLike , GrDislike } from "react-icons/gr"
+import { GrLike, GrDislike } from "react-icons/gr"
+import {AiOutlineHeart, AiFillHeart} from "react-icons/ai"; 
 import { isAuth, userStorage } from "../../chromeHelper";
+import {toggleLike} from "../../network/lib/user"
+
 
 function ArticleCard(params) {
   console.log(params);
@@ -13,8 +16,14 @@ function ArticleCard(params) {
   var articleFakeVotes = {};
   var isReview = false; //TODO- read from params.
   var fakePercent;
-  var isLiked = false;
-  var heart;
+  const [isLiked, setIsLike] = useState(false);
+
+
+  useEffect(()=>{
+    if(isLiked){
+      // setIsLike(false);
+    }
+  })
 
   // Set up parameters.
   if (params != null) {
@@ -67,46 +76,43 @@ function ArticleCard(params) {
     signedIn = isAuth;
   })
 
-  userStorage.get(user => {
-    if (signedIn && user) {
-      if (isLiked) {
-        heart = (
-          <FontAwesomeIcon
-            icon={["fas", "heart"]}
-            size="lg"
-            color="red"
-            onClick={() => toggleArticleLike(articleID, user)}
-            cursor="pointer"
-          />
-        );
-      } else {
-        heart = (
-          <FontAwesomeIcon
-            icon={["fas", "heart"]}
-            size="lg"
-            color="grey"
-            onClick={() => toggleArticleLike(articleID, user)}
-            cursor="pointer"
-          />
-        );
+  const onSeeMore = () => {
+    var redirectURL;
+    userStorage.get(userCredentials => {
+      if (userCredentials) {
+        redirectURL = `http://localhost:8080/?articleId=${articleID}&username=${userCredentials.userName}&password=${userCredentials.password}`;
       }
-    }
-  })
+      else {
+        redirectURL = `http://localhost:8080/`;
+      }
+      window.open(`${redirectURL}`);
+    });
+  }
+
+  const toggleLike = ()=>{
+    setIsLike(!isLiked);
+    // toggleLike() TODO
+  }
 
 
   return (
     <Container fluid="md">
-      <Container>
-        <Card bg='light' text='dark' style={{ width: '13rem' }} className="mb-2">
-          <Card.Header>Some Meta-data regard the article</Card.Header>
-          <Card.Body>
-            {articleFakeVotes.upvote} <GrLike/> {articleFakeVotes.downvote} <GrDislike/>
-          </Card.Body>
-          <Card.Text>
-            <Button variant='link' size='sm' onClick={() => window.open(`http://localhost:8080?articleId=${articleID}`)} >See more</Button>
-          </Card.Text>
-        </Card>
-      </Container>
+      <Row xl={1}>
+        {isLiked ? <AiFillHeart  onClick={toggleLike}/> : <AiOutlineHeart onClick={toggleLike}/>}
+      </Row>
+      <Row xl={7}>
+        <Container>
+          <Card bg='light' text='dark' style={{ width: '13rem' }} className="mb-2">
+            <Card.Header>Some Meta-data regard the article</Card.Header>
+            <Card.Body>
+              {articleFakeVotes.upvote} <GrLike /> {articleFakeVotes.downvote} <GrDislike />
+            </Card.Body>
+            <Card.Text>
+              <Button variant='link' size='sm' onClick={onSeeMore} >See more</Button>
+            </Card.Text>
+          </Card>
+        </Container>
+      </Row>
     </Container>
   )
 }
