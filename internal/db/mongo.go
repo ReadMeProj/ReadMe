@@ -158,6 +158,25 @@ func (db *MongoController) updateOneInDB(dbName string, collectionName string, k
 	return err
 }
 
+// updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
+func (db *MongoController) IncrementOneInDB(dbName string, collectionName string, key string, value string, 
+	increment string, incrementBy int) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{{Key: key, Value: value}}
+	update := bson.M{increment: incrementBy}
+	
+	update = bson.M{"$inc": update}
+
+	res, err := collection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err
+}
+
 func (db *MongoController) GetUser(key string, value interface{}) (User, error) {
 	var user User
 
