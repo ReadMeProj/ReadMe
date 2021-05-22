@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Formik, Field, Form, useField, useFormikContext } from "formik";
 
+import updateArticle from "../../network/lib/article";
+import {articleStorage, userStorage} from '../../chromeHelper'
+
 
 
 class Report extends Component {
@@ -10,15 +13,21 @@ class Report extends Component {
         <Formik
           initialValues={{
             id:"123",
-            mainCat: "",
-            subCat: "",
+            cat: "",
+            
             fake: "",
             rating: "0",
             haveProof: false,
             proof: "",
           }}
           onSubmit={(values) => {
-            alert(JSON.stringify(values, null, 2));
+            // addvalues
+            articleStorage.get((article) => { values.article_id=article.article_id;})
+            userStorage.get((user) => { values.user_id=user.user_id;})
+
+            // updatea_article(values)
+            updateArticle(values)
+            // alert(JSON.stringify(values, null, 2));
             console.log(JSON.stringify(values, null, 2))
 
           }}
@@ -26,15 +35,8 @@ class Report extends Component {
           <Form>
             <div className="cat">
               <label htmlFor="category"> Category:</label>
-              <Field as="select" name="mainCat">
+              <Field as="select" name="cat">
                 <option value="None">Select category</option>
-                <option value="news">News</option>
-                <option value="review">Review</option>
-              </Field>
-            </div>
-            <div className="sub">
-              <label htmlFor="subCategory"> Sub Category:</label>
-              <Field as="select" name="subCat">
                 <option value="politics">Politics</option>
                 <option value="sport">Sports</option>
                 <option value="finance">Finance</option>
