@@ -14,11 +14,8 @@ class Report extends Component {
           initialValues={{
             id:"123",
             cat: "",
-            
             fake: "",
             rating: "0",
-            haveProof: false,
-            proof: "",
           }}
           onSubmit={(values) => {
             // addvalues
@@ -55,14 +52,6 @@ class Report extends Component {
                 <option value="fake">Fake/ Sponsored</option>
                 <option value="none">Not Sure</option>
               </Field>
-            </div>
-            <div className="prbool">
-              <label htmlFor="haveProof">Have a Proof: </label>
-              <Field type="checkbox" name="haveProof" />
-            </div>
-            <div className="proo">
-              <label htmlFor="proof">Proof Address:</label>
-              <Field name="proof" placeholder="http://" />
             </div>
             <div className="rat">
               <label htmlFor="rating">Rate it:</label>
