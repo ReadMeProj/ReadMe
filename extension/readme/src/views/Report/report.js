@@ -4,45 +4,55 @@ import { Formik, Field, Form, useField, useFormikContext } from "formik";
 import {updateArticle} from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
 
+const sleep = (milliseconds) => {
+  return new Promise(resolve => setTimeout(resolve, milliseconds))
+  }
+
 function Report() {
   return (
     <div className="form">
       <Formik
         initialValues={{
           id: "123",
-          cat: "",
-          fake: "",
-          rating: "0",
+          category: "null",
+          fake: "null",
+          rating: "null",
         }}
         onSubmit={(values, { setSubmitting }) => {
-          // addvalues
+          var ids={articleid:"",userid:""};
           articleStorage.get((article) => {
-            values.id = article.article_id;
+            ids['articleid'] = article.id;
+            console.log(article);
           });
           userStorage.get((user) => {
-            values.user_id = user.user_id;
+            ids['userid'] = user.userId;
+            console.log(user);
           });
-          alert(JSON.stringify(values));
+          console.log(ids);
+          console.log(values);
+          sleep(1000).then(()=>{var data=Object.assign({},ids,values);
 
-          // updatea_article(values)
-          updateArticle(values)
+          alert(JSON.stringify(data));
+
+          updateArticle(data)
             .then((res) => {
               console.log(res);
               setSubmitting(false);
             })
             .catch((err) => {
               console.log(err);
-            });
+            });})
+          
           // alert(JSON.stringify(values, null, 2));
-          console.log(JSON.stringify(values, null, 2));
+          //console.log(JSON.stringify(values, null, 2));
         }}
         validate={() => ({})}
       >
         <Form>
           <div className="cat">
             <label htmlFor="category"> Category:</label>
-            <Field as="select" name="cat">
-              <option value="None">Select category</option>
+            <Field as="select" name="category">
+              <option value="null">Select category</option>
               <option value="politics">Politics</option>
               <option value="sport">Sports</option>
               <option value="finance">Finance</option>
@@ -57,6 +67,7 @@ function Report() {
           <div className="fak">
             <label htmlFor="fake"> You Think it is:</label>
             <Field as="select" name="fake">
+            <option value="null">What's between the lines</option>
               <option value="true">Real/ Authentic</option>
               <option value="fake">Fake/ Sponsored</option>
               <option value="none">Not Sure</option>
@@ -65,7 +76,7 @@ function Report() {
           <div className="rat">
             <label htmlFor="rating">Rate it:</label>
             <Field as="select" name="rating">
-              <option value="">Select rating</option>
+              <option value="null">Select rating</option>
               <option value="0">0</option>
               <option value="1">1</option>
               <option value="2">2</option>
