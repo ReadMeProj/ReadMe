@@ -14,6 +14,7 @@ import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
 import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
+import UserScore from "./components/UserScore";
 function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
@@ -50,6 +51,12 @@ function App() {
     );
     history.push(`/login`);
   }
+  let params = new URLSearchParams(document.location.search.substring(1));
+  let articleID = params.get("articleId"); // Will be null if there is no articleId value in the URL.
+  if (articleID) {
+    history.push("moreInfo?articleId=" + articleID);
+  }
+
   return (
     <div className="App">
       <Router>
@@ -67,6 +74,7 @@ function App() {
               <br />
               <div style={{ paddingTop: "100px" }}></div>
               <NavBar />
+              <UserScore />
               <FontAwesomeIcon
                 icon={["fas", "angle-up"]}
                 size="lg"
@@ -98,7 +106,7 @@ function App() {
                   <Route path="/login">
                     <LoginPage />
                   </Route>
-                  <Route path="/moreInfo">
+                  <Route exact path="/moreInfo">
                     <ArticlePage />
                   </Route>
                 </Switch>

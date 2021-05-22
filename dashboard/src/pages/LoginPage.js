@@ -23,8 +23,9 @@ class LoginPage extends Component {
     if (response.data.error == null) {
       this.setState({ userToken: response.data });
       // Store the response in localStorage
-      window.localStorage.setItem("Token", response.data.Data);
+      window.localStorage.setItem("Token", response.data.Data.token);
       window.localStorage.setItem("Username", this.state.userName);
+      window.localStorage.setItem("UserId", response.data.Data.id);
       window.location.href = "/";
     } else if (response.data.error === 401) {
       alert("Password doesn't match");

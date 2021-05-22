@@ -7,19 +7,49 @@ import { config } from "../config.js";
       It's the code responsibility to catch it and know what the response looks like.
   */
 
-//const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 });
+//const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 }); //TODO
 
 /// Get all articles.
 export async function getArticles() {
   return axiosClient.get(`${config["getArticlesPath"]}`);
 }
 
+/// Get article by ID.
+export async function getArticleById(articleId) {
+  var userName = window.localStorage.getItem("Username");
+  var token = window.localStorage.getItem("Token");
+  let headers = {
+    headers: {
+      Token: token,
+      Username: userName,
+    },
+  };
+
+  return axiosClient.get(
+    `${config["getArticlePath"] + "/" + articleId}`,
+    headers
+  );
+}
+
 /// Get user liked articles.
+export async function getUserFavorites() {
+  var userId = window.localStorage.getItem("UserId");
+  return axiosClient.get(`${config["getFavoritesByUserPath"] + "/" + userId}`);
+}
+
+/// Fill info for article that was requested.
+export async function fillRequest(requestID, articleID, reportJson) {
+  var userId = window.localStorage.getItem("UserId");
+  var answer = {
+    requestid: requestID,
+    userid: userId,
+    articleid: articleID,
+    date: new Date().toLocaleString() + "",
+    report: reportJson,
+  };
+  return axiosClient.put(`${config.newAnswerPath}`, answer);
+}
 
 /// Get articles by query.
 
 /// Get article by some filter from the filterEnum.
-
-/// Fill info for article that was requested.
-
-/// Remove article request.
