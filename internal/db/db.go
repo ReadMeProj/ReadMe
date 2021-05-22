@@ -33,4 +33,6 @@ type ReadMeDatabase interface {
 	IsAuth(username string, token Token) error
 	Login(username string, password string) (Token, error)
 	Logout(username string) error
+
+	IncrementOneInDB(dbName string, collectionName string, key string, value string, increment string, incrementBy int) error
 }

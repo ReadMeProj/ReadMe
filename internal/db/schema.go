@@ -106,8 +106,8 @@ type ReadMeLabel struct {
 }
 
 type Votes struct {
-	UpVote   int `json:"upvote"`
-	DownVote int `json:"downvote"`
+	UpVote   int `json:"up"`
+	DownVote int `json:"down"`
 }
 
 type Credentials struct { 

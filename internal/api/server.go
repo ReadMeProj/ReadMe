@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"strings"
 
 	"github.com/gorilla/mux"
 	"github.com/go-playground/validator"
@@ -419,6 +420,50 @@ func updateReport(w http.ResponseWriter, r *http.Request) {
 	GenerateHandler(w, r, response)
 }
 
+func updateVotes(w http.ResponseWriter, r *http.Request) {	
+	_type := ExtractFromRequest(r, "type")
+	_type = strings.ToLower(_type)
+	id   := ExtractFromRequest(r, "id")
+	vote := ExtractFromRequest(r, "vote")
+	vote = strings.ToLower(vote)
+
+	fmt.Printf("type=%s, id=%s, vote=%s", _type, id, vote)
+	
+	if vote != "up" && vote != "down" {
+		http.Error(w, "Vote should be either up or down", http.StatusBadRequest)
+        return
+	}
+
+	incrementBy := 1
+
+	err := error(nil)
+	dbName := "ReadMeDB"
+	switch _type {
+	case "article":
+		increment := fmt.Sprintf("%s.%s", "fakevotes", vote)
+		fmt.Printf("Update article votes: increment=%s, id=%s", increment, id)
+		err = dBase.IncrementOneInDB(dbName, "articles", "id", id, increment, incrementBy)
+	case "request":
+		increment := fmt.Sprintf("%s.%s", "votes", vote)
+		fmt.Printf("Update request votes: increment=%s, id=%s", increment, id)
+		err = dBase.IncrementOneInDB(dbName, "requests", "id", id, increment, incrementBy)
+	case "answer":
+		increment := fmt.Sprintf("%s.%s", "votes", vote)
+		fmt.Printf("Update answer votes: increment=%s, id=%s", increment, id)
+		err = dBase.IncrementOneInDB(dbName, "answers", "id", id, increment, incrementBy)
+	case "report":
+		increment := fmt.Sprintf("%s.%s", "votes", vote)
+		fmt.Printf("Update report votes: increment=%s, id=%s", increment, id)
+		err = dBase.IncrementOneInDB(dbName, "reports", "id", id, increment, incrementBy)
+	default:
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+	}
+	
+	response := Response{Error:err, Data: nil}
+	GenerateHandler(w, r, response)	
+}
+
 func login(w http.ResponseWriter, r *http.Request) {
 	var credentials db.Credentials
 	
@@ -547,8 +592,12 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/newComment", newComment).Methods("PUT")
 	router.HandleFunc("/api/newRequest", newRequest).Methods("PUT")
 	router.HandleFunc("/api/newAnswer", newAnswer).Methods("PUT")
+	router.HandleFunc("/api/newReport", newReport).Methods("PUT")
 	router.HandleFunc("/api/updateAnswer", updateAnswer).Methods("POST")
 	router.HandleFunc("/api/updateRequest", updateRequest).Methods("POST")
+	router.HandleFunc("/api/updateReport", updateReport).Methods("POST")
+
+	router.HandleFunc("/api/votes/{type}/{id}/{vote}", updateVotes).Methods("POST")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")
