@@ -1,7 +1,7 @@
 import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { getArticles } from "../network/lib/apiArticleFunctions";
+import { getUserFavorites } from "../network/lib/apiArticleFunctions";
 import SearchBar from "../components/SearchBar";
 import SearchFilterBox from "../components/SearchFilters";
 class LikesPage extends Component {
@@ -14,7 +14,7 @@ class LikesPage extends Component {
   }
 
   async componentDidMount() {
-    await getArticles().then((response) =>
+    await getUserFavorites().then((response) =>
       this.setState({ articlesData: response.data["Data"] })
     );
   }
@@ -34,13 +34,7 @@ class LikesPage extends Component {
             ? []
             : articles.map((article) => (
                 <dd key={article.id}>
-                  <ArticleCard
-                    title={article.name}
-                    content={`Written by ${article.author}`}
-                    url={article.url}
-                    id={article.id}
-                    isLiked={false} //TODO
-                  />
+                  <ArticleCard articleId={article.id} />
                 </dd>
               ))}
         </dl>
