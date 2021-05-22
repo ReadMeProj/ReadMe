@@ -45,18 +45,19 @@ export const userStorage = {
     },
     set: (userCredentials, cb) => {
         chrome.storage.local.set(
-            {
-                readMeUserId: userCredentials.userId,
-                readMeUserToken : userCredentials.token,
-                readMeUserName: userCredentials.userName,
-                readMeUserPassword: userCredentials.password
-            },
+            { readMeUserCredentials: userCredentials },
             () => {
                 cb();
             }
         );
     },
 };
+
+export function clearStorage() {
+    chrome.storage.local.clear(function (obj) {
+        console.log("cleared");
+    });
+}
 
 
 
