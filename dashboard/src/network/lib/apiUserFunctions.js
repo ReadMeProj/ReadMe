@@ -9,9 +9,10 @@ import { config } from "../config.js";
 
 /// Check if the current session has a valid token.
 export function isLoggedIn() {
-  const loggedInUser = localStorage.getItem("UserId");
-  const loggedInToken = localStorage.getItem("Token");
-  return loggedInUser != null && loggedInToken != null;
+  return true;
+  // const loggedInUser = localStorage.getItem("UserId");
+  // const loggedInToken = localStorage.getItem("Token");
+  // return loggedInUser != null && loggedInToken != null;
 }
 
 /// Send a POST request with the user cardinals to get a session token.
@@ -25,12 +26,12 @@ export async function login(userName, password) {
 /// Send a POST request to log the user out.
 export async function logout(token, username) {
   if (token && username) {
-    let headers = {
-      headers: {
-        Token: token,
-        UserName: username,
-      },
-    };
+    // let headers = {
+    //   headers: {
+    //     Token: token,
+    //     UserName: username,
+    //   },
+    // };
     localStorage.clear();
     window.location.href = "/";
     return;
@@ -46,7 +47,7 @@ export async function logout(token, username) {
 export async function updateInfo(params) {}
 
 /// Send PUT request to update user likes.
-export async function likeArticle(params) {}
+export async function togglelikeArticle(articleID) {}
 
 /// Send PUT request to update user points.
 export async function addScore(params) {}

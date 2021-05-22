@@ -12,6 +12,8 @@ import {
   faHeart,
   faAngleUp,
   faDoorOpen,
+  faArrowAltCircleUp,
+  faArrowAltCircleDown,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -23,6 +25,8 @@ library.add(
   faHome,
   faHeart,
   faAngleUp,
-  faDoorOpen
+  faDoorOpen,
+  faArrowAltCircleUp,
+  faArrowAltCircleDown
   // more icons go here
 );

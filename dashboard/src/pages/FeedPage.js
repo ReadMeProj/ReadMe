@@ -34,14 +34,7 @@ class FeedPage extends Component {
             ? []
             : articles.map((article) => (
                 <dd key={article.id}>
-                  <ArticleCard
-                    title={article.name}
-                    content={`Written by ${article.author}`}
-                    url={article.url}
-                    id={article.id}
-                    isLiked={false} //TODO
-                    image={article.image}
-                  />
+                  <ArticleCard articleId={article.id} />
                 </dd>
               ))}
         </dl>

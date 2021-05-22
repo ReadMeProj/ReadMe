@@ -1,6 +1,5 @@
 import "../App.css";
 import React, { Component } from "react";
-import ArticleCard from "../components/ArticleCard";
 import { getArticleById } from "../network/lib/apiArticleFunctions";
 
 class ArticlePage extends Component {
@@ -28,7 +27,7 @@ class ArticlePage extends Component {
     }
   }
   render() {
-    return <ArticleCard />;
+    return <div></div>;
   }
 }
 
