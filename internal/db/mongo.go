@@ -63,6 +63,19 @@ func getMongoClient(mongoIP string) *mongo.Client {
 	return client
 }	
 
+func (db *MongoController) GetByKey(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{{Key: key, Value: value}}
+
+	err := collection.FindOne(context.TODO(), filter).Decode(pResult)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err	
+}
+
 // extractOneByIDFromDB extracts multiple results from mongo DB, by filtering with ID type.
 func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)

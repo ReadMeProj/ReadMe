@@ -35,4 +35,5 @@ type ReadMeDatabase interface {
 	Logout(username string) error
 
 	IncrementOneInDB(dbName string, collectionName string, key string, value string, increment string, incrementBy int) error
+	GetByKey(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error
 }

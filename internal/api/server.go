@@ -420,6 +420,53 @@ func updateReport(w http.ResponseWriter, r *http.Request) {
 	GenerateHandler(w, r, response)
 }
 
+func getByKey(w http.ResponseWriter, r *http.Request) {
+	_type := ExtractFromRequest(r, "type")
+	_type = strings.ToLower(_type)
+	key  := ExtractFromRequest(r, "key")
+	val   := ExtractFromRequest(r, "val")
+
+	fmt.Printf("type=%s, key=%s, val=%s", _type, key, val)
+	
+	err := error(nil)
+	dbName := "ReadMeDB"
+	collection := ""
+	response := Response{}
+
+	switch _type {
+	case "user":
+		var data db.User
+		collection = "users"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "article":
+		var data db.Article 
+		collection = "articles"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "request":
+		var data db.Request 
+		collection = "requests"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "answer":
+		var data db.Answer 
+		collection = "answers"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "report":
+		var data db.Report 
+		collection = "reports"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	default:
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+	}
+	
+	GenerateHandler(w, r, response)	
+}
+
 func updateVotes(w http.ResponseWriter, r *http.Request) {	
 	_type := ExtractFromRequest(r, "type")
 	_type = strings.ToLower(_type)
@@ -598,6 +645,7 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/updateReport", updateReport).Methods("POST")
 
 	router.HandleFunc("/api/votes/{type}/{id}/{vote}", updateVotes).Methods("POST")
+	router.HandleFunc("/api/{type}/{key}/{val}", getByKey).Methods("GET")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")
