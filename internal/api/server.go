@@ -91,6 +91,19 @@ func getFavoritesByUser(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getFavoriteByUserArticle(w http.ResponseWriter, r *http.Request) {
+	articleid  := ExtractFromRequest(r, "articleid")
+	userid     := ExtractFromRequest(r, "userid")
+
+	jsonData, err := dBase.GetFavorite("articleid", articleid, "userid", userid)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(w, r, response)
+}
+
 func getRequests(key string, value interface{}) (interface{}, error) {
 	jsonData, err := dBase.GetRequests(
 		key,
@@ -423,7 +436,7 @@ func updateReport(w http.ResponseWriter, r *http.Request) {
 func getByKey(w http.ResponseWriter, r *http.Request) {
 	_type := ExtractFromRequest(r, "type")
 	_type = strings.ToLower(_type)
-	key  := ExtractFromRequest(r, "key")
+	key   := ExtractFromRequest(r, "key")
 	val   := ExtractFromRequest(r, "val")
 
 	fmt.Printf("type=%s, key=%s, val=%s", _type, key, val)
@@ -625,6 +638,7 @@ func StartAPIServer(mongoIP string) {
 
 	router.HandleFunc("/api/getFavorites/user/{id}", getFavoritesByUser).Methods("GET")
 	router.HandleFunc("/api/getFavorites/article/{id}", getFavoritesByArticle).Methods("GET")
+	router.HandleFunc("/api/favorite/article/{articleid}/user/{userid}", getFavoriteByUserArticle).Methods("GET")
 	router.HandleFunc("/api/getComments/user/{id}", getCommentsByUser).Methods("GET")
 	router.HandleFunc("/api/getComments/article/{id}", getCommentsByArticle).Methods("GET")
 
@@ -646,6 +660,7 @@ func StartAPIServer(mongoIP string) {
 
 	router.HandleFunc("/api/votes/{type}/{id}/{vote}", updateVotes).Methods("POST")
 	router.HandleFunc("/api/{type}/{key}/{val}", getByKey).Methods("GET")
+	
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")

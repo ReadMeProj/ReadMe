@@ -15,6 +15,7 @@ type ReadMeDatabase interface {
 	UpdateUser(user User) error
 	UpdateArticle(article Article) error
 
+	GetFavorite(key1 string, value1 interface{}, key2 string, value2 string) (Favorite, error)
 	GetFavorites(key string, value interface{}) ([]Favorite, error)
 	GetComments(key string, value interface{}) ([]Comment, error)
 	NewFavorite(favorite Favorite) error

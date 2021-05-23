@@ -234,6 +234,21 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 	}
 
 	return articles, err	
+}	
+
+func (db *MongoController) GetFavorite(key1 string, value1 interface{}, key2 string, value2 string) (Favorite, error) {
+	var favorite Favorite
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoFavoritesCollectionName)
+
+	filter := bson.D{{Key: key1, Value: value1}, {Key: key2, Value: value2}}
+
+	err := collection.FindOne(context.TODO(), filter).Decode(&favorite)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return favorite, err	
 }
 
 func (db *MongoController) GetFavorites(key string, value interface{}) ([]Favorite, error) {
