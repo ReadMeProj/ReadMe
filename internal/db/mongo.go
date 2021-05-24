@@ -21,6 +21,7 @@ const mongoCommentsCollectionName = "comments"
 const mongoRequestsCollectionName = "requests"
 const mongoAnswersCollectionName = "answers"
 const mongoReportsCollectionName = "reports"
+const mongoVotesCollectionName = "votes"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
@@ -67,6 +68,20 @@ func (db *MongoController) GetByKey(dbName string, collectionName string, key st
 	collection := db.client.Database(dbName).Collection(collectionName)
 
 	filter := bson.D{{Key: key, Value: value}}
+
+	err := collection.FindOne(context.TODO(), filter).Decode(pResult)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err	
+}
+
+func (db *MongoController) GetByDoubleKey(dbName string, collectionName string, key1 string, val1 interface{},
+										  key2 string, val2 interface{}, pResult interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{{Key: key1, Value: val1}, {Key: key2, Value: val2}}
 
 	err := collection.FindOne(context.TODO(), filter).Decode(pResult)
 	if err != nil {
@@ -148,6 +163,8 @@ func (db *MongoController) insertOneToDB(dbName string, collectionName string, n
 	log.Println(res)
 	return err
 }
+
+
 
 // updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
 func (db *MongoController) updateOneInDB(dbName string, collectionName string, key string, value string, updateObject map[string]interface{}) error {
@@ -364,6 +381,15 @@ func (db *MongoController) NewComment(comment Comment) error {
 
 func (db *MongoController) NewFavorite(favorite Favorite) error {
 	err := db.insertOneToDB(mongoDatabaseName, mongoFavoritesCollectionName, favorite)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db *MongoController) NewVoteRegistry(vote VoteRegistery) error {
+	err := db.insertOneToDB(mongoDatabaseName, mongoVotesCollectionName, vote)
 	if err != nil {
 		log.Println(err)
 	}

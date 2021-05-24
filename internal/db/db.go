@@ -27,6 +27,7 @@ type ReadMeDatabase interface {
 	NewRequest(reuqest Request) error
 	NewAnswer(answer Answer) error
 	NewReport(report Report) error
+	NewVoteRegistry(vote VoteRegistery) error
 	UpdateAnswer(answer Answer) error
 	UpdateRequest(request Request) error
 	UpdateReport(report Report) error
@@ -37,4 +38,5 @@ type ReadMeDatabase interface {
 
 	IncrementOneInDB(dbName string, collectionName string, key string, value string, increment string, incrementBy int) error
 	GetByKey(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error
+	GetByDoubleKey(dbName string, collectionName string, key1 string, val1 interface{}, key2 string, val2 interface{}, pResult interface{}) error
 }
