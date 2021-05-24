@@ -105,6 +105,12 @@ type ReadMeLabel struct {
 	Score     float32 `json:"score"`
 }
 
+type VoteRegistery struct {
+	UserID 		ID `json:"userid"`
+	ItemID 		ID `json:"itemid"`
+	Up 			bool `json:"up"`
+}
+
 type Votes struct {
 	Up   int `json:"up"`
 	Down int `json:"down"`
