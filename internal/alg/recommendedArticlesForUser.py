@@ -7,7 +7,21 @@ from networkx.algorithms import bipartite
 app = Flask(__name__)
 
 # Constants
-NOT_ENOUGH_DATA_THRESHOLD = 100
+NOT_ENOUGH_DATA_THRESHOLD = 20
+
+from pymongo import MongoClient
+# pprint library is used to make the output look more pretty
+from pprint import pprint
+
+# connect to MongoDB, change the << MONGODB URL >> to reflect your own connection string
+client = MongoClient("localhost", 27017)
+db = client.admin
+# Issue the serverStatus command and print the results
+serverStatusResult = db.command("serverStatus")
+pprint(serverStatusResult)
+
+MongoDb = client["ReadMeDB"]
+favorites = MongoDb["favorites"]
 
 
 # Function that getting the data as we get it from the api and returns a connected nx bipartite Graph
@@ -21,10 +35,11 @@ def prep(JSON_Graph):
 def generic_recommendation(raw_graph, num_of_articles):
     articles_by_degree = []
     for connected_component in nx.connected_components(raw_graph):
-        connected_component = nx.subgraph(raw_graph , connected_component)
+        connected_component = nx.subgraph(raw_graph, connected_component)
         users, articles = bipartite.sets(connected_component)
-        articles_by_degree.append(
-            sorted(filter(lambda node: node in articles, connected_component.degree), key=itemgetter(1)))
+        articles_degree = list(filter(lambda node: node[0] in articles, connected_component.degree))
+        articles_by_degree.extend(
+            sorted(articles_degree, key=itemgetter(1), reverse=True))
     articles, _ = zip(*articles_by_degree)
     return articles[:num_of_articles]
 
@@ -36,6 +51,7 @@ def get_graph_data():
 
 @app.route("/<int:user_id>/<int:num_of_articles>", methods=['GET'])
 def recommendation(user_id, num_of_articles):
+    JSON_Graph = list(favorites.find({}))
     JSON_G = get_graph_data()
     raw_graph = prep(JSON_G)
     connected_component = nx.algorithms.node_connected_component(raw_graph, user_id)
