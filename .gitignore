@@ -96,3 +96,4 @@ $RECYCLE.BIN/
 mongo_data/
 shared_data/
 venv/
+.idea/

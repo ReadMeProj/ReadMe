@@ -15,6 +15,7 @@ type ReadMeDatabase interface {
 	UpdateUser(user User) error
 	UpdateArticle(article Article) error
 
+	GetFavorite(key1 string, value1 interface{}, key2 string, value2 string) (Favorite, error)
 	GetFavorites(key string, value interface{}) ([]Favorite, error)
 	GetComments(key string, value interface{}) ([]Comment, error)
 	NewFavorite(favorite Favorite) error
@@ -26,6 +27,7 @@ type ReadMeDatabase interface {
 	NewRequest(reuqest Request) error
 	NewAnswer(answer Answer) error
 	NewReport(report Report) error
+	NewVoteRegistry(vote VoteRegistery) error
 	UpdateAnswer(answer Answer) error
 	UpdateRequest(request Request) error
 	UpdateReport(report Report) error
@@ -35,4 +37,6 @@ type ReadMeDatabase interface {
 	Logout(username string) error
 
 	IncrementOneInDB(dbName string, collectionName string, key string, value string, increment string, incrementBy int) error
+	GetByKey(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error
+	GetByDoubleKey(dbName string, collectionName string, key1 string, val1 interface{}, key2 string, val2 interface{}, pResult interface{}) error
 }
