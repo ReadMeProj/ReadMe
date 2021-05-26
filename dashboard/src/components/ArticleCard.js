@@ -14,10 +14,6 @@ class ArticleCard extends Component {
       userData: [],
       favoritesData: [],
       articleId: props.articleId,
-      //   liked: false,
-      //   votes: [0, 0],
-      //   relscore: 0,
-      //   userVote: 0,
     };
   }
 
@@ -31,21 +27,15 @@ class ArticleCard extends Component {
       console.log("Missing articleId!");
     }
 
-    await getUserById().then((response) => {
-      if (response.data["Error"] == null)
-        this.setState({ userData: response.data["Data"] });
-    });
+    // await getUserById().then((response) => {
+    //   if (response.data["Error"] == null)
+    //     this.setState({ userData: response.data["Data"] });
+    // });
 
-    await getUserFavorites().then((response) => {
-      if (response.data["Error"] == null)
-        this.setState({ favoritesData: response.data["Data"] });
-    });
-
-    // this.state.relscore = this.state.articleData.relscore;
-    // this.state.votes = [
-    //   this.state.articleData.fakevotes.up,
-    //   this.state.articleData.fakevotes.up,
-    // ];
+    // await getUserFavorites().then((response) => {
+    //   if (response.data["Error"] == null)
+    //     this.setState({ favoritesData: response.data["Data"] });
+    // });
   }
 
   updateLikeButton() {
