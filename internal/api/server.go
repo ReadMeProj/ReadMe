@@ -91,6 +91,19 @@ func getFavoritesByUser(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getFavoriteByUserArticle(w http.ResponseWriter, r *http.Request) {
+	articleid  := ExtractFromRequest(r, "articleid")
+	userid     := ExtractFromRequest(r, "userid")
+
+	jsonData, err := dBase.GetFavorite("articleid", articleid, "userid", userid)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(w, r, response)
+}
+
 func getRequests(key string, value interface{}) (interface{}, error) {
 	jsonData, err := dBase.GetRequests(
 		key,
@@ -420,12 +433,128 @@ func updateReport(w http.ResponseWriter, r *http.Request) {
 	GenerateHandler(w, r, response)
 }
 
+func getByKey(w http.ResponseWriter, r *http.Request) {
+	_type := ExtractFromRequest(r, "type")
+	_type = strings.ToLower(_type)
+	key   := ExtractFromRequest(r, "key")
+	val   := ExtractFromRequest(r, "val")
+
+	fmt.Printf("type=%s, key=%s, val=%s", _type, key, val)
+	
+	err := error(nil)
+	dbName := "ReadMeDB"
+	collection := ""
+	response := Response{}
+
+	switch _type {
+	case "user":
+		var data db.User
+		collection = "users"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "article":
+		var data db.Article 
+		collection = "articles"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "request":
+		var data db.Request 
+		collection = "requests"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "answer":
+		var data db.Answer 
+		collection = "answers"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "report":
+		var data db.Report 
+		collection = "reports"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	default:
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+	}
+	
+	GenerateHandler(w, r, response)	
+}
+
+func getAllByKey(w http.ResponseWriter, r *http.Request) {
+	_type := ExtractFromRequest(r, "type")
+	_type = strings.ToLower(_type)
+	key   := ExtractFromRequest(r, "key")
+	val   := ExtractFromRequest(r, "val")
+
+	fmt.Printf("type=%s, key=%s, val=%s", _type, key, val)
+	
+	err := error(nil)
+	dbName := "ReadMeDB"
+	collection := ""
+	response := Response{}
+
+	switch _type {
+	case "user":
+		var data []db.User
+		collection = "users"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "article":
+		var data []db.Article 
+		collection = "articles"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "request":
+		var data []db.Request 
+		collection = "requests"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "answer":
+		var data []db.Answer 
+		collection = "answers"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "report":
+		var data []db.Report 
+		collection = "reports"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	default:
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+	}
+	
+	GenerateHandler(w, r, response)	
+}
+
+func getVoteRegistry(w http.ResponseWriter, r *http.Request) {
+	userID := ExtractFromRequest(r, "userid")
+	itemID := ExtractFromRequest(r, "itemid")
+
+	var vote db.VoteRegistery
+	err := dBase.GetByDoubleKey("ReadMeDB", "votes", "userid", userID, "itemid", itemID, &vote)
+	if err != nil {
+		fmt.Println(err)
+	}
+	response := Response{Error:err, Data: vote}
+	GenerateHandler(w, r, response)	
+}
+
 func updateVotes(w http.ResponseWriter, r *http.Request) {	
 	_type := ExtractFromRequest(r, "type")
 	_type = strings.ToLower(_type)
 	id   := ExtractFromRequest(r, "id")
-	vote := ExtractFromRequest(r, "vote")
+	var vote string 
+	vote = ExtractFromRequest(r, "vote")
 	vote = strings.ToLower(vote)
+	username := r.Header["Username"][0]
+	user, err := dBase.GetUser("username", username)
+	println(username, user.Username, user.ID)
+	if err != nil {
+		http.Error(w, "Problem with provided username", http.StatusBadRequest)
+		fmt.Println(err)
+        return
+	}
 
 	fmt.Printf("type=%s, id=%s, vote=%s", _type, id, vote)
 	
@@ -436,7 +565,7 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 
 	incrementBy := 1
 
-	err := error(nil)
+	err = error(nil)
 	dbName := "ReadMeDB"
 	switch _type {
 	case "article":
@@ -460,6 +589,17 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
         return
 	}
 	
+	// Register vote in mongo
+	if err == nil {
+		var voteReg db.VoteRegistery
+		voteReg = db.VoteRegistery{
+			UserID: user.ID,
+			ItemID: db.ID(id),
+			Up: vote == "up",
+		}
+		err = dBase.NewVoteRegistry(voteReg)
+	} 
+
 	response := Response{Error:err, Data: nil}
 	GenerateHandler(w, r, response)	
 }
@@ -578,6 +718,7 @@ func StartAPIServer(mongoIP string) {
 
 	router.HandleFunc("/api/getFavorites/user/{id}", getFavoritesByUser).Methods("GET")
 	router.HandleFunc("/api/getFavorites/article/{id}", getFavoritesByArticle).Methods("GET")
+	router.HandleFunc("/api/favorite/article/{articleid}/user/{userid}", getFavoriteByUserArticle).Methods("GET")
 	router.HandleFunc("/api/getComments/user/{id}", getCommentsByUser).Methods("GET")
 	router.HandleFunc("/api/getComments/article/{id}", getCommentsByArticle).Methods("GET")
 
@@ -597,7 +738,10 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/updateRequest", updateRequest).Methods("POST")
 	router.HandleFunc("/api/updateReport", updateReport).Methods("POST")
 
-	router.HandleFunc("/api/votes/{type}/{id}/{vote}", updateVotes).Methods("POST")
+	router.HandleFunc("/api/votes/{type}/{id}/{vote}", isAuthorized(updateVotes)).Methods("POST")
+	router.HandleFunc("/api/{type}/{key}/{val}", getByKey).Methods("GET")
+	router.HandleFunc("/api/all/{type}/{key}/{val}", getAllByKey).Methods("GET")
+	router.HandleFunc("/api/vote/{itemid}/user/{userid}", getVoteRegistry).Methods("GET")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")

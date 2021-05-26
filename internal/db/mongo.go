@@ -21,6 +21,7 @@ const mongoCommentsCollectionName = "comments"
 const mongoRequestsCollectionName = "requests"
 const mongoAnswersCollectionName = "answers"
 const mongoReportsCollectionName = "reports"
+const mongoVotesCollectionName = "votes"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
@@ -62,6 +63,54 @@ func getMongoClient(mongoIP string) *mongo.Client {
 
 	return client
 }	
+
+func (db *MongoController) GetByKey(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{{Key: key, Value: value}}
+
+	err := collection.FindOne(context.TODO(), filter).Decode(pResult)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err	
+}
+
+func (db *MongoController) GetAllByKey(dbName string, collectionName string, key string, value interface{}, pResults interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+	
+	findOptions := options.Find()
+	filter := bson.D{{Key: key, Value: value}}
+	
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), pResults)
+	if err != nil {
+		// handle error
+	}
+	
+	return err
+}
+
+func (db *MongoController) GetByDoubleKey(dbName string, collectionName string, key1 string, val1 interface{},
+										  key2 string, val2 interface{}, pResult interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{{Key: key1, Value: val1}, {Key: key2, Value: val2}}
+
+	err := collection.FindOne(context.TODO(), filter).Decode(pResult)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err	
+}
 
 // extractOneByIDFromDB extracts multiple results from mongo DB, by filtering with ID type.
 func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
@@ -135,6 +184,8 @@ func (db *MongoController) insertOneToDB(dbName string, collectionName string, n
 	log.Println(res)
 	return err
 }
+
+
 
 // updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
 func (db *MongoController) updateOneInDB(dbName string, collectionName string, key string, value string, updateObject map[string]interface{}) error {
@@ -213,14 +264,29 @@ func (db *MongoController) GetArticle(key string, value interface{}) (Article, e
 
 func (db *MongoController) GetArticles() ([]Article, error) {
 	var articles []Article
-	limit := MultipleExtractionLimit
+	//limit := MultipleExtractionLimit
 
-	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(limit))
+	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(20))
 	if err != nil {
 		log.Println(err)
 	}
 
 	return articles, err	
+}	
+
+func (db *MongoController) GetFavorite(key1 string, value1 interface{}, key2 string, value2 string) (Favorite, error) {
+	var favorite Favorite
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoFavoritesCollectionName)
+
+	filter := bson.D{{Key: key1, Value: value1}, {Key: key2, Value: value2}}
+
+	err := collection.FindOne(context.TODO(), filter).Decode(&favorite)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return favorite, err	
 }
 
 func (db *MongoController) GetFavorites(key string, value interface{}) ([]Favorite, error) {
@@ -336,6 +402,15 @@ func (db *MongoController) NewComment(comment Comment) error {
 
 func (db *MongoController) NewFavorite(favorite Favorite) error {
 	err := db.insertOneToDB(mongoDatabaseName, mongoFavoritesCollectionName, favorite)
+	if err != nil {
+		log.Println(err)
+	}
+
+	return err
+}
+
+func (db *MongoController) NewVoteRegistry(vote VoteRegistery) error {
+	err := db.insertOneToDB(mongoDatabaseName, mongoVotesCollectionName, vote)
 	if err != nil {
 		log.Println(err)
 	}

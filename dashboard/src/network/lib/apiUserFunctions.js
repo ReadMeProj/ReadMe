@@ -9,9 +9,10 @@ import { config } from "../config.js";
 
 /// Check if the current session has a valid token.
 export function isLoggedIn() {
-  const loggedInUser = localStorage.getItem("Username");
-  const loggedInToken = localStorage.getItem("Token");
-  return loggedInUser != null && loggedInToken != null;
+  return true;
+  // const loggedInUser = localStorage.getItem("UserId");
+  // const loggedInToken = localStorage.getItem("Token");
+  // return loggedInUser != null && loggedInToken != null;
 }
 
 /// Send a POST request with the user cardinals to get a session token.
@@ -24,16 +25,13 @@ export async function login(userName, password) {
 
 /// Send a POST request to log the user out.
 export async function logout(token, username) {
-  console.log(token + " sjfjdf " + username);
   if (token && username) {
-    let headers = {
-      headers: {
-        Token: token,
-        UserName: username,
-      },
-    };
-    console.log("The headers in logout:" + headers);
-    console.log(axiosClient.post(`${config.logoutPath}`, {}, headers));
+    // let headers = {
+    //   headers: {
+    //     Token: token,
+    //     UserName: username,
+    //   },
+    // };
     localStorage.clear();
     window.location.href = "/";
     return;
@@ -49,12 +47,23 @@ export async function logout(token, username) {
 export async function updateInfo(params) {}
 
 /// Send PUT request to update user likes.
-export async function likeArticle(params) {}
+export async function togglelikeArticle(articleID) {}
 
 /// Send PUT request to update user points.
 export async function addScore(params) {}
 
-/// Get user current point balance.
-export async function getPoints(params) {}
+/// Get user by userId in the localStorage.
+export async function getUserById() {
+  var userName = window.localStorage.getItem("Username");
+  var userId = window.localStorage.getItem("UserId");
+  var token = window.localStorage.getItem("Token");
+  let headers = {
+    headers: {
+      Token: token,
+      Username: userName,
+    },
+  };
+  return axiosClient.get(`${config["getUserPath"] + "/" + userId}`, headers);
+}
 
 /// Add article ID to user's likes.

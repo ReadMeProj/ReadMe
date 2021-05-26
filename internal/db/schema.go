@@ -4,7 +4,7 @@ package db
 type User struct {
 	ID        ID `json:"id"`
 	Username  string `json:"username" validate:"required,gte=2"`
-	Password  string `json:"password" validate:"required,gte=8"`
+	Password  string `json:"password" validate:"required,gte=6"`
 	Email     string `json:"email" validate:"required,email"`
 	FirstName string `json:"firstname" validate:"required,gte=2"`
 	LastName  string `json:"lastname" validate:"required,gte=2"`
@@ -23,6 +23,7 @@ type Article struct {
 	Author string `json:"author" validate:"required,gte=2"`
 	Date   string `json:"date" validate:"required"`
 	Image  string `json:"image" validate:"url"`
+	Site   string `json:"site"`
 	
 	Labels 	   []ReadMeLabel `json:"labels"`
 	FakeVotes  Votes `json:"fakevotes"`
@@ -80,29 +81,18 @@ type Report struct {
 	// Report
 }
 
-type ReadMeReport struct {
-	ID 		  ID `json:"id"`
-	UserID 	  ID `json:"userid" validate:"required"`
-	ArticleID ID `json:"articleid" validate:"required"`
-	Date 	  int64 `json:"date" validate:"required"`
-
-	RequestID ID 	 `json:"requestid"`
-	// If it's an answer to request
-	Content   string `json:"content" validate:"required,lte=128"`
-	Votes	  Votes	  `json:"votes"`
-
-	// If it's just a regular report or an answer
-	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
-	Proof 	  string `json:"url"`
-	Author	  string `json:"author"`
-}
-
 type ID string
 type Token string
 
 type ReadMeLabel struct {
 	Label	  string `json:"label"`
 	Score     float32 `json:"score"`
+}
+
+type VoteRegistery struct {
+	UserID 		ID `json:"userid"`
+	ItemID 		ID `json:"itemid"`
+	Up 			bool `json:"up"`
 }
 
 type Votes struct {
