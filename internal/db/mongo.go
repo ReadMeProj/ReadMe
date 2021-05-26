@@ -264,7 +264,7 @@ func (db *MongoController) GetArticle(key string, value interface{}) (Article, e
 
 func (db *MongoController) GetArticles() ([]Article, error) {
 	var articles []Article
-	limit := MultipleExtractionLimit
+	//limit := MultipleExtractionLimit
 
 	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(20))
 	if err != nil {
