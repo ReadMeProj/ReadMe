@@ -1476,7 +1476,7 @@
         "id": "208f44bf-59d5-47e1-86ca-13c0134e2dfa",
         "name": "Facebook Routinely 'Ignored' Efforts to Manipulate Elections Across the Globe: Whistleblower",
         "url": "https://gizmodo.com/facebook-routinely-ignored-efforts-to-manipulate-electi-1845057347",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "whistleblower",
@@ -1555,7 +1555,7 @@
         "id": "fd3a0189-9527-489f-8142-208d8225dbdb",
         "name": "Oh Crap, Major UN Climate Study Finds",
         "url": "https://earther.gizmodo.com/oh-crap-major-un-climate-study-finds-1844998039",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -1626,7 +1626,7 @@
         "id": "142c505d-1eb9-45da-a1e9-3dc3cf9cb816",
         "name": "Fitbit Sense's ECG App Is Now FDA-Cleared, Just Like the Apple Watch",
         "url": "https://gizmodo.com/fitbit-senses-ecg-app-is-now-fda-cleared-just-like-the-1845050817",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "ecg",
@@ -1689,7 +1689,7 @@
         "id": "d327af51-890d-4732-9d55-6ff72acc1141",
         "name": "Google's Taking on Robocallers With a New Kind of Caller ID",
         "url": "https://gizmodo.com/googles-taking-on-robocallers-with-a-new-kind-of-caller-1844986064",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "kind",
@@ -2159,7 +2159,7 @@
         "id": "bcbfd571-b5d9-47d0-bfcd-077a1d850bf6",
         "name": "Coronavirus: India overtakes Brazil in Covid-19 cases",
         "url": "https://www.bbc.co.uk/news/world-asia-india-54023509",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -2222,7 +2222,7 @@
         "id": "5aa00f2b-1b96-4403-98a2-6032915fd947",
         "name": "India start-ups flounder as tensions with China rise",
         "url": "https://www.bbc.co.uk/news/world-asia-india-54085830",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "companies",
@@ -2289,7 +2289,7 @@
         "id": "0db3f709-0116-4e31-8e6f-0d67c20f379d",
         "name": "England v Australia: Eoin Morgan & Jason Roy fit for ODI series",
         "url": "https://www.bbc.co.uk/sport/cricket/54089815",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -2364,7 +2364,7 @@
         "id": "3b0d58f7-f28c-48b1-bf70-1f7fd7c606a6",
         "name": "Coronavirus: Who would get the vaccine first?",
         "url": "https://www.bbc.co.uk/news/health-54027269",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "successful",
@@ -2490,7 +2490,7 @@
         "id": "cdfa7bff-4443-49a1-b86e-713b98ac68de",
         "name": "India's coronavirus infections top five million mark",
         "url": "https://www.bbc.co.uk/news/world-asia-india-54172321",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "infections",
@@ -2553,7 +2553,7 @@
         "id": "d9cc0566-94c3-4ecf-8894-476a6d6e82fa",
         "name": "India-China dispute: China returns five missing Indian nationals",
         "url": "https://www.bbc.co.uk/news/world-asia-india-54132035",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "missing",
@@ -2624,7 +2624,7 @@
         "id": "2c13d075-90f9-4966-9b36-672e9a644959",
         "name": "How India and China bought peace - for now",
         "url": "https://www.bbc.co.uk/news/world-asia-india-54113621",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "region",
@@ -2683,7 +2683,7 @@
         "id": "8c569248-6d21-4be6-b837-10f257563eeb",
         "name": "Sergio Perez to leave Racing Point at end of year with Sebastian Vettel expected replacement",
         "url": "https://www.bbc.co.uk/sport/formula1/54095848",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "sergio",
@@ -2758,7 +2758,7 @@
         "id": "77a1982e-c6cb-44ba-9faf-2dcb827dc0e7",
         "name": "Sweeping internal Facebook memo: \u201cI have blood on my hands\u201d",
         "url": "https://arstechnica.com/tech-policy/2020/09/sweeping-internal-facebook-memo-i-have-blood-on-my-hands/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -3365,7 +3365,7 @@
         "id": "ecbde7b6-24f2-4b4c-939a-434923b36c2d",
         "name": "Overpriced drugs",
         "url": "https://graphics.reuters.com/USA-DRUGPRICING-LOBBYING/0100B5JY41G/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "overpriced",
@@ -5105,7 +5105,7 @@
         "id": "5bb1ee92-fbcc-4104-a79a-5335203382f1",
         "name": "\u8def\u900f\u4e2d\u6587\u7f51",
         "url": "https://af.reuters.com/article/uk-health-coronavirus-serum-institute-idAFKBN2670P5",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "\u8def\u900f\u4e2d\u6587\u7f51",
@@ -6815,7 +6815,7 @@
         "id": "d318034a-b152-4f25-bfa8-c46c9c128575",
         "name": "Global smartphone shipments tanked by 20.4 percent due to the pandemic",
         "url": "https://www.engadget.com/gartner-q2-2020-smartphone-sales-report-213246930.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -6890,7 +6890,7 @@
         "id": "134381d5-d1a6-4e30-ba78-78e8b533d46c",
         "name": "Nintendo is bringing the Switch to Brazil at last",
         "url": "https://www.engadget.com/nintendo-switch-brazil-152833236.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "soon",
@@ -6945,7 +6945,7 @@
         "id": "7bc5504f-2b4b-4b6a-bbc8-b9b0af8c18f0",
         "name": "Tech Workers Are Living the American Dream\u2014in Canada",
         "url": "https://www.wired.com/story/immigrant-tech-workers-american-dream-canada/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "silicon",
@@ -7012,7 +7012,7 @@
         "id": "f43b4b47-dfcc-4c89-ad35-dea1a093e9d1",
         "name": "Solar Panels Are Starting to Die, Leaving Behind Toxic Trash",
         "url": "https://www.wired.com/story/solar-panels-are-starting-to-die-leaving-behind-toxic-trash/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "toxic",
@@ -7083,7 +7083,7 @@
         "id": "e5b7d1f1-b62e-4515-a159-1cde0005d8a4",
         "name": "Inside the Sprint to Map the Asian Giant Hornet Genome",
         "url": "https://www.wired.com/story/inside-the-sprint-to-map-the-murder-hornet-genome/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "hornets",
@@ -8117,7 +8117,7 @@
         "id": "4634ff8b-68f9-47c5-9536-5f5971cf7620",
         "name": "The Climate Disasters We Ignore Today Will Eventually Come for Us",
         "url": "https://earther.gizmodo.com/the-climate-disasters-we-ignore-today-will-eventually-c-1844779261",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -8180,7 +8180,7 @@
         "id": "81c7e819-a9a6-434b-ae5a-292814e6ec4a",
         "name": "Use This Online Tool to Find Out If You Can Vote by Mail Right Now",
         "url": "https://gizmodo.com/use-this-online-tool-to-find-out-if-you-can-vote-by-mai-1844749193",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "voting",
@@ -8723,7 +8723,7 @@
         "id": "479123c9-1a35-487d-9464-beec20a10a03",
         "name": "Gunjan Saxena: India female pilot\u2019s war biopic flies into a row",
         "url": "https://www.bbc.co.uk/news/world-asia-india-53778420",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "gunjan",
@@ -8798,7 +8798,7 @@
         "id": "7888b2a9-de73-4970-a7cf-59a2ca61bac6",
         "name": "Coronavirus: Youthful Pakistan appears to avoid worst of pandemic",
         "url": "https://www.bbc.co.uk/news/world-asia-53742214",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -9129,7 +9129,7 @@
         "id": "0e58d3e0-cfcd-42d4-a827-2d742865e609",
         "name": "Coronavirus restrictions 'severely hampering' South Asia flood relief",
         "url": "https://www.bbc.co.uk/news/world-asia-53869322",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "coronavirus",
@@ -9208,7 +9208,7 @@
         "id": "b1c27087-989f-4371-aa4b-f2b2fe8a26e0",
         "name": "Kamala Harris speech: What was the verdict on how she did?",
         "url": "https://www.bbc.co.uk/news/election-us-2020-53838209",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "women",
@@ -9267,7 +9267,7 @@
         "id": "828ae52b-a303-407d-ac01-2f2e05e408ae",
         "name": "TikTok to launch legal action against Trump over ban",
         "url": "https://www.bbc.co.uk/news/world-us-canada-53877956",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trumps",
@@ -13906,7 +13906,7 @@
         "id": "1d842c30-5256-48cf-89fe-3d7d50413e31",
         "name": "What's on TV this week: 'Mulan,' 'The Boys,' 'Tony Hawk' and 'NBA 2K21'",
         "url": "https://www.engadget.com/mulan-nba-2k21-tony-hawk-pro-skater-054233862.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "week",
@@ -14916,7 +14916,7 @@
         "id": "783fbb8e-d96b-4fd9-99d4-efced74184d4",
         "name": "India Blocks 118 More China-Linked Apps, Including PlayerUnknown's Battlegrounds",
         "url": "https://gizmodo.com/india-blocks-118-more-china-linked-apps-including-play-1844932764",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "playerunknowns",
@@ -14991,7 +14991,7 @@
         "id": "e22347c5-66e6-4fcd-b5d4-f2528810b4b4",
         "name": "Netflix's New Free-To-Watch Gambit Comes With A Very Dumb Catch",
         "url": "https://gizmodo.com/netflixs-new-free-to-watch-gambit-comes-with-a-very-dum-1844903365",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "netflixs",
@@ -15062,7 +15062,7 @@
         "id": "f74aad9c-93fd-40ef-82fe-d92d5ba4faa3",
         "name": "Russia's Sputnik V Vaccine Shows Promise in Early Trial\u2014But We Don't Know Yet if It Really Works",
         "url": "https://gizmodo.com/russias-sputnik-v-vaccine-shows-promise-in-early-trial-1844956161",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "immune",
@@ -15141,7 +15141,7 @@
         "id": "2970575d-8a98-48ac-913e-a315ae7ed855",
         "name": "A Plan to Cool Us Down Without Burning Up the Planet",
         "url": "https://earther.gizmodo.com/a-plan-to-cool-us-down-without-burning-up-the-planet-1844949946",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -15416,7 +15416,7 @@
         "id": "3241f52b-7cb9-4bb9-a855-9ba01e61af28",
         "name": "The trailblazing first woman lawmaker of India",
         "url": "https://www.bbc.co.uk/news/av/world-asia-india-54023825",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "women",
@@ -15479,7 +15479,7 @@
         "id": "f97a0e68-5bc1-471b-9bef-a1e177c2afbb",
         "name": "Pranab Mukherjee: Former president of India dies after Covid diagnosis",
         "url": "https://www.bbc.co.uk/news/world-asia-india-53732458",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "mukherjee",
@@ -15544,9 +15544,9 @@
     {
         "_id": "5c7335d0-dbdd-4ee7-a2b8-5b67285a4e00",
         "id": "5c7335d0-dbdd-4ee7-a2b8-5b67285a4e00",
-        "name": NaN,
+        "name": null,
         "url": "https://www.cnn.com/2020/09/04/asia/sri-lanka-oil-tanker-fire-intl-hnk/index.html",
-        "date": NaN,
+        "date": null,
         "labels": [],
         "image": "https://cdn.cnn.com/cnnnext/dam/assets/200904152255-sri-lanka-oil-fire-0918-01-super-tease.jpg",
         "site": "CNN"
@@ -15635,7 +15635,7 @@
         "id": "70ecfeaf-2cfd-4d0a-80bc-c487a3bb6c8a",
         "name": "India accuses China of 'provocative military movements' at border",
         "url": "https://www.bbc.co.uk/news/world-asia-india-53971397",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "military",
@@ -15702,7 +15702,7 @@
         "id": "dd48f997-ef78-4eb7-b5e4-31a105629001",
         "name": "India NEET, JEE: Furious students begin taking 'life-changing' exam",
         "url": "https://www.bbc.co.uk/news/world-asia-india-54009174",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "lifechanging",
@@ -15773,7 +15773,7 @@
         "id": "5a9e4f12-740d-4c6d-b5d4-a11e5a3c26ef",
         "name": "England v Australia: Joe Root left out of Twenty20 squad",
         "url": "https://www.bbc.co.uk/sport/cricket/53971711",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -15844,7 +15844,7 @@
         "id": "acb809de-9b40-4c3f-ae69-86e2281af4ab",
         "name": "Meet GW190521\u2014a black-hole merger for the record books",
         "url": "https://arstechnica.com/science/2020/09/meet-gw190521-a-black-hole-merger-for-the-record-books/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "hole",
@@ -18103,7 +18103,7 @@
         "id": "dba69767-871e-4cf6-a0dd-67982107e3bf",
         "name": "India, China trade border accusations",
         "url": "https://www.reuters.com/video/watch/idOVCTV4JU3",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "worldindia",
@@ -18165,7 +18165,7 @@
         "id": "d90fdb86-60b5-44b7-b4e0-f7307452f1c8",
         "name": "India, China troops in another border escalation",
         "url": "https://www.reuters.com/video/watch/idPbYe?now=true",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "fresh",
@@ -20487,7 +20487,7 @@
         "id": "8c00c733-9a3f-4559-b616-3c6949ded31c",
         "name": "Sushi with a side of muscles",
         "url": "https://in.reuters.com/video/watch/idOVCUA4OYV",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shirtless",
@@ -20801,7 +20801,7 @@
         "id": "8c5e1f2f-35f9-41a4-87e7-bffd2d5a3236",
         "name": "Global smartphone shipments tanked by 20.4 percent due to the pandemic",
         "url": "https://www.engadget.com/gartner-q2-2020-smartphone-sales-report-213246930.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -21227,7 +21227,7 @@
         "id": "92b5d899-66ae-4fdd-b35f-7d80425bd96f",
         "name": "Pet Monkeys Brought to Ancient Egypt Were Buried With Sea Shells and Other Trinkets",
         "url": "https://gizmodo.com/pet-monkeys-brought-to-ancient-egypt-were-buried-with-s-1844855746",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "polish",
@@ -21489,7 +21489,7 @@
         "id": "2a0db845-5a3a-45e2-a09f-7ce9f8ebf463",
         "name": "Shinzo Abe: Revisionist nationalist or pragmatic realist?",
         "url": "https://www.bbc.co.uk/news/world-asia-53950704",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "realist",
@@ -21643,7 +21643,7 @@
         "id": "c8972e73-8c64-4633-bc01-c900bd00ce95",
         "name": "India coronavirus: Covid strikes remote Greater Andamanese tribe",
         "url": "https://www.bbc.co.uk/news/world-asia-india-53925071",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "coronavirus",
@@ -21718,7 +21718,7 @@
         "id": "c939caf9-7972-439f-a62e-9c5a003205ee",
         "name": "India NEET, JEE exams: 'Conducting these exams will be a giant mistake'",
         "url": "https://www.bbc.co.uk/news/world-asia-india-53887701",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "giant",
@@ -21793,7 +21793,7 @@
         "id": "1bb2e178-e107-46ad-95b3-99f3c50f58e2",
         "name": "Coronavirus restrictions 'severely hampering' South Asia flood relief",
         "url": "https://www.bbc.co.uk/news/world-asia-53869322",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "coronavirus",
@@ -21872,7 +21872,7 @@
         "id": "258e0b6c-6064-49b8-8695-752b4ebd088f",
         "name": "'They wanted to drown me at birth - now I'm a poet'",
         "url": "https://www.bbc.co.uk/news/stories-53749629",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "kuli",
@@ -24915,7 +24915,7 @@
         "id": "9db025c8-a97d-436b-81d4-a86d15ddaca8",
         "name": "\u8def\u900f\u4e2d\u6587\u7f51",
         "url": "https://af.reuters.com/article/commoditiesNews/idAFL8N2FU097",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "\u8def\u900f\u4e2d\u6587\u7f51",
@@ -25938,7 +25938,7 @@
         "id": "d38bb903-819a-4bcd-bd0a-b7905eb680c4",
         "name": "Wall Street\u2019s record run goes unchallenged",
         "url": "https://in.reuters.com/video/watch/idRCV008NH5",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "unchallenged",
@@ -26623,7 +26623,7 @@
         "id": "97f5700b-674e-49f3-8321-5f827a699d2c",
         "name": "Hurricane Laura takes aim at Houston",
         "url": "https://in.reuters.com/video/watch/idOVCSR6HGF",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "laura",
@@ -27469,7 +27469,7 @@
         "id": "c428c8b8-99ed-4d2a-9d28-14375735d3f8",
         "name": "'Operational mistake' not to remove militia page -Facebook",
         "url": "https://www.reuters.com/video/watch/idOVCTB54GV",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "posted",
@@ -27744,7 +27744,7 @@
         "id": "0e7f12ba-1012-474d-9fa8-7bfd5181f915",
         "name": "Why are People Selling 'Fortnite' iPhones for Thousands of Dollars?",
         "url": "https://lifehacker.com/why-are-people-selling-fortnite-iphones-for-thousands-o-1844789101",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "fortnite",
@@ -27811,7 +27811,7 @@
         "id": "09b724a8-3bde-4b7b-9159-8368cd0f127e",
         "name": "How to Get Free Admission to National Parks on August 25",
         "url": "https://lifehacker.com/how-to-visit-a-national-park-for-free-tomorrow-1844828296",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "spread",
@@ -27874,7 +27874,7 @@
         "id": "4ef2c9d3-4751-45e6-b8bc-cd4339d78a82",
         "name": "What to Know About the CDC's 14-Day Quarantine Travel Policy",
         "url": "https://lifehacker.com/what-to-know-about-changes-to-the-cdcs-14-day-quarantin-1844839926",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "symptoms",
@@ -27941,7 +27941,7 @@
         "id": "4cba2f90-23e9-44f6-a2fa-cc3a94c33bb6",
         "name": "Consider Camping at Wineries and Farms (With Permission)",
         "url": "https://lifehacker.com/consider-camping-at-wineries-and-farms-with-permission-1844810512",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -28004,7 +28004,7 @@
         "id": "42c53dae-f11b-4012-803b-6364108533c9",
         "name": "Record Your Pandemic Stories for the New York Public Library",
         "url": "https://lifehacker.com/the-nypl-wants-to-record-your-pandemic-stories-1844786892",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -28059,7 +28059,7 @@
         "id": "248f82d7-db6a-4b02-9e21-84c94f6acd41",
         "name": "How To Use Any DSLR as a Webcam",
         "url": "https://lifehacker.com/how-to-use-any-dslr-as-a-webcam-1844795043",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "software",
@@ -28114,7 +28114,7 @@
         "id": "9be912e4-692d-4863-bec2-280c21bbc504",
         "name": "Prepare Now for a Long Winter",
         "url": "https://vitals.lifehacker.com/prepare-now-for-a-long-winter-1844778559",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "winter",
@@ -28169,7 +28169,7 @@
         "id": "4513ad5c-1b09-46b4-aef9-5cfb2893e70c",
         "name": "How to Submit Your Mail-in Ballot Without Using the USPS",
         "url": "https://lifehacker.com/how-to-submit-your-mail-in-ballot-without-usps-1844743772",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "using",
@@ -28232,7 +28232,7 @@
         "id": "9ec1e272-bd41-4cce-b7fd-6e5a7bdf5f68",
         "name": "What's Coming to HBO Max in September 2020",
         "url": "https://lifehacker.com/whats-coming-to-hbo-max-in-september-2020-1844827549",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "2019",
@@ -28295,7 +28295,7 @@
         "id": "5bef30d5-1080-44d3-b679-a3819b5cf414",
         "name": "Stop Partying in Your Airbnb",
         "url": "https://lifehacker.com/stop-partying-in-your-airbnb-1844805035",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "partying",
@@ -28354,7 +28354,7 @@
         "id": "c536fa76-b363-450e-a22b-202de1cba31c",
         "name": "Should You Buy College Tuition Insurance?",
         "url": "https://twocents.lifehacker.com/should-you-buy-college-tuition-insurance-1844791790",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "school",
@@ -28409,7 +28409,7 @@
         "id": "3776b286-efba-4cb8-b200-fca6079bfb87",
         "name": "Why You Should Renew Your Passport Right Now",
         "url": "https://twocents.lifehacker.com/why-you-should-renew-your-passport-right-now-1844805334",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "passport",
@@ -28468,7 +28468,7 @@
         "id": "07c89011-bc05-484a-81e0-b9f827e3090b",
         "name": "How to Prevent Getting Lost at the Airport",
         "url": "https://lifehacker.com/how-to-prevent-getting-lost-at-the-airport-1844813166",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pointing",
@@ -28531,7 +28531,7 @@
         "id": "ac7c26e3-40b5-402c-8b96-fee046128193",
         "name": "How to Qualify for Paid Leave If Schools Close Again",
         "url": "https://offspring.lifehacker.com/how-to-qualify-for-paid-leave-if-schools-close-again-1844773629",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "leave",
@@ -28590,7 +28590,7 @@
         "id": "92d5b5e8-bf59-424f-9140-525d88ce823d",
         "name": "Bluetooth update could turn wearables into COVID-19 trackers",
         "url": "https://www.engadget.com/covid-bluetooth-sig-ens-wearables-plan-120555994.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "way",
@@ -28657,7 +28657,7 @@
         "id": "c5b9674f-d995-48a7-98e9-cffe011540fc",
         "name": "Germany to probe whether Amazon influenced prices during the pandemic",
         "url": "https://www.engadget.com/germany-investigating-amazon-over-possible-price-fixing-112319030.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -28720,7 +28720,7 @@
         "id": "f530f6f5-c357-41b6-afda-06207e82197a",
         "name": "Alphabet's Verily begins offering stop-loss health insurance",
         "url": "https://www.engadget.com/alphabet-verily-health-inscurance-coefficient-212604107.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "smart",
@@ -28791,7 +28791,7 @@
         "id": "5a0cbeea-911d-4e9d-9970-6ae171478947",
         "name": "MIT researchers use radio signals to detect everyday household activities",
         "url": "https://www.engadget.com/mit-wireless-signals-monitoring-machine-learning-rf-diary-040049578.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "rfdiary",
@@ -28858,7 +28858,7 @@
         "id": "8acd980f-bced-40b7-a401-03f3a9d2a256",
         "name": "YouTuber\u2019s DIY gun shoots masks onto people\u2019s faces",
         "url": "https://www.engadget.com/covid-19-youtube-diy-mask-launcher-154046116.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "masks",
@@ -28929,7 +28929,7 @@
         "id": "82f38b4c-6f4e-4a3c-a1ab-529354994bba",
         "name": "Watch the first trailer for Gillian Flynn's Amazon series 'Utopia'",
         "url": "https://www.engadget.com/watch-the-first-trailer-for-gillian-flynns-amazon-series-utopia-090535962.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "youths",
@@ -29000,7 +29000,7 @@
         "id": "d7b818f8-b29b-43ef-ae0b-3abc00c0729e",
         "name": "FBI and CISA warn against surge in voice phishing campaigns",
         "url": "https://www.engadget.com/fbi-cisa-issue-voice-phishing-campaign-advisory-121936127.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "attacks",
@@ -29079,7 +29079,7 @@
         "id": "0c873262-ab9a-47d1-b75f-688b7cb0aa83",
         "name": "Anova's $600 convection-steam combo oven is finally available to order",
         "url": "https://www.engadget.com/anova-precision-oven-pre-order-143007732.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "precision",
@@ -29158,7 +29158,7 @@
         "id": "23d45bfa-9faf-4b88-adf6-b2e4968ab27c",
         "name": "Covid Hits Minorities Hardest, but Data Often Doesn't Show It",
         "url": "https://www.wired.com/story/covid-hits-minorities-hardest-data-doesnt-show/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "ucsf",
@@ -29229,7 +29229,7 @@
         "id": "513b16aa-d090-46e6-bfad-c594c68f28d2",
         "name": "A Rocket Scientist\u2019s Love Algorithm Adds Up During Covid-19",
         "url": "https://www.wired.com/story/rocket-scientists-love-algorithm-adds-up-during-covid-19/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "algorithm",
@@ -29300,7 +29300,7 @@
         "id": "ace92a3c-a78c-41d9-9f4c-ded58ffd5825",
         "name": "97,000 People Got Convalescent Plasma. Who Knows if It Works?",
         "url": "https://www.wired.com/story/97000-people-got-convalescent-plasma-who-knows-if-it-works/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trial",
@@ -29363,7 +29363,7 @@
         "id": "50c9cc18-da8f-4737-9fb4-47636786bce5",
         "name": "A Postal Slowdown Is Scary for Those Who Get Meds By Mail",
         "url": "https://www.wired.com/story/a-postal-slowdown-is-scary-for-those-who-get-meds-by-mail/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "veterans",
@@ -29430,7 +29430,7 @@
         "id": "68ef9dac-4738-462d-afda-95766bad4465",
         "name": "The YOLOers vs. Distancers Feud Is Tearing Us Apart",
         "url": "https://www.wired.com/story/the-yoloers-vs-distancers-feud-is-tearing-us-apart/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -29497,7 +29497,7 @@
         "id": "4871d0e9-e93f-4a9b-8d5c-b185ab1dd895",
         "name": "The First Repeat Covid-19 Infection Case Isn\u2019t All Bad News",
         "url": "https://www.wired.com/story/the-first-repeat-covid-19-infection-case-isnt-all-bad-news/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "infection",
@@ -29572,7 +29572,7 @@
         "id": "b7d1f893-ba8f-431e-aa02-38244cdb9fe4",
         "name": "The FDA Just OK'd Emergency Use of Plasma for Covid-19",
         "url": "https://www.wired.com/story/the-fda-just-okd-emergency-use-of-plasma-for-covid-19/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "okd",
@@ -29635,7 +29635,7 @@
         "id": "a2eda62d-5ccd-4f46-9150-b95526d46ad6",
         "name": "The Dangers of Seeing the World Through Ubiquitous Video",
         "url": "https://www.wired.com/story/dangers-ubiquitous-video-propaganda/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -29698,7 +29698,7 @@
         "id": "2721d723-509e-4e0c-99d2-3dd58daeed3a",
         "name": "What to Know Before Sending Your Kids Back to School Online",
         "url": "https://www.wired.com/story/what-to-know-kids-back-to-school-online/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -29761,7 +29761,7 @@
         "id": "96cd376e-4d05-467a-8816-57134d6a3588",
         "name": "How Animal Activists Exposed the Brutality of Factory Farming",
         "url": "https://www.wired.com/story/get-wired-podcast-6-ventilation-shutdown-factory-farms/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "footage",
@@ -29836,7 +29836,7 @@
         "id": "4411489b-fe04-4bf3-9439-cf65025868e5",
         "name": "\u2018Real\u2019 Programming Is an Elitist Myth",
         "url": "https://www.wired.com/story/databases-coding-real-programming-myth/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "code",
@@ -29899,7 +29899,7 @@
         "id": "0588c269-8914-41f2-854e-ee724590e2ab",
         "name": "How the Pandemic Reshaped Election Campaigns\u2014Maybe Forever",
         "url": "https://www.wired.com/story/pandemic-reshaped-2020-election-campaigns-democrats-republicans/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -29966,7 +29966,7 @@
         "id": "7baba453-e06e-4031-9f86-a8d8430d3270",
         "name": "Google Expands Its Fire-Tracking Tools\u2014and Just in Time",
         "url": "https://www.wired.com/story/google-expands-fire-tracking-tools-maps-search/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "toolsand",
@@ -30029,7 +30029,7 @@
         "id": "bb4835bf-a070-4b68-b840-ce4817d1a376",
         "name": "The FDA's Approach to Covid-19 Is a Bloody Mess",
         "url": "https://www.wired.com/story/the-fdas-approach-to-covid-19-is-a-bloody-mess/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trump",
@@ -30096,7 +30096,7 @@
         "id": "4010bace-d06f-4ea6-9d30-ad3447ef292c",
         "name": "California's Wildfire and Covid-19 Disasters Just Collided",
         "url": "https://www.wired.com/story/californias-wildfire-and-covid-19-disasters-just-collided/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "set",
@@ -30167,7 +30167,7 @@
         "id": "b9d1b122-d6f3-4eb5-b74a-0194efbb1c5f",
         "name": "New Data on How Many Kids Got That Covid Mystery Illness",
         "url": "https://www.wired.com/story/new-data-on-how-many-kids-got-that-covid-mystery-illness/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "symptoms",
@@ -30234,7 +30234,7 @@
         "id": "4dc5896e-0518-4039-9940-9c50d118dad8",
         "name": "How to Prevent and Treat Face Mascne",
         "url": "https://www.wired.com/story/mascne-causes-and-treatments/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "bacteria",
@@ -30297,7 +30297,7 @@
         "id": "9df102ca-da8c-4db6-8179-bf4660b50194",
         "name": "Skewed Grading Algorithms Fuel Backlash Beyond the Classroom",
         "url": "https://www.wired.com/story/skewed-grading-algorithms-fuel-backlash-beyond-classroom/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "skewed",
@@ -30364,7 +30364,7 @@
         "id": "1e3eaaca-9e71-4727-b3be-31c53e46cd13",
         "name": "The DNC Is the Best Zoom Meeting of 2020\u2014So Far",
         "url": "https://www.wired.com/story/dnc-long-zoom-meeting/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "2020so",
@@ -34714,7 +34714,7 @@
         "id": "0f72c2d6-094d-4ecb-a359-b72645623408",
         "name": "The Biggest Unanswered Questions About a Covid-19 Vaccine",
         "url": "https://gizmodo.com/the-biggest-unanswered-questions-about-a-covid-19-vacci-1844727738",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -34777,7 +34777,7 @@
         "id": "1f4a45cd-7cb8-48a8-93c8-908d7053ac2b",
         "name": "Covid-19 Just Passed Another Horrible Milestone in the U.S.",
         "url": "https://gizmodo.com/covid-19-just-passed-another-horrible-milestone-in-the-1844766235",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -34840,7 +34840,7 @@
         "id": "3e473568-a9c2-4dab-aca3-58b98ace5d79",
         "name": "Take a Free Course on COVID-19 From MIT",
         "url": "https://vitals.lifehacker.com/take-a-free-course-on-covid-19-from-mit-1844908524",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -34903,7 +34903,7 @@
         "id": "81f2275a-4641-45ae-ad74-08b2eba2dfac",
         "name": "No, COVID Deaths Aren't 'Only 6%' of What's Documented",
         "url": "https://vitals.lifehacker.com/no-covid-deaths-arent-only-6-of-whats-documented-1844907108",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "covid",
@@ -34966,7 +34966,7 @@
         "id": "0bf0998d-0c60-46e4-b03e-42ffa819bee1",
         "name": "Is There an Optimal Time to Get Your Flu Shot This Year?",
         "url": "https://vitals.lifehacker.com/is-there-an-optimal-time-to-get-your-flu-shot-this-year-1844907774",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "optimal",
@@ -35021,7 +35021,7 @@
         "id": "e41e102e-e077-4eb8-a3ab-7bc7d596e3b8",
         "name": "What to Know About the CDC's 14-Day Quarantine Travel Policy",
         "url": "https://lifehacker.com/what-to-know-about-changes-to-the-cdcs-14-day-quarantin-1844839926",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "symptoms",
@@ -35088,7 +35088,7 @@
         "id": "73316a44-4e14-47a1-9960-a50ecad7a79c",
         "name": "Clear Your Sinuses in 20 Seconds by Pushing on Your Face",
         "url": "https://lifehacker.com/clear-your-sinuses-in-20-seconds-with-your-tongue-and-y-5944971",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "30",
@@ -35159,7 +35159,7 @@
         "id": "1a971ddb-0a6a-4fbb-9ae1-12ac5668a919",
         "name": "It's Okay to Say No to Fantasy Sports",
         "url": "https://lifehacker.com/its-okay-to-say-no-to-fantasy-sports-1844858857",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "play",
@@ -35218,7 +35218,7 @@
         "id": "9c085cc3-ceaa-442b-bf29-d4e8e91716e2",
         "name": "How to Estimate How Much Money Is in Your Change Jar",
         "url": "https://lifehacker.com/how-to-estimate-how-much-moneys-in-your-change-jar-wit-5804773",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "change",
@@ -35277,7 +35277,7 @@
         "id": "92f2e5ad-2203-4aa2-8e86-f4e568494d0f",
         "name": "Virtually Visit Black Lives Matter Street Art",
         "url": "https://lifehacker.com/virtually-visit-black-lives-matter-street-art-1844855909",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "browse",
@@ -35348,7 +35348,7 @@
         "id": "159a3171-35ac-41bd-9286-c02674c7b33c",
         "name": "Where to Stream Chadwick Boseman's Top Movies Online",
         "url": "https://lifehacker.com/where-to-stream-chadwick-bosemans-top-movies-online-1844676693",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "stream",
@@ -35415,7 +35415,7 @@
         "id": "9bb24f26-90e9-422b-8048-c02d4d82b41a",
         "name": "How to Pick Your First Strap-on Harness",
         "url": "https://lifehacker.com/how-to-pick-your-first-strap-on-harness-1844848571",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "sex",
@@ -35470,7 +35470,7 @@
         "id": "ab787f75-52e1-4966-80cb-fd415b428278",
         "name": "What to Know About Voter Registration and Types of Voting",
         "url": "https://lifehacker.com/everything-you-need-to-know-to-vote-in-2020-1844873184",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "voting",
@@ -35537,7 +35537,7 @@
         "id": "728e9de3-d287-48cb-8331-0e385e661059",
         "name": "Saturday's Best Deals: JACHS NY Henleys, Power Generators, Kids-Sized Mask Packs, and More",
         "url": "https://kinjadeals.theinventory.com/saturdays-best-deals-jachs-ny-henleys-power-generator-1844889532",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "set",
@@ -35628,7 +35628,7 @@
         "id": "ef30d646-e84e-42b3-b072-e8310ef2acaf",
         "name": "GoPro's Hero 9 Black might include a color front screen for vloggers",
         "url": "https://www.engadget.com/gopro-hero-9-black-leak-164307809.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "video",
@@ -35699,7 +35699,7 @@
         "id": "c9a64c4b-d0c6-49b3-b675-e165b0d63f3c",
         "name": "Alphabet's Verily begins offering stop-loss health insurance",
         "url": "https://www.engadget.com/alphabet-verily-health-inscurance-coefficient-212604107.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "smart",
@@ -35770,7 +35770,7 @@
         "id": "2ab991b7-be57-43d7-977b-846d94ff5471",
         "name": "CBS pads its fall lineup with 'Star Trek: Discovery' and 'One Day at a Time'",
         "url": "https://www.engadget.com/cbs-star-trek-discovery-one-day-at-a-time-202758580.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "episodes",
@@ -35845,7 +35845,7 @@
         "id": "2eb04d5e-b1a2-4d7f-be78-e9d124419cba",
         "name": "MIT researchers use radio signals to detect everyday household activities",
         "url": "https://www.engadget.com/mit-wireless-signals-monitoring-machine-learning-rf-diary-040049578.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "rfdiary",
@@ -35912,7 +35912,7 @@
         "id": "34558396-12b1-48c8-a66b-1244e43a5165",
         "name": "Facebook and Instagram reveal content \u2018recommendation guidelines\u2019",
         "url": "https://www.engadget.com/facebook-and-instagram-reveal-content-recommendation-guidelines-130011327.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "content",
@@ -35975,7 +35975,7 @@
         "id": "04a2ce17-fa7d-4ef5-81d7-2cc7dcb48bfe",
         "name": "Motorola's latest mid-range phone is a sub-$500 stunner with 5G",
         "url": "https://www.engadget.com/motorola-one-5g-snapdragon-765-quad-camera-under-500-dollars-130030709.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "kind",
@@ -36050,7 +36050,7 @@
         "id": "57a7a48b-52bf-4769-9344-96a6ec6e86eb",
         "name": "The Morning After: Sony will directly invite some gamers to pre-order the PS5",
         "url": "https://www.engadget.com/ps5-pre-orders-tma-111524146.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "gamers",
@@ -36125,7 +36125,7 @@
         "id": "d7bb77e2-44a2-40db-87d9-cfc5bee1dd88",
         "name": "What you need to know about Apple's iPhone 12 and 12 Pro",
         "url": "https://www.engadget.com/iphone-12-iphone-12-pro-what-you-need-to-know-price-5g-release-date-2020-184302416.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "12",
@@ -36188,7 +36188,7 @@
         "id": "8a643622-437d-4e01-b53a-807ad3fd455a",
         "name": "How to buy a gaming laptop",
         "url": "https://www.engadget.com/best-gaming-laptops-172033838.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "features",
@@ -36247,7 +36247,7 @@
         "id": "bd623d64-410f-437e-891c-e780e1323885",
         "name": "The First Repeat Covid-19 Infection Case Isn\u2019t All Bad News",
         "url": "https://www.wired.com/story/the-first-repeat-covid-19-infection-case-isnt-all-bad-news/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "infection",
@@ -36322,7 +36322,7 @@
         "id": "89ce956f-2726-4b63-990d-088106761ea6",
         "name": "How WeChat Censored the Coronavirus Pandemic",
         "url": "https://www.wired.com/story/wechat-chinese-internet-censorship-coronavirus/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -36377,7 +36377,7 @@
         "id": "08494325-3f27-4e19-9e14-b7923d181d4a",
         "name": "I Was a Floating Head at an NBA Game. It Gets Weirder",
         "url": "https://www.wired.com/story/watching-basketball-virtually/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "virtual",
@@ -36444,7 +36444,7 @@
         "id": "16dda1e6-7a3f-41ef-aaf1-fc7f2d14cc37",
         "name": "Turns Out Late Night Talk Show Hosts Are Just Like Us",
         "url": "https://www.wired.com/story/late-night-hosts/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shows",
@@ -36507,7 +36507,7 @@
         "id": "5b2fb958-58d5-4ba8-9633-e7a556eede09",
         "name": "The Pandemic Could Derail a Generation of Young Scientists",
         "url": "https://www.wired.com/story/the-pandemic-could-derail-a-generation-of-young-scientists/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -36578,7 +36578,7 @@
         "id": "8c372702-9de2-411b-af31-323490b5d812",
         "name": "The FDA's Approach to Covid-19 Is a Bloody Mess",
         "url": "https://www.wired.com/story/the-fdas-approach-to-covid-19-is-a-bloody-mess/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trump",
@@ -38835,7 +38835,7 @@
         "id": "975fa8e7-6d54-4328-a6b1-94740efa0b2e",
         "name": "Man Who Famously Died From Covid Says Covid Isn't Very Deadly",
         "url": "https://gizmodo.com/man-who-famously-died-from-covid-says-covid-isnt-very-d-1844901909",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "rally",
@@ -38902,7 +38902,7 @@
         "id": "482dc116-1137-4fdf-913a-cd6449dd0fb2",
         "name": "In Baffling Reversal, CDC Now Says You Don't Need a Covid-19 Test If You Don't Have Symptoms",
         "url": "https://gizmodo.com/in-baffling-reversal-cdc-now-says-you-dont-need-a-covi-1844853670",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "symptoms",
@@ -38969,7 +38969,7 @@
         "id": "c3ffae60-c1c7-4ca0-ba6b-71800bc57336",
         "name": "Fauci: I Was Having Surgery When Task Force Discussed Watering Down CDC Testing Guidelines",
         "url": "https://gizmodo.com/fauci-i-was-having-surgery-when-task-force-discussed-w-1844862654",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "watering",
@@ -39036,7 +39036,7 @@
         "id": "97ba02a5-c80a-45b5-be71-083619b66bf3",
         "name": "Nevada Man Hospitalized After Apparent Coronavirus Reinfection",
         "url": "https://gizmodo.com/nevada-man-hospitalized-after-apparent-coronavirus-rein-1844879660",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "infection",
@@ -39099,7 +39099,7 @@
         "id": "01d156a6-2790-47d1-bd7d-40b257df2ff7",
         "name": "The CDC Sort of Clarifies Its New Testing Guidelines",
         "url": "https://gizmodo.com/the-cdc-sort-of-clarifies-its-new-testing-guidelines-1844872504",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "clarifies",
@@ -39162,7 +39162,7 @@
         "id": "be70f1fa-1016-4ca6-aec5-96bff53250e3",
         "name": "'The Trifecta of Disasters' : This Black-Owned Business in New Orleans Survived Hurricane Katrina and the BP Oil Spill. Now It's Facing Covid-19",
         "url": "https://earther.gizmodo.com/the-trifecta-of-disasters-this-black-owned-business-i-1844838913",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "orleans",
@@ -39245,7 +39245,7 @@
         "id": "b3c57061-4e75-4306-a8d6-8ee5d4cd92ba",
         "name": "Social Distancing Is a Lot More Complicated Than Staying 6 Feet Apart",
         "url": "https://gizmodo.com/social-distancing-is-a-lot-more-complicated-than-being-1844845193",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "social",
@@ -39320,7 +39320,7 @@
         "id": "80b97d95-a9c5-4f90-b9f9-23d1b796ca22",
         "name": "Fitbit Just Pulled Several Miracles Out of Its Ass With Its New Wearable Lineup",
         "url": "https://gizmodo.com/fitbit-just-pulled-several-miracles-out-of-its-ass-with-1844831633",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "ass",
@@ -39391,7 +39391,7 @@
         "id": "b6c7ac33-3468-4494-9471-98a76faa4baa",
         "name": "Beyond Meat Is Now Offering Direct Sales Online",
         "url": "https://gizmodo.com/beyond-meat-is-now-offering-direct-sales-online-1844880259",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "options",
@@ -39458,7 +39458,7 @@
         "id": "3c6c105a-4ebd-4f02-a248-f1e2146d5846",
         "name": "Portland's Most Famous Bookstore Will No Longer Sell Books on Amazon",
         "url": "https://gizmodo.com/portlands-most-famous-bookstore-will-no-longer-sell-boo-1844874010",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "bookstore",
@@ -39525,7 +39525,7 @@
         "id": "7c2aded1-5683-4682-b66c-301fb0efdfa3",
         "name": "More Like Republican Novel Corona-vention, Am I Right Folks? Haha. Oh My God This Is Going to Get Someone Killed",
         "url": "https://gizmodo.com/more-like-republican-novel-corona-vention-am-i-right-f-1844884714",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "coronavirus",
@@ -39616,7 +39616,7 @@
         "id": "4f72d1f9-045a-4ff5-86fa-29c58b08757c",
         "name": "Have We Reached Peak Smartwatch?",
         "url": "https://gizmodo.com/have-we-reached-peak-smartwatch-1844882789",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "peak",
@@ -39675,7 +39675,7 @@
         "id": "a1171d5b-a3bd-4069-a455-7a79d5f150b4",
         "name": "What Will Post-Coronavirus Social Life Really Be Like?",
         "url": "https://gizmodo.com/what-will-post-coronavirus-social-life-really-be-like-1844898246",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -39734,7 +39734,7 @@
         "id": "5ffcd948-1d37-4e54-b051-2ad60ed9fb2e",
         "name": "Fitbit Just Made a Wildly Advanced Smartwatch That I'm Finally Excited About",
         "url": "https://gizmodo.com/fitbit-just-made-a-wildly-advanced-smartwatch-that-im-f-1844828208",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "sensor",
@@ -39809,7 +39809,7 @@
         "id": "7f7abe18-53d5-4ecb-8ed3-99fc16a2bf0c",
         "name": "LG's New Wearable Air Purifier Is What George Jetson Would Wear in the Bad Timeline",
         "url": "https://paleofuture.gizmodo.com/lgs-new-wearable-air-purifier-is-what-george-jetson-wou-1844864528",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "timeline",
@@ -39880,7 +39880,7 @@
         "id": "5be98fa1-5ac0-44a8-aea1-29e95fdc1ef2",
         "name": "Developers Can Now Formally Challenge Apple's App Store Rejections",
         "url": "https://gizmodo.com/developers-can-now-formally-challenge-apples-app-store-1844905692",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "apples",
@@ -39947,7 +39947,7 @@
         "id": "530388b9-d5d9-4307-930c-8c484e66b6a0",
         "name": "Evacuations Underway as Hurricane Laura Beelines for Louisiana and Texas",
         "url": "https://earther.gizmodo.com/evacuations-underway-as-hurricane-laura-beelines-for-lo-1844839468",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "underway",
@@ -40010,7 +40010,7 @@
         "id": "47773995-5562-42a1-8151-9320f30f33a2",
         "name": "Hidden Code on the Disney+ Site Suggests a Watch Party Feature Is Coming",
         "url": "https://gizmodo.com/hidden-code-on-the-disney-site-suggests-a-watch-party-1844906374",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "feature",
@@ -40077,7 +40077,7 @@
         "id": "5fdd7398-2c29-4b47-872c-ac3ecd695273",
         "name": "Climbing Mount Everest Has Gotten Easier, Study Finds",
         "url": "https://gizmodo.com/climbing-mount-everest-has-gotten-easier-study-finds-1844871277",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "mount",
@@ -40144,7 +40144,7 @@
         "id": "ec0f444c-ccab-4133-b8b6-29e00bd0c5fe",
         "name": "America's Nice Guy Finally Says 'Fuck You' to Trump Supporters on Twitter",
         "url": "https://gizmodo.com/americas-nice-guy-finally-says-fuck-you-to-trump-suppor-1844877157",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trumps",
@@ -40219,7 +40219,7 @@
         "id": "ead9a237-e1d8-4bad-8a0d-c08c039dc815",
         "name": "New Orleans' Lower Ninth Ward Is a Food Desert\u2014But Residents Are Bringing It Back to Life",
         "url": "https://earther.gizmodo.com/new-orleans-lower-ninth-ward-is-a-food-desert-but-resid-1844842844",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "orleans",
@@ -41732,7 +41732,7 @@
         "id": "93802c76-6719-4518-953d-064449529dfc",
         "name": "How to Track COVID-19 Outbreaks in Local Schools",
         "url": "https://vitals.lifehacker.com/how-to-track-covid-19-outbreaks-in-local-schools-1844917259",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "school",
@@ -41795,7 +41795,7 @@
         "id": "350003c7-eff8-48a1-a917-f3d1df8c54e2",
         "name": "How to Enable 'Express' COVID-19 Exposure Notifications in iOS 13.7",
         "url": "https://lifehacker.com/how-to-enable-express-covid-19-exposure-notifications-i-1844919365",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "137",
@@ -41862,7 +41862,7 @@
         "id": "46f94bc2-57ec-4b35-bd3f-419315f760f3",
         "name": "Use This Fall Foliage Map to Help Plan Your Autumn Road Trip",
         "url": "https://lifehacker.com/use-this-fall-foliage-map-to-help-plan-your-autumn-road-1844942798",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "autumn",
@@ -41937,7 +41937,7 @@
         "id": "acb55bc7-d625-4024-8c67-2b3ac15a050c",
         "name": "How to Watch the Rescheduled Kentucky Derby and Festivities",
         "url": "https://lifehacker.com/how-to-watch-the-rescheduled-kentucky-derby-and-other-f-1844944034",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "festivities",
@@ -41996,7 +41996,7 @@
         "id": "e25567b1-92b2-4e62-a04e-89ba0317f223",
         "name": "How to Get a Handle on Mask Anxiety",
         "url": "https://lifehacker.com/how-to-deal-with-your-mask-anxiety-1844928945",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "masks",
@@ -42051,7 +42051,7 @@
         "id": "a489e262-0fd0-43b3-a848-722ff537c5ad",
         "name": "The Best Online Tutoring Options for Kids",
         "url": "https://offspring.lifehacker.com/the-best-online-tutoring-options-for-help-with-your-kid-1844920151",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "options",
@@ -42118,7 +42118,7 @@
         "id": "b543ab93-f1d6-44c4-87c6-929099dd39c6",
         "name": "HTC CEO Yves Maitre resigns after less than a year",
         "url": "https://www.engadget.com/htc-ceo-yves-maitre-resigns-022707148.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "loss",
@@ -42189,7 +42189,7 @@
         "id": "e49d0074-37ad-4f67-9804-60e89fb78277",
         "name": "Amazon Music adds artist Twitch streams",
         "url": "https://www.engadget.com/amazon-music-twitch-artist-livestreams-135926372.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "live",
@@ -42252,7 +42252,7 @@
         "id": "7cf29da8-f391-435a-bee6-2bc07e4fdc05",
         "name": "Google makes it easier to find local news through Podcasts and Assistant",
         "url": "https://www.engadget.com/google-local-news-podcasts-app-assistant-145951020.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "podcasts",
@@ -42319,7 +42319,7 @@
         "id": "0b2b3119-53cd-4793-85c8-2770f706980b",
         "name": "The Morning After: Nintendo turned 'Super Mario' into a battle royale",
         "url": "https://www.engadget.com/super-mario-bros-35-battle-royale-tma-111520748.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "super",
@@ -42398,7 +42398,7 @@
         "id": "76abc219-6fe3-4dcd-b59d-8bc936996db0",
         "name": "How to (Finally) Listen to All Those Podcasts in Your Queue",
         "url": "https://www.wired.com/story/how-to-listen-to-more-podcasts/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "podcasts",
@@ -44955,7 +44955,7 @@
         "id": "3bc5263a-85f2-4ce5-a4c5-52fdf4da2350",
         "name": "The WHO Now Recommends Cheap Steroids As a Life-Saving Treatment for Severe Covid-19",
         "url": "https://gizmodo.com/the-who-now-recommends-cheap-steroids-as-a-life-saving-1844929649",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "recommends",
@@ -45018,7 +45018,7 @@
         "id": "8c5da42b-a37d-4ae3-94e0-7c5ea75f04c9",
         "name": "Horrifying Images Show How the Coronavirus Ravages Our Lungs",
         "url": "https://gizmodo.com/horrifying-images-show-how-the-coronavirus-ravages-our-1844946904",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "cells",
@@ -45081,7 +45081,7 @@
         "id": "4f5c8559-9ab6-4f02-8594-2cb2ec007dab",
         "name": "Russia's Sputnik V Vaccine Shows Promise in Early Trial\u2014But We Don't Know Yet if It Really Works",
         "url": "https://gizmodo.com/russias-sputnik-v-vaccine-shows-promise-in-early-trial-1844956161",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "immune",
@@ -45160,7 +45160,7 @@
         "id": "a404c6b0-f42a-48b1-99b8-70ffe1eac3f6",
         "name": "The Mandalorian Season 2 Will Arrive Just in Time for Halloween",
         "url": "https://io9.gizmodo.com/the-mandalorian-season-2-will-arrive-just-in-time-for-h-1844928137",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "halloween",
@@ -45223,7 +45223,7 @@
         "id": "038fc1dc-1774-4297-83e3-0694907cf4ce",
         "name": "Coronavirus Antibodies Can Last at Least Four Months, Large Iceland Study Finds",
         "url": "https://gizmodo.com/coronavirus-antibodies-can-last-at-least-four-months-l-1844933434",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "coronavirus",
@@ -45282,7 +45282,7 @@
         "id": "b7cdddd6-fed4-4800-a03a-4582346b0e8a",
         "name": "White House Says It Won't Help Global Vaccine Effort to Spite China, World Health Organization",
         "url": "https://gizmodo.com/white-house-says-it-wont-help-global-vaccine-effort-to-1844921080",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -45365,7 +45365,7 @@
         "id": "0fb8acb8-d8ad-4cce-9e17-7b5a12fef1c3",
         "name": "How Face Shields and Valve Masks Fail to Stop Infectious Droplets, as Shown by Lasers",
         "url": "https://gizmodo.com/how-face-shields-and-valve-masks-fail-to-stop-infectiou-1844916328",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shown",
@@ -45436,7 +45436,7 @@
         "id": "aaf5e53a-cf5a-4e99-82de-2461def40580",
         "name": "The Pandemic Is Taking a Heavy Toll on Our Mental Health, Study Finds",
         "url": "https://gizmodo.com/the-pandemic-is-taking-a-heavy-toll-on-our-mental-healt-1844943071",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -45503,7 +45503,7 @@
         "id": "90ae17de-5c5b-4246-b86c-762b935ad1c3",
         "name": "I Could Not Even Take My Dog Down for a Walk Without Getting Arrested",
         "url": "https://gizmodo.com/i-could-not-even-take-my-dog-down-for-a-walk-without-ge-1844912073",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "getting",
@@ -45570,7 +45570,7 @@
         "id": "7c8d58b5-e128-4cc7-bc67-07117b4aac46",
         "name": "Peloton's Plan to Meet Pandemic Demand: Cheaper Treadmill, Pricier Bike, and New Classes",
         "url": "https://gizmodo.com/pelotons-plan-to-meet-pandemic-demand-cheaper-treadmil-1844956250",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -45649,7 +45649,7 @@
         "id": "1bca572a-e86e-415e-89d1-16908344ad2f",
         "name": "T-Mobile Rolls Out Free Limited Internet for Millions of Students",
         "url": "https://gizmodo.com/t-mobile-rolls-out-free-limited-internet-for-millions-o-1844954910",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "homework",
@@ -45712,7 +45712,7 @@
         "id": "6d23294a-e058-498a-8615-8f796a506746",
         "name": "Woman Arrested For Facebook Post Promoting Anti-Lockdown Protest in Australia",
         "url": "https://gizmodo.com/woman-arrested-for-facebook-post-promoting-anti-lockdow-1844926107",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "video",
@@ -45771,7 +45771,7 @@
         "id": "7a75d975-1c50-479c-a9b9-e85fcabcfcb4",
         "name": "What Outdoor Learning Could Look Like During the Pandemic",
         "url": "https://gizmodo.com/what-outdoor-learning-could-look-like-during-the-pandem-1844956016",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -45830,7 +45830,7 @@
         "id": "96973aef-501b-44f9-a46d-517a3d95528b",
         "name": "Facebook Knows This Election Is Going to Be a Catastrophe",
         "url": "https://gizmodo.com/facebook-knows-this-election-is-going-to-be-a-catastrop-1844942311",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "voting",
@@ -45893,7 +45893,7 @@
         "id": "bfb30053-13ad-42ef-a702-ea40c35c94a7",
         "name": "Zuckerberg Drops $300 Million to Support U.S. Elections",
         "url": "https://gizmodo.com/zuckerberg-drops-300-million-to-support-u-s-elections-1844921516",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "voting",
@@ -45956,7 +45956,7 @@
         "id": "dc30cbca-1a6b-4597-93b1-db8b4d3a249e",
         "name": "Acer's Latest Under $1,000 Laptops Have Wi Fi 6 and Thunderbolt 4",
         "url": "https://gizmodo.com/acers-latest-under-1-000-laptops-have-wi-fi-6-and-thun-1844921077",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "intel",
@@ -46031,7 +46031,7 @@
         "id": "dde1b24d-0ff6-402c-9f12-2d344f3218c9",
         "name": "Facebook\u2019s Militia 'Mistake,' FCC\u2019s Speech Police, and TikTok\u2019s Secret Sauce",
         "url": "https://gizmodo.com/facebook-s-militia-mistake-fcc-s-speech-police-and-ti-1844959479",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "secret",
@@ -46114,7 +46114,7 @@
         "id": "ecb56820-7a7f-4076-9b82-f1b3a36ddf41",
         "name": "The CDC (Trump) Says It's Halting Evictions",
         "url": "https://gizmodo.com/the-cdc-trump-says-its-halting-evictions-1844922254",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "halting",
@@ -46173,7 +46173,7 @@
         "id": "b3d4cf1a-0abd-4a49-884a-b7f725e2288d",
         "name": "Facebook Threatens to Ban Australian Users From Posting Any News Content",
         "url": "https://gizmodo.com/facebook-threatens-to-ban-australian-users-from-posting-1844913616",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "content",
@@ -46240,7 +46240,7 @@
         "id": "02249a78-69d2-414d-bba8-e8055a7c98e3",
         "name": "Bill Barr Is About to Blow Up the Antitrust Case Against Google: Report",
         "url": "https://gizmodo.com/bill-barr-is-about-to-blow-up-the-antitrust-case-agains-1844947111",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "case",
@@ -46307,7 +46307,7 @@
         "id": "579e221b-7f44-49c1-bbc4-c0515df7b54f",
         "name": "California Is About to Get Its Second Major Heat Wave in Less Than a Month",
         "url": "https://earther.gizmodo.com/californias-about-to-get-its-second-major-heat-wave-in-1844945896",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -46374,7 +46374,7 @@
         "id": "ddf108f3-cd3e-46da-b392-d4e2cdbe83ea",
         "name": "President Trump Tells Supporters to Commit Felony by Voting Twice",
         "url": "https://gizmodo.com/president-trump-tells-supporters-to-commit-felony-by-vo-1844939138",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "voting",
@@ -46437,7 +46437,7 @@
         "id": "d87b6db1-046a-4e09-8a4f-fa813199c6ce",
         "name": "Keanu Reeves Teases Matrix 4's 'Beautiful' Story",
         "url": "https://io9.gizmodo.com/updates-from-the-matrix-4-lucifer-and-more-1844902873",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -46512,7 +46512,7 @@
         "id": "559e2516-a341-4966-9379-e163102e3e8b",
         "name": "Facebook Is Helping Encourage Voters to Break the Law",
         "url": "https://gizmodo.com/facebook-is-helping-encourage-voters-to-break-the-law-1844948604",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trumps",
@@ -46579,7 +46579,7 @@
         "id": "a5c779ee-cbb8-45d9-b7b6-907d3713871d",
         "name": "Trump Spreads Conspiracy Theory So Stupid I'm Struggling to Write a Headline for It",
         "url": "https://gizmodo.com/trump-spreads-conspiracy-theory-so-stupid-im-struggling-1844916383",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "struggling",
@@ -48742,7 +48742,7 @@
         "id": "ac93d996-8ee2-4bb2-8ab9-e08f18a3f84a",
         "name": "How COVID-19 May Impact Applying for Financial Aid",
         "url": "https://twocents.lifehacker.com/how-covid-19-may-impact-applying-for-financial-aid-1844982448",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "applying",
@@ -48805,7 +48805,7 @@
         "id": "2fdbd4fc-624f-485d-818e-0aa63287deb6",
         "name": "Interactive Map from United Shows COVID Travel Restrictions",
         "url": "https://lifehacker.com/stay-up-to-date-on-covid-travel-restrictions-with-this-1845011555",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -48868,7 +48868,7 @@
         "id": "523914e8-77d3-4854-a2ad-8e76b4ef1611",
         "name": "Figure Out Now Where to Get Your Child Tested for COVID-19",
         "url": "https://vitals.lifehacker.com/figure-out-now-where-to-get-your-child-tested-for-covid-1845012797",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "test",
@@ -48935,7 +48935,7 @@
         "id": "17b1b528-df6e-467e-a5d4-86c382efe630",
         "name": "Use This Fall Foliage Map to Help Plan Your Autumn Road Trip",
         "url": "https://lifehacker.com/use-this-fall-foliage-map-to-help-plan-your-autumn-road-1844942798",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "autumn",
@@ -49010,7 +49010,7 @@
         "id": "85df85dc-6bda-47a1-8fef-3dcc279222c9",
         "name": "Watch Sesame Street and CNN's Back-to-School Town Hall",
         "url": "https://offspring.lifehacker.com/watch-sesame-street-and-cnns-back-to-school-town-hall-1844997514",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "learning",
@@ -49073,7 +49073,7 @@
         "id": "5fcf8575-0157-41ee-857c-dc390e58e849",
         "name": "The Grammy Museum built a streaming service to share its archives",
         "url": "https://www.engadget.com/grammy-museum-streaming-service-interviews-performances-163349727.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "grammy",
@@ -49144,7 +49144,7 @@
         "id": "01a2d990-1a33-423a-a3cc-4c5966fed946",
         "name": "Switch exclusive 'No More Heroes 3' has been delayed to 2021",
         "url": "https://www.engadget.com/no-more-heroes-3-delayed-nintendo-switch-2021-101539678.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "exclusive",
@@ -49211,7 +49211,7 @@
         "id": "005b311c-b67f-4506-9b1d-d0d7aeb43e13",
         "name": "WildLeaks: The whistleblowing site for planet Earth",
         "url": "https://www.engadget.com/wildleaks-earth-league-international-conservation-whistleblower-133053631.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "crime",
@@ -49278,7 +49278,7 @@
         "id": "a335bd66-4e2a-4008-a343-40ebdba07ea7",
         "name": "Oura Ring Review: Worth the Hype",
         "url": "https://www.wired.com/review/oura-ring/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "temperature",
@@ -49341,7 +49341,7 @@
         "id": "2436df1c-b65e-400f-97ea-3f56751ceafe",
         "name": "Mental Health in the US is Suffering\u2014Will It Go Back to Normal?",
         "url": "https://www.wired.com/story/mental-health-in-the-us-is-suffering-will-it-go-back-to-normal/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -49400,7 +49400,7 @@
         "id": "6f942ba7-95ed-4e73-9fb3-b3aee9ff1c59",
         "name": "School in the Age of Covid: A Series of Impossible Decisions",
         "url": "https://www.wired.com/story/get-wired-podcast-7-covid-school/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "various",
@@ -49471,7 +49471,7 @@
         "id": "cbe0d4ec-a73a-498e-9cb0-bf6d271b5824",
         "name": "Why Contact-Tracing Apps Haven\u2019t Slowed Covid-19 in the US",
         "url": "https://www.wired.com/story/why-contact-tracing-apps-not-slowed-covid-us/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "slowed",
@@ -49542,7 +49542,7 @@
         "id": "a9d49217-a95b-4cb5-9b12-fc0d7c8a9010",
         "name": "Peloton Is Betting You\u2019ll Never Go Back to the Gym",
         "url": "https://www.wired.com/story/peloton-new-bike-home-gyms/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "tread",
@@ -49601,7 +49601,7 @@
         "id": "29b498e3-26c1-45b9-891a-e2b5b0336cd8",
         "name": "In China, GitHub Is a Free Speech Zone for Covid Information",
         "url": "https://www.wired.com/story/china-github-free-speech-covid-information/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "information",
@@ -49672,7 +49672,7 @@
         "id": "e4af9ca3-7402-48eb-810d-30206770dad7",
         "name": "Join Us for This Year's Virtual WIRED25 Celebration",
         "url": "https://www.wired.com/story/wired25-announcement-2020/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "wednesdays",
@@ -49735,7 +49735,7 @@
         "id": "48233367-11be-4ae3-bdab-fb65edbdb849",
         "name": "The Bay Area Just Turned Orange. All Eyes Are on PurpleAir",
         "url": "https://www.wired.com/story/bay-area-just-turned-orange-all-eyes-on-purpleair/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "matter",
@@ -51937,7 +51937,7 @@
         "id": "f5fa461d-122d-4bae-88aa-1e1010e7cf4c",
         "name": "When Did Covid-19 Really Start Spreading in the U.S.?",
         "url": "https://gizmodo.com/when-did-covid-19-really-start-spreading-in-the-u-s-1845014536",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "spread",
@@ -52000,7 +52000,7 @@
         "id": "6b8ac318-6576-4d97-8288-86e8bd0b0836",
         "name": "IOC Says the Games Will Happen \u2018With or Without Covid\u2019",
         "url": "https://gizmodo.com/olympics-2021-international-olympic-committee-says-the-1844978949",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "japan",
@@ -52059,7 +52059,7 @@
         "id": "c07da025-14a0-4644-9ca4-04dad0b07961",
         "name": "Here's What We Know So Far About the AstraZeneca Vaccine Trial Halt",
         "url": "https://gizmodo.com/heres-what-we-know-so-far-about-the-astrazeneca-vaccine-1845004354",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "symptoms",
@@ -52126,7 +52126,7 @@
         "id": "d98287b2-05c0-4198-a6d9-9f3321457c50",
         "name": "How to Read That Damning Sturgis Motorcycle Rally 'Superspreader' Study Like a Scientist",
         "url": "https://gizmodo.com/how-to-read-that-damning-sturgis-motorcycle-rally-super-1844987945",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "rally",
@@ -52201,7 +52201,7 @@
         "id": "c63a68dd-4438-4e52-922e-ccd30fda267f",
         "name": "Top Pharmaceutical Giants Pledge to Stick to Science on Coronavirus Vaccine",
         "url": "https://gizmodo.com/top-pharmaceutical-giants-pledge-to-stick-to-science-on-1844989821",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "giants",
@@ -52276,7 +52276,7 @@
         "id": "fef773ac-084f-47dc-8719-6c7fe56df2fe",
         "name": "What Outdoor Learning Could Look Like During the Pandemic",
         "url": "https://gizmodo.com/what-outdoor-learning-could-look-like-during-the-pandem-1844956016",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -52335,7 +52335,7 @@
         "id": "4973ee1e-977c-423a-9feb-7786d1d4eb72",
         "name": "Pharma Companies Will Commit to Safety in Covid-19 Vaccine",
         "url": "https://gizmodo.com/pharma-companies-to-release-pledge-promising-not-to-see-1844971804",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "coronavirus",
@@ -52402,7 +52402,7 @@
         "id": "03494f45-f32c-43e9-950d-7b1147dbac62",
         "name": "Apple TV Arrives on Vizio SmartCast TVs",
         "url": "https://gizmodo.com/apple-tv-arrives-on-vizio-smartcast-tvs-1845006293",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "support",
@@ -52461,7 +52461,7 @@
         "id": "aefc5dbd-cb63-4df6-a5df-355fb96fdcee",
         "name": "Apple's Annual iPhone Event Is September 15 and Here's What We Could See",
         "url": "https://gizmodo.com/apples-annual-iphone-event-is-september-15-and-heres-wh-1844984112",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "rumors",
@@ -52524,7 +52524,7 @@
         "id": "3687cf61-8281-48b5-8f69-b37b0108ab1a",
         "name": "President Death Recorded Saying He Planned to 'Play Down' Virus He Confessed Was 'More Deadly' Than Flu",
         "url": "https://gizmodo.com/president-death-recorded-saying-he-planned-to-play-down-1845002367",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "confessed",
@@ -52599,7 +52599,7 @@
         "id": "7e1c2377-dd55-4b28-a68a-0e1d781623e7",
         "name": "Florida teen arrested after embarrassingly simple cyberattack on Miami schools",
         "url": "https://gizmodo.com/teen-hacker-charged-with-paralyzing-miami-schools-in-em-1844968182",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "teen",
@@ -52678,7 +52678,7 @@
         "id": "59363bae-172b-4ca0-a2ef-6d93e2a09c41",
         "name": "Poor Households Spend Nearly Four Times as Much on Utilities as Well-Off Ones",
         "url": "https://earther.gizmodo.com/poor-households-spend-nearly-four-times-as-much-on-util-1845010294",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "higher",
@@ -55270,7 +55270,7 @@
         "id": "d25629d0-b130-4c9d-aa54-4ad6748f026a",
         "name": "Coronavirus: What do we know about the artemisia plant?",
         "url": "https://www.bbc.co.uk/news/world-africa-53484298",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "coronavirus",
@@ -55329,7 +55329,7 @@
         "id": "5863ad99-b00c-4a15-8d34-450491985088",
         "name": "Presidential rivals Trump and Biden spar over Covid-19 vaccine",
         "url": "https://www.bbc.co.uk/news/election-us-2020-54066852",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trials",
@@ -55396,7 +55396,7 @@
         "id": "cb5e23d4-4b5e-4ca8-a2de-05ff98a0398b",
         "name": "Coronavirus: India overtakes Brazil in Covid-19 cases",
         "url": "https://www.bbc.co.uk/news/world-asia-india-54023509",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -55459,7 +55459,7 @@
         "id": "46a07869-d757-4fe3-89b9-e96afc81eacd",
         "name": "Coronavirus: Who would get the vaccine first?",
         "url": "https://www.bbc.co.uk/news/health-54027269",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "successful",
@@ -55514,7 +55514,7 @@
         "id": "298c8b60-bede-4b23-86f7-f083dc41f655",
         "name": "Vasyl Lomachenko to face Teofimo Lopez in lightweight unification bout",
         "url": "https://www.bbc.co.uk/sport/boxing/54083611",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -55589,7 +55589,7 @@
         "id": "3a8b1d6d-e013-4312-a88d-b54f91026c04",
         "name": "Autumn Nations Cup: Ireland v Wales to kick-off eight-team tournament",
         "url": "https://www.bbc.co.uk/sport/rugby-union/54104268",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "autumn",
@@ -55660,7 +55660,7 @@
         "id": "7f61f1cb-ed26-4c33-9293-ec690fd44456",
         "name": "New COVID Screening Policies for Passengers Entering the U.S.",
         "url": "https://lifehacker.com/new-covid-screening-policies-for-international-passenge-1845033161",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "contact",
@@ -55723,7 +55723,7 @@
         "id": "c6288b25-d31b-4c16-8cf6-6cdcf3a6dd00",
         "name": "Exit Strategies for Young Adults Forced Home During COVID-19",
         "url": "https://twocents.lifehacker.com/exit-strategies-for-young-adults-forced-home-during-cov-1845066852",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "parents",
@@ -55798,7 +55798,7 @@
         "id": "719464bd-ab3f-4d0a-96b6-a657cfc840ed",
         "name": "How to Spot Price Gouging on Amazon",
         "url": "https://twocents.lifehacker.com/how-to-spot-price-gouging-on-amazon-1845024383",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "products",
@@ -55849,7 +55849,7 @@
         "id": "1a42ce04-4fb2-4286-8bd8-377f3021d7f8",
         "name": "How to Stream Movies From This Year's NYFF and TIFF",
         "url": "https://lifehacker.com/how-to-stream-movies-from-this-years-nyff-and-tiff-1845032372",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "stream",
@@ -55900,7 +55900,7 @@
         "id": "16850c03-7eb4-4a2d-afdf-40c214f9d360",
         "name": "Where to Get Relief if There Isn\u2019t a Second Stimulus Check",
         "url": "https://twocents.lifehacker.com/where-to-get-relief-if-there-isn-t-a-second-stimulus-ch-1845048041",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "states",
@@ -55967,7 +55967,7 @@
         "id": "8cffcce7-14a0-4a0f-bacc-5a6cac87906b",
         "name": "Embrace 'Friluftsliv'\u2014Norway's Open-Air Living",
         "url": "https://lifehacker.com/embrace-friluftsliv-norways-open-air-living-1845051994",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "key",
@@ -56034,7 +56034,7 @@
         "id": "04ee9d6e-4422-4315-b3f0-8fe8adc58a67",
         "name": "How to Survive a Disaster, With Crisis Reporter Judith Matloff",
         "url": "https://lifehacker.com/how-to-survive-a-disaster-with-crisis-reporter-judith-1845049961",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "live",
@@ -56105,7 +56105,7 @@
         "id": "e1273aa6-45a8-483d-82a7-30f1e4ab4397",
         "name": "How to Stay as Safe as Possible on Public Transit Right Now",
         "url": "https://lifehacker.com/how-to-stay-as-safe-as-possible-on-public-transit-right-1845037829",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "possible",
@@ -56172,7 +56172,7 @@
         "id": "5a848e66-5888-4a13-b02b-5d8bf77cf914",
         "name": "Now Is Not the Time for 'Mom Shaming'",
         "url": "https://offspring.lifehacker.com/now-is-not-the-time-for-mom-shaming-1845048336",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -56227,7 +56227,7 @@
         "id": "177386dd-33c7-4df2-88de-ce700f35a065",
         "name": "I'm Reesha Howard, Entrepreneur and Homeschooling Mom of Four, and This Is How I Parent",
         "url": "https://offspring.lifehacker.com/im-reesha-howard-entrepreneur-and-homeschooling-mom-of-1845017173",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "husband",
@@ -56306,7 +56306,7 @@
         "id": "14af1383-409c-4e80-9832-6cd354b1dac9",
         "name": "The EU is testing cross-border COVID-19 contact tracing",
         "url": "https://www.engadget.com/covid-19-contact-tracing-test-european-union-cross-border-162652272.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "contact",
@@ -56373,7 +56373,7 @@
         "id": "19923830-7fcf-4977-821f-c915345e5ae1",
         "name": "Apple experiments with 'Express' store to limit COVID risks",
         "url": "https://www.engadget.com/apple-express-store-format-burlingame-122917184.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -56440,7 +56440,7 @@
         "id": "d1ebd20c-0523-49cd-8e49-54d762e283a5",
         "name": "Apple adds blood oxygen monitoring to the Watch Series 6",
         "url": "https://www.engadget.com/apple-watchos-7-blood-oxygen-172503257.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "university",
@@ -56503,7 +56503,7 @@
         "id": "3e055005-fba7-4c94-adb0-7649401e91a6",
         "name": "Walmart Plus signups officially begin today, starting at $98 per year",
         "url": "https://www.engadget.com/walmart-plus-launch-subscription-details-price-123003235.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "starting",
@@ -56578,7 +56578,7 @@
         "id": "99a67837-e361-4862-bae7-b8066ca715e5",
         "name": "Amazon wants a Joe Exotic series starring Nicolas Cage",
         "url": "https://www.engadget.com/amazon-tiger-king-nicolas-cage-095517875.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "variety",
@@ -56653,7 +56653,7 @@
         "id": "750a6f25-e798-4549-8db4-71f1cb9452f7",
         "name": "Former Facebook employee exposes its inability to stop misinformation",
         "url": "https://www.engadget.com/facebook-memo-political-misinformation-053704272.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "removed",
@@ -56728,7 +56728,7 @@
         "id": "c9152386-0062-4da0-a5a6-6a1a269bbda9",
         "name": "Facebook information center will highlight science-backed data on climate change",
         "url": "https://www.engadget.com/facebook-climate-change-information-center-121525353.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "change",
@@ -56791,7 +56791,7 @@
         "id": "a47b343e-8d0a-4979-9bbb-d4d29253e44e",
         "name": "The Morning After: Apple's big iPad and Apple Watch event",
         "url": "https://www.engadget.com/apple-time-flies-watch-6-ipad-air-tma-113128386.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "sensor",
@@ -56858,7 +56858,7 @@
         "id": "6edfc43e-8fbe-457c-b4fa-1b5aa3715664",
         "name": "Stop Yelling About a Rushed Vaccine, and Start Planning for It",
         "url": "https://www.wired.com/story/stop-yelling-about-a-rushed-vaccine-and-start-planning-for-it/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "public",
@@ -56925,7 +56925,7 @@
         "id": "fbfd2d94-9162-4854-917d-1c7eeac549bd",
         "name": "Scientists Found Phosphine on Venus\u2014A Possible Hint of Life",
         "url": "https://www.wired.com/story/dr-phosphine-and-the-possibility-of-life-on-venus/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "venusa",
@@ -56992,7 +56992,7 @@
         "id": "9f1f48cc-26b5-4e91-bb1f-510eff28c9bc",
         "name": "The Apocalypse Doesn\u2019t Need an Instagram Filter",
         "url": "https://www.wired.com/story/plaintext-the-apocalypse-doesnt-need-an-instagram-filter/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "filter",
@@ -57057,7 +57057,7 @@
         "id": "ebef3ed1-debb-4c5f-99b1-1c21e9fd110e",
         "name": "Asbestos Removal Is a Hard Job, but Covid-19 Makes It Harder",
         "url": "https://www.wired.com/story/asbestos-removal-is-a-hard-job-but-covid-19-makes-it-harder/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pandemic",
@@ -59465,7 +59465,7 @@
         "id": "1131a375-a323-4100-8f6c-b4373d792936",
         "name": "Should a Covid-19 Vaccine Be Mandatory for Kids? Health Experts Are Trying to Decide",
         "url": "https://gizmodo.com/should-a-covid-19-vaccine-be-mandatory-for-kids-health-1845049853",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "decide",
@@ -59536,7 +59536,7 @@
         "id": "6a29d608-8eb1-4f04-8a76-4112f1f986ac",
         "name": "Trump's HHS Goons Smear CDC as 'Deep State,' Routinely Meddle with Covid-19 Reports",
         "url": "https://gizmodo.com/trumps-hhs-goons-smear-cdc-as-deep-state-routinely-med-1845037621",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trumps",
@@ -59615,7 +59615,7 @@
         "id": "1fa4ad37-ad0f-45d7-8a0b-13663cc5f2ad",
         "name": "Anti-Maskers Forced to Dig Graves for Covid-19 Victims in Indonesia",
         "url": "https://gizmodo.com/anti-maskers-forced-to-dig-graves-for-covid-19-victims-1845046526",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "masks",
@@ -59690,7 +59690,7 @@
         "id": "ce121e41-c6d1-4501-9338-df2c1016d683",
         "name": "Scientists Flag 'Inconsistencies' in Russian Vaccine Study",
         "url": "https://gizmodo.com/scientists-flag-inconsistencies-in-russian-vaccine-stud-1845027895",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "scientists",
@@ -59753,7 +59753,7 @@
         "id": "6d1b8179-7e86-4137-ad4d-84edf4b6e63e",
         "name": "Bill Gates Is Rapidly Losing Trust in the FDA and CDC",
         "url": "https://gizmodo.com/bill-gates-is-rapidly-losing-trust-in-the-fda-and-cdc-1845063790",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trust",
@@ -59820,7 +59820,7 @@
         "id": "f1df136b-b229-490c-b3b7-bdf04aa31a0b",
         "name": "How to Watch Apple's Event Today",
         "url": "https://gizmodo.com/how-to-watch-apples-event-today-1845050025",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "stream",
@@ -59875,7 +59875,7 @@
         "id": "92ff3132-f492-4345-8462-51ed0e2e0515",
         "name": "10 Years Ago, World Leaders Set Biodiversity Goals. They Haven\u2019t Met a Single One.",
         "url": "https://earther.gizmodo.com/10-years-ago-world-leaders-set-biodiversity-goals-the-1845056565",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -59946,7 +59946,7 @@
         "id": "314b1325-522b-419b-8673-957aa872a930",
         "name": "BP Says We've Already Reached Peak Oil",
         "url": "https://earther.gizmodo.com/bp-says-weve-already-reached-peak-oil-1845064372",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "demand",
@@ -60009,7 +60009,7 @@
         "id": "64295db0-282f-45ec-b11d-dec3ae8d6493",
         "name": "Google's removing search suggestions about candidates, voting",
         "url": "https://gizmodo.com/google-says-its-getting-rid-of-search-suggestions-about-1845021302",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "voting",
@@ -60072,7 +60072,7 @@
         "id": "5887d343-18a2-46a2-88d4-30361cb96a74",
         "name": "Garmin's New Smartwatch Is Made for Triathletes, Because We Should All Dream Big Right Now",
         "url": "https://gizmodo.com/garmins-new-smartwatch-is-made-for-triathletes-because-1845072674",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "garmins",
@@ -60147,7 +60147,7 @@
         "id": "de56676c-4846-4f5d-a445-e9772171934f",
         "name": "U.S. Concentration Camp Sent Undocumented Women to Be Sterilized, According to Whistleblower",
         "url": "https://gizmodo.com/u-s-concentration-camp-sent-undocumented-women-to-be-s-1845059997",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "whistleblower",
@@ -60222,7 +60222,7 @@
         "id": "b2a81b65-a597-4d87-bcc2-beca52ee2b13",
         "name": "What to Expect from Apple's September Event (Hint: Maybe No iPhones)",
         "url": "https://gizmodo.com/what-to-expect-from-apples-september-event-hint-maybe-1845006259",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "hint",
@@ -60293,7 +60293,7 @@
         "id": "0d7d0158-bc5d-42b5-9b8d-7033b4f7bdcb",
         "name": "Conservative Media May Be Influencing People Not to Evacuate During Hurricanes",
         "url": "https://earther.gizmodo.com/conservative-media-may-be-influencing-people-not-to-eva-1845027141",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "storm",
@@ -60352,7 +60352,7 @@
         "id": "c0584f69-7f33-4ae4-af33-7c839354ebb6",
         "name": "The GoPro Hero9 Is a Little Bigger and a Lot Better in Every Possible Way",
         "url": "https://gizmodo.com/the-gopro-hero9-is-a-little-bigger-and-a-lot-better-in-1845058869",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "better",
@@ -62671,7 +62671,7 @@
         "id": "f0be8a04-b05e-4269-88de-6d59db8fd35f",
         "name": "The first road tests of the Volkswagen ID.3 electric car are showing up",
         "url": "https://arstechnica.com/cars/2020/08/the-first-road-tests-of-the-volkswagen-id-3-electric-car-are-showing-up/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "car",
@@ -62738,7 +62738,7 @@
         "id": "a2bb64f5-6fe3-4d76-b83a-dde59eaabd28",
         "name": "Coronavirus creeps into US mink farms, \u201cunusually large numbers\u201d dead",
         "url": "https://arstechnica.com/science/2020/08/coronavirus-creeps-into-us-mink-farms-unusually-larger-numbers-dead/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "creeps",
@@ -63171,7 +63171,7 @@
         "id": "a36c554b-dc16-4957-9def-9784a15c0253",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/energyOilNews/idAFL8N2F40CW",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -67166,7 +67166,7 @@
         "id": "5fa2105b-1a1d-4c5a-a781-0329171b0f37",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/commoditiesNews/idAFL1N2FN1AN",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -67744,7 +67744,7 @@
         "id": "1b8702ad-0dc4-4434-9d42-b98d59dc6d53",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/worldNews/idAFKBN25H28S",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -68026,7 +68026,7 @@
         "id": "de0307ee-7724-4e18-adaf-454b4fffa34f",
         "name": "RNC 2020 Day 1: GOP formally nominates Trump to 2nd term",
         "url": "https://abcnews.go.com/Politics/rnc-2020-day-president-trump-formally-nominated-delegates/story?id=72555272",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trump",
@@ -68105,7 +68105,7 @@
         "id": "fb889b35-fbde-4f92-aceb-88e1d7ba3b20",
         "name": "The Note: As GOP convention begins, Trump searches for opponent Biden isn\u2019t",
         "url": "https://abcnews.go.com/Politics/note-gop-convention-begins-trump-searches-opponent-biden/story?id=72553084",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trump",
@@ -68180,7 +68180,7 @@
         "id": "5aa386db-4383-4861-ba04-1d7be127d4d7",
         "name": "Timeline: This year\u2019s political fight over the Postal Service",
         "url": "https://abcnews.go.com/Politics/timeline-years-political-fight-postal-service/story?id=72496712",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "mail",
@@ -70887,7 +70887,7 @@
         "id": "64fefd09-e1ca-4b8a-adb5-6d8284611681",
         "name": "'The Last Campfire' from Hello Games hits consoles, iOS and PC tomorrow",
         "url": "https://www.engadget.com/helllo-games-the-last-campfire-233501636.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "hits",
@@ -70962,7 +70962,7 @@
         "id": "dee640f2-800b-46bf-9dfa-17a8c8f3afa5",
         "name": "WoW's 'Shadowlands' expansion starts rolling out on October 26th",
         "url": "https://www.engadget.com/world-of-warcraft-shadowlands-october-27-190201131.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shadowlands",
@@ -71025,7 +71025,7 @@
         "id": "7432aa39-9ae1-4d59-9280-18dfc071dec7",
         "name": "Virtual 'League of Legends' band K/DA returns with The Baddest",
         "url": "https://www.engadget.com/kda-virtual-band-the-baddest-video-ep-league-legends-190024729.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "returns",
@@ -71096,7 +71096,7 @@
         "id": "a9b38cc1-9d63-4454-b484-2506a30efa3c",
         "name": "What you need to know about Apple's iPhone 12 and 12 Pro",
         "url": "https://www.engadget.com/iphone-12-iphone-12-pro-what-you-need-to-know-price-5g-release-date-2020-184302416.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "apples",
@@ -71159,7 +71159,7 @@
         "id": "0b82ae4b-b641-44bd-afad-2e09c1984205",
         "name": "Outlier adds Astronomy and Statistics classes to its online university",
         "url": "https://www.engadget.com/outlier-astronomy-statistics-140021110.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "statistics",
@@ -71230,7 +71230,7 @@
         "id": "c5d32c11-5d77-4ee6-9335-912975aa8422",
         "name": "FaZe and Tfue have settled their lawsuit and said goodbye",
         "url": "https://www.engadget.com/tfue-faze-lawsuit-settled-224753030.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "lawsuit",
@@ -71289,7 +71289,7 @@
         "id": "920efe68-59e6-43e5-9924-2aaa7f3f0515",
         "name": "Someone squeezed a Nintendo Wii into a Game Boy Color-like case",
         "url": "https://www.engadget.com/nintendo-wii-handheld-console-mod-153954715.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "gingerofmods",
@@ -71360,7 +71360,7 @@
         "id": "4fd6f429-438d-40fb-8f50-975a9739cf74",
         "name": "The Morning After: Sony will directly invite some gamers to pre-order the PS5",
         "url": "https://www.engadget.com/ps5-pre-orders-tma-111524146.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "ps5",
@@ -71435,7 +71435,7 @@
         "id": "1d0a44c2-e3f9-4143-b2e3-ef6253e426bc",
         "name": "Google Offers to Help Others With the Tricky Ethics of AI",
         "url": "https://www.wired.com/story/google-help-others-tricky-ethics-ai/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "customers",
@@ -71498,7 +71498,7 @@
         "id": "07ded715-7592-4922-8cfe-e4baec30c1fd",
         "name": "How WeChat Censored the Coronavirus Pandemic",
         "url": "https://www.wired.com/story/wechat-chinese-internet-censorship-coronavirus/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "censored",
@@ -71553,7 +71553,7 @@
         "id": "f69e7d54-99fb-40c9-8c4e-edcbb4e7ed77",
         "name": "The Pandemic Could Derail a Generation of Young Scientists",
         "url": "https://www.wired.com/story/the-pandemic-could-derail-a-generation-of-young-scientists/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -71624,7 +71624,7 @@
         "id": "26cd22b6-aa52-4cfb-8e1a-77a252d6d36a",
         "name": "Elon Musk Is About to Show Off His Neuralink Brain Implant",
         "url": "https://www.wired.com/story/elon-musk-neuralink-brain-implant-v2-demo/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "implant",
@@ -71683,7 +71683,7 @@
         "id": "410ac9cb-2503-4e94-80d9-b157f9ce9796",
         "name": "The First Repeat Covid-19 Infection Case Isn\u2019t All Bad News",
         "url": "https://www.wired.com/story/the-first-repeat-covid-19-infection-case-isnt-all-bad-news/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "case",
@@ -71758,7 +71758,7 @@
         "id": "fc2f1c20-6e0f-43dc-b07b-b778efd90d9c",
         "name": "The Future of American Industry Depends on Open Source Tech",
         "url": "https://www.wired.com/story/opinon-the-future-of-american-industry-depends-on-open-source-tech/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "depends",
@@ -71829,7 +71829,7 @@
         "id": "d6391bcc-acce-4947-b82b-598d2b112012",
         "name": "Turns Out Late Night Talk Show Hosts Are Just Like Us",
         "url": "https://www.wired.com/story/late-night-hosts/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "noah",
@@ -71892,7 +71892,7 @@
         "id": "ed59ee7e-3d20-488d-82ea-db50282c345b",
         "name": "Steely Eyes, Tragic Ends: The Bromantic Theory of History",
         "url": "https://www.wired.com/story/steely-eyes-tragic-ends-the-bromantic-theory-of-history/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "putin",
@@ -71971,7 +71971,7 @@
         "id": "3ff3a68f-71c4-4abf-9bc8-c0c5cc59242f",
         "name": "A Dogfight Renews Concerns About AI's Lethal Potential",
         "url": "https://www.wired.com/story/dogfight-renews-concerns-ai-lethal-potential/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "autonomous",
@@ -75097,7 +75097,7 @@
         "id": "b1b3857c-6c0e-41d4-8302-cb503caba464",
         "name": "Niantic creates a 5G supergroup for 'planet-scale AR' experiences",
         "url": "https://www.engadget.com/niantic-planet-scale-augmented-reality-alliance-5g-real-world-135329689.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "clear",
@@ -75164,7 +75164,7 @@
         "id": "e701310d-bb73-42cd-9793-1550dc9c0206",
         "name": "'Game of Thrones' duo are making a 'Three-Body Problem' series for Netflix",
         "url": "https://www.engadget.com/netflix-weiss-benioff-sci-fi-rian-johnson-152019884.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "project",
@@ -75247,7 +75247,7 @@
         "id": "50cf0fd2-395b-46e1-ba03-17578efa2453",
         "name": "Watch a Toyota-backed flying car's first public, piloted test flight",
         "url": "https://www.engadget.com/skydrive-flying-car-test-flight-195528927.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "piloted",
@@ -75326,7 +75326,7 @@
         "id": "3baab17c-eacc-4816-abf3-c29448441bc1",
         "name": "Samsung says its latest mobile memory is a production breakthrough",
         "url": "https://www.engadget.com/samsung-mobile-memory-euv-production-202043604.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "memory",
@@ -75393,7 +75393,7 @@
         "id": "7aff2d46-6244-4899-9dac-4412e6628555",
         "name": "FDA approves first automated insulin system for kids",
         "url": "https://www.engadget.com/fda-approves-automated-insulin-system-for-kids-090120022.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "individuals",
@@ -75456,7 +75456,7 @@
         "id": "786b8fbd-2287-4c5f-9455-f68fee656e81",
         "name": "Lenovo's new $50 smart clock keeps things stupid simple",
         "url": "https://www.engadget.com/lenovo-smart-clock-essential-google-assistant-130027961.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "world",
@@ -75531,7 +75531,7 @@
         "id": "8bd16e82-3cd6-45ee-9773-fdd81ed0f324",
         "name": "Motorola's latest mid-range phone is a sub-$500 stunner with 5G",
         "url": "https://www.engadget.com/motorola-one-5g-snapdragon-765-quad-camera-under-500-dollars-130030709.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "sub500",
@@ -75606,7 +75606,7 @@
         "id": "2871e6dc-fbd6-4aa8-b320-a19abb67f552",
         "name": "Hitting the Books: Big Tech turns your every move into profit",
         "url": "https://www.engadget.com/hitting-the-books-dipayan-ghosh-terms-of-disservice-153003394.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "profit",
@@ -75681,7 +75681,7 @@
         "id": "54a6376e-eac1-4018-9ee1-03f9d0a8c752",
         "name": "AT&T reportedly backs away from selling Warner Bros. Interactive",
         "url": "https://www.engadget.com/att-timewarner-gaming-division-report-215112181.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "division",
@@ -75748,7 +75748,7 @@
         "id": "3c38d791-68e9-473a-9567-0b4251aa55f8",
         "name": "The Galaxy Z Fold 2 will be available on September 18th for $2,000",
         "url": "https://www.engadget.com/galaxy-z-fold-2-price-specs-availability-140041820.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "fold",
@@ -75815,7 +75815,7 @@
         "id": "5ea7fe52-0caf-438e-a08e-8615662b943a",
         "name": "Lenovo's latest flagship Yoga laptops are clad in leather",
         "url": "https://www.engadget.com/lenovo-yoga-9i-14-15-slim-9i-specs-price-130009868.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "laptops",
@@ -75894,7 +75894,7 @@
         "id": "ab4613b3-5bf6-48d5-9453-7a6d1be88f46",
         "name": "Influential indie studio Vlambeer is shutting down after a decade",
         "url": "https://www.engadget.com/bye-bye-vlambeer-170029297.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shutting",
@@ -75961,7 +75961,7 @@
         "id": "05fff1e1-4754-4850-bfc2-c6e50270d71e",
         "name": "Should Google\u2019s Ad Market Be Regulated Like the Stock Market?",
         "url": "https://www.wired.com/story/google-ad-market-regulated-like-stock-market/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "stock",
@@ -76020,7 +76020,7 @@
         "id": "06624da1-f850-43b9-ad3f-37e345e50861",
         "name": "How Cryptography Lets Down Marginalized Communities",
         "url": "https://www.wired.com/story/seny-kamara-crypto-encryption-underserved-communities/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "cryptography",
@@ -76087,7 +76087,7 @@
         "id": "39a43fd3-d9b3-41f2-94bb-9c4d03373029",
         "name": "A Spate of Arrests Sends the Piracy World Reeling",
         "url": "https://www.wired.com/story/piracy-arrests-belarus-internet-shutdown-atm-hacking-security-news/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "week",
@@ -76162,7 +76162,7 @@
         "id": "a5accc89-a008-4a3a-998f-492cdc3e9ab6",
         "name": "How to (Finally) Listen to All Those Podcasts in Your Queue",
         "url": "https://www.wired.com/story/how-to-listen-to-more-podcasts/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "listening",
@@ -76221,7 +76221,7 @@
         "id": "fce40264-5b2b-4397-9cd2-d0ea5f841a01",
         "name": "Can a Bubble Net Stop a Hurricane? Some Norwegians Think So",
         "url": "https://www.wired.com/story/can-a-bubble-net-stop-a-hurricane-some-norwegians-think-so/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "project",
@@ -76292,7 +76292,7 @@
         "id": "945bbc61-8a9f-4b1c-849a-f6aa88485b7e",
         "name": "Here\u2019s the Real Reason You Miss the Nokia 3310",
         "url": "https://www.wired.com/story/nokia-3310-turns-20/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "reason",
@@ -76355,7 +76355,7 @@
         "id": "4091734b-7aaf-4009-8f46-35dc85f1b5ec",
         "name": "The Excellent Evolution of Bill and Ted Face the Music",
         "url": "https://www.wired.com/story/excellent-evolution-bill-and-ted-face-the-music/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "sense",
@@ -76418,7 +76418,7 @@
         "id": "d7932987-3b35-4024-b611-5079ed519800",
         "name": "The Oysters That Knew What Time It Was",
         "url": "https://www.wired.com/story/oysters-that-knew-what-time-it-was/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "movements",
@@ -79285,7 +79285,7 @@
         "id": "d7846ee0-2f63-4677-9265-d6c0e75cadc4",
         "name": "Riot Games adds to its world of virtual influencers who promote 'League of Legends'",
         "url": "https://www.engadget.com/seraphine-riot-games-virtual-influencer-200538923.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shes",
@@ -79368,7 +79368,7 @@
         "id": "43123a16-8c1b-49f2-8846-af633804950b",
         "name": "Alphabet's Loon balloons are helping scientists study gravity waves",
         "url": "https://www.engadget.com/alphabet-loon-balloons-gravity-waves-222602483.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "gravity",
@@ -79443,7 +79443,7 @@
         "id": "cf999aee-39c7-42a7-b80a-9de84db34c8d",
         "name": "Pinterest users won't see ads when they search for election-related content",
         "url": "https://www.engadget.com/pinterest-election-2020-policies-212046383.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "polling",
@@ -79512,9 +79512,9 @@
     {
         "_id": "1e83601e-41fb-4f74-94a8-f8f8e4197620",
         "id": "1e83601e-41fb-4f74-94a8-f8f8e4197620",
-        "name": NaN,
+        "name": null,
         "url": "https://www.engadget.com/game-development-bundle-175549075.html",
-        "date": NaN,
+        "date": null,
         "labels": []
     },
     {
@@ -79522,7 +79522,7 @@
         "id": "ef0bf4f7-3905-4431-a47d-e7e9a1029c82",
         "name": "Intel unveils Tiger Lake CPUs, rebrands Project Athena as Evo",
         "url": "https://www.engadget.com/intel-tiger-lake-launch-evo-project-athena-164502057.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "project",
@@ -79597,7 +79597,7 @@
         "id": "3503e45f-b00b-4c4f-91ef-3c90d06cbbde",
         "name": "The first 'Avengers' DLC character will be Kate Bishop's Hawkeye",
         "url": "https://www.engadget.com/marvel-avengers-game-kate-bishop-hawkeye-dlc-character-093552895.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "barton",
@@ -79664,7 +79664,7 @@
         "id": "fbaf1fd6-8516-43f9-86c7-4c1807688321",
         "name": "Hitting the Books: Lessons learned from gaming with the King of Sweden",
         "url": "https://www.engadget.com/hitting-the-books-the-dream-architects-david-polfeldt-grand-central-publishing-153005239.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "media",
@@ -79739,7 +79739,7 @@
         "id": "c1b46ae4-5488-44e2-a044-b44ce41c79b0",
         "name": "If 'Tony Hawk's Pro Skater 1 and 2' is a feast, local multiplayer is dessert",
         "url": "https://www.engadget.com/tony-hawk-remake-local-multiplayer-130049963.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "feast",
@@ -79814,7 +79814,7 @@
         "id": "cfd4e9e9-d8fb-470c-aefe-a76812bbb2c3",
         "name": "The Transgressive, Progressive Utopia of Summer Television",
         "url": "https://www.wired.com/story/2020-summer-television/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "arabella",
@@ -79885,7 +79885,7 @@
         "id": "9c16f941-0f1e-4304-aea9-ef676d3aae91",
         "name": "Every Christopher Nolan Film, Ranked for You to Disagree With",
         "url": "https://www.wired.com/story/every-christopher-nolan-film-ranked-for-you-to-disagree-with/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "set",
@@ -85056,7 +85056,7 @@
         "id": "98f4c1e0-89b5-45c4-8e43-94a638650fa1",
         "name": "Inside world's largest camel hospital in Saudi",
         "url": "https://in.reuters.com/video/watch/idOVCUP421T",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "research",
@@ -86414,7 +86414,7 @@
         "id": "daacdca8-5eea-4b94-b267-2a07315801f1",
         "name": "COVID-19 hospital overwhelmed as India surges",
         "url": "https://www.reuters.com/video/watch/idPS3W?now=true",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "secondhighest",
@@ -86681,7 +86681,7 @@
         "id": "0cb85fb2-eb0f-4d0a-a3aa-b40137b1cfd3",
         "name": "Belgium's peeing statue dressed to honor health workers",
         "url": "https://in.reuters.com/video/watch/idOVCUP467B",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "peeing",
@@ -88386,7 +88386,7 @@
         "id": "62d03b8f-f5b3-4cd9-af58-5b31623f3a8f",
         "name": "Riot police fire pepper guns in Hong Kong",
         "url": "https://in.reuters.com/video/watch/idOVCUK36NF",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "secure",
@@ -90357,7 +90357,7 @@
         "id": "bf8fab8c-83d0-4970-852d-c7b7c299a4a3",
         "name": "Coronavirus: Who would get the vaccine first?",
         "url": "https://www.bbc.co.uk/news/health-54027269",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "vaccine",
@@ -90483,7 +90483,7 @@
         "id": "df745425-6e23-4120-aa95-94eb1ad6108b",
         "name": "Sweeping internal Facebook memo: \u201cI have blood on my hands\u201d",
         "url": "https://arstechnica.com/tech-policy/2020/09/sweeping-internal-facebook-memo-i-have-blood-on-my-hands/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "blood",
@@ -91958,7 +91958,7 @@
         "id": "e9562a87-cfbe-4a17-8c43-4a0bcda416d2",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/uk-health-coronavirus-serum-institute-idAFKBN2670P5",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -92882,7 +92882,7 @@
         "id": "c67b6531-243c-4387-a6e3-cd21ada58cbb",
         "name": "Google rolls out captions for audio and video messages on Duo",
         "url": "https://www.engadget.com/google-duo-captions-083552425.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "duo",
@@ -92945,7 +92945,7 @@
         "id": "f34f60b8-f4e3-4808-ad55-ac13ce501365",
         "name": "What\u2019s the tech industry's place in a racial justice movement?",
         "url": "https://www.engadget.com/silicon-valley-technology-race-reckoning-163023023.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "movement",
@@ -93020,7 +93020,7 @@
         "id": "59a4d680-c193-49c9-b35b-50b4675fb700",
         "name": "Facebook Portal adds Zoom support and other work-from-home features",
         "url": "https://www.engadget.com/facebook-portal-zoom-workplace-140020249.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "features",
@@ -93087,7 +93087,7 @@
         "id": "fbdd2138-5e19-4a9b-b278-11fe42420363",
         "name": "Bluetooth update could turn wearables into COVID-19 trackers",
         "url": "https://www.engadget.com/covid-bluetooth-sig-ens-wearables-plan-120555994.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "wearables",
@@ -93154,7 +93154,7 @@
         "id": "32a265c3-410e-464b-8321-488116e3a3e3",
         "name": "How the UK's algorithm-based grading fell apart",
         "url": "https://www.engadget.com/uk-algorithm-a-levels-gcse-results-143503870.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "grade",
@@ -93225,7 +93225,7 @@
         "id": "a23d66c7-d6f5-47ae-a2de-29ca613611af",
         "name": "In a Touch-Free World, the QR Code Is Having Its Moment",
         "url": "https://www.wired.com/story/in-a-touch-free-world-the-qr-code-is-having-its-moment/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "hotels",
@@ -93284,7 +93284,7 @@
         "id": "ae59fc27-2904-40d2-bb61-1efb48018430",
         "name": "This Plane Flies Itself. We Went for a Ride",
         "url": "https://www.wired.com/story/autonomous-plane-xwing/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "plane",
@@ -93347,7 +93347,7 @@
         "id": "0148f0f9-41dc-463e-b143-d3d04142e717",
         "name": "Samsung Galaxy Note 20 Ultra Review: Ultimate Android",
         "url": "https://www.wired.com/review/samsung-galaxy-note-20-ultra/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "good",
@@ -93414,7 +93414,7 @@
         "id": "8b804ebb-9602-45d8-bba7-e16b0cff53f4",
         "name": "Skewed Grading Algorithms Fuel Backlash Beyond the Classroom",
         "url": "https://www.wired.com/story/skewed-grading-algorithms-fuel-backlash-beyond-classroom/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "skewed",
@@ -96083,7 +96083,7 @@
         "id": "61a218e1-6300-47d1-93ab-87ca7a12c80e",
         "name": "Cops in Miami, NYC arrest protesters from facial recognition matches",
         "url": "https://arstechnica.com/tech-policy/2020/08/cops-in-miami-nyc-arrest-protesters-from-facial-recognition-matches/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "recognition",
@@ -96154,7 +96154,7 @@
         "id": "2825b66a-0501-405e-8762-a12710ea8b5e",
         "name": "College contact-tracing app readily leaked personal data, report finds",
         "url": "https://arstechnica.com/tech-policy/2020/08/college-contact-tracing-app-readily-leaked-personal-data-report-finds/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "college",
@@ -96233,7 +96233,7 @@
         "id": "20a592a7-7982-4d21-9238-e76431359114",
         "name": "Apple\u2019s value soars to a record $2 trillion",
         "url": "https://arstechnica.com/gadgets/2020/08/apples-value-soars-to-a-record-2-trillion/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "quarter",
@@ -96296,7 +96296,7 @@
         "id": "dd08423c-8826-48f6-9c57-b5b2a861ad20",
         "name": "The Golden Age of computer user groups",
         "url": "https://arstechnica.com/information-technology/2020/08/the-golden-age-of-computer-user-groups/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "early",
@@ -96355,7 +96355,7 @@
         "id": "9275ad82-adfc-407f-ab31-e76347fadef1",
         "name": "Coronavirus-exposed teachers could stay in classrooms under new fed. guidance",
         "url": "https://arstechnica.com/science/2020/08/coronavirus-exposed-teachers-could-stay-in-classrooms-under-new-fed-guidance/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "workers",
@@ -96422,7 +96422,7 @@
         "id": "c249a111-1118-4a9d-912f-437ff267a0a9",
         "name": "Cities sue Netflix, Hulu, Disney+, claim they owe cable \u201cfranchise fees\u201d",
         "url": "https://arstechnica.com/tech-policy/2020/08/cities-sue-netflix-hulu-disney-claim-they-owe-cable-franchise-fees/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "lawsuit",
@@ -96501,7 +96501,7 @@
         "id": "b54ea53b-fd19-40c5-9415-79f96bc62f64",
         "name": "Anti-vaccine group sues Facebook, claims fact-checking is \u201ccensorship\u201d",
         "url": "https://arstechnica.com/tech-policy/2020/08/anti-vaccine-group-sues-facebook-claims-fact-checking-is-censorship/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "suit",
@@ -96568,7 +96568,7 @@
         "id": "8c4c4813-2a39-4cf5-bec7-0fe76ed24152",
         "name": "Want Verizon or AT&T 5G? You\u2019ll have to buy an expensive unlimited plan",
         "url": "https://arstechnica.com/information-technology/2020/08/verizon-and-att-still-dont-allow-5g-access-in-cheaper-wireless-plans/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "charge",
@@ -96635,7 +96635,7 @@
         "id": "4d83c8d1-7ee3-4baa-ac2f-5590a0b7a2c2",
         "name": "Intel\u2019s run at the GPU market begins with Tiger Lake onboard graphics",
         "url": "https://arstechnica.com/gadgets/2020/08/intel-is-getting-serious-about-xe-gpus-laptop-desktop-and-datacenter/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "tiger",
@@ -98020,7 +98020,7 @@
         "id": "d5a9be46-4075-4ff4-ab08-a19a8d8680e7",
         "name": "How Animal Activists Exposed the Brutality of Factory Farming",
         "url": "https://www.wired.com/story/get-wired-podcast-6-ventilation-shutdown-factory-farms/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "animal",
@@ -98095,7 +98095,7 @@
         "id": "df967638-68c5-4dd0-a772-1de1209b451b",
         "name": "How the Pandemic Reshaped Election Campaigns\u2014Maybe Forever",
         "url": "https://www.wired.com/story/pandemic-reshaped-2020-election-campaigns-democrats-republicans/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "fundraising",
@@ -98162,7 +98162,7 @@
         "id": "1aa6e48a-8540-49f2-b546-da6b56def988",
         "name": "Solar Panels Are Starting to Die, Leaving Behind Toxic Trash",
         "url": "https://www.wired.com/story/solar-panels-are-starting-to-die-leaving-behind-toxic-trash/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "solar",
@@ -99893,7 +99893,7 @@
         "id": "e879589a-dab2-47cb-82c7-99168781b11a",
         "name": "Fortnite Apple row: Microsoft backs Epic in court filing",
         "url": "https://www.bbc.co.uk/news/technology-53888087",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "court",
@@ -99964,7 +99964,7 @@
         "id": "6efe4760-9cdd-4967-b9a0-513f5a164eea",
         "name": "Alibaba tells Trump we 'support American brands'",
         "url": "https://www.bbc.co.uk/news/business-53844725",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "brands",
@@ -100031,7 +100031,7 @@
         "id": "206d2b91-ac5c-4110-80ae-7ba56c385607",
         "name": "Man who believed virus was hoax loses wife to Covid-19",
         "url": "https://www.bbc.co.uk/news/world-us-canada-53892856",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "ill",
@@ -100169,7 +100169,7 @@
         "id": "71e475de-4226-442f-922d-1a9c05494236",
         "name": "Coronavirus pandemic could be over within two years - WHO head",
         "url": "https://www.bbc.co.uk/news/world-53870798",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "week",
@@ -100228,7 +100228,7 @@
         "id": "ff8c8a17-180a-4ba6-83d0-90637a58c4a5",
         "name": "Understanding DNS\u2014anatomy of a BIND zone file",
         "url": "https://arstechnica.com/gadgets/2020/08/understanding-dns-anatomy-of-a-bind-zone-file/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "exampletld",
@@ -101751,7 +101751,7 @@
         "id": "97584ee6-ef89-4a6c-9579-c92eeac9c221",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/worldNews/idAFKBN25H2AB",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -103430,7 +103430,7 @@
         "id": "bb31bd2c-cb51-450c-aa3f-6fe899e3cac1",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/worldNews/idAFKBN25H0OH",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -104103,7 +104103,7 @@
         "id": "60878be0-bc6d-43c9-bee2-8fab7d4242d3",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/worldNews/idAFKBN25H0OF",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -104472,7 +104472,7 @@
         "id": "df49fb6c-9e8b-4dd8-8856-f233847172a5",
         "name": "Watch Elon Musk's Neuralink reveal live at 6PM ET",
         "url": "https://www.engadget.com/neuralink-bmi-livestream-214856853.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "musks",
@@ -104551,7 +104551,7 @@
         "id": "e236139f-8dfa-49d9-b8ad-65760035d363",
         "name": "Xiaomi's under-display camera tech is coming to phones next year",
         "url": "https://www.engadget.com/xiaomis-under-display-camera-tech-is-coming-to-phones-next-year-130012911.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "phones",
@@ -104614,7 +104614,7 @@
         "id": "6129719b-d6e6-4210-ae68-21cb3475cd18",
         "name": "Elon Musk teases 'working Neuralink device' reveal on August 28th",
         "url": "https://www.engadget.com/working-neuralink-device-on-august-28th-at-3-pm-et-081007843.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "transmit",
@@ -104681,7 +104681,7 @@
         "id": "765a1ce0-caaf-4f09-ae83-6bedceb6a10f",
         "name": "Alphabet's Verily begins offering stop-loss health insurance",
         "url": "https://www.engadget.com/alphabet-verily-health-inscurance-coefficient-212604107.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "workers",
@@ -104752,7 +104752,7 @@
         "id": "ea9fa445-d8e1-45c3-935b-9e8770338ace",
         "name": "Fitbit\u2019s $329 Sense watch monitors stress response and heart health",
         "url": "https://www.engadget.com/fitbit-sense-smartwatch-versa-3-inspire-2-price-specs-availability-130050204.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "sense",
@@ -104823,7 +104823,7 @@
         "id": "9844f246-0096-46a2-9dcc-d6bacb2eeaec",
         "name": "Vue Lite smart glasses aren't that smart",
         "url": "https://www.engadget.com/vue-lite-smart-glasses-hands-on-150048078.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trying",
@@ -104882,7 +104882,7 @@
         "id": "f36b26b2-a817-49ba-8b45-adabebf4f130",
         "name": "Amazon Halo is a subscription fitness wearable and platform",
         "url": "https://www.engadget.com/amazon-halo-fitness-platform-134146361.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "subscription",
@@ -104949,7 +104949,7 @@
         "id": "bd9aa487-1834-495a-adf4-1c0d305f7e2d",
         "name": "A Glimpse at the Shiny, Ritzy Bathroom of Tomorrow",
         "url": "https://www.wired.com/story/a-glimpse-at-the-shiny-ritzy-bathroom-of-tomorrow/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "bathrooms",
@@ -107285,7 +107285,7 @@
         "id": "a4eec9c1-87ff-4ebf-8d94-b5c03ea4fb61",
         "name": "Trump or Biden? China expects no favours either way",
         "url": "https://www.bbc.co.uk/news/business-53928783",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "president",
@@ -107419,7 +107419,7 @@
         "id": "4a5c5d76-00f0-4131-90d3-d35550e2343c",
         "name": "Amazon Halo will charge a subscription fee to monitor the tone of your voice",
         "url": "https://arstechnica.com/gadgets/2020/08/amazon-halo-will-charge-a-subscription-fee-to-monitor-the-tone-of-your-voice/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "subscription",
@@ -107494,7 +107494,7 @@
         "id": "619f1a7d-c883-4284-8149-f3b99df23f80",
         "name": "Google AR app lets you place prehistoric creatures, Apollo 11 in your room",
         "url": "https://arstechnica.com/gadgets/2020/08/google-ar-app-lets-you-place-prehistoric-creatures-apollo-11-in-your-room/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shopping",
@@ -107581,7 +107581,7 @@
         "id": "b4958853-67bc-4188-adf4-31d942a9ca53",
         "name": "New Dragon Age still on track to exist, no release date given",
         "url": "https://arstechnica.com/gaming/2020/08/new-dragon-age-still-on-track-to-exist-no-release-date-given/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "release",
@@ -107652,7 +107652,7 @@
         "id": "a413865d-256c-4806-9c1a-51e13e91becc",
         "name": "LG\u2019s battery-powered face mask will \u201cmake breathing effortless\u201d",
         "url": "https://arstechnica.com/gadgets/2020/08/lgs-battery-powered-face-mask-will-make-breathing-effortless/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "lg",
@@ -107715,7 +107715,7 @@
         "id": "1722942d-b246-4198-a8dc-b633aea8c429",
         "name": "Little-known EV and lidar firms are raising billions in Tesla\u2019s shadow",
         "url": "https://arstechnica.com/cars/2020/08/little-known-ev-and-lidar-firms-are-raising-billions-in-teslas-shadow/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "vehicle",
@@ -107794,7 +107794,7 @@
         "id": "6df1c95b-f6f9-4f33-8e92-cb3d1e5e8629",
         "name": "Sony could detect PlayStation users based on how they hold a controller",
         "url": "https://arstechnica.com/gaming/2020/08/sony-could-detect-playstation-users-based-on-how-they-hold-a-controller/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "detect",
@@ -107861,7 +107861,7 @@
         "id": "673a55c9-1d9b-4956-b170-4b0dcc4e301b",
         "name": "Going all-in on remote work: The technical and cultural changes",
         "url": "https://arstechnica.com/information-technology/2020/08/work-from-home-05-culture/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "job",
@@ -108184,7 +108184,7 @@
         "id": "01d38deb-c4e5-4990-95ca-6bc160491b45",
         "name": "Google Docs is now easier for visually impaired users to navigate",
         "url": "https://www.engadget.com/google-docs-update-braille-support-shortcuts-navigation-verbalized-133049191.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "navigate",
@@ -108255,7 +108255,7 @@
         "id": "9f893c0e-af98-4409-a465-c4c6a9d93902",
         "name": "Uber will require some riders to verify they're wearing masks",
         "url": "https://www.engadget.com/uber-rider-mask-selfie-verification-140016317.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "riders",
@@ -108318,7 +108318,7 @@
         "id": "c6da10a2-0564-4e74-ada7-b8720a004127",
         "name": "How 'Coraline' studio Laika uses Intel's AI to perfect stop motion films",
         "url": "https://www.engadget.com/laika-intel-machine-learning-stop-motion-134526313.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "studio",
@@ -108405,7 +108405,7 @@
         "id": "fa678a52-e67d-4064-aa0f-937f4eade137",
         "name": "A Saudi Prince's Attempt to Silence Critics on Twitter",
         "url": "https://www.wired.com/story/mohammed-bin-salman-twitter-investigation/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "critics",
@@ -109403,7 +109403,7 @@
         "id": "b147a3f5-f836-4e77-9b02-a5349adc53a4",
         "name": "China announces new export rules that could prevent sale of TikTok",
         "url": "https://arstechnica.com/tech-policy/2020/08/china-announces-new-export-rules-that-could-prevent-sale-of-tiktok/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "announces",
@@ -109478,7 +109478,7 @@
         "id": "a5fb2b7d-4dee-4ad3-89e7-96dd0e97784e",
         "name": "Tesla\u2019s slow self-driving progress continues with green light warning",
         "url": "https://arstechnica.com/cars/2020/08/teslas-slow-self-driving-progress-continues-with-green-light-warning/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "progress",
@@ -109553,7 +109553,7 @@
         "id": "6e5abd05-e779-412e-8a97-9705322150eb",
         "name": "Top Republican deletes tweet with doctored Biden video footage",
         "url": "https://arstechnica.com/tech-policy/2020/08/top-republican-deletes-tweet-with-doctored-biden-video-footage/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "republican",
@@ -109620,7 +109620,7 @@
         "id": "cf50d771-841d-4e43-9a41-9b279ead5cbb",
         "name": "EPA issues new rules on coal plant pollution",
         "url": "https://arstechnica.com/science/2020/09/epa-issues-new-rules-on-coal-plant-pollution/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "epa",
@@ -111510,7 +111510,7 @@
         "id": "99615b02-bf39-451b-8929-342c5a701ff1",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/africaTech/idAFL8N2FY43H",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -112388,7 +112388,7 @@
         "id": "66ac6cb1-c0f3-45e5-a8f1-5245e50941e7",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/commoditiesNews/idAFL4N2FY11K",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -112840,7 +112840,7 @@
         "id": "48937622-b81f-47b1-b7c9-275746086cd3",
         "name": "Skullcandy\u2019s Crusher Evo headphones are even better at rattling your brain",
         "url": "https://www.engadget.com/skullcandy-crusher-evo-headphones-151354665.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "rattling",
@@ -112907,7 +112907,7 @@
         "id": "13a8e95e-763c-4a14-b610-841376823285",
         "name": "Neato\u2019s robotic D10 vacuum uses LIDAR-based navigation",
         "url": "https://www.engadget.com/neato-d10-robotic-vacuum-lidar-hepa-151909764.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "neatos",
@@ -112982,7 +112982,7 @@
         "id": "9e359965-3eb6-4a5e-99ad-1a0cdde08fad",
         "name": "How TikTok got caught in the middle of a trade war with China",
         "url": "https://www.engadget.com/how-tiktok-got-caught-in-middle-trade-war-with-china-223010428.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "owner",
@@ -113053,7 +113053,7 @@
         "id": "f00f8019-a9ae-41dd-a14a-e687a6919cc9",
         "name": "Google makes it easier to find local news through Podcasts and Assistant",
         "url": "https://www.engadget.com/google-local-news-podcasts-app-assistant-145951020.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "reading",
@@ -113120,7 +113120,7 @@
         "id": "c197496c-c0b5-4fd7-a696-cb4f9bda4304",
         "name": "Segway's ES2 electric scooter is nearly 50 percent off at Amazon",
         "url": "https://www.engadget.com/segway-ninebot-es2-electric-scooter-sale-coupon-amazon-141044227.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "amazon",
@@ -113187,7 +113187,7 @@
         "id": "b59dc47f-a5c8-46be-b87b-205be5a3862d",
         "name": "Qualcomm's adaptive ANC adjusts to changes in earbud fit",
         "url": "https://www.engadget.com/qualcomm-adaptive-active-noise-cancellation-true-wireless-earbuds-073005979.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "movement",
@@ -113254,7 +113254,7 @@
         "id": "58700025-02c4-43d5-863c-60850defe029",
         "name": "US considers blocking deals with China's largest chip maker",
         "url": "https://www.engadget.com/us-may-blacklist-china-chip-maker-smic-192314617.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "chinas",
@@ -113333,7 +113333,7 @@
         "id": "5f9cc3ff-8e29-4607-9eb7-e63cd195ec93",
         "name": "Human Embryo Gene Editing Gets a Road Map\u2014Not a Green Light",
         "url": "https://www.wired.com/story/human-embryo-gene-editing-gets-a-road-map-not-a-green-light/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "editing",
@@ -113412,7 +113412,7 @@
         "id": "ab9e6916-abd3-4b6f-8892-1345b3d0cace",
         "name": "Could a Tree Help Find a Decaying Corpse Nearby?",
         "url": "https://www.wired.com/story/could-a-tree-signal-if-a-corpse-is-decaying/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "help",
@@ -113483,7 +113483,7 @@
         "id": "a8066388-f1bd-4953-8d3b-96ec6b02a6f9",
         "name": "My Doomed Search for a Bedside Wireless Phone Charger",
         "url": "https://www.wired.com/story/bedside-wireless-chargers-rant/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "chargers",
@@ -116043,7 +116043,7 @@
         "id": "b87205b0-a7c3-40b2-b208-44a14cb65db5",
         "name": "Chinese students face increased scrutiny at US airports",
         "url": "https://www.bbc.co.uk/news/world-us-canada-54016278",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "airports",
@@ -116260,7 +116260,7 @@
         "id": "d82499b4-f252-47c3-b4ba-0c781601692c",
         "name": "Shiva \u201cInventor of Email\u201d Ayyadurai loses race for GOP Senate nod",
         "url": "https://arstechnica.com/tech-policy/2020/09/shiva-inventor-of-email-ayyadurai-loses-race-for-gop-senate-nod/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "experts",
@@ -116335,7 +116335,7 @@
         "id": "e320f08f-467a-4460-ad1d-76cb66e81296",
         "name": "Impressions from Intel\u2019s Tiger Lake laptop CPU launch event",
         "url": "https://arstechnica.com/gadgets/2020/09/impressions-from-intels-tiger-lake-laptop-cpu-launch-event/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "laptop",
@@ -116402,7 +116402,7 @@
         "id": "270170f7-e505-4a60-9a84-8b04432ec80b",
         "name": "Why experts are overwhelmingly skeptical of online voting",
         "url": "https://arstechnica.com/tech-policy/2020/09/why-experts-are-overwhelmingly-skeptical-of-online-voting/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "experts",
@@ -116465,7 +116465,7 @@
         "id": "f825d646-126f-42af-a508-6a6664d92765",
         "name": "SpaceX launches 12th Starlink mission, says users getting 100Mbps downloads",
         "url": "https://arstechnica.com/science/2020/09/spacex-launches-12th-starlink-mission-says-users-getting-100-mbps-downloads/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "downloads",
@@ -116544,7 +116544,7 @@
         "id": "d9d21a2a-8e85-4f98-9a61-4b3dccb99069",
         "name": "Hurricane evacuations and electric cars\u2014here\u2019s what we know",
         "url": "https://arstechnica.com/cars/2020/09/hurricane-evacuations-and-electric-cars-heres-what-we-know/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "evacuations",
@@ -116607,7 +116607,7 @@
         "id": "98844803-73c9-4f81-9e36-67af5ac14bfc",
         "name": "New No Time to Die trailer showcases everything you\u2019d expect in a Bond film",
         "url": "https://arstechnica.com/gaming/2020/09/new-no-time-to-die-trailer-showcases-everything-youd-expect-in-a-bond-film/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "united",
@@ -116674,7 +116674,7 @@
         "id": "bb1a768c-c619-487c-8f3e-7c0607a39072",
         "name": "Acura builds a stiffer chassis and sharper creases into the new TLX",
         "url": "https://arstechnica.com/cars/2020/09/acura-builds-a-stiffer-chassis-and-sharper-creases-into-the-new-tlx/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "car",
@@ -116745,7 +116745,7 @@
         "id": "481e46d0-129c-4029-af42-ab45b504692e",
         "name": "Tony Hawk\u2019s Pro Skater 1+2 PC impressions: No pretending for this Superman",
         "url": "https://arstechnica.com/gaming/2020/09/tony-hawks-pro-skater-12-pc-impressions-it-brings-the-beautiful-noise/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "superman",
@@ -117195,7 +117195,7 @@
         "id": "da00246e-93d9-420f-a354-e02e1f32c96a",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/us-canada-markets-idCAKBN25V2MM",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -117260,7 +117260,7 @@
         "id": "7951d7d3-e7f8-475c-b6ba-1308bc6dec3b",
         "name": "Stocks drop in choppy session",
         "url": "https://uk.reuters.com/video/watch/idOVCUA40AZ",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "patchy",
@@ -117610,7 +117610,7 @@
         "id": "e9b96e13-9ad7-4d0f-b170-55afa78084bd",
         "name": "Pentagon says Microsoft still deserves $10 billion JEDI cloud contract",
         "url": "https://www.engadget.com/pentagon-microsoft-dod-jedi-defense-094536689.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pentagon",
@@ -117685,7 +117685,7 @@
         "id": "0ba46d25-61a6-487c-9b5b-60eb18ce1d24",
         "name": "Tile's new service will offer up to $1,000 if it can't find your stuff",
         "url": "https://www.engadget.com/tile-premium-protect-150028951.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "products",
@@ -117756,7 +117756,7 @@
         "id": "5d21459f-9a3b-499c-b412-3a5a9373865c",
         "name": "WildLeaks: The whistleblowing site for planet Earth",
         "url": "https://www.engadget.com/wildleaks-earth-league-international-conservation-whistleblower-133053631.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "crime",
@@ -117823,7 +117823,7 @@
         "id": "0adfb11e-6e58-4ac9-a016-a19cf6a93a13",
         "name": "Why Contact-Tracing Apps Haven\u2019t Slowed Covid-19 in the US",
         "url": "https://www.wired.com/story/why-contact-tracing-apps-not-slowed-covid-us/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "infected",
@@ -117894,7 +117894,7 @@
         "id": "108d3770-3cfd-49cf-b8d3-3190cd2b0682",
         "name": "Hate Social Media? You\u2019ll Love This Documentary",
         "url": "https://www.wired.com/story/social-dilemma-netflix-documentary/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "presentation",
@@ -117957,7 +117957,7 @@
         "id": "548c173b-d359-4524-a280-288a76235e09",
         "name": "School in the Age of Covid: A Series of Impossible Decisions",
         "url": "https://www.wired.com/story/get-wired-podcast-7-covid-school/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "lot",
@@ -118028,7 +118028,7 @@
         "id": "c2479b7b-5225-4407-ab1a-fcee3ef6f3db",
         "name": "Is Lightning-Fast Plasma the Key to a Cleaner Car Engine?",
         "url": "https://www.wired.com/story/is-lightning-fast-plasma-the-key-to-a-cleaner-car-engine/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "car",
@@ -118099,7 +118099,7 @@
         "id": "c3fd98ab-a4a3-4a97-8438-b82e9def4217",
         "name": "Join Us for This Year's Virtual WIRED25 Celebration",
         "url": "https://www.wired.com/story/wired25-announcement-2020/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "noon130",
@@ -119985,7 +119985,7 @@
         "id": "e69323da-24b1-4972-995d-a5394d72b82a",
         "name": "Lidar is becoming a real business",
         "url": "https://arstechnica.com/cars/2020/09/lidar-is-becoming-a-real-business/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "customers",
@@ -120044,7 +120044,7 @@
         "id": "1b88995f-c1af-4340-bd48-e10a478140d9",
         "name": "Augmented reality could be the geology classroom\u2019s killer app",
         "url": "https://arstechnica.com/science/2020/09/augmented-reality-could-be-the-geology-classrooms-killer-app/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "killer",
@@ -120119,7 +120119,7 @@
         "id": "bd4715ec-cda0-4baf-81dc-7b1f3907db39",
         "name": "Apple says Epic\u2019s Fortnite payment scheme \u201cis theft, period.\u201d",
         "url": "https://arstechnica.com/gaming/2020/09/apple-accuses-epic-of-theft-in-countersuit-over-ios-fortnite/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "epics",
@@ -120186,7 +120186,7 @@
         "id": "6ee8d8e4-70b8-4ab6-adae-eaf611021249",
         "name": "Western Digital is trying to redefine the word \u201cRPM\u201d",
         "url": "https://arstechnica.com/gadgets/2020/09/western-digital-is-trying-to-redefine-the-word-rpm/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trying",
@@ -120762,7 +120762,7 @@
         "id": "a2a2b195-611f-425b-8a4d-8b8547f8c52e",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-markets-idAFL4N2G611B",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -121739,7 +121739,7 @@
         "id": "8f103d48-0ec6-4dca-a3f5-aec51ec0a402",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-markets-idAFL4N2G54D0",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -122053,7 +122053,7 @@
         "id": "6fe8e937-6543-419c-a919-5b8e761b9048",
         "name": "Wall Street rebounds to snap three-day skid",
         "url": "https://www.reuters.com/video/watch/idOVCUZ2YYZ",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "territory",
@@ -122115,7 +122115,7 @@
         "id": "e6f0ee7d-847e-49d6-9331-43722d2e317d",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/usa-climate-power-idAFL1N2G5281",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -122511,7 +122511,7 @@
         "id": "359abf35-0c31-42d8-a39e-71123907b8bd",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/us-canada-forex-idCAKBN25Z292",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -122576,7 +122576,7 @@
         "id": "e4a6ba26-8759-4375-81ce-a0c79098c042",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/schlumberger-ibm-idAFL1N2G11I3",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -122909,7 +122909,7 @@
         "id": "7eec2d47-806d-4b2c-bbb3-07e656fd55a9",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/uk-china-usa-data-idAFKBN25Y1WW",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -122974,7 +122974,7 @@
         "id": "d185f21b-62a0-4d7b-b3f3-e5b621128e26",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/usa-climatechange-utilities-idAFL1N2G5157",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -123181,7 +123181,7 @@
         "id": "91a6e216-bdd9-4a24-8bc2-c9eb744d225a",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-markets-idAFL1N2G50OU",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -123246,7 +123246,7 @@
         "id": "97ebbab2-5688-4380-b0b2-033a25ba36fa",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-markets-idAFL1N2G51RU",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -123445,7 +123445,7 @@
         "id": "0ff457db-9837-408c-ae50-7dec9933af3e",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-markets-idAFL1N2G515V",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -123510,7 +123510,7 @@
         "id": "65d07488-7f48-462a-aee4-6fc362b77cb8",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/us-usa-stocks-idUKKBN25Z1JY",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -123796,7 +123796,7 @@
         "id": "5858bf2b-7dc8-4b36-9572-8f370f6642a4",
         "name": "SoftBank is reportedly close to selling ARM to NVIDIA",
         "url": "https://www.engadget.com/softbank-near-selling-arm-to-nvidia-190823916.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "wall",
@@ -123859,7 +123859,7 @@
         "id": "bb0f6880-0195-4130-8fc6-015ac3035f03",
         "name": "Portland officials pass strict ban on facial recognition systems",
         "url": "https://www.engadget.com/portland-facial-recognition-ban-035952590.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "recognition",
@@ -123922,7 +123922,7 @@
         "id": "73c7d1b3-7f61-4655-9ce0-554a4e0edcce",
         "name": "Facebook launches Campus to keep college kids connected (again)",
         "url": "https://www.engadget.com/facebook-campus-college-only-social-network-again-150534405.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "single",
@@ -123985,7 +123985,7 @@
         "id": "a4e2e499-a792-401f-acc2-a734727df4bd",
         "name": "Huawei's latest MateBook X looks great, but good luck getting one",
         "url": "https://www.engadget.com/huawei-matebook-x-2020-123047706.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "laptops",
@@ -124064,7 +124064,7 @@
         "id": "ca434f93-b38f-4582-b122-13fa83b6fec1",
         "name": "Lidar Is Finally Becoming a Real Business",
         "url": "https://www.wired.com/story/lidar-is-finally-becoming-a-real-business/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "ouster",
@@ -124127,7 +124127,7 @@
         "id": "b98867db-3e46-4aa8-bac0-db1c046ba0bf",
         "name": "Anduril\u2019s New Drone Offers to Inject More AI Into Warfare",
         "url": "https://www.wired.com/story/anduril-new-drone-inject-ai-warfare/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "drones",
@@ -124194,7 +124194,7 @@
         "id": "27b182bc-3618-42a7-a21d-5d429ec39e45",
         "name": "What to Expect From Tuesday's Apple Event",
         "url": "https://www.wired.com/story/apple-event-september-15-what-to-expect/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "ipad",
@@ -125705,7 +125705,7 @@
         "id": "e4c2eb66-dea0-4345-a43e-d79584800c92",
         "name": "Maserati\u2019s new MC20 supercar uses F1 engine efficiency technology",
         "url": "https://arstechnica.com/cars/2020/09/maseratis-new-mc20-supercar-uses-f1-engine-efficiency-technology/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "car",
@@ -125780,7 +125780,7 @@
         "id": "47de7a76-f8ea-48b2-bac2-2d86103ac863",
         "name": "Portland adopts strictest facial recognition ban in nation to date",
         "url": "https://arstechnica.com/tech-policy/2020/09/portland-adopts-strictest-facial-recognition-ban-in-nation-to-date/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "technologies",
@@ -127020,7 +127020,7 @@
         "id": "15a54eef-a44a-44b6-af2c-cc6970c463a4",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/usa-portland-tech-idAFL4N2G70L0",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -127085,7 +127085,7 @@
         "id": "c7c9b964-19e6-441c-9a8e-6593541f8058",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-markets-idAFL1N2G70TX",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -127513,7 +127513,7 @@
         "id": "7f62a402-d743-4ec3-a24e-c5dc55e01c3e",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/markets-flows-bofa-idAFL8N2G81JY",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -129282,7 +129282,7 @@
         "id": "c64cc0af-51c2-4075-838c-24319b075f38",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozasp-uk-motor-f1-mclaren-idAFKBN2630KW-OZASP",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -129603,7 +129603,7 @@
         "id": "50901170-cb06-4db7-b7e1-3d6f56c93c7b",
         "name": "The YOLOers vs. Distancers Feud Is Tearing Us Apart",
         "url": "https://www.wired.com/story/the-yoloers-vs-distancers-feud-is-tearing-us-apart/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "antibodies",
@@ -129670,7 +129670,7 @@
         "id": "1b4d92c6-cbb5-4d70-a468-2181efbceb67",
         "name": "The DNC Is the Best Zoom Meeting of 2020\u2014So Far",
         "url": "https://www.wired.com/story/dnc-long-zoom-meeting/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "president",
@@ -130345,7 +130345,7 @@
         "id": "86efb735-b1c1-4446-9af0-c20cc7a3a92d",
         "name": "Coronavirus: Japan suffers its biggest economic slump on record",
         "url": "https://www.bbc.co.uk/news/business-53802967",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "quarter",
@@ -130420,7 +130420,7 @@
         "id": "6d3e11c9-63dc-44cf-8ed8-5a713651a66b",
         "name": "Mali coup: UN joins global condemnation of military takeover",
         "url": "https://www.bbc.co.uk/news/world-africa-53843526",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "global",
@@ -130483,7 +130483,7 @@
         "id": "1f867a1d-af08-4f6f-ae37-f80872787d46",
         "name": "'We have had parents crying for us to open'",
         "url": "https://www.bbc.co.uk/news/business-53743209",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "uk",
@@ -130747,7 +130747,7 @@
         "id": "63ef5281-c1b8-410d-b96e-885e3738b8f4",
         "name": "Mauritius oil spill: Satellite images show removal operation",
         "url": "https://www.bbc.co.uk/news/world-africa-53831687",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "technologies",
@@ -130818,7 +130818,7 @@
         "id": "790c99ff-ae64-45d7-ba74-0e0be7fd9ade",
         "name": "Lyft and Uber receive reprieve in California employment rights row",
         "url": "https://www.bbc.co.uk/news/technology-53853708",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "court",
@@ -130889,7 +130889,7 @@
         "id": "e20bfa15-a56e-4c0a-909d-fbb6a2cce99f",
         "name": "Belarus: Nato denies foreign troops are on border",
         "url": "https://www.bbc.co.uk/news/world-europe-53877953",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "foreign",
@@ -132600,7 +132600,7 @@
         "id": "9831aabc-959f-472f-af7d-268a3e3ff5af",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/southAfricaNews/idAFL8N2FN1CJ",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -132827,7 +132827,7 @@
         "id": "47546d28-e4b2-4a0c-a055-ef0be0ca9fde",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/metalsNews/idAFL4N2FM14G",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -132892,7 +132892,7 @@
         "id": "500f9505-e6e4-4df2-9bfa-6a26e5fc7697",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/metalsNews/idAFL4N2FM01H",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -132957,7 +132957,7 @@
         "id": "9c4b730f-1e5e-4073-a49f-491e21d4bc67",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/commoditiesNews/idAFL1N2FO09C",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -133152,7 +133152,7 @@
         "id": "963869db-024e-4f7f-a85e-97dd8d7bef3e",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/investingNews/idAFKBN25H0P3-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -133217,7 +133217,7 @@
         "id": "519fb51c-64fb-41b6-9cd7-e8f950ae84e9",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/commoditiesNews/idAFL4N2FM14G",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -133625,7 +133625,7 @@
         "id": "8bfe2986-7f72-4b01-91c7-ef4a717d1f0e",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/worldNews/idAFKCN25E064",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -133974,7 +133974,7 @@
         "id": "b9054346-5076-4844-a6e0-1aa22bbc5970",
         "name": "'Airplane Mode' will let you relive the monotony of economy class this fall",
         "url": "https://www.engadget.com/airplane-mode-fall-mac-pc-212223919.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "airplane",
@@ -134049,7 +134049,7 @@
         "id": "324b229c-5053-42c5-b692-6e7d8013314f",
         "name": "Facebook vows legal action after being forced to block Thai anti-royalty group",
         "url": "https://www.engadget.com/facebook-accused-of-cultivating-authoritarianism-in-thailand-094015516.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "restrict",
@@ -134562,7 +134562,7 @@
         "id": "dcc13bf9-346d-41ab-b60a-5ed2a7373b09",
         "name": "US election 2020: Donald Trump's convention speech fact-checked",
         "url": "https://www.bbc.co.uk/news/world-us-canada-53922706",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trump",
@@ -134641,7 +134641,7 @@
         "id": "f9dcb190-c945-4f3f-bdec-1832dc5970fc",
         "name": "Shinzo Abe: Revisionist nationalist or pragmatic realist?",
         "url": "https://www.bbc.co.uk/news/world-asia-53950704",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "realist",
@@ -134882,7 +134882,7 @@
         "id": "e5728bf2-134b-4eb2-a255-f545d4d0dd83",
         "name": "Long-awaited Celera 500L 'bullet' plane is finally revealed",
         "url": "https://www.cnn.com/travel/article/celera-500l-plane/index.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "plane",
@@ -135020,7 +135020,7 @@
         "id": "7eed2533-d186-4a4b-9a14-2e9b4c3a12a5",
         "name": "TikTok to launch legal action against Trump over ban",
         "url": "https://www.bbc.co.uk/news/world-us-canada-53877956",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "chinese",
@@ -135087,7 +135087,7 @@
         "id": "6143f489-60dd-4935-9cc6-cb35f9f9b6e7",
         "name": "Ten countries kept out Covid. But did they win?",
         "url": "https://www.bbc.co.uk/news/world-asia-53831063",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "pacific",
@@ -135150,7 +135150,7 @@
         "id": "98b15e80-e750-4006-a966-e5ef992be71c",
         "name": "South Korea on brink of nationwide virus outbreak, officials warn",
         "url": "https://www.bbc.co.uk/news/world-asia-53888219",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "seoul",
@@ -135217,7 +135217,7 @@
         "id": "09cb4d52-96c5-42d1-bce8-0061247fc611",
         "name": "German economy contracts at record pace",
         "url": "https://www.reuters.com/video/watch/idPbfJ?now=true",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "nowgerman",
@@ -135713,7 +135713,7 @@
         "id": "e34b9eb5-6bff-41a0-bb96-cf954fd93421",
         "name": "Economy-sensitive stocks are a 'buy' now -investor",
         "url": "https://www.reuters.com/video/watch/idOVCT15YTN",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "solutions",
@@ -137282,7 +137282,7 @@
         "id": "e531f8f5-0efd-4746-bd90-31a7ab2eec9e",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/africaTech/idAFL8N2FQ193",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -137426,7 +137426,7 @@
         "id": "51c1d6a2-6344-48eb-9bae-aa270b3d9443",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/topNews/idAFKBN25K0RL-OZATP",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -138233,7 +138233,7 @@
         "id": "847a5280-3d82-4e28-acd8-d9dc55b05b52",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/nigeriaNews/idAFL8N2FQ193",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -138298,7 +138298,7 @@
         "id": "881fac89-50b3-464d-b202-a6c1e245e371",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/nigeriaNews/idAFL4N2FQ1TQ",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -138363,7 +138363,7 @@
         "id": "2d18466a-e8a6-478e-bce9-6d15ba23066f",
         "name": "The Morning After: Elon Musk's brain implant is working -- in pigs",
         "url": "https://www.engadget.com/neuralink-pig-implant-tma-131802027.html",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "implant",
@@ -138596,7 +138596,7 @@
         "id": "5a34113c-9a0e-4e57-b17c-dc2735dfb27c",
         "name": "Australia in first recession for nearly 30 years",
         "url": "https://www.bbc.co.uk/news/business-53994318",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "global",
@@ -138655,7 +138655,7 @@
         "id": "28e61434-f1e4-4b3a-8287-eebeb21489dd",
         "name": "Nancy Pelosi seen without mask inside San Francisco hair salon",
         "url": "https://www.bbc.co.uk/news/world-us-canada-53994209",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "trump",
@@ -138943,7 +138943,7 @@
         "id": "14f47616-e73e-4402-ae21-39efc5b8f90a",
         "name": "How Covid-19 myths are merging with the QAnon conspiracy theory",
         "url": "https://www.bbc.co.uk/news/blogs-trending-53997203",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "merging",
@@ -139010,7 +139010,7 @@
         "id": "47898b51-a01c-44aa-95a8-916fbef38952",
         "name": "\u201cShortsighted\u201d and \u201cSelf-defeating\u201d: US rejects global COVID-19 vaccine effort",
         "url": "https://arstechnica.com/science/2020/09/trump-admin-shuns-global-covid-19-vaccine-program-citing-beef-with-who/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "vaccine",
@@ -139075,9 +139075,9 @@
     {
         "_id": "88414a90-7aac-40a6-aeb6-1972a7444f26",
         "id": "88414a90-7aac-40a6-aeb6-1972a7444f26",
-        "name": NaN,
+        "name": null,
         "url": "https://www.reuters.com/video/watch/idPbXE?now=true",
-        "date": NaN,
+        "date": null,
         "labels": []
     },
     {
@@ -139369,7 +139369,7 @@
         "id": "c3566578-6ed0-4fdd-b484-8b5fd27bef18",
         "name": "Nike sneakers, Lululemon: America's new economy",
         "url": "https://uk.reuters.com/video/watch/idOVCTV4U4R",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "video",
@@ -139774,7 +139774,7 @@
         "id": "a942c046-4974-429b-9651-1ca75f826300",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/worldNews/idAFKBN25R0UQ",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -141469,7 +141469,7 @@
         "id": "77e1a625-4277-41e1-a6f9-4e54346e3ad4",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/investingNews/idAFKBN25Q07Z-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -142757,7 +142757,7 @@
         "id": "a844ff5a-088d-48a4-bd11-e31aa3e8582d",
         "name": "Beirut blast pummelled key nightlife industry",
         "url": "https://www.reuters.com/video/watch/idOVCTB517V",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "venues",
@@ -143186,7 +143186,7 @@
         "id": "2cb72c5c-94c6-40e9-9df1-b0f59150d1ec",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/germany-economy-oil-imports-idAFL8N2FZ421",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -143792,7 +143792,7 @@
         "id": "17664bea-070e-4877-a601-13d4dc22fd73",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/southAfricaNews/idAFL4N2FY1X3",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -143857,7 +143857,7 @@
         "id": "1db8fefd-8dc4-455e-8a99-b90515408807",
         "name": "Stop Yelling About a Rushed Vaccine, and Start Planning for It",
         "url": "https://www.wired.com/story/stop-yelling-about-a-rushed-vaccine-and-start-planning-for-it/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "vaccine",
@@ -144591,7 +144591,7 @@
         "id": "ac84364d-fdb8-433a-920f-a463869bdba5",
         "name": "US budget deficit soars to $3tn record",
         "url": "https://www.bbc.co.uk/news/business-54126226",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "shortfall",
@@ -144650,7 +144650,7 @@
         "id": "84d26080-2a3e-44e5-be7c-52da7dbd8990",
         "name": "Presidential rivals Trump and Biden spar over Covid-19 vaccine",
         "url": "https://www.bbc.co.uk/news/election-us-2020-54066852",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "week",
@@ -144859,7 +144859,7 @@
         "id": "5f60a52d-8222-471d-8818-b003fb3b5511",
         "name": "Climate change may wreck economy unless we act soon, federal report warns",
         "url": "https://arstechnica.com/tech-policy/2020/09/climate-change-may-wreck-economy-unless-we-act-soon-federal-report-warns/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "markets",
@@ -144938,7 +144938,7 @@
         "id": "9e4a11a1-c882-4f46-87de-4d55024cba87",
         "name": "Trump audio shows he knew about COVID\u2019s severity even as he misled public",
         "url": "https://arstechnica.com/tech-policy/2020/09/trump-audio-shows-he-knew-about-covids-severity-even-as-he-misled-public/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "woodward",
@@ -145013,7 +145013,7 @@
         "id": "23d2fc08-8b34-4801-8002-92b36e3f7459",
         "name": "Lucid announces the price and specs for the Air electric sedan",
         "url": "https://arstechnica.com/cars/2020/09/everything-we-know-about-the-lucid-air-electric-vehicle/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "lucid",
@@ -145084,7 +145084,7 @@
         "id": "929970ab-88e4-4d88-aff0-389ff0e5c67a",
         "name": "I\u2019m Thinking of Ending Things: The most un-Netflix \u201cNetflix film\u201d to date",
         "url": "https://arstechnica.com/gaming/2020/09/im-thinking-of-ending-things-an-odd-charlie-kaufman-film-an-odd-netflix-fit/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "unnetflix",
@@ -145143,7 +145143,7 @@
         "id": "e7f80c25-d26f-4353-94c8-c60dec067846",
         "name": "Invest in the 'physical economy': advisor",
         "url": "https://www.reuters.com/video/watch/idRCV008PHH",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "selloff",
@@ -145327,7 +145327,7 @@
         "id": "eecdf4ad-c68f-4a6d-90ad-17b0e7dcaac1",
         "name": "UK economy extends recovery from COVID crash",
         "url": "https://www.reuters.com/video/watch/idOVCV929AJ",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "reopened",
@@ -145393,7 +145393,7 @@
         "id": "fd13a666-9dca-4467-99c0-ef8da0de650f",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozabs-uk-safrica-economy-gdp-idAFKBN26010J-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -145604,7 +145604,7 @@
         "id": "74d9bc4a-e4c9-4278-a772-9523b9f5fa9f",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/namibia-economy-idAFL8N2G73QD",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -145811,7 +145811,7 @@
         "id": "14565d3e-6e46-45a4-8300-ac19790b1e9d",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/malawi-economy-budget-idAFL8N2G829R",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -146164,7 +146164,7 @@
         "id": "3042ecfe-daa5-4dc6-acad-3dc45dee895d",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/safrica-markets-idAFL8N2G750F",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -146229,7 +146229,7 @@
         "id": "987e551e-b185-4113-87c8-a4d213c64ee2",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozabs-uk-kenya-economy-idAFKBN2620SW-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -146294,7 +146294,7 @@
         "id": "42377ea1-465e-4137-9fc3-861ae4e7d7c9",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/kenya-economy-idAFL8N2G80OW",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -146359,7 +146359,7 @@
         "id": "9ee9866c-a4c1-4341-a9da-d6997aa0cd93",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/kenya-economy-idAFL8N2G80TB",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -146570,7 +146570,7 @@
         "id": "95efab78-27f0-4e9e-8b7a-3242d7b6c5be",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/kenya-worldbank-idAFL8N2G61HR",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -146694,7 +146694,7 @@
         "id": "04212a77-d1c6-44de-9519-2f97bf4e48c9",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozabs-uk-namibia-economy-idAFKBN26125Z-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -146988,7 +146988,7 @@
         "id": "b4fc9183-356d-4c7b-8a32-bbed816a7232",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozabs-uk-kenya-worldbank-idAFKBN260174-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -147629,7 +147629,7 @@
         "id": "70ea64ad-c5f5-4b55-9138-49f61bddc73f",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/safrica-economy-gdp-idAFJ8N2A6024",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -147694,7 +147694,7 @@
         "id": "58bc22ef-11a7-44c8-98bf-9fedbda59ddb",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozabs-uk-safrica-economy-gdp-idAFKBN25Z1KW-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -147913,7 +147913,7 @@
         "id": "3182ed5b-f78f-4994-ab99-e586afd588f3",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/russia-politics-navalny-nordstream-idAFL8N2G512K",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -148660,7 +148660,7 @@
         "id": "3f8c6e33-da42-440c-b810-66f26f120f0b",
         "name": "Science Journals Are Purging Racist, Sexist Work. Finally",
         "url": "https://www.wired.com/story/science-journals-are-purging-racist-sexist-work-finally/",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "articles",
@@ -149386,7 +149386,7 @@
         "id": "0f17cf62-f8d9-4bf2-9b7e-9939d1762465",
         "name": "Yoshihide Suga picked by Japan's governing party to succeed Shinzo Abe",
         "url": "https://www.bbc.co.uk/news/world-asia-54070281",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "prime",
@@ -151027,7 +151027,7 @@
         "id": "97e76ddb-7793-4e86-b678-c84770ee3d7c",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/health-coronavirus-zimbabwe-idAFL8N2GC5J4",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -151372,7 +151372,7 @@
         "id": "73a0e758-5476-4ce9-bc08-209f368a4086",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-oil-demand-idAFL8N2GB4OZ",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -151934,7 +151934,7 @@
         "id": "32bfe43a-c53c-4ad0-85cb-426bc8fdcc32",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozabs-uk-ghana-economy-gdp-idAFKBN2671SC-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -152370,7 +152370,7 @@
         "id": "3e381385-2d0f-4048-be48-1d94af60ab60",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/ozabs-uk-safrica-economy-finmin-idAFKBN2640D0-OZABS",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -152435,7 +152435,7 @@
         "id": "a3bf83d4-e1d2-4008-a049-01e32ad0322f",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/safrica-economy-finmin-idAFL8N2GA06D",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -153636,7 +153636,7 @@
         "id": "dc92c5b9-3983-417e-95a3-582a123def5e",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/australia-renewables-idAFL4N2GD2L1",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -153776,7 +153776,7 @@
         "id": "2fee7089-7972-4c3f-8c19-03fdf7125bd8",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/nigeria-agriculture-loans-idAFL8N2GC2SY",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -153841,7 +153841,7 @@
         "id": "2d64bb23-0f9f-4845-9900-e63b19315729",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/global-markets-idAFL1N2GC1MO",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
@@ -154111,7 +154111,7 @@
         "id": "d31493cd-8f21-4689-a6c6-92077d414c5c",
         "name": "Business & Financial News, U.S & International Breaking News",
         "url": "https://af.reuters.com/article/uk-iran-usa-world-court-idAFKBN2672QO",
-        "date": NaN,
+        "date": null,
         "labels": [
             {
                 "label": "international",
