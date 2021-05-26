@@ -1,11 +1,11 @@
 FROM mongo
 
-COPY users.json data/users.json
-COPY articles.json data/articles.json
-COPY favorites.json data/favorites.json
-COPY requests.json data/requests.json
-COPY answers.json data/answers.json
-COPY votes.json data/votes.json
+COPY data/users.json /users.json
+COPY data/articles.json /articles.json
+COPY data/favorites.json /favorites.json
+COPY data/requests.json /requests.json
+COPY data/answers.json /answers.json
+COPY data/votes.json /votes.json
 
 CMD mongoimport --host mongodb --port 27017 --db ReadMeDB --collection users --type json --file /users.json --jsonArray; \
     mongoimport --host mongodb --port 27017 --db ReadMeDB --collection articles --type json --file /articles.json --jsonArray; \ 
