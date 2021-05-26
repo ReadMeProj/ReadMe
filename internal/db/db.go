@@ -38,5 +38,6 @@ type ReadMeDatabase interface {
 
 	IncrementOneInDB(dbName string, collectionName string, key string, value string, increment string, incrementBy int) error
 	GetByKey(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error
+	GetAllByKey(dbName string, collectionName string, key string, value interface{}, pResults interface{}) error
 	GetByDoubleKey(dbName string, collectionName string, key1 string, val1 interface{}, key2 string, val2 interface{}, pResult interface{}) error
 }
