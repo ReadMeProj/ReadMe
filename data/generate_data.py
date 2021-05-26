@@ -133,7 +133,7 @@ def generate_requests_answers_votes(users, articles):
                     "userid": ans_user["id"],
                     "articleid": article["id"],
                     'date': random.randint(request["date"], 1621960017),
-                    content: generator(f"{request['content']},", max_length=len(content), num_return_sequences=1)[0]['generated_text']
+                    'content': generator(f"{request['content']},", max_length=len(content), num_return_sequences=1)[0]['generated_text']
                 }
                 ans.append(answer)
                 _votes, vote_registry_list = generate_votes_for_item(answer["id"], users)
@@ -161,7 +161,7 @@ def generate_votes_for_item(itemid, users):
         "down": 0
     }
 
-    while len(chosen) != num_votes and user not in chosen:
+    while len(chosen) != num_votes:
         up = "up" if random.random() > 0.63 else "down"
         votes[up] += 1
 
@@ -172,6 +172,9 @@ def generate_votes_for_item(itemid, users):
         }
         vote_registry_list.append(vote_registry)
         chosen.append(user)
+
+        while user in chosen:
+            user = random.choice(users)
 
     return votes, vote_registry_list
 
