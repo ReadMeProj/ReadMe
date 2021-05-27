@@ -6,10 +6,7 @@ from flask import abort
 from flask_pymongo import PyMongo
 from networkx.algorithms import bipartite
 
-mongoIP = "localhost"
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://%s:27017/ReadMeDB" % mongoIP
-mongo = PyMongo(app)
 
 # Constants
 NOT_ENOUGH_DATA_THRESHOLD = 30
@@ -55,7 +52,7 @@ def recommendation(user_id, num_of_articles):
     edge_list = list(map(
         lambda fav_json: (fav_json["user"], fav_json["article"]) if fav_json["user"] and fav_json["article"] else None,
         JSON_Graph))
-
+    
     raw_graph = prep(edge_list)
     connected_component = nx.algorithms.node_connected_component(raw_graph, user_id)
     G = raw_graph.subgraph(connected_component)
@@ -81,5 +78,26 @@ def recommendation(user_id, num_of_articles):
         if len(recommended) < num_of_articles:
             recommended.extend(generic_recommendation(raw_graph, num_of_articles - len(recommended)))
     return {
-        "recommended_articles": recommended
+        "error": None,
+        "data": recommended
     }
+
+
+def main():
+    import argparse 
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-m', '--mongo', default='localhost', help="Mongo host")
+    parser.add_argument('-p', '--port', default=5000, help="Recommender service port")
+    args = parser.parse_args()
+
+    app.config["MONGO_URI"] = "mongodb://%s:27017/ReadMeDB" % args.mongo
+    
+    global mongo
+    mongo = PyMongo(app)
+
+    app.run(host="127.0.0.1", port=args.port)    
+
+
+if __name__ == '__main__':
+    main()
