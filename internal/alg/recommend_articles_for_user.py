@@ -96,7 +96,7 @@ def main():
     global mongo
     mongo = PyMongo(app)
 
-    app.run(host="127.0.0.1", port=args.port)    
+    app.run(host="0.0.0.0", port=args.port)    
 
 
 if __name__ == '__main__':

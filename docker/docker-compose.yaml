@@ -17,6 +17,8 @@ services:
           - mongodb
         networks:
           - readme_network
+        logging:
+          driver: none
     app:
         build:
           context: ..
@@ -31,18 +33,19 @@ services:
           #- ./app/:/app/
           - /app/node_modules
           - ./shared_data:/shared_data
-    #dashboard:
-    #    build:
-    #      context: ..
-    #      dockerfile: ./docker/dashboard/Dockerfile
-    #    networks:
-    #      - readme_network
-    #    ports:
-    #      - "3000:3000"
-    #    links:
-    #      - "mongodb"
-    #    volumes:
-    #      - ./shared_data:/shared_data
+    recommendations:
+      build:
+        context: ..
+        dockerfile: ./docker/recommendations/Dockerfile
+      networks:
+        - readme_network
+      ports:
+        - "8081:8081"
+      links:
+        - "mongodb"
+      volumes:
+          - ./shared_data:/shared_data
+      command: python recommend_articles_for_user.py --mongo mongodb --port 8081
 networks:
   readme_network:
     driver: bridge
