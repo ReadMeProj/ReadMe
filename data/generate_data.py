@@ -9,7 +9,7 @@ set_seed(42)
 
 NUM_USERS = 500
 # (min, max)
-NUM_FAVORITES_USER = (5, 200)
+NUM_FAVORITES_USER = (5, 25)
 NUM_REQUEST_USER   = (0, 3)
 NUM_REQUEST_ANSWER = (0, 3)
 NUM_REPORTS_USER   = (0, 27)
@@ -73,6 +73,7 @@ def generate_favorites(users, articles):
 
         for fav in favs:
             favorite = {
+                "_id": str(uuid.uuid4()),
                 'user': user["id"],
                 'article': fav["id"],
                 'date': random.randint(1571960017, 1621960017)
@@ -205,26 +206,30 @@ def generate_reports(users, requests):
 
 
 if __name__ == "__main__":
-    f = open("data/articles.json", "r")
-    articles = json.load(f)
+    with open("data/articles.json", "r") as f:
+        articles = json.load(f)
     print(f'num_article={len(articles)}')
 
-    users = generate_users()
-    with open('data/users.json', 'w') as f:
-        json.dump(users, f, indent=4)
-
+    #users = generate_users()
+    #with open('data/users.json', 'w') as f:
+    #    json.dump(users, f, indent=4)
+    with open('data/users.json', 'r') as f:
+        users = json.load(f)
+    print(f'num_users={len(users)}')
+    
     favorites = generate_favorites(users, articles)
     with open('data/favorites.json', 'w') as f:
         json.dump(favorites, f, indent=4)
+    
+    if False:
+        requests, answers, votes = generate_requests_answers_votes(users, articles)
 
-    requests, answers, votes = generate_requests_answers_votes(users, articles)
+        with open('data/requests.json', 'w') as f:
+            json.dump(requests, f, indent=4)
 
-    with open('data/requests.json', 'w') as f:
-        json.dump(requests, f, indent=4)
+        with open('data/answers.json', 'w') as f:
+            json.dump(answers, f, indent=4)
 
-    with open('data/answers.json', 'w') as f:
-        json.dump(answers, f, indent=4)
-
-    with open('data/votes.json', 'w') as f:
-        json.dump(votes, f, indent=4)
+        with open('data/votes.json', 'w') as f:
+            json.dump(votes, f, indent=4)
 
