@@ -77,6 +77,27 @@ func (db *MongoController) GetByKey(dbName string, collectionName string, key st
 	return err	
 }
 
+func (db *MongoController) GetAllByKey(dbName string, collectionName string, key string, value interface{}, pResults interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+	
+	findOptions := options.Find()
+	filter := bson.D{{Key: key, Value: value}}
+	
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), pResults)
+	if err != nil {
+		// handle error
+	}
+	
+	return err
+}
+
 func (db *MongoController) GetByDoubleKey(dbName string, collectionName string, key1 string, val1 interface{},
 										  key2 string, val2 interface{}, pResult interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
@@ -243,9 +264,9 @@ func (db *MongoController) GetArticle(key string, value interface{}) (Article, e
 
 func (db *MongoController) GetArticles() ([]Article, error) {
 	var articles []Article
-	limit := MultipleExtractionLimit
+	//limit := MultipleExtractionLimit
 
-	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(limit))
+	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(20))
 	if err != nil {
 		log.Println(err)
 	}

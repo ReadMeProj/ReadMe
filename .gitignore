@@ -96,3 +96,11 @@ $RECYCLE.BIN/
 mongo_data/
 shared_data/
 venv/
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/ReadMe.iml
+.idea/vcs.xml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/inspectionProfiles/Project_Default.xml
+.idea/

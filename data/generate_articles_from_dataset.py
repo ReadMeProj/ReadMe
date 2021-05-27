@@ -46,6 +46,6 @@ if __name__ == '__main__':
         readme_data.append(new_json)
 
     print(f"length={len(readme_data)}")
-    with open('data/formatted_data.json', 'w') as f:
+    with open('data/articles.json', 'w') as f:
         json.dump(readme_data, f, indent=4)
 
