@@ -13,6 +13,7 @@ function Report() {
     <div className="form">
       <Formik
         initialValues={{
+          type:'report',
           id: "123",
           category: "null",
           fake: "null",
@@ -31,8 +32,6 @@ function Report() {
           console.log(ids);
           console.log(values);
           sleep(1000).then(()=>{var data=Object.assign({},ids,values);
-
-          alert(JSON.stringify(data));
 
           updateArticle(data)
             .then((res) => {
