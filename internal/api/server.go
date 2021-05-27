@@ -480,6 +480,53 @@ func getByKey(w http.ResponseWriter, r *http.Request) {
 	GenerateHandler(w, r, response)	
 }
 
+func getAllByKey(w http.ResponseWriter, r *http.Request) {
+	_type := ExtractFromRequest(r, "type")
+	_type = strings.ToLower(_type)
+	key   := ExtractFromRequest(r, "key")
+	val   := ExtractFromRequest(r, "val")
+
+	fmt.Printf("type=%s, key=%s, val=%s", _type, key, val)
+	
+	err := error(nil)
+	dbName := "ReadMeDB"
+	collection := ""
+	response := Response{}
+
+	switch _type {
+	case "user":
+		var data []db.User
+		collection = "users"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "article":
+		var data []db.Article 
+		collection = "articles"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "request":
+		var data []db.Request 
+		collection = "requests"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "answer":
+		var data []db.Answer 
+		collection = "answers"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	case "report":
+		var data []db.Report 
+		collection = "reports"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
+	default:
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+	}
+	
+	GenerateHandler(w, r, response)	
+}
+
 func getVoteRegistry(w http.ResponseWriter, r *http.Request) {
 	userID := ExtractFromRequest(r, "userid")
 	itemID := ExtractFromRequest(r, "itemid")
@@ -693,6 +740,7 @@ func StartAPIServer(mongoIP string) {
 
 	router.HandleFunc("/api/votes/{type}/{id}/{vote}", isAuthorized(updateVotes)).Methods("POST")
 	router.HandleFunc("/api/{type}/{key}/{val}", getByKey).Methods("GET")
+	router.HandleFunc("/api/all/{type}/{key}/{val}", getAllByKey).Methods("GET")
 	router.HandleFunc("/api/vote/{itemid}/user/{userid}", getVoteRegistry).Methods("GET")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
