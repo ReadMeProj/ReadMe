@@ -47,7 +47,12 @@ code {
   background-color:#4095c6;
 }
 
-
+.likeHeart{
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color:#ff4c4b;
+}
 .App-link {
   color: #61dafb;
 }
