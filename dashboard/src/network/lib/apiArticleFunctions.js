@@ -64,8 +64,3 @@ export async function fillRequest(requestID, articleID, reportJson) {
 /// Get articles by query.
 
 /// Get article by some filter from the filterEnum.
-
-// Get recommendations
-export async function getRecommendationsForUser(userID) {
-
-}
