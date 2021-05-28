@@ -31,7 +31,7 @@ class ArticleCard extends Component {
       console.log("Missing articleId!");
     }
 
-    await getUserById().then((response) => {
+    /*await getUserById().then((response) => {
       if (response.data["Error"] == null)
         this.setState({ userData: response.data["Data"] });
     });
@@ -39,7 +39,7 @@ class ArticleCard extends Component {
     await getUserFavorites().then((response) => {
       if (response.data["Error"] == null)
         this.setState({ favoritesData: response.data["Data"] });
-    });
+    });*/
 
     // this.state.relscore = this.state.articleData.relscore;
     // this.state.votes = [

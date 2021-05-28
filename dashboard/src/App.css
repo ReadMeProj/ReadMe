@@ -28,6 +28,17 @@
   border-radius: 10px;
 }
 
+.userProfile {
+  background-color: transparent;
+  padding: 10px;
+  margin-top: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #eff0f8;
+  border-radius: 10px;
+  margin-left: 45px;
+}
+
 .searchFilterBox {
   border-style: solid;
   border-width: 2px;

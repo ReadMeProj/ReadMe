@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"strings"
+	"io/ioutil"
 
 	"github.com/gorilla/mux"
 	"github.com/go-playground/validator"
@@ -604,6 +605,29 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 	GenerateHandler(w, r, response)	
 }
 
+func getRecommendations(w http.ResponseWriter, r *http.Request) {
+	id := ExtractFromRequest(r, "id")
+	numArticles := ExtractFromRequest(r, "numArticles")
+
+	if id == "" || numArticles == "" {
+		http.Error(w, "ID or numArticles aren't correct", http.StatusBadRequest)
+        return
+	}
+
+	resp, err := http.Get(fmt.Sprintf("%s/recommendations/%s/%s", recommendationsIPort, id, numArticles))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusUnauthorized)
+        return	
+	}
+	body, _ := ioutil.ReadAll(resp.Body)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.WriteHeader(http.StatusOK)
+	w.Write(body)
+}
+
 func login(w http.ResponseWriter, r *http.Request) {
 	var credentials db.Credentials
 	
@@ -697,12 +721,14 @@ func isAuthorized(endpoint func(http.ResponseWriter, *http.Request)) func(http.R
 }
 
 var dBase db.ReadMeDatabase
-func StartAPIServer(mongoIP string) {
+var recommendationsIPort string
+func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router := mux.NewRouter()
 
 	fmt.Println("Starting API server")
 
 	dBase = db.NewMongoController(mongoIP)
+	recommendationsIPort = _recommendationsIPort
 
 	// REST API
 	router.HandleFunc("/api/getUser/{id}", isAuthorized(getUser)).Methods("GET").Headers()
@@ -738,6 +764,7 @@ func StartAPIServer(mongoIP string) {
 	router.HandleFunc("/api/updateRequest", updateRequest).Methods("POST")
 	router.HandleFunc("/api/updateReport", updateReport).Methods("POST")
 
+	router.HandleFunc("/api/recommendations/{id}/{numArticles}", getRecommendations).Methods("GET")
 	router.HandleFunc("/api/votes/{type}/{id}/{vote}", isAuthorized(updateVotes)).Methods("POST")
 	router.HandleFunc("/api/{type}/{key}/{val}", getByKey).Methods("GET")
 	router.HandleFunc("/api/all/{type}/{key}/{val}", getAllByKey).Methods("GET")
@@ -745,7 +772,7 @@ func StartAPIServer(mongoIP string) {
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")
-	
+
 	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./dashboard/build/")))
 
 	serv := &http.Server{
