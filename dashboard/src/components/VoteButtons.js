@@ -46,7 +46,6 @@ class VoteButtons extends Component {
               color={voteUp === "up" ? "green" : "gray"}
               onClick={() => {
                 this.vote(this.state.itemType, this.state.itemId, "up");
-                this.setState({});
               }}
               cursor="pointer"
             />
@@ -63,7 +62,6 @@ class VoteButtons extends Component {
               color={voteUp === "down" ? "red" : "gray"}
               onClick={() => {
                 this.vote(this.state.itemType, this.state.itemId, "down");
-                this.setState({});
               }}
               cursor="pointer"
             />
