@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import UserRequestCard from "../components/UserRequestCard";
 import SearchBar from "../components/SearchBar";
 import SearchFilterBox from "../components/SearchFilters";
+import { getRequestsForUser } from "../network/lib/apiRequestFunctions";
+import QuestionCard from "../components/QuestionCard";
 class RequestsPage extends Component {
   constructor(props) {
     super(props);
@@ -11,19 +12,21 @@ class RequestsPage extends Component {
     };
   }
 
-  componentDidMount() {
-    // GET request using fetch with set headers
-    const headers = { "Content-Type": "application/json" };
-    fetch("https://api.npms.io/v2/search?q=react", {
-      headers: headers,
-    })
-      .then((response) => response.json())
-      .then((data) => this.setState({ requestsData: data.results }));
+  async componentDidMount() {
+    await getRequestsForUser().then((response) => {
+      if (response.data["Error"] == null)
+        this.setState({ requestsData: response.data["Data"] });
+    });
   }
 
   render() {
     const { requestsData: requests } = this.state;
-
+    if (!requests || requests == {})
+      return (
+        <div style={{ marginTop: "50px" }}>
+          <h2>..You are yet to ask anything!</h2>
+        </div>
+      );
     return (
       <div>
         <div>
@@ -33,11 +36,7 @@ class RequestsPage extends Component {
         <dl>
           {requests.map((article) => (
             <dd key={article.package.date}>
-              <UserRequestCard
-                title={article.package.name}
-                id={article.package.date}
-                url={article.package.links.npm}
-              />
+              <QuestionCard requestId={article.id} reqPage={true} />
             </dd>
           ))}
         </dl>

@@ -99,7 +99,11 @@ class VoteButtons extends Component {
     var votes = [0, 0];
     if (item.votes) votes = [item.votes.up, item.votes.down];
     if (item.fakevotes) votes = [item.fakevotes.up, item.fakevotes.down];
-    return <div>{this.getVoteButtons(userVote, votes)}</div>;
+    return (
+      <div style={{ marginLeft: "20px" }}>
+        {this.getVoteButtons(userVote, votes)}
+      </div>
+    );
   }
 }
 

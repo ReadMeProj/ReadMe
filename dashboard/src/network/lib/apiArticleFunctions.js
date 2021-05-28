@@ -58,6 +58,10 @@ export async function addFav(articleId, date) {
   });
 }
 
+export async function removeFav(articleId) {
+  //todo
+}
+
 /// Get articles by query.
 
 /// Get article by some filter from the filterEnum.

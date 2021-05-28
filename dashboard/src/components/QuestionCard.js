@@ -2,7 +2,6 @@ import { React, Component } from "react";
 import { getRequestById } from "../network/lib/apiRequestFunctions";
 import { Link } from "react-router-dom";
 import VoteButtons from "./VoteButtons";
-//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class QuestionCard extends Component {
   constructor(props) {
@@ -10,6 +9,7 @@ class QuestionCard extends Component {
     this.state = {
       requestData: [],
       requestId: props.requestId,
+      showTitleOnEach: props.reqPage ? props.reqPage : false,
     };
   }
   async componentDidMount() {
@@ -36,6 +36,9 @@ class QuestionCard extends Component {
           <div className="media">
             <div className="media-body">
               <div>
+                {this.state.showTitleOnEach ? (
+                  <h3>Article Title if I had one</h3>
+                ) : null}
                 <small style={{ color: "gray" }}>Asked by: {whoAsked}</small>
                 <p>{content}</p>
                 <div

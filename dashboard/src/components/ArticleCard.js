@@ -1,6 +1,10 @@
 import { React, Component } from "react";
 import { Link } from "react-router-dom";
-import { getArticleById, addFav } from "../network/lib/apiArticleFunctions";
+import {
+  getArticleById,
+  addFav,
+  removeFav,
+} from "../network/lib/apiArticleFunctions";
 import VoteButtons from "./VoteButtons";
 class ArticleCard extends Component {
   constructor(props) {
@@ -10,6 +14,7 @@ class ArticleCard extends Component {
       userData: [],
       favoritesData: [],
       articleId: props.articleId,
+      isOnFavPage: props.isOnFavPage ? props.isOnFavPage : false,
     };
   }
 
@@ -24,8 +29,9 @@ class ArticleCard extends Component {
     }
   }
 
-  updateLikeButton(date) {
-    addFav(this.state.articleId, date);
+  toggleFav(date) {
+    if (this.state.isOnFavPage) removeFav(this.state.articleId);
+    else addFav(this.state.articleId, date);
   }
 
   render() {
@@ -74,9 +80,9 @@ class ArticleCard extends Component {
             <div className="col-3">
               <button
                 className="btn btn-info"
-                onClick={() => this.updateLikeButton(Date.now())}
+                onClick={() => this.toggleFav(Date.now())}
               >
-                Add to Favorites
+                {this.state.isOnFavPage ? "Remove" : "Add to Favorites"}
               </button>
             </div>
             <div className="col-3" style={{ marginLeft: "30px" }}>
