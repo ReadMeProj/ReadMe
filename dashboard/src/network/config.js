@@ -17,5 +17,6 @@ export var config = {
   getAnswersByRequestPath: "/api/getAnswers/request",
   powerUserId: "sudo",
   powerUserToken: "NO_TOKEN",
+  recommendationsPath: "/api/recommendations"
   //newRequest, getAnswers, newAnswer,
 };

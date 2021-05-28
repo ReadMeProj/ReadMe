@@ -11,6 +11,17 @@ import { config } from "../config.js";
 const userId = window.localStorage.getItem("UserId");
 const userName = window.localStorage.getItem("Username");
 const token = window.localStorage.getItem("Token");
+
+export async function getRecommendations() {
+  var numRecommendations = 20;
+  if (userId == null) {
+    console.log("No Userid in local storage, can't get recommendations");
+    return [];
+  }
+  
+  return axiosClient.get(`${config["recommendationsPath"]}/${userID}/${numRecommendations}`)
+}
+
 /// Get all articles.
 export async function getArticles() {
   return axiosClient.get(`${config["getArticlesPath"]}`);
