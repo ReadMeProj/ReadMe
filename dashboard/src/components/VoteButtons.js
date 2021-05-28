@@ -36,6 +36,7 @@ class VoteButtons extends Component {
     if (userVote) {
       voteUp = userVote;
     }
+
     return (
       <div className="row">
         <div className="col-1">
@@ -86,7 +87,7 @@ class VoteButtons extends Component {
       {},
       headers
     );
-    //window.location.reload(); this forces refresh for the page- not good...
+    this.componentDidMount(); // To re-render the component with the new info from the server after voting.
   }
 
   render() {

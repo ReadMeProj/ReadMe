@@ -26,11 +26,9 @@ class QuestionCard extends Component {
   render() {
     const { requestData: request } = this.state;
     if (request == null) return <div></div>;
-    var id = request.id;
     var whoAsked = request.requestedby;
     var content = request.content;
     var isResolved = request.answerid;
-    //var votes = [request.votes.up, request.votes.down];
 
     return (
       <div className="container-fluid" style={{ marginLeft: "7%" }}>
@@ -45,7 +43,7 @@ class QuestionCard extends Component {
                   style={{ marginRight: "20px", marginLeft: "20px" }}
                 >
                   <div className="col">
-                    <VoteButtons id={id} type="request" />
+                    <VoteButtons id={this.state.requestId} type="request" />
                   </div>
                   <div className="col">
                     <Link className="btn btn-info" to={""}>
