@@ -292,9 +292,17 @@ func newFavorite(responseWriter http.ResponseWriter, r *http.Request) {
 		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
         return	
 	}
+
+	var favoriteInDB db.Favorite
+	favoriteInDB, err = dBase.GetFavorite("userid", favorite.UserID, "articleid", string(favorite.ArticleID))
+	if favoriteInDB.ArticleID != "" {
+		response := Response{Error:errors.New("User already favorites article").Error(), Data: nil}
+		GenerateHandler(responseWriter, r, response)
+		return 	
+	}
 	
 	err = dBase.NewFavorite(favorite)
-	response := Response{Error:err, Data: favorite}
+	response := Response{Error:nil, Data: favorite}
 	GenerateHandler(responseWriter, r, response)
 }
 
