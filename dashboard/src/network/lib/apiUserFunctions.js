@@ -9,10 +9,10 @@ import { config } from "../config.js";
 
 /// Check if the current session has a valid token.
 export function isLoggedIn() {
-  return true;
-  // const loggedInUser = localStorage.getItem("UserId");
-  // const loggedInToken = localStorage.getItem("Token");
-  // return loggedInUser != null && loggedInToken != null;
+  //return true;
+  const loggedInUser = localStorage.getItem("UserId");
+  const loggedInToken = localStorage.getItem("Token");
+  return loggedInUser != null && loggedInToken != null;
 }
 
 /// Send a POST request with the user cardinals to get a session token.
