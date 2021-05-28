@@ -50,7 +50,7 @@ type Request struct {
 	RequestedBy ID `json:"requestedby" validate:"required"`
 	ArticleID   ID `json:"articleid" validate:"required"`
 	Name 		string `json:"articlename" validate:"required"`
-	URL  		string `json:"articleurl" validate:"required, url"`
+	URL  		string `json:"articleurl" validate:"required,url"`
 	Date      	int64 `json:"date" validate:"required"`
 	Content   	string `json:"content" validate:"required,lte=256"`
 	AnswerID 	ID `json:"answerid"`

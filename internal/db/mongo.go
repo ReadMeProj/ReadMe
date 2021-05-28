@@ -353,6 +353,40 @@ func (db* MongoController) GetRequests(key string, value interface{}) ([]Request
 	return requests, err
 }
 
+func (db* MongoController) GetAllRequests(which string) ([]Request, error) {
+	var requests []Request
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoRequestsCollectionName)
+	
+	var filter bson.M
+	if which == "all" {
+		filter = bson.M{}
+	} else if which == "open" {
+		exists := bson.M{"$eq": ""}
+		filter = bson.M{"answerid": exists}
+	} else if which == "closed" {
+		exists := bson.M{"$ne": ""}
+		filter = bson.M{"answerid": exists}
+	} else {
+		filter = bson.M{}
+	}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &requests)
+	if err != nil {
+		// handle error
+	}
+	
+	return requests, err
+}
+
+
 func (db* MongoController) GetAnswers(key string, value interface{}) ([]Answer, error) {
 	var answers []Answer
 	err := db.getMany(mongoAnswersCollectionName, key, value, &answers)

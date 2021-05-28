@@ -145,6 +145,23 @@ func getRequestsByUser(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getAllRequests(w http.ResponseWriter, r *http.Request){
+	which := ExtractFromRequest(r, "which")
+	if which == "" {
+		http.Error(w, "which should be one of (open, close, all)", http.StatusBadRequest)
+        return		
+	}
+	
+	jsonData, err := dBase.GetAllRequests(which)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return		
+	}
+
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(w, r, response)	
+}
+
 func getAnswers(key string, value interface{}) (interface{}, error) {
 	jsonData, err := dBase.GetAnswers(
 		key,
@@ -789,6 +806,7 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 
 	router.HandleFunc("/api/getRequests/user/{id}", getRequestsByUser).Methods("GET")
 	router.HandleFunc("/api/getRequests/article/{id}", getRequestsByArticle).Methods("GET")
+	router.HandleFunc("/api/getRequests/{which}", getAllRequests).Methods("GET")
 	router.HandleFunc("/api/getAnswers/user/{id}", getAnswersByUser).Methods("GET")
 	router.HandleFunc("/api/getAnswers/article/{id}", getAnswersByArticle).Methods("GET")
 	router.HandleFunc("/api/getReports/user/{id}", getReportsByUser).Methods("GET")
