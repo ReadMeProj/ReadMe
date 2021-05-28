@@ -112,6 +112,29 @@ func (db *MongoController) GetByDoubleKey(dbName string, collectionName string, 
 	return err	
 }
 
+func (db* MongoController) DeleteAllByKey(dbName string, collectionName string, key []string, val []interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{}
+	for i := 0; i < len(key); i++ {
+		filter = append(filter, bson.E{Key: key[i], Value: val[i]})
+	}
+
+	res, err := collection.DeleteMany(context.TODO(), filter)
+	if err != nil {
+		log.Println(err)
+	}
+
+	if res.DeletedCount == 0 {
+		log.Println("Couldn't delete with given key, val")
+		if err == nil {
+			err = errors.New("None deleted")
+		}
+	}
+
+	return err	
+}
+
 // extractOneByIDFromDB extracts multiple results from mongo DB, by filtering with ID type.
 func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)

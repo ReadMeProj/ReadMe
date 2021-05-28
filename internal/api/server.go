@@ -4,13 +4,26 @@ import (
 	"ReadMe/internal/db"
 	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"strings"
-	"io/ioutil"
+	"errors"
 
-	"github.com/gorilla/mux"
 	"github.com/go-playground/validator"
+	"github.com/gorilla/mux"
 )
+
+// DB meta constants
+const mongoDatabaseName = "ReadMeDB"
+const mongoUsersCollectionName = "users"
+const mongoArticlesCollectionName = "articles"
+const mongoFavoritesCollectionName = "favorites"
+const mongoCommentsCollectionName = "comments"
+const mongoRequestsCollectionName = "requests"
+const mongoAnswersCollectionName = "answers"
+const mongoReportsCollectionName = "reports"
+const mongoVotesCollectionName = "votes"
+const mongoCollectionIDKey = "id"
 
 func getUser(responseWriter http.ResponseWriter, r *http.Request) {
 	jsonData, err := dBase.GetUser(
@@ -266,6 +279,32 @@ func newFavorite(responseWriter http.ResponseWriter, r *http.Request) {
 	err = dBase.NewFavorite(favorite)
 	response := Response{Error:err, Data: favorite}
 	GenerateHandler(responseWriter, r, response)
+}
+
+func deleteFavorite(w http.ResponseWriter, r *http.Request) {
+	var favorite db.Favorite
+
+	err := json.NewDecoder(r.Body).Decode(&favorite)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusBadRequest)
+        return
+    }
+
+	if favorite.ArticleID == "" || favorite.UserID == "" {
+		http.Error(w, errors.New("Got no articleid or userid in request body").Error(), http.StatusBadRequest)
+        return	
+	}
+
+	var keys []string
+	var vals []interface{}
+	keys = append(keys, "userid")
+	keys = append(keys, "articleid")
+	vals = append(vals, favorite.UserID)
+	vals = append(vals, favorite.ArticleID)
+
+	err = dBase.DeleteAllByKey(mongoDatabaseName, mongoFavoritesCollectionName, keys, vals)
+	response := Response{Error:err, Data: favorite}
+	GenerateHandler(w, r, response)
 }
 
 func newComment(responseWriter http.ResponseWriter, r *http.Request) {
@@ -756,6 +795,7 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router.HandleFunc("/api/getReports/article/{id}", getReportsByArticle).Methods("GET")
 
 	router.HandleFunc("/api/newFavorite", newFavorite).Methods("PUT")
+	router.HandleFunc("/api/deleteFavorite", deleteFavorite).Methods("POST")
 	router.HandleFunc("/api/newComment", newComment).Methods("PUT")
 	router.HandleFunc("/api/newRequest", newRequest).Methods("PUT")
 	router.HandleFunc("/api/newAnswer", newAnswer).Methods("PUT")
