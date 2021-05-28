@@ -24,6 +24,7 @@ type ReadMeDatabase interface {
 	GetRequests(key string, value interface{}) ([]Request, error)
 	GetAnswers(key string, value interface{}) ([]Answer, error)
 	GetReports(key string, value interface{}) ([]Report, error)
+	GetAllRequests(which string) ([]Request, error)
 	NewRequest(reuqest Request) error
 	NewAnswer(answer Answer) error
 	NewReport(report Report) error
@@ -40,4 +41,5 @@ type ReadMeDatabase interface {
 	GetByKey(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error
 	GetAllByKey(dbName string, collectionName string, key string, value interface{}, pResults interface{}) error
 	GetByDoubleKey(dbName string, collectionName string, key1 string, val1 interface{}, key2 string, val2 interface{}, pResult interface{}) error
+	DeleteAllByKey(dbName string, collectionName string, key []string, val []interface{}) error
 }

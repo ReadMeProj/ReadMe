@@ -112,6 +112,29 @@ func (db *MongoController) GetByDoubleKey(dbName string, collectionName string, 
 	return err	
 }
 
+func (db* MongoController) DeleteAllByKey(dbName string, collectionName string, key []string, val []interface{}) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{}
+	for i := 0; i < len(key); i++ {
+		filter = append(filter, bson.E{Key: key[i], Value: val[i]})
+	}
+
+	res, err := collection.DeleteMany(context.TODO(), filter)
+	if err != nil {
+		log.Println(err)
+	}
+
+	if res.DeletedCount == 0 {
+		log.Println("Couldn't delete with given key, val")
+		if err == nil {
+			err = errors.New("None deleted")
+		}
+	}
+
+	return err	
+}
+
 // extractOneByIDFromDB extracts multiple results from mongo DB, by filtering with ID type.
 func (db *MongoController) extractOneByIDFromDB(dbName string, collectionName string, key string, value interface{}, pResult interface{}) error {
 	collection := db.client.Database(dbName).Collection(collectionName)
@@ -329,6 +352,40 @@ func (db* MongoController) GetRequests(key string, value interface{}) ([]Request
 
 	return requests, err
 }
+
+func (db* MongoController) GetAllRequests(which string) ([]Request, error) {
+	var requests []Request
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoRequestsCollectionName)
+	
+	var filter bson.M
+	if which == "all" {
+		filter = bson.M{}
+	} else if which == "open" {
+		exists := bson.M{"$eq": ""}
+		filter = bson.M{"answerid": exists}
+	} else if which == "closed" {
+		exists := bson.M{"$ne": ""}
+		filter = bson.M{"answerid": exists}
+	} else {
+		filter = bson.M{}
+	}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &requests)
+	if err != nil {
+		// handle error
+	}
+	
+	return requests, err
+}
+
 
 func (db* MongoController) GetAnswers(key string, value interface{}) ([]Answer, error) {
 	var answers []Answer
