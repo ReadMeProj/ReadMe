@@ -37,6 +37,8 @@ class ProfilePage extends Component {
             <br />
             Email: {user.email}
             <br />
+            Stats: not yet..
+            <br />
             </div>
           }
         </div>
