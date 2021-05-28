@@ -9,6 +9,17 @@ import { config } from "../config.js";
 
 //const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 }); //TODO
 
+export async function getRecommendations() {
+  var userID = window.localStorage.getItem("UserId");
+  var numRecommendations = 20;
+  if (userID == null) {
+    console.log("No Userid in local storage, can't get recommendations");
+    return [];
+  }
+  
+  return axiosClient.get(`${config["recommendationsPath"]}/${userID}/${numRecommendations}`)
+}
+
 /// Get all articles.
 export async function getArticles() {
   return axiosClient.get(`${config["getArticlesPath"]}`);
@@ -53,3 +64,8 @@ export async function fillRequest(requestID, articleID, reportJson) {
 /// Get articles by query.
 
 /// Get article by some filter from the filterEnum.
+
+// Get recommendations
+export async function getRecommendationsForUser(userID) {
+
+}
