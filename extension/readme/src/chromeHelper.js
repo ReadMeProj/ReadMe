@@ -34,9 +34,6 @@ export const articleStorage = {
     },
 };
 
-
-// UserCred : {userName: OvedHaruvi , token : 1234}
-
 export const userStorage = {
     get: cb => {
         chrome.storage.local.get(['readMeUserCredentials'], result => {

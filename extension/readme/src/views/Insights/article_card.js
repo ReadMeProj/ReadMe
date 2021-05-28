@@ -3,7 +3,8 @@ import { Container, Row, Card, Button } from "react-bootstrap";
 import { GrLike, GrDislike } from "react-icons/gr"
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { isAuth, userStorage } from "../../chromeHelper";
-import { toggleLike } from "../../network/lib/user"
+import { toggleUserLike } from "../../network/lib/user"
+import { config } from "../../network/config";
 
 
 function ArticleCard(params) {
@@ -22,7 +23,7 @@ function ArticleCard(params) {
     if (isLiked) {
       // setIsLike(false);
     }
-      isAuth.get((res)=> {setIsSignedIn(res)})
+    isAuth.get((res) => { setIsSignedIn(res) })
   })
 
   // Set up parameters.
@@ -71,18 +72,29 @@ function ArticleCard(params) {
     var redirectURL;
     userStorage.get(userCredentials => {
       if (userCredentials) {
-        redirectURL = `http://localhost:8080/?articleId=${articleID}&username=${userCredentials.userName}&password=${userCredentials.password}`;
+        redirectURL = `http://${config["host"]}:8080/?articleId=${articleID}&username=${userCredentials.userName}&password=${userCredentials.password}`;
       }
       else {
-        redirectURL = `http://localhost:8080/`;
+        redirectURL = `http://${config["host"]}:8080/`;
       }
       window.open(`${redirectURL}`);
     });
   }
 
   const toggleLike = () => {
-    setIsLike(!isLiked);
-    // toggleLike() TODO
+    userStorage.get(userCredentials => {
+      if (userCredentials) {
+        let tokenAndUserNameJson = {
+          'Token': userCredentials.token,
+          'UserName': userCredentials.userName
+        };
+        toggleUserLike(userCredentials.userId, articleID, isLiked, tokenAndUserNameJson).then(
+          res => {
+            setIsLike(!isLiked);
+          }
+        );
+      }
+    })
   }
 
 
@@ -97,7 +109,7 @@ function ArticleCard(params) {
             </Card.Body>
             <Card.Text>
               <Button variant='link' size='sm' onClick={onSeeMore} >See more</Button>
-                {isSignedIn && (isLiked ? <AiFillHeart className="likeHeart" onClick={toggleLike} /> : <AiOutlineHeart className="likeHeart" onClick={toggleLike} />)}
+              {isSignedIn && (isLiked ? <AiFillHeart className="likeHeart" onClick={toggleLike} /> : <AiOutlineHeart className="likeHeart" onClick={toggleLike} />)}
             </Card.Text>
           </Card>
         </Container>
