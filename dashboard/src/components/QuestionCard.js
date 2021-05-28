@@ -1,5 +1,8 @@
 import { React, Component } from "react";
 import { getRequestById } from "../network/lib/apiRequestFunctions";
+import { Link } from "react-router-dom";
+import VoteButtons from "./VoteButtons";
+//import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class QuestionCard extends Component {
   constructor(props) {
@@ -23,7 +26,7 @@ class QuestionCard extends Component {
   render() {
     const { requestData: request } = this.state;
     if (request == null) return <div></div>;
-
+    var id = request.id;
     var whoAsked = request.requestedby;
     var content = request.content;
     var isResolved = request.answerid;
@@ -37,7 +40,22 @@ class QuestionCard extends Component {
               <div>
                 <small style={{ color: "gray" }}>Asked by: {whoAsked}</small>
                 <p>{content}</p>
-                <div>{"Status: " + (isResolved ? "Resolved!" : "Open")}</div>
+                <div
+                  className="row"
+                  style={{ marginRight: "20px", marginLeft: "20px" }}
+                >
+                  <div className="col">
+                    <VoteButtons id={id} type="request" />
+                  </div>
+                  <div className="col">
+                    <Link className="btn btn-info" to={""}>
+                      Answer
+                    </Link>
+                  </div>
+                  <div className="column">
+                    {"Status: " + (isResolved ? "Resolved!" : "Open")}
+                  </div>
+                </div>
               </div>
             </div>
           </div>

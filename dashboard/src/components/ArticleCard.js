@@ -6,6 +6,7 @@ import {
   getArticleById,
 } from "../network/lib/apiArticleFunctions";
 import { getUserById } from "../network/lib/apiUserFunctions";
+import VoteButtons from "./VoteButtons";
 class ArticleCard extends Component {
   constructor(props) {
     super(props);
@@ -61,44 +62,44 @@ class ArticleCard extends Component {
     );
   }
 
-  getVoteButtons(userVote, votes) {
-    var voteUp = "none";
-    if (userVote) {
-      voteUp = userVote;
-    }
-    return (
-      <div className="row">
-        <div className="col-1">
-          <div className="row d-flex justify-content-center">
-            <FontAwesomeIcon
-              icon={["fas", "arrow-alt-circle-up"]}
-              size="lg"
-              color={voteUp === "up" ? "green" : "gray"}
-              onClick={() => {}}
-              cursor="pointer"
-            />
-          </div>
-          <div className="row d-flex justify-content-center">
-            <small>{votes[0]}</small>
-          </div>
-        </div>
-        <div className="col-1">
-          <div className="row d-flex justify-content-center">
-            <FontAwesomeIcon
-              icon={["fas", "arrow-alt-circle-down"]}
-              size="lg"
-              color={voteUp === "down" ? "red" : "gray"}
-              onClick={() => {}}
-              cursor="pointer"
-            />
-          </div>
-          <div className="row d-flex justify-content-center">
-            <small>{votes[1]}</small>
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // getVoteButtons(userVote, votes) {
+  //   var voteUp = "none";
+  //   if (userVote) {
+  //     voteUp = userVote;
+  //   }
+  //   return (
+  //     <div className="row">
+  //       <div className="col-1">
+  //         <div className="row d-flex justify-content-center">
+  //           <FontAwesomeIcon
+  //             icon={["fas", "arrow-alt-circle-up"]}
+  //             size="lg"
+  //             color={voteUp === "up" ? "green" : "gray"}
+  //             onClick={() => {}}
+  //             cursor="pointer"
+  //           />
+  //         </div>
+  //         <div className="row d-flex justify-content-center">
+  //           <small>{votes[0]}</small>
+  //         </div>
+  //       </div>
+  //       <div className="col-1">
+  //         <div className="row d-flex justify-content-center">
+  //           <FontAwesomeIcon
+  //             icon={["fas", "arrow-alt-circle-down"]}
+  //             size="lg"
+  //             color={voteUp === "down" ? "red" : "gray"}
+  //             onClick={() => {}}
+  //             cursor="pointer"
+  //           />
+  //         </div>
+  //         <div className="row d-flex justify-content-center">
+  //           <small>{votes[1]}</small>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   render() {
     const {
@@ -147,7 +148,10 @@ class ArticleCard extends Component {
           </a>
           <div className="row">
             <div className="col-1">{this.getHeartButton(userLiked)}</div>
-            <div className="col-1">{this.getVoteButtons(userVote, votes)}</div>
+            {/* <div className="col-1">{this.getVoteButtons(userVote, votes)}</div> */}
+            <div className="col-1">
+              <VoteButtons id={this.state.articleId} type="article" />
+            </div>
             <div className="col-3" style={{ marginLeft: "30px" }}>
               <Link
                 className="btn btn-info"
