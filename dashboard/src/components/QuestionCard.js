@@ -1,7 +1,7 @@
 import { React, Component } from "react";
 import { getRequestById } from "../network/lib/apiRequestFunctions";
-import { Link } from "react-router-dom";
 import VoteButtons from "./VoteButtons";
+import { Link } from "react-router-dom";
 
 class QuestionCard extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class QuestionCard extends Component {
       requestData: [],
       requestId: props.requestId,
       showTitleOnEach: props.reqPage ? props.reqPage : false,
+      onFocus: props.onFocus ? props.onFocus : false,
     };
   }
   async componentDidMount() {
@@ -48,11 +49,16 @@ class QuestionCard extends Component {
                   <div className="col">
                     <VoteButtons id={this.state.requestId} type="request" />
                   </div>
-                  <div className="col">
-                    <Link className="btn btn-info" to={""}>
-                      Answer
-                    </Link>
-                  </div>
+                  {this.state.onFocus ? null : (
+                    <div className="col">
+                      <Link
+                        className="btn btn-info"
+                        to={"/focusQuestion?requestId=" + this.state.requestId}
+                      >
+                        Focus
+                      </Link>
+                    </div>
+                  )}
                   <div className="column">
                     {"Status: " + (isResolved ? "Resolved!" : "Open")}
                   </div>

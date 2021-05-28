@@ -29,7 +29,15 @@ export async function getRequestById(requestId) {
   return axiosClient.get(`${config["getRequestByIdPath"] + "/" + requestId}`);
 }
 
-export async function answerRequest(requestId, articleId) {}
+export async function submitAnswer(requestId, articleId, content) {
+  return axiosClient.put(`${config["newAnswerPath"]}`, {
+    requestid: requestId,
+    userid: userId,
+    articleid: articleId,
+    date: Date.now(),
+    content: content,
+  });
+}
 
 export async function getAnswersByRequest(requestId) {
   if (!requestId)

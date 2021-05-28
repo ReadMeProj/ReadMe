@@ -16,6 +16,7 @@ import RecommendationsPage from "./pages/RecommendationsPage";
 import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
 import UserScore from "./components/UserScore";
+import QuestionPage from "./pages/QuestionPage";
 function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
@@ -54,8 +55,12 @@ function App() {
   }
   let params = new URLSearchParams(document.location.search.substring(1));
   let articleID = params.get("articleId"); // Will be null if there is no articleId value in the URL.
+  let requestID = params.get("requestId");
   if (articleID) {
     history.push("moreInfo?articleId=" + articleID);
+  }
+  if (requestID) {
+    history.push("focusQuestion?requestId=" + articleID);
   }
 
   return (
@@ -112,6 +117,9 @@ function App() {
                   </Route>
                   <Route exact path="/moreInfo">
                     <ArticlePage />
+                  </Route>
+                  <Route path="/focusQuestion">
+                    <QuestionPage />
                   </Route>
                 </Switch>
               </div>

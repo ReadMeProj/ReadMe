@@ -36,6 +36,7 @@ class ArticlePage extends Component {
     return (
       <div>
         <h2>{article.name}</h2>
+        <br />
         <dl>
           {questions.map((q) => (
             <dd key={q.id}>

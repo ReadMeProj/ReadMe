@@ -149,3 +149,10 @@ input[type="password"]:focus {
 .astext:hover {
   color: #3c4a9b;
 }
+
+.answerAsk {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
