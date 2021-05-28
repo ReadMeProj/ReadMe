@@ -8,7 +8,9 @@ import { config } from "../config.js";
   */
 
 //const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 }); //TODO
-
+const userId = window.localStorage.getItem("UserId");
+const userName = window.localStorage.getItem("Username");
+const token = window.localStorage.getItem("Token");
 /// Get all articles.
 export async function getArticles() {
   return axiosClient.get(`${config["getArticlesPath"]}`);
@@ -16,8 +18,6 @@ export async function getArticles() {
 
 /// Get article by ID.
 export async function getArticleById(articleId) {
-  var userName = window.localStorage.getItem("Username");
-  var token = window.localStorage.getItem("Token");
   let headers = {
     headers: {
       Token: token,
@@ -33,8 +33,16 @@ export async function getArticleById(articleId) {
 
 /// Get user liked articles.
 export async function getUserFavorites() {
-  var userId = window.localStorage.getItem("UserId");
   return axiosClient.get(`${config["getFavoritesByUserPath"] + "/" + userId}`);
+}
+
+// Toggle favorite for article
+export async function addFav(articleId, date) {
+  axiosClient.put(`${config["newFavoritePath"]}`, {
+    userid: userId,
+    articleid: articleId,
+    date: date,
+  });
 }
 
 /// Get articles by query.

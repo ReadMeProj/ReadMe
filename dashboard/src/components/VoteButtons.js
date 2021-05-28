@@ -2,7 +2,7 @@ import "../App.css";
 import React, { Component } from "react";
 import { axiosClient } from "../network/apiClient";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-//router.HandleFunc("/api/votes/{type}/{id}/{vote}", isAuthorized(updateVotes)).Methods("POST")
+
 class VoteButtons extends Component {
   constructor(props) {
     super(props);
@@ -32,9 +32,9 @@ class VoteButtons extends Component {
   }
 
   getVoteButtons(userVote, votes) {
-    var voteUp = "none";
+    var voteType = "none";
     if (userVote) {
-      voteUp = userVote;
+      voteType = userVote;
     }
 
     return (
@@ -44,9 +44,11 @@ class VoteButtons extends Component {
             <FontAwesomeIcon
               icon={["fas", "arrow-alt-circle-up"]}
               size="lg"
-              color={voteUp === "up" ? "green" : "gray"}
+              color={voteType === "up" ? "green" : "gray"}
               onClick={() => {
-                this.vote(this.state.itemType, this.state.itemId, "up");
+                if (voteType != "up")
+                  this.vote(this.state.itemType, this.state.itemId, "up");
+                else this.vote(this.state.itemType, this.state.itemId, "none");
               }}
               cursor="pointer"
             />
@@ -60,9 +62,11 @@ class VoteButtons extends Component {
             <FontAwesomeIcon
               icon={["fas", "arrow-alt-circle-down"]}
               size="lg"
-              color={voteUp === "down" ? "red" : "gray"}
+              color={voteType === "down" ? "red" : "gray"}
               onClick={() => {
-                this.vote(this.state.itemType, this.state.itemId, "down");
+                if (voteType != "down")
+                  this.vote(this.state.itemType, this.state.itemId, "down");
+                else this.vote(this.state.itemType, this.state.itemId, "none");
               }}
               cursor="pointer"
             />
