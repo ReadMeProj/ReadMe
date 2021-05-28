@@ -12,6 +12,7 @@ import LikesPage from "./pages/LikesPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
+import RecommendationsPage from "./pages/RecommendationsPage";
 import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
 import UserScore from "./components/UserScore";
@@ -87,6 +88,9 @@ function App() {
                 <Switch>
                   <Route exact path="/">
                     <FeedPage />
+                  </Route>
+                  <Route path="/recommendations">
+                    <RecommendationsPage />
                   </Route>
                   <Route path="/profile">
                     <ProfilePage />

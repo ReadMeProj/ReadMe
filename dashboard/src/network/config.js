@@ -23,5 +23,6 @@ export var config = {
   //updateArticlePath: "/api/updateArticle",
   powerUserId: "sudo",
   powerUserToken: "NO_TOKEN",
+  recommendationsPath: "/api/recommendations"
   //newRequest, getAnswers, newAnswer,
 };

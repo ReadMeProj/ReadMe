@@ -36,7 +36,13 @@ function NavBar() {
           <dd className="navOption">
             <FontAwesomeIcon icon={["fas", "home"]} size="lg" />
             <Link to="/" className="navLink">
-              Dashboard
+              Home  
+            </Link>
+          </dd>
+          <dd className="navOption">
+            <FontAwesomeIcon icon={["fas", "moon"]} size="lg" />
+            <Link to="/recommendations" className="navLink">
+              You Might Like 
             </Link>
           </dd>
           <dd className="navOption">
