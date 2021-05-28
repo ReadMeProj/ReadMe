@@ -32,9 +32,9 @@ class LikesPage extends Component {
         <dl>
           {articles == null
             ? []
-            : articles.map((article) => (
-                <dd key={article.id}>
-                  <ArticleCard articleId={article.id} />
+            : articles.map((fav) => (
+                <dd key={fav.id}>
+                  <ArticleCard articleId={fav.articleid} isOnFavPage={true} />
                 </dd>
               ))}
         </dl>
