@@ -18,8 +18,10 @@ export async function getRecommendations() {
     console.log("No Userid in local storage, can't get recommendations");
     return [];
   }
-  
-  return axiosClient.get(`${config["recommendationsPath"]}/${userID}/${numRecommendations}`)
+
+  return axiosClient.get(
+    `${config["recommendationsPath"]}/${userId}/${numRecommendations}`
+  );
 }
 
 /// Get all articles.
