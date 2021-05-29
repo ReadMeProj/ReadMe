@@ -362,10 +362,10 @@ func (db* MongoController) GetAllRequests(which string) ([]Request, error) {
 	if which == "all" {
 		filter = bson.M{}
 	} else if which == "open" {
-		exists := bson.M{"$eq": ""}
+		exists := bson.M{"$exists": false}
 		filter = bson.M{"answerid": exists}
 	} else if which == "closed" {
-		exists := bson.M{"$ne": ""}
+		exists := bson.M{"$exists": true}
 		filter = bson.M{"answerid": exists}
 	} else {
 		filter = bson.M{}
@@ -401,7 +401,7 @@ func (db* MongoController) GetReports(key string, value interface{}) ([]Report, 
 	return reports, err
 }
 
-func (db *MongoController) NewUser(user User) error {
+func (db *MongoController) NewUser(user *User) error {
 	user.ID = ID(proto.TokenGenerator())
 
 	_, err := db.GetUser("username", user.Username)
@@ -411,7 +411,7 @@ func (db *MongoController) NewUser(user User) error {
 		return err
 	}
 
-	err = db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, user)
+	err = db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, *user)
 	if err != nil {
 		log.Println(err)
 	}
@@ -419,7 +419,7 @@ func (db *MongoController) NewUser(user User) error {
 	return err
 }
 
-func (db *MongoController) NewArticle(article Article) error {
+func (db *MongoController) NewArticle(article *Article) error {
 	article.ID = ID(proto.TokenGenerator())
 
 	_, err := db.GetArticle("url", article.URL)
@@ -429,7 +429,7 @@ func (db *MongoController) NewArticle(article Article) error {
 		return err
 	}
 
-	err = db.insertOneToDB(mongoDatabaseName, mongoArticlesCollectionName, article)
+	err = db.insertOneToDB(mongoDatabaseName, mongoArticlesCollectionName, *article)
 	if err != nil {
 		log.Println(err)
 	}
@@ -446,10 +446,10 @@ func (db* MongoController) newItemNoValidate(collectionName string, item interfa
 	return err
 }
 
-func (db *MongoController) NewComment(comment Comment) error {
+func (db *MongoController) NewComment(comment *Comment) error {
 	comment.ID = ID(proto.TokenGenerator())
 
-	err := db.insertOneToDB(mongoDatabaseName, mongoCommentsCollectionName, comment)
+	err := db.insertOneToDB(mongoDatabaseName, mongoCommentsCollectionName, *comment)
 	if err != nil {
 		log.Println(err)
 	}
@@ -457,8 +457,8 @@ func (db *MongoController) NewComment(comment Comment) error {
 	return err
 }
 
-func (db *MongoController) NewFavorite(favorite Favorite) error {
-	err := db.insertOneToDB(mongoDatabaseName, mongoFavoritesCollectionName, favorite)
+func (db *MongoController) NewFavorite(favorite *Favorite) error {
+	err := db.insertOneToDB(mongoDatabaseName, mongoFavoritesCollectionName, *favorite)
 	if err != nil {
 		log.Println(err)
 	}
@@ -466,8 +466,8 @@ func (db *MongoController) NewFavorite(favorite Favorite) error {
 	return err
 }
 
-func (db *MongoController) NewVoteRegistry(vote VoteRegistery) error {
-	err := db.insertOneToDB(mongoDatabaseName, mongoVotesCollectionName, vote)
+func (db *MongoController) NewVoteRegistry(vote *VoteRegistery) error {
+	err := db.insertOneToDB(mongoDatabaseName, mongoVotesCollectionName, *vote)
 	if err != nil {
 		log.Println(err)
 	}
@@ -475,19 +475,19 @@ func (db *MongoController) NewVoteRegistry(vote VoteRegistery) error {
 	return err
 }
 
-func (db *MongoController) NewRequest(request Request) error {
+func (db *MongoController) NewRequest(request *Request) error {
 	request.ID = ID(proto.TokenGenerator())
-	return db.newItemNoValidate(mongoRequestsCollectionName, request)	
+	return db.newItemNoValidate(mongoRequestsCollectionName, *request)	
 }
 
-func (db *MongoController) NewAnswer(answer Answer) error {
+func (db *MongoController) NewAnswer(answer *Answer) error {
 	answer.ID = ID(proto.TokenGenerator())
-	return db.newItemNoValidate(mongoAnswersCollectionName, answer)	
+	return db.newItemNoValidate(mongoAnswersCollectionName, *answer)	
 }
 
-func (db *MongoController) NewReport(report Report) error {
+func (db *MongoController) NewReport(report *Report) error {
 	report.ID = ID(proto.TokenGenerator())
-	return db.newItemNoValidate(mongoReportsCollectionName, report)	
+	return db.newItemNoValidate(mongoReportsCollectionName, *report)	
 }
 
 func (db *MongoController) UpdateUser(user User) error {
@@ -532,7 +532,7 @@ func (db *MongoController) UpdateAnswer(answer Answer) error {
 
 func (db *MongoController) UpdateReport(report Report) error {
 	updateMap := make(map[string]interface{})
-	updateMap["category"] = report.Category 
+	updateMap["labels"] = report.Labels 
 	updateMap["fake"] = report.Fake
 	updateMap["rating"] = report.Rating
 	

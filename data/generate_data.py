@@ -206,22 +206,36 @@ def generate_reports(users, requests):
 
 
 if __name__ == "__main__":
-    with open("data/articles.json", "r") as f:
+    with open("docker/mongo/data/articles.json", "r") as f:
         articles = json.load(f)
     print(f'num_article={len(articles)}')
 
     #users = generate_users()
     #with open('data/users.json', 'w') as f:
     #    json.dump(users, f, indent=4)
-    with open('data/users.json', 'r') as f:
+    with open('docker/mongo/data/users.json', 'r') as f:
         users = json.load(f)
     print(f'num_users={len(users)}')
+
+    with open('docker/mongo/data/votes.json', 'r') as f:
+        votes = json.load(f) 
     
-    favorites = generate_favorites(users, articles)
-    with open('data/favorites.json', 'w') as f:
-        json.dump(favorites, f, indent=4)
+    for article in articles:
+        new_votes, vote_regs = generate_votes_for_item(article["id"], users)
+        votes.extend(vote_regs)
+        article["votes"] = new_votes
     
+    with open("docker/mongo/data/articles.json", "w") as f:
+        json.dump(articles, f, indent=4)
+
+    with open("docker/mongo/data/votes.json", "w") as f:
+        json.dump(votes, f, indent=4) 
+
     if False:
+        favorites = generate_favorites(users, articles)
+        with open('data/favorites.json', 'w') as f:
+            json.dump(favorites, f, indent=4)
+
         requests, answers, votes = generate_requests_answers_votes(users, articles)
 
         with open('data/requests.json', 'w') as f:

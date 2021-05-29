@@ -62,7 +62,7 @@ type Answer struct {
 	RequestID ID `json:"requestid" validate:"required"`
 	UserID 	  ID `json:"userid" validate:"required"`
 	ArticleId ID `json:"articleid"` 
-	Date      int64 `json:"date" validate:"required"`
+	Date      int64 `json:"date"` 
 	Content   string `json:"content" validate:"required,lte=256"`
 	// Report
 	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
@@ -78,7 +78,7 @@ type Report struct {
 	ArticleId ID `json:"articleid" validate:"required"`
 	// Report
 	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
-	Category  string `json:"category"`
+	Labels 	  []ReadMeLabel `json:"labels"`
 	Fake 	  bool `json:"fake"`
 	// Report
 }
