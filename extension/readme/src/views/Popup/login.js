@@ -1,14 +1,14 @@
 import React, { Component } from "react";
-import {login} from "../../network/lib/login";
-import {userStorage , isAuth} from '../../chromeHelper'
-import {Alert} from 'react-bootstrap'
+import { login } from "../../network/lib/login";
+import { userStorage, isAuth } from '../../chromeHelper'
+import { Alert } from 'react-bootstrap'
 import { Redirect } from "react-router";
 
 //import { login } from "../apiFunctions";
 class Login extends Component {
   constructor(props) {
     super(props);
-    this.state = { userName: "", password: "", err: '', token: "token" , isSuccess: false};
+    this.state = { userName: "", password: "", err: '', token: "token", isSuccess: false };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,44 +24,38 @@ class Login extends Component {
     event.preventDefault();
     let user = this.state.userName;
     let pass = this.state.password;
-    login({username:user, password: pass}).then((res) =>{
+    login({ username: user, password: pass }).then((res) => {
       console.log(res);
-      this.setState({token: res.token , err: '', isSuccess:true})
+      this.setState({ token: res.token, err: '', isSuccess: true })
       this.state.token = res.token;
-      userStorage.set({userId: res.id , token:res.token , userName: user, password: pass}, ()=> {});
-      isAuth.set(true, ()=>{});
-    }).catch((err) =>{
-      this.setState({err: 'Incorrect Username or Password'})
+      userStorage.set({ userId: res.id, token: res.token, userName: user, password: pass }, () => { });
+      isAuth.set(true, () => { });
+    }).catch((err) => {
+      this.setState({ err: 'Incorrect Username or Password' })
     })
-
-    //Call api to login with post msg.
-    //login(user, pass, this.state.err, this.state.token);
-    //alert("The userName submitted: " + this.state.userName);
   }
   render() {
     return (
       <form onSubmit={this.handleSubmit} className="loginBox">
         <h2>Login</h2>
-        <br></br>
         {this.state.err &&
-        <Alert variant='danger'>{this.state.err}</Alert>}
+          <Alert variant='danger'>{this.state.err}</Alert>}
         {this.state.isSuccess &&
-        <Redirect to='/'/>}
-        <label className="form-label">UserName: </label>
-        <input type="text" name="userName" onChange={this.handleChange} />
-        <br />
-        <br />
-        <label className="form-label">Password: </label>
-        <input type="password" name="password" onChange={this.handleChange} />
-        <br />
-        <br />
+          <Redirect to='/' />}
+        <div className="loginField">
+          <label className="form-label">UserName: </label>
+          <input type="text" name="userName" placeholder="Enter Username" onChange={this.handleChange} />
+        </div>
+        <div className="loginField">
+          <label className="form-label">Password: </label>
+          <input type="password" name="password" placeholder="Enter Password" onChange={this.handleChange} />
+        </div>
         <input
           type="submit"
           value="Login"
-          className="btn btn-info"
+          className="btn-two blue mini"
           onSubmit={this.handleSubmit}
         />
-        <h1>{this.state.token}</h1>
       </form>
     );
   }
