@@ -5,7 +5,7 @@ import Login from "./login";
 import Insights from "../Insights/insights";
 import Report from "../Report/report";
 import Request from "../Request/request";
-import {isAuth} from '../../chromeHelper'
+import { isAuth } from '../../chromeHelper'
 
 
 class LoginButton extends Component {
@@ -15,93 +15,99 @@ class LoginButton extends Component {
     this.state = {
       isLogged: false,
     };
-    
+
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
   }
 
-  componentDidMount(){
+  componentDidMount() {
     isAuth.get((result) => {
-      this.setState({isLogged:result});
+      this.setState({ isLogged: result });
     });
   }
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     isAuth.get((result) => {
-      this.setState({isLogged:result});
+      this.setState({ isLogged: result });
     });
   }
 
   login() {
     console.log("login pushed");
-    this.setState({isLogged: true});
+    this.setState({ isLogged: true });
     <Route path="/login" component={Login} />;
   }
 
   logout() {
     this.setState({ isLogged: false });
-    isAuth.set(false , () => {console.log("User logged out")});
+    isAuth.set(false, () => { console.log("User logged out") });
   }
 
   render() {
     if (this.state.isLogged === true) {
       return (
-        <div>
-          <h3> Welcome Back </h3>
-          <button onClick={this.logout}>Logout</button>
-          <Router>
-            <Link to="/insights">
-              <button type="button">Insights</button>
-            </Link>
-            <Link to="/report">
-              <button type="button">Report</button>
-            </Link>
-            <Link to="/request">
-              <button type="button">Request Review</button>
-            </Link>
-            <Switch>
-              <Route path="/insights">
-                <Insights />
-              </Route>
-              <Route path="/report">
-                <Report />
-              </Route>
-              <Route path="/request">
-                <Request />
-              </Route>
-            </Switch>
-          </Router>
+        <div >
+          <div >
+            <button className="btn-two cyan mini" onClick={this.logout}>Logout</button>
+            <Router>
+              <Link to="/insights">
+                <button className="btn-two cyan mini" type="button">Insights</button>
+              </Link>
+              <Link to="/report">
+                <button className="btn-two cyan mini" type="button">Report</button>
+              </Link>
+              <Link to="/request">
+                <button className="btn-two cyan mini" type="button">Request Review</button>
+              </Link>
+              <Switch>
+                <Route path="/insights">
+                  <Insights />
+                </Route>
+                <Route path="/report">
+                  <Report />
+                </Route>
+                <Route path="/request">
+                  <Request />
+                </Route>
+              </Switch>
+            </Router>
+          </div>
         </div>
+
       );
     } else {
       return (
-        <div>
-          <Router>
-            <Link to="/login">
-              <button type="button">Login</button>
-            </Link>
-            <Link to="/insights">
-              <button type="button">Insights</button>
-            </Link>
-            <Switch>
-              <Route path="/login">
-                <Login />
-              </Route>
-              <Route path="/insights">
-                <Insights />
-              </Route>
-              <Route path="/report">
-                <Report />
-              </Route>
-              <Route path="/request">
-                <Request />
-              </Route>
-            </Switch>
-          </Router>
-          {/* </Router><button  onClick={this.login}>
+
+        <div >
+          <div >
+            <Router>
+              <Link to="/login">
+                <button className="btn-two cyan mini" type="button">Login</button>
+              </Link>
+              <Link to="/insights">
+                <button className="btn-two cyan mini" type="button">Insights</button>
+              </Link>
+              <Switch>
+                <Route path="/login">
+                  <Login />
+                </Route>
+                <Route path="/insights">
+                  <Insights />
+                </Route>
+                <Route path="/report">
+                  <Report />
+                </Route>
+                <Route path="/request">
+                  <Request />
+                </Route>
+              </Switch>
+            </Router>
+            {/* </Router><button  onClick={this.login}>
         Login
       </button> */}
+          </div>
         </div>
+
       );
     }
   }

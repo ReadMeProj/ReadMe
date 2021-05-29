@@ -1,28 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Media, Container, Row, Col, Card, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Container, Row, Card, Button, Badge } from "react-bootstrap";
 import { GrLike, GrDislike } from "react-icons/gr"
-import {AiOutlineHeart, AiFillHeart} from "react-icons/ai"; 
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { isAuth, userStorage } from "../../chromeHelper";
-import {toggleLike} from "../../network/lib/user"
+import { toggleUserLike } from "../../network/lib/user"
+import { config } from "../../network/config";
 
 
 function ArticleCard(params) {
-  console.log(params);
   var articleContent = "";
   var articleTitle = "";
   var articleUrl = "";
+  var articleLabels = "";
   var articleID = "";
   var articleFakeVotes = {};
-  var isReview = false; //TODO- read from params.
-  var fakePercent;
   const [isLiked, setIsLike] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
 
-  useEffect(()=>{
-    if(isLiked){
+  useEffect(() => {
+    if (isLiked) {
       // setIsLike(false);
     }
+    isAuth.get((res) => { setIsSignedIn(res) })
   })
 
   // Set up parameters.
@@ -49,66 +49,101 @@ function ArticleCard(params) {
     if (params.url != null) {
       articleUrl = params.url;
     } else {
-      console.log("Article url is null.");
+      articleUrl = "";
     }
     // Set up article ID.
     if (params.id != null) {
       articleID = params.id;
     } else {
-      console.log("Article id is null.");
+      articleID = "";
     }
 
     if (params.fakeVotes != null) {
       articleFakeVotes = params.fakeVotes;
     }
     else {
-      console.log("Article Fake votes is null");
+      articleFakeVotes = {}
+    }
+
+    if (params.labels != null) {
+      articleLabels = params.labels;
+    }
+    else {
+      articleLabels = [];
     }
   }
 
-  if (isReview) {
-    fakePercent = <b>Sponsored %:{ }</b>;
-  } else {
-    fakePercent = <b>Fake %: {articleFakeVotes.upvote}</b>;
-  }
-  var signedIn;
-  isAuth.get(isAuth => {
-    signedIn = isAuth;
-  })
 
   const onSeeMore = () => {
     var redirectURL;
     userStorage.get(userCredentials => {
       if (userCredentials) {
-        redirectURL = `http://localhost:8080/?articleId=${articleID}&username=${userCredentials.userName}&password=${userCredentials.password}`;
+        redirectURL = `http://${config["host"]}:8080/?articleId=${articleID}&username=${userCredentials.userName}&password=${userCredentials.password}`;
       }
       else {
-        redirectURL = `http://localhost:8080/`;
+        redirectURL = `http://${config["host"]}:8080/`;
       }
       window.open(`${redirectURL}`);
     });
   }
 
-  const toggleLike = ()=>{
-    setIsLike(!isLiked);
-    // toggleLike() TODO
+  const toggleLike = () => {
+    userStorage.get(userCredentials => {
+      if (userCredentials) {
+        let tokenAndUserNameJson = {
+          'Token': userCredentials.token,
+          'UserName': userCredentials.userName
+        };
+        toggleUserLike(userCredentials.userId, articleID, isLiked, tokenAndUserNameJson).then(
+          res => {
+            setIsLike(!isLiked);
+          }
+        );
+      }
+    })
+  }
+
+  function renderLabels() {
+    articleLabels.sort((a, b) => {
+      return a.score > b.score
+    })
+    var displayLabels = articleLabels.slice(0, 6);
+    var listItems = displayLabels.map(labelJ =>
+       <li key={labelJ.label} className="tag">{labelJ.label}</li>)
+    return (
+      <div className="articleLabels">
+        <ul className="labels">
+        {listItems}
+        </ul>
+        {/* {displayLabels.map(label =>{
+          <Badge variant="info">{label.label}</Badge>{''}
+        })} */}
+      </div>)
   }
 
 
   return (
     <Container fluid="md">
-      <Row xl={1}>
-        {isLiked ? <AiFillHeart  onClick={toggleLike}/> : <AiOutlineHeart onClick={toggleLike}/>}
-      </Row>
-      <Row xl={7}>
-        <Container>
+      <Row>
+        <Container className="articleCard">
           <Card bg='light' text='dark' style={{ width: '13rem' }} className="mb-2">
             <Card.Header>Some Meta-data regard the article</Card.Header>
             <Card.Body>
-              {articleFakeVotes.upvote} <GrLike /> {articleFakeVotes.downvote} <GrDislike />
+              {articleFakeVotes.up} <GrLike /> {articleFakeVotes.down} <GrDislike />
+              
             </Card.Body>
             <Card.Text>
+            {renderLabels()}
               <Button variant='link' size='sm' onClick={onSeeMore} >See more</Button>
+              <div className="likeHeart">
+                {isSignedIn &&
+                  (isLiked ?
+                    <AiFillHeart onClick={toggleLike} />
+                    : <AiOutlineHeart onClick={toggleLike} />
+                  )}
+                <span className="likeText">Save to Favorites</span>
+              </div>
+
             </Card.Text>
           </Card>
         </Container>

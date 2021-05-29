@@ -89,8 +89,9 @@ function Report() {
               <option value="10">10</option>
             </Field>
           </div>
+          <br/>
           <div className="subm">
-            <input type="submit" value="Submit" />
+            <input className="btn-two blue mini" type="submit" value="Submit" />
           </div>
         </Form>
       </Formik>
