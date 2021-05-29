@@ -49,7 +49,11 @@ class QuestionPage extends Component {
     return (
       <div>
         <QuestionCard requestId={this.state.requestId} onFocus={true} />
-        <button className="btn btn-info" onClick={this.handleOpenModal}>
+        <button
+          className="btn btn-info"
+          onClick={this.handleOpenModal}
+          style={{ marginLeft: "100px", width: "200px" }}
+        >
           Answer
         </button>
         <div style={{ marginLeft: "200px" }}>

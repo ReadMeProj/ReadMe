@@ -35,7 +35,7 @@ class RequestsPage extends Component {
         </div>
         <dl>
           {requests.map((article) => (
-            <dd key={article.package.date}>
+            <dd key={article.id}>
               <QuestionCard requestId={article.id} reqPage={true} />
             </dd>
           ))}

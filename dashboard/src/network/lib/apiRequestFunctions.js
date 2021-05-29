@@ -18,9 +18,7 @@ export async function getRequestsForArticle(articleId) {
 
 export async function getRequestsForUser() {
   if (!userId) console.log("No user id argument was given for getRequests()!");
-  return axiosClient.get(
-    `${config["getRequestsByArticlePath"] + "/" + userId}`
-  );
+  return axiosClient.get(`${config["getRequestsByUserPath"] + "/" + userId}`);
 }
 
 export async function getRequestById(requestId) {
