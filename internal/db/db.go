@@ -10,25 +10,25 @@ type ReadMeDatabase interface {
 	GetArticle(key string, value interface{}) (Article, error)
 	GetArticles() ([]Article, error)
 
-	NewUser(user User) error
-	NewArticle(article Article) error
+	NewUser(user *User) error
+	NewArticle(article *Article) error
 	UpdateUser(user User) error
 	UpdateArticle(article Article) error
 
 	GetFavorite(key1 string, value1 interface{}, key2 string, value2 string) (Favorite, error)
 	GetFavorites(key string, value interface{}) ([]Favorite, error)
 	GetComments(key string, value interface{}) ([]Comment, error)
-	NewFavorite(favorite Favorite) error
-	NewComment(comment Comment) error
+	NewFavorite(favorite *Favorite) error
+	NewComment(comment *Comment) error
 
 	GetRequests(key string, value interface{}) ([]Request, error)
 	GetAnswers(key string, value interface{}) ([]Answer, error)
 	GetReports(key string, value interface{}) ([]Report, error)
 	GetAllRequests(which string) ([]Request, error)
-	NewRequest(reuqest Request) error
-	NewAnswer(answer Answer) error
-	NewReport(report Report) error
-	NewVoteRegistry(vote VoteRegistery) error
+	NewRequest(reuqest *Request) error
+	NewAnswer(answer *Answer) error
+	NewReport(report *Report) error
+	NewVoteRegistry(vote *VoteRegistery) error
 	UpdateAnswer(answer Answer) error
 	UpdateRequest(request Request) error
 	UpdateReport(report Report) error
