@@ -8,16 +8,20 @@ import { config } from "../config.js";
   */
 
 //const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 }); //TODO
+const userId = window.localStorage.getItem("UserId");
+const userName = window.localStorage.getItem("Username");
+const token = window.localStorage.getItem("Token");
 
 export async function getRecommendations() {
-  var userID = window.localStorage.getItem("UserId");
   var numRecommendations = 20;
-  if (userID == null) {
+  if (userId == null) {
     console.log("No Userid in local storage, can't get recommendations");
     return [];
   }
-  
-  return axiosClient.get(`${config["recommendationsPath"]}/${userID}/${numRecommendations}`)
+
+  return axiosClient.get(
+    `${config["recommendationsPath"]}/${userId}/${numRecommendations}`
+  );
 }
 
 /// Get all articles.
@@ -27,8 +31,6 @@ export async function getArticles() {
 
 /// Get article by ID.
 export async function getArticleById(articleId) {
-  var userName = window.localStorage.getItem("Username");
-  var token = window.localStorage.getItem("Token");
   let headers = {
     headers: {
       Token: token,
@@ -44,21 +46,20 @@ export async function getArticleById(articleId) {
 
 /// Get user liked articles.
 export async function getUserFavorites() {
-  var userId = window.localStorage.getItem("UserId");
   return axiosClient.get(`${config["getFavoritesByUserPath"] + "/" + userId}`);
 }
 
-/// Fill info for article that was requested.
-export async function fillRequest(requestID, articleID, reportJson) {
-  var userId = window.localStorage.getItem("UserId");
-  var answer = {
-    requestid: requestID,
+// Toggle favorite for article
+export async function addFav(articleId, date) {
+  axiosClient.put(`${config["newFavoritePath"]}`, {
     userid: userId,
-    articleid: articleID,
-    date: new Date().toLocaleString() + "",
-    report: reportJson,
-  };
-  return axiosClient.put(`${config.newAnswerPath}`, answer);
+    articleid: articleId,
+    date: date,
+  });
+}
+
+export async function removeFav(articleId) {
+  //todo
 }
 
 /// Get articles by query.

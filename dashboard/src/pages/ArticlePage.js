@@ -1,19 +1,16 @@
 import "../App.css";
 import React, { Component } from "react";
 import { getArticleById } from "../network/lib/apiArticleFunctions";
+import { getRequestsForArticle } from "../network/lib/apiRequestFunctions";
+import QuestionCard from "../components/QuestionCard";
 
 class ArticlePage extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      articleData: null,
-      title: "Title",
-      summery: "summery",
-      url: "",
-      upvotes: 0,
-      downvotes: 0,
-      topic: "none",
+      articleData: [],
+      requestsData: [],
     };
   }
   async componentDidMount() {
@@ -24,10 +21,30 @@ class ArticlePage extends Component {
         if (response.data["Error"] == null)
           this.setState({ articleData: response.data["Data"] });
       });
+      await getRequestsForArticle(articleID).then((response) => {
+        if (response.data["Error"] == null)
+          this.setState({ requestsData: response.data["Data"] });
+      });
+    } else {
+      console.log("Missing articleId in url params!");
     }
   }
   render() {
-    return <div></div>;
+    const { articleData: article, requestsData: questions } = this.state;
+    if (article == null || questions == null) return <div></div>;
+
+    return (
+      <div>
+        <h2>{article.name}</h2>
+        <dl>
+          {questions.map((q) => (
+            <dd key={q.id}>
+              <QuestionCard requestId={q.id} />
+            </dd>
+          ))}
+        </dl>
+      </div>
+    );
   }
 }
 

@@ -623,39 +623,74 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Printf("type=%s, id=%s, vote=%s", _type, id, vote)
 	
-	if vote != "up" && vote != "down" {
-		http.Error(w, "Vote should be either up or down", http.StatusBadRequest)
+	if vote != "up" && vote != "down" && vote != "none" {
+		http.Error(w, "Vote should be either up, down or none", http.StatusBadRequest)
         return
+	}
+
+	var voteReg db.VoteRegistery
+	err = dBase.GetByDoubleKey("ReadMeDB", "votes", "userid", user.ID, "itemid", id, &voteReg)
+	// If we get into this branch then user already voted the item
+	updatePreviousVote := false 
+	if err == nil {
+		if voteReg.Up && vote == "up" || (!voteReg.Up && vote == "down") {
+			// It's the same vote and we'll return 200
+			response := Response{Error:nil, Data:nil}
+			GenerateHandler(w, r, response)
+			return
+
+		} else {
+			// Delete user's vote from registry and update votes 
+			var keys []string
+			var vals []interface{}
+			keys = append(keys, "userid")
+			keys = append(keys, "itemid")
+			vals = append(vals, user.ID)
+			vals = append(vals, id) 
+			err = dBase.DeleteAllByKey(mongoDatabaseName, mongoVotesCollectionName, keys, vals)
+			updatePreviousVote = true
+		} 
 	}
 
 	incrementBy := 1
 
 	err = error(nil)
 	dbName := "ReadMeDB"
+	collection := ""
+	voteName := ""
 	switch _type {
 	case "article":
-		increment := fmt.Sprintf("%s.%s", "fakevotes", vote)
-		fmt.Printf("Update article votes: increment=%s, id=%s", increment, id)
-		err = dBase.IncrementOneInDB(dbName, "articles", "id", id, increment, incrementBy)
+		voteName = "fakevotes"
+		collection = "articles"
 	case "request":
-		increment := fmt.Sprintf("%s.%s", "votes", vote)
-		fmt.Printf("Update request votes: increment=%s, id=%s", increment, id)
-		err = dBase.IncrementOneInDB(dbName, "requests", "id", id, increment, incrementBy)
+		voteName = "votes"
+		collection = "requests"
 	case "answer":
-		increment := fmt.Sprintf("%s.%s", "votes", vote)
-		fmt.Printf("Update answer votes: increment=%s, id=%s", increment, id)
-		err = dBase.IncrementOneInDB(dbName, "answers", "id", id, increment, incrementBy)
+		voteName = "votes"
+		collection = "answers"
 	case "report":
-		increment := fmt.Sprintf("%s.%s", "votes", vote)
-		fmt.Printf("Update report votes: increment=%s, id=%s", increment, id)
-		err = dBase.IncrementOneInDB(dbName, "reports", "id", id, increment, incrementBy)
+		voteName = "votes"
+		collection = "reports"
 	default:
 		http.Error(w, err.Error(), http.StatusBadRequest)
         return
 	}
+	fmt.Printf("Update: voteName=%s, id=%s", voteName, id)
+	// If it's vote none, we only need to decrement votes
+	if vote != "none" {
+		err = dBase.IncrementOneInDB(dbName, collection, "id", id, fmt.Sprintf("%s.%s", voteName, vote), incrementBy)
+	} 
+	
+	voteRegVote := "up"
+	if !voteReg.Up {
+		voteRegVote = "down"
+	} 
+	if updatePreviousVote {
+		err = dBase.IncrementOneInDB(dbName, collection, "id", id, fmt.Sprintf("%s.%s", voteName, voteRegVote), -1)
+	}
 	
 	// Register vote in mongo
-	if err == nil {
+	if vote != "none" {
 		var voteReg db.VoteRegistery
 		voteReg = db.VoteRegistery{
 			UserID: user.ID,

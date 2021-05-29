@@ -22,12 +22,12 @@ if __name__ == "__main__":
     with open('docker/mongo/data/votes.json', 'r') as f:
         votes = json.load(f)
     
-    for req in requests:
-        for article in articles:
-            if article["id"] == req["articleid"]:
-                req["articlename"] = article["name"]
-                req["articleurl"] = article["url"]
+    for fav in favorites:
+        fav["userid"] = fav["user"]
+        fav["articleid"] = fav["article"]
+        del fav["user"]
+        del fav["article"]
 
-    with open('docker/mongo/data/requests.json', 'w') as f:
-            json.dump(requests, f, indent=4)
+    with open('docker/mongo/data/favorites.json', 'w') as f:
+            json.dump(favorites, f, indent=4)
 

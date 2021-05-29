@@ -9,7 +9,6 @@ import { config } from "../config.js";
 
 /// Check if the current session has a valid token.
 export function isLoggedIn() {
-  //return true;
   const loggedInUser = localStorage.getItem("UserId");
   const loggedInToken = localStorage.getItem("Token");
   return loggedInUser != null && loggedInToken != null;
@@ -26,12 +25,6 @@ export async function login(userName, password) {
 /// Send a POST request to log the user out.
 export async function logout(token, username) {
   if (token && username) {
-    // let headers = {
-    //   headers: {
-    //     Token: token,
-    //     UserName: username,
-    //   },
-    // };
     localStorage.clear();
     window.location.href = "/";
     return;
@@ -45,9 +38,6 @@ export async function logout(token, username) {
 
 /// Send  PUT request to update user personal info.
 export async function updateInfo(params) {}
-
-/// Send PUT request to update user likes.
-export async function togglelikeArticle(articleID) {}
 
 /// Send PUT request to update user points.
 export async function addScore(params) {}
@@ -65,5 +55,3 @@ export async function getUserById() {
   };
   return axiosClient.get(`${config["getUserPath"] + "/" + userId}`, headers);
 }
-
-/// Add article ID to user's likes.

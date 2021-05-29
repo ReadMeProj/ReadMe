@@ -61,7 +61,7 @@ type Answer struct {
 	ID 		  ID `json:"id"`
 	RequestID ID `json:"requestid" validate:"required"`
 	UserID 	  ID `json:"userid" validate:"required"`
-	ArticleId ID `json:"articleid" validate:"required"`
+	ArticleId ID `json:"articleid"` 
 	Date      int64 `json:"date" validate:"required"`
 	Content   string `json:"content" validate:"required,lte=256"`
 	// Report
