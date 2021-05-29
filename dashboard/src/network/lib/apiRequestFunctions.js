@@ -6,7 +6,7 @@ import { config } from "../config.js";
       An interaction with the api that returns a response will return a promise. 
       It's the code responsibility to catch it and know what the response looks like.
   */
-const userId = window.localStorage.getItem("UserId");
+// const userId = window.localStorage.getItem("UserId");
 
 export async function getRequestsForArticle(articleId) {
   if (!articleId)
@@ -17,6 +17,7 @@ export async function getRequestsForArticle(articleId) {
 }
 
 export async function getRequestsForUser() {
+  const userId = window.localStorage.getItem("UserId");
   if (!userId) console.log("No user id argument was given for getRequests()!");
   return axiosClient.get(`${config["getRequestsByUserPath"] + "/" + userId}`);
 }
@@ -28,6 +29,7 @@ export async function getRequestById(requestId) {
 }
 
 export async function submitAnswer(requestId, content) {
+  const userId = window.localStorage.getItem("UserId");
   return axiosClient.put(`${config["newAnswerPath"]}`, {
     requestid: requestId,
     userid: userId,

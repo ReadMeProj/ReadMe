@@ -8,11 +8,12 @@ import { config } from "../config.js";
   */
 
 //const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 }); //TODO
-const userId = window.localStorage.getItem("UserId");
-const userName = window.localStorage.getItem("Username");
-const token = window.localStorage.getItem("Token");
+// const userId = window.localStorage.getItem("UserId");
+// const userName = window.localStorage.getItem("Username");
+// const token = window.localStorage.getItem("Token");
 
 export async function getRecommendations() {
+  const userId = window.localStorage.getItem("UserId");
   var numRecommendations = 20;
   if (userId == null) {
     console.log("No Userid in local storage, can't get recommendations");
@@ -31,6 +32,8 @@ export async function getArticles() {
 
 /// Get article by ID.
 export async function getArticleById(articleId) {
+  const userName = window.localStorage.getItem("Username");
+  const token = window.localStorage.getItem("Token");
   let headers = {
     headers: {
       Token: token,
@@ -46,11 +49,13 @@ export async function getArticleById(articleId) {
 
 /// Get user liked articles.
 export async function getUserFavorites() {
+  const userId = window.localStorage.getItem("UserId");
   return axiosClient.get(`${config["getFavoritesByUserPath"] + "/" + userId}`);
 }
 
 // Toggle favorite for article
 export async function addFav(articleId, date) {
+  const userId = window.localStorage.getItem("UserId");
   axiosClient.put(`${config["newFavoritePath"]}`, {
     userid: userId,
     articleid: articleId,
@@ -59,7 +64,11 @@ export async function addFav(articleId, date) {
 }
 
 export async function removeFav(articleId) {
-  //todo
+  const userId = window.localStorage.getItem("UserId");
+  return axiosClient.post(`${config["deleteFavoritePath"]}`, {
+    articleid: articleId,
+    userid: userId,
+  });
 }
 
 /// Get articles by query.

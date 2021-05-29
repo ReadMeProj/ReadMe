@@ -20,7 +20,7 @@ class VoteButtons extends Component {
       await axiosClient
         .get(`/api/vote/${this.state.itemId}/user/${userId}`)
         .then((response) => {
-          this.setState({ userVote: response.data["Data"].up ? "up" : "none" });
+          this.setState({ userVote: response.data["Data"].up });
         });
 
       await axiosClient
@@ -33,8 +33,8 @@ class VoteButtons extends Component {
 
   getVoteButtons(userVote, votes) {
     var voteType = "none";
-    if (userVote) {
-      voteType = userVote;
+    if (userVote != null) {
+      voteType = userVote ? "up" : "down";
     }
 
     return (
