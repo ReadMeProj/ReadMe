@@ -252,7 +252,7 @@ func newUser(responseWriter http.ResponseWriter, r *http.Request) {
         return	
 	}
 	
-	err = dBase.NewUser(user)
+	err = dBase.NewUser(&user)
 	response := Response{Error:err, Data: user}
 	GenerateHandler(responseWriter, r, response)
 }
@@ -273,7 +273,7 @@ func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
         return	
 	}
 
-	err = dBase.NewArticle(article)
+	err = dBase.NewArticle(&article)
 	response := Response{Error:err, Data: article}
 	GenerateHandler(responseWriter, r, response)
 }
@@ -301,7 +301,7 @@ func newFavorite(responseWriter http.ResponseWriter, r *http.Request) {
 		return 	
 	}
 	
-	err = dBase.NewFavorite(favorite)
+	err = dBase.NewFavorite(&favorite)
 	response := Response{Error:nil, Data: favorite}
 	GenerateHandler(responseWriter, r, response)
 }
@@ -347,7 +347,7 @@ func newComment(responseWriter http.ResponseWriter, r *http.Request) {
         return	
 	}
 	
-	err = dBase.NewComment(comment)
+	err = dBase.NewComment(&comment)
 	response := Response{Error:err, Data: comment}
 	GenerateHandler(responseWriter, r, response)
 }
@@ -383,7 +383,7 @@ func newRequest(w http.ResponseWriter, r *http.Request) {
         return 
 	}
 
-	err = dBase.NewRequest(request)
+	err = dBase.NewRequest(&request)
 	response := Response{Error:err, Data: request}
 	GenerateHandler(w, r, response)
 }
@@ -403,7 +403,7 @@ func newAnswer(w http.ResponseWriter, r *http.Request) {
         return 
 	}
 
-	err = dBase.NewAnswer(answer)
+	err = dBase.NewAnswer(&answer)
 	response := Response{Error:err, Data: answer}
 	GenerateHandler(w, r, response)
 }
@@ -423,7 +423,7 @@ func newReport(w http.ResponseWriter, r *http.Request) {
         return 
 	}
 
-	err = dBase.NewReport(report)
+	err = dBase.NewReport(&report)
 	response := Response{Error:err, Data: report}
 	GenerateHandler(w, r, response)
 }
@@ -697,7 +697,7 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 			ItemID: db.ID(id),
 			Up: vote == "up",
 		}
-		err = dBase.NewVoteRegistry(voteReg)
+		err = dBase.NewVoteRegistry(&voteReg)
 	} 
 
 	response := Response{Error:err, Data: nil}
