@@ -35,7 +35,15 @@ class ArticlePage extends Component {
 
     return (
       <div>
-        <h2>{article.name}</h2>
+        <br />
+        <a
+          href={article.url}
+          className="cardLink"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <h2>{article.name}</h2>
+        </a>
         <br />
         <dl>
           {questions.map((q) => (

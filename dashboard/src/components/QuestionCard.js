@@ -30,6 +30,8 @@ class QuestionCard extends Component {
     var whoAsked = request.requestedby;
     var content = request.content;
     var isResolved = request.answerid;
+    var articleTitle = request.articlename;
+    var articleUrl = request.articleurl;
 
     return (
       <div className="container-fluid" style={{ marginLeft: "7%" }}>
@@ -38,7 +40,14 @@ class QuestionCard extends Component {
             <div className="media-body">
               <div>
                 {this.state.showTitleOnEach ? (
-                  <h3>Article Title if I had one</h3>
+                  <a
+                    href={articleUrl}
+                    className="cardLink"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <h4>{articleTitle}</h4>
+                  </a>
                 ) : null}
                 <small style={{ color: "gray" }}>Asked by: {whoAsked}</small>
                 <p>{content}</p>

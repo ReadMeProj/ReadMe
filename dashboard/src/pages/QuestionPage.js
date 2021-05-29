@@ -10,8 +10,6 @@ class QuestionPage extends Component {
     let requestID = params.get("requestId"); // Will be null if there is no articleId value in the URL.
     this.state = {
       requestId: requestID,
-      //requestId: "099bd379451a03d796eb853330cf7a2a4bfd788a",
-      articleId: "a6cbba36-e5c8-4821-bdc4-989dc453cab7",
       answersData: [],
       showModal: false,
       answerInput: "",
@@ -35,11 +33,9 @@ class QuestionPage extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     let answerContent = this.state.answerInput;
-    await submitAnswer(
-      this.state.requestId,
-      this.state.articleId,
-      answerContent
-    ).then(this.handleCloseModal(this));
+    await submitAnswer(this.state.requestId, answerContent).then(
+      this.handleCloseModal(this)
+    );
   }
   async componentDidMount() {
     //todo - get answersData by requestid.
@@ -48,7 +44,12 @@ class QuestionPage extends Component {
     const { answersData: answers } = this.state;
     return (
       <div>
-        <QuestionCard requestId={this.state.requestId} onFocus={true} />
+        <br />
+        <QuestionCard
+          requestId={this.state.requestId}
+          onFocus={true}
+          reqPage={true}
+        />
         <button
           className="btn btn-info"
           onClick={this.handleOpenModal}
@@ -56,7 +57,8 @@ class QuestionPage extends Component {
         >
           Answer
         </button>
-        <div style={{ marginLeft: "200px" }}>
+        <br />
+        <div style={{ marginLeft: "100px" }}>
           {answers == null || answers.length == 0 ? (
             "Be the first to post an answer!"
           ) : (
@@ -65,7 +67,7 @@ class QuestionPage extends Component {
                 ? []
                 : answers.map((ans) => (
                     <dd key={ans.id}>
-                      {/* <AnswerCard id={ans.id} whoWrote="" content="" /> */}
+                      {/* <AnswerCard id={ans.id} whoWrote="" content={ans.content} /> */}
                       {ans.id}
                     </dd>
                   ))}
@@ -73,14 +75,14 @@ class QuestionPage extends Component {
           )}
         </div>
 
-        <Modal show={this.state.showModal}>
+        <Modal show={this.state.showModal} size="lg">
           <Modal.Header>Post Answer:</Modal.Header>
           <Modal.Body>
-            <input
-              className="answerAsk"
-              type="text"
+            <textarea
               name="answerInput"
               onChange={this.handleChange}
+              rows={10}
+              cols={100}
             />
           </Modal.Body>
           <Modal.Footer>
