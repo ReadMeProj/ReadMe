@@ -124,7 +124,7 @@ function Report() {
               />
             </div>
             <div className="subm">
-              <button type="submit" disabled={isSubmitting}>
+              <button className="btn-two blue mini" type="submit" disabled={isSubmitting}>
                 Submit
               </button>
             </div>
