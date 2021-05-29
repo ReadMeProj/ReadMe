@@ -71,7 +71,6 @@ function Report() {
         {({ handleSubmit, errors, isSubmitting }) => (
           <Form onSubmit={handleSubmit}>
             <div className="cat">
-              <label htmlFor="category"> Category:</label>
               <Field as="select" name="category">
                 <option value="null">Select category</option>
                 <option value="politics">Politics</option>
@@ -91,7 +90,6 @@ function Report() {
               />
             </div>
             <div className="fak">
-              <label htmlFor="fake"> You Think it is:</label>
               <Field as="select" name="fake">
                 <option value="null">What's between the lines</option>
                 <option value="true">Real/ Authentic</option>
@@ -105,7 +103,6 @@ function Report() {
               />
             </div>
             <div className="rat">
-              <label htmlFor="rating">Rate it:</label>
               <Field as="select" name="rating">
                 <option value="null">Select rating</option>
                 <option value="0">0</option>
