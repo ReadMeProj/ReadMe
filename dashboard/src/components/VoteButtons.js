@@ -83,9 +83,11 @@ class VoteButtons extends Component {
     let headers = {
       headers: {
         Token: localStorage.getItem("Token"),
-        UserName: localStorage.getItem("Username"),
+        Username: localStorage.getItem("Username"),
       },
     };
+    console.log("Gonna vote..");
+    console.log(headers);
     axiosClient.post(
       `/api/votes/${itemType}/${itemId}/${voteType}`,
       {},

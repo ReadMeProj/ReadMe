@@ -13,7 +13,7 @@ type User struct {
 
 	Interests []ReadMeLabel `json:"interests"`
 	Credit    int `json:"credit"`
-	RelScore  float32 `json:"relscore"`
+	//RelScore  float32 `json:"relscore"`
 }
 
 type Article struct {
@@ -27,7 +27,8 @@ type Article struct {
 	
 	Labels 	   []ReadMeLabel `json:"labels"`
 	FakeVotes  Votes `json:"fakevotes"`
-	RelScore   float32 `json:"relscore"`
+	Rating 	   int `json:"rating"`
+	//RelScore   float32 `json:"relscore"`
 }
 
 type Comment struct {
