@@ -9,7 +9,7 @@ class VoteButtons extends Component {
     this.state = {
       itemId: props.id,
       itemType: props.type,
-      userVote: "none",
+      userVote: null,
       itemData: [],
     };
   }
@@ -20,23 +20,32 @@ class VoteButtons extends Component {
       await axiosClient
         .get(`/api/vote/${this.state.itemId}/user/${userId}`)
         .then((response) => {
-          this.setState({ userVote: response.data["Data"].up });
-        });
+          if (response.data["Error"] == null) {
+            this.setState({
+              userVote: response.data["Data"].up ? "up" : "down",
+            });
+          } else {
+            this.setState({ userVote: "none" });
+          }
+          console.log("STATE WAS CHANGED");
+        })
+        .then(
+          axiosClient
+            .get(`/api/${this.state.itemType}/id/${this.state.itemId}`)
+            .then((response) => {
+              this.setState({ itemData: response.data["Data"] });
+            })
+        );
 
-      await axiosClient
-        .get(`/api/${this.state.itemType}/id/${this.state.itemId}`)
-        .then((response) => {
-          this.setState({ itemData: response.data["Data"] });
-        });
+      // await axiosClient
+      //   .get(`/api/${this.state.itemType}/id/${this.state.itemId}`)
+      //   .then((response) => {
+      //     this.setState({ itemData: response.data["Data"] });
+      //   });
     }
   }
 
   getVoteButtons(userVote, votes) {
-    var voteType = "none";
-    if (userVote != null) {
-      voteType = userVote ? "up" : "down";
-    }
-
     return (
       <div className="row">
         <div className="col-1">
@@ -44,9 +53,9 @@ class VoteButtons extends Component {
             <FontAwesomeIcon
               icon={["fas", "arrow-alt-circle-up"]}
               size="lg"
-              color={voteType === "up" ? "green" : "gray"}
+              color={userVote === "up" ? "green" : "gray"}
               onClick={() => {
-                if (voteType != "up")
+                if (userVote !== "up")
                   this.vote(this.state.itemType, this.state.itemId, "up");
                 else this.vote(this.state.itemType, this.state.itemId, "none");
               }}
@@ -62,9 +71,9 @@ class VoteButtons extends Component {
             <FontAwesomeIcon
               icon={["fas", "arrow-alt-circle-down"]}
               size="lg"
-              color={voteType === "down" ? "red" : "gray"}
+              color={userVote === "down" ? "red" : "gray"}
               onClick={() => {
-                if (voteType != "down")
+                if (userVote !== "down")
                   this.vote(this.state.itemType, this.state.itemId, "down");
                 else this.vote(this.state.itemType, this.state.itemId, "none");
               }}
@@ -80,28 +89,49 @@ class VoteButtons extends Component {
   }
 
   async vote(itemType, itemId, voteType) {
+    var userId = window.localStorage.getItem("UserId");
     let headers = {
       headers: {
         Token: localStorage.getItem("Token"),
         UserName: localStorage.getItem("Username"),
       },
     };
-    axiosClient.post(
-      `/api/votes/${itemType}/${itemId}/${voteType}`,
-      {},
-      headers
-    );
-    this.componentDidMount(); // To re-render the component with the new info from the server after voting.
+    await axiosClient
+      .post(`/api/votes/${itemType}/${itemId}/${voteType}`, {}, headers)
+      .then(() => {
+        if (this.state.itemId) {
+          axiosClient
+            .get(`/api/vote/${this.state.itemId}/user/${userId}`)
+            .then((response) => {
+              if (response.data["Error"] == null) {
+                this.setState({
+                  userVote: response.data["Data"].up ? "up" : "down",
+                });
+              } else {
+                this.setState({ userVote: "none" });
+              }
+              console.log("STATE WAS CHANGED");
+            })
+            .then(
+              axiosClient
+                .get(`/api/${this.state.itemType}/id/${this.state.itemId}`)
+                .then((response) => {
+                  this.setState({ itemData: response.data["Data"] });
+                })
+            );
+        }
+      }); // To re-render the component with the new info from the server after voting.
   }
 
   render() {
-    const { userVote: userVote, itemData: item } = this.state;
+    const { userVote: curUserVote, itemData: item } = this.state;
     var votes = [0, 0];
     if (item.votes) votes = [item.votes.up, item.votes.down];
     if (item.fakevotes) votes = [item.fakevotes.up, item.fakevotes.down];
+
     return (
       <div style={{ marginLeft: "20px" }}>
-        {this.getVoteButtons(userVote, votes)}
+        {this.getVoteButtons(curUserVote, votes)}
       </div>
     );
   }

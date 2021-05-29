@@ -11,8 +11,6 @@ class ArticleCard extends Component {
     super(props);
     this.state = {
       articleData: [],
-      userData: [],
-      favoritesData: [],
       articleId: props.articleId,
       isOnFavPage: props.isOnFavPage ? props.isOnFavPage : false,
     };
