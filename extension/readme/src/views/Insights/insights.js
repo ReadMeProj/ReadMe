@@ -24,7 +24,7 @@ const Insights = (props) => {
       id={article.id}
       isLiked={true}
       fakeVotes={article.fakevotes}
-    //TODO- move to the articleCard and make it a class with state.
+      labels={article.labels}
     />}
   </div>
     )

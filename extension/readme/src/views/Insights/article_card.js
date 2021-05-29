@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Card, Button } from "react-bootstrap";
+import { Container, Row, Card, Button, Badge } from "react-bootstrap";
 import { GrLike, GrDislike } from "react-icons/gr"
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { isAuth, userStorage } from "../../chromeHelper";
@@ -11,10 +11,9 @@ function ArticleCard(params) {
   var articleContent = "";
   var articleTitle = "";
   var articleUrl = "";
+  var articleLabels = "";
   var articleID = "";
   var articleFakeVotes = {};
-  var isReview = false; //TODO- read from params.
-  var fakePercent;
   const [isLiked, setIsLike] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
 
@@ -50,20 +49,27 @@ function ArticleCard(params) {
     if (params.url != null) {
       articleUrl = params.url;
     } else {
-      console.log("Article url is null.");
+      articleUrl = "";
     }
     // Set up article ID.
     if (params.id != null) {
       articleID = params.id;
     } else {
-      console.log("Article id is null.");
+      articleID = "";
     }
 
     if (params.fakeVotes != null) {
       articleFakeVotes = params.fakeVotes;
     }
     else {
-      console.log("Article Fake votes is null");
+      articleFakeVotes = {}
+    }
+
+    if (params.labels != null) {
+      articleLabels = params.labels;
+    }
+    else {
+      articleLabels = [];
     }
   }
 
@@ -97,19 +103,47 @@ function ArticleCard(params) {
     })
   }
 
+  function renderLabels() {
+    articleLabels.sort((a, b) => {
+      return a.score > b.score
+    })
+    var displayLabels = articleLabels.slice(0, 6);
+    var listItems = displayLabels.map(labelJ =>
+       <li key={labelJ.label} className="tag">{labelJ.label}</li>)
+    return (
+      <div className="articleLabels">
+        <ul className="labels">
+        {listItems}
+        </ul>
+        {/* {displayLabels.map(label =>{
+          <Badge variant="info">{label.label}</Badge>{''}
+        })} */}
+      </div>)
+  }
+
 
   return (
     <Container fluid="md">
-      <Row xl={7}>
-        <Container>
+      <Row>
+        <Container className="articleCard">
           <Card bg='light' text='dark' style={{ width: '13rem' }} className="mb-2">
             <Card.Header>Some Meta-data regard the article</Card.Header>
             <Card.Body>
               {articleFakeVotes.up} <GrLike /> {articleFakeVotes.down} <GrDislike />
+              
             </Card.Body>
             <Card.Text>
+            {renderLabels()}
               <Button variant='link' size='sm' onClick={onSeeMore} >See more</Button>
-              {isSignedIn && (isLiked ? <AiFillHeart className="likeHeart" onClick={toggleLike} /> : <AiOutlineHeart className="likeHeart" onClick={toggleLike} />)}
+              <div className="likeHeart">
+                {isSignedIn &&
+                  (isLiked ?
+                    <AiFillHeart onClick={toggleLike} />
+                    : <AiOutlineHeart onClick={toggleLike} />
+                  )}
+                <span className="likeText">Save to Favorites</span>
+              </div>
+
             </Card.Text>
           </Card>
         </Container>
