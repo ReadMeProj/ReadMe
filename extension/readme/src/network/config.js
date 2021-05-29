@@ -12,6 +12,8 @@ export var config = {
     "newArticlePath": "/api/newArticle",
     "updateUserPath": "/api/updateUser",
     "updateArticlePath" : "/api/updateArticle",
+    "updateReportPath" : "/api/updateReport",
+    "updateRequestPath" : "/api/updateRequest",
     "newFavoritePath": "/api/newFavorite",
     "deleteFavoritePath" : "/api/deleteFavorite",
     "powerUserName" : "sudo",

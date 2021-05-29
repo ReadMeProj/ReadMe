@@ -29,3 +29,15 @@ export function updateArticle(articleData) {
         return axiosClient.post(`${config["updateArticlePath"]}`, JSON.stringify(articleData))
     }
 }
+
+export function updateReport(articleData) {
+    if (articleData["articleid"]) {
+        return axiosClient.post(`${config["updateReportPath"]}`, JSON.stringify(articleData))
+    }
+}
+
+export function updateRequest(articleData) {
+    if (articleData["articleid"]) {
+        return axiosClient.post(`${config["updateRequestPath"]}`, JSON.stringify(articleData))
+    }
+}
