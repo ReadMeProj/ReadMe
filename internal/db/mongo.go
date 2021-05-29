@@ -362,10 +362,10 @@ func (db* MongoController) GetAllRequests(which string) ([]Request, error) {
 	if which == "all" {
 		filter = bson.M{}
 	} else if which == "open" {
-		exists := bson.M{"$eq": ""}
+		exists := bson.M{"$exists": false}
 		filter = bson.M{"answerid": exists}
 	} else if which == "closed" {
-		exists := bson.M{"$ne": ""}
+		exists := bson.M{"$exists": true}
 		filter = bson.M{"answerid": exists}
 	} else {
 		filter = bson.M{}

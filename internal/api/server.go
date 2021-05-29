@@ -262,8 +262,7 @@ func newArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	
 	err := json.NewDecoder(r.Body).Decode(&article)
     if err != nil {
-		responseWriter.WriteHeader(http.StatusBadRequest)
-		fmt.Fprintf(responseWriter, "Got no URL in request")
+		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
         return
     }
 
