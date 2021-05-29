@@ -86,7 +86,7 @@ class Request extends Component {
                 />
               </div>
               <div className="submitButton">
-                <button type="submit" disabled={isSubmitting}>
+                <button className="btn-two blue mini" type="submit" disabled={isSubmitting}>
                   Submit Request
                 </button>
               </div>
