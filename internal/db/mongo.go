@@ -532,7 +532,7 @@ func (db *MongoController) UpdateAnswer(answer Answer) error {
 
 func (db *MongoController) UpdateReport(report Report) error {
 	updateMap := make(map[string]interface{})
-	updateMap["category"] = report.Category 
+	updateMap["labels"] = report.Labels 
 	updateMap["fake"] = report.Fake
 	updateMap["rating"] = report.Rating
 	
