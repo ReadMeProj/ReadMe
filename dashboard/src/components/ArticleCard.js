@@ -1,10 +1,6 @@
 import { React, Component } from "react";
 import { Link } from "react-router-dom";
-import {
-  getArticleById,
-  addFav,
-  removeFav,
-} from "../network/lib/apiArticleFunctions";
+import { getArticleById, addFav } from "../network/lib/apiArticleFunctions";
 import VoteButtons from "./VoteButtons";
 class ArticleCard extends Component {
   constructor(props) {
@@ -27,9 +23,8 @@ class ArticleCard extends Component {
     }
   }
 
-  toggleFav(date) {
-    if (this.state.isOnFavPage) removeFav(this.state.articleId);
-    else addFav(this.state.articleId, date);
+  addFavorite(date) {
+    addFav(this.state.articleId, date);
   }
 
   render() {
@@ -76,12 +71,14 @@ class ArticleCard extends Component {
               <VoteButtons id={this.state.articleId} type="article" />
             </div>
             <div className="col-3">
-              <button
-                className="btn btn-info"
-                onClick={() => this.toggleFav(Date.now())}
-              >
-                {this.state.isOnFavPage ? "Remove" : "Add to Favorites"}
-              </button>
+              {this.state.isOnFavPage ? null : (
+                <button
+                  className="btn btn-info"
+                  onClick={() => this.addFavorite(Date.now())}
+                >
+                  Add to Favorites
+                </button>
+              )}
             </div>
             <div className="col-3" style={{ marginLeft: "30px" }}>
               <Link

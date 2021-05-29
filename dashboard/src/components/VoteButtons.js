@@ -36,12 +36,6 @@ class VoteButtons extends Component {
               this.setState({ itemData: response.data["Data"] });
             })
         );
-
-      // await axiosClient
-      //   .get(`/api/${this.state.itemType}/id/${this.state.itemId}`)
-      //   .then((response) => {
-      //     this.setState({ itemData: response.data["Data"] });
-      //   });
     }
   }
 
