@@ -8,7 +8,7 @@ import {
   ErrorMessage,
 } from "formik";
 
-import { updateArticle } from "../../network/lib/article";
+import { updateRequest } from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
 
 const sleep = (milliseconds) => {
@@ -41,7 +41,7 @@ class Request extends Component {
             sleep(1000).then(() => {
               var data = Object.assign({}, ids, values);
 
-              updateArticle(data)
+              updateRequest(data)
                 .then((res) => {
                   console.log(res);
                   setSubmitting(false);

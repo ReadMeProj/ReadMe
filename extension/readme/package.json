@@ -48,6 +48,7 @@
     "react-hook-form": "^7.4.2",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
+    "react-tagsinput": "^3.19.0",
     "regenerator-runtime": "^0.13.7"
   }
 }
