@@ -1,3 +1,6 @@
+import functools
+import operator
+from collections import defaultdict, Counter
 from operator import itemgetter
 
 import networkx as nx
@@ -58,13 +61,13 @@ def recommendationz(user_id, num_of_articles):
     user_articles = {tup[1] for tup in user_articles}
     # Filter out articles that the user didn't like
     users_favs_user_articles = set(filter(lambda tup: tup[1] in user_articles, edge_list))
-    users_favs_user_articles = {tup[0] for tup in users_favs_user_articles} 
+    users_favs_user_articles = {tup[0] for tup in users_favs_user_articles}
     users_favs_user_articles.add(user_id)
     # Keep the edge_list only with users that have an edge to the user_id articles
     print(f'len edge_list before => {len(edge_list)}', flush=True)
     edge_list = list(filter(lambda tup: tup[0] in users_favs_user_articles, edge_list))
     print(f'len edge_list after => {len(edge_list)}', flush=True)
-     
+
     raw_graph = prep(edge_list)
     connected_component = nx.algorithms.node_connected_component(raw_graph, user_id)
     G = raw_graph.subgraph(connected_component)
@@ -99,11 +102,11 @@ def recommendationz(user_id, num_of_articles):
 def recommendation(user_id, num_of_articles):
     if user_id is None or num_of_articles is None:
         abort(400, 'User or number of articles was not provided as expected.')
-    JSON_Graph = filter(valid_favorite_json, (mongo.db.favorites.find({})))
+    JSON_Graph = list(filter(valid_favorite_json, (mongo.db.favorites.find({}))))
     edge_list = list(map(
         lambda fav_json: (fav_json["user"], fav_json["article"]) if fav_json["user"] and fav_json["article"] else None,
         JSON_Graph))
-     
+
     raw_graph = prep(edge_list)
     connected_component = nx.algorithms.node_connected_component(raw_graph, user_id)
     G = raw_graph.subgraph(connected_component)
@@ -133,9 +136,28 @@ def recommendation(user_id, num_of_articles):
         "data": recommended
     }
 
+@app.route("/tags/<string:user_id>/<int:num_of_tags>", methods=['GET'])
+def user_tags(user_id, num_of_tags):
+    if user_id is None or num_of_tags is None:
+        abort(400, 'User or number of tags was not provided as expected.')
+    JSON_Graph = filter(valid_favorite_json, (mongo.db.favorites.find({"user": user_id})))
+    users_favorites_articles_ids = set(map(lambda like_edge: like_edge["article"], JSON_Graph))
+    articles = mongo.db.articles.find({'_id': {'$in': users_favorites_articles_ids}})
+    labels = map(lambda article: article["labels"], articles)
+    labels = functools.reduce(operator.iconcat, labels, [])
+    by_label = defaultdict(Counter)
+    for info in labels:
+        counts = Counter({k: v for k, v in info.items() if k != 'label'})
+        by_label[info['label']] += counts
+    score_per_label = [(k, v.get("score")) for k, v in by_label.items()]
+    score_per_label = sorted(score_per_label, key=itemgetter(1), reverse=True)
+    labels = list(map(lambda label: label[0], score_per_label[:num_of_tags]))
+    return {"labels": labels}
+
+
 
 def main():
-    import argparse 
+    import argparse
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-m', '--mongo', default='localhost', help="Mongo host")
@@ -143,11 +165,11 @@ def main():
     args = parser.parse_args()
 
     app.config["MONGO_URI"] = "mongodb://%s:27017/ReadMeDB" % args.mongo
-    
+
     global mongo
     mongo = PyMongo(app)
 
-    app.run(host="0.0.0.0", port=args.port)    
+    app.run(host="0.0.0.0", port=args.port)
 
 
 if __name__ == '__main__':
