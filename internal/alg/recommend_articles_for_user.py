@@ -13,6 +13,7 @@ app = Flask(__name__)
 
 # Constants
 NOT_ENOUGH_DATA_THRESHOLD = 30
+TAG_THRESHOLD = 0.5
 
 
 # Function that getting the data as we get it from the api and returns a connected nx bipartite Graph
@@ -136,24 +137,26 @@ def recommendation(user_id, num_of_articles):
         "data": recommended
     }
 
+
 @app.route("/tags/<string:user_id>/<int:num_of_tags>", methods=['GET'])
 def user_tags(user_id, num_of_tags):
     if user_id is None or num_of_tags is None:
         abort(400, 'User or number of tags was not provided as expected.')
     JSON_Graph = filter(valid_favorite_json, (mongo.db.favorites.find({"user": user_id})))
-    users_favorites_articles_ids = set(map(lambda like_edge: like_edge["article"], JSON_Graph))
+    users_favorites_articles_ids = list(map(lambda like_edge: like_edge["article"], JSON_Graph))
+    if len(users_favorites_articles_ids) == 0:
+        return {"labels": []}
     articles = mongo.db.articles.find({'_id': {'$in': users_favorites_articles_ids}})
-    labels = map(lambda article: article["labels"], articles)
+    labels = list(map(lambda article: article["labels"], articles))
     labels = functools.reduce(operator.iconcat, labels, [])
     by_label = defaultdict(Counter)
     for info in labels:
-        counts = Counter({k: v for k, v in info.items() if k != 'label'})
+        counts = Counter({k: v for k, v in info.items() if k != 'label' and v > TAG_THRESHOLD})
         by_label[info['label']] += counts
     score_per_label = [(k, v.get("score")) for k, v in by_label.items()]
     score_per_label = sorted(score_per_label, key=itemgetter(1), reverse=True)
     labels = list(map(lambda label: label[0], score_per_label[:num_of_tags]))
     return {"labels": labels}
-
 
 
 def main():
