@@ -14,6 +14,8 @@ app = Flask(__name__)
 # Constants
 NOT_ENOUGH_DATA_THRESHOLD = 30
 TAG_THRESHOLD = 0.5
+NUM_OF_TAGS = 20
+REQUEST_MATCH_THRESHOLD = 3
 
 
 # Function that getting the data as we get it from the api and returns a connected nx bipartite Graph
@@ -38,6 +40,10 @@ def valid_favorite_json(json):
     return "userid" in json and "articleid" in json
 
 
+def valid_request_json(json):
+    return "articleid" in json
+
+
 """ 
     Algorithm: 
     1. Get user's liked articles
@@ -54,7 +60,8 @@ def recommendationz(user_id, num_of_articles):
         abort(400, 'User or number of articles was not provided as expected.')
     JSON_Graph = filter(valid_favorite_json, (mongo.db.favorites.find({})))
     edge_list = list(map(
-        lambda fav_json: (fav_json["userid"], fav_json["articleid"]) if fav_json["userid"] and fav_json["articleid"] else None,
+        lambda fav_json: (fav_json["userid"], fav_json["articleid"]) if fav_json["userid"] and fav_json[
+            "articleid"] else None,
         JSON_Graph))
 
     # Find user's articles 
@@ -105,7 +112,8 @@ def recommendation(user_id, num_of_articles):
         abort(400, 'User or number of articles was not provided as expected.')
     JSON_Graph = list(filter(valid_favorite_json, (mongo.db.favorites.find({}))))
     edge_list = list(map(
-        lambda fav_json: (fav_json["userid"], fav_json["articleid"]) if fav_json["userid"] and fav_json["articleid"] else None,
+        lambda fav_json: (fav_json["userid"], fav_json["articleid"]) if fav_json["userid"] and fav_json[
+            "articleid"] else None,
         JSON_Graph))
 
     raw_graph = prep(edge_list)
@@ -157,6 +165,35 @@ def user_tags(user_id, num_of_tags):
     score_per_label = sorted(score_per_label, key=itemgetter(1), reverse=True)
     labels = list(map(lambda label: label[0], score_per_label[:num_of_tags]))
     return {"labels": labels}
+
+
+@app.route("/requests/<string:user_id>/<int:num_of_requests>", methods=['GET'])
+def user_requests(user_id, num_of_requests):
+    if user_id is None or num_of_requests is None:
+        abort(400, 'User or number of requests was not provided as expected.')
+
+    users_tags = set(user_tags(user_id, NUM_OF_TAGS)["labels"])
+    requests = list(filter(valid_request_json, (mongo.db.requests.find({}))))
+
+    articles = list(mongo.db.articles.find({"_id": {"$in": [request["articleid"] for request in requests]}},
+                                           {"labels": 1}))
+
+    requests_labels = [(request["id"], article["labels"])
+                       for request in requests
+                       for article in articles
+                       if request["articleid"] == article["_id"]]
+
+    requests_labels = list(map(lambda x:
+                               (x[0],
+                                set([label["label"] for label
+                                     in x[1] if label["score"] > TAG_THRESHOLD])),
+                               requests_labels))
+
+    requests = [request[0] for request
+                in requests_labels
+                if len(request[1].intersection(users_tags)) > REQUEST_MATCH_THRESHOLD]
+
+    return {"requests": requests[:num_of_requests]}
 
 
 def main():
