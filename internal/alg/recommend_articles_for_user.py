@@ -35,7 +35,7 @@ def generic_recommendation(raw_graph, num_of_articles):
 
 
 def valid_favorite_json(json):
-    return "user" in json and "article" in json
+    return "userid" in json and "articleid" in json
 
 
 """ 
@@ -54,7 +54,7 @@ def recommendationz(user_id, num_of_articles):
         abort(400, 'User or number of articles was not provided as expected.')
     JSON_Graph = filter(valid_favorite_json, (mongo.db.favorites.find({})))
     edge_list = list(map(
-        lambda fav_json: (fav_json["user"], fav_json["article"]) if fav_json["user"] and fav_json["article"] else None,
+        lambda fav_json: (fav_json["userid"], fav_json["articleid"]) if fav_json["userid"] and fav_json["articleid"] else None,
         JSON_Graph))
 
     # Find user's articles 
@@ -105,7 +105,7 @@ def recommendation(user_id, num_of_articles):
         abort(400, 'User or number of articles was not provided as expected.')
     JSON_Graph = list(filter(valid_favorite_json, (mongo.db.favorites.find({}))))
     edge_list = list(map(
-        lambda fav_json: (fav_json["user"], fav_json["article"]) if fav_json["user"] and fav_json["article"] else None,
+        lambda fav_json: (fav_json["userid"], fav_json["articleid"]) if fav_json["userid"] and fav_json["articleid"] else None,
         JSON_Graph))
 
     raw_graph = prep(edge_list)
@@ -142,8 +142,8 @@ def recommendation(user_id, num_of_articles):
 def user_tags(user_id, num_of_tags):
     if user_id is None or num_of_tags is None:
         abort(400, 'User or number of tags was not provided as expected.')
-    JSON_Graph = filter(valid_favorite_json, (mongo.db.favorites.find({"user": user_id})))
-    users_favorites_articles_ids = list(map(lambda like_edge: like_edge["article"], JSON_Graph))
+    JSON_Graph = filter(valid_favorite_json, (mongo.db.favorites.find({"userid": user_id})))
+    users_favorites_articles_ids = list(map(lambda like_edge: like_edge["articleid"], JSON_Graph))
     if len(users_favorites_articles_ids) == 0:
         return {"labels": []}
     articles = mongo.db.articles.find({'_id': {'$in': users_favorites_articles_ids}})
