@@ -21,7 +21,7 @@ class RequestsPage extends Component {
 
   render() {
     const { requestsData: requests } = this.state;
-    if (!requests || requests == {})
+    if (!requests || requests === {})
       return (
         <div style={{ marginTop: "50px" }}>
           <h2>..You are yet to ask anything!</h2>

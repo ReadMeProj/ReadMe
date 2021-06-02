@@ -43,3 +43,7 @@ export async function getAnswersByRequest(requestId) {
     console.log("No request id argument was given for getRequests()!");
   return axiosClient.get(`/api/all/answer/requestid/${requestId}`); //todo
 }
+
+export async function getAnswerById(answerId) {
+  return axiosClient.get(`${config["getAnswerById"] + "/" + answerId}`);
+}

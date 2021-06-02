@@ -27,7 +27,6 @@ class VoteButtons extends Component {
           } else {
             this.setState({ userVote: "none" });
           }
-          console.log("STATE WAS CHANGED");
         })
         .then(
           axiosClient
@@ -104,7 +103,6 @@ class VoteButtons extends Component {
               } else {
                 this.setState({ userVote: "none" });
               }
-              console.log("STATE WAS CHANGED");
             })
             .then(
               axiosClient

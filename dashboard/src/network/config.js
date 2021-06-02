@@ -19,5 +19,6 @@ export var config = {
   powerUserToken: "NO_TOKEN",
   recommendationsPath: "/api/recommendations",
   deleteFavoritePath: "/api/deleteFavorite",
+  getAnswerById: "/api/answer/id",
   //newRequest, getAnswers, newAnswer,
 };

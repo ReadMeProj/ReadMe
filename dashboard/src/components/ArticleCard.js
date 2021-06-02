@@ -41,10 +41,6 @@ class ArticleCard extends Component {
         ? article.image
         : "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350";
     var url = article.url;
-    var votes = [0, 0];
-
-    if (article.fakevotes)
-      votes = [article.fakevotes.up, article.fakevotes.down];
 
     return (
       <div className="container-fluid" style={{ marginLeft: "7%" }}>

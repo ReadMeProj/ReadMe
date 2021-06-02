@@ -55,3 +55,20 @@ export async function getUserById() {
   };
   return axiosClient.get(`${config["getUserPath"] + "/" + userId}`, headers);
 }
+
+export async function getUsernameById(userId) {
+  var userName = window.localStorage.getItem("Username");
+  var token = window.localStorage.getItem("Token");
+  let headers = {
+    headers: {
+      Token: token,
+      Username: userName,
+    },
+  };
+  var response = await axiosClient.get(
+    `${config["getUserPath"] + "/" + userId}`,
+    headers
+  );
+  if (response.data["Error"] == null) return response.data["Data"].username;
+  return null;
+}
