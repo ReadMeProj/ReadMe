@@ -564,8 +564,16 @@ func (db *MongoController) NewReport(report *Report) error {
 				-1,
 			)
 		}
+
+		// Delete last report
+		var keys []string
+		var vals []interface{}
+		keys = append(keys, "id")
+		vals = append(vals, prevReport.ID) 
+		db.DeleteAllByKey(mongoDatabaseName, mongoReportsCollectionName, keys, vals)
 	}
 
+	// Update all current labels
 	for _, element := range report.Labels {
 		db.IncrementOneInDBByDoubleKey(
 			mongoDatabaseName, 
