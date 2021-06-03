@@ -538,6 +538,11 @@ func getByKey(w http.ResponseWriter, r *http.Request) {
 		collection = "reports"
 		err = dBase.GetByKey(dbName, collection, key, val, &data)
 		response = Response{Error:err, Data: data}
+	case "tag":
+		var data db.Tag
+		collection = "tags"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
 	default:
 		http.Error(w, err.Error(), http.StatusBadRequest)
         return
@@ -585,6 +590,11 @@ func getAllByKey(w http.ResponseWriter, r *http.Request) {
 		collection = "reports"
 		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
 		response = Response{Error:err, Data: data}
+	case "tag":
+		var data []db.Tag
+		collection = "tags"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
 	default:
 		http.Error(w, err.Error(), http.StatusBadRequest)
         return
@@ -622,7 +632,7 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
         return
 	}
 
-	fmt.Printf("type=%s, id=%s, vote=%s", _type, id, vote)
+	fmt.Printf("type=%s, id=%s, ote=%s", _type, id, vote)
 	
 	if vote != "up" && vote != "down" && vote != "none" {
 		http.Error(w, "Vote should be either up, down or none", http.StatusBadRequest)
