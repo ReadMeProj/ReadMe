@@ -494,7 +494,7 @@ func (db *MongoController) UpdateUser(user User) error {
 	updateMap := make(map[string]interface{})
 	updateMap["interests"] = user.Interests
 	updateMap["credit"] = user.Credit
-	updateMap["relscore"] = user.RelScore
+	//updateMap["relscore"] = user.RelScore
 
 	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "username", user.Username, updateMap)
 	if err != nil {
@@ -508,7 +508,7 @@ func (db *MongoController) UpdateArticle(article Article) error {
 	updateMap := make(map[string]interface{})
 	updateMap["labels"] = article.Labels
 	updateMap["fakevotes"] = article.FakeVotes
-	updateMap["relscore"] = article.RelScore
+	//updateMap["relscore"] = article.RelScore
 	
 	err := db.updateOneInDB(mongoDatabaseName, mongoArticlesCollectionName, "url", article.URL, updateMap)
 	if err != nil {

@@ -86,7 +86,7 @@ class VoteButtons extends Component {
     let headers = {
       headers: {
         Token: localStorage.getItem("Token"),
-        UserName: localStorage.getItem("Username"),
+        Username: localStorage.getItem("Username"),
       },
     };
     await axiosClient

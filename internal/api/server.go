@@ -8,6 +8,7 @@ import (
 	"net/http"
 	"strings"
 	"errors"
+	"log"
 
 	"github.com/go-playground/validator"
 	"github.com/gorilla/mux"
@@ -613,9 +614,9 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 	vote = strings.ToLower(vote)
 	username := r.Header["Username"][0]
 	user, err := dBase.GetUser("username", username)
-	println(username, user.Username, user.ID)
+	println(username)
 	if err != nil {
-		http.Error(w, "Problem with provided username", http.StatusBadRequest)
+		http.Error(w, fmt.Sprintf("Problem with username=%s", username), http.StatusBadRequest)
 		fmt.Println(err)
         return
 	}
@@ -634,12 +635,14 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 	if err == nil {
 		if voteReg.Up && vote == "up" || (!voteReg.Up && vote == "down") {
 			// It's the same vote and we'll return 200
+			log.Println("err == nil branch 1")
 			response := Response{Error:nil, Data:nil}
 			GenerateHandler(w, r, response)
 			return
 
 		} else {
 			// Delete user's vote from registry and update votes 
+			log.Println("err == nil branch 2")
 			var keys []string
 			var vals []interface{}
 			keys = append(keys, "userid")
@@ -677,6 +680,7 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("Update: voteName=%s, id=%s", voteName, id)
 	// If it's vote none, we only need to decrement votes
 	if vote != "none" {
+		log.Println("vote != none, make vote")
 		err = dBase.IncrementOneInDB(dbName, collection, "id", id, fmt.Sprintf("%s.%s", voteName, vote), incrementBy)
 	} 
 	
@@ -685,11 +689,13 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 		voteRegVote = "down"
 	} 
 	if updatePreviousVote {
+		log.Println("Update previous vote")
 		err = dBase.IncrementOneInDB(dbName, collection, "id", id, fmt.Sprintf("%s.%s", voteName, voteRegVote), -1)
 	}
 	
 	// Register vote in mongo
 	if vote != "none" {
+		log.Println("Make registry")
 		var voteReg db.VoteRegistery
 		voteReg = db.VoteRegistery{
 			UserID: user.ID,
