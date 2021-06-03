@@ -1,5 +1,6 @@
 import functools
 import operator
+import random
 from collections import defaultdict, Counter
 from operator import itemgetter
 
@@ -12,6 +13,7 @@ from networkx.algorithms import bipartite
 app = Flask(__name__)
 
 # Constants
+RECOMMENDED_ARTICLES_TO_CALCULATE = 100
 NOT_ENOUGH_DATA_THRESHOLD = 30
 TAG_THRESHOLD = 0.5
 NUM_OF_TAGS = 20
@@ -137,12 +139,13 @@ def recommendation(user_id, num_of_articles):
             article_score_dict[sim_score[1]] += sim_score[2]
         sorted_dict = sorted(article_score_dict.items(), key=itemgetter(1), reverse=True)
         articles_sorted_by_score, scores = zip(*sorted_dict)
-        recommended = articles_sorted_by_score[:num_of_articles]
-        if len(recommended) < num_of_articles:
+        recommended = articles_sorted_by_score[:RECOMMENDED_ARTICLES_TO_CALCULATE]
+        if len(recommended) < RECOMMENDED_ARTICLES_TO_CALCULATE:
             recommended.extend(generic_recommendation(raw_graph, num_of_articles - len(recommended)))
+
     return {
         "error": None,
-        "data": recommended
+        "data": random.sample(recommended, num_of_articles)
     }
 
 
