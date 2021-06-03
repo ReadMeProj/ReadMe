@@ -25,7 +25,6 @@ type Article struct {
 	Image  string `json:"image" validate:"url"`
 	Site   string `json:"site"`
 	
-	Labels 	   []ReadMeLabel `json:"labels"`
 	FakeVotes  Votes `json:"fakevotes"`
 	RelScore   float32 `json:"relscore"`
 }
@@ -78,7 +77,7 @@ type Report struct {
 	ArticleId ID `json:"articleid" validate:"required"`
 	// Report
 	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
-	Labels 	  []ReadMeLabel `json:"labels"`
+	Labels 	  []string `json:"labels"`
 	Fake 	  bool `json:"fake"`
 	// Report
 }
@@ -100,6 +99,13 @@ type VoteRegistery struct {
 type Votes struct {
 	Up   int `json:"up"`
 	Down int `json:"down"`
+}
+
+type Tag struct {
+	ID 		  	ID `json:"id"`
+	ArticleID 	ID `json:"articleid" validate:"required"`
+	Label 		string `json:"label" validate:"required"`
+	Score 		int64 `json:"score"`
 }
 
 type Credentials struct { 

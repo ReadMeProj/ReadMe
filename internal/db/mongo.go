@@ -22,6 +22,7 @@ const mongoRequestsCollectionName = "requests"
 const mongoAnswersCollectionName = "answers"
 const mongoReportsCollectionName = "reports"
 const mongoVotesCollectionName = "votes"
+const mongoTagsCollectionName = "tags"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
@@ -240,6 +241,47 @@ func (db *MongoController) IncrementOneInDB(dbName string, collectionName string
 	filter := bson.D{{Key: key, Value: value}}
 	update := bson.M{increment: incrementBy}
 	
+	update = bson.M{"$inc": update}
+
+	res, err := collection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err
+}
+
+// updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
+func (db *MongoController) IncrementOneInDBByDoubleKey(dbName string, collectionName string, key1 string, value1 interface{}, 
+	key2 string, value2 interface{}, increment string, incrementBy int) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{{Key: key1, Value: value1},{Key: key2, Value: value2}}
+	update := bson.M{increment: incrementBy}
+	
+	update = bson.M{"$inc": update}
+
+	res, err := collection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err
+}
+
+// updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
+func (db *MongoController) incrementOneInDBByMany(dbName string, collectionName string, key []string, value []string, 
+	increment string, incrementBy int) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+	
+	filter := bson.D{}
+	for i := 0; i < len(key); i++ {
+		filter = append(filter, bson.E{Key: key[i], Value: value[i]})
+	}
+	
+	update := bson.M{increment: incrementBy}
 	update = bson.M{"$inc": update}
 
 	res, err := collection.UpdateOne(context.TODO(), filter, update)
@@ -485,8 +527,58 @@ func (db *MongoController) NewAnswer(answer *Answer) error {
 	return db.newItemNoValidate(mongoAnswersCollectionName, *answer)	
 }
 
+func (db *MongoController) updateTag(articleid ID, tag string, incrementBy int) error {
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+
+	filter := bson.D{{Key: "id", Value: articleid}, {Key:"tag", Value: tag}}
+	update := bson.M{"score": incrementBy}
+	
+	update = bson.M{"$inc": update}
+
+	res, err := collection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err	
+}
+
 func (db *MongoController) NewReport(report *Report) error {
 	report.ID = ID(proto.TokenGenerator())
+	
+	var prevReport Report
+	err := db.GetByDoubleKey(mongoDatabaseName, mongoReportsCollectionName, "userid", report.UserID, "articleid", report.ArticleId, &prevReport)
+	// if err == nil, prevReport should contain previous data
+	if err == nil {
+		// Down score each labels from previous report
+		for _, element := range prevReport.Labels {
+			db.IncrementOneInDBByDoubleKey(
+				mongoDatabaseName, 
+				mongoTagsCollectionName, 
+				"articleid",
+				report.ArticleId,
+				"label",
+				element,
+				"score",
+				-1,
+			)
+		}
+	}
+
+	for _, element := range report.Labels {
+		db.IncrementOneInDBByDoubleKey(
+			mongoDatabaseName, 
+			mongoTagsCollectionName, 
+			"articleid",
+			report.ArticleId,
+			"label",
+			element,
+			"score",
+			1,
+		)	
+	}
+
 	return db.newItemNoValidate(mongoReportsCollectionName, *report)	
 }
 

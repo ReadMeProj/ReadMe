@@ -23,6 +23,7 @@ const mongoRequestsCollectionName = "requests"
 const mongoAnswersCollectionName = "answers"
 const mongoReportsCollectionName = "reports"
 const mongoVotesCollectionName = "votes"
+const mongoTagsCollectionName = "tags"
 const mongoCollectionIDKey = "id"
 
 func getUser(responseWriter http.ResponseWriter, r *http.Request) {
