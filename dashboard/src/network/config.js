@@ -20,5 +20,6 @@ export var config = {
   recommendationsPath: "/api/recommendations",
   deleteFavoritePath: "/api/deleteFavorite",
   getAnswerById: "/api/answer/id",
-  //newRequest, getAnswers, newAnswer,
+  newRequestPath: "/api/newRequest",
+  //getAllOpenRequests
 };

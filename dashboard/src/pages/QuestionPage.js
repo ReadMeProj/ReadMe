@@ -1,7 +1,6 @@
 import { React, Component } from "react";
 import Modal from "react-bootstrap/Modal";
 import AnswerCard from "../components/AnswerCard";
-//import AnswerCard from "../components/AnswerCard";
 import QuestionCard from "../components/QuestionCard";
 import {
   getAnswersByRequest,
