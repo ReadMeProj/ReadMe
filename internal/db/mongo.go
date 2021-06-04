@@ -8,6 +8,7 @@ import (
 	"log"
 
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -22,6 +23,7 @@ const mongoRequestsCollectionName = "requests"
 const mongoAnswersCollectionName = "answers"
 const mongoReportsCollectionName = "reports"
 const mongoVotesCollectionName = "votes"
+const mongoTagsCollectionName = "tags"
 const mongoCollectionIDKey = "id"
 const MultipleExtractionLimit = 10000
 
@@ -206,8 +208,34 @@ func (db *MongoController) insertOneToDB(dbName string, collectionName string, n
 
 	log.Println(res)
 	return err
-}
+}	
 
+// insertOneToDB inserts a single new object to database (any ReadMe client object)
+func (db *MongoController) insertOneIfNotExists(dbName string, collectionName string, 
+	key []string, val []interface{}, newObject interface{}) error {
+	var data interface{}
+	
+	collection := db.client.Database(dbName).Collection(collectionName)
+		
+	filter := bson.D{}
+	for i := 0; i < len(key); i++ {
+		filter = append(filter, bson.E{Key: key[i], Value: val[i]})
+	}
+	
+	err := collection.FindOne(context.TODO(), filter).Decode(&data)
+	// if err == nil the data exists, don't insert it
+	if err == nil {
+		return err 
+	}
+
+	res, err := collection.InsertOne(context.TODO(), newObject) 
+	if err != nil  || res == nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err
+}
 
 
 // updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
@@ -240,6 +268,47 @@ func (db *MongoController) IncrementOneInDB(dbName string, collectionName string
 	filter := bson.D{{Key: key, Value: value}}
 	update := bson.M{increment: incrementBy}
 	
+	update = bson.M{"$inc": update}
+
+	res, err := collection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err
+}
+
+// updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
+func (db *MongoController) IncrementOneInDBByDoubleKey(dbName string, collectionName string, key1 string, value1 interface{}, 
+	key2 string, value2 interface{}, increment string, incrementBy int) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+
+	filter := bson.D{{Key: key1, Value: value1},{Key: key2, Value: value2}}
+	update := bson.M{increment: incrementBy}
+	
+	update = bson.M{"$inc": update}
+
+	res, err := collection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err
+}
+
+// updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
+func (db *MongoController) incrementOneInDBByMany(dbName string, collectionName string, key []string, value []string, 
+	increment string, incrementBy int) error {
+	collection := db.client.Database(dbName).Collection(collectionName)
+	
+	filter := bson.D{}
+	for i := 0; i < len(key); i++ {
+		filter = append(filter, bson.E{Key: key[i], Value: value[i]})
+	}
+	
+	update := bson.M{increment: incrementBy}
 	update = bson.M{"$inc": update}
 
 	res, err := collection.UpdateOne(context.TODO(), filter, update)
@@ -295,7 +364,33 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 	}
 
 	return articles, err	
-}	
+}
+
+func (db* MongoController) GetArticlesByQuery(query string) ([]Article, error) {
+	var articles []Article
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+	
+	findOptions := options.Find()
+
+	regex := primitive.Regex{Pattern: fmt.Sprintf(".*%s.*", query), Options: "i"}
+	filter := bson.M{"name": bson.M{"$regex": regex}}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &articles)
+	if err != nil {
+		// handle error
+		log.Println(err)
+	}
+	
+	return articles, err
+}
 
 func (db *MongoController) GetFavorite(key1 string, value1 interface{}, key2 string, value2 string) (Favorite, error) {
 	var favorite Favorite
@@ -350,6 +445,32 @@ func (db* MongoController) GetRequests(key string, value interface{}) ([]Request
 	var requests []Request
 	err := db.getMany(mongoRequestsCollectionName, key, value, &requests)
 
+	return requests, err
+}
+
+func (db* MongoController) GetRequestsByQuery(query string) ([]Request, error) {
+	var requests []Request
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoRequestsCollectionName)
+	
+	findOptions := options.Find()
+
+	regex := primitive.Regex{Pattern: fmt.Sprintf(".*%s.*", query), Options: "i"}
+	filter := bson.M{"content": bson.M{"$regex": regex}}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &requests)
+	if err != nil {
+		// handle error
+		log.Println(err)
+	}
+	
 	return requests, err
 }
 
@@ -411,6 +532,10 @@ func (db *MongoController) NewUser(user *User) error {
 		return err
 	}
 
+	// Sign in user
+	user.AccessToken = Token(proto.TokenGenerator())
+	user.Credit = 50
+	
 	err = db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, *user)
 	if err != nil {
 		log.Println(err)
@@ -477,24 +602,127 @@ func (db *MongoController) NewVoteRegistry(vote *VoteRegistery) error {
 
 func (db *MongoController) NewRequest(request *Request) error {
 	request.ID = ID(proto.TokenGenerator())
+	
+	db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(request.RequestedBy), "credit", 10)	
+	
 	return db.newItemNoValidate(mongoRequestsCollectionName, *request)	
 }
 
 func (db *MongoController) NewAnswer(answer *Answer) error {
 	answer.ID = ID(proto.TokenGenerator())
+
+	db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(answer.UserID), "credit", 20)	
+
 	return db.newItemNoValidate(mongoAnswersCollectionName, *answer)	
+}
+
+func (db *MongoController) updateTag(articleid ID, tag string, incrementBy int) error {
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+
+	filter := bson.D{{Key: "id", Value: articleid}, {Key:"tag", Value: tag}}
+	update := bson.M{"score": incrementBy}
+	
+	update = bson.M{"$inc": update}
+
+	res, err := collection.UpdateOne(context.TODO(), filter, update)
+	if err != nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err	
 }
 
 func (db *MongoController) NewReport(report *Report) error {
 	report.ID = ID(proto.TokenGenerator())
+	
+	var prevReport Report
+	err := db.GetByDoubleKey(mongoDatabaseName, mongoReportsCollectionName, "userid", report.UserID, "articleid", report.ArticleId, &prevReport)
+	// if err == nil, prevReport should contain previous data
+	if err == nil {
+		fmt.Println("Have previous report")
+		// Down score each labels from previous report
+		for _, element := range prevReport.Labels {
+			fmt.Println("Decrementing " + element)
+			db.IncrementOneInDBByDoubleKey(
+				mongoDatabaseName, 
+				mongoTagsCollectionName, 
+				"articleid",
+				report.ArticleId,
+				"label",
+				element,
+				"score",
+				-1,
+			)
+		}
+
+		// Delete last report
+		var keys []string
+		var vals []interface{}
+		keys = append(keys, "id")
+		vals = append(vals, prevReport.ID) 
+		db.DeleteAllByKey(mongoDatabaseName, mongoReportsCollectionName, keys, vals)
+	}
+
+	// User never reported this article, award him 5 points
+	if err != nil {
+		db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(report.UserID), "credit", 10)	
+	}
+
+	fmt.Println("Labels length")
+	fmt.Println(len(report.Labels))
+	// Update all current labels
+	for _, element := range report.Labels {
+		fmt.Println("Updating " + element)
+		
+		newTag := Tag {
+			ID: ID(proto.TokenGenerator()),
+			ArticleID: report.ArticleId,
+			Label: element,
+			Score: 0,
+		} 
+
+		var keys []string
+		var vals []interface{}
+		keys = append(keys, "articleid")
+		keys = append(keys, "label")
+		vals = append(vals, report.ArticleId) 
+		vals = append(vals, element)
+
+		err = db.insertOneIfNotExists(
+			mongoDatabaseName,
+			mongoTagsCollectionName,
+			keys,
+			vals,
+			newTag,
+		)
+		if err != nil {
+			fmt.Println("Insert if not exists")
+			fmt.Println(err.Error())
+		}
+
+		err = db.IncrementOneInDBByDoubleKey(
+			mongoDatabaseName, 
+			mongoTagsCollectionName, 
+			"articleid",
+			report.ArticleId,
+			"label",
+			element,
+			"score",
+			1,
+		)
+		if err != nil {
+			fmt.Println("Increment")
+			fmt.Println(err.Error())
+		}
+	}
+
 	return db.newItemNoValidate(mongoReportsCollectionName, *report)	
 }
 
 func (db *MongoController) UpdateUser(user User) error {
 	updateMap := make(map[string]interface{})
-	updateMap["interests"] = user.Interests
 	updateMap["credit"] = user.Credit
-	//updateMap["relscore"] = user.RelScore
 
 	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "username", user.Username, updateMap)
 	if err != nil {
@@ -506,9 +734,7 @@ func (db *MongoController) UpdateUser(user User) error {
 
 func (db *MongoController) UpdateArticle(article Article) error {
 	updateMap := make(map[string]interface{})
-	updateMap["labels"] = article.Labels
 	updateMap["fakevotes"] = article.FakeVotes
-	//updateMap["relscore"] = article.RelScore
 	
 	err := db.updateOneInDB(mongoDatabaseName, mongoArticlesCollectionName, "url", article.URL, updateMap)
 	if err != nil {
@@ -546,10 +772,17 @@ func (db *MongoController) UpdateReport(report Report) error {
 
 func (db *MongoController) UpdateRequest(request Request) error {
 	updateMap := make(map[string]interface{})
-	updateMap["votes"] = request.Votes 
-	updateMap["answerid"] = request.AnswerID 
+	updateMap["answerid"] = request.AnswerID
 	
-	err := db.updateOneInDB(mongoDatabaseName, mongoRequestsCollectionName, "id", string(request.ID), updateMap)
+	// Award correct answer by 50 points
+	var answer Answer
+	err := db.GetByKey(mongoDatabaseName, mongoAnswersCollectionName, "id", string(request.AnswerID), &answer)
+	if err == nil {
+		// This answer really exists
+		db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(request.RequestedBy), "credit", 50)	
+	}
+	
+	err = db.updateOneInDB(mongoDatabaseName, mongoRequestsCollectionName, "id", string(request.ID), updateMap)
 	if err != nil {
 		log.Println(err)
 	}

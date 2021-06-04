@@ -9,6 +9,7 @@ import (
 	"strings"
 	"errors"
 	"log"
+	"strconv"
 
 	"github.com/go-playground/validator"
 	"github.com/gorilla/mux"
@@ -24,6 +25,7 @@ const mongoRequestsCollectionName = "requests"
 const mongoAnswersCollectionName = "answers"
 const mongoReportsCollectionName = "reports"
 const mongoVotesCollectionName = "votes"
+const mongoTagsCollectionName = "tags"
 const mongoCollectionIDKey = "id"
 
 func getUser(responseWriter http.ResponseWriter, r *http.Request) {
@@ -128,6 +130,15 @@ func getRequests(key string, value interface{}) (interface{}, error) {
 	return jsonData, err 
 }
 
+func getRequestsByQuery(responseWriter http.ResponseWriter, r *http.Request) {
+	query := ExtractFromRequest(r, "query")
+
+	jsonData, err := dBase.GetRequestsByQuery(query)
+	
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
 func getRequestsByArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	jsonData, err := getRequests(
 		"articleid",
@@ -152,13 +163,26 @@ func getAllRequests(w http.ResponseWriter, r *http.Request){
 		http.Error(w, "which should be one of (open, close, all)", http.StatusBadRequest)
         return		
 	}
-	
+
+	limit := ExtractFromRequest(r, "limit")
+	limitInt, err := strconv.Atoi(limit)
+
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+        return		
+	}
+
 	jsonData, err := dBase.GetAllRequests(which)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
         return		
 	}
 
+	if limitInt > len(jsonData) { 
+		limitInt = len(jsonData)
+	}
+
+	jsonData = jsonData[:limitInt]
 	response := Response{Error: err, Data: jsonData}
 	GenerateHandler(w, r, response)	
 }
@@ -238,6 +262,15 @@ func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getArticlesByQuery(responseWriter http.ResponseWriter, r *http.Request) {
+	query := ExtractFromRequest(r, "query")
+
+	jsonData, err := dBase.GetArticlesByQuery(query)
+	
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
 func newUser(responseWriter http.ResponseWriter, r *http.Request) {
 	var user db.User
 
@@ -252,7 +285,7 @@ func newUser(responseWriter http.ResponseWriter, r *http.Request) {
 		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
         return	
 	}
-	
+
 	err = dBase.NewUser(&user)
 	response := Response{Error:err, Data: user}
 	GenerateHandler(responseWriter, r, response)
@@ -537,6 +570,11 @@ func getByKey(w http.ResponseWriter, r *http.Request) {
 		collection = "reports"
 		err = dBase.GetByKey(dbName, collection, key, val, &data)
 		response = Response{Error:err, Data: data}
+	case "tag":
+		var data db.Tag
+		collection = "tags"
+		err = dBase.GetByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
 	default:
 		http.Error(w, err.Error(), http.StatusBadRequest)
         return
@@ -584,6 +622,11 @@ func getAllByKey(w http.ResponseWriter, r *http.Request) {
 		collection = "reports"
 		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
 		response = Response{Error:err, Data: data}
+	case "tag":
+		var data []db.Tag
+		collection = "tags"
+		err = dBase.GetAllByKey(dbName, collection, key, val, &data)
+		response = Response{Error:err, Data: data}
 	default:
 		http.Error(w, err.Error(), http.StatusBadRequest)
         return
@@ -621,7 +664,7 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
         return
 	}
 
-	fmt.Printf("type=%s, id=%s, vote=%s", _type, id, vote)
+	fmt.Printf("type=%s, id=%s, ote=%s", _type, id, vote)
 	
 	if vote != "up" && vote != "down" && vote != "none" {
 		http.Error(w, "Vote should be either up, down or none", http.StatusBadRequest)
@@ -840,6 +883,7 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router.HandleFunc("/api/getArticle/{id}", isAuthorized(getArticle)).Methods("GET")
 	router.HandleFunc("/api/getArticle", isAuthorized(getArticleByURL)).Methods("GET")
 	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
+	router.HandleFunc("/api/getArticles/{query}", getArticlesByQuery).Methods("GET")
 
 	router.HandleFunc("/api/newUser", newUser).Methods("PUT")
 	router.HandleFunc("/api/newArticle", newArticle).Methods("PUT")
@@ -854,7 +898,8 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 
 	router.HandleFunc("/api/getRequests/user/{id}", getRequestsByUser).Methods("GET")
 	router.HandleFunc("/api/getRequests/article/{id}", getRequestsByArticle).Methods("GET")
-	router.HandleFunc("/api/getRequests/{which}", getAllRequests).Methods("GET")
+	router.HandleFunc("/api/getRequests/{which}/{limit}", getAllRequests).Methods("GET")
+	router.HandleFunc("/api/getRequests/{query}", getRequestsByQuery).Methods("GET")
 	router.HandleFunc("/api/getAnswers/user/{id}", getAnswersByUser).Methods("GET")
 	router.HandleFunc("/api/getAnswers/article/{id}", getAnswersByArticle).Methods("GET")
 	router.HandleFunc("/api/getReports/user/{id}", getReportsByUser).Methods("GET")
