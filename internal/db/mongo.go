@@ -532,6 +532,10 @@ func (db *MongoController) NewUser(user *User) error {
 		return err
 	}
 
+	// Sign in user
+	user.AccessToken = Token(proto.TokenGenerator())
+	user.Credit = 50
+	
 	err = db.insertOneToDB(mongoDatabaseName, mongoUsersCollectionName, *user)
 	if err != nil {
 		log.Println(err)

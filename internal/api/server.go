@@ -285,7 +285,7 @@ func newUser(responseWriter http.ResponseWriter, r *http.Request) {
 		http.Error(responseWriter, err.Error(), http.StatusBadRequest)
         return	
 	}
-	
+
 	err = dBase.NewUser(&user)
 	response := Response{Error:err, Data: user}
 	GenerateHandler(responseWriter, r, response)
