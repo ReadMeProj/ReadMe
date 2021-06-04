@@ -7,7 +7,8 @@
         "email": "sudo@gmail.com",
         "firstname": "Marko",
         "lastname": "Markov",
-        "accesstoken": "NO_TOKEN"
+        "accesstoken": "NO_TOKEN",
+        "credit": 955
     },
     {
         "id": "fe551a5b-d8c7-47de-b6c8-e3565601514c",
@@ -16,7 +17,7 @@
         "email": "optimistic960013@gmail.com",
         "firstname": "optimistic",
         "lastname": "lewin",
-        "credit": 50,
+        "credit": 1165,
         "_id": "fe551a5b-d8c7-47de-b6c8-e3565601514c"
     },
     {
@@ -26,7 +27,7 @@
         "email": "ecstatic940265@gmail.com",
         "firstname": "ecstatic",
         "lastname": "ardinghelli",
-        "credit": 50,
+        "credit": 1010,
         "_id": "4359ec49-85b9-4cc5-a3b8-4b47d519a64d"
     },
     {
@@ -36,7 +37,7 @@
         "email": "eloquent940781@gmail.com",
         "firstname": "eloquent",
         "lastname": "franklin",
-        "credit": 50,
+        "credit": 1035,
         "_id": "b5fddcb8-91c6-4040-8e86-5fa8597a090c"
     },
     {
@@ -46,7 +47,7 @@
         "email": "zen034131@gmail.com",
         "firstname": "zen",
         "lastname": "carson",
-        "credit": 50,
+        "credit": 1070,
         "_id": "229643b8-6762-4c37-ab87-dc744562416e"
     },
     {
@@ -56,7 +57,7 @@
         "email": "gifted928327@gmail.com",
         "firstname": "gifted",
         "lastname": "zhukovsky",
-        "credit": 50,
+        "credit": 1025,
         "_id": "b2a3c3a2-5beb-4c1b-82fe-b98a4322f6e3"
     },
     {
@@ -66,7 +67,7 @@
         "email": "gifted413953@gmail.com",
         "firstname": "gifted",
         "lastname": "volhard",
-        "credit": 50,
+        "credit": 1035,
         "_id": "5c5aa0bf-2923-49c3-ac29-da3a3c1b7948"
     },
     {
@@ -76,7 +77,7 @@
         "email": "pedantic496965@gmail.com",
         "firstname": "pedantic",
         "lastname": "bassi",
-        "credit": 50,
+        "credit": 1020,
         "_id": "ba42f307-d333-4162-b358-e171da64be39"
     },
     {
@@ -86,7 +87,7 @@
         "email": "dreamy916697@gmail.com",
         "firstname": "dreamy",
         "lastname": "ramanujan",
-        "credit": 50,
+        "credit": 875,
         "_id": "5ee43f34-9e9a-4660-9538-7d730b450a05"
     },
     {
@@ -96,7 +97,7 @@
         "email": "loving627048@gmail.com",
         "firstname": "loving",
         "lastname": "bohr",
-        "credit": 50,
+        "credit": 950,
         "_id": "4a4f9599-839d-43eb-950a-47fb4f76149a"
     },
     {
@@ -106,7 +107,7 @@
         "email": "serene288095@gmail.com",
         "firstname": "serene",
         "lastname": "carson",
-        "credit": 50,
+        "credit": 930,
         "_id": "49bc16f4-4b9e-47a1-95da-274e79b04386"
     },
     {
@@ -116,7 +117,7 @@
         "email": "jovial171822@gmail.com",
         "firstname": "jovial",
         "lastname": "elbakyan",
-        "credit": 50,
+        "credit": 920,
         "_id": "73520a0b-5969-4c3f-a0d9-cd9c0f174b96"
     },
     {
@@ -126,7 +127,7 @@
         "email": "pedantic346578@gmail.com",
         "firstname": "pedantic",
         "lastname": "keldysh",
-        "credit": 50,
+        "credit": 945,
         "_id": "a701dc2a-24a6-43ad-b298-2aa0b6d6d581"
     },
     {
@@ -136,7 +137,7 @@
         "email": "hungry930103@gmail.com",
         "firstname": "hungry",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 980,
         "_id": "0cfa653c-bb59-4d2a-981f-7cd265166509"
     },
     {
@@ -146,7 +147,7 @@
         "email": "awesome299737@gmail.com",
         "firstname": "awesome",
         "lastname": "hermann",
-        "credit": 50,
+        "credit": 935,
         "_id": "af11449f-16c4-4a8d-8964-e39b662c8366"
     },
     {
@@ -156,7 +157,7 @@
         "email": "stoic010651@gmail.com",
         "firstname": "stoic",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 960,
         "_id": "58587a7e-971d-423f-a334-ba0006ff7054"
     },
     {
@@ -166,7 +167,7 @@
         "email": "elastic317810@gmail.com",
         "firstname": "elastic",
         "lastname": "leakey",
-        "credit": 50,
+        "credit": 935,
         "_id": "e067b4d9-e3f3-42c6-8e2f-b9b57787ddf1"
     },
     {
@@ -176,7 +177,7 @@
         "email": "peaceful602606@gmail.com",
         "firstname": "peaceful",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 1085,
         "_id": "96009236-4d28-41db-a619-dc3f1268da87"
     },
     {
@@ -186,7 +187,7 @@
         "email": "elegant098050@gmail.com",
         "firstname": "elegant",
         "lastname": "booth",
-        "credit": 50,
+        "credit": 860,
         "_id": "773d7e79-23f9-4c88-92b6-9ad68a6b8a4e"
     },
     {
@@ -196,7 +197,7 @@
         "email": "amazing191361@gmail.com",
         "firstname": "amazing",
         "lastname": "poitras",
-        "credit": 50,
+        "credit": 920,
         "_id": "5ff6d1df-b54d-4a86-83ee-6286583eac2a"
     },
     {
@@ -206,7 +207,7 @@
         "email": "xenodochial985435@gmail.com",
         "firstname": "xenodochial",
         "lastname": "chatterjee",
-        "credit": 50,
+        "credit": 935,
         "_id": "9fbaa302-2f4a-4586-b4ef-07a288eedaa8"
     },
     {
@@ -216,7 +217,7 @@
         "email": "ecstatic991183@gmail.com",
         "firstname": "ecstatic",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 1090,
         "_id": "a953d205-ef9a-4e3b-9003-ef893995923d"
     },
     {
@@ -226,7 +227,7 @@
         "email": "keen849808@gmail.com",
         "firstname": "keen",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 840,
         "_id": "661e2e95-856c-4135-8d1a-8f36dfaff3dd"
     },
     {
@@ -236,7 +237,7 @@
         "email": "fervent935348@gmail.com",
         "firstname": "fervent",
         "lastname": "goodall",
-        "credit": 50,
+        "credit": 1035,
         "_id": "4c1488b9-374a-4069-b2fe-5fcabbc1a212"
     },
     {
@@ -246,7 +247,7 @@
         "email": "jovial427868@gmail.com",
         "firstname": "jovial",
         "lastname": "elion",
-        "credit": 50,
+        "credit": 1010,
         "_id": "61f79fa2-901a-4dcd-bf02-518121a61aab"
     },
     {
@@ -256,7 +257,7 @@
         "email": "admiring620450@gmail.com",
         "firstname": "admiring",
         "lastname": "varahamihira",
-        "credit": 50,
+        "credit": 1025,
         "_id": "50219fc9-6e5d-4570-b5e3-e73ac8ef32e2"
     },
     {
@@ -266,7 +267,7 @@
         "email": "vigilant322602@gmail.com",
         "firstname": "vigilant",
         "lastname": "bose",
-        "credit": 50,
+        "credit": 870,
         "_id": "75279b28-0e4b-4435-ad89-346bf80c9a9a"
     },
     {
@@ -276,7 +277,7 @@
         "email": "reverent337543@gmail.com",
         "firstname": "reverent",
         "lastname": "proskuriakova",
-        "credit": 50,
+        "credit": 975,
         "_id": "de6a2e50-dc1b-436c-8010-52fcd9aaf7b3"
     },
     {
@@ -286,7 +287,7 @@
         "email": "eager685014@gmail.com",
         "firstname": "eager",
         "lastname": "bohr",
-        "credit": 50,
+        "credit": 905,
         "_id": "2f72e421-6d51-451d-baa6-26f8eb61f5de"
     },
     {
@@ -296,7 +297,7 @@
         "email": "cranky981693@gmail.com",
         "firstname": "cranky",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 985,
         "_id": "797820cc-d345-484b-9f40-a10e9290cc33"
     },
     {
@@ -306,7 +307,7 @@
         "email": "elated595148@gmail.com",
         "firstname": "elated",
         "lastname": "borg",
-        "credit": 50,
+        "credit": 975,
         "_id": "4c5d51de-fc74-45df-83e4-3d67936be577"
     },
     {
@@ -316,7 +317,7 @@
         "email": "festive299468@gmail.com",
         "firstname": "festive",
         "lastname": "euler",
-        "credit": 50,
+        "credit": 1025,
         "_id": "d58fb8d4-0d81-4f88-93a8-b6116d71047d"
     },
     {
@@ -326,7 +327,7 @@
         "email": "suspicious773872@gmail.com",
         "firstname": "suspicious",
         "lastname": "williams",
-        "credit": 50,
+        "credit": 945,
         "_id": "43c9b697-30bc-4739-b509-dfaf0b074c91"
     },
     {
@@ -336,7 +337,7 @@
         "email": "pedantic320037@gmail.com",
         "firstname": "pedantic",
         "lastname": "hodgkin",
-        "credit": 50,
+        "credit": 1025,
         "_id": "62794ff5-7c16-4b5e-a546-f727bfc01287"
     },
     {
@@ -346,7 +347,7 @@
         "email": "nifty201632@gmail.com",
         "firstname": "nifty",
         "lastname": "tesla",
-        "credit": 50,
+        "credit": 940,
         "_id": "78c0ceea-5305-4aa0-87d7-01b336bc3d0b"
     },
     {
@@ -356,7 +357,7 @@
         "email": "stoic889579@gmail.com",
         "firstname": "stoic",
         "lastname": "brown",
-        "credit": 50,
+        "credit": 1040,
         "_id": "04e62846-86d7-43c7-a26f-abd31f369c98"
     },
     {
@@ -366,7 +367,7 @@
         "email": "stupefied487347@gmail.com",
         "firstname": "stupefied",
         "lastname": "shannon",
-        "credit": 50,
+        "credit": 1030,
         "_id": "b1abd920-5d8d-415c-8c3f-b179b79f4bee"
     },
     {
@@ -376,7 +377,7 @@
         "email": "blissful362316@gmail.com",
         "firstname": "blissful",
         "lastname": "goldstine",
-        "credit": 50,
+        "credit": 1090,
         "_id": "b91469f3-67fd-458a-9d57-29a6749e08e2"
     },
     {
@@ -386,7 +387,7 @@
         "email": "happy096705@gmail.com",
         "firstname": "happy",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 950,
         "_id": "934664ac-5906-43c9-a061-c3e01ba99118"
     },
     {
@@ -396,7 +397,7 @@
         "email": "fervent670656@gmail.com",
         "firstname": "fervent",
         "lastname": "engelbart",
-        "credit": 50,
+        "credit": 1040,
         "_id": "33a89458-c0c6-47ed-9c78-60e83211dc3e"
     },
     {
@@ -406,7 +407,7 @@
         "email": "relaxed016272@gmail.com",
         "firstname": "relaxed",
         "lastname": "lumiere",
-        "credit": 50,
+        "credit": 1035,
         "_id": "491a2664-8815-4e8f-baaa-973c6a6e87ea"
     },
     {
@@ -416,7 +417,7 @@
         "email": "amazing641708@gmail.com",
         "firstname": "amazing",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 1025,
         "_id": "e8cf4cb2-9635-441d-9ce3-e535c211a983"
     },
     {
@@ -426,7 +427,7 @@
         "email": "amazing232719@gmail.com",
         "firstname": "amazing",
         "lastname": "volhard",
-        "credit": 50,
+        "credit": 935,
         "_id": "f5e5e689-d830-4280-9a6f-ad62613773eb"
     },
     {
@@ -436,7 +437,7 @@
         "email": "xenodochial419049@gmail.com",
         "firstname": "xenodochial",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 1040,
         "_id": "5fcd6d5f-a430-4782-9167-6086c02ca337"
     },
     {
@@ -446,7 +447,7 @@
         "email": "practical190586@gmail.com",
         "firstname": "practical",
         "lastname": "brattain",
-        "credit": 50,
+        "credit": 1020,
         "_id": "bed2f41c-e03a-456d-8351-9cda14933f6c"
     },
     {
@@ -456,7 +457,7 @@
         "email": "pedantic572628@gmail.com",
         "firstname": "pedantic",
         "lastname": "mirzakhani",
-        "credit": 50,
+        "credit": 930,
         "_id": "f0531596-1107-4a2b-8c8c-3308c4a28ae8"
     },
     {
@@ -466,7 +467,7 @@
         "email": "zealous314737@gmail.com",
         "firstname": "zealous",
         "lastname": "jennings",
-        "credit": 50,
+        "credit": 995,
         "_id": "9170e6ba-b049-4e91-b9c2-2a3e2f87d017"
     },
     {
@@ -476,7 +477,7 @@
         "email": "modest545494@gmail.com",
         "firstname": "modest",
         "lastname": "wing",
-        "credit": 50,
+        "credit": 1005,
         "_id": "59b3f08a-5ef8-40d4-9103-3a5c6c09e733"
     },
     {
@@ -486,7 +487,7 @@
         "email": "mystifying777014@gmail.com",
         "firstname": "mystifying",
         "lastname": "mestorf",
-        "credit": 50,
+        "credit": 1020,
         "_id": "5fc9c5ad-15d2-4fee-ac88-1c0728262a88"
     },
     {
@@ -496,7 +497,7 @@
         "email": "dreamy685574@gmail.com",
         "firstname": "dreamy",
         "lastname": "yalow",
-        "credit": 50,
+        "credit": 1070,
         "_id": "3ca8fa22-b36d-44f9-903f-767050f9ab84"
     },
     {
@@ -506,7 +507,7 @@
         "email": "festive374989@gmail.com",
         "firstname": "festive",
         "lastname": "aryabhata",
-        "credit": 50,
+        "credit": 940,
         "_id": "696cc1eb-73f7-4353-a9c5-0043f91e7ab6"
     },
     {
@@ -516,7 +517,7 @@
         "email": "eloquent240084@gmail.com",
         "firstname": "eloquent",
         "lastname": "rosalind",
-        "credit": 50,
+        "credit": 1105,
         "_id": "09efd19d-a3a6-46b3-8640-fcb94de6bb62"
     },
     {
@@ -526,7 +527,7 @@
         "email": "quirky520471@gmail.com",
         "firstname": "quirky",
         "lastname": "babbage",
-        "credit": 50,
+        "credit": 955,
         "_id": "92402a23-0257-49c3-9356-fb271894eec5"
     },
     {
@@ -536,7 +537,7 @@
         "email": "stupefied413186@gmail.com",
         "firstname": "stupefied",
         "lastname": "shtern",
-        "credit": 50,
+        "credit": 1035,
         "_id": "7d7473b4-0834-458c-81fc-e5e048c4996c"
     },
     {
@@ -546,7 +547,7 @@
         "email": "nifty649909@gmail.com",
         "firstname": "nifty",
         "lastname": "hypatia",
-        "credit": 50,
+        "credit": 990,
         "_id": "cc11ccc6-f6f6-4e62-83b5-e7b6935d5da5"
     },
     {
@@ -556,7 +557,7 @@
         "email": "youthful120679@gmail.com",
         "firstname": "youthful",
         "lastname": "visvesvaraya",
-        "credit": 50,
+        "credit": 1040,
         "_id": "cef0395d-11d9-444a-92ed-6332a3b1bafd"
     },
     {
@@ -566,7 +567,7 @@
         "email": "inspiring936183@gmail.com",
         "firstname": "inspiring",
         "lastname": "kilby",
-        "credit": 50,
+        "credit": 950,
         "_id": "63504264-4363-426d-9b33-4d2aa1cf3976"
     },
     {
@@ -576,7 +577,7 @@
         "email": "peaceful471746@gmail.com",
         "firstname": "peaceful",
         "lastname": "goldberg",
-        "credit": 50,
+        "credit": 875,
         "_id": "01ab11f3-81cf-4cb8-83fd-5b12196b2414"
     },
     {
@@ -586,7 +587,7 @@
         "email": "xenodochial594013@gmail.com",
         "firstname": "xenodochial",
         "lastname": "elbakyan",
-        "credit": 50,
+        "credit": 950,
         "_id": "3c1183d4-daae-46d4-8e01-c4e109232080"
     },
     {
@@ -596,7 +597,7 @@
         "email": "zealous742967@gmail.com",
         "firstname": "zealous",
         "lastname": "bhabha",
-        "credit": 50,
+        "credit": 1000,
         "_id": "eb237efa-6c2c-4d71-928a-e5a20fb45a56"
     },
     {
@@ -606,7 +607,7 @@
         "email": "zealous674680@gmail.com",
         "firstname": "zealous",
         "lastname": "ride",
-        "credit": 50,
+        "credit": 1080,
         "_id": "87ecf998-ba49-4665-925f-ddadfe787be7"
     },
     {
@@ -616,7 +617,7 @@
         "email": "infallible760385@gmail.com",
         "firstname": "infallible",
         "lastname": "bassi",
-        "credit": 50,
+        "credit": 925,
         "_id": "eb67e65c-d68a-448c-be5c-22d8680830f9"
     },
     {
@@ -626,7 +627,7 @@
         "email": "nostalgic710932@gmail.com",
         "firstname": "nostalgic",
         "lastname": "wing",
-        "credit": 50,
+        "credit": 960,
         "_id": "e813f8d7-c195-4767-a0e1-5243beae9222"
     },
     {
@@ -636,7 +637,7 @@
         "email": "festive274846@gmail.com",
         "firstname": "festive",
         "lastname": "jang",
-        "credit": 50,
+        "credit": 990,
         "_id": "6b2cce5a-7c50-41e9-b8ca-879bc26774ec"
     },
     {
@@ -646,7 +647,7 @@
         "email": "tender821465@gmail.com",
         "firstname": "tender",
         "lastname": "banach",
-        "credit": 50,
+        "credit": 905,
         "_id": "1ecaffc9-03cd-458c-9822-f6d5556d3eb7"
     },
     {
@@ -656,7 +657,7 @@
         "email": "wonderful787558@gmail.com",
         "firstname": "wonderful",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 1030,
         "_id": "71d95da3-f2f7-4bf8-b756-c72d691302f2"
     },
     {
@@ -666,7 +667,7 @@
         "email": "serene605766@gmail.com",
         "firstname": "serene",
         "lastname": "dubinsky",
-        "credit": 50,
+        "credit": 885,
         "_id": "e8bcc143-f90f-41ad-85a4-effdd590f527"
     },
     {
@@ -676,7 +677,7 @@
         "email": "pedantic187026@gmail.com",
         "firstname": "pedantic",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 945,
         "_id": "924caa1d-59bf-42d6-8a08-53f146ad5796"
     },
     {
@@ -686,7 +687,7 @@
         "email": "unruffled865780@gmail.com",
         "firstname": "unruffled",
         "lastname": "keldysh",
-        "credit": 50,
+        "credit": 940,
         "_id": "8211218a-aa43-468a-bc2d-d8100558fdcd"
     },
     {
@@ -696,7 +697,7 @@
         "email": "nostalgic240050@gmail.com",
         "firstname": "nostalgic",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 1005,
         "_id": "92090fd0-00fe-4ad1-a346-52aa45d8b67e"
     },
     {
@@ -706,7 +707,7 @@
         "email": "epic221969@gmail.com",
         "firstname": "epic",
         "lastname": "montalcini",
-        "credit": 50,
+        "credit": 975,
         "_id": "89246323-5f54-4848-8c08-25dcaed6ae63"
     },
     {
@@ -716,7 +717,7 @@
         "email": "practical074821@gmail.com",
         "firstname": "practical",
         "lastname": "northcutt",
-        "credit": 50,
+        "credit": 955,
         "_id": "458bc89d-2cda-4049-b069-64957b675fe2"
     },
     {
@@ -726,7 +727,7 @@
         "email": "hopeful713695@gmail.com",
         "firstname": "hopeful",
         "lastname": "sinoussi",
-        "credit": 50,
+        "credit": 980,
         "_id": "7d20aa3b-634b-4180-b9db-8e463304a468"
     },
     {
@@ -736,7 +737,7 @@
         "email": "musing743953@gmail.com",
         "firstname": "musing",
         "lastname": "jennings",
-        "credit": 50,
+        "credit": 1065,
         "_id": "eefa59ee-5fc9-452d-bdb6-27e8c6de6ab5"
     },
     {
@@ -746,7 +747,7 @@
         "email": "optimistic952145@gmail.com",
         "firstname": "optimistic",
         "lastname": "euler",
-        "credit": 50,
+        "credit": 980,
         "_id": "473738fe-a044-45a1-9ada-37af5bde72e5"
     },
     {
@@ -756,7 +757,7 @@
         "email": "romantic247451@gmail.com",
         "firstname": "romantic",
         "lastname": "ritchie",
-        "credit": 50,
+        "credit": 870,
         "_id": "35cc9172-31db-4599-8cc5-dfeae88df0cf"
     },
     {
@@ -766,7 +767,7 @@
         "email": "inspiring481754@gmail.com",
         "firstname": "inspiring",
         "lastname": "goodall",
-        "credit": 50,
+        "credit": 1090,
         "_id": "bd4bb604-e7de-4950-a1b4-76fa82317152"
     },
     {
@@ -776,7 +777,7 @@
         "email": "naughty931746@gmail.com",
         "firstname": "naughty",
         "lastname": "haibt",
-        "credit": 50,
+        "credit": 795,
         "_id": "f549a719-09e4-4c9a-b615-071ff0da27f2"
     },
     {
@@ -786,7 +787,7 @@
         "email": "cocky267586@gmail.com",
         "firstname": "cocky",
         "lastname": "babbage",
-        "credit": 50,
+        "credit": 965,
         "_id": "eb6bf62c-469c-4e29-8e5c-5ac5469be296"
     },
     {
@@ -796,7 +797,7 @@
         "email": "naughty377351@gmail.com",
         "firstname": "naughty",
         "lastname": "mendeleev",
-        "credit": 50,
+        "credit": 1010,
         "_id": "cf1cc9ca-695b-433d-84ed-45d071846f9c"
     },
     {
@@ -806,7 +807,7 @@
         "email": "zen139005@gmail.com",
         "firstname": "zen",
         "lastname": "thompson",
-        "credit": 50,
+        "credit": 895,
         "_id": "8e8b0d4b-8a85-4350-8760-d238614d4a65"
     },
     {
@@ -816,7 +817,7 @@
         "email": "elastic529042@gmail.com",
         "firstname": "elastic",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 890,
         "_id": "3b7a5f2a-659c-45cc-9383-8f9f73d720e6"
     },
     {
@@ -826,7 +827,7 @@
         "email": "compassionate950240@gmail.com",
         "firstname": "compassionate",
         "lastname": "feynman",
-        "credit": 50,
+        "credit": 935,
         "_id": "57efdeca-e911-4251-8ff4-393051c8275e"
     },
     {
@@ -836,7 +837,7 @@
         "email": "compassionate178390@gmail.com",
         "firstname": "compassionate",
         "lastname": "albattani",
-        "credit": 50,
+        "credit": 995,
         "_id": "3cb1964e-67d2-4a63-bba8-9e7256644a3a"
     },
     {
@@ -846,7 +847,7 @@
         "email": "relaxed771159@gmail.com",
         "firstname": "relaxed",
         "lastname": "swartz",
-        "credit": 50,
+        "credit": 1040,
         "_id": "feb8cfe4-3669-4c95-bb0c-09ed7f82c437"
     },
     {
@@ -856,7 +857,7 @@
         "email": "condescending847896@gmail.com",
         "firstname": "condescending",
         "lastname": "babbage",
-        "credit": 50,
+        "credit": 1020,
         "_id": "ec7a238a-c926-44c0-b485-15c1a6d31ca1"
     },
     {
@@ -866,7 +867,7 @@
         "email": "brave661565@gmail.com",
         "firstname": "brave",
         "lastname": "heyrovsky",
-        "credit": 50,
+        "credit": 1000,
         "_id": "37fceaf7-f076-4841-bbfd-a7fc55d2d94e"
     },
     {
@@ -876,7 +877,7 @@
         "email": "pedantic152809@gmail.com",
         "firstname": "pedantic",
         "lastname": "yonath",
-        "credit": 50,
+        "credit": 980,
         "_id": "fa255858-0a74-4fc6-b063-b9ac57f4d1ff"
     },
     {
@@ -886,7 +887,7 @@
         "email": "youthful945198@gmail.com",
         "firstname": "youthful",
         "lastname": "mccarthy",
-        "credit": 50,
+        "credit": 995,
         "_id": "4c7673ac-11a8-43a9-b291-1f13938995df"
     },
     {
@@ -896,7 +897,7 @@
         "email": "dreamy936899@gmail.com",
         "firstname": "dreamy",
         "lastname": "brattain",
-        "credit": 50,
+        "credit": 970,
         "_id": "e98491eb-5643-49e6-a169-a4ef4c52407a"
     },
     {
@@ -906,7 +907,7 @@
         "email": "pensive502296@gmail.com",
         "firstname": "pensive",
         "lastname": "vaughan",
-        "credit": 50,
+        "credit": 975,
         "_id": "a52a3d7f-83b6-440f-9fbb-8e8908ad0967"
     },
     {
@@ -916,7 +917,7 @@
         "email": "awesome254599@gmail.com",
         "firstname": "awesome",
         "lastname": "mayer",
-        "credit": 50,
+        "credit": 1005,
         "_id": "3cb3ae50-7a18-4eb1-8223-9a2fb4a612e0"
     },
     {
@@ -926,7 +927,7 @@
         "email": "boring797643@gmail.com",
         "firstname": "boring",
         "lastname": "austin",
-        "credit": 50,
+        "credit": 955,
         "_id": "a1a0de9c-d63b-4cb6-91cb-d00f19c5f0e5"
     },
     {
@@ -936,7 +937,7 @@
         "email": "sad403690@gmail.com",
         "firstname": "sad",
         "lastname": "kepler",
-        "credit": 50,
+        "credit": 1010,
         "_id": "013a37c8-3b44-46e1-bf54-711baaa36a42"
     },
     {
@@ -946,7 +947,7 @@
         "email": "admiring762268@gmail.com",
         "firstname": "admiring",
         "lastname": "payne",
-        "credit": 50,
+        "credit": 975,
         "_id": "cd0430d7-12ac-41d3-b3a5-d1823673b995"
     },
     {
@@ -956,7 +957,7 @@
         "email": "quirky715969@gmail.com",
         "firstname": "quirky",
         "lastname": "mestorf",
-        "credit": 50,
+        "credit": 900,
         "_id": "92660483-aeab-4267-9445-edb268be1ae2"
     },
     {
@@ -966,7 +967,7 @@
         "email": "happy516136@gmail.com",
         "firstname": "happy",
         "lastname": "fermi",
-        "credit": 50,
+        "credit": 960,
         "_id": "9a661153-157d-4697-ae2f-21a06861837a"
     },
     {
@@ -976,7 +977,7 @@
         "email": "naughty181883@gmail.com",
         "firstname": "naughty",
         "lastname": "ramanujan",
-        "credit": 50,
+        "credit": 1090,
         "_id": "a472c7df-332b-4380-83f0-9286ef227b2f"
     },
     {
@@ -986,7 +987,7 @@
         "email": "vigilant921277@gmail.com",
         "firstname": "vigilant",
         "lastname": "roentgen",
-        "credit": 50,
+        "credit": 845,
         "_id": "cc273fa0-ec45-4a37-8304-27d91ef8c9ef"
     },
     {
@@ -996,7 +997,7 @@
         "email": "sad177449@gmail.com",
         "firstname": "sad",
         "lastname": "johnson",
-        "credit": 50,
+        "credit": 980,
         "_id": "30e0d59f-9dbc-47b0-a021-7ecf2c8010be"
     },
     {
@@ -1006,7 +1007,7 @@
         "email": "angry411998@gmail.com",
         "firstname": "angry",
         "lastname": "galileo",
-        "credit": 50,
+        "credit": 1000,
         "_id": "bb177bf8-7ec5-4e6b-9a87-bb0fba10f1ef"
     },
     {
@@ -1016,7 +1017,7 @@
         "email": "goofy782071@gmail.com",
         "firstname": "goofy",
         "lastname": "hugle",
-        "credit": 50,
+        "credit": 1000,
         "_id": "3e775d9e-24b2-4fc2-9cd9-63c113564d81"
     },
     {
@@ -1026,7 +1027,7 @@
         "email": "stoic892554@gmail.com",
         "firstname": "stoic",
         "lastname": "rosalind",
-        "credit": 50,
+        "credit": 1105,
         "_id": "75117fb2-1a49-478e-8c02-be1731622164"
     },
     {
@@ -1036,7 +1037,7 @@
         "email": "goofy644925@gmail.com",
         "firstname": "goofy",
         "lastname": "noether",
-        "credit": 50,
+        "credit": 960,
         "_id": "26295ddd-1e3f-45cb-a133-3376d2949199"
     },
     {
@@ -1046,7 +1047,7 @@
         "email": "blissful865281@gmail.com",
         "firstname": "blissful",
         "lastname": "pasteur",
-        "credit": 50,
+        "credit": 1020,
         "_id": "9cbca9d9-db27-47fc-9729-ae372c1577c0"
     },
     {
@@ -1056,7 +1057,7 @@
         "email": "peaceful733221@gmail.com",
         "firstname": "peaceful",
         "lastname": "chebyshev",
-        "credit": 50,
+        "credit": 895,
         "_id": "5e09dd6e-e59b-4373-88e3-9ba4c91a5900"
     },
     {
@@ -1066,7 +1067,7 @@
         "email": "fervent622292@gmail.com",
         "firstname": "fervent",
         "lastname": "almeida",
-        "credit": 50,
+        "credit": 990,
         "_id": "3a410064-fcc8-43fe-bb83-0c61bd88064f"
     },
     {
@@ -1076,7 +1077,7 @@
         "email": "relaxed383473@gmail.com",
         "firstname": "relaxed",
         "lastname": "fermat",
-        "credit": 50,
+        "credit": 995,
         "_id": "6058d5e7-7d76-469e-b08a-9657e8459e06"
     },
     {
@@ -1086,7 +1087,7 @@
         "email": "gallant392407@gmail.com",
         "firstname": "gallant",
         "lastname": "sinoussi",
-        "credit": 50,
+        "credit": 830,
         "_id": "e2f4da34-16e3-455f-bda5-1b21d40de893"
     },
     {
@@ -1096,7 +1097,7 @@
         "email": "unruffled782613@gmail.com",
         "firstname": "unruffled",
         "lastname": "montalcini",
-        "credit": 50,
+        "credit": 880,
         "_id": "84294a35-3ec0-4a76-87ba-379526e530c8"
     },
     {
@@ -1106,7 +1107,7 @@
         "email": "stupefied615305@gmail.com",
         "firstname": "stupefied",
         "lastname": "goldwasser",
-        "credit": 50,
+        "credit": 1020,
         "_id": "dd999295-0cc0-46cd-ad4a-483222409f18"
     },
     {
@@ -1116,7 +1117,7 @@
         "email": "wonderful790104@gmail.com",
         "firstname": "wonderful",
         "lastname": "brown",
-        "credit": 50,
+        "credit": 845,
         "_id": "8e2ac3d0-5c7f-451b-8272-5f975f6a90b9"
     },
     {
@@ -1126,7 +1127,7 @@
         "email": "dreamy103697@gmail.com",
         "firstname": "dreamy",
         "lastname": "jackson",
-        "credit": 50,
+        "credit": 900,
         "_id": "5080c4be-66d3-4e26-8fc6-15737d46faa6"
     },
     {
@@ -1136,7 +1137,7 @@
         "email": "angry460953@gmail.com",
         "firstname": "angry",
         "lastname": "wiles",
-        "credit": 50,
+        "credit": 1080,
         "_id": "3f6a0562-cb30-4e50-b8a6-41cf4868b453"
     },
     {
@@ -1146,7 +1147,7 @@
         "email": "musing880670@gmail.com",
         "firstname": "musing",
         "lastname": "austin",
-        "credit": 50,
+        "credit": 955,
         "_id": "8757d04d-245d-4f8f-9a9d-58b554972d7c"
     },
     {
@@ -1156,7 +1157,7 @@
         "email": "optimistic952058@gmail.com",
         "firstname": "optimistic",
         "lastname": "colden",
-        "credit": 50,
+        "credit": 1075,
         "_id": "d789ccd8-0d5d-4bb8-bf27-75b08e600e1c"
     },
     {
@@ -1166,7 +1167,7 @@
         "email": "friendly303054@gmail.com",
         "firstname": "friendly",
         "lastname": "bardeen",
-        "credit": 50,
+        "credit": 1035,
         "_id": "1788c6c8-1b7a-4cc4-b060-ecf5dcd0357a"
     },
     {
@@ -1176,7 +1177,7 @@
         "email": "kind541566@gmail.com",
         "firstname": "kind",
         "lastname": "sammet",
-        "credit": 50,
+        "credit": 1040,
         "_id": "3b7e0e68-363d-442b-8875-f9002ffb5d7f"
     },
     {
@@ -1186,7 +1187,7 @@
         "email": "romantic161692@gmail.com",
         "firstname": "romantic",
         "lastname": "hodgkin",
-        "credit": 50,
+        "credit": 1075,
         "_id": "8eba4eef-5826-4e48-a844-d1b9ae8bca8d"
     },
     {
@@ -1196,7 +1197,7 @@
         "email": "lucid627570@gmail.com",
         "firstname": "lucid",
         "lastname": "murdock",
-        "credit": 50,
+        "credit": 995,
         "_id": "66b8ac8c-2f06-45cb-a0e8-b2a1b1ff31d3"
     },
     {
@@ -1206,7 +1207,7 @@
         "email": "relaxed202970@gmail.com",
         "firstname": "relaxed",
         "lastname": "sinoussi",
-        "credit": 50,
+        "credit": 1045,
         "_id": "fe968390-6ce6-4623-9aec-fb3de7528f39"
     },
     {
@@ -1216,7 +1217,7 @@
         "email": "cocky755719@gmail.com",
         "firstname": "cocky",
         "lastname": "williams",
-        "credit": 50,
+        "credit": 990,
         "_id": "469c1d13-71a9-4238-a938-96a976e329af"
     },
     {
@@ -1226,7 +1227,7 @@
         "email": "competent786814@gmail.com",
         "firstname": "competent",
         "lastname": "aryabhata",
-        "credit": 50,
+        "credit": 1060,
         "_id": "b944bc2e-4a1a-49c8-af44-55c6728e2f23"
     },
     {
@@ -1236,7 +1237,7 @@
         "email": "sharp172715@gmail.com",
         "firstname": "sharp",
         "lastname": "hodgkin",
-        "credit": 50,
+        "credit": 970,
         "_id": "44470116-bf0f-4abd-afb8-bbfae2e2da26"
     },
     {
@@ -1246,7 +1247,7 @@
         "email": "pensive831323@gmail.com",
         "firstname": "pensive",
         "lastname": "dubinsky",
-        "credit": 50,
+        "credit": 970,
         "_id": "dc1c55f9-3a65-4102-81f5-0298b1821a4e"
     },
     {
@@ -1256,7 +1257,7 @@
         "email": "silly911467@gmail.com",
         "firstname": "silly",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 910,
         "_id": "19aed093-3ae7-4e77-8a38-fffa189e15ad"
     },
     {
@@ -1266,7 +1267,7 @@
         "email": "laughing852892@gmail.com",
         "firstname": "laughing",
         "lastname": "montalcini",
-        "credit": 50,
+        "credit": 980,
         "_id": "d5934fbe-0342-4b82-802c-804e67505ad1"
     },
     {
@@ -1276,7 +1277,7 @@
         "email": "serene253584@gmail.com",
         "firstname": "serene",
         "lastname": "pare",
-        "credit": 50,
+        "credit": 1020,
         "_id": "b4d8a0a4-a772-45a4-be97-0107d0edfbb6"
     },
     {
@@ -1286,7 +1287,7 @@
         "email": "thirsty182992@gmail.com",
         "firstname": "thirsty",
         "lastname": "bohr",
-        "credit": 50,
+        "credit": 940,
         "_id": "4e728fb8-acc5-443e-8ae9-06f6409b5e33"
     },
     {
@@ -1296,7 +1297,7 @@
         "email": "cranky439690@gmail.com",
         "firstname": "cranky",
         "lastname": "cray",
-        "credit": 50,
+        "credit": 1030,
         "_id": "2334791d-6ce3-47cb-a7bc-6a19f80f8c15"
     },
     {
@@ -1306,7 +1307,7 @@
         "email": "keen027677@gmail.com",
         "firstname": "keen",
         "lastname": "chandrasekhar",
-        "credit": 50,
+        "credit": 1040,
         "_id": "cd55235d-add4-45a4-a1f2-cea5fd7e8350"
     },
     {
@@ -1316,7 +1317,7 @@
         "email": "distracted881537@gmail.com",
         "firstname": "distracted",
         "lastname": "galileo",
-        "credit": 50,
+        "credit": 1035,
         "_id": "f812a54d-7907-4719-b849-fbc9bedcb08b"
     },
     {
@@ -1326,7 +1327,7 @@
         "email": "cocky632595@gmail.com",
         "firstname": "cocky",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 905,
         "_id": "9d984b10-97f9-4af2-9b8f-f02469c79db4"
     },
     {
@@ -1336,7 +1337,7 @@
         "email": "dazzling687339@gmail.com",
         "firstname": "dazzling",
         "lastname": "wright",
-        "credit": 50,
+        "credit": 965,
         "_id": "3bc41a2a-0b86-480e-9df1-5abcc7d813d1"
     },
     {
@@ -1346,7 +1347,7 @@
         "email": "frosty162456@gmail.com",
         "firstname": "frosty",
         "lastname": "hypatia",
-        "credit": 50,
+        "credit": 900,
         "_id": "cbb5cf65-20d0-47f1-9d85-28b27ef7396c"
     },
     {
@@ -1356,7 +1357,7 @@
         "email": "gallant168784@gmail.com",
         "firstname": "gallant",
         "lastname": "morse",
-        "credit": 50,
+        "credit": 910,
         "_id": "965eb5cc-1dde-4c39-bc89-af445dfcf746"
     },
     {
@@ -1366,7 +1367,7 @@
         "email": "suspicious523986@gmail.com",
         "firstname": "suspicious",
         "lastname": "carson",
-        "credit": 50,
+        "credit": 1000,
         "_id": "d3955fad-61f0-424b-be32-d749aaf208ec"
     },
     {
@@ -1376,7 +1377,7 @@
         "email": "keen982595@gmail.com",
         "firstname": "keen",
         "lastname": "haibt",
-        "credit": 50,
+        "credit": 1000,
         "_id": "57047ff6-690b-43a0-b1af-54d73fd2fad0"
     },
     {
@@ -1386,7 +1387,7 @@
         "email": "confident947055@gmail.com",
         "firstname": "confident",
         "lastname": "heyrovsky",
-        "credit": 50,
+        "credit": 950,
         "_id": "3d4366fc-c008-4d6d-bd46-7619d9e98fe4"
     },
     {
@@ -1396,7 +1397,7 @@
         "email": "pensive930972@gmail.com",
         "firstname": "pensive",
         "lastname": "sammet",
-        "credit": 50,
+        "credit": 885,
         "_id": "88a2add5-8054-4e7f-aeb3-ee2c23215e3d"
     },
     {
@@ -1406,7 +1407,7 @@
         "email": "laughing756263@gmail.com",
         "firstname": "laughing",
         "lastname": "mirzakhani",
-        "credit": 50,
+        "credit": 1035,
         "_id": "53f80305-d539-49ee-9fc2-7b8c72f2420a"
     },
     {
@@ -1416,7 +1417,7 @@
         "email": "happy786527@gmail.com",
         "firstname": "happy",
         "lastname": "stonebraker",
-        "credit": 50,
+        "credit": 975,
         "_id": "85dbe9ab-4406-4412-ae3f-1d9fb171c49b"
     },
     {
@@ -1426,7 +1427,7 @@
         "email": "vigorous484344@gmail.com",
         "firstname": "vigorous",
         "lastname": "hermann",
-        "credit": 50,
+        "credit": 1015,
         "_id": "88cb7fc0-fbb2-4d2b-866c-eef24a4e6a92"
     },
     {
@@ -1436,7 +1437,7 @@
         "email": "quirky986652@gmail.com",
         "firstname": "quirky",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 880,
         "_id": "50ff4c8f-4b6c-48d9-83d2-30df49b1de8d"
     },
     {
@@ -1446,7 +1447,7 @@
         "email": "epic848421@gmail.com",
         "firstname": "epic",
         "lastname": "kilby",
-        "credit": 50,
+        "credit": 915,
         "_id": "7807d614-9437-4543-a327-cbfef618639e"
     },
     {
@@ -1456,7 +1457,7 @@
         "email": "nostalgic657120@gmail.com",
         "firstname": "nostalgic",
         "lastname": "feynman",
-        "credit": 50,
+        "credit": 950,
         "_id": "2e44f9ab-795f-46aa-bb9f-38171ae3f53b"
     },
     {
@@ -1466,7 +1467,7 @@
         "email": "zealous019380@gmail.com",
         "firstname": "zealous",
         "lastname": "goldwasser",
-        "credit": 50,
+        "credit": 985,
         "_id": "347f67e9-22dd-41f9-bbdb-5eaffe6f228f"
     },
     {
@@ -1476,7 +1477,7 @@
         "email": "vigorous049915@gmail.com",
         "firstname": "vigorous",
         "lastname": "keller",
-        "credit": 50,
+        "credit": 985,
         "_id": "ce4e2e92-e980-411b-ba93-6b35ab6581ca"
     },
     {
@@ -1486,7 +1487,7 @@
         "email": "eloquent152742@gmail.com",
         "firstname": "eloquent",
         "lastname": "wiles",
-        "credit": 50,
+        "credit": 950,
         "_id": "1d0e662b-bdfb-43cd-a98b-a2e7201e162a"
     },
     {
@@ -1496,7 +1497,7 @@
         "email": "adoring516122@gmail.com",
         "firstname": "adoring",
         "lastname": "goldberg",
-        "credit": 50,
+        "credit": 1130,
         "_id": "572386d5-addb-47cd-b364-3d3555a00389"
     },
     {
@@ -1506,7 +1507,7 @@
         "email": "jolly499045@gmail.com",
         "firstname": "jolly",
         "lastname": "curran",
-        "credit": 50,
+        "credit": 1075,
         "_id": "d6e49b91-0700-4654-a800-cbfdfce36bb3"
     },
     {
@@ -1516,7 +1517,7 @@
         "email": "priceless145933@gmail.com",
         "firstname": "priceless",
         "lastname": "mclean",
-        "credit": 50,
+        "credit": 930,
         "_id": "6315154b-1190-490f-b9c4-107aee2d330e"
     },
     {
@@ -1526,7 +1527,7 @@
         "email": "youthful833918@gmail.com",
         "firstname": "youthful",
         "lastname": "neumann",
-        "credit": 50,
+        "credit": 955,
         "_id": "c41ff725-774b-42eb-b6b7-f00aef776ad2"
     },
     {
@@ -1536,7 +1537,7 @@
         "email": "hungry982258@gmail.com",
         "firstname": "hungry",
         "lastname": "feynman",
-        "credit": 50,
+        "credit": 1065,
         "_id": "91b4bfa7-f21c-4afc-a3f9-1ba94bb0e8f1"
     },
     {
@@ -1546,7 +1547,7 @@
         "email": "hopeful286790@gmail.com",
         "firstname": "hopeful",
         "lastname": "spence",
-        "credit": 50,
+        "credit": 965,
         "_id": "8d248f88-caba-42c6-b367-5e410e8ba808"
     },
     {
@@ -1556,7 +1557,7 @@
         "email": "mystifying065180@gmail.com",
         "firstname": "mystifying",
         "lastname": "vaughan",
-        "credit": 50,
+        "credit": 945,
         "_id": "fbce148e-4f63-45a3-bb75-550bae10f5bd"
     },
     {
@@ -1566,7 +1567,7 @@
         "email": "wonderful676618@gmail.com",
         "firstname": "wonderful",
         "lastname": "kirch",
-        "credit": 50,
+        "credit": 985,
         "_id": "e6a70901-86fb-4a85-9511-93756289344c"
     },
     {
@@ -1576,7 +1577,7 @@
         "email": "compassionate047868@gmail.com",
         "firstname": "compassionate",
         "lastname": "mayer",
-        "credit": 50,
+        "credit": 940,
         "_id": "3d09e02b-36fd-414d-8605-85743a6374e1"
     },
     {
@@ -1586,7 +1587,7 @@
         "email": "gifted690331@gmail.com",
         "firstname": "gifted",
         "lastname": "vaughan",
-        "credit": 50,
+        "credit": 1000,
         "_id": "325c24cc-72d9-4a58-9ab2-3301e42397cd"
     },
     {
@@ -1596,7 +1597,7 @@
         "email": "brave383028@gmail.com",
         "firstname": "brave",
         "lastname": "lewin",
-        "credit": 50,
+        "credit": 1010,
         "_id": "b160b924-95c7-42fc-bd27-1882957f02e8"
     },
     {
@@ -1606,7 +1607,7 @@
         "email": "epic836440@gmail.com",
         "firstname": "epic",
         "lastname": "hodgkin",
-        "credit": 50,
+        "credit": 1095,
         "_id": "95ff6895-05af-455b-a3ce-55e23ef6257b"
     },
     {
@@ -1616,7 +1617,7 @@
         "email": "mystifying566246@gmail.com",
         "firstname": "mystifying",
         "lastname": "payne",
-        "credit": 50,
+        "credit": 935,
         "_id": "f09a191e-1ed0-4fe9-a2ac-a8885a1fdf2a"
     },
     {
@@ -1626,7 +1627,7 @@
         "email": "dazzling668826@gmail.com",
         "firstname": "dazzling",
         "lastname": "hugle",
-        "credit": 50,
+        "credit": 1035,
         "_id": "63f31dd7-c0a7-4199-b228-72096817a441"
     },
     {
@@ -1636,7 +1637,7 @@
         "email": "ecstatic046990@gmail.com",
         "firstname": "ecstatic",
         "lastname": "zhukovsky",
-        "credit": 50,
+        "credit": 970,
         "_id": "1d40fc0d-4dea-4740-baa0-edd8193b4c3a"
     },
     {
@@ -1646,7 +1647,7 @@
         "email": "unruffled033173@gmail.com",
         "firstname": "unruffled",
         "lastname": "pike",
-        "credit": 50,
+        "credit": 990,
         "_id": "2e76c1cb-8097-4538-9911-31d2cabd565c"
     },
     {
@@ -1656,7 +1657,7 @@
         "email": "priceless854458@gmail.com",
         "firstname": "priceless",
         "lastname": "swirles",
-        "credit": 50,
+        "credit": 930,
         "_id": "9d75da15-6001-4409-af08-41d65bdf6f6b"
     },
     {
@@ -1666,7 +1667,7 @@
         "email": "upbeat093204@gmail.com",
         "firstname": "upbeat",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 965,
         "_id": "49884247-aee0-43fb-9585-c0b9c839863a"
     },
     {
@@ -1676,7 +1677,7 @@
         "email": "mystifying937854@gmail.com",
         "firstname": "mystifying",
         "lastname": "hoover",
-        "credit": 50,
+        "credit": 900,
         "_id": "27817e3e-8e94-4f63-b285-fbd85b8b0ada"
     },
     {
@@ -1686,7 +1687,7 @@
         "email": "serene280801@gmail.com",
         "firstname": "serene",
         "lastname": "euler",
-        "credit": 50,
+        "credit": 950,
         "_id": "05d5880d-b282-4b0a-9308-d861f551236c"
     },
     {
@@ -1696,7 +1697,7 @@
         "email": "xenodochial875099@gmail.com",
         "firstname": "xenodochial",
         "lastname": "kirch",
-        "credit": 50,
+        "credit": 995,
         "_id": "41c3ad26-dd80-4b72-9e20-d439f2b8a736"
     },
     {
@@ -1706,7 +1707,7 @@
         "email": "vigorous848408@gmail.com",
         "firstname": "vigorous",
         "lastname": "jepsen",
-        "credit": 50,
+        "credit": 985,
         "_id": "bf705096-6d34-46a9-ad58-dfc0386284d5"
     },
     {
@@ -1716,7 +1717,7 @@
         "email": "stupefied845461@gmail.com",
         "firstname": "stupefied",
         "lastname": "allen",
-        "credit": 50,
+        "credit": 945,
         "_id": "302c64ad-5b58-460f-b008-a9a89e90434a"
     },
     {
@@ -1726,7 +1727,7 @@
         "email": "gifted666870@gmail.com",
         "firstname": "gifted",
         "lastname": "goldberg",
-        "credit": 50,
+        "credit": 1040,
         "_id": "0ba88a1e-d276-4be8-800a-501ae8bb49a9"
     },
     {
@@ -1736,7 +1737,7 @@
         "email": "optimistic033974@gmail.com",
         "firstname": "optimistic",
         "lastname": "fermi",
-        "credit": 50,
+        "credit": 1055,
         "_id": "bbd1f9e5-c562-49c0-baed-b1972b420fb5"
     },
     {
@@ -1746,7 +1747,7 @@
         "email": "amazing926142@gmail.com",
         "firstname": "amazing",
         "lastname": "hopper",
-        "credit": 50,
+        "credit": 1005,
         "_id": "c10000d4-b33f-4918-b55a-71206bfb19ab"
     },
     {
@@ -1756,7 +1757,7 @@
         "email": "modest501631@gmail.com",
         "firstname": "modest",
         "lastname": "hopper",
-        "credit": 50,
+        "credit": 1100,
         "_id": "a41ae6d2-da86-4323-afb9-449fe2557614"
     },
     {
@@ -1766,7 +1767,7 @@
         "email": "friendly358662@gmail.com",
         "firstname": "friendly",
         "lastname": "edison",
-        "credit": 50,
+        "credit": 1005,
         "_id": "a0ebc367-7cce-4392-847c-53245cb60116"
     },
     {
@@ -1776,7 +1777,7 @@
         "email": "practical262655@gmail.com",
         "firstname": "practical",
         "lastname": "hawking",
-        "credit": 50,
+        "credit": 1065,
         "_id": "4fecb535-c0a1-4a2e-9ab1-a6b8d22cdea2"
     },
     {
@@ -1786,7 +1787,7 @@
         "email": "clever267888@gmail.com",
         "firstname": "clever",
         "lastname": "benz",
-        "credit": 50,
+        "credit": 940,
         "_id": "40c438fb-a5ae-49a3-8eb0-80c41e4751fd"
     },
     {
@@ -1796,7 +1797,7 @@
         "email": "happy604661@gmail.com",
         "firstname": "happy",
         "lastname": "minsky",
-        "credit": 50,
+        "credit": 1015,
         "_id": "de9db9be-ee0a-497b-83e6-06d8941be243"
     },
     {
@@ -1806,7 +1807,7 @@
         "email": "relaxed447212@gmail.com",
         "firstname": "relaxed",
         "lastname": "minsky",
-        "credit": 50,
+        "credit": 995,
         "_id": "3d20eb9d-1b1d-4016-8814-f641cde87278"
     },
     {
@@ -1816,7 +1817,7 @@
         "email": "hopeful993712@gmail.com",
         "firstname": "hopeful",
         "lastname": "chandrasekhar",
-        "credit": 50,
+        "credit": 1005,
         "_id": "90e47311-d286-4bbf-98c0-e70fc06cb13f"
     },
     {
@@ -1826,7 +1827,7 @@
         "email": "fervent924593@gmail.com",
         "firstname": "fervent",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 930,
         "_id": "ae8b5575-acff-4125-a1cb-4d13a82eac08"
     },
     {
@@ -1836,7 +1837,7 @@
         "email": "jolly646519@gmail.com",
         "firstname": "jolly",
         "lastname": "hamilton",
-        "credit": 50,
+        "credit": 925,
         "_id": "3569194b-271d-4d4b-9c1f-4ca11d1333a5"
     },
     {
@@ -1846,7 +1847,7 @@
         "email": "determined167243@gmail.com",
         "firstname": "determined",
         "lastname": "vaughan",
-        "credit": 50,
+        "credit": 1075,
         "_id": "eae1d236-57b9-419d-887a-7dfbadbe038d"
     },
     {
@@ -1856,7 +1857,7 @@
         "email": "elastic886805@gmail.com",
         "firstname": "elastic",
         "lastname": "visvesvaraya",
-        "credit": 50,
+        "credit": 1095,
         "_id": "9b40b058-3b06-4d0a-8646-8a051e762944"
     },
     {
@@ -1866,7 +1867,7 @@
         "email": "quirky965610@gmail.com",
         "firstname": "quirky",
         "lastname": "johnson",
-        "credit": 50,
+        "credit": 880,
         "_id": "55d42ca3-eff9-4efd-86e1-139de4052263"
     },
     {
@@ -1876,7 +1877,7 @@
         "email": "brave567982@gmail.com",
         "firstname": "brave",
         "lastname": "goldstine",
-        "credit": 50,
+        "credit": 1035,
         "_id": "198b03f9-ec5e-480c-9787-2d6cdd2c6046"
     },
     {
@@ -1886,7 +1887,7 @@
         "email": "friendly457387@gmail.com",
         "firstname": "friendly",
         "lastname": "neumann",
-        "credit": 50,
+        "credit": 880,
         "_id": "aa8404e0-99b0-4a41-9011-755614b4d327"
     },
     {
@@ -1896,7 +1897,7 @@
         "email": "friendly051238@gmail.com",
         "firstname": "friendly",
         "lastname": "yalow",
-        "credit": 50,
+        "credit": 925,
         "_id": "8eb1336f-7b0d-4c9d-829e-ff569e87e5f4"
     },
     {
@@ -1906,7 +1907,7 @@
         "email": "cranky266093@gmail.com",
         "firstname": "cranky",
         "lastname": "kowalevski",
-        "credit": 50,
+        "credit": 1005,
         "_id": "1ef768d6-2e9e-4e3b-aa81-aaf68d0d44ed"
     },
     {
@@ -1916,7 +1917,7 @@
         "email": "hungry182553@gmail.com",
         "firstname": "hungry",
         "lastname": "lovelace",
-        "credit": 50,
+        "credit": 1010,
         "_id": "867c969b-084e-4675-9888-7d433f5c953b"
     },
     {
@@ -1926,7 +1927,7 @@
         "email": "infallible915579@gmail.com",
         "firstname": "infallible",
         "lastname": "goldberg",
-        "credit": 50,
+        "credit": 1015,
         "_id": "53e1305a-51d1-4023-9888-732de1928598"
     },
     {
@@ -1936,7 +1937,7 @@
         "email": "cranky125286@gmail.com",
         "firstname": "cranky",
         "lastname": "goldstine",
-        "credit": 50,
+        "credit": 915,
         "_id": "3eb9e255-ae9e-4373-afe5-a115823a271e"
     },
     {
@@ -1946,7 +1947,7 @@
         "email": "hardcore827422@gmail.com",
         "firstname": "hardcore",
         "lastname": "mclean",
-        "credit": 50,
+        "credit": 1010,
         "_id": "9b7668c1-ec3b-4843-8f7b-7fdd9af860fa"
     },
     {
@@ -1956,7 +1957,7 @@
         "email": "festive887676@gmail.com",
         "firstname": "festive",
         "lastname": "roentgen",
-        "credit": 50,
+        "credit": 975,
         "_id": "a484f6dd-77b3-43f9-9a8e-9392cbc943c8"
     },
     {
@@ -1966,7 +1967,7 @@
         "email": "quizzical438427@gmail.com",
         "firstname": "quizzical",
         "lastname": "easley",
-        "credit": 50,
+        "credit": 1075,
         "_id": "af7ec5b2-2d23-4e1e-b3f6-dad77e867917"
     },
     {
@@ -1976,7 +1977,7 @@
         "email": "modest807836@gmail.com",
         "firstname": "modest",
         "lastname": "liskov",
-        "credit": 50,
+        "credit": 940,
         "_id": "d82f9dd5-8907-4fc8-b96b-8ad493cd3f6e"
     },
     {
@@ -1986,7 +1987,7 @@
         "email": "brave339596@gmail.com",
         "firstname": "brave",
         "lastname": "northcutt",
-        "credit": 50,
+        "credit": 985,
         "_id": "c01a39e4-0e5c-40e7-a129-9630392f5d43"
     },
     {
@@ -1996,7 +1997,7 @@
         "email": "confident982544@gmail.com",
         "firstname": "confident",
         "lastname": "pasteur",
-        "credit": 50,
+        "credit": 895,
         "_id": "3ac88c5d-0901-46f2-8775-43e00f63204e"
     },
     {
@@ -2006,7 +2007,7 @@
         "email": "musing325367@gmail.com",
         "firstname": "musing",
         "lastname": "dijkstra",
-        "credit": 50,
+        "credit": 950,
         "_id": "9f53b112-9669-4816-a647-e68596543091"
     },
     {
@@ -2016,7 +2017,7 @@
         "email": "competent457759@gmail.com",
         "firstname": "competent",
         "lastname": "kalam",
-        "credit": 50,
+        "credit": 905,
         "_id": "27296609-2082-40b3-afdf-57cd410e90b5"
     },
     {
@@ -2026,7 +2027,7 @@
         "email": "admiring745458@gmail.com",
         "firstname": "admiring",
         "lastname": "davinci",
-        "credit": 50,
+        "credit": 950,
         "_id": "7313298d-a75e-4c2c-b3e9-dfa1de892bbd"
     },
     {
@@ -2036,7 +2037,7 @@
         "email": "musing127706@gmail.com",
         "firstname": "musing",
         "lastname": "perlman",
-        "credit": 50,
+        "credit": 960,
         "_id": "4455c46e-1e7f-428a-aefa-613119b07aa0"
     },
     {
@@ -2046,7 +2047,7 @@
         "email": "distracted206436@gmail.com",
         "firstname": "distracted",
         "lastname": "carson",
-        "credit": 50,
+        "credit": 985,
         "_id": "ff5043f9-563e-4719-828b-1a2c3ed9109f"
     },
     {
@@ -2056,7 +2057,7 @@
         "email": "pedantic870051@gmail.com",
         "firstname": "pedantic",
         "lastname": "beaver",
-        "credit": 50,
+        "credit": 935,
         "_id": "ccc7bf53-cf6f-41a5-a25c-829e8649a4e8"
     },
     {
@@ -2066,7 +2067,7 @@
         "email": "trusting554262@gmail.com",
         "firstname": "trusting",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 945,
         "_id": "3b659395-b481-4907-bc67-4064c2ed389f"
     },
     {
@@ -2076,7 +2077,7 @@
         "email": "optimistic326973@gmail.com",
         "firstname": "optimistic",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 980,
         "_id": "534b3ad9-d3a3-44e7-ba46-154ee908d58a"
     },
     {
@@ -2086,7 +2087,7 @@
         "email": "boring341389@gmail.com",
         "firstname": "boring",
         "lastname": "cray",
-        "credit": 50,
+        "credit": 1025,
         "_id": "58f5e65b-77ca-4955-bbdf-97cf4cf1ad0e"
     },
     {
@@ -2096,7 +2097,7 @@
         "email": "nervous640376@gmail.com",
         "firstname": "nervous",
         "lastname": "shirley",
-        "credit": 50,
+        "credit": 1005,
         "_id": "f6c2b1ae-bec4-4f29-96ec-ed17893b575d"
     },
     {
@@ -2106,7 +2107,7 @@
         "email": "clever696582@gmail.com",
         "firstname": "clever",
         "lastname": "nightingale",
-        "credit": 50,
+        "credit": 985,
         "_id": "8d440a8f-aceb-4825-aabe-be33cd03ab6e"
     },
     {
@@ -2116,7 +2117,7 @@
         "email": "serene068486@gmail.com",
         "firstname": "serene",
         "lastname": "davinci",
-        "credit": 50,
+        "credit": 915,
         "_id": "5225d814-3e4e-4e92-99d1-624a20d07c15"
     },
     {
@@ -2126,7 +2127,7 @@
         "email": "heuristic183285@gmail.com",
         "firstname": "heuristic",
         "lastname": "bohr",
-        "credit": 50,
+        "credit": 965,
         "_id": "dc77158f-8552-4f16-9718-11fce7da602f"
     },
     {
@@ -2136,7 +2137,7 @@
         "email": "gracious179904@gmail.com",
         "firstname": "gracious",
         "lastname": "albattani",
-        "credit": 50,
+        "credit": 1045,
         "_id": "1b4e21d0-295c-4765-9f19-b077b6be883e"
     },
     {
@@ -2146,7 +2147,7 @@
         "email": "pensive842524@gmail.com",
         "firstname": "pensive",
         "lastname": "bell",
-        "credit": 50,
+        "credit": 1035,
         "_id": "fb207ae8-a20c-4c48-959b-42c06e4580ff"
     },
     {
@@ -2156,7 +2157,7 @@
         "email": "reverent177850@gmail.com",
         "firstname": "reverent",
         "lastname": "hugle",
-        "credit": 50,
+        "credit": 930,
         "_id": "4c26d1a5-a4d3-49b7-9e1f-c260bf4252ff"
     },
     {
@@ -2166,7 +2167,7 @@
         "email": "keen800030@gmail.com",
         "firstname": "keen",
         "lastname": "franklin",
-        "credit": 50,
+        "credit": 980,
         "_id": "6cbd0ec3-15b8-48c6-848b-50b6f051751e"
     },
     {
@@ -2176,7 +2177,7 @@
         "email": "inspiring365419@gmail.com",
         "firstname": "inspiring",
         "lastname": "nightingale",
-        "credit": 50,
+        "credit": 1060,
         "_id": "9959eb77-2b6a-43f9-a6eb-c8bc84dea872"
     },
     {
@@ -2186,7 +2187,7 @@
         "email": "gifted744518@gmail.com",
         "firstname": "gifted",
         "lastname": "feynman",
-        "credit": 50,
+        "credit": 965,
         "_id": "d62479c4-b114-4f3e-8b05-a80acf29b030"
     },
     {
@@ -2196,7 +2197,7 @@
         "email": "infallible597383@gmail.com",
         "firstname": "infallible",
         "lastname": "edison",
-        "credit": 50,
+        "credit": 1005,
         "_id": "2fe52314-8fe8-4613-ac5f-0508c13528c2"
     },
     {
@@ -2206,7 +2207,7 @@
         "email": "condescending641383@gmail.com",
         "firstname": "condescending",
         "lastname": "edison",
-        "credit": 50,
+        "credit": 1010,
         "_id": "1ed070e3-7b75-4cfa-b95e-542aecf2e1d4"
     },
     {
@@ -2216,7 +2217,7 @@
         "email": "hardcore571918@gmail.com",
         "firstname": "hardcore",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 930,
         "_id": "a2500589-b315-4716-a3fc-896e6521e63d"
     },
     {
@@ -2226,7 +2227,7 @@
         "email": "compassionate456557@gmail.com",
         "firstname": "compassionate",
         "lastname": "minsky",
-        "credit": 50,
+        "credit": 1045,
         "_id": "8f36fa5f-1c24-44ce-885a-23368425e421"
     },
     {
@@ -2236,7 +2237,7 @@
         "email": "elegant775618@gmail.com",
         "firstname": "elegant",
         "lastname": "proskuriakova",
-        "credit": 50,
+        "credit": 935,
         "_id": "e7985f17-1116-4878-9ee3-07bda08547ad"
     },
     {
@@ -2246,7 +2247,7 @@
         "email": "frosty903521@gmail.com",
         "firstname": "frosty",
         "lastname": "volhard",
-        "credit": 50,
+        "credit": 895,
         "_id": "5cfca0a8-eb97-44de-b3d6-d782b277c9d0"
     },
     {
@@ -2256,7 +2257,7 @@
         "email": "quizzical678831@gmail.com",
         "firstname": "quizzical",
         "lastname": "golick",
-        "credit": 50,
+        "credit": 965,
         "_id": "4da3de38-448e-4e93-8355-a3c113dbb9cb"
     },
     {
@@ -2266,7 +2267,7 @@
         "email": "infallible519941@gmail.com",
         "firstname": "infallible",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 1010,
         "_id": "4e1ff1d1-631d-45ed-a24f-9bd38a368b55"
     },
     {
@@ -2276,7 +2277,7 @@
         "email": "affectionate029667@gmail.com",
         "firstname": "affectionate",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 970,
         "_id": "d1047e35-5029-471c-99e9-4c7e75585e95"
     },
     {
@@ -2286,7 +2287,7 @@
         "email": "affectionate209993@gmail.com",
         "firstname": "affectionate",
         "lastname": "roentgen",
-        "credit": 50,
+        "credit": 1005,
         "_id": "37333735-b17f-4799-a5f9-8eba223bea92"
     },
     {
@@ -2296,7 +2297,7 @@
         "email": "peaceful263838@gmail.com",
         "firstname": "peaceful",
         "lastname": "fermi",
-        "credit": 50,
+        "credit": 1010,
         "_id": "f7848c50-d987-4176-bae3-17c8b115d2bd"
     },
     {
@@ -2306,7 +2307,7 @@
         "email": "sleepy564205@gmail.com",
         "firstname": "sleepy",
         "lastname": "elbakyan",
-        "credit": 50,
+        "credit": 990,
         "_id": "72f74fdb-e0e9-414e-9f96-58dca8aae28d"
     },
     {
@@ -2316,7 +2317,7 @@
         "email": "nervous213348@gmail.com",
         "firstname": "nervous",
         "lastname": "leavitt",
-        "credit": 50,
+        "credit": 1015,
         "_id": "75964ac2-840d-429b-b2ae-8f3115c11908"
     },
     {
@@ -2326,7 +2327,7 @@
         "email": "stupefied559059@gmail.com",
         "firstname": "stupefied",
         "lastname": "feynman",
-        "credit": 50,
+        "credit": 990,
         "_id": "22d0aad1-e2d4-4d0f-a2e3-a5784b6b4cbe"
     },
     {
@@ -2336,7 +2337,7 @@
         "email": "modest103930@gmail.com",
         "firstname": "modest",
         "lastname": "heisenberg",
-        "credit": 50,
+        "credit": 940,
         "_id": "c4ccaa50-a223-4222-abd3-333d95ae3efc"
     },
     {
@@ -2346,7 +2347,7 @@
         "email": "laughing002921@gmail.com",
         "firstname": "laughing",
         "lastname": "shtern",
-        "credit": 50,
+        "credit": 1025,
         "_id": "22a0b495-315d-4c42-909a-f0b6945055fa"
     },
     {
@@ -2356,7 +2357,7 @@
         "email": "thirsty522675@gmail.com",
         "firstname": "thirsty",
         "lastname": "chandrasekhar",
-        "credit": 50,
+        "credit": 965,
         "_id": "a0b50f64-829d-4fe5-984a-56201a0f7775"
     },
     {
@@ -2366,7 +2367,7 @@
         "email": "cranky220969@gmail.com",
         "firstname": "cranky",
         "lastname": "khorana",
-        "credit": 50,
+        "credit": 875,
         "_id": "0a84fea1-bec7-4223-9ea3-744ba9e5412c"
     },
     {
@@ -2376,7 +2377,7 @@
         "email": "agitated513552@gmail.com",
         "firstname": "agitated",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 1020,
         "_id": "94757201-2cd5-4ae3-91b8-3c8e911a892f"
     },
     {
@@ -2386,7 +2387,7 @@
         "email": "optimistic410067@gmail.com",
         "firstname": "optimistic",
         "lastname": "easley",
-        "credit": 50,
+        "credit": 900,
         "_id": "8ba82c92-0096-4a8b-bcb1-05b17dbb7c16"
     },
     {
@@ -2396,7 +2397,7 @@
         "email": "reverent793271@gmail.com",
         "firstname": "reverent",
         "lastname": "heisenberg",
-        "credit": 50,
+        "credit": 945,
         "_id": "32624e82-63e1-4bcb-8c8c-6a6096641577"
     },
     {
@@ -2406,7 +2407,7 @@
         "email": "sleepy621815@gmail.com",
         "firstname": "sleepy",
         "lastname": "noether",
-        "credit": 50,
+        "credit": 1065,
         "_id": "9a064cb3-5c7e-497e-b383-83dd482c9213"
     },
     {
@@ -2416,7 +2417,7 @@
         "email": "nervous153368@gmail.com",
         "firstname": "nervous",
         "lastname": "edison",
-        "credit": 50,
+        "credit": 905,
         "_id": "9c05c783-1470-4ea1-ad2c-01233dba11f2"
     },
     {
@@ -2426,7 +2427,7 @@
         "email": "relaxed872050@gmail.com",
         "firstname": "relaxed",
         "lastname": "heisenberg",
-        "credit": 50,
+        "credit": 875,
         "_id": "25aa3a49-f0d7-4f81-b118-83b9bc0f7863"
     },
     {
@@ -2436,7 +2437,7 @@
         "email": "heuristic417146@gmail.com",
         "firstname": "heuristic",
         "lastname": "kepler",
-        "credit": 50,
+        "credit": 840,
         "_id": "1d1515de-9ffd-43b9-b945-df195641622a"
     },
     {
@@ -2446,7 +2447,7 @@
         "email": "inspiring270477@gmail.com",
         "firstname": "inspiring",
         "lastname": "mccarthy",
-        "credit": 50,
+        "credit": 845,
         "_id": "0d2b3705-2bc6-4da6-88bd-4d0add57ba57"
     },
     {
@@ -2456,7 +2457,7 @@
         "email": "elated693806@gmail.com",
         "firstname": "elated",
         "lastname": "wescoff",
-        "credit": 50,
+        "credit": 985,
         "_id": "16bac4e1-8900-4423-a31c-2f51b2827354"
     },
     {
@@ -2466,7 +2467,7 @@
         "email": "stupefied608989@gmail.com",
         "firstname": "stupefied",
         "lastname": "kilby",
-        "credit": 50,
+        "credit": 955,
         "_id": "9fe39664-f6e1-4fe8-a758-e2730d7e8240"
     },
     {
@@ -2476,7 +2477,7 @@
         "email": "practical061632@gmail.com",
         "firstname": "practical",
         "lastname": "chandrasekhar",
-        "credit": 50,
+        "credit": 1075,
         "_id": "796e5b24-7647-47c1-91b4-5d97892284dc"
     },
     {
@@ -2486,7 +2487,7 @@
         "email": "suspicious548709@gmail.com",
         "firstname": "suspicious",
         "lastname": "zhukovsky",
-        "credit": 50,
+        "credit": 1080,
         "_id": "d170c760-476b-4c2d-bac0-106b6c803a2d"
     },
     {
@@ -2496,7 +2497,7 @@
         "email": "naughty119148@gmail.com",
         "firstname": "naughty",
         "lastname": "minsky",
-        "credit": 50,
+        "credit": 1050,
         "_id": "6ce3b58b-ab15-4203-917a-d64095f75ec2"
     },
     {
@@ -2506,7 +2507,7 @@
         "email": "upbeat246299@gmail.com",
         "firstname": "upbeat",
         "lastname": "goodall",
-        "credit": 50,
+        "credit": 945,
         "_id": "74b3a4f3-8c5a-45a7-8eb0-289692b080eb"
     },
     {
@@ -2516,7 +2517,7 @@
         "email": "practical054447@gmail.com",
         "firstname": "practical",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 1005,
         "_id": "27840aca-088e-47ed-b732-eafed261b072"
     },
     {
@@ -2526,7 +2527,7 @@
         "email": "trusting137367@gmail.com",
         "firstname": "trusting",
         "lastname": "engelbart",
-        "credit": 50,
+        "credit": 965,
         "_id": "71039b8c-5cff-4478-8d67-53fab2d5c573"
     },
     {
@@ -2536,7 +2537,7 @@
         "email": "sad289023@gmail.com",
         "firstname": "sad",
         "lastname": "visvesvaraya",
-        "credit": 50,
+        "credit": 1015,
         "_id": "772654f2-056c-406e-94f3-bef33b07f49b"
     },
     {
@@ -2546,7 +2547,7 @@
         "email": "unruffled578610@gmail.com",
         "firstname": "unruffled",
         "lastname": "swirles",
-        "credit": 50,
+        "credit": 985,
         "_id": "aa65e656-0d4f-4e44-b793-b77e439a665a"
     },
     {
@@ -2556,7 +2557,7 @@
         "email": "ecstatic524140@gmail.com",
         "firstname": "ecstatic",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 905,
         "_id": "9b89b57b-d010-46a5-b5cf-83052828d654"
     },
     {
@@ -2566,7 +2567,7 @@
         "email": "goofy800722@gmail.com",
         "firstname": "goofy",
         "lastname": "mclean",
-        "credit": 50,
+        "credit": 975,
         "_id": "785723c2-8c6e-41a6-a46f-125e61f82dcb"
     },
     {
@@ -2576,7 +2577,7 @@
         "email": "nervous743748@gmail.com",
         "firstname": "nervous",
         "lastname": "volhard",
-        "credit": 50,
+        "credit": 975,
         "_id": "c3eb8fb1-8782-4449-8312-5fc79b6056e7"
     },
     {
@@ -2586,7 +2587,7 @@
         "email": "suspicious944171@gmail.com",
         "firstname": "suspicious",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 970,
         "_id": "e5409aea-ca54-4819-ad04-3c877269d37b"
     },
     {
@@ -2596,7 +2597,7 @@
         "email": "focused096520@gmail.com",
         "firstname": "focused",
         "lastname": "spence",
-        "credit": 50,
+        "credit": 1035,
         "_id": "d7c34342-ed0b-4455-bcd8-ca4419ef1c49"
     },
     {
@@ -2606,7 +2607,7 @@
         "email": "pedantic353875@gmail.com",
         "firstname": "pedantic",
         "lastname": "bassi",
-        "credit": 50,
+        "credit": 1020,
         "_id": "b0626a18-131c-4b4b-843f-8ee93e03d4b0"
     },
     {
@@ -2616,7 +2617,7 @@
         "email": "kind825135@gmail.com",
         "firstname": "kind",
         "lastname": "austin",
-        "credit": 50,
+        "credit": 970,
         "_id": "4577d47c-e34a-4c83-be58-5eea32913b44"
     },
     {
@@ -2626,7 +2627,7 @@
         "email": "eager709991@gmail.com",
         "firstname": "eager",
         "lastname": "brown",
-        "credit": 50,
+        "credit": 915,
         "_id": "2297ea77-4c02-40d9-8086-05398ecd1355"
     },
     {
@@ -2636,7 +2637,7 @@
         "email": "inspiring235697@gmail.com",
         "firstname": "inspiring",
         "lastname": "pasteur",
-        "credit": 50,
+        "credit": 960,
         "_id": "6238287d-03b9-4640-a625-d9244eed3393"
     },
     {
@@ -2646,7 +2647,7 @@
         "email": "competent743292@gmail.com",
         "firstname": "competent",
         "lastname": "lichterman",
-        "credit": 50,
+        "credit": 955,
         "_id": "0b071e93-f3cb-47ae-8bfd-77bb477051f1"
     },
     {
@@ -2656,7 +2657,7 @@
         "email": "jovial008350@gmail.com",
         "firstname": "jovial",
         "lastname": "hamilton",
-        "credit": 50,
+        "credit": 965,
         "_id": "c4439bca-6770-49b0-baa8-ed854f5562ef"
     },
     {
@@ -2666,7 +2667,7 @@
         "email": "vibrant216894@gmail.com",
         "firstname": "vibrant",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 1000,
         "_id": "fba06a73-edac-441d-8804-61b815fa2357"
     },
     {
@@ -2676,7 +2677,7 @@
         "email": "confident625753@gmail.com",
         "firstname": "confident",
         "lastname": "shaw",
-        "credit": 50,
+        "credit": 1010,
         "_id": "16ad3a95-dc0a-4f4f-9adc-a5cdd6a0c551"
     },
     {
@@ -2686,7 +2687,7 @@
         "email": "confident215064@gmail.com",
         "firstname": "confident",
         "lastname": "mcnulty",
-        "credit": 50,
+        "credit": 940,
         "_id": "acf81027-4851-469d-bc0e-ea698fdf669b"
     },
     {
@@ -2696,7 +2697,7 @@
         "email": "sharp676184@gmail.com",
         "firstname": "sharp",
         "lastname": "austin",
-        "credit": 50,
+        "credit": 950,
         "_id": "9dd8798e-c79d-485f-83a8-ec8f08c86948"
     },
     {
@@ -2706,7 +2707,7 @@
         "email": "inspiring926189@gmail.com",
         "firstname": "inspiring",
         "lastname": "visvesvaraya",
-        "credit": 50,
+        "credit": 1075,
         "_id": "6ce48489-0cf8-4669-9b31-9a199e3c8b9c"
     },
     {
@@ -2716,7 +2717,7 @@
         "email": "cocky356420@gmail.com",
         "firstname": "cocky",
         "lastname": "brattain",
-        "credit": 50,
+        "credit": 990,
         "_id": "8731116d-947b-4c6e-83b1-61b839a2d34b"
     },
     {
@@ -2726,7 +2727,7 @@
         "email": "lucid972181@gmail.com",
         "firstname": "lucid",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 970,
         "_id": "7eaa3ba1-6af5-4092-bad3-f4cb9a737222"
     },
     {
@@ -2736,7 +2737,7 @@
         "email": "relaxed204556@gmail.com",
         "firstname": "relaxed",
         "lastname": "kowalevski",
-        "credit": 50,
+        "credit": 955,
         "_id": "600b86b1-231f-44e6-8377-b5477217ff5f"
     },
     {
@@ -2746,7 +2747,7 @@
         "email": "reverent941552@gmail.com",
         "firstname": "reverent",
         "lastname": "wescoff",
-        "credit": 50,
+        "credit": 1035,
         "_id": "95a50bc7-c168-475e-8f1a-0774ecb7b106"
     },
     {
@@ -2756,7 +2757,7 @@
         "email": "clever202169@gmail.com",
         "firstname": "clever",
         "lastname": "montalcini",
-        "credit": 50,
+        "credit": 1020,
         "_id": "1d8b4f35-3957-45e2-9186-fbdc033918ee"
     },
     {
@@ -2766,7 +2767,7 @@
         "email": "jolly771670@gmail.com",
         "firstname": "jolly",
         "lastname": "pare",
-        "credit": 50,
+        "credit": 1040,
         "_id": "d1d07e0c-f80c-4352-84ae-3330a835ff82"
     },
     {
@@ -2776,7 +2777,7 @@
         "email": "angry891637@gmail.com",
         "firstname": "angry",
         "lastname": "zhukovsky",
-        "credit": 50,
+        "credit": 935,
         "_id": "7f5e247c-8cff-498c-bed6-e455529876b0"
     },
     {
@@ -2786,7 +2787,7 @@
         "email": "friendly721753@gmail.com",
         "firstname": "friendly",
         "lastname": "poincare",
-        "credit": 50,
+        "credit": 990,
         "_id": "3e490fc4-5ab3-488f-959b-847cdd4adb8b"
     },
     {
@@ -2796,7 +2797,7 @@
         "email": "focused779717@gmail.com",
         "firstname": "focused",
         "lastname": "goldstine",
-        "credit": 50,
+        "credit": 1025,
         "_id": "eb74fa81-2221-40f3-8dc7-0036f0589b8c"
     },
     {
@@ -2806,7 +2807,7 @@
         "email": "hungry801994@gmail.com",
         "firstname": "hungry",
         "lastname": "goldstine",
-        "credit": 50,
+        "credit": 935,
         "_id": "33ac1f45-6605-4245-bd69-966723f6e155"
     },
     {
@@ -2816,7 +2817,7 @@
         "email": "vibrant589975@gmail.com",
         "firstname": "vibrant",
         "lastname": "fermat",
-        "credit": 50,
+        "credit": 935,
         "_id": "70a67b00-a9b5-42b9-8f21-8aee463fa08a"
     },
     {
@@ -2826,7 +2827,7 @@
         "email": "quizzical851027@gmail.com",
         "firstname": "quizzical",
         "lastname": "rosalind",
-        "credit": 50,
+        "credit": 955,
         "_id": "e06a2eb2-c1e7-4d26-be90-b79da81511ec"
     },
     {
@@ -2836,7 +2837,7 @@
         "email": "competent735160@gmail.com",
         "firstname": "competent",
         "lastname": "fermi",
-        "credit": 50,
+        "credit": 925,
         "_id": "7261faf6-cfcf-4c2f-b325-383d24f62dc0"
     },
     {
@@ -2846,7 +2847,7 @@
         "email": "wizardly808697@gmail.com",
         "firstname": "wizardly",
         "lastname": "proskuriakova",
-        "credit": 50,
+        "credit": 865,
         "_id": "0451a0f1-4ffd-4d94-8596-b089990b0e9a"
     },
     {
@@ -2856,7 +2857,7 @@
         "email": "wizardly586693@gmail.com",
         "firstname": "wizardly",
         "lastname": "lamport",
-        "credit": 50,
+        "credit": 1000,
         "_id": "4ae7b001-2e19-41da-9035-4bf1e77517cc"
     },
     {
@@ -2866,7 +2867,7 @@
         "email": "elegant485833@gmail.com",
         "firstname": "elegant",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 1085,
         "_id": "d417ceb5-9ccb-4ea5-a4c6-ba76a3132525"
     },
     {
@@ -2876,7 +2877,7 @@
         "email": "distracted587996@gmail.com",
         "firstname": "distracted",
         "lastname": "shtern",
-        "credit": 50,
+        "credit": 1060,
         "_id": "122f02fb-24ca-40db-9e46-bee8e75589c5"
     },
     {
@@ -2886,7 +2887,7 @@
         "email": "pensive003424@gmail.com",
         "firstname": "pensive",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 1000,
         "_id": "e37ea8e9-34ec-4da5-bcdc-a5a820ea1974"
     },
     {
@@ -2896,7 +2897,7 @@
         "email": "practical198386@gmail.com",
         "firstname": "practical",
         "lastname": "pasteur",
-        "credit": 50,
+        "credit": 855,
         "_id": "53ffc6c8-ce9f-4057-bd0d-3c15b8c29899"
     },
     {
@@ -2906,7 +2907,7 @@
         "email": "ecstatic043973@gmail.com",
         "firstname": "ecstatic",
         "lastname": "khorana",
-        "credit": 50,
+        "credit": 1005,
         "_id": "99946856-f223-4d00-a7d1-3f2fb44c5e8d"
     },
     {
@@ -2916,7 +2917,7 @@
         "email": "vigorous122816@gmail.com",
         "firstname": "vigorous",
         "lastname": "galileo",
-        "credit": 50,
+        "credit": 945,
         "_id": "27c30df7-4aed-430b-b9ec-61d735e894d1"
     },
     {
@@ -2926,7 +2927,7 @@
         "email": "agitated572025@gmail.com",
         "firstname": "agitated",
         "lastname": "spence",
-        "credit": 50,
+        "credit": 950,
         "_id": "8c232d25-3de6-43f7-9149-36f4c39bbe1f"
     },
     {
@@ -2936,7 +2937,7 @@
         "email": "nervous832818@gmail.com",
         "firstname": "nervous",
         "lastname": "lalande",
-        "credit": 50,
+        "credit": 1025,
         "_id": "305b0282-a7ef-4a7b-a27e-62403b70e442"
     },
     {
@@ -2946,7 +2947,7 @@
         "email": "confident554398@gmail.com",
         "firstname": "confident",
         "lastname": "bhabha",
-        "credit": 50,
+        "credit": 1090,
         "_id": "9960aa08-78ad-46f6-bf3c-f7a9c5d1db22"
     },
     {
@@ -2956,7 +2957,7 @@
         "email": "inspiring056164@gmail.com",
         "firstname": "inspiring",
         "lastname": "wozniak",
-        "credit": 50,
+        "credit": 1005,
         "_id": "ed8ec492-d087-4566-8d7c-90a58fefd279"
     },
     {
@@ -2966,7 +2967,7 @@
         "email": "lucid435811@gmail.com",
         "firstname": "lucid",
         "lastname": "chandrasekhar",
-        "credit": 50,
+        "credit": 1065,
         "_id": "8eb6d705-ffe9-420a-aa27-108886e94fdb"
     },
     {
@@ -2976,7 +2977,7 @@
         "email": "confident861207@gmail.com",
         "firstname": "confident",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 1015,
         "_id": "a6a7e1d3-2059-46f0-aeb6-8867ae2e5b54"
     },
     {
@@ -2986,7 +2987,7 @@
         "email": "quizzical934667@gmail.com",
         "firstname": "quizzical",
         "lastname": "tesla",
-        "credit": 50,
+        "credit": 925,
         "_id": "45cedfea-cb85-40eb-9741-1a64ca0fb493"
     },
     {
@@ -2996,7 +2997,7 @@
         "email": "objective190158@gmail.com",
         "firstname": "objective",
         "lastname": "nobel",
-        "credit": 50,
+        "credit": 1015,
         "_id": "1c62e355-03de-4e87-8b8d-9aac8ac1dcda"
     },
     {
@@ -3006,7 +3007,7 @@
         "email": "clever728326@gmail.com",
         "firstname": "clever",
         "lastname": "babbage",
-        "credit": 50,
+        "credit": 925,
         "_id": "1bdb67b4-c550-47cb-a7d0-a50619d5c616"
     },
     {
@@ -3016,7 +3017,7 @@
         "email": "sleepy100996@gmail.com",
         "firstname": "sleepy",
         "lastname": "jones",
-        "credit": 50,
+        "credit": 950,
         "_id": "33fbae6d-0346-46d0-b424-fe45e20abf59"
     },
     {
@@ -3026,7 +3027,7 @@
         "email": "loving223943@gmail.com",
         "firstname": "loving",
         "lastname": "swanson",
-        "credit": 50,
+        "credit": 1010,
         "_id": "897f3a05-44c8-4da7-ba25-15332460b167"
     },
     {
@@ -3036,7 +3037,7 @@
         "email": "clever413975@gmail.com",
         "firstname": "clever",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 970,
         "_id": "2aa5c9c8-4da4-40f5-8a2e-be5090548f62"
     },
     {
@@ -3046,7 +3047,7 @@
         "email": "frosty759492@gmail.com",
         "firstname": "frosty",
         "lastname": "shirley",
-        "credit": 50,
+        "credit": 1100,
         "_id": "26b8b734-9250-4119-b4f9-c335cb0e0244"
     },
     {
@@ -3056,7 +3057,7 @@
         "email": "modest645257@gmail.com",
         "firstname": "modest",
         "lastname": "lichterman",
-        "credit": 50,
+        "credit": 885,
         "_id": "e584b724-9673-4417-bd32-ad4596fabe88"
     },
     {
@@ -3066,7 +3067,7 @@
         "email": "infallible428341@gmail.com",
         "firstname": "infallible",
         "lastname": "sinoussi",
-        "credit": 50,
+        "credit": 965,
         "_id": "476fec03-f83b-4fe0-abbb-e7d5d990fd03"
     },
     {
@@ -3076,7 +3077,7 @@
         "email": "relaxed084887@gmail.com",
         "firstname": "relaxed",
         "lastname": "tesla",
-        "credit": 50,
+        "credit": 975,
         "_id": "63ea8c08-f5f9-4fcf-affb-1ee6c6a42aa8"
     },
     {
@@ -3086,7 +3087,7 @@
         "email": "peaceful816580@gmail.com",
         "firstname": "peaceful",
         "lastname": "visvesvaraya",
-        "credit": 50,
+        "credit": 965,
         "_id": "b1d241a8-25a8-421c-a295-04301018a4a4"
     },
     {
@@ -3096,7 +3097,7 @@
         "email": "pedantic927503@gmail.com",
         "firstname": "pedantic",
         "lastname": "ptolemy",
-        "credit": 50,
+        "credit": 1095,
         "_id": "79143f57-1f18-4f3e-a6b6-f616da096602"
     },
     {
@@ -3106,7 +3107,7 @@
         "email": "serene567700@gmail.com",
         "firstname": "serene",
         "lastname": "bohr",
-        "credit": 50,
+        "credit": 915,
         "_id": "12e26e4b-1d69-474a-a1e9-8013b92952be"
     },
     {
@@ -3116,7 +3117,7 @@
         "email": "zen665918@gmail.com",
         "firstname": "zen",
         "lastname": "stonebraker",
-        "credit": 50,
+        "credit": 1010,
         "_id": "22af02cf-d056-4a27-8cb7-e4fe21954c02"
     },
     {
@@ -3126,7 +3127,7 @@
         "email": "elastic082723@gmail.com",
         "firstname": "elastic",
         "lastname": "shirley",
-        "credit": 50,
+        "credit": 960,
         "_id": "6cbdbd09-49f1-49f9-8eca-a04e85c8188d"
     },
     {
@@ -3136,7 +3137,7 @@
         "email": "blissful365177@gmail.com",
         "firstname": "blissful",
         "lastname": "fermi",
-        "credit": 50,
+        "credit": 970,
         "_id": "e3fff7f1-b92a-42e0-a1b7-5604962da385"
     },
     {
@@ -3146,7 +3147,7 @@
         "email": "jolly922809@gmail.com",
         "firstname": "jolly",
         "lastname": "hamilton",
-        "credit": 50,
+        "credit": 1110,
         "_id": "fb609b6f-becd-49ba-b184-93c939ad288a"
     },
     {
@@ -3156,7 +3157,7 @@
         "email": "competent413797@gmail.com",
         "firstname": "competent",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 995,
         "_id": "273279aa-4ce0-47b6-ba6c-c26d4146f4a6"
     },
     {
@@ -3166,7 +3167,7 @@
         "email": "unruffled842579@gmail.com",
         "firstname": "unruffled",
         "lastname": "boyd",
-        "credit": 50,
+        "credit": 1010,
         "_id": "3c5c19ac-1081-4c7f-aab9-32093a02b497"
     },
     {
@@ -3176,7 +3177,7 @@
         "email": "naughty862912@gmail.com",
         "firstname": "naughty",
         "lastname": "volhard",
-        "credit": 50,
+        "credit": 945,
         "_id": "431d6ba0-45d5-4d72-83fa-1186cf4420e2"
     },
     {
@@ -3186,7 +3187,7 @@
         "email": "jolly980686@gmail.com",
         "firstname": "jolly",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 860,
         "_id": "e3f79832-4a6c-4722-ac0f-f869304f49b4"
     },
     {
@@ -3196,7 +3197,7 @@
         "email": "gifted162473@gmail.com",
         "firstname": "gifted",
         "lastname": "beaver",
-        "credit": 50,
+        "credit": 1005,
         "_id": "63aa9506-fcc7-4de1-9db4-624d4c9ed0c5"
     },
     {
@@ -3206,7 +3207,7 @@
         "email": "vigorous981806@gmail.com",
         "firstname": "vigorous",
         "lastname": "shannon",
-        "credit": 50,
+        "credit": 905,
         "_id": "b09b8fa1-44b5-48ad-b71a-f6af253a0d0b"
     },
     {
@@ -3216,7 +3217,7 @@
         "email": "peaceful486959@gmail.com",
         "firstname": "peaceful",
         "lastname": "yonath",
-        "credit": 50,
+        "credit": 1055,
         "_id": "26f71301-92c0-47f5-a29c-9cb5d035d6d9"
     },
     {
@@ -3226,7 +3227,7 @@
         "email": "eloquent874495@gmail.com",
         "firstname": "eloquent",
         "lastname": "bhabha",
-        "credit": 50,
+        "credit": 1130,
         "_id": "f3dc8046-0f1a-482f-8d2d-328125390e70"
     },
     {
@@ -3236,7 +3237,7 @@
         "email": "sharp658902@gmail.com",
         "firstname": "sharp",
         "lastname": "galileo",
-        "credit": 50,
+        "credit": 1020,
         "_id": "8c40f375-3f24-4bee-8783-3def370416cd"
     },
     {
@@ -3246,7 +3247,7 @@
         "email": "goofy351906@gmail.com",
         "firstname": "goofy",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 1020,
         "_id": "a139a38b-e304-4b71-a4fa-095c5713f955"
     },
     {
@@ -3256,7 +3257,7 @@
         "email": "wonderful038430@gmail.com",
         "firstname": "wonderful",
         "lastname": "brahmagupta",
-        "credit": 50,
+        "credit": 925,
         "_id": "28302c9f-5acb-4cf3-bf0d-a7973a7b41ef"
     },
     {
@@ -3266,7 +3267,7 @@
         "email": "silly021465@gmail.com",
         "firstname": "silly",
         "lastname": "dubinsky",
-        "credit": 50,
+        "credit": 1050,
         "_id": "8af2c798-5981-4d5f-a591-de0bbfc55ea1"
     },
     {
@@ -3276,7 +3277,7 @@
         "email": "pensive489554@gmail.com",
         "firstname": "pensive",
         "lastname": "hypatia",
-        "credit": 50,
+        "credit": 940,
         "_id": "9cfc43f0-79c3-4942-ade0-3ebde22253a3"
     },
     {
@@ -3286,7 +3287,7 @@
         "email": "eager818184@gmail.com",
         "firstname": "eager",
         "lastname": "jang",
-        "credit": 50,
+        "credit": 940,
         "_id": "1e92a3a0-9331-497b-a671-3eb78c0b22ea"
     },
     {
@@ -3296,7 +3297,7 @@
         "email": "friendly735779@gmail.com",
         "firstname": "friendly",
         "lastname": "colden",
-        "credit": 50,
+        "credit": 915,
         "_id": "71f5affc-1590-45db-8878-be6f734277fd"
     },
     {
@@ -3306,7 +3307,7 @@
         "email": "trusting658804@gmail.com",
         "firstname": "trusting",
         "lastname": "mestorf",
-        "credit": 50,
+        "credit": 975,
         "_id": "e91d65cc-5e6e-400f-9c5b-b419692a4b37"
     },
     {
@@ -3316,7 +3317,7 @@
         "email": "elastic539423@gmail.com",
         "firstname": "elastic",
         "lastname": "kirch",
-        "credit": 50,
+        "credit": 910,
         "_id": "c3bba0db-059d-4b36-9f1c-1d30042cbeea"
     },
     {
@@ -3326,7 +3327,7 @@
         "email": "keen521117@gmail.com",
         "firstname": "keen",
         "lastname": "edison",
-        "credit": 50,
+        "credit": 1005,
         "_id": "f0f72102-98c9-4252-9abe-5e22c4a6be68"
     },
     {
@@ -3336,7 +3337,7 @@
         "email": "nostalgic472846@gmail.com",
         "firstname": "nostalgic",
         "lastname": "bose",
-        "credit": 50,
+        "credit": 1010,
         "_id": "54e78b3c-3d90-4a0a-b93f-cf5838efeae7"
     },
     {
@@ -3346,7 +3347,7 @@
         "email": "eager562718@gmail.com",
         "firstname": "eager",
         "lastname": "ardinghelli",
-        "credit": 50,
+        "credit": 940,
         "_id": "6fdc5845-2040-424f-9c36-07c6b7b7e8d9"
     },
     {
@@ -3356,7 +3357,7 @@
         "email": "infallible942843@gmail.com",
         "firstname": "infallible",
         "lastname": "liskov",
-        "credit": 50,
+        "credit": 1010,
         "_id": "408570e3-f93d-4670-820f-9229d93fb19e"
     },
     {
@@ -3366,7 +3367,7 @@
         "email": "elegant556472@gmail.com",
         "firstname": "elegant",
         "lastname": "kirch",
-        "credit": 50,
+        "credit": 885,
         "_id": "5b1ea9ae-54f3-48aa-a5c8-70553e18747a"
     },
     {
@@ -3376,7 +3377,7 @@
         "email": "musing322702@gmail.com",
         "firstname": "musing",
         "lastname": "bohr",
-        "credit": 50,
+        "credit": 945,
         "_id": "0da01284-300d-478c-b689-8077bf08928d"
     },
     {
@@ -3386,7 +3387,7 @@
         "email": "hardcore906120@gmail.com",
         "firstname": "hardcore",
         "lastname": "vaughan",
-        "credit": 50,
+        "credit": 920,
         "_id": "0face6fe-4e12-42f4-ab37-b5a7593a9730"
     },
     {
@@ -3396,7 +3397,7 @@
         "email": "dreamy845061@gmail.com",
         "firstname": "dreamy",
         "lastname": "hopper",
-        "credit": 50,
+        "credit": 960,
         "_id": "baf554f4-f20c-4bfa-855b-e529600b7f4d"
     },
     {
@@ -3406,7 +3407,7 @@
         "email": "frosty877169@gmail.com",
         "firstname": "frosty",
         "lastname": "easley",
-        "credit": 50,
+        "credit": 1035,
         "_id": "e501db83-8db1-4d45-b17c-bf5a59e24c68"
     },
     {
@@ -3416,7 +3417,7 @@
         "email": "epic125355@gmail.com",
         "firstname": "epic",
         "lastname": "boyd",
-        "credit": 50,
+        "credit": 960,
         "_id": "efdf7152-2039-410f-8494-3a8b4a031575"
     },
     {
@@ -3426,7 +3427,7 @@
         "email": "peaceful762202@gmail.com",
         "firstname": "peaceful",
         "lastname": "snyder",
-        "credit": 50,
+        "credit": 980,
         "_id": "dab3e6b2-f1de-4225-8e6d-cbac502f6af0"
     },
     {
@@ -3436,7 +3437,7 @@
         "email": "relaxed780068@gmail.com",
         "firstname": "relaxed",
         "lastname": "vaughan",
-        "credit": 50,
+        "credit": 990,
         "_id": "f774f2b3-d4e4-43c4-8fc3-99edb08966b6"
     },
     {
@@ -3446,7 +3447,7 @@
         "email": "serene347228@gmail.com",
         "firstname": "serene",
         "lastname": "johnson",
-        "credit": 50,
+        "credit": 1000,
         "_id": "a5291199-62c1-4088-824f-8725ef9fc079"
     },
     {
@@ -3456,7 +3457,7 @@
         "email": "tender872829@gmail.com",
         "firstname": "tender",
         "lastname": "hugle",
-        "credit": 50,
+        "credit": 1080,
         "_id": "a09908a9-8eac-4ebd-a25b-d07c771ce5e4"
     },
     {
@@ -3466,7 +3467,7 @@
         "email": "nervous317456@gmail.com",
         "firstname": "nervous",
         "lastname": "mayer",
-        "credit": 50,
+        "credit": 1085,
         "_id": "a41a76ac-a6af-4863-b81d-94692673c78c"
     },
     {
@@ -3476,7 +3477,7 @@
         "email": "elated807740@gmail.com",
         "firstname": "elated",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 975,
         "_id": "12a0dfee-99ca-4fc3-8a66-7f790c437256"
     },
     {
@@ -3486,7 +3487,7 @@
         "email": "serene866326@gmail.com",
         "firstname": "serene",
         "lastname": "lamarr",
-        "credit": 50,
+        "credit": 1070,
         "_id": "b4c033cf-d55c-42ac-b79b-d9953007ec53"
     },
     {
@@ -3496,7 +3497,7 @@
         "email": "suspicious484631@gmail.com",
         "firstname": "suspicious",
         "lastname": "joliot",
-        "credit": 50,
+        "credit": 1030,
         "_id": "ff58885b-e02d-4ee9-8e9c-c3d02fb9cc58"
     },
     {
@@ -3506,7 +3507,7 @@
         "email": "dazzling350208@gmail.com",
         "firstname": "dazzling",
         "lastname": "elbakyan",
-        "credit": 50,
+        "credit": 995,
         "_id": "6a38c605-8628-4896-bdcc-efda1599bb83"
     },
     {
@@ -3516,7 +3517,7 @@
         "email": "affectionate207356@gmail.com",
         "firstname": "affectionate",
         "lastname": "bhabha",
-        "credit": 50,
+        "credit": 1020,
         "_id": "d4ff1d15-7712-4b66-bf81-04b1cd05e50f"
     },
     {
@@ -3526,7 +3527,7 @@
         "email": "festive618723@gmail.com",
         "firstname": "festive",
         "lastname": "kilby",
-        "credit": 50,
+        "credit": 1105,
         "_id": "fa86d07f-f0a5-48e0-be68-57994b8c8796"
     },
     {
@@ -3536,7 +3537,7 @@
         "email": "vibrant371837@gmail.com",
         "firstname": "vibrant",
         "lastname": "shockley",
-        "credit": 50,
+        "credit": 1060,
         "_id": "20c71e8e-3220-4e0a-ae70-c2f17c94ba61"
     },
     {
@@ -3546,7 +3547,7 @@
         "email": "goofy435031@gmail.com",
         "firstname": "goofy",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 945,
         "_id": "d9e5d28a-bc67-48a7-beab-e7972800d108"
     },
     {
@@ -3556,7 +3557,7 @@
         "email": "ecstatic009792@gmail.com",
         "firstname": "ecstatic",
         "lastname": "golick",
-        "credit": 50,
+        "credit": 1015,
         "_id": "bb9f127b-76ac-4a2a-9a17-ef0a85d15982"
     },
     {
@@ -3566,7 +3567,7 @@
         "email": "gifted528127@gmail.com",
         "firstname": "gifted",
         "lastname": "chaplygin",
-        "credit": 50,
+        "credit": 1085,
         "_id": "6cfe1430-d851-4155-976e-9e237ec1df48"
     },
     {
@@ -3576,7 +3577,7 @@
         "email": "ecstatic407784@gmail.com",
         "firstname": "ecstatic",
         "lastname": "aryabhata",
-        "credit": 50,
+        "credit": 1085,
         "_id": "26e66dcf-5653-4cfb-94c8-116db8dc72e5"
     },
     {
@@ -3586,7 +3587,7 @@
         "email": "lucid982182@gmail.com",
         "firstname": "lucid",
         "lastname": "hoover",
-        "credit": 50,
+        "credit": 935,
         "_id": "6c01d09a-840a-4d1f-96bb-4a9075ba6493"
     },
     {
@@ -3596,7 +3597,7 @@
         "email": "hungry095935@gmail.com",
         "firstname": "hungry",
         "lastname": "lewin",
-        "credit": 50,
+        "credit": 950,
         "_id": "72c99a20-67d5-4156-9062-8d4a9107d44e"
     },
     {
@@ -3606,7 +3607,7 @@
         "email": "relaxed456511@gmail.com",
         "firstname": "relaxed",
         "lastname": "engelbart",
-        "credit": 50,
+        "credit": 1045,
         "_id": "018aaf05-3167-49b9-876d-934b0b2a6c0d"
     },
     {
@@ -3616,7 +3617,7 @@
         "email": "laughing109678@gmail.com",
         "firstname": "laughing",
         "lastname": "leavitt",
-        "credit": 50,
+        "credit": 985,
         "_id": "23d9a1c2-ba7d-4024-b0b4-ec842dcb486c"
     },
     {
@@ -3626,7 +3627,7 @@
         "email": "objective717058@gmail.com",
         "firstname": "objective",
         "lastname": "bhabha",
-        "credit": 50,
+        "credit": 975,
         "_id": "1917c4e3-d334-498f-a774-f68cef8810df"
     },
     {
@@ -3636,7 +3637,7 @@
         "email": "romantic138113@gmail.com",
         "firstname": "romantic",
         "lastname": "hugle",
-        "credit": 50,
+        "credit": 1005,
         "_id": "0f675ff0-8780-438b-99c1-463c192f8edb"
     },
     {
@@ -3646,7 +3647,7 @@
         "email": "loving619576@gmail.com",
         "firstname": "loving",
         "lastname": "golick",
-        "credit": 50,
+        "credit": 945,
         "_id": "136b82f0-101e-47ae-a9d7-321cab04972a"
     },
     {
@@ -3656,7 +3657,7 @@
         "email": "upbeat975585@gmail.com",
         "firstname": "upbeat",
         "lastname": "mclean",
-        "credit": 50,
+        "credit": 895,
         "_id": "165ebe98-de62-49af-8274-a7ae2a72345c"
     },
     {
@@ -3666,7 +3667,7 @@
         "email": "thirsty684577@gmail.com",
         "firstname": "thirsty",
         "lastname": "almeida",
-        "credit": 50,
+        "credit": 1120,
         "_id": "03f85d4a-420e-493f-9f37-81bedbb195b8"
     },
     {
@@ -3676,7 +3677,7 @@
         "email": "youthful043350@gmail.com",
         "firstname": "youthful",
         "lastname": "thompson",
-        "credit": 50,
+        "credit": 895,
         "_id": "2ab74de5-22fe-4b24-b352-7b2ffe472934"
     },
     {
@@ -3686,7 +3687,7 @@
         "email": "sharp752245@gmail.com",
         "firstname": "sharp",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 1070,
         "_id": "eeb9e178-c9e0-4d91-bee1-51ff1f1c4ee0"
     },
     {
@@ -3696,7 +3697,7 @@
         "email": "vibrant315727@gmail.com",
         "firstname": "vibrant",
         "lastname": "easley",
-        "credit": 50,
+        "credit": 970,
         "_id": "60359091-551a-450d-b011-466397c97bff"
     },
     {
@@ -3706,7 +3707,7 @@
         "email": "suspicious556613@gmail.com",
         "firstname": "suspicious",
         "lastname": "colden",
-        "credit": 50,
+        "credit": 1005,
         "_id": "11ce4d9d-107d-428b-9bb2-e31b398e77ce"
     },
     {
@@ -3716,7 +3717,7 @@
         "email": "romantic925832@gmail.com",
         "firstname": "romantic",
         "lastname": "saha",
-        "credit": 50,
+        "credit": 885,
         "_id": "ec34cc7a-9b2d-494c-932d-142b775472f6"
     },
     {
@@ -3726,7 +3727,7 @@
         "email": "amazing622517@gmail.com",
         "firstname": "amazing",
         "lastname": "montalcini",
-        "credit": 50,
+        "credit": 1105,
         "_id": "ac1f4465-4343-4877-b8be-09b0e07bd807"
     },
     {
@@ -3736,7 +3737,7 @@
         "email": "musing278376@gmail.com",
         "firstname": "musing",
         "lastname": "booth",
-        "credit": 50,
+        "credit": 1060,
         "_id": "d05ebe68-d5d8-45bf-815f-1fe73b919f24"
     },
     {
@@ -3746,7 +3747,7 @@
         "email": "peaceful659116@gmail.com",
         "firstname": "peaceful",
         "lastname": "ramanujan",
-        "credit": 50,
+        "credit": 915,
         "_id": "5fa281b0-ea7d-40af-9b52-22db24972ca5"
     },
     {
@@ -3756,7 +3757,7 @@
         "email": "heuristic597927@gmail.com",
         "firstname": "heuristic",
         "lastname": "bohr",
-        "credit": 50,
+        "credit": 900,
         "_id": "49f65737-60c2-49c7-85d3-5a7aad6cb598"
     },
     {
@@ -3766,7 +3767,7 @@
         "email": "amazing240514@gmail.com",
         "firstname": "amazing",
         "lastname": "easley",
-        "credit": 50,
+        "credit": 1020,
         "_id": "e0f3d865-560f-486d-89b5-0c6734350916"
     },
     {
@@ -3776,7 +3777,7 @@
         "email": "hungry487920@gmail.com",
         "firstname": "hungry",
         "lastname": "mendeleev",
-        "credit": 50,
+        "credit": 1105,
         "_id": "9a42b0f5-5b45-42c9-9bcb-a264375a0411"
     },
     {
@@ -3786,7 +3787,7 @@
         "email": "gifted407016@gmail.com",
         "firstname": "gifted",
         "lastname": "neumann",
-        "credit": 50,
+        "credit": 955,
         "_id": "2821c1fa-b6bf-4438-bc91-22927cfadac6"
     },
     {
@@ -3796,7 +3797,7 @@
         "email": "pedantic157981@gmail.com",
         "firstname": "pedantic",
         "lastname": "lamport",
-        "credit": 50,
+        "credit": 965,
         "_id": "888edb7b-c4cc-41da-8f96-81dabeab3edf"
     },
     {
@@ -3806,7 +3807,7 @@
         "email": "dazzling576205@gmail.com",
         "firstname": "dazzling",
         "lastname": "morse",
-        "credit": 50,
+        "credit": 1055,
         "_id": "35b0d060-c29d-4010-b2f5-85d589433d5f"
     },
     {
@@ -3816,7 +3817,7 @@
         "email": "practical084325@gmail.com",
         "firstname": "practical",
         "lastname": "saha",
-        "credit": 50,
+        "credit": 905,
         "_id": "67077a7f-3e42-47c1-bf0f-b2df7e86838a"
     },
     {
@@ -3826,7 +3827,7 @@
         "email": "vibrant926495@gmail.com",
         "firstname": "vibrant",
         "lastname": "wing",
-        "credit": 50,
+        "credit": 980,
         "_id": "b3aefa6d-14c4-4fbd-bdd7-a43d1836dcbe"
     },
     {
@@ -3836,7 +3837,7 @@
         "email": "hungry826292@gmail.com",
         "firstname": "hungry",
         "lastname": "lamport",
-        "credit": 50,
+        "credit": 1045,
         "_id": "cb360465-1313-4b76-bbe3-7e72e76069cd"
     },
     {
@@ -3846,7 +3847,7 @@
         "email": "flamboyant664742@gmail.com",
         "firstname": "flamboyant",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 940,
         "_id": "b722f995-9c36-434a-a2af-b9d82ce53594"
     },
     {
@@ -3856,7 +3857,7 @@
         "email": "sharp993933@gmail.com",
         "firstname": "sharp",
         "lastname": "montalcini",
-        "credit": 50,
+        "credit": 1025,
         "_id": "be81d7c3-9c9a-450c-97ee-959b00f47d03"
     },
     {
@@ -3866,7 +3867,7 @@
         "email": "priceless267722@gmail.com",
         "firstname": "priceless",
         "lastname": "bhabha",
-        "credit": 50,
+        "credit": 1025,
         "_id": "968e9af5-d4fb-42ec-809e-7410525c2baa"
     },
     {
@@ -3876,7 +3877,7 @@
         "email": "determined127975@gmail.com",
         "firstname": "determined",
         "lastname": "fermi",
-        "credit": 50,
+        "credit": 990,
         "_id": "68270103-bc31-4b51-8a96-0facc2c6bdb1"
     },
     {
@@ -3886,7 +3887,7 @@
         "email": "unruffled999880@gmail.com",
         "firstname": "unruffled",
         "lastname": "benz",
-        "credit": 50,
+        "credit": 1040,
         "_id": "bcb8671f-9895-4421-ab02-5338fb818da8"
     },
     {
@@ -3896,7 +3897,7 @@
         "email": "laughing868034@gmail.com",
         "firstname": "laughing",
         "lastname": "feynman",
-        "credit": 50,
+        "credit": 930,
         "_id": "5c2949d5-132e-4c67-bade-f44cb2ca9563"
     },
     {
@@ -3906,7 +3907,7 @@
         "email": "hopeful827718@gmail.com",
         "firstname": "hopeful",
         "lastname": "meitner",
-        "credit": 50,
+        "credit": 985,
         "_id": "190f96b0-60a0-4a16-9eca-4a5950d863ce"
     },
     {
@@ -3916,7 +3917,7 @@
         "email": "clever279371@gmail.com",
         "firstname": "clever",
         "lastname": "pasteur",
-        "credit": 50,
+        "credit": 990,
         "_id": "8f3d1f64-84ff-4a89-b9ea-705f2d178ce0"
     },
     {
@@ -3926,7 +3927,7 @@
         "email": "elastic689268@gmail.com",
         "firstname": "elastic",
         "lastname": "nobel",
-        "credit": 50,
+        "credit": 940,
         "_id": "2f08429c-0c27-4d1c-b1b0-53a97953cd29"
     },
     {
@@ -3936,7 +3937,7 @@
         "email": "goofy644742@gmail.com",
         "firstname": "goofy",
         "lastname": "austin",
-        "credit": 50,
+        "credit": 940,
         "_id": "2e52fb37-6fd8-4afd-a1eb-689d7e9236c0"
     },
     {
@@ -3946,7 +3947,7 @@
         "email": "cocky809733@gmail.com",
         "firstname": "cocky",
         "lastname": "boyd",
-        "credit": 50,
+        "credit": 1060,
         "_id": "413b6199-e086-41f8-83c6-82276d907387"
     },
     {
@@ -3956,7 +3957,7 @@
         "email": "naughty849830@gmail.com",
         "firstname": "naughty",
         "lastname": "raman",
-        "credit": 50,
+        "credit": 1025,
         "_id": "5762631a-79b0-41c4-a706-ef6d74d98e1a"
     },
     {
@@ -3966,7 +3967,7 @@
         "email": "dazzling510162@gmail.com",
         "firstname": "dazzling",
         "lastname": "kilby",
-        "credit": 50,
+        "credit": 960,
         "_id": "c7ebc12e-cfac-44f8-9752-2ca69a2c66b2"
     },
     {
@@ -3976,7 +3977,7 @@
         "email": "confident014556@gmail.com",
         "firstname": "confident",
         "lastname": "engelbart",
-        "credit": 50,
+        "credit": 950,
         "_id": "125e1b05-59b1-4058-a1be-8fd55c72deaa"
     },
     {
@@ -3986,7 +3987,7 @@
         "email": "stupefied586833@gmail.com",
         "firstname": "stupefied",
         "lastname": "nobel",
-        "credit": 50,
+        "credit": 890,
         "_id": "0f579408-47d7-48ae-b98d-08665360e08d"
     },
     {
@@ -3996,7 +3997,7 @@
         "email": "nifty954899@gmail.com",
         "firstname": "nifty",
         "lastname": "wilson",
-        "credit": 50,
+        "credit": 1075,
         "_id": "a0791176-9d29-4aff-ae61-b3e716265e62"
     },
     {
@@ -4006,7 +4007,7 @@
         "email": "frosty343010@gmail.com",
         "firstname": "frosty",
         "lastname": "kirch",
-        "credit": 50,
+        "credit": 940,
         "_id": "babead62-c862-4d99-bbaf-c5db6fbfdcea"
     },
     {
@@ -4016,7 +4017,7 @@
         "email": "inspiring303441@gmail.com",
         "firstname": "inspiring",
         "lastname": "archimedes",
-        "credit": 50,
+        "credit": 985,
         "_id": "cd2b4dcf-6c8b-4272-8b60-c26211361fd8"
     },
     {
@@ -4026,7 +4027,7 @@
         "email": "festive990235@gmail.com",
         "firstname": "festive",
         "lastname": "brattain",
-        "credit": 50,
+        "credit": 975,
         "_id": "cfb2564b-4b22-4ed5-af23-40c3f6b8add3"
     },
     {
@@ -4036,7 +4037,7 @@
         "email": "suspicious576084@gmail.com",
         "firstname": "suspicious",
         "lastname": "wing",
-        "credit": 50,
+        "credit": 1115,
         "_id": "1d3e1150-977a-4e5e-b203-c5ddede43495"
     },
     {
@@ -4046,7 +4047,7 @@
         "email": "modest240568@gmail.com",
         "firstname": "modest",
         "lastname": "kilby",
-        "credit": 50,
+        "credit": 1005,
         "_id": "1b4ae762-fae9-4446-bc9b-b2ddca3bbdeb"
     },
     {
@@ -4056,7 +4057,7 @@
         "email": "tender046173@gmail.com",
         "firstname": "tender",
         "lastname": "ride",
-        "credit": 50,
+        "credit": 970,
         "_id": "8c6a61e8-bc2b-4f50-9599-f31a555de9f4"
     },
     {
@@ -4066,7 +4067,7 @@
         "email": "gifted317807@gmail.com",
         "firstname": "gifted",
         "lastname": "clarke",
-        "credit": 50,
+        "credit": 1035,
         "_id": "7f4a544a-e659-49ff-9a7f-86810016bc5f"
     },
     {
@@ -4076,7 +4077,7 @@
         "email": "vigilant182307@gmail.com",
         "firstname": "vigilant",
         "lastname": "noyce",
-        "credit": 50,
+        "credit": 1080,
         "_id": "3aa1f81e-7a14-4d3d-ab06-43214da64659"
     },
     {
@@ -4086,7 +4087,7 @@
         "email": "goofy018409@gmail.com",
         "firstname": "goofy",
         "lastname": "panini",
-        "credit": 50,
+        "credit": 920,
         "_id": "faf79520-9c5f-4379-bdec-7393d6edae30"
     },
     {
@@ -4096,7 +4097,7 @@
         "email": "sad714224@gmail.com",
         "firstname": "sad",
         "lastname": "sinoussi",
-        "credit": 50,
+        "credit": 1000,
         "_id": "75d54912-2dd2-4cab-8f05-2ef5290dd5aa"
     },
     {
@@ -4106,7 +4107,7 @@
         "email": "clever542493@gmail.com",
         "firstname": "clever",
         "lastname": "snyder",
-        "credit": 50,
+        "credit": 1125,
         "_id": "8660f44b-da12-4484-ae5c-c2f8cf4df72b"
     },
     {
@@ -4116,7 +4117,7 @@
         "email": "cranky701601@gmail.com",
         "firstname": "cranky",
         "lastname": "curie",
-        "credit": 50,
+        "credit": 1015,
         "_id": "40842204-aa59-40d9-95ea-f907012d98f2"
     },
     {
@@ -4126,7 +4127,7 @@
         "email": "heuristic381792@gmail.com",
         "firstname": "heuristic",
         "lastname": "heyrovsky",
-        "credit": 50,
+        "credit": 925,
         "_id": "c78171dc-a898-4692-98b6-9776cbfc9cec"
     },
     {
@@ -4136,7 +4137,7 @@
         "email": "boring945625@gmail.com",
         "firstname": "boring",
         "lastname": "rosalind",
-        "credit": 50,
+        "credit": 1100,
         "_id": "3f62e110-e412-4c4a-81b8-26a689cf30e7"
     },
     {
@@ -4146,7 +4147,7 @@
         "email": "silly724599@gmail.com",
         "firstname": "silly",
         "lastname": "noyce",
-        "credit": 50,
+        "credit": 940,
         "_id": "4c257f24-b399-40c0-9012-5890de1f7e01"
     },
     {
@@ -4156,7 +4157,7 @@
         "email": "compassionate769639@gmail.com",
         "firstname": "compassionate",
         "lastname": "bartik",
-        "credit": 50,
+        "credit": 855,
         "_id": "c95f4cad-5799-4b3f-9b36-9caed71d16ff"
     },
     {
@@ -4166,7 +4167,7 @@
         "email": "elastic695832@gmail.com",
         "firstname": "elastic",
         "lastname": "beaver",
-        "credit": 50,
+        "credit": 1060,
         "_id": "bfb9f39b-47a9-4866-8b34-3ada8801793e"
     },
     {
@@ -4176,7 +4177,7 @@
         "email": "pedantic172461@gmail.com",
         "firstname": "pedantic",
         "lastname": "proskuriakova",
-        "credit": 50,
+        "credit": 1025,
         "_id": "62b8abf2-b135-4e79-af33-bd82d5364b43"
     },
     {
@@ -4186,7 +4187,7 @@
         "email": "nervous902278@gmail.com",
         "firstname": "nervous",
         "lastname": "morse",
-        "credit": 50,
+        "credit": 975,
         "_id": "ab5d08d8-2ad4-4456-b83c-346349aba50e"
     },
     {
@@ -4196,7 +4197,7 @@
         "email": "epic465190@gmail.com",
         "firstname": "epic",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 995,
         "_id": "f688f665-8c7f-47ad-aa63-666da1699f63"
     },
     {
@@ -4206,7 +4207,7 @@
         "email": "nifty851403@gmail.com",
         "firstname": "nifty",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 1005,
         "_id": "e98c7ce9-4f8f-46d8-948f-d312184c8ead"
     },
     {
@@ -4216,7 +4217,7 @@
         "email": "heuristic272386@gmail.com",
         "firstname": "heuristic",
         "lastname": "tereshkova",
-        "credit": 50,
+        "credit": 1040,
         "_id": "b4445cda-e12a-4310-8b79-62649de08c9c"
     },
     {
@@ -4226,7 +4227,7 @@
         "email": "tender276212@gmail.com",
         "firstname": "tender",
         "lastname": "swanson",
-        "credit": 50,
+        "credit": 895,
         "_id": "9db5f983-2c83-4643-ba5a-b8cf8d013d98"
     },
     {
@@ -4236,7 +4237,7 @@
         "email": "optimistic876532@gmail.com",
         "firstname": "optimistic",
         "lastname": "shirley",
-        "credit": 50,
+        "credit": 890,
         "_id": "b95390d4-e717-4b3f-9a54-f548c833dea8"
     },
     {
@@ -4246,7 +4247,7 @@
         "email": "heuristic950097@gmail.com",
         "firstname": "heuristic",
         "lastname": "darwin",
-        "credit": 50,
+        "credit": 995,
         "_id": "78d39a54-89a8-4813-8fe3-ed6fdb79333c"
     },
     {
@@ -4256,7 +4257,7 @@
         "email": "quirky818913@gmail.com",
         "firstname": "quirky",
         "lastname": "proskuriakova",
-        "credit": 50,
+        "credit": 1035,
         "_id": "55d75ac8-7ea4-4c7f-8f12-1020b8f54355"
     },
     {
@@ -4266,7 +4267,7 @@
         "email": "inspiring778795@gmail.com",
         "firstname": "inspiring",
         "lastname": "poincare",
-        "credit": 50,
+        "credit": 990,
         "_id": "3ce1e8c9-3276-4f70-bd05-ff04aa1a2f33"
     },
     {
@@ -4276,7 +4277,7 @@
         "email": "hardcore079290@gmail.com",
         "firstname": "hardcore",
         "lastname": "swanson",
-        "credit": 50,
+        "credit": 955,
         "_id": "7ac3ba23-c4a0-4119-bebd-12d6e940f68d"
     },
     {
@@ -4286,7 +4287,7 @@
         "email": "pedantic442944@gmail.com",
         "firstname": "pedantic",
         "lastname": "carson",
-        "credit": 50,
+        "credit": 895,
         "_id": "fe8deb1e-86c5-4017-86be-57187c250f72"
     },
     {
@@ -4296,7 +4297,7 @@
         "email": "trusting243728@gmail.com",
         "firstname": "trusting",
         "lastname": "dubinsky",
-        "credit": 50,
+        "credit": 1035,
         "_id": "f140a4a1-ada1-4924-b6b3-fc5a427458e4"
     },
     {
@@ -4306,7 +4307,7 @@
         "email": "trusting372395@gmail.com",
         "firstname": "trusting",
         "lastname": "mestorf",
-        "credit": 50,
+        "credit": 960,
         "_id": "8ae49627-fdbd-4992-befc-db923aaedeca"
     },
     {
@@ -4316,7 +4317,7 @@
         "email": "angry836674@gmail.com",
         "firstname": "angry",
         "lastname": "brattain",
-        "credit": 50,
+        "credit": 1020,
         "_id": "c8ed5db0-8440-49e3-b7b3-03277c25972b"
     },
     {
@@ -4326,7 +4327,7 @@
         "email": "competent185694@gmail.com",
         "firstname": "competent",
         "lastname": "poitras",
-        "credit": 50,
+        "credit": 1055,
         "_id": "9eeef97c-bccd-4680-938f-a5a6f7903915"
     },
     {
@@ -4336,7 +4337,7 @@
         "email": "focused385258@gmail.com",
         "firstname": "focused",
         "lastname": "payne",
-        "credit": 50,
+        "credit": 960,
         "_id": "3d66986e-0043-4d87-85cb-50dac8e33863"
     },
     {
@@ -4346,7 +4347,7 @@
         "email": "adoring344300@gmail.com",
         "firstname": "adoring",
         "lastname": "albattani",
-        "credit": 50,
+        "credit": 910,
         "_id": "03300996-9d5a-4831-b1ba-846ea6d79fa7"
     },
     {
@@ -4356,7 +4357,7 @@
         "email": "nostalgic269212@gmail.com",
         "firstname": "nostalgic",
         "lastname": "murdock",
-        "credit": 50,
+        "credit": 960,
         "_id": "7b53eedd-9a41-445b-a0c5-05226002e120"
     },
     {
@@ -4366,7 +4367,7 @@
         "email": "elastic140665@gmail.com",
         "firstname": "elastic",
         "lastname": "yonath",
-        "credit": 50,
+        "credit": 975,
         "_id": "de9390c3-7061-4c64-9fe0-d31e6a1dc5df"
     },
     {
@@ -4376,7 +4377,7 @@
         "email": "angry271286@gmail.com",
         "firstname": "angry",
         "lastname": "noether",
-        "credit": 50,
+        "credit": 920,
         "_id": "52fc4938-5862-49f0-84f1-d6875f02bd33"
     },
     {
@@ -4386,7 +4387,7 @@
         "email": "dreamy470720@gmail.com",
         "firstname": "dreamy",
         "lastname": "nobel",
-        "credit": 50,
+        "credit": 960,
         "_id": "f63ee54d-3439-4554-9aa7-b5bed79538c4"
     },
     {
@@ -4396,7 +4397,7 @@
         "email": "wonderful776618@gmail.com",
         "firstname": "wonderful",
         "lastname": "golick",
-        "credit": 50,
+        "credit": 985,
         "_id": "3d920287-5477-467a-957b-d0cca451ade9"
     },
     {
@@ -4406,7 +4407,7 @@
         "email": "eager601585@gmail.com",
         "firstname": "eager",
         "lastname": "heyrovsky",
-        "credit": 50,
+        "credit": 980,
         "_id": "2d441ec8-5024-42df-b5ab-8fbcfb52c2ee"
     },
     {
@@ -4416,7 +4417,7 @@
         "email": "blissful615717@gmail.com",
         "firstname": "blissful",
         "lastname": "mendeleev",
-        "credit": 50,
+        "credit": 925,
         "_id": "b2e87d68-83e7-4533-817c-b92c429c02ed"
     },
     {
@@ -4426,7 +4427,7 @@
         "email": "reverent184787@gmail.com",
         "firstname": "reverent",
         "lastname": "mestorf",
-        "credit": 50,
+        "credit": 1060,
         "_id": "36fb2132-4af2-44fc-9428-6207349dda1f"
     },
     {
@@ -4436,7 +4437,7 @@
         "email": "zealous878293@gmail.com",
         "firstname": "zealous",
         "lastname": "lamport",
-        "credit": 50,
+        "credit": 890,
         "_id": "050735ab-8bdd-4150-a607-189916a84d56"
     },
     {
@@ -4446,7 +4447,7 @@
         "email": "wizardly202041@gmail.com",
         "firstname": "wizardly",
         "lastname": "mahavira",
-        "credit": 50,
+        "credit": 975,
         "_id": "ec47e781-49dc-4968-b104-fea8f6dd72c0"
     },
     {
@@ -4456,7 +4457,7 @@
         "email": "infallible313656@gmail.com",
         "firstname": "infallible",
         "lastname": "cori",
-        "credit": 50,
+        "credit": 950,
         "_id": "df15d340-8147-40c6-86b3-5564ae4bf861"
     },
     {
@@ -4466,7 +4467,7 @@
         "email": "flamboyant511426@gmail.com",
         "firstname": "flamboyant",
         "lastname": "panini",
-        "credit": 50,
+        "credit": 1000,
         "_id": "0fedbf37-5c03-45e4-8d54-59838d26a801"
     },
     {
@@ -4476,7 +4477,7 @@
         "email": "confident962071@gmail.com",
         "firstname": "confident",
         "lastname": "varahamihira",
-        "credit": 50,
+        "credit": 955,
         "_id": "b536b4a1-437b-4bd2-8da0-75a10cdee9c3"
     },
     {
@@ -4486,7 +4487,7 @@
         "email": "admiring248763@gmail.com",
         "firstname": "admiring",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 980,
         "_id": "ed309e84-6ceb-4dcc-877a-499184b4a25d"
     },
     {
@@ -4496,7 +4497,7 @@
         "email": "wonderful560833@gmail.com",
         "firstname": "wonderful",
         "lastname": "snyder",
-        "credit": 50,
+        "credit": 895,
         "_id": "70723f80-96cf-47ad-9fbe-4e3fa0c6c3af"
     },
     {
@@ -4506,7 +4507,7 @@
         "email": "cocky403127@gmail.com",
         "firstname": "cocky",
         "lastname": "bose",
-        "credit": 50,
+        "credit": 905,
         "_id": "3819861e-8318-4b73-9e14-e4fcda1f166b"
     },
     {
@@ -4516,7 +4517,7 @@
         "email": "keen597010@gmail.com",
         "firstname": "keen",
         "lastname": "booth",
-        "credit": 50,
+        "credit": 945,
         "_id": "1bc3ad0b-2c2a-437d-8649-224334ae6a4a"
     },
     {
@@ -4526,7 +4527,7 @@
         "email": "wizardly799563@gmail.com",
         "firstname": "wizardly",
         "lastname": "mahavira",
-        "credit": 50,
+        "credit": 1030,
         "_id": "4b8cbf0d-9b84-40ad-9457-c069371d9400"
     },
     {
@@ -4536,7 +4537,7 @@
         "email": "romantic631797@gmail.com",
         "firstname": "romantic",
         "lastname": "proskuriakova",
-        "credit": 50,
+        "credit": 1030,
         "_id": "0428af7f-0501-454f-aa47-2b03a763f0a9"
     },
     {
@@ -4546,7 +4547,7 @@
         "email": "angry735435@gmail.com",
         "firstname": "angry",
         "lastname": "brattain",
-        "credit": 50,
+        "credit": 900,
         "_id": "d900c053-a777-443e-aa48-bdc2a227d182"
     },
     {
@@ -4556,7 +4557,7 @@
         "email": "compassionate253492@gmail.com",
         "firstname": "compassionate",
         "lastname": "babbage",
-        "credit": 50,
+        "credit": 955,
         "_id": "7e786332-28d6-4ea9-a69d-4f0164bd8af3"
     },
     {
@@ -4566,7 +4567,7 @@
         "email": "silly397740@gmail.com",
         "firstname": "silly",
         "lastname": "ramanujan",
-        "credit": 50,
+        "credit": 985,
         "_id": "dd79db4d-e0ae-4adf-b189-2d0b367434de"
     },
     {
@@ -4576,7 +4577,7 @@
         "email": "reverent906007@gmail.com",
         "firstname": "reverent",
         "lastname": "boyd",
-        "credit": 50,
+        "credit": 975,
         "_id": "de218c58-c50d-4812-96c2-8a1fadb059ce"
     },
     {
@@ -4586,7 +4587,7 @@
         "email": "reverent318063@gmail.com",
         "firstname": "reverent",
         "lastname": "kalam",
-        "credit": 50,
+        "credit": 995,
         "_id": "06609aa4-d366-4bf9-b4dd-082e5ba3fa31"
     },
     {
@@ -4596,7 +4597,7 @@
         "email": "compassionate990772@gmail.com",
         "firstname": "compassionate",
         "lastname": "liskov",
-        "credit": 50,
+        "credit": 905,
         "_id": "bc673e01-5f0a-4710-b7be-851a7ee44e83"
     },
     {
@@ -4606,7 +4607,7 @@
         "email": "unruffled046498@gmail.com",
         "firstname": "unruffled",
         "lastname": "ritchie",
-        "credit": 50,
+        "credit": 1075,
         "_id": "b8a1fe53-9863-48c0-8a66-a3fff0bb3eff"
     },
     {
@@ -4616,7 +4617,7 @@
         "email": "musing657905@gmail.com",
         "firstname": "musing",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 1070,
         "_id": "8f05bdec-0e35-41cc-96c1-06d1d84c76fd"
     },
     {
@@ -4626,7 +4627,7 @@
         "email": "gallant179335@gmail.com",
         "firstname": "gallant",
         "lastname": "noyce",
-        "credit": 50,
+        "credit": 1070,
         "_id": "94ccb704-1cf4-4b71-b923-577848bcb27f"
     },
     {
@@ -4636,7 +4637,7 @@
         "email": "frosty788178@gmail.com",
         "firstname": "frosty",
         "lastname": "hoover",
-        "credit": 50,
+        "credit": 990,
         "_id": "57e0f678-3fe3-41d7-8667-c5a1312e8238"
     },
     {
@@ -4646,7 +4647,7 @@
         "email": "practical162411@gmail.com",
         "firstname": "practical",
         "lastname": "dijkstra",
-        "credit": 50,
+        "credit": 975,
         "_id": "222efb00-63d7-450e-b37e-3d2717b3bd4d"
     },
     {
@@ -4656,7 +4657,7 @@
         "email": "confident682756@gmail.com",
         "firstname": "confident",
         "lastname": "mcclintock",
-        "credit": 50,
+        "credit": 950,
         "_id": "faca3c3b-202a-4209-b526-6f8942d9ddbf"
     },
     {
@@ -4666,7 +4667,7 @@
         "email": "hungry955798@gmail.com",
         "firstname": "hungry",
         "lastname": "aryabhata",
-        "credit": 50,
+        "credit": 960,
         "_id": "8cc03911-9b3d-4503-9c73-78028ac4e58f"
     },
     {
@@ -4676,7 +4677,7 @@
         "email": "tender375402@gmail.com",
         "firstname": "tender",
         "lastname": "perlman",
-        "credit": 50,
+        "credit": 1060,
         "_id": "b7d99bf1-23ff-431d-a643-c1e50b1ef2f7"
     },
     {
@@ -4686,7 +4687,7 @@
         "email": "frosty223105@gmail.com",
         "firstname": "frosty",
         "lastname": "jepsen",
-        "credit": 50,
+        "credit": 1025,
         "_id": "48f9b223-6d71-49fb-866f-2db734cd5980"
     },
     {
@@ -4696,7 +4697,7 @@
         "email": "musing525782@gmail.com",
         "firstname": "musing",
         "lastname": "hugle",
-        "credit": 50,
+        "credit": 905,
         "_id": "9e56c8f0-bba9-4e5e-9809-e4dfabb2bb49"
     },
     {
@@ -4706,7 +4707,7 @@
         "email": "loving088547@gmail.com",
         "firstname": "loving",
         "lastname": "lamport",
-        "credit": 50,
+        "credit": 840,
         "_id": "fa3d7397-120b-4383-b000-0c51bb820bc5"
     },
     {
@@ -4716,7 +4717,7 @@
         "email": "vibrant281406@gmail.com",
         "firstname": "vibrant",
         "lastname": "stallman",
-        "credit": 50,
+        "credit": 1050,
         "_id": "827a43a0-9add-461c-91fe-e8abf61e8b25"
     },
     {
@@ -4726,7 +4727,7 @@
         "email": "nostalgic834301@gmail.com",
         "firstname": "nostalgic",
         "lastname": "keldysh",
-        "credit": 50,
+        "credit": 1030,
         "_id": "0cf11505-5b9a-4fc0-8794-6badff3b494b"
     },
     {
@@ -4736,7 +4737,7 @@
         "email": "loving805626@gmail.com",
         "firstname": "loving",
         "lastname": "yonath",
-        "credit": 50,
+        "credit": 1080,
         "_id": "3bea9831-8a03-4cc1-9094-1fbcdd5cd01e"
     },
     {
@@ -4746,7 +4747,7 @@
         "email": "gifted137674@gmail.com",
         "firstname": "gifted",
         "lastname": "allen",
-        "credit": 50,
+        "credit": 1000,
         "_id": "dc08948d-094b-4cd0-96fa-88448cb30ca2"
     },
     {
@@ -4756,7 +4757,7 @@
         "email": "confident785196@gmail.com",
         "firstname": "confident",
         "lastname": "kirch",
-        "credit": 50,
+        "credit": 870,
         "_id": "dea7de76-e60b-4b45-acef-428c42be4db2"
     },
     {
@@ -4766,7 +4767,7 @@
         "email": "boring326487@gmail.com",
         "firstname": "boring",
         "lastname": "heisenberg",
-        "credit": 50,
+        "credit": 950,
         "_id": "d6d17c5c-292c-4d98-9515-4d078c64ea11"
     },
     {
@@ -4776,7 +4777,7 @@
         "email": "agitated244714@gmail.com",
         "firstname": "agitated",
         "lastname": "zhukovsky",
-        "credit": 50,
+        "credit": 985,
         "_id": "6e134922-6cb8-4373-9b8f-5d8ae417b722"
     },
     {
@@ -4786,7 +4787,7 @@
         "email": "hardcore597964@gmail.com",
         "firstname": "hardcore",
         "lastname": "kilby",
-        "credit": 50,
+        "credit": 900,
         "_id": "c8ff2e37-b7a5-4645-87d0-e5147e10d7cf"
     },
     {
@@ -4796,7 +4797,7 @@
         "email": "objective025725@gmail.com",
         "firstname": "objective",
         "lastname": "kare",
-        "credit": 50,
+        "credit": 1020,
         "_id": "f4ced799-a0d4-4b66-9f72-1ffd1599ad22"
     },
     {
@@ -4806,7 +4807,7 @@
         "email": "confident183219@gmail.com",
         "firstname": "confident",
         "lastname": "kalam",
-        "credit": 50,
+        "credit": 1025,
         "_id": "5b36bed6-2bcd-4262-a875-7bf7ccac346c"
     },
     {
@@ -4816,7 +4817,7 @@
         "email": "sad952028@gmail.com",
         "firstname": "sad",
         "lastname": "engelbart",
-        "credit": 50,
+        "credit": 1085,
         "_id": "2af62f38-09bd-453f-a4bb-9d88b56f17af"
     },
     {
@@ -4826,7 +4827,7 @@
         "email": "eloquent338988@gmail.com",
         "firstname": "eloquent",
         "lastname": "mirzakhani",
-        "credit": 50,
+        "credit": 975,
         "_id": "f5a46c59-ccf5-4950-8c85-b7c24c9c44aa"
     },
     {
@@ -4836,7 +4837,7 @@
         "email": "quizzical545279@gmail.com",
         "firstname": "quizzical",
         "lastname": "keldysh",
-        "credit": 50,
+        "credit": 875,
         "_id": "d5bfd6f7-175a-4d97-860a-b91ff3c3b53e"
     },
     {
@@ -4846,7 +4847,7 @@
         "email": "laughing423216@gmail.com",
         "firstname": "laughing",
         "lastname": "lamport",
-        "credit": 50,
+        "credit": 1030,
         "_id": "7f615b91-2c10-42e5-b2ba-bd1f505a03eb"
     },
     {
@@ -4856,7 +4857,7 @@
         "email": "priceless890714@gmail.com",
         "firstname": "priceless",
         "lastname": "jackson",
-        "credit": 50,
+        "credit": 1045,
         "_id": "985bc336-6f56-4cbb-9ef0-df3faa418cec"
     },
     {
@@ -4866,7 +4867,7 @@
         "email": "amazing250124@gmail.com",
         "firstname": "amazing",
         "lastname": "bhaskara",
-        "credit": 50,
+        "credit": 990,
         "_id": "70e68548-c10a-4f61-999c-85bef3433dff"
     },
     {
@@ -4876,7 +4877,7 @@
         "email": "xenodochial119083@gmail.com",
         "firstname": "xenodochial",
         "lastname": "shtern",
-        "credit": 50,
+        "credit": 905,
         "_id": "d4db988b-57e8-405f-b473-9f1e40bec9de"
     },
     {
@@ -4886,7 +4887,7 @@
         "email": "quizzical592712@gmail.com",
         "firstname": "quizzical",
         "lastname": "ritchie",
-        "credit": 50,
+        "credit": 975,
         "_id": "8f71e105-277a-4b67-8c36-cd025513e265"
     },
     {
@@ -4896,7 +4897,7 @@
         "email": "tender171827@gmail.com",
         "firstname": "tender",
         "lastname": "banach",
-        "credit": 50,
+        "credit": 1065,
         "_id": "d4e5be52-4a77-4c07-8a0e-832b23daabb0"
     },
     {
@@ -4906,7 +4907,7 @@
         "email": "serene479473@gmail.com",
         "firstname": "serene",
         "lastname": "clarke",
-        "credit": 50,
+        "credit": 1000,
         "_id": "4a4809a1-e042-46d5-b0e5-c7363bf4251a"
     },
     {
@@ -4916,7 +4917,7 @@
         "email": "mystifying716781@gmail.com",
         "firstname": "mystifying",
         "lastname": "jones",
-        "credit": 50,
+        "credit": 940,
         "_id": "75232499-97d1-492a-8ebb-7d0cf866f450"
     },
     {
@@ -4926,7 +4927,7 @@
         "email": "cocky539613@gmail.com",
         "firstname": "cocky",
         "lastname": "euler",
-        "credit": 50,
+        "credit": 950,
         "_id": "a0ddfa42-d052-4df9-8098-ec33ed18381b"
     },
     {
@@ -4936,7 +4937,7 @@
         "email": "tender967842@gmail.com",
         "firstname": "tender",
         "lastname": "hawking",
-        "credit": 50,
+        "credit": 970,
         "_id": "27c8e66d-95b0-4699-ad91-d2dd07a1b9f8"
     },
     {
@@ -4946,7 +4947,7 @@
         "email": "serene101702@gmail.com",
         "firstname": "serene",
         "lastname": "perlman",
-        "credit": 50,
+        "credit": 965,
         "_id": "1da9f8f4-e818-42ae-8e6a-06277bc85394"
     },
     {
@@ -4956,7 +4957,7 @@
         "email": "goofy773477@gmail.com",
         "firstname": "goofy",
         "lastname": "dijkstra",
-        "credit": 50,
+        "credit": 930,
         "_id": "6d0f16c9-a9e4-457b-ae28-a2bfc5ec54f1"
     },
     {
@@ -4966,7 +4967,7 @@
         "email": "keen675677@gmail.com",
         "firstname": "keen",
         "lastname": "saha",
-        "credit": 50,
+        "credit": 1055,
         "_id": "c619db35-92eb-4648-931c-2216d43798ea"
     },
     {
@@ -4976,7 +4977,7 @@
         "email": "agitated671978@gmail.com",
         "firstname": "agitated",
         "lastname": "hopper",
-        "credit": 50,
+        "credit": 1055,
         "_id": "a70a1a2e-04b8-46fb-bd47-dd19b3cffe00"
     },
     {
@@ -4986,7 +4987,7 @@
         "email": "practical479695@gmail.com",
         "firstname": "practical",
         "lastname": "turing",
-        "credit": 50,
+        "credit": 1010,
         "_id": "ff106b5c-cc72-4b2b-9026-9b6cf623e8e9"
     },
     {
@@ -4996,7 +4997,7 @@
         "email": "serene905616@gmail.com",
         "firstname": "serene",
         "lastname": "mahavira",
-        "credit": 50,
+        "credit": 1040,
         "_id": "0585f569-9b7f-4f0f-b0ff-ec179b1c5846"
     },
     {
@@ -5006,7 +5007,7 @@
         "email": "friendly114152@gmail.com",
         "firstname": "friendly",
         "lastname": "nobel",
-        "credit": 50,
+        "credit": 980,
         "_id": "149ea9e6-7cc7-4ded-b872-9cf6213acba9"
     }
 ]

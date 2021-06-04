@@ -6,10 +6,14 @@ COPY data/favorites.json /favorites.json
 COPY data/requests.json /requests.json
 COPY data/answers.json /answers.json
 COPY data/votes.json /votes.json
+COPY data/tags.json /tags.json
+COPY data/reports.json /reports.json
 
 CMD mongoimport --host mongodb --port 27017 --db ReadMeDB --collection users --type json --file /users.json --jsonArray; \
     mongoimport --host mongodb --port 27017 --db ReadMeDB --collection articles --type json --file /articles.json --jsonArray; \ 
     mongoimport --host mongodb --port 27017 --db ReadMeDB --collection favorites --type json --file /favorites.json --jsonArray; \ 
     mongoimport --host mongodb --port 27017 --db ReadMeDB --collection requests --type json --file /requests.json --jsonArray; \ 
     mongoimport --host mongodb --port 27017 --db ReadMeDB --collection answers --type json --file /answers.json --jsonArray; \
-    mongoimport --host mongodb --port 27017 --db ReadMeDB --collection votes --type json --file /votes.json --jsonArray; 
+    mongoimport --host mongodb --port 27017 --db ReadMeDB --collection votes --type json --file /votes.json --jsonArray; \ 
+    mongoimport --host mongodb --port 27017 --db ReadMeDB --collection tags --type json --file /tags.json --jsonArray; \
+    mongoimport --host mongodb --port 27017 --db ReadMeDB --collection reports --type json --file /reports.json --jsonArray; 
