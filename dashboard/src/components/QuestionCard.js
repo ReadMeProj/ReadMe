@@ -10,8 +10,8 @@ class QuestionCard extends Component {
     this.state = {
       requestData: [],
       requestId: props.requestId,
-      showTitleOnEach: props.reqPage ? props.reqPage : false,
-      onFocus: props.onFocus ? props.onFocus : false,
+      showTitleOnEach: props.reqPage != null ? props.reqPage : false,
+      onFocus: props.onFocus != null ? props.onFocus : false,
       whoAsked: "",
     };
   }

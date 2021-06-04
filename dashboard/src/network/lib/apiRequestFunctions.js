@@ -64,3 +64,7 @@ export async function getAnswersByRequest(requestId) {
 export async function getAnswerById(answerId) {
   return axiosClient.get(`${config["getAnswerById"] + "/" + answerId}`);
 }
+
+export async function getOpenRequests() {
+  return axiosClient.get(`${config["getAllOpenRequestsPath"]}`);
+}

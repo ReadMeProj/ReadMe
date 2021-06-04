@@ -21,5 +21,9 @@ export var config = {
   deleteFavoritePath: "/api/deleteFavorite",
   getAnswerById: "/api/answer/id",
   newRequestPath: "/api/newRequest",
-  //getAllOpenRequests
+  getAllOpenRequestsPath: "/api/getRequests/open/25",
+  //get requests by query
+  //get articles by query
+  //get recommendations by query?
+  //get likes by query
 };

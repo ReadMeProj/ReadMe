@@ -1,6 +1,6 @@
 import "./App.css";
 import React from "react";
-import RequestsPage from "./pages/RequestsPage";
+// import RequestsPage from "./pages/RequestsPage";
 import UserRequestsPage from "./pages/UserRequestsPage";
 import NavBar from "./components/NavBar";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
@@ -17,6 +17,8 @@ import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
 import UserScore from "./components/UserScore";
 import QuestionPage from "./pages/QuestionPage";
+import OpenRequestsPage from "./pages/OpenRequestsPage";
+
 function App() {
   // Variables to tie the search bar with the other components.
   // const { search } = window.location;
@@ -101,7 +103,7 @@ function App() {
                     <ProfilePage />
                   </Route>
                   <Route path="/requests">
-                    <RequestsPage />
+                    <OpenRequestsPage />
                   </Route>
                   <Route path="/userRequests">
                     <UserRequestsPage />
