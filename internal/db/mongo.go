@@ -207,8 +207,34 @@ func (db *MongoController) insertOneToDB(dbName string, collectionName string, n
 
 	log.Println(res)
 	return err
-}
+}	
 
+// insertOneToDB inserts a single new object to database (any ReadMe client object)
+func (db *MongoController) insertOneIfNotExists(dbName string, collectionName string, 
+	key []string, val []interface{}, newObject interface{}) error {
+	var data interface{}
+	
+	collection := db.client.Database(dbName).Collection(collectionName)
+		
+	filter := bson.D{}
+	for i := 0; i < len(key); i++ {
+		filter = append(filter, bson.E{Key: key[i], Value: val[i]})
+	}
+	
+	err := collection.FindOne(context.TODO(), filter).Decode(&data)
+	// if err == nil the data exists, don't insert it
+	if err == nil {
+		return err 
+	}
+
+	res, err := collection.InsertOne(context.TODO(), newObject) 
+	if err != nil  || res == nil {
+		log.Println(err)
+	}
+
+	log.Println(res)
+	return err
+}
 
 
 // updateOneInDB updates a single existing object in database (any ReadMe client object), with a given ID
@@ -551,8 +577,10 @@ func (db *MongoController) NewReport(report *Report) error {
 	err := db.GetByDoubleKey(mongoDatabaseName, mongoReportsCollectionName, "userid", report.UserID, "articleid", report.ArticleId, &prevReport)
 	// if err == nil, prevReport should contain previous data
 	if err == nil {
+		fmt.Println("Have previous report")
 		// Down score each labels from previous report
 		for _, element := range prevReport.Labels {
+			fmt.Println("Decrementing " + element)
 			db.IncrementOneInDBByDoubleKey(
 				mongoDatabaseName, 
 				mongoTagsCollectionName, 
@@ -573,9 +601,39 @@ func (db *MongoController) NewReport(report *Report) error {
 		db.DeleteAllByKey(mongoDatabaseName, mongoReportsCollectionName, keys, vals)
 	}
 
+	fmt.Println("Labels length")
+	fmt.Println(len(report.Labels))
 	// Update all current labels
 	for _, element := range report.Labels {
-		db.IncrementOneInDBByDoubleKey(
+		fmt.Println("Updating " + element)
+		
+		newTag := Tag {
+			ID: ID(proto.TokenGenerator()),
+			ArticleID: report.ArticleId,
+			Label: element,
+			Score: 0,
+		} 
+
+		var keys []string
+		var vals []interface{}
+		keys = append(keys, "articleid")
+		keys = append(keys, "label")
+		vals = append(vals, report.ArticleId) 
+		vals = append(vals, element)
+
+		err = db.insertOneIfNotExists(
+			mongoDatabaseName,
+			mongoTagsCollectionName,
+			keys,
+			vals,
+			newTag,
+		)
+		if err != nil {
+			fmt.Println("Insert if not exists")
+			fmt.Println(err.Error())
+		}
+
+		err = db.IncrementOneInDBByDoubleKey(
 			mongoDatabaseName, 
 			mongoTagsCollectionName, 
 			"articleid",
@@ -584,7 +642,11 @@ func (db *MongoController) NewReport(report *Report) error {
 			element,
 			"score",
 			1,
-		)	
+		)
+		if err != nil {
+			fmt.Println("Increment")
+			fmt.Println(err.Error())
+		}
 	}
 
 	return db.newItemNoValidate(mongoReportsCollectionName, *report)	
