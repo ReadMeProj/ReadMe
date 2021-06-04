@@ -6,6 +6,7 @@ import Insights from "../Insights/insights";
 import Report from "../Report/report";
 import Request from "../Request/request";
 import { isAuth } from '../../chromeHelper'
+import Register from "../Register/register";
 
 
 class LoginButton extends Component {
@@ -81,6 +82,9 @@ class LoginButton extends Component {
         <div >
           <div >
             <Router>
+            <Link to="/register">
+                <button className="btn-two cyan mini" type="button">Register</button>
+              </Link>
               <Link to="/login">
                 <button className="btn-two cyan mini" type="button">Login</button>
               </Link>
@@ -88,6 +92,9 @@ class LoginButton extends Component {
                 <button className="btn-two cyan mini" type="button">Insights</button>
               </Link>
               <Switch>
+              <Route path="/register">
+                  <Register />
+                </Route>
                 <Route path="/login">
                   <Login />
                 </Route>

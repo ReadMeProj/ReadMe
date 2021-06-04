@@ -7,19 +7,36 @@ import {
   useFormikContext,
   ErrorMessage,
 } from "formik";
+import { Alert, Spinner } from "react-bootstrap";
+import { Redirect, Route } from "react-router-dom";
 
 import { updateRequest } from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
+import afterRequest from "./after_request"
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
 };
 
 class Request extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hasArticle: undefined,
+      isSuccess: false,
+    };
+    articleStorage.get((article) => {
+      this.state.hasArticle = article;
+    });
+  }
   render() {
+    if (this.state.hasArticle)
     return (
-      <div className="form">
-        {/* <h1>Request a Report</h1> */}
+      <div>
+          {" "}
+          {this.state.hasArticle === "noArticle" ? (
+            <Alert variant="info"> No Article </Alert>
+          ) : (
         <Formik
           initialValues={{
             id: "123",
@@ -44,6 +61,7 @@ class Request extends Component {
               updateRequest(data)
                 .then((res) => {
                   console.log(res);
+                  this.setState({ isSuccess: true });
                   setSubmitting(false);
                 })
                 .catch((err) => {
@@ -70,6 +88,10 @@ class Request extends Component {
         >
           {({ handleSubmit, errors, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>
+              {this.state.isSuccess && <Redirect to="/afterRequest" />}
+                  <Route path="/afterRequest">
+                    <afterRequest />
+                  </Route>
               <div className="commentsField">
                 <Field
                   id="content"
@@ -86,15 +108,28 @@ class Request extends Component {
                 />
               </div>
               <div className="submitButton">
-                <button className="btn-two blue mini" type="submit" disabled={isSubmitting}>
+                <button
+                  className="btn-two blue mini"
+                  type="submit"
+                  disabled={isSubmitting}
+                >
                   Submit Request
                 </button>
               </div>
             </Form>
           )}
         </Formik>
+      )}
       </div>
     );
+    else
+      return (
+        <div>
+          <Spinner animation="border" role="status">
+            <span className="sr-only"></span>
+          </Spinner>
+        </div>
+      );
   }
 }
 
