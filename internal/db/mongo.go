@@ -545,11 +545,17 @@ func (db *MongoController) NewVoteRegistry(vote *VoteRegistery) error {
 
 func (db *MongoController) NewRequest(request *Request) error {
 	request.ID = ID(proto.TokenGenerator())
+	
+	db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(request.RequestedBy), "credit", 10)	
+	
 	return db.newItemNoValidate(mongoRequestsCollectionName, *request)	
 }
 
 func (db *MongoController) NewAnswer(answer *Answer) error {
 	answer.ID = ID(proto.TokenGenerator())
+
+	db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(answer.UserID), "credit", 20)	
+
 	return db.newItemNoValidate(mongoAnswersCollectionName, *answer)	
 }
 
@@ -599,6 +605,11 @@ func (db *MongoController) NewReport(report *Report) error {
 		keys = append(keys, "id")
 		vals = append(vals, prevReport.ID) 
 		db.DeleteAllByKey(mongoDatabaseName, mongoReportsCollectionName, keys, vals)
+	}
+
+	// User never reported this article, award him 5 points
+	if err != nil {
+		db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(report.UserID), "credit", 10)	
 	}
 
 	fmt.Println("Labels length")
@@ -654,7 +665,6 @@ func (db *MongoController) NewReport(report *Report) error {
 
 func (db *MongoController) UpdateUser(user User) error {
 	updateMap := make(map[string]interface{})
-	updateMap["interests"] = user.Interests
 	updateMap["credit"] = user.Credit
 
 	err := db.updateOneInDB(mongoDatabaseName, mongoUsersCollectionName, "username", user.Username, updateMap)
@@ -705,10 +715,17 @@ func (db *MongoController) UpdateReport(report Report) error {
 
 func (db *MongoController) UpdateRequest(request Request) error {
 	updateMap := make(map[string]interface{})
-	updateMap["votes"] = request.Votes 
-	updateMap["answerid"] = request.AnswerID 
+	updateMap["answerid"] = request.AnswerID
 	
-	err := db.updateOneInDB(mongoDatabaseName, mongoRequestsCollectionName, "id", string(request.ID), updateMap)
+	// Award correct answer by 50 points
+	var answer Answer
+	err := db.GetByKey(mongoDatabaseName, mongoAnswersCollectionName, "id", string(request.AnswerID), &answer)
+	if err == nil {
+		// This answer really exists
+		db.IncrementOneInDB(mongoDatabaseName, mongoUsersCollectionName, "id", string(request.RequestedBy), "credit", 50)	
+	}
+	
+	err = db.updateOneInDB(mongoDatabaseName, mongoRequestsCollectionName, "id", string(request.ID), updateMap)
 	if err != nil {
 		log.Println(err)
 	}

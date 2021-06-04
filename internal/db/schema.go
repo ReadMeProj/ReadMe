@@ -11,9 +11,7 @@ type User struct {
 
 	AccessToken Token `json:"accesstoken"`
 
-	Interests []ReadMeLabel `json:"interests"`
 	Credit    int `json:"credit"`
-	//RelScore  float32 `json:"relscore"`
 }
 
 type Article struct {
@@ -26,8 +24,6 @@ type Article struct {
 	Site   string `json:"site"`
 	
 	FakeVotes  Votes `json:"fakevotes"`
-	Rating 	   int `json:"rating"`
-	//RelScore   float32 `json:"relscore"`
 }
 
 type Comment struct {
