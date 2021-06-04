@@ -363,7 +363,32 @@ func (db *MongoController) GetArticles() ([]Article, error) {
 	}
 
 	return articles, err	
-}	
+}
+
+func (db* MongoController) GetArticlesByQuery(query string) ([]Article, error) {
+	var articles []Article
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+	
+	findOptions := options.Find()
+
+	filter := bson.M{"name": bson.M{"$regex": fmt.Sprintf(".*%s.*", query)}}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &articles)
+	if err != nil {
+		// handle error
+		log.Println(err)
+	}
+	
+	return articles, err
+}
 
 func (db *MongoController) GetFavorite(key1 string, value1 interface{}, key2 string, value2 string) (Favorite, error) {
 	var favorite Favorite
@@ -418,6 +443,31 @@ func (db* MongoController) GetRequests(key string, value interface{}) ([]Request
 	var requests []Request
 	err := db.getMany(mongoRequestsCollectionName, key, value, &requests)
 
+	return requests, err
+}
+
+func (db* MongoController) GetRequestsByQuery(query string) ([]Request, error) {
+	var requests []Request
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoRequestsCollectionName)
+	
+	findOptions := options.Find()
+
+	filter := bson.M{"content": bson.M{"$regex": fmt.Sprintf(".*%s.*", query)}}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &requests)
+	if err != nil {
+		// handle error
+		log.Println(err)
+	}
+	
 	return requests, err
 }
 

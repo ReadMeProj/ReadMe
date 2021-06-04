@@ -9,6 +9,7 @@ type ReadMeDatabase interface {
 	GetUsers() ([]User, error)
 	GetArticle(key string, value interface{}) (Article, error)
 	GetArticles() ([]Article, error)
+	GetArticlesByQuery(query string) ([]Article, error)
 
 	NewUser(user *User) error
 	NewArticle(article *Article) error
@@ -22,6 +23,7 @@ type ReadMeDatabase interface {
 	NewComment(comment *Comment) error
 
 	GetRequests(key string, value interface{}) ([]Request, error)
+	GetRequestsByQuery(query string) ([]Request, error)
 	GetAnswers(key string, value interface{}) ([]Answer, error)
 	GetReports(key string, value interface{}) ([]Report, error)
 	GetAllRequests(which string) ([]Request, error)

@@ -130,6 +130,15 @@ func getRequests(key string, value interface{}) (interface{}, error) {
 	return jsonData, err 
 }
 
+func getRequestsByQuery(responseWriter http.ResponseWriter, r *http.Request) {
+	query := ExtractFromRequest(r, "query")
+
+	jsonData, err := dBase.GetRequestsByQuery(query)
+	
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
 func getRequestsByArticle(responseWriter http.ResponseWriter, r *http.Request) {
 	jsonData, err := getRequests(
 		"articleid",
@@ -249,6 +258,15 @@ func getArticleByURL(responseWriter http.ResponseWriter, r *http.Request) {
 
 func getArticles(responseWriter http.ResponseWriter, r *http.Request) {
 	jsonData, err := dBase.GetArticles()
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
+func getArticlesByQuery(responseWriter http.ResponseWriter, r *http.Request) {
+	query := ExtractFromRequest(r, "query")
+
+	jsonData, err := dBase.GetArticlesByQuery(query)
+	
 	response := Response{Error: err, Data: jsonData}
 	GenerateHandler(responseWriter, r, response)
 }
@@ -865,6 +883,7 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router.HandleFunc("/api/getArticle/{id}", isAuthorized(getArticle)).Methods("GET")
 	router.HandleFunc("/api/getArticle", isAuthorized(getArticleByURL)).Methods("GET")
 	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
+	router.HandleFunc("/api/getArticles/{query}", getArticlesByQuery).Methods("GET")
 
 	router.HandleFunc("/api/newUser", newUser).Methods("PUT")
 	router.HandleFunc("/api/newArticle", newArticle).Methods("PUT")
@@ -880,6 +899,7 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router.HandleFunc("/api/getRequests/user/{id}", getRequestsByUser).Methods("GET")
 	router.HandleFunc("/api/getRequests/article/{id}", getRequestsByArticle).Methods("GET")
 	router.HandleFunc("/api/getRequests/{which}/{limit}", getAllRequests).Methods("GET")
+	router.HandleFunc("/api/getRequests/{query}", getRequestsByQuery).Methods("GET")
 	router.HandleFunc("/api/getAnswers/user/{id}", getAnswersByUser).Methods("GET")
 	router.HandleFunc("/api/getAnswers/article/{id}", getAnswersByArticle).Methods("GET")
 	router.HandleFunc("/api/getReports/user/{id}", getReportsByUser).Methods("GET")
