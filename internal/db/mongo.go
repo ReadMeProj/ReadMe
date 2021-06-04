@@ -8,6 +8,7 @@ import (
 	"log"
 
 	"go.mongodb.org/mongo-driver/bson"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -372,7 +373,8 @@ func (db* MongoController) GetArticlesByQuery(query string) ([]Article, error) {
 	
 	findOptions := options.Find()
 
-	filter := bson.M{"name": bson.M{"$regex": fmt.Sprintf(".*%s.*", query)}}
+	regex := primitive.Regex{Pattern: fmt.Sprintf(".*%s.*", query), Options: "i"}
+	filter := bson.M{"name": bson.M{"$regex": regex}}
 
 	// Passing bson.D{{}} as the filter matches all documents in the collection
 	cur, err := collection.Find(context.Background(), filter, findOptions)
@@ -453,7 +455,8 @@ func (db* MongoController) GetRequestsByQuery(query string) ([]Request, error) {
 	
 	findOptions := options.Find()
 
-	filter := bson.M{"content": bson.M{"$regex": fmt.Sprintf(".*%s.*", query)}}
+	regex := primitive.Regex{Pattern: fmt.Sprintf(".*%s.*", query), Options: "i"}
+	filter := bson.M{"content": bson.M{"$regex": regex}}
 
 	// Passing bson.D{{}} as the filter matches all documents in the collection
 	cur, err := collection.Find(context.Background(), filter, findOptions)
