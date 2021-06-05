@@ -22,6 +22,7 @@ export var config = {
   getAnswerById: "/api/answer/id",
   newRequestPath: "/api/newRequest",
   getAllOpenRequestsPath: "/api/getRequests/open/25",
+  newUserPath: "/api/newUser"
   //get recommendations by query?
   //get likes by query
 };

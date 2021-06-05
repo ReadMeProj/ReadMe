@@ -13,6 +13,7 @@ import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
 import QuestionPage from "./pages/QuestionPage";
 import OpenRequestsPage from "./pages/OpenRequestsPage";
+import SignUpPage from "./pages/SingUpPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import { createBrowserHistory } from "history";
@@ -110,6 +111,9 @@ function App() {
                   </Route>
                   <Route path="/login">
                     <LoginPage />
+                  </Route>
+                  <Route path="/signUp">
+                    <SignUpPage />
                   </Route>
                   <Route exact path="/moreInfo">
                     <ArticlePage />

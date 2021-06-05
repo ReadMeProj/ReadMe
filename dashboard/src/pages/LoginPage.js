@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { login } from "../network/lib/apiUserFunctions";
+import { Link } from "react-router-dom";
 class LoginPage extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +58,12 @@ class LoginPage extends Component {
           className="btn btn-info"
           onSubmit={this.handleSubmit}
         />
+        <Link
+          className="btn btn-info"
+          to={"signUp"}
+          style={{ marginLeft: 40 }}
+        >
+          Sign Up</Link>
       </form>
     );
   }

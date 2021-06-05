@@ -78,10 +78,10 @@ function ArticleCard(params) {
     var redirectURL;
     userStorage.get(userCredentials => {
       if (userCredentials) {
-        redirectURL = `http://${config["host"]}:8080/?articleId=${articleID}&username=${userCredentials.userName}&password=${userCredentials.password}`;
+        redirectURL = `${config["host"]}:8080/?articleId=${articleID}`;
       }
       else {
-        redirectURL = `http://${config["host"]}:8080/`;
+        redirectURL = `${config["host"]}:8080`;
       }
       window.open(`${redirectURL}`);
     });

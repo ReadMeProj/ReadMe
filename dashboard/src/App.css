@@ -141,6 +141,12 @@ input[type="password"]:focus {
   padding: 70px 0;
 }
 
+.loginField {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .astext {
   background: none;
   border: none;
