@@ -2,14 +2,14 @@ import React from "react";
 
 
 
-const afterRequest = ()=>{
+const AfterRequest = ()=>{
     return(
         <div>
-            <h1>Thank you for submitting a request</h1>
-            <h2>we hope it will be answered soon</h2>
+            <h2>Thank you for submitting a request</h2>
+            <h3>we hope it will be answered soon</h3>
         </div>
     )
 }
 
 
-export default afterRequest
+export default AfterRequest

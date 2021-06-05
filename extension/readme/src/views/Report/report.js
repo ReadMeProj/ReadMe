@@ -8,13 +8,18 @@ import {
   ErrorMessage,
 } from "formik";
 import { Alert, Spinner } from "react-bootstrap";
-import { Redirect, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route,
+} from "react-router-dom";
 import TagsInput from "react-tagsinput";
 import "react-tagsinput/react-tagsinput.css"; // If using WebPack and style-loader
 
-import { updateReport } from "../../network/lib/article";
+import { newReport } from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
-import afterReport from "./after_report";
+import AfterReport from "./after_report";
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -33,12 +38,12 @@ class Report extends Component {
     articleStorage.get((article) => {
       this.state.hasArticle = article;
     });
-    this.handleChange = this.handleChange.bind(this);
-  }
-  handleChange = (tags) => {
+/*     this.handleChange = this.handleChange.bind(this);
+ */  }
+ /*  handleChange = (tags) => {
     this.setState({ tags });
   };
-
+ */
   render() {
     if (this.state.hasArticle)
       return (
@@ -83,7 +88,7 @@ class Report extends Component {
                 sleep(1000).then(() => {
                   var data = Object.assign({}, ids, values_to_send);
 
-                  updateReport(data)
+                  newReport(data)
                     .then((res) => {
                       console.log(res);
                       this.setState({ isSuccess: true });
@@ -120,10 +125,14 @@ class Report extends Component {
                 setFieldValue,
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  {this.state.isSuccess && <Redirect to="/afterReport" />}
-                  <Route path="/afterReport">
-                    <afterReport />
-                  </Route>
+                  {this.state.isSuccess && <Redirect to="/after_report" />}
+                  {/* <Router>
+                    <Switch>
+                      <Route path="/afterReport">
+                        <AfterReport />
+                      </Route>
+                    </Switch>
+                  </Router> */}
                   <div className="input-group">
                     <TagsInput
                       name="tags"

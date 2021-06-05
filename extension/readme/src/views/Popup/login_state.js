@@ -4,7 +4,9 @@ import "./App.css";
 import Login from "./login";
 import Insights from "../Insights/insights";
 import Report from "../Report/report";
+import AfterReport from "../Report/after_report"
 import Request from "../Request/request";
+import AfterRequest from "../Request/after_request"
 import { isAuth } from '../../chromeHelper'
 import Register from "../Register/register";
 
@@ -69,6 +71,12 @@ class LoginButton extends Component {
                 </Route>
                 <Route path="/request">
                   <Request />
+                </Route>
+                <Route path="/after_report">
+                  <AfterReport />
+                </Route>
+                <Route path="/after_request">
+                  <AfterRequest />
                 </Route>
               </Switch>
             </Router>

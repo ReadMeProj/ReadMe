@@ -2,13 +2,13 @@ import React from "react";
 
 
 
-const afterReport = ()=>{
+const AfterReport = ()=>{
     return(
         <div>
-            <h1>Thank you for submitting a report</h1>
+            <h2>Thank you for submitting a report :)</h2>
         </div>
     )
 }
 
 
-export default afterReport
+export default AfterReport

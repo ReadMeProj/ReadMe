@@ -10,9 +10,9 @@ import {
 import { Alert, Spinner } from "react-bootstrap";
 import { Redirect, Route } from "react-router-dom";
 
-import { updateRequest } from "../../network/lib/article";
+import { newRequest } from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
-import afterRequest from "./after_request"
+import AfterRequest from "./after_request"
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -58,7 +58,7 @@ class Request extends Component {
             sleep(1000).then(() => {
               var data = Object.assign({}, ids, values);
 
-              updateRequest(data)
+              newRequest(data)
                 .then((res) => {
                   console.log(res);
                   this.setState({ isSuccess: true });
@@ -89,9 +89,6 @@ class Request extends Component {
           {({ handleSubmit, errors, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>
               {this.state.isSuccess && <Redirect to="/afterRequest" />}
-                  <Route path="/afterRequest">
-                    <afterRequest />
-                  </Route>
               <div className="commentsField">
                 <Field
                   id="content"
