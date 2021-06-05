@@ -28,6 +28,8 @@ class RequestsPage extends Component {
     return (
       <div>
         <br />
+        <h2>Your Requests</h2>
+        <br />
         <dl>
           {requests.map((article) => (
             <dd key={article.id}>

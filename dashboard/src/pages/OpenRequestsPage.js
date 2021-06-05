@@ -20,6 +20,8 @@ class OpenRequestsPage extends Component {
     return (
       <div>
         <br />
+        <h2>Requests waiting for your answer:</h2>
+        <br />
         <dl>
           {requests.map((req) => (
             <dd key={req.id}>

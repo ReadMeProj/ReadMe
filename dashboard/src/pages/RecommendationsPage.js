@@ -25,14 +25,18 @@ class RecommendationsPage extends Component {
     return (
       <div>
         <br />
+        <h2>Articles recommended for you!</h2>
+        <br />
         <dl>
-          {articles == null
-            ? []
-            : articles.map((article) => (
-                <dd key={article}>
-                  <ArticleCard articleId={article} />
-                </dd>
-              ))}
+          {articles == null || articles === {} ? (
+            <div>Loading recommendations...</div>
+          ) : (
+            articles.map((article) => (
+              <dd key={article}>
+                <ArticleCard articleId={article} />
+              </dd>
+            ))
+          )}
         </dl>
       </div>
     );

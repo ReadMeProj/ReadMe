@@ -11,12 +11,13 @@ import LikesPage from "./pages/LikesPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
+import QuestionPage from "./pages/QuestionPage";
+import OpenRequestsPage from "./pages/OpenRequestsPage";
+import AnalyticsPage from "./pages/AnalyticsPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
 import UserScore from "./components/UserScore";
-import QuestionPage from "./pages/QuestionPage";
-import OpenRequestsPage from "./pages/OpenRequestsPage";
 
 function App() {
   const history = createBrowserHistory();
@@ -114,6 +115,9 @@ function App() {
                   </Route>
                   <Route path="/focusQuestion">
                     <QuestionPage />
+                  </Route>
+                  <Route path="/analytics">
+                    <AnalyticsPage />
                   </Route>
                 </Switch>
               </div>
