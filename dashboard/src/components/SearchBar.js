@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const SearchBar = () => (
   <form action="/" method="get">
-    <div className="searchBar" style={{ marginLeft: "20%" }}>
+    <div className="searchBar">
       <input
         type="text"
         id="header-search"

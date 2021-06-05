@@ -1,6 +1,7 @@
 .App {
   text-align: left;
   overflow: "hidden";
+  font-size: large;
 }
 
 .App-logo {
@@ -92,6 +93,7 @@ hr {
 
 .navLink:hover {
   color: #3c4a9b;
+  font-weight: bold;
   text-decoration-line: none;
 }
 

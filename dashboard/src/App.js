@@ -77,7 +77,7 @@ function App() {
             >
               {logoImg}
               <br />
-              <div style={{ paddingTop: "100px" }}></div>
+              <div style={{ paddingTop: "100px" }} />
               <NavBar />
               <UserScore />
               <FontAwesomeIcon

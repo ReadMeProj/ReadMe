@@ -73,7 +73,9 @@ class QuestionPage extends Component {
         <div style={{ marginLeft: "100px" }}>
           <h4 style={{ marginLeft: "7%" }}>Answers:</h4>
           {answers == null || answers.length === 0 ? (
-            "Be the first to post an answer!"
+            <div style={{ marginLeft: "7%" }}>
+              Be the first to post an answer!
+            </div>
           ) : (
             <dl>
               {answers == null
