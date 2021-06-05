@@ -72,7 +72,7 @@ class ArticlePage extends Component {
   }
   render() {
     const { articleData: article, requestsData: questions } = this.state;
-    if (article == null || questions == null) return <div></div>;
+    if (article == null) return <div></div>;
 
     return (
       <div>
@@ -92,19 +92,26 @@ class ArticlePage extends Component {
             onClick={this.handleOpenModal}
             style={{ marginLeft: "10%", width: "200px" }}
           >
-            Submit a question
+            Request a question
           </button>
           <br />
-          <dl>
-            {questions.map((q) => (
-              <dd key={q.id}>
-                <QuestionCard requestId={q.id} />
-              </dd>
-            ))}
-          </dl>
+          {questions == null || questions === {} ? (
+            <div style={{ marginLeft: "7%" }}>
+              <br />
+              No question have been requested yet!
+            </div>
+          ) : (
+            <dl>
+              {questions.map((q) => (
+                <dd key={q.id}>
+                  <QuestionCard requestId={q.id} />
+                </dd>
+              ))}
+            </dl>
+          )}
         </div>
         <Modal show={this.state.showModal} size="lg">
-          <Modal.Header>Write a Question:</Modal.Header>
+          <Modal.Header>Request a Question:</Modal.Header>
           <Modal.Body>
             <textarea
               name="questionInput"
@@ -118,7 +125,7 @@ class ArticlePage extends Component {
               Close
             </button>
             <button className="btn btn-info" onClick={this.handleSubmit}>
-              Submit
+              Request
             </button>
           </Modal.Footer>
         </Modal>

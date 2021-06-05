@@ -35,12 +35,22 @@ class LikesPage extends Component {
             <div>You are yet to add any article to your favorites!</div>
           ) : (
             articles.map((fav) => (
-              <div key={fav.id} className="container-fluid">
+              <div
+                key={fav.id}
+                className="container-fluid"
+                style={{
+                  borderStyle: "solid",
+                  borderWidth: "3px",
+                  borderColor: "#eff0f8",
+                  borderRadius: "10px",
+                  marginTop: "10px",
+                  width: "900px",
+                }}
+              >
                 <FontAwesomeIcon
                   icon={["fas", "times"]}
                   size="2x"
                   color="red"
-                  style={{ position: "fixed", marginTop: "5%" }}
                   onClick={async () => {
                     await removeFav(fav.articleid).then((response) => {
                       if (response.data["Error"] == null)
@@ -53,6 +63,7 @@ class LikesPage extends Component {
                   }}
                   cursor="pointer"
                 />
+                <br />
                 <ArticleCard articleId={fav.articleid} isOnFavPage={true} />
               </div>
             ))
