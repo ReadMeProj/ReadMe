@@ -24,6 +24,18 @@ export function newArticle(articleData) {
     }
 }
 
+export function newReport(articleData) {
+    if (articleData["articleid"]) {
+        return axiosClient.put(`${config["newReportPath"]}`, JSON.stringify(articleData));
+    }
+}
+
+export function newRequest(articleData) {
+    if (articleData["articleid"]) {
+        return axiosClient.put(`${config["newRequestPath"]}`, JSON.stringify(articleData));
+    }
+}
+
 export function updateArticle(articleData) {
     if (articleData["id"]) {
         return axiosClient.post(`${config["updateArticlePath"]}`, JSON.stringify(articleData))

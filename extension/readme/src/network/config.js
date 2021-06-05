@@ -10,6 +10,8 @@ export var config = {
     "getUsersPath": "/api/getUsers",
     "newUserPath": "/api/newUser",
     "newArticlePath": "/api/newArticle",
+    "newReportPath" : "/api/newReport",
+    "newRequestPath" : "/api/newRequest",
     "updateUserPath": "/api/updateUser",
     "updateArticlePath" : "/api/updateArticle",
     "updateReportPath" : "/api/updateReport",

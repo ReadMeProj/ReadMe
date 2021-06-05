@@ -11,8 +11,8 @@ import Report from "../Report/report";
 function App() {
   return (
     <div className="App">
-      
-        <img width={48} height={48} src={logo} />
+      <a href="http://localhost:8080" target="_blank">
+        <img width={48} height={48} src={logo} /></a>
         <div>
           <LoginButton />
         </div>
