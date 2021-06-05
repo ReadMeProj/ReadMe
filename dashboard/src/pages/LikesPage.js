@@ -36,7 +36,7 @@ class LikesPage extends Component {
           ) : (
             articles.map((fav) => (
               <div
-                key={fav.id}
+                key={fav.articleid}
                 className="container-fluid"
                 style={{
                   borderStyle: "solid",
@@ -52,14 +52,12 @@ class LikesPage extends Component {
                   size="2x"
                   color="red"
                   onClick={async () => {
-                    await removeFav(fav.articleid).then((response) => {
-                      if (response.data["Error"] == null)
-                        getUserFavorites().then((response) =>
-                          this.setState({
-                            articlesData: response.data["Data"],
-                          })
-                        );
-                    });
+                    await removeFav(fav.articleid);
+                    await getUserFavorites().then((response) =>
+                      this.setState({
+                        articlesData: response.data["Data"],
+                      })
+                    );
                   }}
                   cursor="pointer"
                 />
