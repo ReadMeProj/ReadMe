@@ -4,11 +4,23 @@ import React, { Component } from "react";
 class AnalyticsPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { articlesData: [] };
+    this.state = { analyticsType: "none" };
   }
   render() {
-    const { articlesData: articles } = this.state;
-    return <div></div>;
+    const { analyticsType: type } = this.state;
+    return (
+      <div>
+        <br />
+        <h2>Advanced Analytics!</h2>
+        <hr />
+        <br />
+        <div className="d-flex justify-content-around">
+          <button className="btn btn-info">Show analytics type 1</button>
+          <button className="btn btn-info">Show analytics type 2</button>
+          <button className="btn btn-info">Show analytics type 3</button>
+        </div>
+      </div>
+    );
   }
 }
 

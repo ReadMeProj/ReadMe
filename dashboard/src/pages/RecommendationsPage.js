@@ -29,7 +29,7 @@ class RecommendationsPage extends Component {
         <br />
         <dl>
           {articles == null || articles === {} ? (
-            <div>Loading recommendations...</div>
+            <div>No recommendations found...</div>
           ) : (
             articles.map((article) => (
               <dd key={article}>
