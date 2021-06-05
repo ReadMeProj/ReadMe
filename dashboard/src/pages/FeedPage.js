@@ -14,9 +14,17 @@ class FeedPage extends Component {
   }
 
   async componentDidMount() {
-    await getArticles().then((response) =>
-      this.setState({ articlesData: response.data["Data"] })
-    );
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get("q");
+    if (query) {
+      await getArticles(query).then((response) =>
+        this.setState({ articlesData: response.data["Data"] })
+      );
+    } else {
+      await getArticles().then((response) =>
+        this.setState({ articlesData: response.data["Data"] })
+      );
+    }
   }
 
   render() {

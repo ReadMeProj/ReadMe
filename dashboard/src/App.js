@@ -7,7 +7,6 @@ import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "./assets/siteLogo.png";
 import FeedPage from "./pages/FeedPage";
-import FillRequestPage from "./pages/FillRequestPage";
 import LikesPage from "./pages/LikesPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/UserProfile";
@@ -20,10 +19,6 @@ import QuestionPage from "./pages/QuestionPage";
 import OpenRequestsPage from "./pages/OpenRequestsPage";
 
 function App() {
-  // Variables to tie the search bar with the other components.
-  // const { search } = window.location;
-  // const query = new URLSearchParams(search).get("q");
-
   const history = createBrowserHistory();
   var logoImg = (
     <Link to="/">
@@ -107,9 +102,6 @@ function App() {
                   </Route>
                   <Route path="/userRequests">
                     <UserRequestsPage />
-                  </Route>
-                  <Route path="/fillRequest">
-                    <FillRequestPage />
                   </Route>
                   <Route path="/likes">
                     <LikesPage />

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import QuestionCard from "../components/QuestionCard";
-import SearchBar from "../components/SearchBar";
-import SearchFilterBox from "../components/SearchFilters";
 import { getOpenRequests } from "../network/lib/apiRequestFunctions";
 
 class OpenRequestsPage extends Component {
@@ -21,10 +19,7 @@ class OpenRequestsPage extends Component {
     const { requestsData: requests } = this.state;
     return (
       <div>
-        <div>
-          <SearchBar />
-          <SearchFilterBox />
-        </div>
+        <br />
         <dl>
           {requests.map((req) => (
             <dd key={req.id}>
