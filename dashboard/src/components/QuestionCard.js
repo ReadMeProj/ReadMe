@@ -72,7 +72,7 @@ class QuestionCard extends Component {
                         className="btn btn-info"
                         to={"/focusQuestion?requestId=" + this.state.requestId}
                       >
-                        Focus
+                        View Answers
                       </Link>
                     </div>
                   )}

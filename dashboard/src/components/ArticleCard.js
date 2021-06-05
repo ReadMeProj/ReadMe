@@ -81,7 +81,7 @@ class ArticleCard extends Component {
                 className="btn btn-info"
                 to={"moreInfo?articleId=" + this.state.articleId}
               >
-                View Discussion
+                To Article Page
               </Link>
             </div>
           </div>

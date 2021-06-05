@@ -16,6 +16,7 @@ import {
   faArrowAltCircleDown,
   faGrinStars,
   faTimes,
+  faDiagnoses,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -31,6 +32,7 @@ library.add(
   faArrowAltCircleUp,
   faArrowAltCircleDown,
   faGrinStars,
-  faTimes
+  faTimes,
+  faDiagnoses
   // more icons go here
 );
