@@ -33,19 +33,23 @@ class FeedPage extends Component {
 
     return (
       <div>
-        <div>
+        <div className="d-flex justify-content-around">
           <SearchBar />
+        </div>
+        <div className="d-flex justify-content-around">
           <SearchFilterBox />
         </div>
-        <dl>
-          {articles == null
-            ? []
-            : articles.map((article) => (
-                <dd key={article.id}>
-                  <ArticleCard articleId={article.id} />
-                </dd>
-              ))}
-        </dl>
+        <div className="d-flex justify-content-around">
+          <dl>
+            {articles == null
+              ? []
+              : articles.map((article) => (
+                  <dd key={article.id}>
+                    <ArticleCard articleId={article.id} />
+                  </dd>
+                ))}
+          </dl>
+        </div>
       </div>
     );
   }

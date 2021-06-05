@@ -1,5 +1,8 @@
 import { React, Component } from "react";
-import { getAnswerById } from "../network/lib/apiRequestFunctions";
+import {
+  getAnswerById,
+  getRequestById,
+} from "../network/lib/apiRequestFunctions";
 import { getUsernameById } from "../network/lib/apiUserFunctions";
 import VoteButtons from "./VoteButtons";
 
@@ -9,7 +12,7 @@ class AnswerCard extends Component {
     this.state = {
       answerData: [],
       answerId: props.answerId,
-      isCorrect: props.isCorrect != null ? props.isCorrect : false,
+      isCorrect: false,
       whoAnswered: "",
     };
   }
@@ -24,6 +27,14 @@ class AnswerCard extends Component {
           console.log("Error getting answer data by id.");
         }
       });
+      var correctAnswerId;
+      await getRequestById(this.state.answerData.requestid).then((res) => {
+        if (res.data["Error"] == null)
+          correctAnswerId = res.data["Data"].answerid;
+      });
+      if (correctAnswerId == this.state.answerId) {
+        this.setState({ isCorrect: true });
+      }
     }
     await getUsernameById(this.state.answerData.userid).then((response) => {
       this.setState({ whoAnswered: response });
@@ -42,7 +53,7 @@ class AnswerCard extends Component {
           style={{
             width: "800px",
             height: "auto",
-            backgroundColor: this.state.isCorrect ? "green" : "white",
+            backgroundColor: this.state.isCorrect ? "#E3FFDE" : "white",
           }}
         >
           <div className="media">

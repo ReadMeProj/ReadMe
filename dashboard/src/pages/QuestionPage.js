@@ -80,7 +80,7 @@ class QuestionPage extends Component {
                 ? []
                 : answers.map((ans) => (
                     <dd key={ans.id}>
-                      <AnswerCard answerId={ans.id} isCorrect={false} />
+                      <AnswerCard answerId={ans.id} />
                     </dd>
                   ))}
             </dl>

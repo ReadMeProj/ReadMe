@@ -30,23 +30,12 @@ class LikesPage extends Component {
         <br />
         <h2>Favorites</h2>
         <br />
-        <dl>
-          {articles == null || articles === {} ? (
-            <div>You are yet to add any article to your favorites!</div>
-          ) : (
-            articles.map((fav) => (
-              <div
-                key={fav.articleid}
-                className="container-fluid"
-                style={{
-                  borderStyle: "solid",
-                  borderWidth: "3px",
-                  borderColor: "#eff0f8",
-                  borderRadius: "10px",
-                  marginTop: "10px",
-                  width: "900px",
-                }}
-              >
+        {articles == null || articles === {} ? (
+          <div>You are yet to add any article to your favorites!</div>
+        ) : (
+          <div>
+            {articles.map((fav) => (
+              <div key={fav.articleid} className="d-flex align-items-center">
                 <FontAwesomeIcon
                   icon={["fas", "times"]}
                   size="2x"
@@ -61,12 +50,11 @@ class LikesPage extends Component {
                   }}
                   cursor="pointer"
                 />
-                <br />
                 <ArticleCard articleId={fav.articleid} isOnFavPage={true} />
               </div>
-            ))
-          )}
-        </dl>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

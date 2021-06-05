@@ -77,7 +77,12 @@ class QuestionCard extends Component {
                     </div>
                   )}
                   <div className="column">
-                    {"Status: " + (isResolved ? "Resolved!" : "Open")}
+                    Status:{" "}
+                    {isResolved ? (
+                      <b style={{ color: "green" }}>Resolved!</b>
+                    ) : (
+                      "Open"
+                    )}
                   </div>
                 </div>
               </div>

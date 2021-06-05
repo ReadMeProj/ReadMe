@@ -72,6 +72,7 @@ function App() {
                 textAlign: "start",
                 padding: "10px 15px 0",
                 position: "fixed",
+                minHeight: "100%",
               }}
             >
               {logoImg}
