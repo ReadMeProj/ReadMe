@@ -705,7 +705,7 @@ func updateVotes(w http.ResponseWriter, r *http.Request) {
 	voteName := ""
 	switch _type {
 	case "article":
-		voteName = "votes"
+		voteName = "fakevotes"
 		collection = "articles"
 	case "request":
 		voteName = "votes"
