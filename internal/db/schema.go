@@ -23,7 +23,7 @@ type Article struct {
 	Image  string `json:"image" validate:"url"`
 	Site   string `json:"site"`
 	
-	FakeVotes  Votes `json:"fakevotes"`
+	Votes  Votes `json:"votes"`
 }
 
 type Comment struct {
