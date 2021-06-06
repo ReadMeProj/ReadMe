@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { register } from "../network/lib/apiUserFunctions";
+import { login, register } from "../network/lib/apiUserFunctions";
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { Redirect } from "react-router";
@@ -86,20 +86,21 @@ class SignUpPage extends Component {
     let mail = this.state.email;
     let first = this.state.firstName;
     let last = this.state.lastName;
-    const response = await register({
+    const registerResponse = await register({
       username: user,
       password: pass,
       email: mail,
       firstname: first,
       lastname: last,
     });
-    if (response.data.error == null) {
-      this.setState({ token: response.data.Data.token, err: "", isSuccess: true });
-      this.state.token = response.data.Data.token;
+    const loginResponse = await login(this.state.userName, this.state.password);
+    if (registerResponse?.data?.error == null && loginResponse?.data?.error == null) {
+      this.setState({ token: loginResponse.data.Data.token, err: "", isSuccess: true });
+      this.state.token = loginResponse.data.Data.token;
       // Store the response in localStorage
-      window.localStorage.setItem("Token", response.data.Data.token);
+      window.localStorage.setItem("Token", loginResponse.data.Data.token);
       window.localStorage.setItem("Username", this.state.userName);
-      window.localStorage.setItem("UserId", response.data.Data.id);
+      window.localStorage.setItem("UserId", registerResponse.data.Data.id);
       window.location.href = "/";
     }
     else {
