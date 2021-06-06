@@ -8,11 +8,18 @@ import {
   ErrorMessage,
 } from "formik";
 import { Alert, Spinner } from "react-bootstrap";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route,
+} from "react-router-dom";
 import TagsInput from "react-tagsinput";
 import "react-tagsinput/react-tagsinput.css"; // If using WebPack and style-loader
 
-import { updateReport } from "../../network/lib/article";
+import { newReport } from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
+import AfterReport from "./after_report";
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -21,18 +28,22 @@ const sleep = (milliseconds) => {
 class Report extends Component {
   constructor(props) {
     super(props);
-    this.state = { hasArticle: undefined, tags: [], rating_st: "", fake_st: "" };
-    articleStorage.get((article) => {this.state.hasArticle=article; });
-    this.handleChange = this.handleChange.bind(this);
-    
-    
-  }
-  handleChange = (tags) => {
+    this.state = {
+      hasArticle: undefined,
+      tags: [],
+      rating_st: "",
+      fake_st: "",
+      isSuccess: false,
+    };
+    articleStorage.get((article) => {
+      this.state.hasArticle = article;
+    });
+/*     this.handleChange = this.handleChange.bind(this);
+ */  }
+ /*  handleChange = (tags) => {
     this.setState({ tags });
   };
-
-      
-
+ */
   render() {
     if (this.state.hasArticle)
       return (
@@ -45,7 +56,7 @@ class Report extends Component {
               initialValues={{
                 type: "report",
                 id: "123",
-                tags:[],
+                tags: [],
                 fake_st: "null",
                 rating_st: "null",
               }}
@@ -63,22 +74,24 @@ class Report extends Component {
                 if (values["fake_st"] == "true") {
                   values_to_send["fake"] = true;
                 }
-                if (values["fake_st"] == false) {
+                if (values["fake_st"] == "false") {
                   values_to_send["fake"] = false;
                 }
                 values_to_send["rating"] = parseInt(values.rating_st, 10);
                 // handle labels
-                for (const tag in values["tags"]){
+                values_to_send["labels"] = values["tags"];
+                /* for (const tag in values["tags"]){
                   values_to_send["labels"].push({label:values["tags"][tag]});
-                }
+                 */
                 //values_to_send["labels"].push({ label: values.category });
                 console.log(values_to_send);
                 sleep(1000).then(() => {
                   var data = Object.assign({}, ids, values_to_send);
 
-                  updateReport(data)
+                  newReport(data)
                     .then((res) => {
                       console.log(res);
+                      this.setState({ isSuccess: true });
                       setSubmitting(false);
                     })
                     .catch((err) => {
@@ -112,7 +125,14 @@ class Report extends Component {
                 setFieldValue,
               }) => (
                 <Form onSubmit={handleSubmit}>
-                  
+                  {this.state.isSuccess && <Redirect to="/after_report" />}
+                  {/* <Router>
+                    <Switch>
+                      <Route path="/afterReport">
+                        <AfterReport />
+                      </Route>
+                    </Switch>
+                  </Router> */}
                   <div className="input-group">
                     <TagsInput
                       name="tags"
@@ -131,7 +151,7 @@ class Report extends Component {
                     <Field as="select" name="fake_st">
                       <option value="null">What's between the lines</option>
                       <option value="true">Real/ Authentic</option>
-                      <option value="fake">Fake/ Sponsored</option>
+                      <option value="false">Fake/ Sponsored</option>
                       <option value="none">Not Sure</option>
                     </Field>
                     <ErrorMessage
