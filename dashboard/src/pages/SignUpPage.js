@@ -84,15 +84,8 @@ class SignUpPage extends Component {
     let user = this.state.userName;
     let pass = this.state.password;
     let mail = this.state.email;
-    let first = this.state.firstname;
-    let last = this.state.lastname;
-    register({
-      username: user,
-      password: pass,
-      email: mail,
-      firstname: first,
-      lastname: last,
-    })
+    let first = this.state.firstName;
+    let last = this.state.lastName;
     const response = await register({
       username: user,
       password: pass,
@@ -131,19 +124,19 @@ class SignUpPage extends Component {
             placeholder="Enter Username"
             autoFocus
           />
-          {<span className='error'>{errors.userName}</span>}
-        </div>
 
+        </div>
+        {<span className='error'>{errors.userName}</span>}
         <div className="loginField">
           <label className="form-label">Password: </label>
           <input type="password"
             name="password"
             placeholder="Enter Password"
             onChange={this.handleChange} noValidate />
-          {errors.password.length > 0 &&
-            <span className='error'>{errors.password}</span>}
-        </div>
 
+        </div>
+        {errors.password.length > 0 &&
+          <span className='error'>{errors.password}</span>}
 
         <div className="loginField">
           <label className="form-label">Email: </label>
@@ -151,9 +144,9 @@ class SignUpPage extends Component {
             name="email"
             placeholder="Enter Your Email"
             onChange={this.handleChange} noValidate />
-          {errors.email.length > 0 &&
-            <span className='error'>{errors.email}</span>}
         </div>
+        {errors.email.length > 0 &&
+          <span className='error'>{errors.email}</span>}
 
         <div className="loginField">
           <label className="form-label">First Name: </label>
@@ -161,8 +154,8 @@ class SignUpPage extends Component {
             name="firstName"
             placeholder="Enter Your First Name"
             onChange={this.handleChange} noValidate />
-          {<span className='error'>{errors.firstName}</span>}
         </div>
+        {<span className='error'>{errors.firstName}</span>}
 
         <div className="loginField">
           <label className="form-label">Surname: </label>
@@ -170,15 +163,18 @@ class SignUpPage extends Component {
             name="lastName"
             placeholder="Enter Your Surname"
             onChange={this.handleChange} noValidate />
-          {<span className='error'>{errors.lastName}</span>}
         </div>
-        <label className="form-label"></label>
-        <input
-          type="submit"
-          value="Sign Up"
-          className="btn btn-info"
-          onSubmit={this.handleSubmit}
-        />
+        {<span className='error'>{errors.lastName}</span>}
+
+        <div>
+          <label className="form-label"></label>
+          <input
+            type="submit"
+            value="Sign Up"
+            className="btn btn-info"
+            onSubmit={this.handleSubmit}
+          />
+        </div>
       </form>
     );
   }

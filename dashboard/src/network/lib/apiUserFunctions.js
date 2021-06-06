@@ -73,6 +73,6 @@ export async function getUsernameById(userId) {
   return null;
 }
 
-export async function register(registerJSon) {
-  return axiosClient.put(`${config.newUserPath}`, registerJSon);
+export async function register(registerJson) {
+  return axiosClient.put(`${config.newUserPath}`, registerJson);
 }

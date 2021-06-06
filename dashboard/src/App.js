@@ -13,7 +13,7 @@ import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
 import QuestionPage from "./pages/QuestionPage";
 import OpenRequestsPage from "./pages/OpenRequestsPage";
-import SignUpPage from "./pages/SingUpPage";
+import SignUpPage from "./pages/SignUpPage";
 import AnalyticsPage from "./pages/AnalyticsPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import { createBrowserHistory } from "history";
