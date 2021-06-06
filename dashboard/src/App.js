@@ -19,6 +19,7 @@ import RecommendationsPage from "./pages/RecommendationsPage";
 import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
 import UserScore from "./components/UserScore";
+import AboutPage from "./pages/AboutPage";
 
 function App() {
   const history = createBrowserHistory();
@@ -50,7 +51,7 @@ function App() {
         />
       </button>
     );
-    history.push(`/login`);
+    history.push(`/about`);
   }
   let params = new URLSearchParams(document.location.search.substring(1));
   let articleID = params.get("articleId"); // Will be null if there is no articleId value in the URL.
@@ -120,6 +121,9 @@ function App() {
                   </Route>
                   <Route path="/focusQuestion">
                     <QuestionPage />
+                  </Route>
+                  <Route path="/about">
+                    <AboutPage />
                   </Route>
                   <Route path="/analytics">
                     <AnalyticsPage />

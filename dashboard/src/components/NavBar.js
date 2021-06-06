@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { isLoggedIn, logout } from "../network/lib/apiUserFunctions";
 
 function NavBar() {
@@ -21,6 +22,7 @@ function NavBar() {
       {NavBarOption("user-circle", "/profile", "My Profile", sessionUp)}
       {NavBarOption("inbox", "/requests", "Answer Requests", sessionUp)}
       {NavBarOption("tasks", "/userRequests", "My Requests", sessionUp)}
+      {NavBarAbout()}
     </div>
   );
 }
@@ -89,5 +91,17 @@ function NavBarLogin(isSessionUp) {
     </dd>
   );
 }
+
+function NavBarAbout() {
+  return (
+    <dd className="navOption">
+      <FontAwesomeIcon icon={faInfoCircle} size="lg" />
+      <Link to="/about" className="navLink">
+        About ReadMe
+      </Link>
+    </dd>
+  );
+}
+
 
 export default NavBar;
