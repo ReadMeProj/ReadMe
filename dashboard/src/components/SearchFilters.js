@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Link } from "react-router-dom";
 
-function SearchFilters2(params) {
+function SearchFilters() {
   const [toDateInit, setToDate] = useState(new Date());
   const [fromDateInit, setFromDate] = useState(1577829600000);
   return (
@@ -89,4 +89,4 @@ function SearchFilters2(params) {
   );
 }
 
-export default SearchFilters2;
+export default SearchFilters;

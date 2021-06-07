@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
 import { getArticles } from "../network/lib/apiArticleFunctions";
 import SearchBar from "../components/SearchBar";
-import SearchFilter2 from "../components/SearchFilters2";
+import SearchFilter from "../components/SearchFilters";
 class FeedPage extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +37,7 @@ class FeedPage extends Component {
           <SearchBar />
         </div>
         <div className="d-flex justify-content-around">
-          <SearchFilter2 />
+          <SearchFilter />
         </div>
         <div className="d-flex justify-content-around">
           <dl>
