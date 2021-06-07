@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import SearchBar from "../components/SearchBar";
-import SearchFilterBox from "../components/SearchFilters";
 import { getRequestsForUser } from "../network/lib/apiRequestFunctions";
 import QuestionCard from "../components/QuestionCard";
 class RequestsPage extends Component {
@@ -21,7 +19,7 @@ class RequestsPage extends Component {
 
   render() {
     const { requestsData: requests } = this.state;
-    if (!requests || requests == {})
+    if (!requests || requests === {})
       return (
         <div style={{ marginTop: "50px" }}>
           <h2>..You are yet to ask anything!</h2>
@@ -29,10 +27,9 @@ class RequestsPage extends Component {
       );
     return (
       <div>
-        <div>
-          <SearchBar />
-          <SearchFilterBox />
-        </div>
+        <br />
+        <h2>Your Requests</h2>
+        <br />
         <dl>
           {requests.map((article) => (
             <dd key={article.id}>

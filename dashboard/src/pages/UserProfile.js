@@ -9,8 +9,6 @@ class ProfilePage extends Component {
       userData: {},
     };
   }
-;
-
   async componentDidMount() {
     await getUserById().then((response) =>
       this.setState({ userData: response.data["Data"] })
@@ -22,25 +20,30 @@ class ProfilePage extends Component {
     const { userData: user } = this.state;
 
     return (
-      <div className="container-fluid" style={{ marginLeft: "50px", marginTop: "50px" }}>
-        <div className="userProfile" style={{ width: "800px", height: "800px" }}>
-          {
-            user == null 
-            ? {}
-            : 
-            <div className="row justify-content-start" style={{ margetLeft: "45px"}}>
-            <h2>Hello {user.firstname} {user.lastname}</h2>
-            <hr />
-            Username: {user.username}
-            <br />
-            Credit: {user.credit}
-            <br />
-            Email: {user.email}
-            <br />
-            Stats: not yet..
-            <br />
+      <div
+        className="container-fluid"
+        style={{ marginLeft: "7%", marginTop: "50px" }}
+      >
+        <div
+          className="userProfile"
+          style={{ width: "800px", height: "800px" }}
+        >
+          {user == null ? (
+            {}
+          ) : (
+            <div className="row justify-content-center" style={{}}>
+              <h2>
+                Hello {user.firstname} {user.lastname} !
+              </h2>
+              <hr />
+              <p>
+                <b>Username:</b> {user.username} <br />
+                <b>Credit:</b> {user.credit} <br />
+                <b>Email:</b> {user.email} <br />
+                <b>Stats:</b> not yet.. <br />
+              </p>
             </div>
-          }
+          )}
         </div>
       </div>
     );

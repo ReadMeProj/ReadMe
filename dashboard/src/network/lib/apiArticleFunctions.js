@@ -26,7 +26,8 @@ export async function getRecommendations() {
 }
 
 /// Get all articles.
-export async function getArticles() {
+export async function getArticles(query) {
+  if (query) return axiosClient.get(`${config["getArticlesPath"]}/${query}`);
   return axiosClient.get(`${config["getArticlesPath"]}`);
 }
 

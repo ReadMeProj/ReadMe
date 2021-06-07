@@ -1,27 +1,27 @@
 import "./App.css";
 import React from "react";
-import RequestsPage from "./pages/RequestsPage";
+// import RequestsPage from "./pages/RequestsPage";
 import UserRequestsPage from "./pages/UserRequestsPage";
 import NavBar from "./components/NavBar";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "./assets/siteLogo.png";
 import FeedPage from "./pages/FeedPage";
-import FillRequestPage from "./pages/FillRequestPage";
 import LikesPage from "./pages/LikesPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/UserProfile";
 import ArticlePage from "./pages/ArticlePage";
+import QuestionPage from "./pages/QuestionPage";
+import OpenRequestsPage from "./pages/OpenRequestsPage";
+import SignUpPage from "./pages/SignUpPage";
+import AnalyticsPage from "./pages/AnalyticsPage";
 import RecommendationsPage from "./pages/RecommendationsPage";
 import { createBrowserHistory } from "history";
 import { isLoggedIn } from "./network/lib/apiUserFunctions";
 import UserScore from "./components/UserScore";
-import QuestionPage from "./pages/QuestionPage";
-function App() {
-  // Variables to tie the search bar with the other components.
-  // const { search } = window.location;
-  // const query = new URLSearchParams(search).get("q");
+import AboutPage from "./pages/AboutPage";
 
+function App() {
   const history = createBrowserHistory();
   var logoImg = (
     <Link to="/">
@@ -51,7 +51,7 @@ function App() {
         />
       </button>
     );
-    history.push(`/login`);
+    history.push(`/about`);
   }
   let params = new URLSearchParams(document.location.search.substring(1));
   let articleID = params.get("articleId"); // Will be null if there is no articleId value in the URL.
@@ -74,11 +74,12 @@ function App() {
                 textAlign: "start",
                 padding: "10px 15px 0",
                 position: "fixed",
+                minHeight: "100%",
               }}
             >
               {logoImg}
               <br />
-              <div style={{ paddingTop: "100px" }}></div>
+              <div style={{ paddingTop: "100px" }} />
               <NavBar />
               <UserScore />
               <FontAwesomeIcon
@@ -101,13 +102,10 @@ function App() {
                     <ProfilePage />
                   </Route>
                   <Route path="/requests">
-                    <RequestsPage />
+                    <OpenRequestsPage />
                   </Route>
                   <Route path="/userRequests">
                     <UserRequestsPage />
-                  </Route>
-                  <Route path="/fillRequest">
-                    <FillRequestPage />
                   </Route>
                   <Route path="/likes">
                     <LikesPage />
@@ -115,11 +113,20 @@ function App() {
                   <Route path="/login">
                     <LoginPage />
                   </Route>
+                  <Route path="/signUp">
+                    <SignUpPage />
+                  </Route>
                   <Route exact path="/moreInfo">
                     <ArticlePage />
                   </Route>
                   <Route path="/focusQuestion">
                     <QuestionPage />
+                  </Route>
+                  <Route path="/about">
+                    <AboutPage />
+                  </Route>
+                  <Route path="/analytics">
+                    <AnalyticsPage />
                   </Route>
                 </Switch>
               </div>
