@@ -46,10 +46,11 @@
 
 .searchFilterBox {
   border-style: solid;
-  border-width: 2px;
+  border-width: 4px;
   border-color: #eaf6fd;
+  background-color: #ecf8ff4b;
   border-radius: 10px;
-  height: 100px;
+  height: 120px;
   width: 87%;
   text-align: center;
   margin-left: 45px;
@@ -120,6 +121,7 @@ input[type="password"] {
   border-bottom: 1px solid gray;
   outline: none;
   background-color: transparent;
+  width: 150px;
 }
 
 input[type="text"]:focus,
