@@ -51,20 +51,6 @@ class ArticlePage extends Component {
         }
       })
       .then(this.handleCloseModal(this));
-    // await submitQuestion(
-    //   this.state.articleData.id,
-    //   questionContent,
-    //   this.state.articleData.name,
-    //   this.state.articleData.url
-    // )
-    //   .then(this.handleCloseModal(this))
-    //   .then(
-    //     getRequestsForArticle(this.state.articleData.id).then((response) => {
-    //       if (response.data["Error"] == null) {
-    //         this.setState({ requestsData: response.data["Data"] });
-    //       }
-    //     })
-    //   );
   }
 
   async componentDidMount() {
