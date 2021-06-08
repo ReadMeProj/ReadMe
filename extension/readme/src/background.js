@@ -68,10 +68,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         });
         getArticleTags(res.data.Data).then(tagresult => {
           if (tagresult && tagresult.status === 200){
-            console.log("got tags from db");
-            let articleRawTags;
-            articleRawTags = sort_by_key(tagresult.data.Data,'score');
-            articleTags = articleRawTags.slice(0,8);
+              if (tagresult.data.Data){
+              console.log("got tags from db");
+              let articleRawTags;
+              articleRawTags = sort_by_key(tagresult.data.Data,'score');
+              articleTags = articleRawTags.slice(0,8);}
+            else{
+              articleTags=[];
+            }
             console.log("Going to store these tags in chrome storage");
             console.log(articleTags);
             tagStorage.set(articleTags, () => {
