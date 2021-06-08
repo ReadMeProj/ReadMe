@@ -7,11 +7,6 @@ import { config } from "../config.js";
       It's the code responsibility to catch it and know what the response looks like.
   */
 
-//const FiltersEnum = Object.freeze({ filter1: 1, filter2: 2, filter3: 3 }); //TODO
-// const userId = window.localStorage.getItem("UserId");
-// const userName = window.localStorage.getItem("Username");
-// const token = window.localStorage.getItem("Token");
-
 export async function getRecommendations() {
   const userId = window.localStorage.getItem("UserId");
   var numRecommendations = 20;
@@ -29,6 +24,18 @@ export async function getRecommendations() {
 export async function getArticles(query) {
   if (query) return axiosClient.get(`${config["getArticlesPath"]}/${query}`);
   return axiosClient.get(`${config["getArticlesPath"]}`);
+}
+
+/// Get articles by tag.
+export async function getArticlesByTag(tag) {
+  return axiosClient.get(`/api/all/article/label/${tag}`);
+}
+
+/// Get articles in some date interval.
+export async function getArticlesByDateInterval(from, to) {
+  return axiosClient.get(
+    `/api/getArticles/${Date.parse(from)}/${Date.parse(to)}`
+  );
 }
 
 /// Get article by ID.

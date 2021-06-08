@@ -1,7 +1,11 @@
 import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { getArticles } from "../network/lib/apiArticleFunctions";
+import {
+  getArticles,
+  getArticlesByTag,
+  getArticlesByDateInterval,
+} from "../network/lib/apiArticleFunctions";
 import SearchBar from "../components/SearchBar";
 import SearchFilter from "../components/SearchFilters";
 class FeedPage extends Component {
@@ -16,8 +20,19 @@ class FeedPage extends Component {
   async componentDidMount() {
     const { search } = window.location;
     const query = new URLSearchParams(search).get("q");
+    const tag = new URLSearchParams(search).get("tag");
+    const fromDate = new URLSearchParams(search).get("from");
+    const toDate = new URLSearchParams(search).get("to");
     if (query) {
       await getArticles(query).then((response) =>
+        this.setState({ articlesData: response.data["Data"] })
+      );
+    } else if (tag) {
+      await getArticlesByTag(tag).then((response) =>
+        this.setState({ articlesData: response.data["Data"] })
+      );
+    } else if (fromDate && toDate) {
+      await getArticlesByDateInterval(fromDate, toDate).then((response) =>
         this.setState({ articlesData: response.data["Data"] })
       );
     } else {
