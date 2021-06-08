@@ -356,10 +356,30 @@ func (db *MongoController) GetArticle(key string, value interface{}) (Article, e
 
 func (db *MongoController) GetArticles() ([]Article, error) {
 	var articles []Article
-	//limit := MultipleExtractionLimit
 
 	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(20))
 	if err != nil {
+		log.Println(err)
+	}
+
+	return articles, err	
+}
+
+func (db* MongoController) getArticlesSample() ([]Article, error) {
+	var articles []Article
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+	sample := bson.M{"$sample": bson.M{"size": 20}}
+	operations := []bson.M{sample}
+	curr, err := collection.Aggregate(context.Background(), operations)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = curr.All(context.TODO(), &articles)
+	if err != nil {
+		// handle error
 		log.Println(err)
 	}
 
