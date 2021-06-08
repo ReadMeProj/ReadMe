@@ -19,7 +19,7 @@ type Article struct {
 	Name   string `json:"name" validate:"required"`
 	URL    string `json:"url" validate:"required,url"`
 	Author string `json:"author" validate:"required,gte=2"`
-	Date   string `json:"date" validate:"required"`
+	Date   int64 `json:"date" validate:"required"`
 	Image  string `json:"image" validate:"url"`
 	Site   string `json:"site"`
 	
@@ -73,7 +73,7 @@ type Report struct {
 	UserID 	  ID `json:"userid" validate:"required"`
 	ArticleId ID `json:"articleid" validate:"required"`
 	// Report
-	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
+	Rating 	  int `json:"rating" validate:"lte=10,gte=0"`
 	Labels 	  []string `json:"labels"`
 	Fake 	  bool `json:"fake"`
 	// Report
