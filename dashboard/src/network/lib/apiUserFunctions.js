@@ -37,10 +37,10 @@ export async function logout(token, username) {
 }
 
 /// Send  PUT request to update user personal info.
-export async function updateInfo(params) {}
+export async function updateInfo(params) { }
 
 /// Send PUT request to update user points.
-export async function addScore(params) {}
+export async function addScore(params) { }
 
 /// Get user by userId in the localStorage.
 export async function getUserById() {
@@ -54,4 +54,25 @@ export async function getUserById() {
     },
   };
   return axiosClient.get(`${config["getUserPath"] + "/" + userId}`, headers);
+}
+
+export async function getUsernameById(userId) {
+  var userName = window.localStorage.getItem("Username");
+  var token = window.localStorage.getItem("Token");
+  let headers = {
+    headers: {
+      Token: token,
+      Username: userName,
+    },
+  };
+  var response = await axiosClient.get(
+    `${config["getUserPath"] + "/" + userId}`,
+    headers
+  );
+  if (response.data["Error"] == null) return response.data["Data"].username;
+  return null;
+}
+
+export async function register(registerJson) {
+  return axiosClient.put(`${config.newUserPath}`, registerJson);
 }

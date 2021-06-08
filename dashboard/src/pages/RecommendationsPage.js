@@ -2,8 +2,6 @@ import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
 import { getRecommendations } from "../network/lib/apiArticleFunctions";
-import SearchBar from "../components/SearchBar";
-import SearchFilterBox from "../components/SearchFilters";
 
 class RecommendationsPage extends Component {
   constructor(props) {
@@ -16,12 +14,8 @@ class RecommendationsPage extends Component {
 
   async componentDidMount() {
     await getRecommendations()
-    .then((response) =>
-      response.data.data
-    )
-    .then((data) =>
-      this.setState({ articlesData: data })
-    );
+      .then((response) => response.data.data)
+      .then((data) => this.setState({ articlesData: data }));
   }
 
   render() {
@@ -30,18 +24,19 @@ class RecommendationsPage extends Component {
 
     return (
       <div>
-        <div>
-          <SearchBar />
-          <SearchFilterBox />
-        </div>
+        <br />
+        <h2>Articles recommended for you!</h2>
+        <br />
         <dl>
-          {articles == null
-            ? []
-            : articles.map((article) => (
-                <dd key={article}>
-                  <ArticleCard articleId={article} />
-                </dd>
-              ))}
+          {articles == null || articles === {} ? (
+            <div>No recommendations found...</div>
+          ) : (
+            articles.map((article) => (
+              <dd key={article}>
+                <ArticleCard articleId={article} />
+              </dd>
+            ))
+          )}
         </dl>
       </div>
     );

@@ -1,18 +1,12 @@
 import { React, Component } from "react";
 import { Link } from "react-router-dom";
-import {
-  getArticleById,
-  addFav,
-  removeFav,
-} from "../network/lib/apiArticleFunctions";
+import { getArticleById, addFav } from "../network/lib/apiArticleFunctions";
 import VoteButtons from "./VoteButtons";
 class ArticleCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       articleData: [],
-      userData: [],
-      favoritesData: [],
       articleId: props.articleId,
       isOnFavPage: props.isOnFavPage ? props.isOnFavPage : false,
     };
@@ -29,9 +23,8 @@ class ArticleCard extends Component {
     }
   }
 
-  toggleFav(date) {
-    if (this.state.isOnFavPage) removeFav(this.state.articleId);
-    else addFav(this.state.articleId, date);
+  addFavorite(date) {
+    addFav(this.state.articleId, date);
   }
 
   render() {
@@ -48,13 +41,9 @@ class ArticleCard extends Component {
         ? article.image
         : "https://images.pexels.com/photos/20787/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350";
     var url = article.url;
-    var votes = [0, 0];
-
-    if (article.fakevotes)
-      votes = [article.fakevotes.up, article.fakevotes.down];
 
     return (
-      <div className="container-fluid" style={{ marginLeft: "7%" }}>
+      <div className="container-fluid">
         <div className="articleBox" style={{ width: "800px", height: "auto" }}>
           <a href={url} className="cardLink" target="_blank" rel="noreferrer">
             <div className="media">
@@ -78,19 +67,21 @@ class ArticleCard extends Component {
               <VoteButtons id={this.state.articleId} type="article" />
             </div>
             <div className="col-3">
-              <button
-                className="btn btn-info"
-                onClick={() => this.toggleFav(Date.now())}
-              >
-                {this.state.isOnFavPage ? "Remove" : "Add to Favorites"}
-              </button>
+              {this.state.isOnFavPage ? null : (
+                <button
+                  className="btn btn-info"
+                  onClick={() => this.addFavorite(Date.now())}
+                >
+                  Add to Favorites
+                </button>
+              )}
             </div>
             <div className="col-3" style={{ marginLeft: "30px" }}>
               <Link
                 className="btn btn-info"
                 to={"moreInfo?articleId=" + this.state.articleId}
               >
-                View Discussion
+                To Article Page
               </Link>
             </div>
           </div>

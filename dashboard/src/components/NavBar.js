@@ -1,15 +1,69 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { isLoggedIn, logout } from "../network/lib/apiUserFunctions";
+
 function NavBar() {
-  // Check if user is logged in and create the login/logout option.
-  var loginLogout;
   var sessionUp;
-  var navBar;
   sessionUp = isLoggedIn();
-  if (sessionUp) {
-    loginLogout = (
+  return (
+    <div>
+      {NavBarLogin(sessionUp)}
+      {NavBarOption("home", "/", "Home", sessionUp)}
+      {NavBarOption(
+        "grin-stars",
+        "/recommendations",
+        "You Might Like",
+        sessionUp
+      )}
+      {NavBarOption("diagnoses", "/analytics", "Analytics", sessionUp)}
+      {NavBarOption("star", "/likes", "My Favorites", sessionUp)}
+      {NavBarOption("user-circle", "/profile", "My Profile", sessionUp)}
+      {NavBarOption("inbox", "/requests", "Answer Requests", sessionUp)}
+      {NavBarOption("tasks", "/userRequests", "My Requests", sessionUp)}
+      {NavBarAbout()}
+    </div>
+  );
+}
+
+function NavBarOption(iconName, linkTo, name, isSessionUp) {
+  if (isSessionUp) return NavLinkOption(iconName, linkTo, name);
+  return NavBlockedOption(iconName, name);
+}
+function NavLinkOption(iconName, linkTo, name) {
+  return (
+    <dd className="navOption">
+      <FontAwesomeIcon icon={["fas", `${iconName}`]} size="lg" />
+      <Link to={linkTo} className="navLink">
+        {name}
+      </Link>
+    </dd>
+  );
+}
+function NavBlockedOption(iconName, name) {
+  return (
+    <dd className="navOption">
+      <FontAwesomeIcon
+        icon={["fas", `${iconName}`]}
+        size="lg"
+        style={{ marginRight: "20px" }}
+      />
+      <button
+        className="astext"
+        onClick={() => {
+          alert("Please log in!");
+        }}
+      >
+        {name}
+      </button>
+    </dd>
+  );
+}
+
+function NavBarLogin(isSessionUp) {
+  if (isSessionUp)
+    return (
       <dd className="navOption">
         <FontAwesomeIcon
           icon={["fas", "door-open"]}
@@ -28,143 +82,26 @@ function NavBar() {
         </button>
       </dd>
     );
-    // set up the rest of the navbar
-    navBar = (
-      <div>
-        <dl>
-          {loginLogout}
-          <dd className="navOption">
-            <FontAwesomeIcon icon={["fas", "home"]} size="lg" />
-            <Link to="/" className="navLink">
-              Home
-            </Link>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon icon={["fas", "grin-stars"]} size="lg" />
-            <Link to="/recommendations" className="navLink">
-              You Might Like
-            </Link>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon icon={["fas", "star"]} size="lg" />
-            <Link to="/likes" className="navLink">
-              Likes
-            </Link>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon icon={["fas", "user-circle"]} size="lg" />
-            <Link to="/profile" className="navLink">
-              My Profile
-            </Link>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon icon={["fas", "inbox"]} size="lg" />
-            <Link to="/requests" className="navLink">
-              Answer Requests
-            </Link>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon icon={["fas", "tasks"]} size="lg" />
-            <Link to="/userRequests" className="navLink">
-              My Requested
-            </Link>
-          </dd>
-        </dl>
-      </div>
-    );
-  } else {
-    loginLogout = (
-      <dd className="navOption">
-        <FontAwesomeIcon icon={["fas", "user-circle"]} size="lg" />
-        <Link to="/login" className="navLink">
-          Login
-        </Link>
-      </dd>
-    );
-    navBar = (
-      <div>
-        <dl>
-          {loginLogout}
-          <dd className="navOption">
-            <FontAwesomeIcon
-              icon={["fas", "home"]}
-              size="lg"
-              style={{ marginRight: "20px" }}
-            />
-            <button
-              className="astext"
-              onClick={() => {
-                alert("Please log in!");
-              }}
-            >
-              Dashboard
-            </button>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon
-              icon={["fas", "star"]}
-              size="lg"
-              style={{ marginRight: "20px" }}
-            />
-            <button
-              className="astext"
-              onClick={() => {
-                alert("Please log in!");
-              }}
-            >
-              Likes
-            </button>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon
-              icon={["fas", "user-circle"]}
-              size="lg"
-              style={{ marginRight: "20px" }}
-            />
-            <button
-              className="astext"
-              onClick={() => {
-                alert("Please log in!");
-              }}
-            >
-              My Profile
-            </button>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon
-              icon={["fas", "inbox"]}
-              size="lg"
-              style={{ marginRight: "20px" }}
-            />
-            <button
-              className="astext"
-              onClick={() => {
-                alert("Please log in!");
-              }}
-            >
-              Answer Requests
-            </button>
-          </dd>
-          <dd className="navOption">
-            <FontAwesomeIcon
-              icon={["fas", "tasks"]}
-              size="lg"
-              style={{ marginRight: "20px" }}
-            />
-            <button
-              className="astext"
-              onClick={() => {
-                alert("Please log in!");
-              }}
-            >
-              My Requested
-            </button>
-          </dd>
-        </dl>
-      </div>
-    );
-  }
-  return navBar;
+  return (
+    <dd className="navOption">
+      <FontAwesomeIcon icon={["fas", "user-circle"]} size="lg" />
+      <Link to="/login" className="navLink">
+        Login
+      </Link>
+    </dd>
+  );
 }
+
+function NavBarAbout() {
+  return (
+    <dd className="navOption">
+      <FontAwesomeIcon icon={faInfoCircle} size="lg" />
+      <Link to="/about" className="navLink">
+        About ReadMe
+      </Link>
+    </dd>
+  );
+}
+
 
 export default NavBar;

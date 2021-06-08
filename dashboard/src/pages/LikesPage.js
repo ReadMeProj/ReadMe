@@ -1,9 +1,11 @@
 import "../App.css";
 import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
-import { getUserFavorites } from "../network/lib/apiArticleFunctions";
-import SearchBar from "../components/SearchBar";
-import SearchFilterBox from "../components/SearchFilters";
+import {
+  getUserFavorites,
+  removeFav,
+} from "../network/lib/apiArticleFunctions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class LikesPage extends Component {
   constructor(props) {
     super(props);
@@ -25,19 +27,34 @@ class LikesPage extends Component {
 
     return (
       <div>
-        <div>
-          <SearchBar />
-          <SearchFilterBox />
-        </div>
-        <dl>
-          {articles == null
-            ? []
-            : articles.map((fav) => (
-                <dd key={fav.id}>
-                  <ArticleCard articleId={fav.articleid} isOnFavPage={true} />
-                </dd>
-              ))}
-        </dl>
+        <br />
+        <h2>Favorites</h2>
+        <br />
+        {articles == null || articles === {} ? (
+          <div>You are yet to add any article to your favorites!</div>
+        ) : (
+          <div style={{ marginLeft: "7%" }}>
+            {articles.map((fav) => (
+              <div key={fav.articleid} className="d-flex align-items-center">
+                <FontAwesomeIcon
+                  icon={["fas", "times"]}
+                  size="2x"
+                  color="red"
+                  onClick={async () => {
+                    await removeFav(fav.articleid);
+                    await getUserFavorites().then((response) =>
+                      this.setState({
+                        articlesData: response.data["Data"],
+                      })
+                    );
+                  }}
+                  cursor="pointer"
+                />
+                <ArticleCard articleId={fav.articleid} isOnFavPage={true} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   }

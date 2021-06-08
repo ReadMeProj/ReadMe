@@ -38,8 +38,33 @@ export async function submitAnswer(requestId, content) {
   });
 }
 
+export async function submitQuestion(
+  articleId,
+  content,
+  articlename,
+  articleurl
+) {
+  const userId = window.localStorage.getItem("UserId");
+  return axiosClient.put(`${config["newRequestPath"]}`, {
+    requestedby: userId,
+    articleid: articleId,
+    articlename: articlename,
+    articleurl: articleurl,
+    date: Date.now(),
+    content: content,
+  });
+}
+
 export async function getAnswersByRequest(requestId) {
   if (!requestId)
     console.log("No request id argument was given for getRequests()!");
   return axiosClient.get(`/api/all/answer/requestid/${requestId}`); //todo
+}
+
+export async function getAnswerById(answerId) {
+  return axiosClient.get(`${config["getAnswerById"] + "/" + answerId}`);
+}
+
+export async function getOpenRequests() {
+  return axiosClient.get(`${config["getAllOpenRequestsPath"]}`);
 }

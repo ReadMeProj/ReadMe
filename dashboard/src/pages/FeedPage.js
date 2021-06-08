@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
 import { getArticles } from "../network/lib/apiArticleFunctions";
 import SearchBar from "../components/SearchBar";
-import SearchFilterBox from "../components/SearchFilters";
+import SearchFilter from "../components/SearchFilters";
 class FeedPage extends Component {
   constructor(props) {
     super(props);
@@ -14,9 +14,17 @@ class FeedPage extends Component {
   }
 
   async componentDidMount() {
-    await getArticles().then((response) =>
-      this.setState({ articlesData: response.data["Data"] })
-    );
+    const { search } = window.location;
+    const query = new URLSearchParams(search).get("q");
+    if (query) {
+      await getArticles(query).then((response) =>
+        this.setState({ articlesData: response.data["Data"] })
+      );
+    } else {
+      await getArticles().then((response) =>
+        this.setState({ articlesData: response.data["Data"] })
+      );
+    }
   }
 
   render() {
@@ -25,19 +33,23 @@ class FeedPage extends Component {
 
     return (
       <div>
-        <div>
+        <div className="d-flex justify-content-around">
           <SearchBar />
-          <SearchFilterBox />
         </div>
-        <dl>
-          {articles == null
-            ? []
-            : articles.map((article) => (
-                <dd key={article.id}>
-                  <ArticleCard articleId={article.id} />
-                </dd>
-              ))}
-        </dl>
+        <div className="d-flex justify-content-around">
+          <SearchFilter />
+        </div>
+        <div className="d-flex justify-content-around">
+          <dl>
+            {articles == null
+              ? []
+              : articles.map((article) => (
+                  <dd key={article.id}>
+                    <ArticleCard articleId={article.id} />
+                  </dd>
+                ))}
+          </dl>
+        </div>
       </div>
     );
   }

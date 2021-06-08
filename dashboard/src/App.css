@@ -1,6 +1,7 @@
 .App {
   text-align: left;
   overflow: "hidden";
+  font-size: large;
 }
 
 .App-logo {
@@ -24,8 +25,12 @@
   margin-top: 10px;
   border-style: solid;
   border-width: 2px;
-  border-color: #eff0f8;
+  border-color: #eaf6fd;
   border-radius: 10px;
+}
+
+.articleBox:hover {
+  background-color: #f5fafe;
 }
 
 .userProfile {
@@ -41,10 +46,11 @@
 
 .searchFilterBox {
   border-style: solid;
-  border-width: 2px;
-  border-color: #dedfec;
+  border-width: 4px;
+  border-color: #eaf6fd;
+  background-color: #ecf8ff4b;
   border-radius: 10px;
-  height: 100px;
+  height: 120px;
   width: 87%;
   text-align: center;
   margin-left: 45px;
@@ -88,6 +94,7 @@ hr {
 
 .navLink:hover {
   color: #3c4a9b;
+  font-weight: bold;
   text-decoration-line: none;
 }
 
@@ -114,6 +121,7 @@ input[type="password"] {
   border-bottom: 1px solid gray;
   outline: none;
   background-color: transparent;
+  width: 150px;
 }
 
 input[type="text"]:focus,
@@ -124,6 +132,9 @@ input[type="password"]:focus {
 }
 
 .loginBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #eff0f8;
   padding: 10px;
   border-style: solid;
@@ -131,6 +142,32 @@ input[type="password"]:focus {
   border-color: #dbdce6;
   border-radius: 10px;
   width: 50%;
+  min-height: 300px;
+  margin: 90px 220px;
+  text-align: center;
+  padding: 70px 0;
+}
+
+.loginField {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: auto;
+}
+
+.aboutBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eff0f8;
+  padding: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dbdce6;
+  border-radius: 10px;
+  align-items: stretch;
   min-height: 300px;
   margin: 90px 220px;
   text-align: center;
@@ -155,4 +192,8 @@ input[type="password"]:focus {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+}
+
+.cardText {
+  text-align: left;
 }
