@@ -19,7 +19,7 @@ type Article struct {
 	Name   string `json:"name" validate:"required"`
 	URL    string `json:"url" validate:"required,url"`
 	Author string `json:"author" validate:"required,gte=2"`
-	Date   string `json:"date" validate:"required"`
+	Date   int64 `json:"date" validate:"required"`
 	Image  string `json:"image" validate:"url"`
 	Site   string `json:"site"`
 	
@@ -61,9 +61,7 @@ type Answer struct {
 	Date      int64 `json:"date"` 
 	Content   string `json:"content" validate:"required,lte=256"`
 	// Report
-	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
 	Category  string `json:"category"`
-	Fake 	  bool `json:"fake"`
 	// Report
 	Votes 	  Votes `json:"votes"`
 }
@@ -73,9 +71,7 @@ type Report struct {
 	UserID 	  ID `json:"userid" validate:"required"`
 	ArticleId ID `json:"articleid" validate:"required"`
 	// Report
-	Rating 	  int `json:"rating" validate:"lte=5,gte=0"`
 	Labels 	  []string `json:"labels"`
-	Fake 	  bool `json:"fake"`
 	// Report
 }
 

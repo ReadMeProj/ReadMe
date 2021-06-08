@@ -170,13 +170,22 @@ def user_tags(user_id, num_of_tags):
     return {"labels": labels}
 
 
+def generic_requests(num_of_requests, requests):
+    requests = [request["id"] for request in requests]
+    random.shuffle(requests)
+    return requests[:num_of_requests]
+
+
 @app.route("/requests/<string:user_id>/<int:num_of_requests>", methods=['GET'])
 def user_requests(user_id, num_of_requests):
     if user_id is None or num_of_requests is None:
         abort(400, 'User or number of requests was not provided as expected.')
 
     users_tags = set(user_tags(user_id, NUM_OF_TAGS)["labels"])
-    requests = list(filter(valid_request_json, (mongo.db.requests.find({}))))
+
+    requests = list(filter(valid_request_json, (mongo.db.requests.find({"answerid": None}))))
+    if len(users_tags) == 0:
+        return generic_requests(num_of_requests, requests)
 
     articles = list(mongo.db.articles.find({"_id": {"$in": [request["articleid"] for request in requests]}},
                                            {"labels": 1}))
@@ -192,11 +201,14 @@ def user_requests(user_id, num_of_requests):
                                      in x[1] if label["score"] > TAG_THRESHOLD])),
                                requests_labels))
 
-    requests = [request[0] for request
-                in requests_labels
-                if len(request[1].intersection(users_tags)) > REQUEST_MATCH_THRESHOLD]
+    requests_for_user = [request[0] for request
+                         in requests_labels
+                         if len(request[1].intersection(users_tags)) > REQUEST_MATCH_THRESHOLD]
+    if len(requests_for_user) < num_of_requests:
+        requests_for_user.extend(generic_requests(num_of_requests - len(requests_for_user), requests))
 
-    return {"requests": requests[:num_of_requests]}
+    random.shuffle(requests_for_user)
+    return {"requests": requests_for_user[:num_of_requests]}
 
 
 def main():

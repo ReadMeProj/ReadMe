@@ -355,15 +355,52 @@ func (db *MongoController) GetArticle(key string, value interface{}) (Article, e
 }
 
 func (db *MongoController) GetArticles() ([]Article, error) {
-	var articles []Article
-	//limit := MultipleExtractionLimit
+	return db.getArticlesSample()	
+}
 
-	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(20))
+func (db* MongoController) getArticlesSample() ([]Article, error) {
+	var articles []Article
+
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+	sample := bson.M{"$sample": bson.M{"size": 20}}
+	operations := []bson.M{sample}
+	curr, err := collection.Aggregate(context.Background(), operations)
 	if err != nil {
 		log.Println(err)
 	}
 
+	// All extract all (subject to limit) from requested query 
+	err = curr.All(context.TODO(), &articles)
+	if err != nil {
+		// handle error
+		log.Println(err)
+	}
+
 	return articles, err	
+}
+
+func (db *MongoController) GetArticlesByDate(from int64, to int64) ([]Article, error) {
+	var articles []Article
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+	
+	findOptions := options.Find()
+	findOptions.SetLimit(100)
+
+	filter := bson.M{"date": bson.M{"$gte": from, "$lt": to}}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &articles)
+	if err != nil {
+		// handle error
+	}
+	
+	return articles, err
 }
 
 func (db* MongoController) GetArticlesByQuery(query string) ([]Article, error) {
@@ -759,8 +796,6 @@ func (db *MongoController) UpdateAnswer(answer Answer) error {
 func (db *MongoController) UpdateReport(report Report) error {
 	updateMap := make(map[string]interface{})
 	updateMap["labels"] = report.Labels 
-	updateMap["fake"] = report.Fake
-	updateMap["rating"] = report.Rating
 	
 	err := db.updateOneInDB(mongoDatabaseName, mongoAnswersCollectionName, "id", string(report.ID), updateMap)
 	if err != nil {
