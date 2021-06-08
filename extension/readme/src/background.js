@@ -1,6 +1,6 @@
 'use strict';
-var { getArticle, newArticle } = require('./network/lib/article');
-const {articleStorage, isAuth, clearStorage} = require('./chromeHelper');
+var { getArticle, getArticleTags, newArticle, sort_by_key } = require('./network/lib/article');
+const {articleStorage,tagStorage, isAuth, clearStorage} = require('./chromeHelper');
 // With background scripts you can communicate with popup
 // and contentScript files.
 // For more information on background script,
@@ -39,8 +39,8 @@ function articleFromOg(ogData) {
     "id": encodeURIComponent(ogData.og.url),
     "name": og.title,
     "url": og.url,
-    "author": author || "Doron Kopit",
-    "date": date || "2021-03-12",
+    "author": author || "Anonymous",
+    "date": date || Date.now,
     "image": image || "",
     "source": og.site_name,
     "labels": labels || []
@@ -57,6 +57,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     const articleUrl = ogMetaData.og.url;
     const currentArticle = articleFromOg(ogMetaData);
     let articleToPop;
+    let articleTags;
     getArticle(articleUrl, false).then(res => {
       if (res && res.status === 200 && res.data.Data && res.data.Data.id) {
         console.log("Found article in the DB");
@@ -64,7 +65,19 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         console.log("Going to store this in chrome storage");
         console.log(articleToPop.Data);
         articleStorage.set(articleToPop.Data, () => {
-        })
+        });
+        getArticleTags(res.data.Data).then(tagresult => {
+          if (tagresult && tagresult.status === 200){
+            console.log("got tags from db");
+            let articleRawTags;
+            articleRawTags = sort_by_key(tagresult.data.Data,'score');
+            articleTags = articleRawTags.slice(0,8);
+            console.log("Going to store these tags in chrome storage");
+            console.log(articleTags);
+            tagStorage.set(articleTags, () => {
+          });
+            }
+          })
       }
       else {
         newArticle(currentArticle).then((res => {
@@ -81,6 +94,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }).then(()=>{
       articleStorage.get((article)=>{
         sendResponse({type: "articleUpdated" , data:article });
+      })
+      tagStorage.get((tags)=>{
+        sendResponse({type: "tagsUpdated" , data:tags });
       })
     })
   }

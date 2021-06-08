@@ -18,6 +18,12 @@ export function getArticles() {
     return axiosClient.get(`${config["getArticlesPath"]}`);
 }
 
+export function getArticleTags(articleData) {
+    if (articleData["id"]) {
+    return axiosClient.get(`${config["getArticleTagsPath"]}${articleData["id"]}`);
+    }
+}
+
 export function newArticle(articleData) {
     if (articleData["id"]) {
         return axiosClient.put(`${config["newArticlePath"]}`, JSON.stringify(articleData));
@@ -52,4 +58,13 @@ export function updateRequest(articleData) {
     if (articleData["articleid"]) {
         return axiosClient.post(`${config["updateRequestPath"]}`, JSON.stringify(articleData))
     }
+}
+
+export function sort_by_key(array, key)
+{
+ return [].slice.call(array).sort(function(a, b)
+ {
+  var x = a[key]; var y = b[key];
+  return ((x < y) ? 1 : ((x > y) ? -1 : 0));
+ });
 }

@@ -104,10 +104,10 @@ function ArticleCard(params) {
   }
 
   function renderLabels() {
-    articleLabels.sort((a, b) => {
-      return a.score > b.score
-    })
-    var displayLabels = articleLabels.slice(0, 6);
+    // articleLabels.sort((a, b) => {
+    //   return a.score > b.score
+    // })
+    var displayLabels = articleLabels;//.slice(0, 6);
     var listItems = displayLabels.map(labelJ =>
        <li key={labelJ.label} className="tag">{labelJ.label}</li>)
     return (
@@ -127,7 +127,7 @@ function ArticleCard(params) {
       <Row>
         <Container className="articleCard">
           <Card bg='light' text='dark' style={{ width: '13rem' }} className="mb-2">
-            <Card.Header>Some Meta-data regard the article</Card.Header>
+            {/* <Card.Header>Some Meta-data regard the article</Card.Header> */}
             <Card.Body>
               {articleFakeVotes.up} <GrLike /> {articleFakeVotes.down} <GrDislike />
               

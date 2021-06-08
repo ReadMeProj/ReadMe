@@ -34,6 +34,24 @@ export const articleStorage = {
     },
 };
 
+export const tagStorage = {
+    get: cb => {
+        chrome.storage.local.get(['currentArticleTag'], result => {
+            cb(result.currentArticleTag);
+        });
+    },
+    set: (tags, cb) => {
+        chrome.storage.local.set(
+            {
+                currentArticleTag: tags,
+            },
+            () => {
+                cb();
+            }
+        );
+    },
+};
+
 export const userStorage = {
     get: cb => {
         chrome.storage.local.get(['readMeUserCredentials'], result => {
