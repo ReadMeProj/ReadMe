@@ -355,14 +355,7 @@ func (db *MongoController) GetArticle(key string, value interface{}) (Article, e
 }
 
 func (db *MongoController) GetArticles() ([]Article, error) {
-	var articles []Article
-
-	err := db.extractManyFromDB(mongoDatabaseName, mongoArticlesCollectionName, &articles, int64(20))
-	if err != nil {
-		log.Println(err)
-	}
-
-	return articles, err	
+	return db.getArticlesSample()	
 }
 
 func (db* MongoController) getArticlesSample() ([]Article, error) {
@@ -779,8 +772,6 @@ func (db *MongoController) UpdateAnswer(answer Answer) error {
 func (db *MongoController) UpdateReport(report Report) error {
 	updateMap := make(map[string]interface{})
 	updateMap["labels"] = report.Labels 
-	updateMap["fake"] = report.Fake
-	updateMap["rating"] = report.Rating
 	
 	err := db.updateOneInDB(mongoDatabaseName, mongoAnswersCollectionName, "id", string(report.ID), updateMap)
 	if err != nil {
