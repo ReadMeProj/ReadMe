@@ -26,10 +26,11 @@ The chrome extension let you use our platform while you are browsing and reading
   <kbd>  
   <img src="./docs/extension_Insights.png">
 </kbd>   
+
 * Earn ReadMe Credit by reporting on articles.  
     
   <kbd>
-  <img src="./docs/extension_report.png">
+  <img src="./docs/extension_Report.png">
 </kbd>
 
 * Submit requests regard article easily.  
