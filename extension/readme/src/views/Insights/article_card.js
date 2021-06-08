@@ -109,9 +109,10 @@ function ArticleCard(params) {
     // })
     var displayLabels = articleLabels;//.slice(0, 6);
     var listItems = displayLabels.map(labelJ =>
-       <li key={labelJ.label} className="tag">{labelJ.label}</li>)
+       <span key={labelJ.label} className="tag">{labelJ.label}</span>)
     return (
       <div className="articleLabels">
+        
         <ul className="labels">
         {listItems}
         </ul>

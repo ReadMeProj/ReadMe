@@ -40,7 +40,7 @@ function articleFromOg(ogData) {
     "name": og.title,
     "url": og.url,
     "author": author || "Anonymous",
-    "date": date || Date.now,
+    "date": Date.parse(date) || Date.now(),
     "image": image || "",
     "source": og.site_name,
     "labels": labels || []
