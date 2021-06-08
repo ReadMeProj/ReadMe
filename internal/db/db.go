@@ -10,6 +10,7 @@ type ReadMeDatabase interface {
 	GetArticle(key string, value interface{}) (Article, error)
 	GetArticles() ([]Article, error)
 	GetArticlesByQuery(query string) ([]Article, error)
+	GetArticlesByDate(from int64, to int64) ([]Article, error)
 
 	NewUser(user *User) error
 	NewArticle(article *Article) error

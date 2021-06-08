@@ -379,6 +379,30 @@ func (db* MongoController) getArticlesSample() ([]Article, error) {
 	return articles, err	
 }
 
+func (db *MongoController) GetArticlesByDate(from int64, to int64) ([]Article, error) {
+	var articles []Article
+	collection := db.client.Database(mongoDatabaseName).Collection(mongoArticlesCollectionName)
+	
+	findOptions := options.Find()
+	findOptions.SetLimit(100)
+
+	filter := bson.M{"date": bson.M{"$gte": from, "$lt": to}}
+
+	// Passing bson.D{{}} as the filter matches all documents in the collection
+	cur, err := collection.Find(context.Background(), filter, findOptions)
+	if err != nil {
+		log.Println(err)
+	}
+
+	// All extract all (subject to limit) from requested query 
+	err = cur.All(context.TODO(), &articles)
+	if err != nil {
+		// handle error
+	}
+	
+	return articles, err
+}
+
 func (db* MongoController) GetArticlesByQuery(query string) ([]Article, error) {
 	var articles []Article
 

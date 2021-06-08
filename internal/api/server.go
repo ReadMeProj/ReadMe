@@ -271,6 +271,23 @@ func getArticlesByQuery(responseWriter http.ResponseWriter, r *http.Request) {
 	GenerateHandler(responseWriter, r, response)
 }
 
+func getArticlesByDate(responseWriter http.ResponseWriter, r *http.Request) {
+	from := ExtractFromRequest(r, "from")
+	fromInt, err := strconv.Atoi(from)	
+	to := ExtractFromRequest(r, "to")
+	toInt, err := strconv.Atoi(to)
+	
+	if err != nil {
+		response := Response{Error: err, Data: nil}
+		GenerateHandler(responseWriter, r, response)
+	}
+
+	jsonData, err := dBase.GetArticlesByDate(int64(fromInt), int64(toInt))
+	
+	response := Response{Error: err, Data: jsonData}
+	GenerateHandler(responseWriter, r, response)
+}
+
 func newUser(responseWriter http.ResponseWriter, r *http.Request) {
 	var user db.User
 
@@ -884,6 +901,7 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router.HandleFunc("/api/getArticle", isAuthorized(getArticleByURL)).Methods("GET")
 	router.HandleFunc("/api/getArticles", getArticles).Methods("GET")
 	router.HandleFunc("/api/getArticles/{query}", getArticlesByQuery).Methods("GET")
+	router.HandleFunc("/api/getArticles/{from}/{to}", getArticlesByDate).Methods("GET")
 
 	router.HandleFunc("/api/newUser", newUser).Methods("PUT")
 	router.HandleFunc("/api/newArticle", newArticle).Methods("PUT")
