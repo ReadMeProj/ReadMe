@@ -815,6 +815,36 @@ func getRequestsRecommendations(w http.ResponseWriter, r *http.Request) {
 	w.Write(body)
 }
 
+func getSiteAnalytics(w http.ResponseWriter, r *http.Request) {
+	resp, err := http.Get(fmt.Sprintf("%s/analytics/sites", recommendationsIPort))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusUnauthorized)
+        return	
+	}
+	body, _ := ioutil.ReadAll(resp.Body)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.WriteHeader(http.StatusOK)
+	w.Write(body)
+}
+
+func getTagAnalytics(w http.ResponseWriter, r *http.Request) {
+	resp, err := http.Get(fmt.Sprintf("%s/analytics/tags", recommendationsIPort))
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusUnauthorized)
+        return	
+	}
+	body, _ := ioutil.ReadAll(resp.Body)
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+	w.WriteHeader(http.StatusOK)
+	w.Write(body)
+}
+
 func login(w http.ResponseWriter, r *http.Request) {
 	var credentials db.Credentials
 	
@@ -962,6 +992,9 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router.HandleFunc("/api/{type}/{key}/{val}", getByKey).Methods("GET")
 	router.HandleFunc("/api/all/{type}/{key}/{val}", getAllByKey).Methods("GET")
 	router.HandleFunc("/api/vote/{itemid}/user/{userid}", getVoteRegistry).Methods("GET")
+	
+	router.HandleFunc("/api/analytics/sites", getSiteAnalytics).Methods("GET")
+	router.HandleFunc("/api/analytics/tags", getTagAnalytics).Methods("GET")
 
 	router.HandleFunc("/api/login", login).Methods("POST")
 	router.HandleFunc("/api/logout", isAuthorized(logout)).Methods("POST")
