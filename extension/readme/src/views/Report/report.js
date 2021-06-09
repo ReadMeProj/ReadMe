@@ -57,8 +57,8 @@ class Report extends Component {
                 type: "report",
                 id: "123",
                 tags: [],
-                fake_st: "null",
-                rating_st: "null",
+                fake_st: "true",
+                rating_st: "1",
               }}
               onSubmit={(values, { setSubmitting }) => {
                 var ids = { articleid: "", userid: "" };
@@ -147,7 +147,7 @@ class Report extends Component {
                       className="text-red-500 text-xs italic"
                     />
                   </div>
-                  <div className="fak">
+                  {/* <div className="fak">
                     <Field as="select" name="fake_st">
                       <option value="null">What's between the lines</option>
                       <option value="true">Real/ Authentic</option>
@@ -180,7 +180,7 @@ class Report extends Component {
                       name="rating_st"
                       className="text-red-500 text-xs italic"
                     />
-                  </div>
+                  </div> */}
                   <div className="subm">
                     <button
                       className="btn-two blue mini"

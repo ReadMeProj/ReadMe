@@ -42,6 +42,7 @@ class Request extends Component {
             id: "123",
             type: "request",
             content: "",
+            date: Date.now()
           }}
           onSubmit={(values, { setSubmitting }) => {
             var ids = { articleid: "", userid: "" };
@@ -99,7 +100,7 @@ class Request extends Component {
                   placeholder="Type here your request"
                 />
                 <ErrorMessage
-                  component="div"
+                  component="span"
                   name="content"
                   className="text-red-500 text-xs italic"
                 />

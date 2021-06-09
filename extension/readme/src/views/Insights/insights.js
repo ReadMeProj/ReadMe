@@ -2,14 +2,17 @@ import React, { Component, useEffect } from "react";
 import { useState } from 'react'
 import ArticleCard from "./article_card";
 import { Alert, Spinner } from 'react-bootstrap';
-import { articleStorage } from '../../chromeHelper'
+import { articleStorage,tagStorage } from '../../chromeHelper'
 
 
 const Insights = (props) => {
   const [article, setArticle] = useState();
+  const [labels, setLabels] = useState();
 
   useEffect(() => {
     articleStorage.get((article) => {setArticle(article) })
+    tagStorage.get((labels) => {setLabels(labels) })
+
   }, [])
 
 
@@ -24,7 +27,7 @@ const Insights = (props) => {
       id={article.id}
       isLiked={true}
       fakeVotes={article.fakevotes}
-      labels={article.labels}
+      labels={labels}
     />}
   </div>
     )

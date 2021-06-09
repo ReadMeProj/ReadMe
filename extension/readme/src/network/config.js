@@ -6,6 +6,7 @@ export var config = {
     "logoutPath": "/api/logout",
     "getArticlePath": "/api/getArticle",
     "getArticlesPath": "/api/getArticles",
+    "getArticleTagsPath":"/api/all/tag/articleid/",
     "getUserPath": "/api/getUser",
     "getUsersPath": "/api/getUsers",
     "newUserPath": "/api/newUser",
