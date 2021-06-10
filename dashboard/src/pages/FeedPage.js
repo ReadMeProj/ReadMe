@@ -14,6 +14,7 @@ class FeedPage extends Component {
 
     this.state = {
       articlesData: [],
+      tagsData: [],
       showFirst: null,
       refreshFeedFunc: (type) => {
         if (type) {
@@ -34,9 +35,14 @@ class FeedPage extends Component {
         this.setState({ articlesData: response.data["Data"] })
       );
     } else if (tag) {
-      // var tagsResponse = await getByTag(tag);
-      // if (tagsResponse.data["Error"] == null)
-      //   tagsResponse = tagsResponse.data["Data"];
+      await getByTag(tag).then((response) => {
+        if (!response.data["Error"]) {
+          this.setState({
+            tagsData:
+              response.data["Data"] != null ? response.data["Data"] : [],
+          });
+        }
+      });
     } else if (fromDate && toDate) {
       await getArticlesByDateInterval(fromDate, toDate).then((response) =>
         this.setState({ articlesData: response.data["Data"] })
@@ -50,10 +56,10 @@ class FeedPage extends Component {
 
   render() {
     if (this.props == null) return;
-    const { articlesData: articles } = this.state;
+    const { articlesData: articles, tagsData: tags } = this.state;
     // Set up articles.
     var articlesToMap = [];
-    if (articles !== null) {
+    if (articles !== null && this.state.tagsData.length === 0) {
       if (this.state.showFirst) {
         if (this.state.showFirst == "real") {
           articlesToMap = articles
@@ -79,6 +85,12 @@ class FeedPage extends Component {
           </dd>
         ));
       }
+    } else if (tags) {
+      articlesToMap = tags.slice(0, 20).map((article) => (
+        <dd key={article.articleid}>
+          <ArticleCard articleId={article.articleid} />
+        </dd>
+      ));
     }
     return (
       <div>
