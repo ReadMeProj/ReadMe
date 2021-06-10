@@ -1,5 +1,8 @@
 import "../App.css";
 import React, { Component } from "react";
+import Tabs from 'react-bootstrap/Tabs'
+import Tab from 'react-bootstrap/Tab'
+
 
 class AnalyticsPage extends Component {
   constructor(props) {
@@ -14,11 +17,17 @@ class AnalyticsPage extends Component {
         <h2>Advanced Analytics!</h2>
         <hr />
         <br />
-        <div className="d-flex justify-content-around">
-          <button className="btn btn-info">Show analytics type 1</button>
-          <button className="btn btn-info">Show analytics type 2</button>
-          <button className="btn btn-info">Show analytics type 3</button>
-        </div>
+        <Tabs defaultActiveKey="home" transition={false} id="noanim-tab-example">
+          <Tab eventKey="home" title="Home">
+            Hi
+          </Tab>
+          <Tab eventKey="profile" title="Profile">
+            Something else
+          </Tab>
+          <Tab eventKey="contact" title="Contact">
+            Something different
+          </Tab>
+        </Tabs>
       </div>
     );
   }
