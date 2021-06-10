@@ -68,3 +68,11 @@ export async function getAnswerById(answerId) {
 export async function getOpenRequests() {
   return axiosClient.get(`${config["getAllOpenRequestsPath"]}`);
 }
+
+export async function getVotesBySites(){
+  return axiosClient.get(`${config["getAnalyticsSitesPath"]}`)
+}
+
+export async function getTagsCount(){
+  return axiosClient.get(`${config["getTagsCountPath"]}`)
+}

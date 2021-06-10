@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { login, register } from "../network/lib/apiUserFunctions";
-import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import { Redirect } from "react-router";
 
