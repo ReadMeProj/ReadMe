@@ -27,8 +27,8 @@ export async function getArticles(query) {
 }
 
 /// Get articles by tag.
-export async function getArticlesByTag(tag) {
-  return axiosClient.get(`/api/all/article/label/${tag}`);
+export async function getByTag(tag) {
+  return axiosClient.get(`/api/all/tag/label/${tag}`);
 }
 
 /// Get articles in some date interval.

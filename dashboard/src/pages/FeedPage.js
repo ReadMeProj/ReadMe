@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import ArticleCard from "../components/ArticleCard";
 import {
   getArticles,
-  getArticlesByTag,
+  getByTag,
   getArticlesByDateInterval,
 } from "../network/lib/apiArticleFunctions";
 import SearchBar from "../components/SearchBar";
@@ -28,9 +28,9 @@ class FeedPage extends Component {
         this.setState({ articlesData: response.data["Data"] })
       );
     } else if (tag) {
-      await getArticlesByTag(tag).then((response) =>
-        this.setState({ articlesData: response.data["Data"] })
-      );
+      // var tagsResponse = await getByTag(tag);
+      // if (tagsResponse.data["Error"] == null)
+      //   tagsResponse = tagsResponse.data["Data"];
     } else if (fromDate && toDate) {
       await getArticlesByDateInterval(fromDate, toDate).then((response) =>
         this.setState({ articlesData: response.data["Data"] })
