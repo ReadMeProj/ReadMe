@@ -210,6 +210,41 @@ def user_requests(user_id, num_of_requests):
     random.shuffle(requests_for_user)
     return {"requests": requests_for_user[:num_of_requests]}
 
+@app.route("/analytics/sites", methods=['GET'])
+def analytics_sites():
+    articles = list(mongo.db.articles.find())
+    sites = set()
+    for article in articles:
+        if "site" in article:
+            sites.add(article["site"])
+    
+    sites = {site: {"up": 0,"down": 0} for site in sites}
+    for article in articles:
+        votes = article["fakevotes"]
+        if "site" in article:
+            site = article["site"]
+            sites[site]["up"] += votes["up"]
+            sites[site]["down"] += votes["down"]
+    
+    return {"sites": sites}
+
+@app.route("/analytics/tags", methods=['GET'])
+def analytics_tags():
+    tags = list(mongo.db.tags.find())
+    labels = set()
+    for tag in tags:
+        if "label" in tag:
+            labels.add(tag["label"])
+    
+    labels = {label: {"count":0, "score":0} for label in labels}
+    for tag in tags:
+        score = tag["score"]
+        label = tag["label"]
+        labels[label]["count"] += 1
+        labels[label]["score"] += score
+    
+    return {"labels": labels}
+
 
 def main():
     import argparse
