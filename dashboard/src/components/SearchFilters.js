@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { Link } from "react-router-dom";
 
-function SearchFilters() {
+function SearchFilters(params) {
   const [toDateInit, setToDate] = useState(new Date());
   const [fromDateInit, setFromDate] = useState(1577829600000);
+
   return (
     <div className="searchFilterBox">
       <div className="d-flex justify-content-center">Search Filters</div>
@@ -69,20 +69,24 @@ function SearchFilters() {
           />
         </div>
         <div className="col-2">
-          <Link
+          <button
             className="btn btn-outline-info"
             style={{ width: "200px" }}
-            to={"?first=real"}
+            onClick={() => {
+              params.refreshFeedFunc("real");
+            }}
           >
             Most Reliable First
-          </Link>
-          <Link
+          </button>
+          <button
             className="btn btn-outline-info"
             style={{ width: "200px" }}
-            to={"?first=fake"}
+            onClick={() => {
+              params.refreshFeedFunc("fake");
+            }}
           >
             Least Reliable First
-          </Link>
+          </button>
         </div>
       </div>
     </div>

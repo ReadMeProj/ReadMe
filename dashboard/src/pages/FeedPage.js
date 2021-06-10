@@ -14,6 +14,12 @@ class FeedPage extends Component {
 
     this.state = {
       articlesData: [],
+      showFirst: null,
+      refreshFeedFunc: (type) => {
+        if (type) {
+          this.setState({ showFirst: type });
+        }
+      },
     };
   }
 
@@ -45,25 +51,47 @@ class FeedPage extends Component {
   render() {
     if (this.props == null) return;
     const { articlesData: articles } = this.state;
-
+    // Set up articles.
+    var articlesToMap = [];
+    if (articles !== null) {
+      if (this.state.showFirst) {
+        if (this.state.showFirst == "real") {
+          articlesToMap = articles
+            .sort((a, b) => b.fakevotes.up - a.fakevotes.up)
+            .map((article) => (
+              <dd key={article.id}>
+                <ArticleCard articleId={article.id} />
+              </dd>
+            ));
+        } else {
+          articlesToMap = articles
+            .sort((a, b) => b.fakevotes.down - a.fakevotes.down)
+            .map((article) => (
+              <dd key={article.id}>
+                <ArticleCard articleId={article.id} />
+              </dd>
+            ));
+        }
+      } else {
+        articlesToMap = articles.map((article) => (
+          <dd key={article.id}>
+            <ArticleCard articleId={article.id} />
+          </dd>
+        ));
+      }
+    }
     return (
       <div>
         <div className="d-flex justify-content-around">
           <SearchBar />
         </div>
         <div className="d-flex justify-content-around">
-          <SearchFilter />
+          <SearchFilter
+            refreshFeedFunc={this.state.refreshFeedFunc.bind(this)}
+          />
         </div>
         <div className="d-flex justify-content-around">
-          <dl>
-            {articles == null
-              ? []
-              : articles.map((article) => (
-                  <dd key={article.id}>
-                    <ArticleCard articleId={article.id} />
-                  </dd>
-                ))}
-          </dl>
+          <dl>{articlesToMap}</dl>
         </div>
       </div>
     );
