@@ -4,7 +4,11 @@ import { Link } from "react-router-dom";
 class LoginPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { userName: "", password: "", userToken: "" };
+    this.state = {
+      userName: "",
+      password: "",
+      userToken: "",
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -63,7 +67,8 @@ class LoginPage extends Component {
             to={"signUp"}
             style={{ marginLeft: 40 }}
           >
-            Sign Up</Link>
+            Sign Up
+          </Link>
         </div>
       </form>
     );

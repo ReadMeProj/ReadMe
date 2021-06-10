@@ -40,7 +40,19 @@ class ProfilePage extends Component {
                 <b>Username:</b> {user.username} <br />
                 <b>Credit:</b> {user.credit} <br />
                 <b>Email:</b> {user.email} <br />
-                <b>Stats:</b> not yet.. <br />
+                <b>Rank:</b>
+                {user.credit >= 500 ? " Premium! " : " Regular "}
+                <br />
+                <button
+                  onClick={() => {
+                    alert(
+                      "You can send reports, answer to existing requests and vote on the relaibility of articles on ReadMe! When you reach a sufficient score you'll become a premium user :) "
+                    );
+                  }}
+                >
+                  How to become a premium user?
+                </button>
+                <br />
               </p>
             </div>
           )}

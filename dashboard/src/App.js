@@ -94,7 +94,7 @@ class App extends Component {
                 {logoImg}
                 <br />
                 <div style={{ paddingTop: "100px" }} />
-                <NavBar isPremium={this.state.score >= 1000} />
+                <NavBar isPremium={this.state.score >= 500} />
                 <UserScore score={this.state.score} />
                 <FontAwesomeIcon
                   icon={["fas", "angle-up"]}
@@ -113,7 +113,7 @@ class App extends Component {
                       <RecommendationsPage />
                     </Route>
                     <Route path="/profile">
-                      <ProfilePage score={this.state.score} />
+                      <ProfilePage />
                     </Route>
                     <Route path="/requests">
                       <OpenRequestsPage />
@@ -131,7 +131,7 @@ class App extends Component {
                       <SignUpPage />
                     </Route>
                     <Route exact path="/moreInfo">
-                      <ArticlePage isPremium={this.state.score >= 1000} />
+                      <ArticlePage isPremium={this.state.score >= 500} />
                     </Route>
                     <Route path="/focusQuestion">
                       <QuestionPage />
