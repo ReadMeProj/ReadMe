@@ -1,12 +1,13 @@
 'use strict';
 var { getArticle, getArticleTags, newArticle, sort_by_key } = require('./network/lib/article');
-const {articleStorage,tagStorage, isAuth, clearStorage} = require('./chromeHelper');
+const {articleStorage,tagStorage, isAuth, isPrem, clearStorage} = require('./chromeHelper');
 // With background scripts you can communicate with popup
 // and contentScript files.
 // For more information on background script,
 // See https://developer.chrome.com/extensions/background_pages
 
 clearStorage();
+isPrem.set(false , () =>{})
 isAuth.set(false , () =>{})
 articleStorage.set("noArticle" , ()=>{});
 
@@ -63,7 +64,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         console.log("Found article in the DB");
         articleToPop = res.data;
         console.log("Going to store this in chrome storage");
-        console.log(articleToPop.Data);
+        console.log(res.data);
         articleStorage.set(articleToPop.Data, () => {
         });
         getArticleTags(res.data.Data).then(tagresult => {
