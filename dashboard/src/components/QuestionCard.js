@@ -1,9 +1,13 @@
 import { React, Component } from "react";
-import { getRequestById } from "../network/lib/apiRequestFunctions";
+import {
+  getAnswersByRequest,
+  getRequestById,
+} from "../network/lib/apiRequestFunctions";
 import { getUsernameById } from "../network/lib/apiUserFunctions";
 import VoteButtons from "./VoteButtons";
 import { Link } from "react-router-dom";
 import { getArticleById } from "../network/lib/apiArticleFunctions";
+import { calcCorrectAnswerId } from "../util/calcFunctions";
 
 class QuestionCard extends Component {
   constructor(props) {
@@ -15,6 +19,7 @@ class QuestionCard extends Component {
       showTitleOnEach: props.reqPage != null ? props.reqPage : false,
       onFocus: props.onFocus != null ? props.onFocus : false,
       whoAsked: "",
+      hasAnswer: props && props.hasAnswer ? props.hasAnswer : false,
     };
   }
   async componentDidMount() {
@@ -35,13 +40,20 @@ class QuestionCard extends Component {
       if (response.data["Error"] == null)
         this.setState({ articleData: response.data["Data"] });
     });
+    if (!this.props.hasAnswer)
+      await getAnswersByRequest(this.state.requestId).then((response) => {
+        if (response.data["Error"] == null)
+          this.setState({
+            hasAnswer: calcCorrectAnswerId(response.data["Data"]),
+          });
+      });
   }
 
   render() {
     const { requestData: request, articleData: article } = this.state;
     if (request == null) return <div></div>;
     var content = request.content;
-    var isResolved = request.answerid;
+    var isResolved = this.state.hasAnswer;
     var articleTitle = article.name;
     var articleUrl = article.url;
 

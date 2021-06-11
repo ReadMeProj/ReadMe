@@ -64,16 +64,22 @@ class QuestionPage extends Component {
   }
 
   render() {
-    const { answersData: answers, requestorId: whoAsked } = this.state;
+    const {
+      answersData: answers,
+      requestorId: whoAsked,
+      correctAnswerId: cor,
+    } = this.state;
     var currUserId = window.localStorage.getItem("UserId");
     var isTheOneWhoAsked = currUserId === whoAsked;
     return (
       <div>
         <br />
         <QuestionCard
+          key={cor != null}
           requestId={this.state.requestId}
           onFocus={true}
           reqPage={true}
+          hasAnswer={cor != null}
         />
         {!isTheOneWhoAsked ? (
           <button
@@ -108,8 +114,9 @@ class QuestionPage extends Component {
                 : answers.map((ans) => (
                     <dd key={ans.id}>
                       <AnswerCard
+                        key={cor}
                         answerId={ans.id}
-                        correctAnswerId={this.state.correctAnswerId}
+                        correctAnswerId={cor}
                       />
                     </dd>
                   ))}

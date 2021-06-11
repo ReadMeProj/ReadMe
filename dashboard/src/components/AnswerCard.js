@@ -14,8 +14,7 @@ class AnswerCard extends Component {
       answerId: props.answerId,
       isCorrect: false,
       whoAnswered: "",
-      correctAnswerId:
-        props && props.correctAnswerId ? props.correctAnswerId : null,
+      correctAnswerId: props.correctAnswerId,
     };
   }
   async componentDidMount() {

@@ -18,6 +18,7 @@ class ArticlePage extends Component {
       requestsData: [],
       showModal: false,
       questionInput: "",
+      correctAnswerId: "",
       isPremium:
         this.props && this.props.isPremium ? this.props.isPremium : false,
     };
