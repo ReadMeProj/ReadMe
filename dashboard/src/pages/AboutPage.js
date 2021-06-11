@@ -12,10 +12,6 @@ import { Link } from "react-router-dom";
 
 
 class AboutPage extends Component {
-    constructor(props) {
-        super(props);
-    }
-
 
     render() {
         return (
@@ -32,13 +28,13 @@ class AboutPage extends Component {
                     ReadMe is a crowd sourced web app that helps users explore the news.
                     Our engine learns your preferences, and by using complex algorithms and the wisdom of the crowd it offers a custom made news feed for each user.
                     Join us! Consume the news more efficiently and help other users as well!
-                    </p>
+                </p>
                 <Accordion>
                     <Card>
                         <Card.Header>
                             <Accordion.Toggle as={Button} variant="link" eventKey="0">
                                 How can i get ReadMe credit?
-                         </Accordion.Toggle>
+                            </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="0">
                             <Card.Body>
@@ -65,8 +61,8 @@ class AboutPage extends Component {
                     <Card>
                         <Card.Header>
                             <Accordion.Toggle as={Button} variant="link" eventKey="1">
-                                What can i do with ReadMe Credit
-                         </Accordion.Toggle>
+                                What can i do with ReadMe credit?
+                            </Accordion.Toggle>
                         </Card.Header>
                         <Accordion.Collapse eventKey="1">
                             <Card.Body>
@@ -98,31 +94,17 @@ class AboutPage extends Component {
                                             <img
                                                 width={50}
                                                 height={50}
-                                                src={PremiumUserIcon}
-                                                alt="logo"
-                                                style={{ alignSelf: "left", paddingright: 30 }}
-                                            />
-                                            <span style={{ fontWeight: "bold" }}>- Premium Users can enjoy</span>
-                                            <ul>
-                                                <li>
-                                                    Apply requests in article pages, our system will route you request to the optimal user for an answer.
-                                                </li>
-                                            </ul>
-                                            <ul>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <img
-                                                width={50}
-                                                height={50}
                                                 src={PowerUserIcon}
                                                 alt="logo"
                                                 style={{ alignSelf: "left", paddingright: 30 }}
                                             />
                                             <span style={{ fontWeight: "bold" }}>- Power User can enjoy</span>
                                             <ul>
-                                                <li>Perform complex queries to readme database and news analytics.<br/>
-                                                You can see which website published most of the fake news, sort authors by favorites and many more!</li>
+                                                <li>Perform complex queries to readme database and news analytics.<br />
+                                                    You can see which website published most of the fake news, sort authors by favorites and many more!</li>
+                                                <li>
+                                                    Apply requests in article pages, our system will route you request to the optimal user for an answer.
+                                                </li>
                                             </ul>
                                         </li>
                                     </ul>
