@@ -95,7 +95,7 @@ class FeedPage extends Component {
             ));
         }
       } else {
-        articlesToMap = articles.map((article) => (
+        articlesToMap = articles.slice(0, 20).map((article) => (
           <dd key={article.id}>
             <ArticleCard
               articleId={article.id}
