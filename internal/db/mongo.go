@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"log"
+	"strings"
 
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
@@ -680,6 +681,7 @@ func (db *MongoController) NewReport(report *Report) error {
 		fmt.Println("Have previous report")
 		// Down score each labels from previous report
 		for _, element := range prevReport.Labels {
+			element = strings.ToLower(element)
 			fmt.Println("Decrementing " + element)
 			db.IncrementOneInDBByDoubleKey(
 				mongoDatabaseName, 
@@ -710,8 +712,9 @@ func (db *MongoController) NewReport(report *Report) error {
 	fmt.Println(len(report.Labels))
 	// Update all current labels
 	for _, element := range report.Labels {
+		element = strings.ToLower(element)
 		fmt.Println("Updating " + element)
-		
+
 		newTag := Tag {
 			ID: ID(proto.TokenGenerator()),
 			ArticleID: report.ArticleId,
