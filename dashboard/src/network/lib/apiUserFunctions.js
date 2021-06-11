@@ -36,12 +36,6 @@ export async function logout(token, username) {
   }
 }
 
-/// Send  PUT request to update user personal info.
-export async function updateInfo(params) { }
-
-/// Send PUT request to update user points.
-export async function addScore(params) { }
-
 /// Get user by userId in the localStorage.
 export async function getUserById() {
   var userName = window.localStorage.getItem("Username");

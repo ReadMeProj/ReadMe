@@ -3,16 +3,14 @@ import { login, register } from "../network/lib/apiUserFunctions";
 import { Alert } from "react-bootstrap";
 import { Redirect } from "react-router";
 
-
-
-const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+const validEmailRegex = RegExp(
+  /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
+);
 const validateForm = (errors) => {
   let valid = true;
-  Object.values(errors).forEach(
-    (val) => val.length > 0 && (valid = false)
-  );
+  Object.values(errors).forEach((val) => val.length > 0 && (valid = false));
   return valid;
-}
+};
 
 class SignUpPage extends Component {
   constructor(props) {
@@ -25,7 +23,13 @@ class SignUpPage extends Component {
       email: "",
       userToken: "token",
       isSuccess: false,
-      errors: { userName: '', password: '', email: '', firstName: '', lastName: '' }
+      errors: {
+        userName: "",
+        password: "",
+        email: "",
+        firstName: "",
+        lastName: "",
+      },
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -36,35 +40,21 @@ class SignUpPage extends Component {
     const { name, value } = event.target;
     let errors = this.state.errors;
     switch (name) {
-      case 'firstname':
-        errors.firstName =
-          value.length < 1
-            ? 'First Name can\'t be empty!'
-            : '';
+      case "firstname":
+        errors.firstName = value.length < 1 ? "First Name can't be empty!" : "";
         break;
-      case 'lastname':
-        errors.lastName =
-          value.length < 1
-            ? 'Last Name can\'t be empty!'
-            : '';
+      case "lastname":
+        errors.lastName = value.length < 1 ? "Last Name can't be empty!" : "";
         break;
-      case 'username':
-        errors.userName =
-          value.length < 1
-            ? 'Username can\'t be empty!'
-            : '';
+      case "username":
+        errors.userName = value.length < 1 ? "Username can't be empty!" : "";
         break;
-      case 'email':
-        errors.email =
-          validEmailRegex.test(value)
-            ? ''
-            : 'Email is not valid!';
+      case "email":
+        errors.email = validEmailRegex.test(value) ? "" : "Email is not valid!";
         break;
-      case 'password':
+      case "password":
         errors.password =
-          value.length < 6
-            ? 'Password must be 6 characters long!'
-            : '';
+          value.length < 6 ? "Password must be 6 characters long!" : "";
         break;
       default:
         break;
@@ -75,9 +65,9 @@ class SignUpPage extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     if (validateForm(this.state.errors)) {
-      console.info('Valid Form')
+      console.info("Valid Form");
     } else {
-      console.error('Invalid Form');
+      console.error("Invalid Form");
       return;
     }
     let user = this.state.userName;
@@ -93,16 +83,22 @@ class SignUpPage extends Component {
       lastname: last,
     });
     const loginResponse = await login(this.state.userName, this.state.password);
-    if (registerResponse?.data?.error == null && loginResponse?.data?.error == null) {
-      this.setState({ token: loginResponse.data.Data.token, err: "", isSuccess: true });
+    if (
+      registerResponse?.data?.error == null &&
+      loginResponse?.data?.error == null
+    ) {
+      this.setState({
+        token: loginResponse.data.Data.token,
+        err: "",
+        isSuccess: true,
+      });
       this.state.token = loginResponse.data.Data.token;
       // Store the response in localStorage
       window.localStorage.setItem("Token", loginResponse.data.Data.token);
       window.localStorage.setItem("Username", this.state.userName);
       window.localStorage.setItem("UserId", registerResponse.data.Data.id);
       window.location.href = "/";
-    }
-    else {
+    } else {
       this.setState({ err: "Registration Failed" });
     }
   }
@@ -124,47 +120,59 @@ class SignUpPage extends Component {
             placeholder="Enter Username"
             autoFocus
           />
-
         </div>
-        {<span className='error'>{errors.userName}</span>}
+        {<span className="error">{errors.userName}</span>}
         <div className="loginField">
           <label className="form-label">Password: </label>
-          <input type="password"
+          <input
+            type="password"
             name="password"
             placeholder="Enter Password"
-            onChange={this.handleChange} noValidate />
-
+            onChange={this.handleChange}
+            noValidate
+          />
         </div>
-        {errors.password.length > 0 &&
-          <span className='error'>{errors.password}</span>}
+        {errors.password.length > 0 && (
+          <span className="error">{errors.password}</span>
+        )}
 
         <div className="loginField">
           <label className="form-label">Email: </label>
-          <input type="text"
+          <input
+            type="text"
             name="email"
             placeholder="Enter Your Email"
-            onChange={this.handleChange} noValidate />
+            onChange={this.handleChange}
+            noValidate
+          />
         </div>
-        {errors.email.length > 0 &&
-          <span className='error'>{errors.email}</span>}
+        {errors.email.length > 0 && (
+          <span className="error">{errors.email}</span>
+        )}
 
         <div className="loginField">
           <label className="form-label">First Name: </label>
-          <input type="text"
+          <input
+            type="text"
             name="firstName"
             placeholder="Enter Your First Name"
-            onChange={this.handleChange} noValidate />
+            onChange={this.handleChange}
+            noValidate
+          />
         </div>
-        {<span className='error'>{errors.firstName}</span>}
+        {<span className="error">{errors.firstName}</span>}
 
         <div className="loginField">
           <label className="form-label">Surname: </label>
-          <input type="text"
+          <input
+            type="text"
             name="lastName"
             placeholder="Enter Your Surname"
-            onChange={this.handleChange} noValidate />
+            onChange={this.handleChange}
+            noValidate
+          />
         </div>
-        {<span className='error'>{errors.lastName}</span>}
+        {<span className="error">{errors.lastName}</span>}
 
         <div>
           <label className="form-label"></label>

@@ -1,26 +1,11 @@
-import { React, Component } from "react";
-import { getUserById, isLoggedIn } from "../network/lib/apiUserFunctions";
+import { React } from "react";
+import { isLoggedIn } from "../network/lib/apiUserFunctions";
 
-class UserScore extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { score: 0 };
+function UserScore(params) {
+  if (!isLoggedIn() || !params.score) {
+    return <div></div>;
   }
 
-  async componentDidMount() {
-    await getUserById().then((response) => {
-      if (response.data["Error"] == null)
-        this.setState({ score: response.data["Data"].credit });
-    });
-  }
-
-  render() {
-    if (!isLoggedIn()) {
-      return <div></div>;
-    }
-
-    return <div className="score">My Score: {this.state.score}</div>;
-  }
+  return <div className="score">My Score: {params.score}</div>;
 }
-
 export default UserScore;

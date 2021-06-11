@@ -7,6 +7,7 @@ import {
 } from "../network/lib/apiRequestFunctions";
 import QuestionCard from "../components/QuestionCard";
 import Modal from "react-bootstrap/Modal";
+import PremiumUserIcon from "../assets/PremiumUser.png";
 
 class ArticlePage extends Component {
   constructor(props) {
@@ -17,6 +18,8 @@ class ArticlePage extends Component {
       requestsData: [],
       showModal: false,
       questionInput: "",
+      isPremium:
+        this.props && this.props.isPremium ? this.props.isPremium : false,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -87,11 +90,19 @@ class ArticlePage extends Component {
           </a>
           <br />
           <button
+            disabled={!this.state.isPremium}
             className="btn btn-info"
             onClick={this.handleOpenModal}
-            style={{ marginLeft: "10%", width: "200px" }}
+            style={{ marginLeft: "10%", width: "250px", height: "60px" }}
           >
-            Request a question
+            Request a question{" "}
+            <img
+              width={50}
+              height={50}
+              src={PremiumUserIcon}
+              alt="logo"
+              style={{ alignSelf: "left" }}
+            />
           </button>
           <br />
           {questions == null || questions === {} ? (
