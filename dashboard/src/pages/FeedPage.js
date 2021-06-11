@@ -6,6 +6,7 @@ import {
   getByTag,
   getArticlesByDateInterval,
 } from "../network/lib/apiArticleFunctions";
+import { calcThreshold, calcRelaibility } from "../util/calcFunctions";
 import SearchBar from "../components/SearchBar";
 import SearchFilter from "../components/SearchFilters";
 class FeedPage extends Component {
@@ -21,44 +22,6 @@ class FeedPage extends Component {
         }
       },
     };
-  }
-
-  calcThreshold(articles) {
-    if (articles == null || articles.length == 0) return 0;
-
-    var upAvg,
-      downAvg,
-      upSum = 0,
-      downSum = 0;
-
-    articles.forEach((element) => {
-      upSum += element.fakevotes.up;
-      downSum += element.fakevotes.down;
-    });
-    upAvg = upSum / articles.length;
-    downAvg = downSum / articles.length;
-    return this.calcRelaibility(upAvg, downAvg, null);
-  }
-
-  calcRelaibility(upVotes, downVotes, threshold) {
-    var ratio = 0;
-    if (upVotes > 0 && downVotes > 0) {
-      ratio = upVotes / downVotes;
-    } else if (upVotes > 0 && downVotes === 0) {
-      ratio = upVotes / 0.9;
-    } else if (upVotes == 0 && downVotes > 0) {
-      ratio = -1 * (downVotes / 0.9);
-    }
-    // Check threshold for both directions.
-    if (threshold) {
-      if (ratio > 0) {
-        return ratio >= threshold ? ratio : 0;
-      } else {
-        return ratio * -1 >= threshold ? ratio : 0;
-      }
-    } else {
-      return ratio;
-    }
   }
 
   async componentDidMount() {
@@ -98,21 +61,13 @@ class FeedPage extends Component {
     var articlesToMap = [];
     if (articles !== null && this.state.tagsData.length === 0) {
       if (this.state.showFirst) {
-        var threshold = this.calcThreshold(articles);
+        var threshold = calcThreshold(articles);
         if (this.state.showFirst === "real") {
           articlesToMap = articles
             .sort(
               (a, b) =>
-                this.calcRelaibility(
-                  b.fakevotes.up,
-                  b.fakevotes.down,
-                  threshold
-                ) -
-                this.calcRelaibility(
-                  a.fakevotes.up,
-                  a.fakevotes.down,
-                  threshold
-                )
+                calcRelaibility(b.fakevotes.up, b.fakevotes.down, threshold) -
+                calcRelaibility(a.fakevotes.up, a.fakevotes.down, threshold)
             )
             .map((article) => (
               <dd key={article.id}>
@@ -123,16 +78,8 @@ class FeedPage extends Component {
           articlesToMap = articles
             .sort(
               (a, b) =>
-                this.calcRelaibility(
-                  a.fakevotes.up,
-                  a.fakevotes.down,
-                  threshold
-                ) -
-                this.calcRelaibility(
-                  b.fakevotes.up,
-                  b.fakevotes.down,
-                  threshold
-                )
+                calcRelaibility(a.fakevotes.up, a.fakevotes.down, threshold) -
+                calcRelaibility(b.fakevotes.up, b.fakevotes.down, threshold)
             )
             .map((article) => (
               <dd key={article.id}>

@@ -6,6 +6,7 @@ import {
   getAnswersByRequest,
   submitAnswer,
 } from "../network/lib/apiRequestFunctions";
+import { calcCorrectAnswerId } from "../util/calcFunctions";
 class QuestionPage extends Component {
   constructor(props) {
     super(props);
@@ -51,8 +52,10 @@ class QuestionPage extends Component {
         this.setState({ answersData: response.data["Data"] });
     });
   }
+
   render() {
     const { answersData: answers } = this.state;
+    var correctAnswerId = calcCorrectAnswerId(answers);
     return (
       <div>
         <br />
@@ -82,7 +85,10 @@ class QuestionPage extends Component {
                 ? []
                 : answers.map((ans) => (
                     <dd key={ans.id}>
-                      <AnswerCard answerId={ans.id} />
+                      <AnswerCard
+                        answerId={ans.id}
+                        correctAnswerId={correctAnswerId}
+                      />
                     </dd>
                   ))}
             </dl>
