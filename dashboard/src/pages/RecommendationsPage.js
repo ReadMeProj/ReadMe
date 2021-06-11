@@ -9,6 +9,7 @@ class RecommendationsPage extends Component {
 
     this.state = {
       articlesData: [],
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -33,7 +34,10 @@ class RecommendationsPage extends Component {
           ) : (
             articles.map((article) => (
               <dd key={article}>
-                <ArticleCard articleId={article} />
+                <ArticleCard
+                  articleId={article}
+                  refreshScoreFunc={this.state.refreshScoreFunc}
+                />
               </dd>
             ))
           )}

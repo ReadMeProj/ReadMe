@@ -23,7 +23,15 @@ import AboutPage from "./pages/AboutPage";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { score: 0 };
+    this.state = {
+      score: 0,
+      refreshScoreFunc: async function () {
+        await getUserById().then((response) => {
+          if (response.data["Error"] == null)
+            this.setState({ score: response.data["Data"].credit });
+        });
+      },
+    };
   }
   async componentDidMount() {
     await getUserById().then((response) => {
@@ -107,10 +115,18 @@ class App extends Component {
                 <div className="scrollableDiv">
                   <Switch>
                     <Route exact path="/">
-                      <FeedPage />
+                      <FeedPage
+                        refreshScoreFunc={this.state.refreshScoreFunc.bind(
+                          this
+                        )}
+                      />
                     </Route>
                     <Route path="/recommendations">
-                      <RecommendationsPage />
+                      <RecommendationsPage
+                        refreshScoreFunc={this.state.refreshScoreFunc.bind(
+                          this
+                        )}
+                      />
                     </Route>
                     <Route path="/profile">
                       <ProfilePage />
@@ -122,7 +138,11 @@ class App extends Component {
                       <UserRequestsPage />
                     </Route>
                     <Route path="/likes">
-                      <LikesPage />
+                      <LikesPage
+                        refreshScoreFunc={this.state.refreshScoreFunc.bind(
+                          this
+                        )}
+                      />
                     </Route>
                     <Route path="/login">
                       <LoginPage />
@@ -134,7 +154,11 @@ class App extends Component {
                       <ArticlePage isPremium={this.state.score >= 500} />
                     </Route>
                     <Route path="/focusQuestion">
-                      <QuestionPage />
+                      <QuestionPage
+                        refreshScoreFunc={this.state.refreshScoreFunc.bind(
+                          this
+                        )}
+                      />
                     </Route>
                     <Route path="/about">
                       <AboutPage />

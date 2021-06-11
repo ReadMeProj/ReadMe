@@ -15,6 +15,8 @@ class VoteButtons extends Component {
         props.refreshAllAnswersFunc != null
           ? props.refreshAllAnswersFunc
           : () => {},
+      refreshScoreFunc:
+        props.refreshScoreFunc != null ? props.refreshScoreFunc : () => {},
     };
   }
   async componentDidMount() {
@@ -65,6 +67,7 @@ class VoteButtons extends Component {
                     "none"
                   );
                 this.state.refreshAnswersFunc();
+                this.state.refreshScoreFunc();
               }}
               cursor="pointer"
             />
@@ -93,6 +96,7 @@ class VoteButtons extends Component {
                     "none"
                   );
                 this.state.refreshAnswersFunc();
+                this.state.refreshScoreFunc();
               }}
               cursor="pointer"
             />

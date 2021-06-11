@@ -12,6 +12,7 @@ class LikesPage extends Component {
 
     this.state = {
       articlesData: [],
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -50,7 +51,11 @@ class LikesPage extends Component {
                   }}
                   cursor="pointer"
                 />
-                <ArticleCard articleId={fav.articleid} isOnFavPage={true} />
+                <ArticleCard
+                  articleId={fav.articleid}
+                  isOnFavPage={true}
+                  refreshScoreFunc={this.state.refreshScoreFunc}
+                />
               </div>
             ))}
           </div>

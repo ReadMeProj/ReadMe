@@ -28,6 +28,8 @@ class QuestionPage extends Component {
             });
         });
       },
+      refreshScoreFunc:
+        props.refreshScoreFunc != null ? props.refreshScoreFunc : () => {},
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -55,6 +57,7 @@ class QuestionPage extends Component {
       if (response.data["Error"] == null)
         this.setState({ answersData: response.data["Data"] });
     });
+    this.state.refreshScoreFunc();
   }
   async componentDidMount() {
     await getAnswersByRequest(this.state.requestId).then((response) => {

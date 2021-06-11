@@ -9,6 +9,7 @@ class ArticleCard extends Component {
       articleData: [],
       articleId: props.articleId,
       isOnFavPage: props.isOnFavPage ? props.isOnFavPage : false,
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -68,7 +69,11 @@ class ArticleCard extends Component {
           </a>
           <div className="row">
             <div className="col-2">
-              <VoteButtons id={this.state.articleId} type="article" />
+              <VoteButtons
+                id={this.state.articleId}
+                type="article"
+                refreshScoreFunc={this.state.refreshScoreFunc}
+              />
             </div>
             <div className="col-3">
               {this.state.isOnFavPage ? null : (

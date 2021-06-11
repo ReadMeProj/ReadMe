@@ -21,6 +21,7 @@ class FeedPage extends Component {
           this.setState({ showFirst: type });
         }
       },
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -71,7 +72,10 @@ class FeedPage extends Component {
             )
             .map((article) => (
               <dd key={article.id}>
-                <ArticleCard articleId={article.id} />
+                <ArticleCard
+                  articleId={article.id}
+                  refreshScoreFunc={this.state.refreshScoreFunc}
+                />
               </dd>
             ));
         } else {
@@ -83,21 +87,30 @@ class FeedPage extends Component {
             )
             .map((article) => (
               <dd key={article.id}>
-                <ArticleCard articleId={article.id} />
+                <ArticleCard
+                  articleId={article.id}
+                  refreshScoreFunc={this.state.refreshScoreFunc}
+                />
               </dd>
             ));
         }
       } else {
         articlesToMap = articles.map((article) => (
           <dd key={article.id}>
-            <ArticleCard articleId={article.id} />
+            <ArticleCard
+              articleId={article.id}
+              refreshScoreFunc={this.state.refreshScoreFunc}
+            />
           </dd>
         ));
       }
     } else if (tags) {
       articlesToMap = tags.slice(0, 20).map((article) => (
         <dd key={article.articleid}>
-          <ArticleCard articleId={article.articleid} />
+          <ArticleCard
+            articleId={article.articleid}
+            refreshScoreFunc={this.state.refreshScoreFunc}
+          />
         </dd>
       ));
     }
