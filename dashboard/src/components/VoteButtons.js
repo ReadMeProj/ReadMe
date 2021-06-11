@@ -11,6 +11,10 @@ class VoteButtons extends Component {
       itemType: props.type,
       userVote: null,
       itemData: [],
+      refreshAnswersFunc:
+        props.refreshAllAnswersFunc != null
+          ? props.refreshAllAnswersFunc
+          : () => {},
     };
   }
   async componentDidMount() {
@@ -38,6 +42,10 @@ class VoteButtons extends Component {
     }
   }
 
+  // async componentDidUpdate(){
+
+  // }
+
   getVoteButtons(userVote, votes) {
     return (
       <div className="row">
@@ -47,10 +55,16 @@ class VoteButtons extends Component {
               icon={["fas", "arrow-alt-circle-up"]}
               size="lg"
               color={userVote === "up" ? "green" : "gray"}
-              onClick={() => {
+              onClick={async () => {
                 if (userVote !== "up")
-                  this.vote(this.state.itemType, this.state.itemId, "up");
-                else this.vote(this.state.itemType, this.state.itemId, "none");
+                  await this.vote(this.state.itemType, this.state.itemId, "up");
+                else
+                  await this.vote(
+                    this.state.itemType,
+                    this.state.itemId,
+                    "none"
+                  );
+                this.state.refreshAnswersFunc();
               }}
               cursor="pointer"
             />
@@ -65,10 +79,20 @@ class VoteButtons extends Component {
               icon={["fas", "arrow-alt-circle-down"]}
               size="lg"
               color={userVote === "down" ? "red" : "gray"}
-              onClick={() => {
+              onClick={async () => {
                 if (userVote !== "down")
-                  this.vote(this.state.itemType, this.state.itemId, "down");
-                else this.vote(this.state.itemType, this.state.itemId, "none");
+                  await this.vote(
+                    this.state.itemType,
+                    this.state.itemId,
+                    "down"
+                  );
+                else
+                  await this.vote(
+                    this.state.itemType,
+                    this.state.itemId,
+                    "none"
+                  );
+                this.state.refreshAnswersFunc();
               }}
               cursor="pointer"
             />

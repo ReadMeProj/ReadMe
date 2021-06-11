@@ -20,6 +20,14 @@ class QuestionPage extends Component {
       showModal: false,
       answerInput: "",
       correctAnswerId: "",
+      refreshAnswersFunc: async function () {
+        await getAnswersByRequest(this.state.requestId).then((response) => {
+          if (response.data["Error"] == null)
+            this.setState({
+              correctAnswerId: calcCorrectAnswerId(response.data["Data"]),
+            });
+        });
+      },
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -117,6 +125,9 @@ class QuestionPage extends Component {
                         key={cor}
                         answerId={ans.id}
                         correctAnswerId={cor}
+                        refreshAnswersFunc={this.state.refreshAnswersFunc.bind(
+                          this
+                        )}
                       />
                     </dd>
                   ))}
