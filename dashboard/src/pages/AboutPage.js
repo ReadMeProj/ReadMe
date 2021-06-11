@@ -4,15 +4,12 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import circleLogo from "../assets/SiteLogo-Circle.png"
 import BasicUserIcon from "../assets/BasicUser.png"
-import PremiumUserIcon from "../assets/PremiumUser.png"
 import PowerUserIcon from "../assets/PowerUser.png"
 import { isLoggedIn } from "../network/lib/apiUserFunctions";
 import { Link } from "react-router-dom";
 
 
-
 class AboutPage extends Component {
-
     render() {
         return (
 
