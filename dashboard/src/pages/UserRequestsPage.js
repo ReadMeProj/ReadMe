@@ -31,7 +31,7 @@ class RequestsPage extends Component {
         <h2>Your Requests</h2>
         <br />
         <dl>
-          {requests.map((article) => (
+          {requests.slice(0, 20).map((article) => (
             <dd key={article.id}>
               <QuestionCard requestId={article.id} reqPage={true} />
             </dd>

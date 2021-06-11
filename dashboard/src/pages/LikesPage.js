@@ -35,7 +35,7 @@ class LikesPage extends Component {
           <div>You are yet to add any article to your favorites!</div>
         ) : (
           <div style={{ marginLeft: "7%" }}>
-            {articles.map((fav) => (
+            {articles.slice(0, 20).map((fav) => (
               <div key={fav.articleid} className="d-flex align-items-center">
                 <FontAwesomeIcon
                   icon={["fas", "times"]}

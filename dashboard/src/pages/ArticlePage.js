@@ -113,7 +113,7 @@ class ArticlePage extends Component {
             </div>
           ) : (
             <dl>
-              {questions.map((q) => (
+              {questions.slice(0, 20).map((q) => (
                 <dd key={q.id}>
                   <QuestionCard requestId={q.id} />
                 </dd>

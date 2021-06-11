@@ -122,7 +122,7 @@ class QuestionPage extends Component {
             <dl>
               {answers == null
                 ? []
-                : answers.map((ans) => (
+                : answers.slice(0, 20).map((ans) => (
                     <dd key={ans.id}>
                       <AnswerCard
                         key={cor}

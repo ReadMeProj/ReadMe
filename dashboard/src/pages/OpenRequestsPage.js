@@ -23,7 +23,7 @@ class OpenRequestsPage extends Component {
         <h2>Requests waiting for your answer:</h2>
         <br />
         <dl>
-          {requests.map((req) => (
+          {requests.slice(0, 20).map((req) => (
             <dd key={req.id}>
               <QuestionCard requestId={req.id} reqPage={true} />
             </dd>
