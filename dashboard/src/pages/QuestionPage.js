@@ -4,6 +4,7 @@ import AnswerCard from "../components/AnswerCard";
 import QuestionCard from "../components/QuestionCard";
 import {
   getAnswersByRequest,
+  getRequestById,
   submitAnswer,
 } from "../network/lib/apiRequestFunctions";
 import { calcCorrectAnswerId } from "../util/calcFunctions";
@@ -14,6 +15,7 @@ class QuestionPage extends Component {
     let requestID = params.get("requestId"); // Will be null if there is no articleId value in the URL.
     this.state = {
       requestId: requestID,
+      requestorId: "",
       answersData: [],
       showModal: false,
       answerInput: "",
@@ -51,11 +53,18 @@ class QuestionPage extends Component {
       if (response.data["Error"] == null)
         this.setState({ answersData: response.data["Data"] });
     });
+    await getRequestById(this.state.requestId).then((res) => {
+      if (res.data["Error"] == null) {
+        this.setState({ requestorId: res.data["Data"].requestedby });
+      }
+    });
   }
 
   render() {
-    const { answersData: answers } = this.state;
+    const { answersData: answers, requestorId: whoAsked } = this.state;
     var correctAnswerId = calcCorrectAnswerId(answers);
+    var currUserId = window.localStorage.getItem("UserId");
+    var isTheOneWhoAsked = currUserId === whoAsked;
     return (
       <div>
         <br />
@@ -64,21 +73,32 @@ class QuestionPage extends Component {
           onFocus={true}
           reqPage={true}
         />
-        <button
-          className="btn btn-info"
-          onClick={this.handleOpenModal}
-          style={{ marginLeft: "10%", width: "200px" }}
-        >
-          Add Your Answer
-        </button>
+        {!isTheOneWhoAsked ? (
+          <button
+            className="btn btn-info"
+            onClick={this.handleOpenModal}
+            style={{ marginLeft: "10%", width: "200px" }}
+          >
+            Add Your Answer
+          </button>
+        ) : (
+          <div />
+        )}
+
         <br />
         <br />
         <div style={{ marginLeft: "100px" }}>
           <h4 style={{ marginLeft: "7%" }}>Answers:</h4>
           {answers == null || answers.length === 0 ? (
-            <div style={{ marginLeft: "7%" }}>
-              Be the first to post an answer!
-            </div>
+            isTheOneWhoAsked ? (
+              <div style={{ marginLeft: "7%" }}>
+                No one posted an answer yet..
+              </div>
+            ) : (
+              <div style={{ marginLeft: "7%" }}>
+                Be the first to post an answer!
+              </div>
+            )
           ) : (
             <dl>
               {answers == null
