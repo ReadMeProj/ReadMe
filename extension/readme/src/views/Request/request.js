@@ -3,16 +3,13 @@ import {
   Formik,
   Field,
   Form,
-  useField,
-  useFormikContext,
   ErrorMessage,
 } from "formik";
 import { Alert, Spinner } from "react-bootstrap";
-import { Redirect, Route } from "react-router-dom";
-
+import { Redirect } from "react-router-dom";
 import { newRequest } from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
-import AfterRequest from "./after_request"
+
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -69,9 +66,6 @@ class Request extends Component {
                   console.log(err);
                 });
             });
-
-            // alert(JSON.stringify(values, null, 2));
-            //console.log(JSON.stringify(values, null, 2));
           }}
           validate={(values) => {
             let errors = {};
@@ -89,7 +83,7 @@ class Request extends Component {
         >
           {({ handleSubmit, errors, isSubmitting }) => (
             <Form onSubmit={handleSubmit}>
-              {this.state.isSuccess && <Redirect to="/afterRequest" />}
+              {this.state.isSuccess && <Redirect to="/after_request" />}
               <div className="commentsField">
                 <Field
                   id="content"
