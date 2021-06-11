@@ -61,7 +61,7 @@ class FeedPage extends Component {
     var articlesToMap = [];
     if (articles !== null && this.state.tagsData.length === 0) {
       if (this.state.showFirst) {
-        if (this.state.showFirst == "real") {
+        if (this.state.showFirst === "real") {
           articlesToMap = articles
             .sort((a, b) => b.fakevotes.up - a.fakevotes.up)
             .map((article) => (

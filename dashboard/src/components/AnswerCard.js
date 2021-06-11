@@ -32,7 +32,7 @@ class AnswerCard extends Component {
         if (res.data["Error"] == null)
           correctAnswerId = res.data["Data"].answerid;
       });
-      if (correctAnswerId == this.state.answerId) {
+      if (correctAnswerId === this.state.answerId) {
         this.setState({ isCorrect: true });
       }
     }
