@@ -1,25 +1,17 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import {
   Formik,
-  Field,
   Form,
-  useField,
-  useFormikContext,
   ErrorMessage,
 } from "formik";
 import { Alert, Spinner } from "react-bootstrap";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Redirect,
-  Route,
-} from "react-router-dom";
+import {  Redirect } from "react-router-dom";
 import TagsInput from "react-tagsinput";
 import "react-tagsinput/react-tagsinput.css"; // If using WebPack and style-loader
 
 import { newReport } from "../../network/lib/article";
 import { articleStorage, userStorage } from "../../chromeHelper";
-import AfterReport from "./after_report";
+
 
 const sleep = (milliseconds) => {
   return new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -38,12 +30,8 @@ class Report extends Component {
     articleStorage.get((article) => {
       this.state.hasArticle = article;
     });
-/*     this.handleChange = this.handleChange.bind(this);
- */  }
- /*  handleChange = (tags) => {
-    this.setState({ tags });
-  };
- */
+  }
+ 
   render() {
     if (this.state.hasArticle)
       return (
@@ -80,10 +68,6 @@ class Report extends Component {
                 values_to_send["rating"] = parseInt(values.rating_st, 10);
                 // handle labels
                 values_to_send["labels"] = values["tags"];
-                /* for (const tag in values["tags"]){
-                  values_to_send["labels"].push({label:values["tags"][tag]});
-                 */
-                //values_to_send["labels"].push({ label: values.category });
                 console.log(values_to_send);
                 sleep(1000).then(() => {
                   var data = Object.assign({}, ids, values_to_send);
@@ -98,9 +82,6 @@ class Report extends Component {
                       console.log(err);
                     });
                 });
-
-                // alert(JSON.stringify(values, null, 2));
-                //console.log(JSON.stringify(values, null, 2));
               }}
               validate={(values) => {
                 console.log(values);
@@ -126,13 +107,6 @@ class Report extends Component {
               }) => (
                 <Form onSubmit={handleSubmit}>
                   {this.state.isSuccess && <Redirect to="/after_report" />}
-                  {/* <Router>
-                    <Switch>
-                      <Route path="/afterReport">
-                        <AfterReport />
-                      </Route>
-                    </Switch>
-                  </Router> */}
                   <div className="input-group">
                     <TagsInput
                       name="tags"
@@ -147,40 +121,6 @@ class Report extends Component {
                       className="text-red-500 text-xs italic"
                     />
                   </div>
-                  {/* <div className="fak">
-                    <Field as="select" name="fake_st">
-                      <option value="null">What's between the lines</option>
-                      <option value="true">Real/ Authentic</option>
-                      <option value="false">Fake/ Sponsored</option>
-                      <option value="none">Not Sure</option>
-                    </Field>
-                    <ErrorMessage
-                      component="div"
-                      name="fake_st"
-                      className="text-red-500 text-xs italic"
-                    />
-                  </div>
-                  <div className="rat">
-                    <Field as="select" name="rating_st">
-                      <option value="null">Select rating</option>
-                      <option value="0">0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                    </Field>
-                    <ErrorMessage
-                      component="div"
-                      name="rating_st"
-                      className="text-red-500 text-xs italic"
-                    />
-                  </div> */}
                   <div className="subm">
                     <button
                       className="btn-two blue mini"
