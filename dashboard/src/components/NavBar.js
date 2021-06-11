@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { isLoggedIn, logout } from "../network/lib/apiUserFunctions";
-import PremiumUserIcon from "../assets/PremiumUser.png";
+import PowerUserIcon from "../assets/PowerUser.png";
 
 function NavBar(props) {
   var sessionUp;
@@ -69,7 +69,7 @@ function NavLinkOption(iconName, linkTo, name, forPremium) {
         <img
           width={50}
           height={50}
-          src={PremiumUserIcon}
+          src={PowerUserIcon}
           alt="logo"
           style={{ alignSelf: "left", paddingright: 30 }}
         />
@@ -95,7 +95,7 @@ function NavBlockedOption(iconName, name, forPremium) {
         <img
           width={50}
           height={50}
-          src={PremiumUserIcon}
+          src={PowerUserIcon}
           alt="logo"
           style={{
             alignSelf: "left",

@@ -49,9 +49,13 @@ class ArticleCard extends Component {
             <div className="media">
               <div className="media-body">
                 <b>{title}</b>
-                <div>
-                  <small style={{ color: "gray" }}>Author: {author}</small>
-                </div>
+                {author && author != "" ? (
+                  <div>
+                    <small style={{ color: "gray" }}>Author: {author}</small>
+                  </div>
+                ) : (
+                  <div />
+                )}
               </div>
               <img
                 width={150}

@@ -3,12 +3,14 @@ import { getRequestById } from "../network/lib/apiRequestFunctions";
 import { getUsernameById } from "../network/lib/apiUserFunctions";
 import VoteButtons from "./VoteButtons";
 import { Link } from "react-router-dom";
+import { getArticleById } from "../network/lib/apiArticleFunctions";
 
 class QuestionCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       requestData: [],
+      articleData: [],
       requestId: props.requestId,
       showTitleOnEach: props.reqPage != null ? props.reqPage : false,
       onFocus: props.onFocus != null ? props.onFocus : false,
@@ -29,15 +31,19 @@ class QuestionCard extends Component {
         this.setState({ whoAsked: response });
       }
     );
+    await getArticleById(this.state.requestData.articleid).then((response) => {
+      if (response.data["Error"] == null)
+        this.setState({ articleData: response.data["Data"] });
+    });
   }
 
   render() {
-    const { requestData: request } = this.state;
+    const { requestData: request, articleData: article } = this.state;
     if (request == null) return <div></div>;
     var content = request.content;
     var isResolved = request.answerid;
-    var articleTitle = request.articlename;
-    var articleUrl = request.articleurl;
+    var articleTitle = article.name;
+    var articleUrl = article.url;
 
     return (
       <div className="container-fluid" style={{ marginLeft: "7%" }}>
@@ -52,7 +58,7 @@ class QuestionCard extends Component {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <h4>{articleTitle}</h4>
+                    <h4>Article: {articleTitle}</h4>
                   </a>
                 ) : null}
                 <small style={{ color: "gray" }}>
