@@ -87,38 +87,43 @@ class ArticlePage extends Component {
             target="_blank"
             rel="noreferrer"
           >
-            <h2>{article.name}</h2>
+            <h2 className="d-flex justify-content-around">{article.name}</h2>
           </a>
           <br />
-          <button
-            disabled={!this.state.isPremium}
-            className="btn btn-info"
-            onClick={this.handleOpenModal}
-            style={{ marginLeft: "10%", width: "250px", height: "60px" }}
-          >
-            Request a question{" "}
-            <img
-              width={50}
-              height={50}
-              src={PowerUserIcon}
-              alt="logo"
-              style={{ alignSelf: "left" }}
-            />
-          </button>
+          <div className="d-flex justify-content-around">
+            <button
+              disabled={!this.state.isPremium}
+              className="btn btn-info"
+              onClick={this.handleOpenModal}
+              style={{ width: "250px", height: "60px" }}
+            >
+              Request a question{" "}
+              <img
+                width={50}
+                height={50}
+                src={PowerUserIcon}
+                alt="logo"
+                style={{ alignSelf: "left" }}
+              />
+            </button>
+          </div>
+
           <br />
           {questions == null || questions === {} ? (
-            <div style={{ marginLeft: "7%" }}>
+            <div className="d-flex justify-content-around">
               <br />
               No question have been requested yet!
             </div>
           ) : (
-            <dl>
-              {questions.slice(0, 20).map((q) => (
-                <dd key={q.id}>
-                  <QuestionCard requestId={q.id} />
-                </dd>
-              ))}
-            </dl>
+            <div className="d-flex justify-content-around">
+              <dl>
+                {questions.slice(0, 20).map((q) => (
+                  <dd key={q.id}>
+                    <QuestionCard requestId={q.id} />
+                  </dd>
+                ))}
+              </dl>
+            </div>
           )}
         </div>
         <Modal show={this.state.showModal} size="lg">

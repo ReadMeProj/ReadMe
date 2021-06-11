@@ -27,7 +27,7 @@ class LikesPage extends Component {
     const { articlesData: articles } = this.state;
 
     return (
-      <div>
+      <div style={{ marginLeft: "15%" }}>
         <br />
         <h2>Favorites</h2>
         <br />

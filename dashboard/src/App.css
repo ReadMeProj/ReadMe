@@ -1,7 +1,7 @@
 .App {
   text-align: left;
   overflow: "hidden";
-  font-size: large;
+  zoom: 85%;
 }
 
 .App-logo {
@@ -41,7 +41,6 @@
   border-width: 2px;
   border-color: #eff0f8;
   border-radius: 10px;
-  margin-left: 45px;
 }
 
 .searchFilterBox {
@@ -51,7 +50,8 @@
   background-color: #ecf8ff4b;
   border-radius: 10px;
   height: 120px;
-  width: 87%;
+  min-width: 87%;
+  width: fit-content;
   text-align: center;
   margin-left: 45px;
 }

@@ -58,7 +58,7 @@ class QuestionCard extends Component {
     var articleUrl = article.url;
 
     return (
-      <div className="container-fluid" style={{ marginLeft: "7%" }}>
+      <div className="container-fluid">
         <div className="articleBox" style={{ width: "800px", height: "auto" }}>
           <div className="media">
             <div className="media-body">

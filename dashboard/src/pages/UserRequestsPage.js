@@ -28,15 +28,17 @@ class RequestsPage extends Component {
     return (
       <div>
         <br />
-        <h2>Your Requests</h2>
+        <h2 className="d-flex justify-content-around">Your Requests</h2>
         <br />
-        <dl>
-          {requests.slice(0, 20).map((article) => (
-            <dd key={article.id}>
-              <QuestionCard requestId={article.id} reqPage={true} />
-            </dd>
-          ))}
-        </dl>
+        <div className="d-flex justify-content-around">
+          <dl>
+            {requests.slice(0, 20).map((article) => (
+              <dd key={article.id}>
+                <QuestionCard requestId={article.id} reqPage={true} />
+              </dd>
+            ))}
+          </dl>
+        </div>
       </div>
     );
   }

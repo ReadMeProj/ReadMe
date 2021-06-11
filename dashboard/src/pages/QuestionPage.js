@@ -83,7 +83,7 @@ class QuestionPage extends Component {
     var currUserId = window.localStorage.getItem("UserId");
     var isTheOneWhoAsked = currUserId === whoAsked;
     return (
-      <div>
+      <div style={{ marginLeft: "10%" }}>
         <br />
         <QuestionCard
           key={cor != null}

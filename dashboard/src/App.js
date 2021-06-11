@@ -101,7 +101,7 @@ class App extends Component {
               >
                 {logoImg}
                 <br />
-                <div style={{ paddingTop: "100px" }} />
+                <div className="col-5" style={{ paddingTop: "40%" }} />
                 <NavBar isPremium={this.state.score >= 500} />
                 <UserScore score={this.state.score} />
                 <FontAwesomeIcon
