@@ -19,6 +19,7 @@ class QuestionPage extends Component {
       answersData: [],
       showModal: false,
       answerInput: "",
+      correctAnswerId: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,14 +40,13 @@ class QuestionPage extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     let answerContent = this.state.answerInput;
-    await submitAnswer(this.state.requestId, answerContent)
-      .then(this.handleCloseModal(this))
-      .then(
-        getAnswersByRequest(this.state.requestId).then((response) => {
-          if (response.data["Error"] == null)
-            this.setState({ answersData: response.data["Data"] });
-        })
-      );
+    await submitAnswer(this.state.requestId, answerContent).then(
+      this.handleCloseModal(this)
+    );
+    await getAnswersByRequest(this.state.requestId).then((response) => {
+      if (response.data["Error"] == null)
+        this.setState({ answersData: response.data["Data"] });
+    });
   }
   async componentDidMount() {
     await getAnswersByRequest(this.state.requestId).then((response) => {
@@ -58,11 +58,13 @@ class QuestionPage extends Component {
         this.setState({ requestorId: res.data["Data"].requestedby });
       }
     });
+    this.setState({
+      correctAnswerId: calcCorrectAnswerId(this.state.answersData),
+    });
   }
 
   render() {
     const { answersData: answers, requestorId: whoAsked } = this.state;
-    var correctAnswerId = calcCorrectAnswerId(answers);
     var currUserId = window.localStorage.getItem("UserId");
     var isTheOneWhoAsked = currUserId === whoAsked;
     return (
@@ -107,7 +109,7 @@ class QuestionPage extends Component {
                     <dd key={ans.id}>
                       <AnswerCard
                         answerId={ans.id}
-                        correctAnswerId={correctAnswerId}
+                        correctAnswerId={this.state.correctAnswerId}
                       />
                     </dd>
                   ))}
