@@ -7,6 +7,15 @@ export function login(userNameAndPasswordJson){
         return res.data.Data;
     });
 }
+export function getUser(userId , isUserTriggered=true, tokenAndUserNameJson={"userName" : "defaultName", "token": "defualtToken"}) {
+    let callConfig = {
+        headers: {
+            'Token': isUserTriggered ? tokenAndUserNameJson.token : config.powerUserToken,
+            'UserName': isUserTriggered ?  tokenAndUserNameJson.userName : config.powerUserName
+        }
+    }
+    return axiosClient.get(`${config["getUserPath"]}/${userId}` , callConfig);
+}
 
 export function logout(tokenAndIdJson){
     if(tokenAndIdJson && tokenAndIdJson.token && tokenAndIdJson.userName){

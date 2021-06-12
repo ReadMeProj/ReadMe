@@ -14,6 +14,8 @@ class AnswerCard extends Component {
       answerId: props.answerId,
       isCorrect: false,
       whoAnswered: "",
+      correctAnswerId: props.correctAnswerId,
+      refreshAllAnswersFunc: props.refreshAnswersFunc,
     };
   }
   async componentDidMount() {
@@ -27,14 +29,6 @@ class AnswerCard extends Component {
           console.log("Error getting answer data by id.");
         }
       });
-      var correctAnswerId;
-      await getRequestById(this.state.answerData.requestid).then((res) => {
-        if (res.data["Error"] == null)
-          correctAnswerId = res.data["Data"].answerid;
-      });
-      if (correctAnswerId === this.state.answerId) {
-        this.setState({ isCorrect: true });
-      }
     }
     await getUsernameById(this.state.answerData.userid).then((response) => {
       this.setState({ whoAnswered: response });
@@ -53,7 +47,8 @@ class AnswerCard extends Component {
           style={{
             width: "800px",
             height: "auto",
-            backgroundColor: this.state.isCorrect ? "#E3FFDE" : "white",
+            backgroundColor:
+              this.state.correctAnswerId === answer.id ? "#E3FFDE" : "white",
           }}
         >
           <div className="media">
@@ -67,7 +62,11 @@ class AnswerCard extends Component {
                 style={{ marginRight: "20px", marginLeft: "20px" }}
               >
                 <div className="col">
-                  <VoteButtons id={this.state.answerId} type="answer" />
+                  <VoteButtons
+                    id={this.state.answerId}
+                    type="answer"
+                    refreshAllAnswersFunc={this.state.refreshAllAnswersFunc}
+                  />
                 </div>
               </div>
             </div>

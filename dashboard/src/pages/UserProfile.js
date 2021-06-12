@@ -21,7 +21,7 @@ class ProfilePage extends Component {
 
     return (
       <div
-        className="container-fluid"
+        className="d-flex justify-content-around"
         style={{ marginLeft: "7%", marginTop: "50px" }}
       >
         <div
@@ -42,6 +42,7 @@ class ProfilePage extends Component {
                 <b>Email:</b> {user.email} <br />
                 <b>Rank:</b>
                 {user.credit >= 500 ? " Premium! " : " Regular "}
+                <br />
                 <br />
                 <button
                   onClick={() => {

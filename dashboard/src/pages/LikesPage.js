@@ -12,6 +12,7 @@ class LikesPage extends Component {
 
     this.state = {
       articlesData: [],
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -26,7 +27,7 @@ class LikesPage extends Component {
     const { articlesData: articles } = this.state;
 
     return (
-      <div>
+      <div style={{ marginLeft: "15%" }}>
         <br />
         <h2>Favorites</h2>
         <br />
@@ -34,7 +35,7 @@ class LikesPage extends Component {
           <div>You are yet to add any article to your favorites!</div>
         ) : (
           <div style={{ marginLeft: "7%" }}>
-            {articles.map((fav) => (
+            {articles.slice(0, 20).map((fav) => (
               <div key={fav.articleid} className="d-flex align-items-center">
                 <FontAwesomeIcon
                   icon={["fas", "times"]}
@@ -50,7 +51,11 @@ class LikesPage extends Component {
                   }}
                   cursor="pointer"
                 />
-                <ArticleCard articleId={fav.articleid} isOnFavPage={true} />
+                <ArticleCard
+                  articleId={fav.articleid}
+                  isOnFavPage={true}
+                  refreshScoreFunc={this.state.refreshScoreFunc}
+                />
               </div>
             ))}
           </div>

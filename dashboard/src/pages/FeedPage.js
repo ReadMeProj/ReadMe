@@ -6,12 +6,12 @@ import {
   getByTag,
   getArticlesByDateInterval,
 } from "../network/lib/apiArticleFunctions";
+import { calcThreshold, calcRelaibility } from "../util/calcFunctions";
 import SearchBar from "../components/SearchBar";
 import SearchFilter from "../components/SearchFilters";
 class FeedPage extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       articlesData: [],
       tagsData: [],
@@ -21,6 +21,7 @@ class FeedPage extends Component {
           this.setState({ showFirst: type });
         }
       },
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -61,34 +62,55 @@ class FeedPage extends Component {
     var articlesToMap = [];
     if (articles !== null && this.state.tagsData.length === 0) {
       if (this.state.showFirst) {
+        var threshold = calcThreshold(articles);
         if (this.state.showFirst === "real") {
           articlesToMap = articles
-            .sort((a, b) => b.fakevotes.up - a.fakevotes.up)
+            .sort(
+              (a, b) =>
+                calcRelaibility(b.fakevotes.up, b.fakevotes.down, threshold) -
+                calcRelaibility(a.fakevotes.up, a.fakevotes.down, threshold)
+            )
             .map((article) => (
               <dd key={article.id}>
-                <ArticleCard articleId={article.id} />
+                <ArticleCard
+                  articleId={article.id}
+                  refreshScoreFunc={this.state.refreshScoreFunc}
+                />
               </dd>
             ));
         } else {
           articlesToMap = articles
-            .sort((a, b) => b.fakevotes.down - a.fakevotes.down)
+            .sort(
+              (a, b) =>
+                calcRelaibility(a.fakevotes.up, a.fakevotes.down, threshold) -
+                calcRelaibility(b.fakevotes.up, b.fakevotes.down, threshold)
+            )
             .map((article) => (
               <dd key={article.id}>
-                <ArticleCard articleId={article.id} />
+                <ArticleCard
+                  articleId={article.id}
+                  refreshScoreFunc={this.state.refreshScoreFunc}
+                />
               </dd>
             ));
         }
       } else {
-        articlesToMap = articles.map((article) => (
+        articlesToMap = articles.slice(0, 20).map((article) => (
           <dd key={article.id}>
-            <ArticleCard articleId={article.id} />
+            <ArticleCard
+              articleId={article.id}
+              refreshScoreFunc={this.state.refreshScoreFunc}
+            />
           </dd>
         ));
       }
     } else if (tags) {
       articlesToMap = tags.slice(0, 20).map((article) => (
         <dd key={article.articleid}>
-          <ArticleCard articleId={article.articleid} />
+          <ArticleCard
+            articleId={article.articleid}
+            refreshScoreFunc={this.state.refreshScoreFunc}
+          />
         </dd>
       ));
     }

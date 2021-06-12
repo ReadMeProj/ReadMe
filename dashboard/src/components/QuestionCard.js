@@ -1,18 +1,25 @@
 import { React, Component } from "react";
-import { getRequestById } from "../network/lib/apiRequestFunctions";
+import {
+  getAnswersByRequest,
+  getRequestById,
+} from "../network/lib/apiRequestFunctions";
 import { getUsernameById } from "../network/lib/apiUserFunctions";
 import VoteButtons from "./VoteButtons";
 import { Link } from "react-router-dom";
+import { getArticleById } from "../network/lib/apiArticleFunctions";
+import { calcCorrectAnswerId } from "../util/calcFunctions";
 
 class QuestionCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       requestData: [],
+      articleData: [],
       requestId: props.requestId,
       showTitleOnEach: props.reqPage != null ? props.reqPage : false,
       onFocus: props.onFocus != null ? props.onFocus : false,
       whoAsked: "",
+      hasAnswer: props && props.hasAnswer ? props.hasAnswer : false,
     };
   }
   async componentDidMount() {
@@ -29,18 +36,29 @@ class QuestionCard extends Component {
         this.setState({ whoAsked: response });
       }
     );
+    await getArticleById(this.state.requestData.articleid).then((response) => {
+      if (response.data["Error"] == null)
+        this.setState({ articleData: response.data["Data"] });
+    });
+    if (!this.props.hasAnswer)
+      await getAnswersByRequest(this.state.requestId).then((response) => {
+        if (response.data["Error"] == null)
+          this.setState({
+            hasAnswer: calcCorrectAnswerId(response.data["Data"]),
+          });
+      });
   }
 
   render() {
-    const { requestData: request } = this.state;
+    const { requestData: request, articleData: article } = this.state;
     if (request == null) return <div></div>;
     var content = request.content;
-    var isResolved = request.answerid;
-    var articleTitle = request.articlename;
-    var articleUrl = request.articleurl;
+    var isResolved = this.state.hasAnswer;
+    var articleTitle = article.name;
+    var articleUrl = article.url;
 
     return (
-      <div className="container-fluid" style={{ marginLeft: "7%" }}>
+      <div className="container-fluid">
         <div className="articleBox" style={{ width: "800px", height: "auto" }}>
           <div className="media">
             <div className="media-body">
@@ -52,7 +70,7 @@ class QuestionCard extends Component {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <h4>{articleTitle}</h4>
+                    <h4>Article: {articleTitle}</h4>
                   </a>
                 ) : null}
                 <small style={{ color: "gray" }}>

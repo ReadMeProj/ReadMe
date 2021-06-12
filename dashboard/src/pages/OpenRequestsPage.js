@@ -20,15 +20,19 @@ class OpenRequestsPage extends Component {
     return (
       <div>
         <br />
-        <h2>Requests waiting for your answer:</h2>
+        <h2 className="d-flex justify-content-around">
+          Requests waiting for your answer:
+        </h2>
         <br />
-        <dl>
-          {requests.map((req) => (
-            <dd key={req.id}>
-              <QuestionCard requestId={req.id} reqPage={true} />
-            </dd>
-          ))}
-        </dl>
+        <div className="d-flex justify-content-around">
+          <dl>
+            {requests.slice(0, 20).map((req) => (
+              <dd key={req.id}>
+                <QuestionCard requestId={req.id} reqPage={true} />
+              </dd>
+            ))}
+          </dl>
+        </div>
       </div>
     );
   }

@@ -9,6 +9,7 @@ class ArticleCard extends Component {
       articleData: [],
       articleId: props.articleId,
       isOnFavPage: props.isOnFavPage ? props.isOnFavPage : false,
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -49,9 +50,13 @@ class ArticleCard extends Component {
             <div className="media">
               <div className="media-body">
                 <b>{title}</b>
-                <div>
-                  <small style={{ color: "gray" }}>Author: {author}</small>
-                </div>
+                {author && author != "" ? (
+                  <div>
+                    <small style={{ color: "gray" }}>Author: {author}</small>
+                  </div>
+                ) : (
+                  <div />
+                )}
               </div>
               <img
                 width={150}
@@ -64,7 +69,11 @@ class ArticleCard extends Component {
           </a>
           <div className="row">
             <div className="col-2">
-              <VoteButtons id={this.state.articleId} type="article" />
+              <VoteButtons
+                id={this.state.articleId}
+                type="article"
+                refreshScoreFunc={this.state.refreshScoreFunc}
+              />
             </div>
             <div className="col-3">
               {this.state.isOnFavPage ? null : (
