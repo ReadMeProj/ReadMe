@@ -119,6 +119,13 @@ def recommendation(user_id, num_of_articles):
         JSON_Graph))
 
     raw_graph = prep(edge_list)
+    if not raw_graph.has_node(user_id):
+        recommended = generic_recommendation(raw_graph, num_of_articles+10)
+        return {
+            "error": None,
+            "data": random.sample(recommended, num_of_articles)
+        }
+
     connected_component = nx.algorithms.node_connected_component(raw_graph, user_id)
     G = raw_graph.subgraph(connected_component)
     users, articles = bipartite.sets(G)

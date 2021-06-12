@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Card, Button, Badge } from "react-bootstrap";
-import { GrLike, GrDislike } from "react-icons/gr"
+import { GrLike, GrDislike } from "react-icons/gr";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
-import { isAuth, userStorage } from "../../chromeHelper";
-import { toggleUserLike } from "../../network/lib/user"
+import { isAuth, userStorage, userScore } from "../../chromeHelper";
+import { toggleUserLike } from "../../network/lib/user";
 import { config } from "../../network/config";
-
 
 function ArticleCard(params) {
   var articleContent = "";
@@ -16,14 +15,16 @@ function ArticleCard(params) {
   var articleFakeVotes = {};
   const [isLiked, setIsLike] = useState(false);
   const [isSignedIn, setIsSignedIn] = useState(false);
-
+  const [userCredit, setuserCredit] = useState(0);
 
   useEffect(() => {
     if (isLiked) {
       // setIsLike(false);
     }
-    isAuth.get((res) => { setIsSignedIn(res) })
-  })
+    isAuth.get((res) => {
+      setIsSignedIn(res);
+    });
+  });
 
   // Set up parameters.
   if (params != null) {
@@ -60,92 +61,115 @@ function ArticleCard(params) {
 
     if (params.fakeVotes != null) {
       articleFakeVotes = params.fakeVotes;
-    }
-    else {
-      articleFakeVotes = {}
+    } else {
+      articleFakeVotes = {};
     }
 
     if (params.labels != null) {
       articleLabels = params.labels;
-    }
-    else {
+    } else {
       articleLabels = [];
     }
   }
-
+  if (isSignedIn){
+    userScore.get((result)=>{setuserCredit(result)})
+  }
 
   const onSeeMore = () => {
     var redirectURL;
-    userStorage.get(userCredentials => {
+    userStorage.get((userCredentials) => {
       if (userCredentials) {
         redirectURL = `${config["host"]}:8080/?articleId=${articleID}`;
-      }
-      else {
+      } else {
         redirectURL = `${config["host"]}:8080`;
       }
       window.open(`${redirectURL}`);
     });
-  }
+  };
 
   const toggleLike = () => {
-    userStorage.get(userCredentials => {
+    userStorage.get((userCredentials) => {
       if (userCredentials) {
         let tokenAndUserNameJson = {
-          'Token': userCredentials.token,
-          'UserName': userCredentials.userName
+          Token: userCredentials.token,
+          UserName: userCredentials.userName,
         };
-        toggleUserLike(userCredentials.userId, articleID, isLiked, tokenAndUserNameJson).then(
-          res => {
-            setIsLike(!isLiked);
-          }
-        );
+        toggleUserLike(
+          userCredentials.userId,
+          articleID,
+          isLiked,
+          tokenAndUserNameJson
+        ).then((res) => {
+          setIsLike(!isLiked);
+        });
       }
-    })
-  }
+    });
+  };
 
   function renderLabels() {
     var displayLabels = articleLabels;
-    var listItems = displayLabels.map(labelJ =>
-       <span key={labelJ.label} className="tag">{labelJ.label}</span>)
-    return (
-      <div className="articleLabels">
-        
-        <ul className="labels">
-        {listItems}
-        </ul>
-      </div>)
+    if (articleLabels.length != 0) {
+      var listItems = displayLabels.map((labelJ) => (
+        <span key={labelJ.label} className="tag">
+          {labelJ.label}
+        </span>
+      ));
+      return (
+        <div className="articleLabels">
+          <ul className="labels">{listItems}</ul>
+        </div>
+      );
+    } else {
+      return (
+        <div className="articleLabels">
+          {isSignedIn ? <span>Be the first to Report</span> : <h1></h1>}
+        </div>
+      );
+    }
   }
-
 
   return (
     <Container fluid="md">
       <Row>
         <Container className="articleCard">
-          <Card bg='light' text='dark' style={{ width: '13rem' }} className="mb-2">
+          <Card
+            bg="light"
+            text="dark"
+            style={{ width: "13rem" }}
+            className="mb-2"
+          >
             {/* <Card.Header>Some Meta-data regard the article</Card.Header> */}
             <Card.Body>
-              {articleFakeVotes.up} <GrLike /> {articleFakeVotes.down} <GrDislike />
-              
+              {articleFakeVotes.up} <GrLike /> {articleFakeVotes.down}{" "}
+              <GrDislike />
             </Card.Body>
             <Card.Text>
-            {renderLabels()}
+              {renderLabels()}
               {/* <Button variant='link' size='sm' onClick={onSeeMore} >See more</Button> */}
             </Card.Text>
             <Card.Text>
-            <div className="likeHeart">
+              <div className="likeHeart">
                 {isSignedIn &&
-                  (isLiked ?
+                  (isLiked ? (
                     <AiFillHeart onClick={toggleLike} />
-                    : <AiOutlineHeart onClick={toggleLike} />
-                  )}
+                  ) : (
+                    <AiOutlineHeart onClick={toggleLike} />
+                  ))}
                 <span className="likeText">Save to Favorites</span>
               </div>
             </Card.Text>
+            {isSignedIn ? (
+              <Card.Text>
+                <span>Your score is :{userCredit}</span>
+              </Card.Text>
+            ) : (
+              <Card.Text></Card.Text>
+            )}
           </Card>
         </Container>
       </Row>
     </Container>
-  )
+  );
 }
 
 export default ArticleCard;
