@@ -34,6 +34,24 @@ export const isPrem = {
     },
 };
 
+export const userScore = {
+    get: cb => {
+        chrome.storage.local.get(['userScore'], result => {
+            cb(result.userScore);
+        });
+    },
+    set: (userScore, cb) => {
+        chrome.storage.local.set(
+            {
+                userScore: userScore,
+            },
+            () => {
+                cb();
+            }
+        );
+    },
+};
+
 export const articleStorage = {
     get: cb => {
         chrome.storage.local.get(['currentArticle'], result => {
