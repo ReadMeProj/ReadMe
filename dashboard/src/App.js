@@ -151,7 +151,12 @@ class App extends Component {
                       <SignUpPage />
                     </Route>
                     <Route exact path="/moreInfo">
-                      <ArticlePage isPremium={this.state.score >= 500} />
+                      <ArticlePage
+                        isPremium={this.state.score >= 500}
+                        refreshScoreFunc={this.state.refreshScoreFunc.bind(
+                          this
+                        )}
+                      />
                     </Route>
                     <Route path="/focusQuestion">
                       <QuestionPage
