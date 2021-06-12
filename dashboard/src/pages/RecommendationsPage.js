@@ -9,6 +9,7 @@ class RecommendationsPage extends Component {
 
     this.state = {
       articlesData: [],
+      refreshScoreFunc: props.refreshScoreFunc,
     };
   }
 
@@ -25,19 +26,26 @@ class RecommendationsPage extends Component {
     return (
       <div>
         <br />
-        <h2>Articles recommended for you!</h2>
+        <h2 className="d-flex justify-content-around">
+          Articles recommended for you!
+        </h2>
         <br />
-        <dl>
-          {articles == null || articles === {} ? (
-            <div>No recommendations found...</div>
-          ) : (
-            articles.map((article) => (
-              <dd key={article}>
-                <ArticleCard articleId={article} />
-              </dd>
-            ))
-          )}
-        </dl>
+        <div className="d-flex justify-content-around">
+          <dl>
+            {articles == null || articles === {} ? (
+              <div>No recommendations found...</div>
+            ) : (
+              articles.map((article) => (
+                <dd key={article}>
+                  <ArticleCard
+                    articleId={article}
+                    refreshScoreFunc={this.state.refreshScoreFunc}
+                  />
+                </dd>
+              ))
+            )}
+          </dl>
+        </div>
       </div>
     );
   }

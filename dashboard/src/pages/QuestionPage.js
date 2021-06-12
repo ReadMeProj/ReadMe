@@ -19,6 +19,17 @@ class QuestionPage extends Component {
       answersData: [],
       showModal: false,
       answerInput: "",
+      correctAnswerId: "",
+      refreshAnswersFunc: async function () {
+        await getAnswersByRequest(this.state.requestId).then((response) => {
+          if (response.data["Error"] == null)
+            this.setState({
+              correctAnswerId: calcCorrectAnswerId(response.data["Data"]),
+            });
+        });
+      },
+      refreshScoreFunc:
+        props.refreshScoreFunc != null ? props.refreshScoreFunc : () => {},
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -39,14 +50,14 @@ class QuestionPage extends Component {
   async handleSubmit(event) {
     event.preventDefault();
     let answerContent = this.state.answerInput;
-    await submitAnswer(this.state.requestId, answerContent)
-      .then(this.handleCloseModal(this))
-      .then(
-        getAnswersByRequest(this.state.requestId).then((response) => {
-          if (response.data["Error"] == null)
-            this.setState({ answersData: response.data["Data"] });
-        })
-      );
+    await submitAnswer(this.state.requestId, answerContent).then(
+      this.handleCloseModal(this)
+    );
+    await getAnswersByRequest(this.state.requestId).then((response) => {
+      if (response.data["Error"] == null)
+        this.setState({ answersData: response.data["Data"] });
+    });
+    this.state.refreshScoreFunc();
   }
   async componentDidMount() {
     await getAnswersByRequest(this.state.requestId).then((response) => {
@@ -58,20 +69,28 @@ class QuestionPage extends Component {
         this.setState({ requestorId: res.data["Data"].requestedby });
       }
     });
+    this.setState({
+      correctAnswerId: calcCorrectAnswerId(this.state.answersData),
+    });
   }
 
   render() {
-    const { answersData: answers, requestorId: whoAsked } = this.state;
-    var correctAnswerId = calcCorrectAnswerId(answers);
+    const {
+      answersData: answers,
+      requestorId: whoAsked,
+      correctAnswerId: cor,
+    } = this.state;
     var currUserId = window.localStorage.getItem("UserId");
     var isTheOneWhoAsked = currUserId === whoAsked;
     return (
-      <div>
+      <div style={{ marginLeft: "10%" }}>
         <br />
         <QuestionCard
+          key={cor != null}
           requestId={this.state.requestId}
           onFocus={true}
           reqPage={true}
+          hasAnswer={cor != null}
         />
         {!isTheOneWhoAsked ? (
           <button
@@ -103,11 +122,15 @@ class QuestionPage extends Component {
             <dl>
               {answers == null
                 ? []
-                : answers.map((ans) => (
+                : answers.slice(0, 20).map((ans) => (
                     <dd key={ans.id}>
                       <AnswerCard
+                        key={cor}
                         answerId={ans.id}
-                        correctAnswerId={correctAnswerId}
+                        correctAnswerId={cor}
+                        refreshAnswersFunc={this.state.refreshAnswersFunc.bind(
+                          this
+                        )}
                       />
                     </dd>
                   ))}

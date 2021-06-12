@@ -14,8 +14,8 @@ class AnswerCard extends Component {
       answerId: props.answerId,
       isCorrect: false,
       whoAnswered: "",
-      correctAnswerId:
-        props && props.correctAnswerId ? props.correctAnswerId : null,
+      correctAnswerId: props.correctAnswerId,
+      refreshAllAnswersFunc: props.refreshAnswersFunc,
     };
   }
   async componentDidMount() {
@@ -62,7 +62,11 @@ class AnswerCard extends Component {
                 style={{ marginRight: "20px", marginLeft: "20px" }}
               >
                 <div className="col">
-                  <VoteButtons id={this.state.answerId} type="answer" />
+                  <VoteButtons
+                    id={this.state.answerId}
+                    type="answer"
+                    refreshAllAnswersFunc={this.state.refreshAllAnswersFunc}
+                  />
                 </div>
               </div>
             </div>
