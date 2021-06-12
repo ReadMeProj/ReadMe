@@ -104,10 +104,7 @@ function ArticleCard(params) {
   }
 
   function renderLabels() {
-    // articleLabels.sort((a, b) => {
-    //   return a.score > b.score
-    // })
-    var displayLabels = articleLabels;//.slice(0, 6);
+    var displayLabels = articleLabels;
     var listItems = displayLabels.map(labelJ =>
        <span key={labelJ.label} className="tag">{labelJ.label}</span>)
     return (
@@ -116,9 +113,6 @@ function ArticleCard(params) {
         <ul className="labels">
         {listItems}
         </ul>
-        {/* {displayLabels.map(label =>{
-          <Badge variant="info">{label.label}</Badge>{''}
-        })} */}
       </div>)
   }
 
@@ -135,8 +129,10 @@ function ArticleCard(params) {
             </Card.Body>
             <Card.Text>
             {renderLabels()}
-              <Button variant='link' size='sm' onClick={onSeeMore} >See more</Button>
-              <div className="likeHeart">
+              {/* <Button variant='link' size='sm' onClick={onSeeMore} >See more</Button> */}
+            </Card.Text>
+            <Card.Text>
+            <div className="likeHeart">
                 {isSignedIn &&
                   (isLiked ?
                     <AiFillHeart onClick={toggleLike} />
@@ -144,7 +140,6 @@ function ArticleCard(params) {
                   )}
                 <span className="likeText">Save to Favorites</span>
               </div>
-
             </Card.Text>
           </Card>
         </Container>

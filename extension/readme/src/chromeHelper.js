@@ -16,6 +16,24 @@ export const isAuth = {
     },
 };
 
+export const isPrem = {
+    get: cb => {
+        chrome.storage.local.get(['isPrem'], result => {
+            cb(result.isPrem);
+        });
+    },
+    set: (isPrem, cb) => {
+        chrome.storage.local.set(
+            {
+                isPrem: isPrem,
+            },
+            () => {
+                cb();
+            }
+        );
+    },
+};
+
 export const articleStorage = {
     get: cb => {
         chrome.storage.local.get(['currentArticle'], result => {

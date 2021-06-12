@@ -7,7 +7,7 @@ import {
 } from "../network/lib/apiRequestFunctions";
 import QuestionCard from "../components/QuestionCard";
 import Modal from "react-bootstrap/Modal";
-import PremiumUserIcon from "../assets/PremiumUser.png";
+import PowerUserIcon from "../assets/PowerUser.png";
 
 class ArticlePage extends Component {
   constructor(props) {
@@ -99,7 +99,7 @@ class ArticlePage extends Component {
             <img
               width={50}
               height={50}
-              src={PremiumUserIcon}
+              src={PowerUserIcon}
               alt="logo"
               style={{ alignSelf: "left" }}
             />
