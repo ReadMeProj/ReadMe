@@ -39,6 +39,10 @@ class LoginButton extends Component {
     this.fetch_user();
     this.timer = setInterval(() => this.fetch_user(), 1000);
   }
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    this.timer = null;
+}
 
   /* componentDidUpdate(prevProps,prevState) {
     if ((prevState.loginAnswer != this.state.loginAnswer)||(prevState.isLogged != this.state.isLogged)){
