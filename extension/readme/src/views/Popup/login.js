@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { login, getUser } from "../../network/lib/login";
-import { userStorage, isAuth, isPrem } from "../../chromeHelper";
+import { userStorage, isAuth, isPrem, userScore } from "../../chromeHelper";
 import { Alert } from "react-bootstrap";
 import { Redirect } from "react-router";
 
@@ -54,6 +54,7 @@ class Login extends Component {
                 console.log("notprem");
               });
             }
+            userScore.set(userRes.data.Data.credit, () => {});
           }
         });
       })

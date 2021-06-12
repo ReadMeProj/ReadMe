@@ -92,14 +92,14 @@ class LoginButton extends Component {
                 <Link to="/request">
                   <button className="btn-two cyan mini" type="button">
                     Request Review
-                  </button>
-                  <img
+                    <img
                     width={30}
                     height={25}
                     src={PremiumUserIcon}
                     alt="logo"
                     style={{ alignSelf: "left" }}
                   />
+                  </button>
                 </Link>
               ) : (
                 <button
