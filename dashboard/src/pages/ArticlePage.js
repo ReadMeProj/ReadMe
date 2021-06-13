@@ -21,6 +21,8 @@ class ArticlePage extends Component {
       correctAnswerId: "",
       isPremium:
         this.props && this.props.isPremium ? this.props.isPremium : false,
+      refreshScoreFunc:
+        props.refreshScoreFunc != null ? props.refreshScoreFunc : () => {},
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -47,14 +49,13 @@ class ArticlePage extends Component {
       questionContent,
       this.state.articleData.name,
       this.state.articleData.url
-    );
-    await getRequestsForArticle(this.state.articleData.id)
-      .then((response) => {
-        if (response.data["Error"] == null) {
-          this.setState({ requestsData: response.data["Data"] });
-        }
-      })
-      .then(this.handleCloseModal(this));
+    ).then(this.handleCloseModal(this));
+    await getRequestsForArticle(this.state.articleData.id).then((response) => {
+      if (response.data["Error"] == null) {
+        this.setState({ requestsData: response.data["Data"] });
+      }
+    });
+    this.state.refreshScoreFunc();
   }
 
   async componentDidMount() {
