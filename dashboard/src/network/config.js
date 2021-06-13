@@ -1,7 +1,7 @@
 export var config = {
-  host: "http://localhost",
-  "db-port": "8080",
-  "dashboard-port": "8080",
+  host: "http://readmeproj.online",
+  "db-port": "80",
+  "dashboard-port": "80",
   loginPath: "/api/login",
   logoutPath: "/api/logout",
   getArticlePath: "/api/getArticle",
