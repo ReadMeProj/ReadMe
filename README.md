@@ -1,10 +1,21 @@
 # ReadMe Project
 ![alt](./dashboard/src/assets/siteLogo.png?raw=true "ReadMe")
+
 ## What is ReadMe
 ReadMe is a crowd sourced web app that helps users explore the news. Our engine learns your preferences, and by using complex algorithms and the wisdom of the crowd it offers a custom made news feed for each user. Join us! Consume the news more efficiently and help other users as well!
+
+## Links
+* [Server](/internal/api)
+* [Algorithms](/internal/alg)
+* [Frontend](/dashboard)
+* [Chrome Extension](/extension)
+* [See docs](/data)
+* [Database](/internal/db)
+
 ## Prerequisites
 * Docker
 * node > 10.6
+
 ## Run with Docker
 ```bash
 $ ReadMe@Server:~/ReadMe/ docker-compose -f ./docker/docker-compose.yaml up --build -d 

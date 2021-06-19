@@ -21,7 +21,7 @@ export var config = {
   deleteFavoritePath: "/api/deleteFavorite",
   getAnswerById: "/api/answer/id",
   newRequestPath: "/api/newRequest",
-  getAllOpenRequestsPath: "/api/getRequests/open/25",
+  getAllOpenRequestsPath: "/api/recommendations/requests",
   newUserPath: "/api/newUser",
   getAnalyticsSitesPath: "/api/analytics/sites",
   getTagsCountPath: "/api/analytics/tags"
