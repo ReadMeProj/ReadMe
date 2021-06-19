@@ -1,7 +1,7 @@
 export var config = {
     "host": "http://20.71.92.74",
-    "db-port": "8080",
-    "dashboard-port": "8080",
+    "db-port": "80",
+    "dashboard-port": "80",
     "loginPath": "/api/login",
     "logoutPath": "/api/logout",
     "getArticlePath": "/api/getArticle",
