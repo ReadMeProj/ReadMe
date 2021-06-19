@@ -10,8 +10,8 @@ class OpenRequestsPage extends Component {
 
   async componentDidMount() {
     await getOpenRequests().then((response) => {
-      if (response.data["Error"] == null)
-        this.setState({ requestsData: response.data["Data"] });
+      if (response.data["requests"] != null)
+        this.setState({ requestsData: response.data["requests"] });
     });
   }
 
@@ -27,8 +27,8 @@ class OpenRequestsPage extends Component {
         <div className="d-flex justify-content-around">
           <dl>
             {requests.slice(0, 20).map((req) => (
-              <dd key={req.id}>
-                <QuestionCard requestId={req.id} reqPage={true} />
+              <dd key={req}>
+                <QuestionCard requestId={req} reqPage={true} />
               </dd>
             ))}
           </dl>
