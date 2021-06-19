@@ -66,7 +66,9 @@ export async function getAnswerById(answerId) {
 }
 
 export async function getOpenRequests() {
-  return axiosClient.get(`${config["getAllOpenRequestsPath"]}`);
+  const userId = window.localStorage.getItem("UserId");
+  if (!userId) console.log("No user id argument was given for getRequests()!");
+  return axiosClient.get(`${config["getAllOpenRequestsPath"]}/${userId}/25`);
 }
 
 export async function getVotesBySites(){
