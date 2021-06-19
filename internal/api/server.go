@@ -1002,7 +1002,7 @@ func StartAPIServer(mongoIP string, _recommendationsIPort string) {
 	router.PathPrefix("/").Handler(http.FileServer(http.Dir("./dashboard/build/")))
 
 	serv := &http.Server{
-        Addr:         "0.0.0.0:8080",
+        Addr:         "0.0.0.0:80",
         Handler:      router,
     }
 
