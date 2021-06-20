@@ -76,7 +76,7 @@ new articles that we didn't see before on the server will be created- that's the
   <img src="./docs/Jaccard.png">
 </kbd>
      ```python
-        tuples = [(article_liked_by_user, some_article)
+     tuples = [(article_liked_by_user, some_article)
                   for article_liked_by_user in liked_articles_by_user
                   for some_article in articles
                   if not (article_liked_by_user == some_article some_article or in liked_articles_by_user)]
