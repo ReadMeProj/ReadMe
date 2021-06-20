@@ -4,6 +4,8 @@
 ## What is ReadMe
 ReadMe is a crowd sourced web app that helps users explore the news. Our engine learns your preferences, and by using complex algorithms and the wisdom of the crowd it offers a custom made news feed for each user. Join us! Consume the news more efficiently and help other users as well!
 
+Our web app is available - [here](http://readmeproj.online/).
+
 ## Links
 * [Server](/internal/api)
 * [Algorithms](/internal/alg)
