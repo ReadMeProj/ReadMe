@@ -71,38 +71,37 @@ new articles that we didn't see before on the server will be created- that's the
   * Based on Favorites DB Collection.
   * Model the Users, Articles, and Favorites to Bi Partite graph where User & Articles are nodes, favorites are edges. 
   * If we have enough Data - 
+  * <kbd>
+    <img src="./docs/Jaccard.png">
+    </kbd>  
+    
     * Aggregate Jaccard
-     <kbd>
-  <img src="./docs/Jaccard.png">
-</kbd>
-     ```python
-     tuples = [(article_liked_by_user, some_article)
-                  for article_liked_by_user in liked_articles_by_user
-                  for some_article in articles
-                  if not (article_liked_by_user == some_article some_article or in liked_articles_by_user)]
-
-        similarity_scores = nx.jaccard_coefficient(G, tuples)
-        article_set_ndup = [article for article in articles if article not in liked_articles_by_user]
-        article_score_dict = dict.fromkeys(article_set_ndup, 0)
-        for sim_score in similarity_scores:
-            article_score_dict[sim_score[1]] += sim_score[2]
-        sorted_dict = sorted(article_score_dict.items(), key=itemgetter(1), reverse=True)
-        articles_sorted_by_score, scores = zip(*sorted_dict)
-        recommended = articles_sorted_by_score[:RECOMMENDED_ARTICLES_TO_CALCULATE]
-        if len(recommended) < RECOMMENDED_ARTICLES_TO_CALCULATE:
-            recommended.extend(generic_recommendation(raw_graph, num_of_articles - len(recommended)))
-
-    return {
-        "error": None,
-        "data": random.sample(recommended, num_of_articles)
-    }
-    ```
+    *  ```python
+          tuples = [(article_liked_by_user, some_article)
+                    for article_liked_by_user in liked_articles_by_user
+                    for some_article in articles
+                    if not (article_liked_by_user == some_article some_article or in liked_articles_by_user)]
+          similarity_scores = nx.jaccard_coefficient(G, tuples)
+          article_set_ndup = [article for article in articles if article not in liked_articles_by_user]
+          article_score_dict = dict.fromkeys(article_set_ndup, 0)
+          for sim_score in similarity_scores:
+              article_score_dict[sim_score[1]] += sim_score[2]
+          sorted_dict = sorted(article_score_dict.items(), key=itemgetter(1), reverse=True)
+          articles_sorted_by_score, scores = zip(*sorted_dict)
+          recommended = articles_sorted_by_score[:RECOMMENDED_ARTICLES_TO_CALCULATE]
+          if len(recommended) < RECOMMENDED_ARTICLES_TO_CALCULATE:
+              recommended.extend(generic_recommendation(raw_graph, num_of_articles - len(recommended)))
+        return {
+            "error": None,
+            "data": random.sample(recommended, num_of_articles)
+        }  
+ 
   * Else: (Not enough data to estimate user preferences)
      Generic recommendation using degree centrality measure.
-      ```python
+     ```python
       if len(liked_articles_by_user) < NOT_ENOUGH_DATA_THRESHOLD:
         recommended = generic_recommendation(raw_graph, num_of_articles)
-      ```
+        ```
       ```python
       def generic_recommendation(raw_graph, num_of_articles):
         articles_by_degree = []
